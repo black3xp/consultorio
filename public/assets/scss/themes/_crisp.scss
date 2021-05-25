@@ -1,0 +1,224 @@
+//
+// default.scss
+// Extended from Bootstrap
+//
+
+//
+// Bootstrap Overrides ===================================
+//
+
+// 1. Colors
+$white: #FFFFFF;
+$gray-100: #F9FBFD;
+$gray-200: #fafafb;
+$gray-300: #E3EBF6;
+$gray-400: #D2DDEC;
+$gray-500: #B1C2D9;
+$gray-600: #95AAC9;
+$gray-700: #1b2955;
+$gray-800: darken($gray-700, 1%);
+$gray-900: darken($gray-800, 3%);
+$black: #000000;
+$body-bg: $gray-200;;
+$body-color: #1b2955;
+$text-muted: #8e94aa;
+$black-translucent: rgba(0, 0, 0, 0.15);
+$white-translucent: rgba(255, 255, 255, 0.15);
+
+$primary: #407cff;
+$success: #00e08b;
+$info: #3fbafc;
+$warning: #ffb700;
+$danger: #ff256e;
+$secondary: $gray-600;
+$light: $gray-100;
+$dark: $gray-700;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+                (
+                        "primary":    $primary,
+                        "secondary":  $secondary,
+                        "success":    $success,
+                        "info":       $info,
+                        "warning":    $warning,
+                        "danger":     $danger,
+                        "light":      $light,
+                        "dark":       $dark,
+                ),
+                $theme-colors
+);
+
+//contrast threshold adjust accordingly
+$yiq-contrasted-threshold: 220;
+
+//2. Typography
+//used for body text
+$font-primary: 'Hind Vadodara', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+//used for headings and subtitle
+$font-secondary: 'Jost*', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-weight-base:500;
+$headings-font-family: $font-secondary;
+$font-family-sans-serif: $font-primary;
+
+$font-size-base: 0.9rem;
+$font-size-lg: ($font-size-base * 1.25);
+$font-size-sm: ($font-size-base * .875);
+$font-size-xs: ($font-size-base * .6666666667); // 10px
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $gray-900;
+$yiq-text-light: $white;
+$line-height-lg: 1.5;
+$line-height-sm: 1.5;
+
+//3. Box shadow
+$box-shadow: 0 3px 8px 0 rgba(27,41,85,0.05);
+$box-shadow-sm:0 6px 10px 0 rgba(27,41,85,0.05);
+$box-shadow-lg: 0 25px 50px rgba(8,21,66,.06);
+
+//4. Borders
+$border-width: 1px;
+$border-color: #E9EAEE;
+$border-radius: .25rem;
+$border-radius-sm: .2rem;
+$border-radius-lg: .3rem;
+
+// Badges
+$bg-soft-level: -10;
+$badge-padding-x: .5em;
+$badge-padding-y: 0.4rem;
+$badge-padding-x: 0.5rem;
+$badge-font-size: 80%;
+
+//form
+$input-bg: $white;
+$input-color: $body-color;
+$input-group-addon-bg: $input-bg;
+$input-border-color: $border-color;
+$input-focus-border-color: $gray-600;
+$form-dark-bg: rgba(255, 255, 255, 0.2);
+$custom-file-border-color: $gray-300;
+$custom-control-indicator-active-bg: $gray-500;
+$custom-select-dark-indicator: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$gray-300}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23");
+
+//buttons
+$btn-box-shadow: 0 2px 8px 0 rgba(0,0,0,.1);;
+$btn-font-weight: 500;
+
+
+//top navigation
+$top-nav-shadow: $box-shadow;
+$top-nav-border-bottom-width: 0px;
+$nav-link-padding-y: .5rem;
+$nav-link-padding-x: 1rem;
+
+//modal
+$modal-backdrop-opacity: 1;
+$overlay-color: rgba(27,41,85,0.75); //used backdrop shadow for modal and loading overlay in card
+
+$component-active-color: $white;
+
+$transition-base: all .2s ease;
+$transition-fade: opacity .15s linear;
+$transition-collapse: height .35s ease;
+
+// List group
+$list-group-border-color: $border-color;
+
+//cards
+$card-shadow: $box-shadow-lg;
+$card-shadow-hover: $box-shadow-sm;
+$card-cap-bg: transparent;
+$card-border-width: 0px;
+
+//avatar
+$avatar-size-base: 3rem;
+$avatar-size-xs: 1.625rem;
+$avatar-size-sm: 2.5rem;
+$avatar-size-lg: 4rem;
+$avatar-size-xl: 5.125rem;
+$avatar-size-xxl: 8rem;
+
+//button
+$close-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M14.7,1.3c-0.4-0.4-1-0.4-1.4,0L8,6.6L2.7,1.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L6.6,8l-5.3,5.3 c-0.4,0.4-0.4,1,0,1.4C1.5,14.9,1.7,15,2,15s0.5-0.1,0.7-0.3L8,9.4l5.3,5.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L9.4,8l5.3-5.3C15.1,2.3,15.1,1.7,14.7,1.3z'/%3E%3C/svg%3E"), "#", "%23");
+$close-image-light: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M14.7,1.3c-0.4-0.4-1-0.4-1.4,0L8,6.6L2.7,1.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L6.6,8l-5.3,5.3 c-0.4,0.4-0.4,1,0,1.4C1.5,14.9,1.7,15,2,15s0.5-0.1,0.7-0.3L8,9.4l5.3,5.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L9.4,8l5.3-5.3C15.1,2.3,15.1,1.7,14.7,1.3z'/%3E%3C/svg%3E"), "#", "%23");
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding: .9375rem;
+$table-cell-padding-sm: .5rem;
+$table-accent-bg: $gray-100;
+$table-hover-bg: $gray-100;
+$table-border-color: $gray-200;
+$table-head-bg: $gray-100;
+$table-head-color: $gray-600;
+
+//dropdown
+$dropdown-box-shadow: $box-shadow-lg;
+
+//tabs
+$tab-padding-top: 1rem;
+$tab-padding-bottom: 1rem;
+
+//sidebar
+$sidebar-width: 240px;
+$sidebar-z-index: 999;
+$sidebar-font-weight:500;
+$sidebar-bg: $gray-900;
+$sidebar-backdrop-z-index: 99;
+$sidebar-border-right-color: rgba(255, 255, 255, 0.07);
+$sidebar-border-right-width: 1px;
+$sidebar-brand-bg: $black-translucent;
+$sidebar-link-color: rgba(255,255,255,0.5);
+$sidebar-active-link-color:rgba(255,255,255,1);
+$sidebar-color: #fff;
+$sidebar-icon-size: 18px;
+$sidebar-separator-color: rgba(255, 255, 255, 0.07);
+$sidebar-icon-bg: rgba(255, 255, 255, 0.22);
+//Header
+$header-height: 65px;
+
+//Layout
+$page-padding-x:70px; //padding when sidebar is unpinned
+$page-padding-y:$header-height; // padding from top for header
+
+
+//chat
+$chat-sidebar-width: 240px;
+$chat-sidebar-color: $gray-900;
+$chat-sidebar-header-height: 60px;
+$chat-window-header-height: 65px;
+$chat-window-footer-height: 65px;
+
+//mail
+$mail-sidebar-width: 240px;
+$mail-sidebar-color: $gray-900;
+$mail-sidebar-header-height: 60px;
+$mail-window-header-height: 65px;
+$mail-window-footer-height: 65px;
+
+//Icons
+$icon-font: 'Material Design Icons';
+
+//Icon Mappings
+$icon-chevron-down: "\F140";
+$icon-chevron-up: "\F143";
+$icon-chevron-left: "\F141";
+$icon-chevron-right: "\F142";
+$icon-sidebar-pin: "\F930";
+$icon-sidebar-pin-off: "\F92F";
+$icon-search: "\F349";
+$icon-arrow-right: "\F054";
+$icon-arrow-left: "\F04D";
+$icon-close: "\F156";
+$icon-close-circle: "\F15a";
+$icon-check: "\F12c";
+$icon-check-circle: "\F5e0";
+$icon-circle: "\F130";
+$icon-fullscreen: "\F293";
+$icon-fullscreen-close: "\F294";
+$icon-reload: "\F453";
+$icon-menu: "\F35C";

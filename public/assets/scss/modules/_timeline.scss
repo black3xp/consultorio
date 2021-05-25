@@ -1,0 +1,55 @@
+//timeline
+.timeline {
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  .timeline-item {
+
+    position: relative;
+
+    padding: 0 0px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    border-radius: $border-radius;
+    transition: all ease 0.2s;
+    .timeline-wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+    }
+    &:hover {
+      background-color: $gray-100;
+      cursor: default;
+    }
+    &:not(:last-child):after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 2px;
+      height: calc(100% + 25px);
+      background-color: $gray-400;
+      z-index: 0;
+
+    }
+  }
+  //for small timline in card use avatar-xs for icon
+  &.timeline-xs {
+    .timeline-item {
+      margin-bottom: 15px;
+      &:not(:last-child):after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 12px;
+        width: 2px;
+        height: calc(100% + 25px);
+        background-color: $gray-400;
+        z-index: 0;
+
+      }
+    }
+  }
+}

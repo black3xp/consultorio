@@ -1,0 +1,12 @@
+@mixin alert-border-variant( $color) {
+  border:0;
+  border-left:4px solid $color;
+  background-color: $gray-200;
+   .icon{
+    color: $color;
+     padding-right: 7px;
+     font-size: 1.5rem;
+     margin-left: -4px;
+
+  }
+}

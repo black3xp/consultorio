@@ -1,0 +1,52 @@
+//Demo CSS
+
+.icon--name {
+  width: 100px;
+
+}
+
+.icon--item {
+  opacity: 0.9;
+  transition: all linear 0.2s;
+  border-radius: 0.25rem;
+}
+
+.icon--item.active,
+.icon--item:hover {
+  opacity: 1;
+  background-color: #f6f9fc;
+  box-shadow: 0 0 0px 3px #3e4676;
+}
+
+.icon--wrapper {
+  display: inline-block;
+  height: 100px;
+  max-width: 135px;
+  margin: 0 5px;
+}
+
+.iconbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  bottom: 20px;
+
+  text-align: center;
+}
+
+.iconbar--wrapper {
+  transition: all ease 0.3s;
+  display: inline-block;
+  padding: 0 15px 15px 15px;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
+#iconbar-preview {
+  font-size: 23px;
+  vertical-align: sub;
+}
+
+

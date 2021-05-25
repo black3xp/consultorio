@@ -1,0 +1,42 @@
+//Alert
+
+//for placing the alert
+.alert-container{
+  position: fixed;
+  z-index: 9;
+  top:$header-height;
+  left:$page-padding-x;
+  right: 0;
+  .alert{
+    border-radius: 0;
+    margin-bottom: 0;
+    opacity: 1;
+    animation: showRibbon 0.5s 0s cubic-bezier(0.35, 1.35, 0.5, 1) backwards;
+
+  }
+}
+.sidebar-pinned{
+  .alert-container {
+    left: $sidebar-width
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .alert-container {
+    left: 0
+  }
+}
+//call mixin for creating border alerts
+@each $color, $value in $theme-colors {
+  .alert-border-#{$color} {
+    @include alert-border-variant($value);
+  }
+}
+
+
+@keyframes showAlert {
+  from {
+    opacity: 0;
+    transform: translateY(-50px)
+  }
+}

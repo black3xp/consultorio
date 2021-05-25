@@ -1,0 +1,155 @@
+//extended from datepicker plugin
+
+
+.datepicker {
+  padding: 16px 25px;
+  border-radius: 2px;
+  font-size: 12px;
+  z-index: 99 !important;
+}
+
+.datepicker:after {
+  border-bottom-color: $gray-300
+}
+
+.datepicker thead tr .datepicker-switch {
+  color: $gray-600;
+  font-size: 13px;
+  font-weight: $font-weight-normal;
+}
+
+.datepicker thead tr .next, .datepicker thead tr .prev {
+  color: $primary;
+  content: '';
+  font-size: 0
+}
+
+.datepicker thead tr .next:before, .datepicker thead tr .prev:before {
+  color: $primary;
+  font-family: $icon-font;
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+
+}
+
+.datepicker thead tr .prev:before {
+  content: $icon-arrow-left;
+
+}
+
+.datepicker thead tr .next:before {
+  content: $icon-arrow-right;
+
+}
+
+.datepicker thead tr .dow {
+  text-align: center;
+  color: $primary;
+  text-transform: uppercase;
+  font-size: 11px
+}
+
+.datepicker thead tr th {
+  text-align: center;
+  width: 31px;
+  height: 29px
+}
+
+.datepicker tbody tr .odd {
+  color: $gray-400
+}
+
+.datepicker table tr td {
+  text-align: center;
+  width: 31px;
+  height: 29px;
+  cursor: default;
+  border-radius: $border-radius;
+
+}
+
+.datepicker table tr td.old, .datepicker table tr td.new {
+  color: $gray-500
+}
+
+.datepicker table tr td.day:hover {
+  background: $gray-300
+}
+
+.datepicker table tr td.active {
+  color: #fff;
+  background-color: $primary !important
+}
+
+.datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover {
+  background-image: none;
+  text-shadow: none;
+  font-weight: 600
+}
+
+.datepicker table tr td.today:hover, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover {
+  background-color: $gray-300;
+  background-image: none;
+  color: $black;
+}
+
+.datepicker table tr td.today {
+  color: $black;
+  background-color: fade($warning, 60);
+}
+
+.datepicker table tr td span {
+  border-radius: 4px;
+  width: 42px;
+  height: 42px;
+  line-height: 42px
+}
+
+.datepicker table tr td span.active {
+  border-radius: $border-radius;
+  background-color: $primary !important;
+
+}
+
+.datepicker table tr td span.active, .datepicker table tr td span.active:hover, .datepicker table tr td span.active.disabled, .datepicker table tr td span.active.disabled:hover {
+  background-image: none;
+  border: 0;
+  text-shadow: none
+}
+
+td.active.selected.range-start.range-end.day {
+  border-radius: $border-radius;
+}
+
+td.range-start.day {
+  background-color: $primary !important;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.datepicker table tr td.range {
+  background-color: $primary;
+  color: $white;
+}
+
+td.selected.range-end.day {
+  background-color: $primary;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.datepicker.dropdown-menu {
+  border-color: $border-color;
+  color: $gray-600;
+  box-shadow: $dropdown-box-shadow;
+  border-radius: $border-radius;
+
+}
+
+.datepicker-inline {
+  width: auto
+}

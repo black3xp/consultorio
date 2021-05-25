@@ -1,0 +1,13 @@
+// Sizing Mixins
+
+// Generate min-height from 10vh to 100vh Classes
+@mixin generate-heights($n, $j: 0) {
+  @if $j <= $n {
+    @for $i from $j through $n {
+      $step: $i*10;
+      .m-h-#{$step} {
+        min-height: ($step*1vh);
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+//avatar
+.avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: $gray-500;
+  color: $white;
+}
+
+.avatar-title:hover,
+.avatar-img:hover {
+  box-shadow: 0px 0px 0px 2px rgb(255, 255, 255);
+}
+
+// Status
+//
+// Adds a status circle in the bottom right corner
+
+.avatar-online::before,
+.avatar-away::before,
+.avatar-dnd::before,
+.avatar-offline::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  border: 3px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-online::before {
+  background-color: $success;
+}
+
+.avatar-away::before {
+  background-color: $warning;
+
+}
+
+.avatar-dnd::before {
+  background-color: $danger;
+
+}
+
+.avatar-offline::before {
+  background-color: $gray-500;
+}
+
+// Sizes
+//
+// Controls the size of avatar images, avatar sizes, and avatar statuses
+// ($avatarSize, $borderWidth, $borderRadius, $fontSize, $statusBorderWidth)
+
+.avatar {
+  @include avatar($avatar-size-base, 4px, 6px, 18px, 2px);
+}
+
+.avatar-xs {
+  @include avatar($avatar-size-xs, 2px, 4px, 10px, 1px);
+}
+
+.avatar-sm {
+  @include avatar($avatar-size-sm, 3px, 4px, 13px, 2px);
+}
+
+.avatar-lg {
+  @include avatar($avatar-size-lg, 3px, 8px, 24px, 3px);
+}
+
+.avatar-xl {
+  @include avatar($avatar-size-xl, 4px, 8px, 30px, 4px);
+}
+
+.avatar-xxl {
+  @include avatar($avatar-size-xl, 6px, 8px, 30px, 4px);
+
+  @include media-breakpoint-up(md) {
+    @include avatar($avatar-size-xxl, 4px, 12px, 42px, 4px);
+  }
+}
+
+.avatar-group {
+  display: inline-flex;
+
+  .avatar + .avatar {
+    margin-left: -$avatar-size-base / 4;
+  }
+  .avatar-xs + .avatar-xs {
+    margin-left: -$avatar-size-xs / 4;
+  }
+  .avatar-sm + .avatar-sm {
+    margin-left: -$avatar-size-sm / 4;
+  }
+  .avatar-lg + .avatar-lg {
+    margin-left: -$avatar-size-lg / 4;
+  }
+  .avatar-xl + .avatar-xl {
+    margin-left: -$avatar-size-xl / 4;
+  }
+
+  .avatar {
+
+    &:hover {
+      z-index: 1;
+    }
+  }
+}
+//for avatar as input also requires js check form-data.js
+
+.avatar-input {
+  position: relative;
+  overflow: hidden;
+  //hide file input
+  .avatar-file-picker {
+    position: absolute;
+    z-index: 2;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+  .avatar-input-icon{
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all ease 0.2s;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+  }
+  &:hover .avatar-input-icon{
+    opacity: 1;
+  }
+}
+

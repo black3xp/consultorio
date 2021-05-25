@@ -1,0 +1,22 @@
+//Tabs
+// Line tabs
+.tab-line {
+  border-bottom: none;
+  .nav-item {
+    .nav-link {
+      font-weight: 600;
+      color: $text-muted;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 2px solid $white;
+      &.active {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px solid theme-color(primary);
+        color: theme-color(primary);
+      }
+    }
+  }
+}

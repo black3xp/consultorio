@@ -1,0 +1,59 @@
+//Chat Application
+.chat-sidebar {
+  max-width: $chat-sidebar-width;
+  background-color: $chat-sidebar-color;
+  .chat-sidebar-header {
+    height: $chat-sidebar-header-height;
+  }
+  .chat-sidebar-item {
+    padding: 10px 15px;
+    display: block;
+    opacity: 0.7;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      opacity: 1;
+    }
+  }
+
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  .chat-window-header {
+    flex: 0 0 auto;
+    height: $mail-window-header-height;
+    border-bottom: 1px solid $border-color;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    box-shadow: $box-shadow;
+  }
+  .chat-window-footer {
+    min-height: $chat-window-footer-height;
+
+    padding: 10px 15px;
+  }
+  .chat-window-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    .chat-item {
+      transition: all ease 0.2s;
+      padding: 15px 0;
+      &:hover {
+        background-color: $gray-100;
+      }
+    }
+  }
+
+}
+@media (max-width: 992px){
+  .chat-sidebar{
+    position: fixed;
+    z-index: 1;
+  }
+}

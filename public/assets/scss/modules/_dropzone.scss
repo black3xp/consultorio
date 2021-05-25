@@ -1,0 +1,11 @@
+//extended from dropzone plugin
+
+.dropzone {
+
+  border: 2px dashed $border-color !important;
+  transition: background-color ease 0.2s;
+  border-radius: 0.25rem;
+  &:hover {
+    background-color: $gray-100;
+  }
+}

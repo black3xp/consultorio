@@ -1,0 +1,26 @@
+// Badges
+
+.badge {
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+// Quick fix for badges in buttons
+.btn .badge {
+  top: -2px;
+}
+span.notification-counter {
+  position: absolute;
+  right: 17px;
+  top: 15px;
+  background: $danger;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+// Creates the "soft" badge variant
+@each $color, $value in $theme-colors {
+  .badge-soft-#{$color} {
+    @include badge-variant-soft(theme-color-level($color, $bg-soft-level), $value);
+  }
+}

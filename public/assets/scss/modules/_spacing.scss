@@ -1,0 +1,62 @@
+//spacing
+
+//generate padding and margin classes
+// generate-paddings-options-prefix( number of steps)
+// each steps is of 5px
+@include generate-padding-options-prefix(20);
+@include generate-margin-options-prefix(20);
+
+.p-all-0 {
+  padding: 0;
+}
+
+.p-all-5 {
+  padding: 10px;
+}
+
+.p-all-10 {
+  padding: 10px;
+}
+
+.p-all-15 {
+  padding: 15px;
+}
+
+.p-all-25 {
+  padding: 25px;
+}
+
+.m-all-0 {
+  margin: 0;
+}
+
+.m-all-5 {
+  margin: 5px;
+}
+
+.m-all-10 {
+  margin: 10px;
+}
+
+.m-all-15 {
+  margin: 15px;
+}
+
+.m-all-25 {
+  margin: 25px;
+}
+
+//padding and margins Helper Classes
+
+.pull-up-xs {
+  margin-top: -25px;
+}
+
+.pull-up-sm {
+  margin-top: -50px;
+}
+
+.pull-up {
+  margin-top: -90px;
+}
+

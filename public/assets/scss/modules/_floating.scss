@@ -1,0 +1,40 @@
+// floating label for form inputs
+// Overrides form-control and custom-select
+.floating-label {
+  position: relative;
+  label:first-child {
+    font-size: 0.85714em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 0.42857em;
+    margin-left: 1px;
+    padding: 0 0.91667em;
+    z-index: 1;
+    user-select: none;
+    transform: translateY(3px);
+    pointer-events: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all .2s ease-out;
+  }
+
+  .form-control {
+
+    height: calc(2.8rem + 2px);
+  }
+  &.show-label {
+    label:first-child {
+      transform: none;
+      opacity: 1;
+    }
+    .form-control {
+      padding-top: 1.2rem;
+    }
+  }
+
+}

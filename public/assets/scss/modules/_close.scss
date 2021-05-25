@@ -1,0 +1,30 @@
+// close button
+.close {
+
+  span {
+    background-image: $close-image;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: transparent;
+    text-shadow: none;
+    background-position: center;
+  }
+  //light version for dark backgrounds
+  &.light span {
+    background-image: $close-image-light;
+  }
+}
+
+.modal {
+  //modal close button
+  .close {
+    z-index: 1;
+    top: 1.5rem !important;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: rgba(193, 193, 193, 0.3) !important;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    padding: 0;
+  }
+}

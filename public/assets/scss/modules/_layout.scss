@@ -1,0 +1,56 @@
+html, body {
+  height: 100%;
+}
+
+.admin-main {
+  padding-top: $page-padding-y;
+}
+
+.admin-header {
+  display: flex;
+  background: $white;
+  box-shadow: $top-nav-shadow;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  align-items: center;
+  height: $header-height;
+  border-bottom: $top-nav-border-bottom-width solid $border-color;
+  .sidebar-toggle {
+    display: none;
+    align-items: center;
+    padding-left: 15px;
+    //avoid overlapping of search icon
+    margin-right: 15px;
+    font-family: $icon-font;
+    font-size: 24px;
+    &:before {
+      content: $icon-menu;
+    }
+  }
+
+}
+
+@media (min-width: 992px) {
+  .admin-main, .admin-header {
+    padding-left: $page-padding-x;
+  }
+
+  body.sidebar-pinned {
+    .admin-header, .admin-main {
+      padding-left: $sidebar-width;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+
+  .admin-header {
+    .sidebar-toggle {
+      display: block;
+    }
+
+  }
+}

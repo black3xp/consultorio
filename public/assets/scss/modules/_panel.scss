@@ -1,0 +1,20 @@
+//panels for chat and mailbox
+
+.usable-height {
+  height: calc(100vh - 65px);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel .panel-header, .panel .panel-footer {
+  flex: 0 0 auto;
+}
+
+.panel .panel-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+

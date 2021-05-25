@@ -1,0 +1,22 @@
+//Guides App
+
+.guide-item {
+  min-height: 335px;
+  &:after {
+    opacity: 1;
+    transition: all ease 0.2s;
+    content: "";
+  }
+  &:hover, &:focus, &:active {
+    &:after {
+      opacity: 1;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-style: solid;
+      border-width: 35px 0px 0 35px;
+      border-color: #fff #dcdcdc;
+    }
+  }
+}

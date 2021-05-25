@@ -1,0 +1,61 @@
+// tables
+
+.table {
+  vertical-align: middle;
+
+  thead th, tfoot th {
+    background-color: $table-head-bg;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    letter-spacing: .08em;
+    color: $table-head-color;
+    border-bottom-width: $table-border-width;
+  }
+  &.table-layout-fixed {
+    table-layout: fixed;
+  }
+  &.table-card {
+    border-collapse: separate;
+    border-spacing: 0 .5em;
+    thead th, tfoot th {
+      border-color: transparent;
+      background-color: transparent;
+
+    }
+    tbody {
+      tr {
+        background-color: $white;
+        box-shadow: $box-shadow;
+        transition: all ease 0.2s;
+        border: 1px solid $border-color;
+        &:hover {
+          box-shadow: $box-shadow-sm;
+        }
+      }
+    }
+  }
+
+  //for align td data vertically middle
+  &.align-td-middle {
+    th, td {
+      vertical-align: middle;
+    }
+  }
+}
+
+.table-sm {
+  font-size: $font-size-sm;
+
+  thead th {
+    font-size: $font-size-xs;
+  }
+}
+// Data Tables
+th.sorting_asc , th.sorting_desc {
+  background:rgba(210, 221, 236, 0.1)
+}
+
+td.sorting_1 {
+  background-color:rgba(210, 221, 236, 0.1)
+}

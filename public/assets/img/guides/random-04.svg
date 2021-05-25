@@ -1,0 +1,32 @@
+<svg width="300" height="230" viewBox="0 0 300 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect x="1" y="218" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="90" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="106" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="122" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="138" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="154" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="170" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="186" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="1" y="202" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="159" y="85" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="159" y="5" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="159" y="21" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="159" y="37" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="159" y="53" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<rect x="159" y="69" width="158" height="6" fill="#161718" fill-opacity="0.35"/>
+<path d="M159 230V90L299 230H159Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M159 230V133L256 230H159Z" fill="#161718" fill-opacity="0.25"/>
+<ellipse cx="243" cy="131.5" rx="29" ry="30.5" fill="#161718" fill-opacity="0.35"/>
+<circle cx="279.5" cy="180.5" r="20.5" fill="#161718" fill-opacity="0.35"/>
+<path d="M1 55.5C1 60.0306 1.89237 64.5168 3.62616 68.7026C5.35994 72.8883 7.9012 76.6916 11.1048 79.8952C14.3084 83.0988 18.1117 85.6401 22.2974 87.3738C26.4832 89.1076 30.9694 90 35.5 90C40.0306 90 44.5168 89.1076 48.7026 87.3738C52.8883 85.6401 56.6916 83.0988 59.8952 79.8952C63.0988 76.6916 65.6401 72.8883 67.3738 68.7026C69.1076 64.5168 70 60.0306 70 55.5L35.5 55.5L1 55.5Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M35.9941 55.8772L2.33886 0.535306L68.1671 -0.339301L35.9941 55.8772Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M77 55.5C77 60.0306 77.8924 64.5168 79.6262 68.7026C81.3599 72.8883 83.9012 76.6916 87.1048 79.8952C90.3084 83.0988 94.1117 85.6401 98.2974 87.3738C102.483 89.1076 106.969 90 111.5 90C116.031 90 120.517 89.1076 124.703 87.3738C128.888 85.6401 132.692 83.0988 135.895 79.8952C139.099 76.6916 141.64 72.8883 143.374 68.7026C145.108 64.5168 146 60.0306 146 55.5L111.5 55.5L77 55.5Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M111.994 55.8772L78.3389 0.535306L144.167 -0.339301L111.994 55.8772Z" fill="#161718" fill-opacity="0.35"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="300" height="230" fill="white"/>
+</clipPath>
+</defs>
+</svg>

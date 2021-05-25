@@ -1,0 +1,43 @@
+//extended from jqueryui plugin
+
+.ui-widget.ui-widget-content {
+  border: 1px solid $border-color;
+}
+
+.ui-slider-range {
+  background-color: $gray-700;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  background: #fff;
+  border: 1px solid $border-color;
+  height: 1.8em;
+  width: 2.5em;
+  top: -.6em;
+  box-shadow: $box-shadow;
+  text-align: center;
+  transition: color ease .2s;
+  &:after,
+  &:before{
+    font-family: $icon-font;
+    font-size: 1rem;
+    color: $body-color;
+
+  }
+  &:before{
+    content: $icon-chevron-left;
+  }
+
+  &:after{
+    content: $icon-chevron-right;
+  }
+
+  &.ui-state-active {
+    background-color: $gray-900;
+    &:after,
+    &:before{
+      color: $white;
+
+    }
+  }
+}

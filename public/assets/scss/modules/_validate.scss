@@ -1,0 +1,10 @@
+//extended from jQuery Validate plugin
+// Applying Danger Color to jQuery Validate plugin
+
+label.is-invalid {
+  color: $danger !important;
+}
+
+label.is-valid {
+  color: $success !important;
+}

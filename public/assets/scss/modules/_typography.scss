@@ -1,0 +1,92 @@
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+}
+// inherit the color of parent class for anchors
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.font-primary {
+  font-family: $font-primary !important;
+}
+
+.font-secondary {
+  font-family: $font-secondary !important;
+}
+
+.text-underline {
+  border-bottom: 1px dotted currentColor;
+}
+
+.text-underline:hover {
+  border-bottom-style: solid;
+}
+
+.text-overline {
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: $font-secondary;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
+}

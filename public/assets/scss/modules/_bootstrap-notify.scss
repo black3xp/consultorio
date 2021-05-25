@@ -1,0 +1,34 @@
+//extended from bootstrap-notify plugin
+
+.bootstrap-notify {
+  box-shadow: $box-shadow-lg;
+  border-radius: $border-radius;
+  padding: 10px;
+  background-color: #fff;
+  max-width: 450px;
+  .avatar-title {
+    font-size: 1.2rem;
+  }
+  .progress {
+    background-color: transparent;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 2px;
+    border-radius: 0;
+  }
+}
+// material style toast
+.toast {
+  box-shadow: $box-shadow-lg;
+  background-color: #323232;
+  display: inline-block;
+  padding: 20px 15px;
+  color: #fff;
+  min-width: 300px;
+  .close {
+    color: #fff !important;
+  }
+}

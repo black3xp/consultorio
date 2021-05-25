@@ -1,0 +1,100 @@
+/*!
+ [Table of contents]
+ 1. Reboot
+ 2. Core Bootstrap Modules
+        2.1.  type
+        2.2.  images
+        2.3.  code
+        2.4.  grid
+        2.5.  code
+        2.6.  tables
+        2.7.  forms
+        2.8.  button
+        2.9.  transitions
+        2.10. dropdown
+        2.11. button Group
+        2.12. custom Forms
+        2.13. nav
+        2.14. navbar
+        2.15. card
+        2.16. breadcrumb
+        2.17. pagination
+        2.18. badge
+        2.19. jumbotron
+        2.20. alert
+        2.21. progress
+        2.22. media
+        2.23. list-group
+        2.24. close
+        2.25. toasts
+        2.26. modal
+        2.27. tooltip
+        2.28. popover
+        2.29. carousel
+        2.30. spinners
+        2.31. utilities
+        2.32. print
+ 3. Altas Modules and overrides
+        3.1   alert
+        3.2   badge
+        3.3   button
+        3.4   border
+        3.5   card
+        3.6   close
+        3.7   dropdown
+        3.8   form
+        3.9   modal
+        3.10   table
+        3.11   tab
+        3.12   typography
+          3.12.1 Forms
+          3.12.2 floating
+          3.12.3 imagebox
+          3.12.4 minicheckbox
+          3.12.5 switch
+          3.12.6 optionbox
+          3.12.7 optionbox-column
+          3.12.8 optionbox-grid
+          3.12.9 taginput
+        3.13 accordion
+        3.14 avatar
+        3.15 loader
+        3.16 timeline
+        3.17 sidebar
+        3.18 panel
+        3.19 spacing
+        3.20 sizing
+        3.21 layout
+        3.22 select2
+        3.23 datepicker
+        3.24 daterangepicker
+        3.25 timepicker
+        3.26 rangeslider
+        3.27 dropzone
+        3.28 summernote
+        3.29 bootstrap-notify
+        3.30 chart
+        3.31 validate
+        3.32 chat
+        3.33 mail
+        3.34 kanban
+        3.35 guide
+        3.36 background
+        3.37 grid-xlg
+        3.38 helper
+        3.39 demo
+ */
+// Bootstrap setup
+@import '../vendor/bootstrap/scss/functions';
+
+// Atmos theme setup
+@import 'themes/default';
+
+// Bootstrap core
+@import '../vendor/bootstrap/scss/bootstrap';
+
+// module imports
+@import 'modules/imports';
+
+// Custom core
+@import 'user';

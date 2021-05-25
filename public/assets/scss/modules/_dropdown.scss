@@ -1,0 +1,26 @@
+//Dropdowns
+.dropdown-menu {
+  border: 1px solid $border-color;
+
+  .dropdown-item {
+    font-size: $font-size-base;
+    font-weight: 500;
+    .dropdown-icon {
+      font-size: $font-size-lg;
+    }
+  }
+  //top nav notification
+  &.notification-container {
+    width: 320px;
+    padding: 0 ;
+    .notification-events {
+      height: 250px;
+      overflow: auto;
+      padding: 10px 15px;
+    }
+  }
+}
+
+.show > .dropdown-menu {
+  box-shadow: $dropdown-box-shadow;
+}

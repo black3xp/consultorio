@@ -1,0 +1,14 @@
+//loading container for cards
+.loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  border-radius: $border-radius;
+  background-color: $overlay-color;
+  background-image: url("../img/loading.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}

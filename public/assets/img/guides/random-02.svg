@@ -1,0 +1,42 @@
+<svg width="300" height="230" viewBox="0 0 300 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect x="21" y="55" width="279" height="277" rx="44" fill="#161718" fill-opacity="0.35"/>
+<circle cx="72" cy="235" r="72" fill="#161718" fill-opacity="0.35"/>
+<rect x="266" y="198" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="266" y="212" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="279" y="198" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="279" y="212" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="10" y="10" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="10" y="24" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="23" y="10" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="23" y="24" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="37" y="10" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="37" y="24" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="50" y="10" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="50" y="24" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="10" y="37" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="10" y="51" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="23" y="37" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="23" y="51" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="37" y="37" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="37" y="51" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="50" y="37" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="50" y="51" width="10" height="10" rx="5" fill="#161718" fill-opacity="0.35"/>
+<rect x="160" y="103" width="4.75" height="119" rx="2.375" fill="#161718" fill-opacity="0.35"/>
+<rect x="174.25" y="103" width="4.75" height="119" rx="2.375" fill="#161718" fill-opacity="0.35"/>
+<rect x="188.5" y="103" width="4.75" height="119" rx="2.375" fill="#161718" fill-opacity="0.35"/>
+<rect x="202.75" y="103" width="4.75" height="119" rx="2.375" fill="#161718" fill-opacity="0.35"/>
+<rect x="217" y="103" width="4.75" height="119" rx="2.375" fill="#161718" fill-opacity="0.35"/>
+<rect x="231.25" y="103" width="4.75" height="119" rx="2.375" fill="#161718" fill-opacity="0.35"/>
+<path d="M269 156.418C269 145.942 264.838 135.895 257.431 128.487C250.023 121.08 239.976 116.918 229.5 116.918C219.024 116.918 208.977 121.08 201.569 128.487C194.162 135.895 190 145.942 190 156.418L229.5 156.418H269Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M-24 98C-24 108.476 -19.8384 118.523 -12.4307 125.931C-5.02302 133.338 5.02395 137.5 15.5 137.5C25.9761 137.5 36.023 133.338 43.4307 125.931C50.8384 118.523 55 108.476 55 98L15.5 98H-24Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M300.5 8C290.024 8 279.977 12.1616 272.569 19.5693C265.162 26.977 261 37.0239 261 47.5C261 57.9761 265.162 68.023 272.569 75.4307C279.977 82.8384 290.024 87 300.5 87L300.5 47.5V8Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M204.044 34H248L234.593 3H188L204.044 34Z" fill="#161718" fill-opacity="0.35"/>
+<path d="M149.044 34H193L179.593 3H133L149.044 34Z" fill="#161718" fill-opacity="0.35"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="300" height="230" fill="white"/>
+</clipPath>
+</defs>
+</svg>

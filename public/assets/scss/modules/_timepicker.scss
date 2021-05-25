@@ -1,0 +1,22 @@
+//extended from bootstrap-timepicker  plugin
+
+
+.bootstrap-timepicker-widget {
+  //overriding glypicons with material icon library
+  .glyphicon {
+    display: inline-block;
+    font-family: $icon-font;
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .glyphicon-chevron-down:before {
+    content: $icon-chevron-down;
+  }
+  .glyphicon-chevron-up:before {
+    content: $icon-chevron-up;
+  }
+}

@@ -1,0 +1,89 @@
+//Grid for large screens
+.visible-xlg {
+  display: none;
+}
+
+
+@media (min-width: 1800px) {
+
+  .visible-xlg {
+    display: block !important;
+  }
+  .hidden-xlg {
+    display: none !important;
+  }
+
+  .col-xlg-1, .col-xlg-2, .col-xlg-3, .col-xlg-4, .col-xlg-5, .col-xlg-6, .col-xlg-7, .col-xlg-8, .col-xlg-9, .col-xlg-10, .col-xlg-11 {
+
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+  }
+  .col-xlg-12 {
+
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-xlg-11 {
+
+    flex: 0 0 91.6667%;
+    max-width: 91.6667%;
+  }
+  .col-xlg-10 {
+    width: 83.3333%;
+    flex: 0 0 83.3333%;
+    max-width: 83.3333%;
+  }
+  .col-xlg-9 {
+
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-xlg-8 {
+
+    flex: 0 0 66.6667%;
+    max-width: 66.6667%;
+  }
+  .col-xlg-7 {
+
+    flex: 0 0 58.3333%;
+    max-width: 58.3333%;
+  }
+  .col-xlg-6 {
+
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-xlg-5 {
+
+    flex: 0 0 41.6667%;
+    max-width: 41.6667%;
+  }
+  .col-xlg-4 {
+
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+  .col-xlg-3 {
+
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-xlg-2 {
+
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
+  }
+  .col-xlg-1 {
+
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+
+}

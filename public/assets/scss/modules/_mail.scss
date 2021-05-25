@@ -1,0 +1,103 @@
+//Mail Application
+
+.mail-sidebar {
+  max-width: $mail-sidebar-width;
+  background-color: $mail-sidebar-color;
+  .mail-sidebar-header {
+    height: $mail-sidebar-header-height;
+  }
+  .mail-sidebar-item {
+    padding: 10px 15px;
+    display: block;
+    opacity: 0.7;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      opacity: 1;
+    }
+  }
+
+}
+
+.mail-window {
+  display: flex;
+  flex-direction: column;
+  .mail-window-header {
+    flex: 0 0 auto;
+    height: $mail-window-header-height;
+    border-bottom: 1px solid $border-color;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    box-shadow: $box-shadow;
+  }
+  .mail-window-footer {
+    min-height: $mail-window-footer-height;
+
+    padding: 10px 15px;
+  }
+  .mail-window-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    .mail-item {
+      transition: all ease 0.2s;
+      padding: 15px 0;
+      cursor: pointer;
+      &:hover {
+        background-color: $gray-100;
+      }
+      &.active {
+        background-color: $gray-200;
+      }
+    }
+    .mailbox-options {
+      width: 80px;
+    }
+    .mailbox-name {
+      width: 180px;
+    }
+    .mailbox-sender {
+      margin-left: 0.5rem;
+    }
+  }
+
+}
+
+.compose-wrapper {
+  position: fixed;
+  z-index: 999;
+  right: 40px;
+  bottom: 0;
+  .compose-header {
+    padding: 0px 15px;
+    .compose-toolbar {
+      padding: 5px 0;
+    }
+  }
+  .compose-dialog {
+    width: 35vw;
+    max-width: 400px;
+    height: 450px;
+    background-color: #fff;
+    box-shadow: $box-shadow-lg;
+  }
+  .compose-body {
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+  .compose-footer {
+    padding: 8px 15px;
+    border-top: 1px solid $border-color;
+  }
+}
+
+.compose-container {
+  display: none;
+}
+
+.show-compose-window .compose-container {
+  display: block;
+}

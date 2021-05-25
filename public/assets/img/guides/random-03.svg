@@ -1,0 +1,35 @@
+<svg width="300" height="230" viewBox="0 0 300 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0)">
+        <rect x="157" y="8" width="4.58333" height="4.58333" rx="2.29167" fill="#161718" fill-opacity="0.35"/>
+        <rect x="157" y="14.4167" width="4.58333" height="4.58333" rx="2.29167" fill="#161718" fill-opacity="0.35"/>
+        <rect x="162.958" y="8" width="4.58333" height="4.58333" rx="2.29167" fill="#161718" fill-opacity="0.35"/>
+        <rect x="162.958" y="14.4167" width="4.58333" height="4.58333" rx="2.29167" fill="#161718" fill-opacity="0.35"/>
+        <path d="M75.9304 102H273L212.894 250H4L75.9304 102Z" fill="#161718" fill-opacity="0.35"/>
+        <rect x="237" y="-56" width="5" height="100" rx="2.5" fill="#161718" fill-opacity="0.35"/>
+        <rect x="251" y="-56" width="5" height="100" rx="2.5" fill="#161718" fill-opacity="0.35"/>
+        <rect x="265" y="-56" width="5" height="100" rx="2.5" fill="#161718" fill-opacity="0.35"/>
+        <rect x="279" y="-56" width="5" height="100" rx="2.5" fill="#161718" fill-opacity="0.35"/>
+        <circle cx="77" cy="117" r="100" fill="#161718" fill-opacity="0.35"/>
+        <circle cx="75" cy="118" r="64" fill="#161718" fill-opacity="0.35"/>
+        <circle cx="75.5" cy="118.5" r="35.5" fill="#161718" fill-opacity="0.35"/>
+        <path d="M256 203L319.328 233.497L334.969 302.024L291.145 356.978H220.855L177.031 302.024L192.672 233.497L256 203Z" fill="#161718" fill-opacity="0.35"/>
+        <path d="M226.699 71L270 146H183.397L226.699 71Z" fill="#161718" fill-opacity="0.35"/>
+        <rect x="292" y="217" width="10" height="10" rx="5" transform="rotate(-180 292 217)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="292" y="203" width="10" height="10" rx="5" transform="rotate(-180 292 203)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="279" y="217" width="10" height="10" rx="5" transform="rotate(-180 279 217)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="279" y="203" width="10" height="10" rx="5" transform="rotate(-180 279 203)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="265" y="217" width="10" height="10" rx="5" transform="rotate(-180 265 217)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="265" y="203" width="10" height="10" rx="5" transform="rotate(-180 265 203)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="252" y="217" width="10" height="10" rx="5" transform="rotate(-180 252 217)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="252" y="203" width="10" height="10" rx="5" transform="rotate(-180 252 203)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="292" y="190" width="10" height="10" rx="5" transform="rotate(-180 292 190)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="292" y="176" width="10" height="10" rx="5" transform="rotate(-180 292 176)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="279" y="190" width="10" height="10" rx="5" transform="rotate(-180 279 190)" fill="#161718" fill-opacity="0.35"/>
+        <rect x="279" y="176" width="10" height="10" rx="5" transform="rotate(-180 279 176)" fill="#161718" fill-opacity="0.35"/>
+    </g>
+    <defs>
+        <clipPath id="clip0">
+            <rect width="300" height="230" fill="white"/>
+        </clipPath>
+    </defs>
+</svg>

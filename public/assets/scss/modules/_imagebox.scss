@@ -1,0 +1,62 @@
+//image checkbox
+.image-box {
+  display: inline-block;
+  background-color: #000;
+  input[type="checkbox"], input[type="radio"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .image-box-content {
+    position: relative;
+    cursor: pointer;
+    &:after,
+    &:before {
+      position: absolute;
+      color: $white;
+      left: 50%;
+      top: 50%;
+      font-size: 1.5rem;
+      margin-top: -1rem;
+      margin-left: -0.5rem;
+      font-family: $icon-font;
+      text-rendering: auto;
+      line-height: inherit;
+      -webkit-font-smoothing: antialiased;
+    }
+    &:after {
+      content: $icon-circle;
+      z-index: 1;
+      opacity: 0.7;
+    }
+    &:before {
+      z-index: 2;
+      content: $icon-check-circle;
+      opacity: 0;
+      transform: scale(0);
+      transition: all ease 0.2s;
+    }
+    img {
+      opacity: 0.8;
+      max-width: 100%;
+    }
+  }
+
+  input[type="checkbox"]:checked + .image-box-content,
+  input[type="radio"]:checked + .image-box-content {
+    img {
+      opacity: 0.6;
+    }
+    &:after {
+      opacity: 0;
+    }
+    &:before {
+      color: $white;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+  }
+
+}

@@ -1,0 +1,128 @@
+// card.scss
+
+
+// Bootstrap Overrides ============
+
+.card {
+  box-shadow: $card-shadow;
+  transition: box-shadow ease 0.2s;
+
+  .card-header {
+    border-bottom: 0;
+    .card-title {
+      font-family: $font-secondary;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+  }
+  .card-body {
+    padding: $card-spacer-y $card-spacer-x;
+    &.card-scroll {
+      height: 350px;
+      .scroll-bar {
+        background-color: #1f263d;
+      }
+    }
+  }
+  .card-footer {
+    border-top: 1px solid $border-color;
+
+  }
+  &:hover {
+    box-shadow: $card-shadow-hover;
+  }
+  .card-media {
+    position: relative;
+
+    @include border-top-radius($card-inner-border-radius);
+  }
+  .card-controls {
+    // We make default controls sticky at the top of card
+    // By positioning it absolutely
+    @include border-top-radius($card-inner-border-radius);
+    margin-left: auto;
+    position: absolute;
+    right: $card-spacer-x;
+    top: $card-spacer-y;
+    z-index: 2;
+
+    > .icon {
+      font-family: $icon-font;
+      text-rendering: auto;
+      line-height: inherit;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      opacity: 0.4;
+      transition: opacity ease 0.2s;
+      margin: 0 2px;
+      &:hover {
+        opacity: 1;
+      }
+
+    }
+    // Standard Control icons
+    .js-card-fullscreen {
+      &:before {
+        content: $icon-fullscreen;
+      }
+    }
+
+    .js-card-refresh {
+      &:before {
+        content: $icon-reload;
+      }
+    }
+    .js-card-close {
+      &:before {
+        content: $icon-close;
+      }
+    }
+
+    &.card-controls-bottom {
+      @include border-bottom-radius($card-inner-border-radius);
+      position: absolute;
+      top: unset;
+      right: $card-spacer-x;
+      bottom: $card-spacer-y;
+      z-index: 2;
+
+    }
+    > .dropdown {
+      display: inline-block;
+      > a .icon {
+        font-size: 18px;
+        opacity: 0.4;
+        transition: opacity ease 0.2s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+  &.is-fullscreen {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-radius: 0 !important;
+    z-index: 9999;
+    bottom: 0;
+    margin: 0 !important;
+    .js-card-fullscreen {
+      &:before {
+        content: $icon-fullscreen-close;
+      }
+    }
+  }
+
+}
+
+.card-hover {
+  transition: all ease 0.2s;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-lg;
+  }
+}

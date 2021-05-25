@@ -1,0 +1,132 @@
+// Form Inputs
+// Overrides form-control and custom-select
+//  .input-group-flush
+//  .form-dark
+
+.form-control, .custom-select {
+  background-color: $input-bg;
+  &:focus {
+    outline: 0;
+    box-shadow: none !important;
+  }
+  &.form-control-plaintext {
+
+    border: 0;
+    outline: 0;
+    box-shadow: none !important;
+    &:focus {
+      border: 0;
+      outline: 0;
+      box-shadow: none !important;
+    }
+  }
+}
+
+// Input group merge
+//
+// Makes input group text and form control visually the same element
+
+.input-group.input-group-flush {
+
+  > .form-control {
+    border-radius: $input-border-radius;
+    &:focus {
+      ~ [class*="input-group"] {
+        > .input-group-text {
+          border-color: $input-focus-border-color;
+        }
+      }
+    }
+    &.is-valid {
+      ~ [class*="input-group"] {
+
+        > .input-group-text {
+          border-color: $form-feedback-valid-color;
+        }
+      }
+    }
+    &.is-invalid {
+      ~ [class*="input-group"] {
+        > .input-group-text {
+          border-color: $form-feedback-invalid-color;
+        }
+      }
+    }
+
+  }
+
+  > .form-control-prepended {
+    padding-left: $input-padding-x / 2;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-left-width: 0;
+  }
+
+  > .form-control-appended {
+    padding-right: $input-padding-x / 2;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right-width: 0;
+  }
+
+  > .input-group-prepend {
+    order: -1; // flex reordering to make sure its the first
+    margin-right: 0;
+
+    > .input-group-text {
+      border-top-left-radius: $input-border-radius;
+      border-bottom-left-radius: $input-border-radius;
+      border-right-width: 0;
+      transition: $input-transition;
+    }
+  }
+
+  > .input-group-append {
+
+    > .input-group-text {
+      border-top-right-radius: $input-border-radius;
+      border-bottom-right-radius: $input-border-radius;
+      border-left-width: 0;
+      transition: $input-transition;
+    }
+  }
+}
+
+.form-dark {
+  label {
+    color: $white;
+  }
+  .form-control, .custom-select, .input-group-text {
+    border: 0 !important;
+    background-color: $white-translucent;
+    color: $white;
+    transition: background-color ease 0.2s;
+    // Placeholder
+    &::placeholder {
+      color: darken($white, 40);
+      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+      opacity: 1;
+    }
+  }
+  .form-control, .custom-select {
+
+    &:focus, &:active {
+      background-color: lighten($black-translucent, 70%);
+    }
+  }
+  select {
+    &.custom-select {
+      background-image: $custom-select-dark-indicator;
+    }
+    &:focus option {
+      color: $body-color !important;
+    }
+  }
+  .form-control:disabled, .form-control[readonly] {
+    background-color: rgba(176, 170, 170, 0.32);
+
+  }
+
+}
+
+

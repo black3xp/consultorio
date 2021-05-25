@@ -1,0 +1,62 @@
+//accordion
+.accordion {
+  .collapse {
+    border-top: 1px solid transparent;
+    &.show {
+      border-top: 1px solid $border-color;
+    }
+  }
+  .card {
+    box-shadow: none;
+    border: 1px solid $border-color;
+    .card-header {
+      position: relative;
+      padding-right: 35px;
+      a[data-toggle="collapse"]:after {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-family: $icon-font;
+        content: $icon-chevron-down;
+        font-size: 1.2rem;
+
+      }
+      a[data-toggle="collapse"][aria-expanded="true"]:after {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-family: $icon-font;
+        content: $icon-chevron-up;
+        font-size: 1.2rem;
+
+      }
+    }
+  }
+  //with plus minus sign
+  &.alternate-icons {
+    .card {
+      .card-header {
+        position: relative;
+        padding-right: 35px;
+        a[data-toggle="collapse"]:after {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          font-family: $icon-font;
+          content: "\f415";
+          font-size: 1.2rem;
+        }
+        a[data-toggle="collapse"][aria-expanded="true"]:after {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          font-family: $icon-font;
+          content: "\f374";
+
+          font-size: 1.2rem;
+
+        }
+      }
+    }
+  }
+}

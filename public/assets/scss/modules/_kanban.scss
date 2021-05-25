@@ -1,0 +1,48 @@
+//Kanban Application
+
+.kanban-workspace {
+
+  .kanban-list {
+    width: 300px;
+    min-width: 300px;
+    padding: 10px;
+
+    .kanban-list-container {
+      padding: 10px;
+      border-radius: $border-radius;
+      background-color: $gray-400;
+      .kanban-list-wrapper {
+        padding: 10px 0
+      }
+    }
+  }
+}
+
+.kanban-board-title {
+  margin: 0;
+  padding: 5px;
+  border-radius: $border-radius;
+  transition: all ease 0.2s;
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $black-translucent;
+  }
+}
+
+.kanban-item {
+  transiton: all ease 0.2s;
+  margin-bottom: 10px
+}
+
+.kanban-ribbion {
+  height: 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: $border-radius;
+}
+
+.tilt {
+  transform: rotate(3deg);
+  box-shadow: $box-shadow-lg;
+}

@@ -1,0 +1,61 @@
+//custom option box
+.option-box-grid {
+  display: inline-block;
+  input[type="checkbox"] ,
+  input[type="radio"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  label {
+    position: relative;
+    padding: 8px 10px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    transition: all ease 0.2s;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    background-color: $white;
+    &:after,
+    &:before {
+      position: absolute;
+      color: $gray-300;
+      right: 5px;
+      top: 5px;
+      font-family: $icon-font;
+      text-rendering: auto;
+      line-height: inherit;
+      -webkit-font-smoothing: antialiased;
+      font-size: 1.5rem;
+    }
+    &:after {
+      content: $icon-circle;
+    }
+    &:before {
+      content: $icon-circle;
+      opacity: 0;
+      transform: scale(0);
+      transition: all ease 0.2s;
+    }
+    .radio-content {
+      display: block;
+      margin-top: 8px;
+    }
+  }
+
+  input[type="checkbox"]:checked + label ,
+  input[type="radio"]:checked + label {
+    &:after {
+      opacity: 0;
+    }
+    &:before {
+      content: $icon-check-circle;
+      color: $success;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+  }
+
+}

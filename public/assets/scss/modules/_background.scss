@@ -1,0 +1,101 @@
+//Background
+
+// Creates the "soft" badge variant
+@each $color, $value in $theme-colors {
+  .bg-soft-#{$color} {
+    @include badge-variant-soft(theme-color-level($color, $bg-soft-level), $value);
+  }
+}
+
+.bg-gray-100 {
+  background-color: $gray-100;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.bg-gray-300 {
+  background-color: $gray-300;
+}
+
+.bg-gray-400 {
+  background-color: $gray-400;
+}
+
+.bg-gray-500 {
+  background-color: $gray-500;
+}
+
+.bg-gray-600 {
+  background-color: $gray-600;
+}
+
+.bg-gray-700 {
+  background-color: $gray-700;
+}
+
+.bg-gray-800 {
+  background-color: $gray-800;
+}
+
+.bg-gray-900 {
+  background-color: $gray-900;
+}
+
+
+.bg-white-translucent {
+  background-color: $white-translucent;
+}
+
+.bg-black-translucent {
+  background-color: $black-translucent;
+}
+
+.overlay-gradient-top {
+
+  width: 100%;
+  background: linear-gradient(to top, rgba(20, 16, 17, .4) 0, rgba(20, 16, 17, .28) 59%, rgba(20, 16, 17, .09) 84%, rgba(20, 16, 17, .01) 99%, rgba(255, 255, 255, 0) 100%);
+
+}
+
+.overlay-gradient-bottom {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(20, 16, 17, .4) 0, rgba(20, 16, 17, .28) 59%, rgba(20, 16, 17, .09) 84%, rgba(20, 16, 17, .01) 99%, rgba(255, 255, 255, 0) 100%);
+
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.bg-overlay-light {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+.bg-dots{
+  background-image: url('../img/patterns/dot.svg');
+  background-size: 20px;
+}
+
+.bg-pattern{
+  background-image: url("../img/patterns/bg.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.gradient-01{
+  background-image: linear-gradient(to top right, #5540bf , #a697f2);
+}

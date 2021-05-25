@@ -1,0 +1,16 @@
+//extended from daterangepicker plugin
+
+
+.daterangepicker {
+  font-family: $font-primary;
+  border: 1px solid $border-color;
+  box-shadow: $box-shadow-lg;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color: $primary;
+}
+
+.daterangepicker .drp-buttons {
+  border-top: 1px solid $border-color;
+}

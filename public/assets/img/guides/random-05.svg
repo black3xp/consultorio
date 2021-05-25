@@ -1,0 +1,21 @@
+<svg width="300" height="230" viewBox="0 0 300 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0)">
+        <path d="M76.5 118L110.708 177.25H42.292L76.5 118Z" fill="#161718" fill-opacity="0.35"/>
+        <circle cx="77" cy="153" r="48" fill="#161718" fill-opacity="0.35"/>
+        <circle cx="77" cy="153" r="77" fill="#161718" fill-opacity="0.35"/>
+        <rect x="290" y="76" width="50" height="154" fill="#161718" fill-opacity="0.35"/>
+        <rect x="163" y="76" width="50" height="154" fill="#161718" fill-opacity="0.35"/>
+        <rect x="227" y="76" width="50" height="154" fill="#161718" fill-opacity="0.35"/>
+        <rect x="-55" y="36" width="243" height="4" rx="2" fill="#161718" fill-opacity="0.35"/>
+        <rect x="-55" y="43" width="243" height="4" rx="2" fill="#161718" fill-opacity="0.35"/>
+        <rect x="-55" y="50" width="243" height="4" rx="2" fill="#161718" fill-opacity="0.35"/>
+        <rect x="-55" y="15" width="243" height="4" rx="2" fill="#161718" fill-opacity="0.35"/>
+        <rect x="-55" y="22" width="243" height="4" rx="2" fill="#161718" fill-opacity="0.35"/>
+        <rect x="-55" y="29" width="243" height="4" rx="2" fill="#161718" fill-opacity="0.35"/>
+    </g>
+    <defs>
+        <clipPath id="clip0">
+            <rect width="300" height="230" fill="white"/>
+        </clipPath>
+    </defs>
+</svg>
