@@ -1,13 +1,51 @@
 <script>
   import {fade} from 'svelte/transition';
+  import axios from 'axios';
+  import { onMount } from 'svelte';
+  import { url } from '../../util/index';
+
   import Header from "../../Layout/Header.svelte";
   import Aside from "../../Layout/Aside.svelte";
   import Evoluciones from "../../componentes/Evoluciones.svelte";
   import UltimosVitales from "../../componentes/UltimosVitales.svelte";
   import Antecedente from "../../componentes/Antecedente.svelte";
   import CabeceraPerfil from "../../componentes/CabeceraPerfil.svelte";
+  
 
   export let params = "";
+  let paciente = {};
+  let edad = '';
+
+  function cargarPaciente() {
+    const config = {
+      method: 'get',
+      url: `${url}/pacientes/${params.id}`
+    }
+    axios(config).then(res => {
+      paciente = res.data;
+      edad = calcularEdad(paciente.fechaNacimiento)
+      console.log(res.data)
+    }).catch(error => {
+      console.error(error)
+    })
+  }
+
+  function calcularEdad(fecha) {
+    var hoy = new Date();
+    var cumpleanos = new Date(fecha);
+    var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+    var m = hoy.getMonth() - cumpleanos.getMonth();
+
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+        edad--;
+    }
+
+    return edad;
+  }
+
+  onMount(() => {
+    cargarPaciente();
+  })
 </script>
 
 <style>
@@ -31,11 +69,17 @@
   <Header />
   <section class="admin-content">
     <section class="admin-content">
-      <CabeceraPerfil />
+      <CabeceraPerfil
+        bind:edad={edad}
+        bind:nombres={paciente.nombres}
+        bind:apellidos={paciente.apellidos}
+        bind:cedula={paciente.cedula}
+        bind:id={paciente.id}
+      />
       <div class="pull-up">
         <div class="col-md-12">
           <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 order-lg-1 order-sm-3">
               <div class="card m-b-30">
                 <div class="card-header">
                   <div class="avatar mr-2 avatar-xs">
@@ -146,7 +190,7 @@
             </div>
 
 
-            <div class="col-md-5">
+            <div class="col-md-5 order-2 order-sm-1">
               <div class="card m-b-30">
                 <div class="card-header">
                   <div class="avatar mr-2 avatar-xs">
@@ -167,7 +211,7 @@
             </div>
             <!--.antecedentes columna-->
 
-            <div class="col-md-4">
+            <div class="col-md-4 order-lg-12 order-sm-2">
               <div class="card m-b-30">
                 <div class="card-header">
                   <div class="avatar mr-2 avatar-xs">

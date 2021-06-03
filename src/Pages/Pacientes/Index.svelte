@@ -16,7 +16,8 @@
         };
         axios(config).then((res) => {
             let {data} = res;
-            console.log(data)
+            pacientes = data;
+            console.log(pacientes)
         }).catch((err) => {
             console.error(err);
         })
@@ -51,34 +52,36 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <div class="avatar avatar-sm "><img src="assets/img/users/user-1.jpg" class="avatar-img avatar-sm rounded-circle" alt=""></div>
-                    </td>
-                    <td>Victor Brito</td>
-                    <td>28</td>
-                    <td>Femenina</td>
-                    <td>8098478903</td>
-                    <td>4023994823929</td>
-                    <td class="text-right">
-                        <a
-                            href="/pacientes/perfil/1"
-                            class="btn btn-danger"
-                            data-tooltip="Eliminar"
-                            use:link
-                        >
-                            <i class="mdi mdi-close"></i>
-                        </a>
-                        <a
-                            href="/pacientes/perfil/1"
-                            class="btn btn-primary"
-                            data-tooltip="Perfil"
-                            use:link
-                        >
-                            <i class="mdi mdi-send"></i>
-                        </a>
-                    </td>
-                </tr>
+                {#each pacientes as paciente}
+                         <tr>
+                             <td>
+                                 <div class="avatar avatar-sm "><img src="assets/img/users/user-1.jpg" class="avatar-img avatar-sm rounded-circle" alt=""></div>
+                             </td>
+                             <td>{paciente.nombres}</td>
+                             <td>{paciente.fechaNacimiento}</td>
+                             <td>{paciente.sexo}</td>
+                             <td>{paciente.celular}</td>
+                             <td>{paciente.cedula}</td>
+                             <td class="text-right">
+                                 <a
+                                     href="/pacientes/perfil/1"
+                                     class="btn btn-danger"
+                                     data-tooltip="Eliminar"
+                                     use:link
+                                 >
+                                     <i class="mdi mdi-close"></i>
+                                 </a>
+                                 <a
+                                     href="/pacientes/perfil/1"
+                                     class="btn btn-primary"
+                                     data-tooltip="Perfil"
+                                     use:link
+                                 >
+                                     <i class="mdi mdi-send"></i>
+                                 </a>
+                             </td>
+                         </tr>
+                {/each}
                 </tbody>
             </table>
 

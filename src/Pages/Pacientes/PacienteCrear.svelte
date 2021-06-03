@@ -3,6 +3,7 @@
     import Header from "../../Layout/Header.svelte";
     import Aside from "../../Layout/Aside.svelte";
     import Select2 from '../../componentes/Select2.svelte';
+    import { push } from 'svelte-spa-router';
 
     import { onMount } from 'svelte';
     import { url } from '../../util/index';
@@ -11,34 +12,65 @@
     let aseguradoras = []
     let aseguradora = "";
 
+    let nombres = '';
+    let apellidos = '';
+    let apodo = '';
+    let sexo = '';
+    let fechaNacimiento = '';
+    let nacionalidad = '';
+    let estadoCivil = '';
+    let telefono = '';
+    let celular = '';
+    let cedula = '';
+    let tipoDocumento = '';
+    let religion = '';
+    let ocupacion = '';
+    let numeroSeguro = '';
+    let ciudad = '';
+    let provincia = '';
+    let direccion = '';
+    let email = '';
+    let empresa = [];
+    let responsables = [];
+
     function registrarPaciente(){
         const paciente = {
-            consultorioId: "3c9f2025-2e85-4340-8c48-e10dd70f2510",
-            nombre: "string",
-            apellidos: "string",
-            tipoIdentidad: "string",
-            sexo: "string",
-            cedula: "string",
-            email: "string",
-            celular: "string",
-            telefono: "string",
-            fechaNacimiento: "2021-05-22T13:19:40.984Z",
-            apodo: "string",
-            direccion: "string",
-            ciudad: "string",
-            aseguradoraId: "string",
-            noAfiliado: "string",
-            nacionalidad: "string",
-            provinciaId: 0,
-            municipioId: 0,
-            ocupacion: "string",
-            observaciones: "string",
-            imagenCedula: "string",
-            imagenSeguro: "string",
-            createAt: "2021-05-22T13:19:40.984Z",
-            createdBy: "string",
+            nombres:nombres,
+            apellidos:apellidos,
+            apodo:apodo,
+            sexo:sexo,
+            fechaNacimiento:new Date(fechaNacimiento),
+            nacionalidad:nacionalidad,
+            estadoCivil:estadoCivil,
+            telefono:telefono,
+            celular:celular,
+            cedula:cedula,
+            tipoDocumento:tipoDocumento,
+            religion:religion,
+            ocupacion:ocupacion,
+            seguroMedico:aseguradoras.filter(x => x.id === aseguradora),
+            numeroSeguro:numeroSeguro,
+            ciudad:ciudad,
+            provincia:provincia,
+            direccion:direccion,
+            email:email,
+            empresa:empresa,
+            responsables:responsables,
         };
-        console.log('Registrando paciente')
+        const config = {
+            method: 'post',
+            url: `${url}/pacientes`,
+            data: paciente,
+        }
+        axios(config).then(res => {
+            if(res.status === 200){
+                console.log(res)
+                push(`/pacientes/perfil/${res.data.id}`);
+            }
+        }).catch(error => {
+            console.log(error)
+        })
+        console.log(paciente)
     }
 
     function cargarAseguradoras() {
@@ -101,6 +133,7 @@
                                             id="inpNombre"
                                             placeholder="John"
                                             required
+                                            bind:value={nombres}
                                         />
                                     </div>
                                     <div class="form-group col-md-6">
@@ -111,6 +144,7 @@
                                             class="form-control"
                                             placeholder="Doe"
                                             required
+                                            bind:value={apellidos}
                                         />
                                     </div>
                                 </div>
@@ -122,6 +156,7 @@
                                             class="form-control"
                                             id="inpApodo"
                                             required
+                                            bind:value={apodo}
                                         />
                                     </div>
                                     <div class="form-group col-md-6">
@@ -130,6 +165,7 @@
                                             class="form-control"
                                             id="sltSexo"
                                             required
+                                            bind:value={sexo}
                                         >
                                             <option value="" selected disabled> - seleccionar sexo - </option>
                                             <option value="M">Masculino</option>
@@ -145,6 +181,7 @@
                                             class="form-control"
                                             id="inpFechaNacimiento"
                                             required
+                                            bind:value={fechaNacimiento}
                                         >
                                     </div>
                                     <div class="form-group col-md-6">
@@ -153,6 +190,7 @@
                                             class="form-control"
                                             id="sltTipoDocumento"
                                             required
+                                            bind:value={tipoDocumento}
                                         >
                                             <option value="" selected disabled> - seleccionar tipo - </option>
                                             <option value="C">Cedula</option>
@@ -168,6 +206,7 @@
                                             class="form-control"
                                             id="inpNumeroDocumento"
                                             required
+                                            bind:value={cedula}
                                         />
                                     </div>
                                     <div class="form-group col-md-6">
@@ -176,6 +215,7 @@
                                             type="tel"
                                             class="form-control"
                                             id="inpTelefono"
+                                            bind:value={telefono}
                                         />
                                     </div>
                                 </div>
@@ -186,6 +226,7 @@
                                             type="tel"
                                             class="form-control"
                                             id="inpCelular"
+                                            bind:value={celular}
                                         />
                                     </div>
                                     <div class="form-group col-md-6">
@@ -194,6 +235,7 @@
                                             type="email"
                                             class="form-control"
                                             id="inpCorreo"
+                                            bind:value={email}
                                         />
                                     </div>
                                 </div>
@@ -209,7 +251,6 @@
                                     <div class={!asegurado ? 'hidden seguro animate__animated animate__bounceIn' : 'show seguro animate__animated animate__bounceIn'}>
                                         <h5>Informacion de seguro</h5>
                                         <hr>
-                                        {aseguradora}
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                             <Select2
@@ -226,6 +267,7 @@
                                                     type="number"
                                                     class="form-control"
                                                     id="inpNoAfiliado"
+                                                    bind:value={numeroSeguro}
                                                 />
                                             </div>
                                         </div>
@@ -238,8 +280,10 @@
                                         <select
                                             class="form-control"
                                             id="sltCiudad"
+                                            bind:value={ciudad}
                                         >
                                             <option value="" selected disabled> - seleccionar ciudad - </option>
+                                            <option value="San Francisco de Macoris">San Francisco de Macoris</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -247,13 +291,15 @@
                                         <select
                                             class="form-control"
                                             id="sltProvincia"
+                                            bind:value={provincia}
                                         >
                                             <option value="" selected disabled> - seleccionar provincia - </option>
+                                            <option value="Duarte">Duarte</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <!-- <div class="form-group col-md-6">
                                         <label for="sltMunicipio">Municipio</label>
                                         <select
                                             class="form-control"
@@ -261,12 +307,13 @@
                                         >
                                             <option value="" selected disabled> - seleccionar municipio - </option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group col-md-6">
                                         <label for="sltNacionalidad">Nacionalidad</label>
                                         <select
                                             class="form-control"
                                             id="sltNacionalidad"
+                                            bind:value={nacionalidad}
                                         >
                                             <option value="" selected disabled> - seleccionar nacionalidad - </option>
                                         </select>
@@ -279,6 +326,7 @@
                                             type="text" 
                                             class="form-control"
                                             id="inpDireccion"
+                                            bind:value={direccion}
                                         >
                                     </div>
                                 </div>

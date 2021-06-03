@@ -4,6 +4,7 @@ import Index from './Pages/Home/Index.svelte'
 import Pacientes from './Pages/Pacientes/Index.svelte';
 import PacientePerfil from './Pages/Pacientes/PacientePerfil.svelte';
 import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
+import AtencionHistoriaClinica from './Pages/AtencionMedica/HistoriaClinica.svelte';
 
 const isAdmin = () => {
     const roles = ['admin', 'patient', 'assitent']
@@ -30,6 +31,7 @@ const routes = {
     "/pacientes": Pacientes,
     "/pacientes/perfil/:id": PacientePerfil,
     "/pacientes/crear": PacienteCrear,
+    "/pacientes/:idPaciente/historias/:idHistoria": AtencionHistoriaClinica,
 }
 
 export default routes;
