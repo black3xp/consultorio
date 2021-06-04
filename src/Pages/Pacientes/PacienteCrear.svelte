@@ -92,7 +92,6 @@
         jQuery('.select-aseguradoras').on("select2:select", e => {
             console.log(e.params.data.id)
         });
-        console.log('hola')
         cargarAseguradoras();
     })
 </script>
@@ -155,7 +154,6 @@
                                             type="text"
                                             class="form-control"
                                             id="inpApodo"
-                                            required
                                             bind:value={apodo}
                                         />
                                     </div>
@@ -168,8 +166,8 @@
                                             bind:value={sexo}
                                         >
                                             <option value="" selected disabled> - seleccionar sexo - </option>
-                                            <option value="M">Masculino</option>
-                                            <option value="F">Femenino</option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Femenino">Femenino</option>
                                         </select>
                                     </div>
                                 </div>
@@ -205,7 +203,6 @@
                                             type="number"
                                             class="form-control"
                                             id="inpNumeroDocumento"
-                                            required
                                             bind:value={cedula}
                                         />
                                     </div>
@@ -316,6 +313,7 @@
                                             bind:value={nacionalidad}
                                         >
                                             <option value="" selected disabled> - seleccionar nacionalidad - </option>
+                                            <option value="Dominicana">Dominicana</option>
                                         </select>
                                     </div>
                                 </div>

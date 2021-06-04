@@ -72,7 +72,7 @@
                                      <i class="mdi mdi-close"></i>
                                  </a>
                                  <a
-                                     href="/pacientes/perfil/1"
+                                     href={`/pacientes/perfil/${paciente.id}`}
                                      class="btn btn-primary"
                                      data-tooltip="Perfil"
                                      use:link
