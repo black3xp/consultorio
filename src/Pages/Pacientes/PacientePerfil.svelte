@@ -1,5 +1,6 @@
 <script>
   import {fade} from 'svelte/transition';
+  import { push } from 'svelte-spa-router';
   import axios from 'axios';
   import { onMount } from 'svelte';
   import { url } from '../../util/index';
@@ -79,6 +80,7 @@
         bind:apellidos={paciente.apellidos}
         bind:cedula={paciente.cedula}
         bind:id={paciente.id}
+        {paciente}
       />
       <div class="pull-up">
         <div class="col-md-12">

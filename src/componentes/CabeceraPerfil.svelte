@@ -1,10 +1,28 @@
 <script>
+  import { url } from '../util/index';
+  import axios from 'axios';
+  import { push } from 'svelte-spa-router';
   export let nombres;
   export let apellidos;
   export let cedula;
   export let edad;
   export let id;
+  export let paciente;
   
+  function crearNuevaHistoria() {
+    const config = {
+      method: 'post',
+      url: `${url}/historias`,
+      data: paciente,
+    }
+    axios(config).then(res => {
+      console.log(res.data)
+      push(`/pacientes/${id}/historias/${res.data.id}`)
+    }).catch(error => {
+      console.error(error)
+    })
+  }
+
 </script>
 <div class="bg-dark m-b-30">
     <div class="">
@@ -32,10 +50,13 @@
 
           <div class="col-md-6" style="text-align: right">
             <div class="dropdown">
-              <a href={`/${id}`} type="button" class="btn text-white m-b-30 ml-2 mr-2 ml-3 btn-primary" data-toggle="modal"
-                data-target="#modalNuevaAtencion"><i class="mdi mdi-progress-check"></i>
+              <button 
+                type="button"
+                class="btn text-white m-b-30 ml-2 mr-2 ml-3 btn-primary"
+                on:click={crearNuevaHistoria}
+              ><i class="mdi mdi-progress-check"></i>
                 Iniciar nueva atención
-              </a>
+              </button>
             </div>
           </div>
         </div>

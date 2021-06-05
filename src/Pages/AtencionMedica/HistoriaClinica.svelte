@@ -6,14 +6,46 @@
     import ModalTratamientos from "../../componentes/Modals/ModalTratamientos.svelte";
     import ModalInterconsulta from "../../componentes/Modals/ModalInterconsulta.svelte";
     import ModalAntecedentes from "../../componentes/Modals/ModalAntecedentes.svelte";
-    import OrdenesMedicas from '../../componentes/OrdenesMedicas.svelte'
-import { onMount } from "svelte";
+    import OrdenesMedicas from '../../componentes/OrdenesMedicas.svelte';
+    import axios from 'axios';
+    import { onMount } from "svelte";
+    import { url } from '../../util/index'
 
-    export let params;
+    export let params = "";
+    let paciente = {};
+    let edad = '';
+    let seguro = '';
+
+    function cargarPaciente() {
+        const config = {
+            method: 'get',
+            url: `${url}/pacientes/${params.idPaciente}`
+        }
+        axios(config).then(res => {
+            paciente = res.data;
+            edad = calcularEdad(paciente.fechaNacimiento)
+            seguro = paciente.seguroMedico[0].nombre;
+            console.log(res.data)
+        }).catch(error => {
+            console.error(error)
+        })
+    }
+
+    function calcularEdad(fecha) {
+        var hoy = new Date();
+        var cumpleanos = new Date(fecha);
+        var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+        var m = hoy.getMonth() - cumpleanos.getMonth();
+
+        if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+            edad--;
+        }
+
+        return edad;
+    }
 
     onMount(() => {
-        console.log(`ID Paciente: ${params.idPaciente}`)
-        console.log(`ID Historia: ${params.idHistoria}`)
+        cargarPaciente()
     })
 </script>
 
@@ -24,7 +56,7 @@ import { onMount } from "svelte";
         <div class="col-md-6">
             <h5>
                 <span class="badge badge-primary" data-bind="text: titulo">Historia Clinica</span>
-                <span data-bind="text: paciente().nombreParaMostrar">Fiordaliza De Jesus Herrera</span>
+                <span data-bind="text: paciente().nombreParaMostrar">{paciente.nombres} {paciente.apellidos} </span>
             </h5>
         </div>
         <div class="col-md-6" style="text-align: right;">
@@ -278,11 +310,18 @@ import { onMount } from "svelte";
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group buscardor dropdown dropdown-vnc">
-                                    <input type="text" class="form-control" name="" data-bind="textInput: busqueda" id="txtBusquedaProblemaMedico" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <input type="text" class="form-control" id="txtBusquedaProblemaMedico" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     <ul class="lista-buscador dropdown-menu" id="buscador" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -128px, 0px); border-radius: 5px;">
-                                        <div class="contenidoLista" data-bind="foreach: problemasMedicos"></div>
+                                        <div class="contenidoLista">
+                                            <li>
+                                                <a href="#!">
+                                                    <span class="badge badge-primary">A000</span>  
+                                                    FIEBRE TIFOIDEA
+                                                </a>
+                                            </li>
+                                        </div>
                                         <li class="defecto">
-                                            <a href="#!" data-bind="click: agregarDiagnostico"><i class="mdi mdi-plus"></i>Agregar manualmente</a>
+                                            <a href="#!"><i class="mdi mdi-plus"></i>Agregar manualmente</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -290,12 +329,12 @@ import { onMount } from "svelte";
                             </div>
         
                             <div class="col-md-12">
-                                <ul class="list-info" data-bind="foreach: diagnosticos">
+                                <ul class="list-info">
                                     <li>
-                                        <span class="badge badge-primary" data-bind="text: codigo">F316</span>&nbsp;<span data-bind="text: nombre">TRASTORNO AFECTIVO BIPOLAR, EPISODIO MIXTO PRESENTE</span>
+                                        <span class="badge badge-primary">F316</span>&nbsp;<span >TRASTORNO AFECTIVO BIPOLAR, EPISODIO MIXTO PRESENTE</span>
                                         <div style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;">
-                                            <a href="#!" class="text-primary" data-bind="click: modoEditarOn" title="Agregar comentarios"><i class="mdi-18px mdi mdi-comment-plus-outline"></i></a>
-                                            <a href="#!" data-bind="click: eliminar" class="text-danger" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar diagnostico"><i class="mdi-18px mdi mdi-trash-can-outline"></i></a>
+                                            <a href="#!" class="text-primary" title="Agregar comentarios"><i class="mdi-18px mdi mdi-comment-plus-outline"></i></a>
+                                            <a href="#!" class="text-danger" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar diagnostico"><i class="mdi-18px mdi mdi-trash-can-outline"></i></a>
                                         </div>
                                     </li>
                                 </ul>
@@ -311,32 +350,11 @@ import { onMount } from "svelte";
                         <div class="card-title">Observaciones</div>
                     </div>
                     <div class="card-body">
-                        <textarea class="form-control" style="width: 100%; display: block; height: 150px;" data-bind="value: notaMedica.observaciones" rows="3"></textarea>
+                        <textarea class="form-control" style="width: 100%; display: block; height: 150px;" rows="3"></textarea>
                     </div>
                 </div>
 
                 <div class="row">
-
-                    <div class="col-lg-6">
-                        <div class="card m-b-20">
-                            <div class="card-header">
-                                <div class="card-title">Pronostico</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <select name="" class="form-control form-control-lg" data-bind="options: pronosticos, 
-                                        value: notaMedica.pronostico, 
-                                        optionsCaption : '- Seleccionar -'">
-                                        <option value="">- Seleccionar -</option>
-                                        <option value="Favorable o Bueno">Favorable o Bueno</option>
-                                        <option value="Moderado o Intermedio">Moderado o Intermedio</option>
-                                        <option value="Grave">Grave</option>
-                                        <option value="Reservado">Reservado</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col-lg-6">
                         <div class="card m-b-20">
@@ -347,35 +365,12 @@ import { onMount } from "svelte";
                                 <div class="form-row">
                                     <div class="form-group floating-label col-md-6 show-label">
                                         <label for="">Fecha</label>
-                                        <input type="date" class="form-control" data-bind="value: notaMedica.fecha" placeholder="Fecha">
+                                        <input type="date" class="form-control" placeholder="Fecha">
                                     </div>
                                     <div class="form-group floating-label col-md-6 show-label">
                                         <label for="">Hora</label>
-                                        <input type="time" placeholder="Hora" class="form-control" max="23:59:59" data-bind="value: notaMedica.hora">
+                                        <input type="time" placeholder="Hora" class="form-control" max="23:59:59">
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6" data-bindx="if: notaMedica.deOrden()">
-                        <div class="card m-b-20">
-                            <div class="card-header">
-                                <div class="card-title">Especialista</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <select class="form-control form-control-lg" id="sltEspecialistas" style="width: 100%; padding-top: 5px;" tabindex="-1" aria-hidden="true" required="" data-select2-id="sltEspecialistas">
-                                    <option value="2" data-select2-id="1009">Alfredo Joel Mena</option>
-                                    <option value="3" data-select2-id="1010">Vladimir Núñez</option>
-                                    <option value="5" data-select2-id="1011">Verenice Gálvez</option>
-                                    <option value="8" data-select2-id="1012">stephany maria nuñez moya</option>
-                                    <option value="9" data-select2-id="1013">Pedro  Compres</option>
-                                    <option value="10" data-select2-id="1014">Milagros Sierra</option>
-                                    <option value="11" data-select2-id="1015">Marlena Taveras</option>
-                                    <option value="12" data-select2-id="1016">Mariela Camilo</option>
-                                    <option value="13" data-select2-id="1017">Emely Bidó García</option>
-                                </select>
                                 </div>
                             </div>
                         </div>
@@ -387,7 +382,11 @@ import { onMount } from "svelte";
         </div>
     </main>
 
-<ModalDatosPaciente/>
+<ModalDatosPaciente
+    {paciente}
+    {edad}
+    {seguro}
+/>
 <ModalTratamientos/>
 <ModalInterconsulta/>
 <ModalAntecedentes/>
