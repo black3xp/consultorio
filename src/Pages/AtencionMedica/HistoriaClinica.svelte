@@ -15,6 +15,9 @@
     let paciente = {};
     let edad = '';
     let seguro = '';
+    let diagnosticos = []
+    let inpBuscarDiagnostico = '';
+    let diagnosticosSeleccionados = [];
 
     function cargarPaciente() {
         const config = {
@@ -29,6 +32,34 @@
         }).catch(error => {
             console.error(error)
         })
+    }
+
+    $: filtroDiagnostico = (diagnosticos);
+
+    function cargarDiagnosticos() {
+        const config = {
+            method: 'get',
+            url: `${url}/diagnosticos?b=${inpBuscarDiagnostico}`
+        }
+        setTimeout(() => {
+            axios(config).then(res => {
+                diagnosticos = res.data;
+            }).catch(error => {
+                console.log(error);
+            })
+        }, 1000);
+    }
+
+    function seleccionarDiagnostico(id) {
+        const config = {
+            method: 'get',
+            url: `${url}/diagnosticos/${id}`
+        }
+        axios(config).then(res => {
+            diagnosticosSeleccionados = [...diagnosticosSeleccionados, res.data]
+            console.log(diagnosticosSeleccionados)
+        })
+        inpBuscarDiagnostico = '';
     }
 
     function calcularEdad(fecha) {
@@ -46,6 +77,7 @@
 
     onMount(() => {
         cargarPaciente()
+        cargarDiagnosticos()
     })
 </script>
 
@@ -310,15 +342,26 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group buscardor dropdown dropdown-vnc">
-                                    <input type="text" class="form-control" id="txtBusquedaProblemaMedico" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        on:keyup={cargarDiagnosticos}
+                                        id="txtBusquedaProblemaMedico"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="true"
+                                        bind:value={inpBuscarDiagnostico}
+                                    >
                                     <ul class="lista-buscador dropdown-menu" id="buscador" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -128px, 0px); border-radius: 5px;">
                                         <div class="contenidoLista">
-                                            <li>
-                                                <a href="#!">
-                                                    <span class="badge badge-primary">A000</span>  
-                                                    FIEBRE TIFOIDEA
-                                                </a>
-                                            </li>
+                                            {#each filtroDiagnostico as diagnostico}
+                                                 <li>
+                                                    <div class="p-2" on:click={() => seleccionarDiagnostico(diagnostico.c)}>
+                                                        <span class="badge badge-primary">{diagnostico.c}</span>  
+                                                        {diagnostico.d}
+                                                    </div>
+                                                 </li>
+                                            {/each}
                                         </div>
                                         <li class="defecto">
                                             <a href="#!"><i class="mdi mdi-plus"></i>Agregar manualmente</a>
@@ -330,13 +373,26 @@
         
                             <div class="col-md-12">
                                 <ul class="list-info">
-                                    <li>
-                                        <span class="badge badge-primary">F316</span>&nbsp;<span >TRASTORNO AFECTIVO BIPOLAR, EPISODIO MIXTO PRESENTE</span>
-                                        <div style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;">
-                                            <a href="#!" class="text-primary" title="Agregar comentarios"><i class="mdi-18px mdi mdi-comment-plus-outline"></i></a>
-                                            <a href="#!" class="text-danger" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar diagnostico"><i class="mdi-18px mdi mdi-trash-can-outline"></i></a>
+                                    {#each diagnosticosSeleccionados as item}
+                                         <li>
+                                             <span class="badge badge-primary">{item.c}</span>&nbsp;<span >{item.d}</span>
+                                             <div style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;">
+                                                 <a href="#!" class="text-primary" title="Agregar comentarios"><i class="mdi-18px mdi mdi-comment-plus-outline"></i></a>
+                                                 <a href="#!" class="text-danger" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar diagnostico"><i class="mdi-18px mdi mdi-trash-can-outline"></i></a>
+                                             </div>
+                                         </li>
+                                    {/each}
+                                    {#if diagnosticosSeleccionados.length === 0}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert border alert-light" role="alert">
+                                                <p class="alert-body text-center mt-3">No tienes agregado ningún diagnostico
+                                                </p>
+                                            </div>
+                                            <ul class="list-info" data-bind="foreach: estudios"></ul>
                                         </div>
-                                    </li>
+                                     </div>
+                                    {/if}
                                 </ul>
                             </div>
                         </div>
