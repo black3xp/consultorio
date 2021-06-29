@@ -22,9 +22,4 @@
             {/if}
         {/if}
     {/each}
-    {#if antecedentes.length === 0}
-        <p class="opacity-75">
-            No hay {nombre}
-        </p>
-    {/if}
 </div>

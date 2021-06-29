@@ -6650,9 +6650,9 @@ var app = (function () {
     }
 
     // (16:8) {#if antecedente.categoria.id === id}
-    function create_if_block_1(ctx) {
+    function create_if_block$1(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[3].activo && create_if_block_2(ctx);
+    	let if_block = /*antecedente*/ ctx[3].activo && create_if_block_1(ctx);
 
     	const block = {
     		c: function create() {
@@ -6668,7 +6668,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_2(ctx);
+    					if_block = create_if_block_1(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -6685,7 +6685,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
+    		id: create_if_block$1.name,
     		type: "if",
     		source: "(16:8) {#if antecedente.categoria.id === id}",
     		ctx
@@ -6695,7 +6695,7 @@ var app = (function () {
     }
 
     // (17:12) {#if antecedente.activo}
-    function create_if_block_2(ctx) {
+    function create_if_block_1(ctx) {
     	let div;
     	let h5;
     	let t0_value = /*antecedente*/ ctx[3].nombre + "";
@@ -6704,6 +6704,7 @@ var app = (function () {
     	let p;
     	let t2_value = /*antecedente*/ ctx[3].descripcion + "";
     	let t2;
+    	let t3;
 
     	const block = {
     		c: function create() {
@@ -6713,6 +6714,7 @@ var app = (function () {
     			t1 = space();
     			p = element("p");
     			t2 = text(t2_value);
+    			t3 = space();
     			attr_dev(h5, "class", "alert-heading");
     			set_style(h5, "margin-bottom", "0px");
     			set_style(h5, "font-size", "12px");
@@ -6734,6 +6736,7 @@ var app = (function () {
     			append_dev(div, t1);
     			append_dev(div, p);
     			append_dev(p, t2);
+    			append_dev(div, t3);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*antecedentes*/ 4 && t0_value !== (t0_value = /*antecedente*/ ctx[3].nombre + "")) set_data_dev(t0, t0_value);
@@ -6746,7 +6749,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2.name,
+    		id: create_if_block_1.name,
     		type: "if",
     		source: "(17:12) {#if antecedente.activo}",
     		ctx
@@ -6758,7 +6761,7 @@ var app = (function () {
     // (15:4) {#each antecedentes as antecedente}
     function create_each_block$1(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[3].categoria.id === /*id*/ ctx[0] && create_if_block_1(ctx);
+    	let if_block = /*antecedente*/ ctx[3].categoria.id === /*id*/ ctx[0] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -6774,7 +6777,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1(ctx);
+    					if_block = create_if_block$1(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -6800,44 +6803,6 @@ var app = (function () {
     	return block;
     }
 
-    // (25:4) {#if antecedentes.length === 0}
-    function create_if_block$1(ctx) {
-    	let p;
-    	let t0;
-    	let t1;
-
-    	const block = {
-    		c: function create() {
-    			p = element("p");
-    			t0 = text("No hay ");
-    			t1 = text(/*nombre*/ ctx[1]);
-    			attr_dev(p, "class", "opacity-75");
-    			add_location(p, file$9, 25, 8, 821);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, t0);
-    			append_dev(p, t1);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*nombre*/ 2) set_data_dev(t1, /*nombre*/ ctx[1]);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$1.name,
-    		type: "if",
-    		source: "(25:4) {#if antecedentes.length === 0}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     function create_fragment$a(ctx) {
     	let div;
     	let h6;
@@ -6845,7 +6810,6 @@ var app = (function () {
     	let t1;
     	let hr;
     	let t2;
-    	let t3;
     	let each_value = /*antecedentes*/ ctx[2];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -6853,8 +6817,6 @@ var app = (function () {
     	for (let i = 0; i < each_value.length; i += 1) {
     		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
     	}
-
-    	let if_block = /*antecedentes*/ ctx[2].length === 0 && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -6869,8 +6831,6 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			t3 = space();
-    			if (if_block) if_block.c();
     			add_location(h6, file$9, 12, 4, 217);
     			add_location(hr, file$9, 13, 4, 240);
     			add_location(div, file$9, 11, 0, 206);
@@ -6889,9 +6849,6 @@ var app = (function () {
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div, null);
     			}
-
-    			append_dev(div, t3);
-    			if (if_block) if_block.m(div, null);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*nombre*/ 2) set_data_dev(t0, /*nombre*/ ctx[1]);
@@ -6909,7 +6866,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block$1(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div, t3);
+    						each_blocks[i].m(div, null);
     					}
     				}
 
@@ -6919,26 +6876,12 @@ var app = (function () {
 
     				each_blocks.length = each_value.length;
     			}
-
-    			if (/*antecedentes*/ ctx[2].length === 0) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
-    				} else {
-    					if_block = create_if_block$1(ctx);
-    					if_block.c();
-    					if_block.m(div, null);
-    				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
-    			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			destroy_each(each_blocks, detaching);
-    			if (if_block) if_block.d();
     		}
     	};
 
@@ -7163,7 +7106,7 @@ var app = (function () {
     }
 
     // (426:26) {#if antecedente.categoria.id === categoria.id}
-    function create_if_block_2$1(ctx) {
+    function create_if_block_2(ctx) {
     	let if_block_anchor;
     	let if_block = /*antecedente*/ ctx[24].activo === false && create_if_block_3(ctx);
 
@@ -7198,7 +7141,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$1.name,
+    		id: create_if_block_2.name,
     		type: "if",
     		source: "(426:26) {#if antecedente.categoria.id === categoria.id}",
     		ctx
@@ -7278,7 +7221,7 @@ var app = (function () {
     // (425:24) {#each antecedentes as antecedente}
     function create_each_block_2(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[24].categoria.id === /*categoria*/ ctx[21].id && create_if_block_2$1(ctx);
+    	let if_block = /*antecedente*/ ctx[24].categoria.id === /*categoria*/ ctx[21].id && create_if_block_2(ctx);
 
     	const block = {
     		c: function create() {
@@ -7294,7 +7237,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_2$1(ctx);
+    					if_block = create_if_block_2(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
