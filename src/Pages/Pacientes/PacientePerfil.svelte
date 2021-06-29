@@ -19,6 +19,43 @@
   let edad = "";
   let seguro = "";
   let categoriasAntecedentes = [];
+  let antecedentes = [];
+
+  function actualizarPaciente() {
+    paciente.antecedentes = antecedentes;
+    const config = {
+      method: 'put',
+      url: `${url}/pacientes/${paciente.id}`,
+      data: paciente,
+    };
+    axios(config)
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
+  function cambiarEstadoAntecedente(idAntecedente) {
+    const index = antecedentes.findIndex(x => x.id === idAntecedente)
+    antecedentes[index].activo = true;
+  }
+
+  function cargarAntecedentes() {
+    const config = {
+      method: "get",
+      url: `${url}/antecedentes`,
+    };
+    axios(config)
+      .then((res) => {
+        antecedentes = res.data;
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
   function cargarCategoriasAntecedentes() {
     const config = {
@@ -65,6 +102,7 @@
     jQuery("html, body").animate({ scrollTop: 0 }, "slow");
     cargarPaciente();
     cargarCategoriasAntecedentes();
+    cargarAntecedentes();
   });
 </script>
 
@@ -131,7 +169,7 @@
                       </h1>
                       Puede arrastrar el documento a esta zona.<br />
                       <div class="p-t-5">
-                        <a href="#" class="btn btn-lg btn-primary"
+                        <a href="#!" class="btn btn-lg btn-primary"
                           >Subir Archivo</a
                         >
                       </div>
@@ -156,7 +194,7 @@
                       <div class="ml-auto">
                         <div class="dropdown">
                           <a
-                            href="#"
+                            href="#!"
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
@@ -194,7 +232,7 @@
                       <div class="ml-auto">
                         <div class="dropdown">
                           <a
-                            href="#"
+                            href="#!"
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
@@ -249,18 +287,23 @@
                       <i class="mdi mdi-history mdi-18px" />
                     </div>
                   </div>
-                  Antecedentes <button class="btn btn-outline-primary btn-sm"><i class="mdi mdi-plus"></i> AGREGAR</button>
+                  Antecedentes &nbsp;<button
+                    class="btn btn-outline-primary btn-sm"
+                    data-toggle="modal"
+                    data-target="#modalAntecedentes"
+                    ><i class="mdi mdi-plus" /> AGREGAR &nbsp;
+                  </button>
                 </div>
                 <div class="card-body">
                   <div class="atenciones-vnc mb-3">
-                      {#each categoriasAntecedentes as categoria}
-                        <!-- content here -->
-                        <TarjetaAntecedentes
-                          bind:id={categoria.id}
-                          bind:nombre={categoria.nombre}
-                          bind:paciente={paciente.antecedentes}
-                        />
-                      {/each}
+                    {#each categoriasAntecedentes as categoria}
+                      <!-- content here -->
+                      <TarjetaAntecedentes
+                        bind:id={categoria.id}
+                        bind:nombre={categoria.nombre}
+                        bind:antecedentes={paciente.antecedentes}
+                      />
+                    {/each}
                   </div>
                 </div>
               </div>
@@ -289,14 +332,14 @@
                     <ul class="lista-buscador dropdown-menu" id="buscador">
                       <div class="contenidoLista">
                         <li>
-                          <a href="#">Metrocaps</a>
+                          <a href="#!">Metrocaps</a>
                         </li>
                         <li>
-                          <a href="#">Albendazol</a>
+                          <a href="#!">Albendazol</a>
                         </li>
                       </div>
                       <li class="defecto">
-                        <a href="#"
+                        <a href="#!"
                           ><i class="mdi mdi-plus" /> Agregar manualmente</a
                         >
                       </li>
@@ -327,6 +370,157 @@
     </section>
 
     <ModalDatosPaciente {paciente} {edad} {seguro} />
+
+    <!--modal antecedentes-->
+    <div
+      class="modal fade modal-slide-right"
+      id="modalAntecedentes"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalAntecedentes"
+      style="display: none;"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAntecedentes">Antecedentes</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div style="margin-right: 40px;">
+              <div class="guardar-documento">
+                <div
+                  class="guardando mr-2 text-success"
+                  data-bind="html: content, class: contentClass"
+                >
+                  <i class="mdi mdi-check-all" /> <i>listo y guardado</i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-12" data-bind="foreach: gruposAntecedentes">
+                {#each categoriasAntecedentes as categoria}
+                  <div
+                    class="card  m-b-30"
+                    style="box-shadow: none; border: #32325d solid 1px;"
+                  >
+                    <div class="card-header">
+                      <div class="card-title" data-bind="text: nombre">
+                        {categoria.nombre}
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div
+                        class="botones-antecedentes"
+                        data-bind="foreach: tiposAntecedentesFiltrados"
+                      >
+                        {#each antecedentes as antecedente}
+                          {#if antecedente.categoria.id === categoria.id}
+                            {#if antecedente.activo === false}
+                              <!-- content here -->
+                              <button
+                                type="button"
+                                class="btn btn-outline-primary btn-sm mb-1 mr-2"
+                                style="box-shadow: none;"
+                                on:click={() => cambiarEstadoAntecedente(antecedente.id)}
+                                ><i class="mdi mdi-plus" />
+                                <span data-bind="text: nombre"
+                                  >{antecedente.nombre}</span
+                                >
+                              </button>
+                            {/if}
+                          {/if}
+                        {/each}
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="row">
+                            <div
+                              class="col-lg-12"
+                              data-bind="foreach: antecedentesFiltrados"
+                            >
+
+
+                            {#each antecedentes as antecedente}
+                              {#if antecedente.categoria.id === categoria.id}
+                                  {#if antecedente.activo === true}
+                                     <!-- content here -->
+                                     <div
+                                    class="card m-b-20 mt-3"
+                                    style="box-shadow: none; border: 1px grey solid;"
+                                  >
+                                    <div class="card-header">
+                                      <div class="card-title">
+                                        <i class="mdi mdi-history mdi-18px" />
+                                        <span data-bind="text: nombre"
+                                          >{antecedente.nombre}</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="card-controls">
+                                      <div class="dropdown">
+                                        <a
+                                          href="/"
+                                          data-toggle="dropdown"
+                                          aria-haspopup="true"
+                                          aria-expanded="false"
+                                        >
+                                          <i class="icon mdi  mdi-dots-vertical" />
+                                        </a>
+                                        <div
+                                          class="dropdown-menu dropdown-menu-right"
+                                        >
+                                          <button
+                                            class="dropdown-item text-danger"
+                                            data-bind="click: eliminar"
+                                            type="button"
+                                            ><i class="mdi mdi-trash-can-outline" />
+                                            Eliminar</button
+                                          >
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                      <textarea
+                                        class="form-control"
+                                        bind:value={antecedente.descripcion}
+                                        on:blur={actualizarPaciente}
+                                        style="width: 100%; display: block; height: 100px;"
+                                        id="exampleFormControlTextarea1"
+                                        rows="5"
+                                        name="Comentario"
+                                      />
+                                    </div>
+                                  </div>
+                                  {/if}
+                              {/if}
+                            {/each}
+
+
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {/each}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--.modal antecedentes-->
   </section>
 </main>
 

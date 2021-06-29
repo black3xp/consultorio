@@ -6643,7 +6643,164 @@ var app = (function () {
     const { console: console_1$4 } = globals;
     const file$9 = "src\\componentes\\TarjetaAntecedentes.svelte";
 
-    // (15:4) {#if antecedentes.length === 0}
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[3] = list[i];
+    	return child_ctx;
+    }
+
+    // (16:8) {#if antecedente.categoria.id === id}
+    function create_if_block_1(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*antecedente*/ ctx[3].activo && create_if_block_2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*antecedente*/ ctx[3].activo) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_2(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(16:8) {#if antecedente.categoria.id === id}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (17:12) {#if antecedente.activo}
+    function create_if_block_2(ctx) {
+    	let div;
+    	let h5;
+    	let t0_value = /*antecedente*/ ctx[3].nombre + "";
+    	let t0;
+    	let t1;
+    	let p;
+    	let t2_value = /*antecedente*/ ctx[3].descripcion + "";
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h5 = element("h5");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			p = element("p");
+    			t2 = text(t2_value);
+    			attr_dev(h5, "class", "alert-heading");
+    			set_style(h5, "margin-bottom", "0px");
+    			set_style(h5, "font-size", "12px");
+    			set_style(h5, "text-transform", "uppercase");
+    			set_style(h5, "font-weight", "bold");
+    			add_location(h5, file$9, 18, 20, 481);
+    			set_style(p, "padding", "0");
+    			set_style(p, "margin", "0");
+    			add_location(p, file$9, 19, 20, 641);
+    			attr_dev(div, "class", "alert alert-secondary");
+    			set_style(div, "padding", "10px");
+    			attr_dev(div, "role", "alert");
+    			add_location(div, file$9, 17, 16, 388);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h5);
+    			append_dev(h5, t0);
+    			append_dev(div, t1);
+    			append_dev(div, p);
+    			append_dev(p, t2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*antecedentes*/ 4 && t0_value !== (t0_value = /*antecedente*/ ctx[3].nombre + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*antecedentes*/ 4 && t2_value !== (t2_value = /*antecedente*/ ctx[3].descripcion + "")) set_data_dev(t2, t2_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(17:12) {#if antecedente.activo}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (15:4) {#each antecedentes as antecedente}
+    function create_each_block$1(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*antecedente*/ ctx[3].categoria.id === /*id*/ ctx[0] && create_if_block_1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*antecedente*/ ctx[3].categoria.id === /*id*/ ctx[0]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(15:4) {#each antecedentes as antecedente}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (25:4) {#if antecedentes.length === 0}
     function create_if_block$1(ctx) {
     	let p;
     	let t0;
@@ -6653,9 +6810,9 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t0 = text("No hay ");
-    			t1 = text(/*nombre*/ ctx[0]);
+    			t1 = text(/*nombre*/ ctx[1]);
     			attr_dev(p, "class", "opacity-75");
-    			add_location(p, file$9, 15, 8, 301);
+    			add_location(p, file$9, 25, 8, 821);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6663,7 +6820,7 @@ var app = (function () {
     			append_dev(p, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*nombre*/ 1) set_data_dev(t1, /*nombre*/ ctx[0]);
+    			if (dirty & /*nombre*/ 2) set_data_dev(t1, /*nombre*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -6674,7 +6831,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(15:4) {#if antecedentes.length === 0}",
+    		source: "(25:4) {#if antecedentes.length === 0}",
     		ctx
     	});
 
@@ -6688,20 +6845,35 @@ var app = (function () {
     	let t1;
     	let hr;
     	let t2;
-    	let if_block = /*antecedentes*/ ctx[1].length === 0 && create_if_block$1(ctx);
+    	let t3;
+    	let each_value = /*antecedentes*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	let if_block = /*antecedentes*/ ctx[2].length === 0 && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			h6 = element("h6");
-    			t0 = text(/*nombre*/ ctx[0]);
+    			t0 = text(/*nombre*/ ctx[1]);
     			t1 = space();
     			hr = element("hr");
     			t2 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t3 = space();
     			if (if_block) if_block.c();
-    			add_location(h6, file$9, 12, 4, 227);
-    			add_location(hr, file$9, 13, 4, 250);
-    			add_location(div, file$9, 11, 0, 216);
+    			add_location(h6, file$9, 12, 4, 217);
+    			add_location(hr, file$9, 13, 4, 240);
+    			add_location(div, file$9, 11, 0, 206);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6713,12 +6885,42 @@ var app = (function () {
     			append_dev(div, t1);
     			append_dev(div, hr);
     			append_dev(div, t2);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+
+    			append_dev(div, t3);
     			if (if_block) if_block.m(div, null);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*nombre*/ 1) set_data_dev(t0, /*nombre*/ ctx[0]);
+    			if (dirty & /*nombre*/ 2) set_data_dev(t0, /*nombre*/ ctx[1]);
 
-    			if (/*antecedentes*/ ctx[1].length === 0) {
+    			if (dirty & /*antecedentes, id*/ 5) {
+    				each_value = /*antecedentes*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, t3);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (/*antecedentes*/ ctx[2].length === 0) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -6735,6 +6937,7 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
     			if (if_block) if_block.d();
     		}
     	};
@@ -6758,7 +6961,7 @@ var app = (function () {
     	let { antecedentes = [] } = $$props;
 
     	onMount(() => {
-    		console.log(antecedentes);
+    		console.log(id);
     	});
 
     	const writable_props = ["id", "nombre", "antecedentes"];
@@ -6768,30 +6971,30 @@ var app = (function () {
     	});
 
     	$$self.$$set = $$props => {
-    		if ("id" in $$props) $$invalidate(2, id = $$props.id);
-    		if ("nombre" in $$props) $$invalidate(0, nombre = $$props.nombre);
-    		if ("antecedentes" in $$props) $$invalidate(1, antecedentes = $$props.antecedentes);
+    		if ("id" in $$props) $$invalidate(0, id = $$props.id);
+    		if ("nombre" in $$props) $$invalidate(1, nombre = $$props.nombre);
+    		if ("antecedentes" in $$props) $$invalidate(2, antecedentes = $$props.antecedentes);
     	};
 
     	$$self.$capture_state = () => ({ onMount, id, nombre, antecedentes });
 
     	$$self.$inject_state = $$props => {
-    		if ("id" in $$props) $$invalidate(2, id = $$props.id);
-    		if ("nombre" in $$props) $$invalidate(0, nombre = $$props.nombre);
-    		if ("antecedentes" in $$props) $$invalidate(1, antecedentes = $$props.antecedentes);
+    		if ("id" in $$props) $$invalidate(0, id = $$props.id);
+    		if ("nombre" in $$props) $$invalidate(1, nombre = $$props.nombre);
+    		if ("antecedentes" in $$props) $$invalidate(2, antecedentes = $$props.antecedentes);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [nombre, antecedentes, id];
+    	return [id, nombre, antecedentes];
     }
 
     class TarjetaAntecedentes extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$a, safe_not_equal, { id: 2, nombre: 0, antecedentes: 1 });
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, { id: 0, nombre: 1, antecedentes: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -6831,46 +7034,66 @@ var app = (function () {
     const { console: console_1$5 } = globals;
     const file$a = "src\\Pages\\Pacientes\\PacientePerfil.svelte";
 
-    function get_each_context$1(ctx, list, i) {
+    function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i];
-    	child_ctx[16] = list;
-    	child_ctx[17] = i;
+    	child_ctx[24] = list[i];
+    	child_ctx[25] = list;
+    	child_ctx[26] = i;
     	return child_ctx;
     }
 
-    // (256:22) {#each categoriasAntecedentes as categoria}
-    function create_each_block$1(ctx) {
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[24] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[21] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_3(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[21] = list[i];
+    	child_ctx[29] = list;
+    	child_ctx[30] = i;
+    	return child_ctx;
+    }
+
+    // (299:20) {#each categoriasAntecedentes as categoria}
+    function create_each_block_3(ctx) {
     	let tarjetaantecedentes;
     	let updating_id;
     	let updating_nombre;
-    	let updating_paciente;
+    	let updating_antecedentes;
     	let current;
 
     	function tarjetaantecedentes_id_binding(value) {
-    		/*tarjetaantecedentes_id_binding*/ ctx[10].call(null, value, /*categoria*/ ctx[15]);
+    		/*tarjetaantecedentes_id_binding*/ ctx[13].call(null, value, /*categoria*/ ctx[21]);
     	}
 
     	function tarjetaantecedentes_nombre_binding(value) {
-    		/*tarjetaantecedentes_nombre_binding*/ ctx[11].call(null, value, /*categoria*/ ctx[15]);
+    		/*tarjetaantecedentes_nombre_binding*/ ctx[14].call(null, value, /*categoria*/ ctx[21]);
     	}
 
-    	function tarjetaantecedentes_paciente_binding(value) {
-    		/*tarjetaantecedentes_paciente_binding*/ ctx[12].call(null, value);
+    	function tarjetaantecedentes_antecedentes_binding(value) {
+    		/*tarjetaantecedentes_antecedentes_binding*/ ctx[15].call(null, value);
     	}
 
     	let tarjetaantecedentes_props = {};
 
-    	if (/*categoria*/ ctx[15].id !== void 0) {
-    		tarjetaantecedentes_props.id = /*categoria*/ ctx[15].id;
+    	if (/*categoria*/ ctx[21].id !== void 0) {
+    		tarjetaantecedentes_props.id = /*categoria*/ ctx[21].id;
     	}
 
-    	if (/*categoria*/ ctx[15].nombre !== void 0) {
-    		tarjetaantecedentes_props.nombre = /*categoria*/ ctx[15].nombre;
+    	if (/*categoria*/ ctx[21].nombre !== void 0) {
+    		tarjetaantecedentes_props.nombre = /*categoria*/ ctx[21].nombre;
     	}
 
     	if (/*paciente*/ ctx[0].antecedentes !== void 0) {
-    		tarjetaantecedentes_props.paciente = /*paciente*/ ctx[0].antecedentes;
+    		tarjetaantecedentes_props.antecedentes = /*paciente*/ ctx[0].antecedentes;
     	}
 
     	tarjetaantecedentes = new TarjetaAntecedentes({
@@ -6880,7 +7103,7 @@ var app = (function () {
 
     	binding_callbacks.push(() => bind(tarjetaantecedentes, "id", tarjetaantecedentes_id_binding));
     	binding_callbacks.push(() => bind(tarjetaantecedentes, "nombre", tarjetaantecedentes_nombre_binding));
-    	binding_callbacks.push(() => bind(tarjetaantecedentes, "paciente", tarjetaantecedentes_paciente_binding));
+    	binding_callbacks.push(() => bind(tarjetaantecedentes, "antecedentes", tarjetaantecedentes_antecedentes_binding));
 
     	const block = {
     		c: function create() {
@@ -6896,20 +7119,20 @@ var app = (function () {
 
     			if (!updating_id && dirty & /*categoriasAntecedentes*/ 8) {
     				updating_id = true;
-    				tarjetaantecedentes_changes.id = /*categoria*/ ctx[15].id;
+    				tarjetaantecedentes_changes.id = /*categoria*/ ctx[21].id;
     				add_flush_callback(() => updating_id = false);
     			}
 
     			if (!updating_nombre && dirty & /*categoriasAntecedentes*/ 8) {
     				updating_nombre = true;
-    				tarjetaantecedentes_changes.nombre = /*categoria*/ ctx[15].nombre;
+    				tarjetaantecedentes_changes.nombre = /*categoria*/ ctx[21].nombre;
     				add_flush_callback(() => updating_nombre = false);
     			}
 
-    			if (!updating_paciente && dirty & /*paciente*/ 1) {
-    				updating_paciente = true;
-    				tarjetaantecedentes_changes.paciente = /*paciente*/ ctx[0].antecedentes;
-    				add_flush_callback(() => updating_paciente = false);
+    			if (!updating_antecedentes && dirty & /*paciente*/ 1) {
+    				updating_antecedentes = true;
+    				tarjetaantecedentes_changes.antecedentes = /*paciente*/ ctx[0].antecedentes;
+    				add_flush_callback(() => updating_antecedentes = false);
     			}
 
     			tarjetaantecedentes.$set(tarjetaantecedentes_changes);
@@ -6930,9 +7153,587 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$1.name,
+    		id: create_each_block_3.name,
     		type: "each",
-    		source: "(256:22) {#each categoriasAntecedentes as categoria}",
+    		source: "(299:20) {#each categoriasAntecedentes as categoria}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (426:26) {#if antecedente.categoria.id === categoria.id}
+    function create_if_block_2$1(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*antecedente*/ ctx[24].activo === false && create_if_block_3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*antecedente*/ ctx[24].activo === false) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_3(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$1.name,
+    		type: "if",
+    		source: "(426:26) {#if antecedente.categoria.id === categoria.id}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (427:28) {#if antecedente.activo === false}
+    function create_if_block_3(ctx) {
+    	let button;
+    	let i;
+    	let t0;
+    	let span;
+    	let t1_value = /*antecedente*/ ctx[24].nombre + "";
+    	let t1;
+    	let t2;
+    	let mounted;
+    	let dispose;
+
+    	function click_handler(...args) {
+    		return /*click_handler*/ ctx[16](/*antecedente*/ ctx[24], ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			i = element("i");
+    			t0 = space();
+    			span = element("span");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			attr_dev(i, "class", "mdi mdi-plus");
+    			add_location(i, file$a, 433, 33, 16569);
+    			attr_dev(span, "data-bind", "text: nombre");
+    			add_location(span, file$a, 434, 32, 16629);
+    			attr_dev(button, "type", "button");
+    			attr_dev(button, "class", "btn btn-outline-primary btn-sm mb-1 mr-2");
+    			set_style(button, "box-shadow", "none");
+    			add_location(button, file$a, 428, 30, 16248);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    			append_dev(button, i);
+    			append_dev(button, t0);
+    			append_dev(button, span);
+    			append_dev(span, t1);
+    			append_dev(button, t2);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", click_handler, false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*antecedentes*/ 16 && t1_value !== (t1_value = /*antecedente*/ ctx[24].nombre + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(427:28) {#if antecedente.activo === false}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (425:24) {#each antecedentes as antecedente}
+    function create_each_block_2(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*antecedente*/ ctx[24].categoria.id === /*categoria*/ ctx[21].id && create_if_block_2$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*antecedente*/ ctx[24].categoria.id === /*categoria*/ ctx[21].id) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_2$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2.name,
+    		type: "each",
+    		source: "(425:24) {#each antecedentes as antecedente}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (453:30) {#if antecedente.categoria.id === categoria.id}
+    function create_if_block$2(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*antecedente*/ ctx[24].activo === true && create_if_block_1$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*antecedente*/ ctx[24].activo === true) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(453:30) {#if antecedente.categoria.id === categoria.id}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (454:34) {#if antecedente.activo === true}
+    function create_if_block_1$1(ctx) {
+    	let div6;
+    	let div1;
+    	let div0;
+    	let i0;
+    	let t0;
+    	let span;
+    	let t1_value = /*antecedente*/ ctx[24].nombre + "";
+    	let t1;
+    	let t2;
+    	let div4;
+    	let div3;
+    	let a;
+    	let i1;
+    	let t3;
+    	let div2;
+    	let button;
+    	let i2;
+    	let t4;
+    	let t5;
+    	let div5;
+    	let textarea;
+    	let t6;
+    	let mounted;
+    	let dispose;
+
+    	function textarea_input_handler() {
+    		/*textarea_input_handler*/ ctx[17].call(textarea, /*each_value_1*/ ctx[25], /*antecedente_index*/ ctx[26]);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div6 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			i0 = element("i");
+    			t0 = space();
+    			span = element("span");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			div4 = element("div");
+    			div3 = element("div");
+    			a = element("a");
+    			i1 = element("i");
+    			t3 = space();
+    			div2 = element("div");
+    			button = element("button");
+    			i2 = element("i");
+    			t4 = text("\r\n                                            Eliminar");
+    			t5 = space();
+    			div5 = element("div");
+    			textarea = element("textarea");
+    			t6 = space();
+    			attr_dev(i0, "class", "mdi mdi-history mdi-18px");
+    			add_location(i0, file$a, 461, 40, 17924);
+    			attr_dev(span, "data-bind", "text: nombre");
+    			add_location(span, file$a, 462, 40, 18004);
+    			attr_dev(div0, "class", "card-title");
+    			add_location(div0, file$a, 460, 38, 17858);
+    			attr_dev(div1, "class", "card-header");
+    			add_location(div1, file$a, 459, 36, 17793);
+    			attr_dev(i1, "class", "icon mdi  mdi-dots-vertical");
+    			add_location(i1, file$a, 475, 42, 18743);
+    			attr_dev(a, "href", "/");
+    			attr_dev(a, "data-toggle", "dropdown");
+    			attr_dev(a, "aria-haspopup", "true");
+    			attr_dev(a, "aria-expanded", "false");
+    			add_location(a, file$a, 469, 40, 18407);
+    			attr_dev(i2, "class", "mdi mdi-trash-can-outline");
+    			add_location(i2, file$a, 484, 45, 19313);
+    			attr_dev(button, "class", "dropdown-item text-danger");
+    			attr_dev(button, "data-bind", "click: eliminar");
+    			attr_dev(button, "type", "button");
+    			add_location(button, file$a, 480, 42, 19048);
+    			attr_dev(div2, "class", "dropdown-menu dropdown-menu-right");
+    			add_location(div2, file$a, 477, 40, 18872);
+    			attr_dev(div3, "class", "dropdown");
+    			add_location(div3, file$a, 468, 38, 18343);
+    			attr_dev(div4, "class", "card-controls");
+    			add_location(div4, file$a, 467, 36, 18276);
+    			attr_dev(textarea, "class", "form-control");
+    			set_style(textarea, "width", "100%");
+    			set_style(textarea, "display", "block");
+    			set_style(textarea, "height", "100px");
+    			attr_dev(textarea, "id", "exampleFormControlTextarea1");
+    			attr_dev(textarea, "rows", "5");
+    			attr_dev(textarea, "name", "Comentario");
+    			add_location(textarea, file$a, 491, 38, 19698);
+    			attr_dev(div5, "class", "card-body");
+    			add_location(div5, file$a, 490, 36, 19635);
+    			attr_dev(div6, "class", "card m-b-20 mt-3");
+    			set_style(div6, "box-shadow", "none");
+    			set_style(div6, "border", "1px grey solid");
+    			add_location(div6, file$a, 455, 37, 17565);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div6, anchor);
+    			append_dev(div6, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, i0);
+    			append_dev(div0, t0);
+    			append_dev(div0, span);
+    			append_dev(span, t1);
+    			append_dev(div6, t2);
+    			append_dev(div6, div4);
+    			append_dev(div4, div3);
+    			append_dev(div3, a);
+    			append_dev(a, i1);
+    			append_dev(div3, t3);
+    			append_dev(div3, div2);
+    			append_dev(div2, button);
+    			append_dev(button, i2);
+    			append_dev(button, t4);
+    			append_dev(div6, t5);
+    			append_dev(div6, div5);
+    			append_dev(div5, textarea);
+    			set_input_value(textarea, /*antecedente*/ ctx[24].descripcion);
+    			append_dev(div6, t6);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(textarea, "input", textarea_input_handler),
+    					listen_dev(textarea, "blur", /*actualizarPaciente*/ ctx[5], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*antecedentes*/ 16 && t1_value !== (t1_value = /*antecedente*/ ctx[24].nombre + "")) set_data_dev(t1, t1_value);
+
+    			if (dirty & /*antecedentes*/ 16) {
+    				set_input_value(textarea, /*antecedente*/ ctx[24].descripcion);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div6);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(454:34) {#if antecedente.activo === true}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (452:28) {#each antecedentes as antecedente}
+    function create_each_block_1(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*antecedente*/ ctx[24].categoria.id === /*categoria*/ ctx[21].id && create_if_block$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*antecedente*/ ctx[24].categoria.id === /*categoria*/ ctx[21].id) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$2(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(452:28) {#each antecedentes as antecedente}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (410:16) {#each categoriasAntecedentes as categoria}
+    function create_each_block$2(ctx) {
+    	let div8;
+    	let div1;
+    	let div0;
+    	let t0_value = /*categoria*/ ctx[21].nombre + "";
+    	let t0;
+    	let t1;
+    	let div7;
+    	let div2;
+    	let t2;
+    	let div6;
+    	let div5;
+    	let div4;
+    	let div3;
+    	let t3;
+    	let each_value_2 = /*antecedentes*/ ctx[4];
+    	validate_each_argument(each_value_2);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    	}
+
+    	let each_value_1 = /*antecedentes*/ ctx[4];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div8 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			div7 = element("div");
+    			div2 = element("div");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t2 = space();
+    			div6 = element("div");
+    			div5 = element("div");
+    			div4 = element("div");
+    			div3 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t3 = space();
+    			attr_dev(div0, "class", "card-title");
+    			attr_dev(div0, "data-bind", "text: nombre");
+    			add_location(div0, file$a, 415, 22, 15587);
+    			attr_dev(div1, "class", "card-header");
+    			add_location(div1, file$a, 414, 20, 15538);
+    			attr_dev(div2, "class", "botones-antecedentes");
+    			attr_dev(div2, "data-bind", "foreach: tiposAntecedentesFiltrados");
+    			add_location(div2, file$a, 420, 22, 15807);
+    			attr_dev(div3, "class", "col-lg-12");
+    			attr_dev(div3, "data-bind", "foreach: antecedentesFiltrados");
+    			add_location(div3, file$a, 445, 28, 17091);
+    			attr_dev(div4, "class", "row");
+    			add_location(div4, file$a, 444, 26, 17044);
+    			attr_dev(div5, "class", "col-12");
+    			add_location(div5, file$a, 443, 24, 16996);
+    			attr_dev(div6, "class", "row");
+    			add_location(div6, file$a, 442, 22, 16953);
+    			attr_dev(div7, "class", "card-body");
+    			add_location(div7, file$a, 419, 20, 15760);
+    			attr_dev(div8, "class", "card  m-b-30");
+    			set_style(div8, "box-shadow", "none");
+    			set_style(div8, "border", "#32325d solid 1px");
+    			add_location(div8, file$a, 410, 18, 15375);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div8, anchor);
+    			append_dev(div8, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div8, t1);
+    			append_dev(div8, div7);
+    			append_dev(div7, div2);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div2, null);
+    			}
+
+    			append_dev(div7, t2);
+    			append_dev(div7, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, div4);
+    			append_dev(div4, div3);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div3, null);
+    			}
+
+    			append_dev(div8, t3);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*categoriasAntecedentes*/ 8 && t0_value !== (t0_value = /*categoria*/ ctx[21].nombre + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*cambiarEstadoAntecedente, antecedentes, categoriasAntecedentes*/ 88) {
+    				each_value_2 = /*antecedentes*/ ctx[4];
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_2(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_2.length;
+    			}
+
+    			if (dirty & /*antecedentes, actualizarPaciente, categoriasAntecedentes*/ 56) {
+    				each_value_1 = /*antecedentes*/ ctx[4];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div3, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div8);
+    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(410:16) {#each categoriasAntecedentes as categoria}",
     		ctx
     	});
 
@@ -6972,7 +7773,7 @@ var app = (function () {
     	let t6;
     	let div30;
     	let div5;
-    	let h5;
+    	let h50;
     	let t8;
     	let p;
     	let t10;
@@ -7088,32 +7889,52 @@ var app = (function () {
     	let div49;
     	let t56;
     	let button7;
-    	let span;
+    	let span0;
     	let t58;
     	let modaldatospaciente;
+    	let t59;
+    	let div65;
+    	let div64;
+    	let div63;
+    	let div59;
+    	let h51;
+    	let t61;
+    	let button8;
+    	let span1;
+    	let t63;
+    	let div58;
+    	let div57;
+    	let div56;
+    	let i11;
+    	let t64;
+    	let i12;
+    	let t66;
+    	let div62;
+    	let div61;
+    	let div60;
     	let main_intro;
     	let current;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
 
     	function cabeceraperfil_edad_binding(value) {
-    		/*cabeceraperfil_edad_binding*/ ctx[5].call(null, value);
+    		/*cabeceraperfil_edad_binding*/ ctx[8].call(null, value);
     	}
 
     	function cabeceraperfil_nombres_binding(value) {
-    		/*cabeceraperfil_nombres_binding*/ ctx[6].call(null, value);
+    		/*cabeceraperfil_nombres_binding*/ ctx[9].call(null, value);
     	}
 
     	function cabeceraperfil_apellidos_binding(value) {
-    		/*cabeceraperfil_apellidos_binding*/ ctx[7].call(null, value);
+    		/*cabeceraperfil_apellidos_binding*/ ctx[10].call(null, value);
     	}
 
     	function cabeceraperfil_cedula_binding(value) {
-    		/*cabeceraperfil_cedula_binding*/ ctx[8].call(null, value);
+    		/*cabeceraperfil_cedula_binding*/ ctx[11].call(null, value);
     	}
 
     	function cabeceraperfil_id_binding(value) {
-    		/*cabeceraperfil_id_binding*/ ctx[9].call(null, value);
+    		/*cabeceraperfil_id_binding*/ ctx[12].call(null, value);
     	}
 
     	let cabeceraperfil_props = { paciente: /*paciente*/ ctx[0] };
@@ -7168,16 +7989,16 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let each_value = /*categoriasAntecedentes*/ ctx[3];
-    	validate_each_argument(each_value);
-    	let each_blocks = [];
+    	let each_value_3 = /*categoriasAntecedentes*/ ctx[3];
+    	validate_each_argument(each_value_3);
+    	let each_blocks_1 = [];
 
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
     	}
 
-    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
-    		each_blocks[i] = null;
+    	const out = i => transition_out(each_blocks_1[i], 1, 1, () => {
+    		each_blocks_1[i] = null;
     	});
 
     	modaldatospaciente = new ModalDatosPaciente({
@@ -7188,6 +8009,14 @@ var app = (function () {
     			},
     			$$inline: true
     		});
+
+    	let each_value = /*categoriasAntecedentes*/ ctx[3];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
 
     	const block = {
     		c: function create() {
@@ -7218,8 +8047,8 @@ var app = (function () {
     			t6 = space();
     			div30 = element("div");
     			div5 = element("div");
-    			h5 = element("h5");
-    			h5.textContent = "Archivos o Documentos";
+    			h50 = element("h5");
+    			h50.textContent = "Archivos o Documentos";
     			t8 = space();
     			p = element("p");
     			p.textContent = "Puede subir documentos del paciente, como fotos de\r\n                    laboratorios, recetas entre otros.";
@@ -7312,16 +8141,16 @@ var app = (function () {
     			div39 = element("div");
     			div38 = element("div");
     			i7 = element("i");
-    			t43 = text("\r\n                  Antecedentes ");
+    			t43 = text("\r\n                  Antecedentes  ");
     			button6 = element("button");
     			i8 = element("i");
-    			t44 = text(" AGREGAR");
+    			t44 = text(" AGREGAR  ");
     			t45 = space();
     			div42 = element("div");
     			div41 = element("div");
 
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
     			}
 
     			t46 = space();
@@ -7354,18 +8183,46 @@ var app = (function () {
     			div49 = element("div");
     			t56 = text("AirPlus\r\n                    ");
     			button7 = element("button");
-    			span = element("span");
-    			span.textContent = "×";
+    			span0 = element("span");
+    			span0.textContent = "×";
     			t58 = space();
     			create_component(modaldatospaciente.$$.fragment);
+    			t59 = space();
+    			div65 = element("div");
+    			div64 = element("div");
+    			div63 = element("div");
+    			div59 = element("div");
+    			h51 = element("h5");
+    			h51.textContent = "Antecedentes";
+    			t61 = space();
+    			button8 = element("button");
+    			span1 = element("span");
+    			span1.textContent = "×";
+    			t63 = space();
+    			div58 = element("div");
+    			div57 = element("div");
+    			div56 = element("div");
+    			i11 = element("i");
+    			t64 = space();
+    			i12 = element("i");
+    			i12.textContent = "listo y guardado";
+    			t66 = space();
+    			div62 = element("div");
+    			div61 = element("div");
+    			div60 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
     			attr_dev(i0, "class", "mdi mdi-comment-account-outline mdi-18px");
-    			add_location(i0, file$a, 92, 22, 2844);
+    			add_location(i0, file$a, 130, 22, 3740);
     			attr_dev(div0, "class", "avatar-title bg-dark rounded-circle");
-    			add_location(div0, file$a, 91, 20, 2771);
+    			add_location(div0, file$a, 129, 20, 3667);
     			attr_dev(div1, "class", "avatar mr-2 avatar-xs");
-    			add_location(div1, file$a, 90, 18, 2714);
+    			add_location(div1, file$a, 128, 18, 3610);
     			attr_dev(div2, "class", "card-header");
-    			add_location(div2, file$a, 89, 16, 2669);
+    			add_location(div2, file$a, 127, 16, 3565);
     			attr_dev(textarea, "class", "form-control mt-2");
     			set_style(textarea, "width", "100%");
     			set_style(textarea, "display", "block");
@@ -7374,155 +8231,157 @@ var app = (function () {
     			attr_dev(textarea, "rows", "3");
     			attr_dev(textarea, "data-bind", "value: paciente().comentario");
     			attr_dev(textarea, "name", "Comentario");
-    			add_location(textarea, file$a, 98, 18, 3078);
+    			add_location(textarea, file$a, 136, 18, 3974);
     			attr_dev(div3, "class", "form-group col-lg-12");
-    			add_location(div3, file$a, 97, 16, 3024);
+    			add_location(div3, file$a, 135, 16, 3920);
     			attr_dev(div4, "class", "card m-b-30");
-    			add_location(div4, file$a, 88, 14, 2626);
-    			attr_dev(h5, "class", "m-b-0");
-    			add_location(h5, file$a, 119, 18, 3854);
+    			add_location(div4, file$a, 126, 14, 3522);
+    			attr_dev(h50, "class", "m-b-0");
+    			add_location(h50, file$a, 157, 18, 4750);
     			attr_dev(p, "class", "m-b-0 mt-2 text-muted");
-    			add_location(p, file$a, 120, 18, 3918);
+    			add_location(p, file$a, 158, 18, 4814);
     			attr_dev(div5, "class", "card-header");
-    			add_location(div5, file$a, 118, 16, 3809);
+    			add_location(div5, file$a, 156, 16, 4705);
     			attr_dev(i1, "class", " mdi mdi-progress-upload");
-    			add_location(i1, file$a, 129, 24, 4353);
+    			add_location(i1, file$a, 167, 24, 5249);
     			attr_dev(h1, "class", "display-4");
-    			add_location(h1, file$a, 128, 22, 4305);
-    			add_location(br0, file$a, 131, 63, 4485);
-    			attr_dev(a0, "href", "#");
+    			add_location(h1, file$a, 166, 22, 5201);
+    			add_location(br0, file$a, 169, 63, 5381);
+    			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "btn btn-lg btn-primary");
-    			add_location(a0, file$a, 133, 24, 4560);
+    			add_location(a0, file$a, 171, 24, 5456);
     			attr_dev(div6, "class", "p-t-5");
-    			add_location(div6, file$a, 132, 22, 4515);
+    			add_location(div6, file$a, 170, 22, 5411);
     			attr_dev(div7, "class", "dz-message");
-    			add_location(div7, file$a, 127, 20, 4257);
+    			add_location(div7, file$a, 165, 20, 5153);
     			attr_dev(form, "class", "dropzone dz-clickable");
     			attr_dev(form, "action", "/");
-    			add_location(form, file$a, 126, 18, 4188);
-    			add_location(br1, file$a, 139, 18, 4779);
+    			add_location(form, file$a, 164, 18, 5084);
+    			add_location(br1, file$a, 177, 18, 5676);
     			attr_dev(i2, "class", "mdi mdi-24px mdi-file-pdf");
-    			add_location(i2, file$a, 146, 28, 5128);
+    			add_location(i2, file$a, 184, 28, 6025);
     			attr_dev(div8, "class", "avatar-title bg-dark rounded");
-    			add_location(div8, file$a, 145, 26, 5056);
+    			add_location(div8, file$a, 183, 26, 5953);
     			attr_dev(div9, "class", "avatar avatar-sm ");
-    			add_location(div9, file$a, 144, 24, 4997);
+    			add_location(div9, file$a, 182, 24, 5894);
     			attr_dev(div10, "class", "m-r-20");
-    			add_location(div10, file$a, 143, 22, 4951);
-    			add_location(div11, file$a, 151, 24, 5327);
+    			add_location(div10, file$a, 181, 22, 5848);
+    			add_location(div11, file$a, 189, 24, 6224);
     			attr_dev(div12, "class", "text-muted");
-    			add_location(div12, file$a, 152, 24, 5376);
+    			add_location(div12, file$a, 190, 24, 6273);
     			attr_dev(div13, "class", "");
-    			add_location(div13, file$a, 150, 22, 5287);
+    			add_location(div13, file$a, 188, 22, 6184);
     			attr_dev(i3, "class", "mdi  mdi-dots-vertical mdi-18px");
-    			add_location(i3, file$a, 163, 28, 5818);
-    			attr_dev(a1, "href", "#");
+    			add_location(i3, file$a, 201, 28, 6716);
+    			attr_dev(a1, "href", "#!");
     			attr_dev(a1, "data-toggle", "dropdown");
     			attr_dev(a1, "aria-haspopup", "true");
     			attr_dev(a1, "aria-expanded", "false");
-    			add_location(a1, file$a, 157, 26, 5566);
+    			add_location(a1, file$a, 195, 26, 6463);
     			attr_dev(button0, "class", "dropdown-item");
     			attr_dev(button0, "type", "button");
-    			add_location(button0, file$a, 167, 28, 6002);
+    			add_location(button0, file$a, 205, 28, 6900);
     			attr_dev(button1, "class", "dropdown-item");
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$a, 170, 28, 6153);
+    			add_location(button1, file$a, 208, 28, 7051);
     			attr_dev(button2, "class", "dropdown-item");
     			attr_dev(button2, "type", "button");
-    			add_location(button2, file$a, 173, 28, 6312);
+    			add_location(button2, file$a, 211, 28, 7210);
     			attr_dev(div14, "class", "dropdown-menu dropdown-menu-right");
-    			add_location(div14, file$a, 166, 26, 5925);
+    			add_location(div14, file$a, 204, 26, 6823);
     			attr_dev(div15, "class", "dropdown");
-    			add_location(div15, file$a, 156, 24, 5516);
+    			add_location(div15, file$a, 194, 24, 6413);
     			attr_dev(div16, "class", "ml-auto");
-    			add_location(div16, file$a, 155, 22, 5469);
+    			add_location(div16, file$a, 193, 22, 6366);
     			attr_dev(div17, "class", "list-group-item d-flex  align-items-center");
-    			add_location(div17, file$a, 142, 20, 4871);
+    			add_location(div17, file$a, 180, 20, 5768);
     			attr_dev(i4, "class", "mdi mdi-24px mdi-file-document-box");
-    			add_location(i4, file$a, 184, 28, 6849);
+    			add_location(i4, file$a, 222, 28, 7747);
     			attr_dev(div18, "class", "avatar-title bg-dark rounded");
-    			add_location(div18, file$a, 183, 26, 6777);
+    			add_location(div18, file$a, 221, 26, 7675);
     			attr_dev(div19, "class", "avatar avatar-sm ");
-    			add_location(div19, file$a, 182, 24, 6718);
+    			add_location(div19, file$a, 220, 24, 7616);
     			attr_dev(div20, "class", "m-r-20");
-    			add_location(div20, file$a, 181, 22, 6672);
-    			add_location(div21, file$a, 189, 24, 7057);
+    			add_location(div20, file$a, 219, 22, 7570);
+    			add_location(div21, file$a, 227, 24, 7955);
     			attr_dev(div22, "class", "text-muted");
-    			add_location(div22, file$a, 190, 24, 7110);
+    			add_location(div22, file$a, 228, 24, 8008);
     			attr_dev(div23, "class", "");
-    			add_location(div23, file$a, 188, 22, 7017);
+    			add_location(div23, file$a, 226, 22, 7915);
     			attr_dev(i5, "class", "mdi  mdi-dots-vertical mdi-18px");
-    			add_location(i5, file$a, 201, 28, 7549);
-    			attr_dev(a2, "href", "#");
+    			add_location(i5, file$a, 239, 28, 8448);
+    			attr_dev(a2, "href", "#!");
     			attr_dev(a2, "data-toggle", "dropdown");
     			attr_dev(a2, "aria-haspopup", "true");
     			attr_dev(a2, "aria-expanded", "false");
-    			add_location(a2, file$a, 195, 26, 7297);
+    			add_location(a2, file$a, 233, 26, 8195);
     			attr_dev(button3, "class", "dropdown-item");
     			attr_dev(button3, "type", "button");
-    			add_location(button3, file$a, 205, 28, 7733);
+    			add_location(button3, file$a, 243, 28, 8632);
     			attr_dev(button4, "class", "dropdown-item");
     			attr_dev(button4, "type", "button");
-    			add_location(button4, file$a, 208, 28, 7884);
+    			add_location(button4, file$a, 246, 28, 8783);
     			attr_dev(button5, "class", "dropdown-item");
     			attr_dev(button5, "type", "button");
-    			add_location(button5, file$a, 211, 28, 8043);
+    			add_location(button5, file$a, 249, 28, 8942);
     			attr_dev(div24, "class", "dropdown-menu dropdown-menu-right");
-    			add_location(div24, file$a, 204, 26, 7656);
+    			add_location(div24, file$a, 242, 26, 8555);
     			attr_dev(div25, "class", "dropdown");
-    			add_location(div25, file$a, 194, 24, 7247);
+    			add_location(div25, file$a, 232, 24, 8145);
     			attr_dev(div26, "class", "ml-auto");
-    			add_location(div26, file$a, 193, 22, 7200);
+    			add_location(div26, file$a, 231, 22, 8098);
     			attr_dev(div27, "class", "list-group-item d-flex  align-items-center");
-    			add_location(div27, file$a, 180, 20, 6592);
+    			add_location(div27, file$a, 218, 20, 7490);
     			attr_dev(div28, "class", "list-group list-group-flush ");
-    			add_location(div28, file$a, 141, 18, 4807);
+    			add_location(div28, file$a, 179, 18, 5704);
     			attr_dev(div29, "class", "card-body");
-    			add_location(div29, file$a, 125, 16, 4145);
+    			add_location(div29, file$a, 163, 16, 5041);
     			attr_dev(div30, "class", "card m-b-30");
-    			add_location(div30, file$a, 117, 14, 3766);
+    			add_location(div30, file$a, 155, 14, 4662);
     			attr_dev(div31, "class", "col-lg-3 order-lg-1 order-sm-3");
-    			add_location(div31, file$a, 87, 12, 2566);
+    			add_location(div31, file$a, 125, 12, 3462);
     			attr_dev(i6, "class", "mdi mdi-progress-check mdi-18px");
-    			add_location(i6, file$a, 228, 22, 8684);
+    			add_location(i6, file$a, 266, 22, 9583);
     			attr_dev(div32, "class", "avatar-title bg-dark rounded-circle");
-    			add_location(div32, file$a, 227, 20, 8611);
+    			add_location(div32, file$a, 265, 20, 9510);
     			attr_dev(div33, "class", "avatar mr-2 avatar-xs");
-    			add_location(div33, file$a, 226, 18, 8554);
+    			add_location(div33, file$a, 264, 18, 9453);
     			attr_dev(div34, "class", "card-header");
-    			add_location(div34, file$a, 225, 16, 8509);
+    			add_location(div34, file$a, 263, 16, 9408);
     			attr_dev(div35, "class", "card-body");
-    			add_location(div35, file$a, 233, 16, 8865);
+    			add_location(div35, file$a, 271, 16, 9764);
     			attr_dev(div36, "class", "card m-b-30");
-    			add_location(div36, file$a, 224, 14, 8466);
+    			add_location(div36, file$a, 262, 14, 9365);
     			attr_dev(div37, "class", "col-md-5 order-2 order-sm-1");
-    			add_location(div37, file$a, 223, 12, 8409);
+    			add_location(div37, file$a, 261, 12, 9308);
     			attr_dev(i7, "class", "mdi mdi-history mdi-18px");
-    			add_location(i7, file$a, 248, 22, 9920);
+    			add_location(i7, file$a, 286, 22, 10819);
     			attr_dev(div38, "class", "avatar-title bg-dark rounded-circle");
-    			add_location(div38, file$a, 247, 20, 9847);
+    			add_location(div38, file$a, 285, 20, 10746);
     			attr_dev(div39, "class", "avatar mr-2 avatar-xs");
-    			add_location(div39, file$a, 246, 18, 9790);
+    			add_location(div39, file$a, 284, 18, 10689);
     			attr_dev(i8, "class", "mdi mdi-plus");
-    			add_location(i8, file$a, 251, 78, 10092);
+    			add_location(i8, file$a, 293, 21, 11135);
     			attr_dev(button6, "class", "btn btn-outline-primary btn-sm");
-    			add_location(button6, file$a, 251, 31, 10045);
+    			attr_dev(button6, "data-toggle", "modal");
+    			attr_dev(button6, "data-target", "#modalAntecedentes");
+    			add_location(button6, file$a, 289, 37, 10950);
     			attr_dev(div40, "class", "card-header");
-    			add_location(div40, file$a, 245, 16, 9745);
+    			add_location(div40, file$a, 283, 16, 10644);
     			attr_dev(div41, "class", "atenciones-vnc mb-3");
-    			add_location(div41, file$a, 254, 18, 10222);
+    			add_location(div41, file$a, 297, 18, 11290);
     			attr_dev(div42, "class", "card-body");
-    			add_location(div42, file$a, 253, 16, 10179);
+    			add_location(div42, file$a, 296, 16, 11247);
     			attr_dev(div43, "class", "card m-b-30");
-    			add_location(div43, file$a, 244, 14, 9702);
+    			add_location(div43, file$a, 282, 14, 10601);
     			attr_dev(i9, "class", "mdi mdi-comment-account-outline mdi-18px");
-    			add_location(i9, file$a, 271, 22, 10956);
+    			add_location(i9, file$a, 314, 22, 12012);
     			attr_dev(div44, "class", "avatar-title bg-dark rounded-circle");
-    			add_location(div44, file$a, 270, 20, 10883);
+    			add_location(div44, file$a, 313, 20, 11939);
     			attr_dev(div45, "class", "avatar mr-2 avatar-xs");
-    			add_location(div45, file$a, 269, 18, 10826);
+    			add_location(div45, file$a, 312, 18, 11882);
     			attr_dev(div46, "class", " card-header");
-    			add_location(div46, file$a, 268, 16, 10780);
+    			add_location(div46, file$a, 311, 16, 11836);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "name", "");
@@ -7530,54 +8389,96 @@ var app = (function () {
     			attr_dev(input, "data-toggle", "dropdown");
     			attr_dev(input, "aria-haspopup", "true");
     			attr_dev(input, "aria-expanded", "false");
-    			add_location(input, file$a, 279, 20, 11252);
-    			attr_dev(a3, "href", "#");
-    			add_location(a3, file$a, 291, 26, 11743);
-    			add_location(li0, file$a, 290, 24, 11711);
-    			attr_dev(a4, "href", "#");
-    			add_location(a4, file$a, 294, 26, 11857);
-    			add_location(li1, file$a, 293, 24, 11825);
+    			add_location(input, file$a, 322, 20, 12308);
+    			attr_dev(a3, "href", "#!");
+    			add_location(a3, file$a, 334, 26, 12799);
+    			add_location(li0, file$a, 333, 24, 12767);
+    			attr_dev(a4, "href", "#!");
+    			add_location(a4, file$a, 337, 26, 12914);
+    			add_location(li1, file$a, 336, 24, 12882);
     			attr_dev(div47, "class", "contenidoLista");
-    			add_location(div47, file$a, 289, 22, 11657);
+    			add_location(div47, file$a, 332, 22, 12713);
     			attr_dev(i10, "class", "mdi mdi-plus");
-    			add_location(i10, file$a, 299, 27, 12054);
-    			attr_dev(a5, "href", "#");
-    			add_location(a5, file$a, 298, 24, 12014);
+    			add_location(i10, file$a, 342, 27, 13113);
+    			attr_dev(a5, "href", "#!");
+    			add_location(a5, file$a, 341, 24, 13072);
     			attr_dev(li2, "class", "defecto");
-    			add_location(li2, file$a, 297, 22, 11968);
+    			add_location(li2, file$a, 340, 22, 13026);
     			attr_dev(ul, "class", "lista-buscador dropdown-menu svelte-1iwy51i");
     			attr_dev(ul, "id", "buscador");
-    			add_location(ul, file$a, 288, 20, 11578);
+    			add_location(ul, file$a, 331, 20, 12634);
     			attr_dev(div48, "class", "form-group buscardor dropdown");
-    			add_location(div48, file$a, 278, 18, 11187);
-    			attr_dev(span, "aria-hidden", "true");
-    			add_location(span, file$a, 315, 22, 12635);
+    			add_location(div48, file$a, 321, 18, 12243);
+    			attr_dev(span0, "aria-hidden", "true");
+    			add_location(span0, file$a, 358, 22, 13694);
     			attr_dev(button7, "type", "button");
     			attr_dev(button7, "class", "close");
     			attr_dev(button7, "data-dismiss", "alert");
     			attr_dev(button7, "aria-label", "Close");
-    			add_location(button7, file$a, 309, 20, 12421);
+    			add_location(button7, file$a, 352, 20, 13480);
     			attr_dev(div49, "class", "alert alert-secondary alert-dismissible fade show");
     			attr_dev(div49, "role", "alert");
-    			add_location(div49, file$a, 304, 18, 12232);
+    			add_location(div49, file$a, 347, 18, 13291);
     			attr_dev(div50, "class", "col-12");
-    			add_location(div50, file$a, 277, 16, 11147);
+    			add_location(div50, file$a, 320, 16, 12203);
     			attr_dev(div51, "class", "card m-b-30");
-    			add_location(div51, file$a, 267, 14, 10737);
+    			add_location(div51, file$a, 310, 14, 11793);
     			attr_dev(div52, "class", "col-md-4 order-lg-12 order-sm-2");
-    			add_location(div52, file$a, 243, 12, 9641);
+    			add_location(div52, file$a, 281, 12, 10540);
     			attr_dev(div53, "class", "row");
-    			add_location(div53, file$a, 86, 10, 2535);
+    			add_location(div53, file$a, 124, 10, 3431);
     			attr_dev(div54, "class", "col-md-12");
-    			add_location(div54, file$a, 85, 8, 2500);
+    			add_location(div54, file$a, 123, 8, 3396);
     			attr_dev(div55, "class", "pull-up");
-    			add_location(div55, file$a, 84, 6, 2469);
+    			add_location(div55, file$a, 122, 6, 3365);
     			attr_dev(section0, "class", "admin-content");
-    			add_location(section0, file$a, 75, 4, 2202);
+    			add_location(section0, file$a, 113, 4, 3098);
+    			attr_dev(h51, "class", "modal-title");
+    			attr_dev(h51, "id", "modalAntecedentes");
+    			add_location(h51, file$a, 386, 12, 14433);
+    			attr_dev(span1, "aria-hidden", "true");
+    			add_location(span1, file$a, 393, 14, 14677);
+    			attr_dev(button8, "type", "button");
+    			attr_dev(button8, "class", "close");
+    			attr_dev(button8, "data-dismiss", "modal");
+    			attr_dev(button8, "aria-label", "Close");
+    			add_location(button8, file$a, 387, 12, 14511);
+    			attr_dev(i11, "class", "mdi mdi-check-all");
+    			add_location(i11, file$a, 401, 18, 15009);
+    			add_location(i12, file$a, 401, 50, 15041);
+    			attr_dev(div56, "class", "guardando mr-2 text-success");
+    			attr_dev(div56, "data-bind", "html: content, class: contentClass");
+    			add_location(div56, file$a, 397, 16, 14845);
+    			attr_dev(div57, "class", "guardar-documento");
+    			add_location(div57, file$a, 396, 14, 14796);
+    			set_style(div58, "margin-right", "40px");
+    			add_location(div58, file$a, 395, 12, 14747);
+    			attr_dev(div59, "class", "modal-header");
+    			add_location(div59, file$a, 385, 10, 14393);
+    			attr_dev(div60, "class", "col-lg-12");
+    			attr_dev(div60, "data-bind", "foreach: gruposAntecedentes");
+    			add_location(div60, file$a, 408, 14, 15231);
+    			attr_dev(div61, "class", "row");
+    			add_location(div61, file$a, 407, 12, 15198);
+    			attr_dev(div62, "class", "modal-body");
+    			add_location(div62, file$a, 406, 10, 15160);
+    			attr_dev(div63, "class", "modal-content");
+    			add_location(div63, file$a, 384, 8, 14354);
+    			attr_dev(div64, "class", "modal-dialog");
+    			attr_dev(div64, "role", "document");
+    			add_location(div64, file$a, 383, 6, 14302);
+    			attr_dev(div65, "class", "modal fade modal-slide-right");
+    			attr_dev(div65, "id", "modalAntecedentes");
+    			attr_dev(div65, "tabindex", "-1");
+    			attr_dev(div65, "role", "dialog");
+    			attr_dev(div65, "aria-labelledby", "modalAntecedentes");
+    			set_style(div65, "display", "none");
+    			attr_dev(div65, "aria-hidden", "true");
+    			add_location(div65, file$a, 374, 4, 14068);
     			attr_dev(section1, "class", "admin-content");
-    			add_location(section1, file$a, 74, 2, 2165);
+    			add_location(section1, file$a, 112, 2, 3061);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$a, 72, 0, 2094);
+    			add_location(main, file$a, 110, 0, 2990);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7610,7 +8511,7 @@ var app = (function () {
     			append_dev(div31, t6);
     			append_dev(div31, div30);
     			append_dev(div30, div5);
-    			append_dev(div5, h5);
+    			append_dev(div5, h50);
     			append_dev(div5, t8);
     			append_dev(div5, p);
     			append_dev(div30, t10);
@@ -7699,8 +8600,8 @@ var app = (function () {
     			append_dev(div43, div42);
     			append_dev(div42, div41);
 
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div41, null);
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div41, null);
     			}
 
     			append_dev(div52, t46);
@@ -7731,9 +8632,34 @@ var app = (function () {
     			append_dev(div50, div49);
     			append_dev(div49, t56);
     			append_dev(div49, button7);
-    			append_dev(button7, span);
+    			append_dev(button7, span0);
     			append_dev(section1, t58);
     			mount_component(modaldatospaciente, section1, null);
+    			append_dev(section1, t59);
+    			append_dev(section1, div65);
+    			append_dev(div65, div64);
+    			append_dev(div64, div63);
+    			append_dev(div63, div59);
+    			append_dev(div59, h51);
+    			append_dev(div59, t61);
+    			append_dev(div59, button8);
+    			append_dev(button8, span1);
+    			append_dev(div59, t63);
+    			append_dev(div59, div58);
+    			append_dev(div58, div57);
+    			append_dev(div57, div56);
+    			append_dev(div56, i11);
+    			append_dev(div56, t64);
+    			append_dev(div56, i12);
+    			append_dev(div63, t66);
+    			append_dev(div63, div62);
+    			append_dev(div62, div61);
+    			append_dev(div61, div60);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div60, null);
+    			}
+
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -7773,27 +8699,27 @@ var app = (function () {
     			cabeceraperfil.$set(cabeceraperfil_changes);
 
     			if (dirty & /*categoriasAntecedentes, paciente*/ 9) {
-    				each_value = /*categoriasAntecedentes*/ ctx[3];
-    				validate_each_argument(each_value);
+    				each_value_3 = /*categoriasAntecedentes*/ ctx[3];
+    				validate_each_argument(each_value_3);
     				let i;
 
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$1(ctx, each_value, i);
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3(ctx, each_value_3, i);
 
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    						transition_in(each_blocks[i], 1);
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    						transition_in(each_blocks_1[i], 1);
     					} else {
-    						each_blocks[i] = create_each_block$1(child_ctx);
-    						each_blocks[i].c();
-    						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div41, null);
+    						each_blocks_1[i] = create_each_block_3(child_ctx);
+    						each_blocks_1[i].c();
+    						transition_in(each_blocks_1[i], 1);
+    						each_blocks_1[i].m(div41, null);
     					}
     				}
 
     				group_outros();
 
-    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    				for (i = each_value_3.length; i < each_blocks_1.length; i += 1) {
     					out(i);
     				}
 
@@ -7805,6 +8731,30 @@ var app = (function () {
     			if (dirty & /*edad*/ 2) modaldatospaciente_changes.edad = /*edad*/ ctx[1];
     			if (dirty & /*seguro*/ 4) modaldatospaciente_changes.seguro = /*seguro*/ ctx[2];
     			modaldatospaciente.$set(modaldatospaciente_changes);
+
+    			if (dirty & /*antecedentes, actualizarPaciente, categoriasAntecedentes, cambiarEstadoAntecedente*/ 120) {
+    				each_value = /*categoriasAntecedentes*/ ctx[3];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div60, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -7814,8 +8764,8 @@ var app = (function () {
     			transition_in(ultimosvitales.$$.fragment, local);
     			transition_in(evoluciones.$$.fragment, local);
 
-    			for (let i = 0; i < each_value.length; i += 1) {
-    				transition_in(each_blocks[i]);
+    			for (let i = 0; i < each_value_3.length; i += 1) {
+    				transition_in(each_blocks_1[i]);
     			}
 
     			transition_in(modaldatospaciente.$$.fragment, local);
@@ -7835,10 +8785,10 @@ var app = (function () {
     			transition_out(cabeceraperfil.$$.fragment, local);
     			transition_out(ultimosvitales.$$.fragment, local);
     			transition_out(evoluciones.$$.fragment, local);
-    			each_blocks = each_blocks.filter(Boolean);
+    			each_blocks_1 = each_blocks_1.filter(Boolean);
 
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				transition_out(each_blocks[i]);
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				transition_out(each_blocks_1[i]);
     			}
 
     			transition_out(modaldatospaciente.$$.fragment, local);
@@ -7852,8 +8802,9 @@ var app = (function () {
     			destroy_component(cabeceraperfil);
     			destroy_component(ultimosvitales);
     			destroy_component(evoluciones);
-    			destroy_each(each_blocks, detaching);
+    			destroy_each(each_blocks_1, detaching);
     			destroy_component(modaldatospaciente);
+    			destroy_each(each_blocks, detaching);
     		}
     	};
 
@@ -7889,6 +8840,42 @@ var app = (function () {
     	let edad = "";
     	let seguro = "";
     	let categoriasAntecedentes = [];
+    	let antecedentes = [];
+
+    	function actualizarPaciente() {
+    		$$invalidate(0, paciente.antecedentes = antecedentes, paciente);
+
+    		const config = {
+    			method: "put",
+    			url: `${url}/pacientes/${paciente.id}`,
+    			data: paciente
+    		};
+
+    		axios$1(config).then(res => {
+    			console.log(res.data);
+    		}).catch(error => {
+    			console.error(error);
+    		});
+    	}
+
+    	function cambiarEstadoAntecedente(idAntecedente) {
+    		const index = antecedentes.findIndex(x => x.id === idAntecedente);
+    		$$invalidate(4, antecedentes[index].activo = true, antecedentes);
+    	}
+
+    	function cargarAntecedentes() {
+    		const config = {
+    			method: "get",
+    			url: `${url}/antecedentes`
+    		};
+
+    		axios$1(config).then(res => {
+    			$$invalidate(4, antecedentes = res.data);
+    			console.log(res.data);
+    		}).catch(error => {
+    			console.error(error);
+    		});
+    	}
 
     	function cargarCategoriasAntecedentes() {
     		const config = {
@@ -7922,6 +8909,7 @@ var app = (function () {
     		jQuery("html, body").animate({ scrollTop: 0 }, "slow");
     		cargarPaciente();
     		cargarCategoriasAntecedentes();
+    		cargarAntecedentes();
     	});
 
     	const writable_props = ["params"];
@@ -7965,13 +8953,20 @@ var app = (function () {
     		$$invalidate(3, categoriasAntecedentes);
     	}
 
-    	function tarjetaantecedentes_paciente_binding(value) {
+    	function tarjetaantecedentes_antecedentes_binding(value) {
     		paciente.antecedentes = value;
     		$$invalidate(0, paciente);
     	}
 
+    	const click_handler = antecedente => cambiarEstadoAntecedente(antecedente.id);
+
+    	function textarea_input_handler(each_value_1, antecedente_index) {
+    		each_value_1[antecedente_index].descripcion = this.value;
+    		$$invalidate(4, antecedentes);
+    	}
+
     	$$self.$$set = $$props => {
-    		if ("params" in $$props) $$invalidate(4, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(7, params = $$props.params);
     	};
 
     	$$self.$capture_state = () => ({
@@ -7993,17 +8988,22 @@ var app = (function () {
     		edad,
     		seguro,
     		categoriasAntecedentes,
+    		antecedentes,
+    		actualizarPaciente,
+    		cambiarEstadoAntecedente,
+    		cargarAntecedentes,
     		cargarCategoriasAntecedentes,
     		cargarPaciente,
     		calcularEdad
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("params" in $$props) $$invalidate(4, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(7, params = $$props.params);
     		if ("paciente" in $$props) $$invalidate(0, paciente = $$props.paciente);
     		if ("edad" in $$props) $$invalidate(1, edad = $$props.edad);
     		if ("seguro" in $$props) $$invalidate(2, seguro = $$props.seguro);
     		if ("categoriasAntecedentes" in $$props) $$invalidate(3, categoriasAntecedentes = $$props.categoriasAntecedentes);
+    		if ("antecedentes" in $$props) $$invalidate(4, antecedentes = $$props.antecedentes);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -8015,6 +9015,9 @@ var app = (function () {
     		edad,
     		seguro,
     		categoriasAntecedentes,
+    		antecedentes,
+    		actualizarPaciente,
+    		cambiarEstadoAntecedente,
     		params,
     		cabeceraperfil_edad_binding,
     		cabeceraperfil_nombres_binding,
@@ -8023,14 +9026,16 @@ var app = (function () {
     		cabeceraperfil_id_binding,
     		tarjetaantecedentes_id_binding,
     		tarjetaantecedentes_nombre_binding,
-    		tarjetaantecedentes_paciente_binding
+    		tarjetaantecedentes_antecedentes_binding,
+    		click_handler,
+    		textarea_input_handler
     	];
     }
 
     class PacientePerfil extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$b, safe_not_equal, { params: 4 });
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, { params: 7 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -8052,14 +9057,14 @@ var app = (function () {
     /* src\componentes\Select2.svelte generated by Svelte v3.29.0 */
     const file$b = "src\\componentes\\Select2.svelte";
 
-    function get_each_context$2(ctx, list, i) {
+    function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[5] = list[i];
     	return child_ctx;
     }
 
     // (23:4) {#each datos as item}
-    function create_each_block$2(ctx) {
+    function create_each_block$3(ctx) {
     	let option;
     	let t_value = /*item*/ ctx[5].nombre + "";
     	let t;
@@ -8092,7 +9097,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$2.name,
+    		id: create_each_block$3.name,
     		type: "each",
     		source: "(23:4) {#each datos as item}",
     		ctx
@@ -8115,7 +9120,7 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
     	}
 
     	const block = {
@@ -8173,12 +9178,12 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$2(ctx, each_value, i);
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i] = create_each_block$3(child_ctx);
     						each_blocks[i].c();
     						each_blocks[i].m(select, null);
     					}
@@ -12081,20 +13086,20 @@ var app = (function () {
     const { console: console_1$7 } = globals;
     const file$i = "src\\Pages\\AtencionMedica\\HistoriaClinica.svelte";
 
-    function get_each_context$3(ctx, list, i) {
+    function get_each_context$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[13] = list[i];
     	return child_ctx;
     }
 
-    function get_each_context_1(ctx, list, i) {
+    function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[16] = list[i];
     	return child_ctx;
     }
 
     // (357:44) {#each filtroDiagnostico as diagnostico}
-    function create_each_block_1(ctx) {
+    function create_each_block_1$1(ctx) {
     	let li;
     	let div;
     	let span;
@@ -12154,7 +13159,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block_1.name,
+    		id: create_each_block_1$1.name,
     		type: "each",
     		source: "(357:44) {#each filtroDiagnostico as diagnostico}",
     		ctx
@@ -12164,7 +13169,7 @@ var app = (function () {
     }
 
     // (376:36) {#each diagnosticosSeleccionados as item}
-    function create_each_block$3(ctx) {
+    function create_each_block$4(ctx) {
     	let li;
     	let span0;
     	let t0_value = /*item*/ ctx[13].c + "";
@@ -12248,7 +13253,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$3.name,
+    		id: create_each_block$4.name,
     		type: "each",
     		source: "(376:36) {#each diagnosticosSeleccionados as item}",
     		ctx
@@ -12258,7 +13263,7 @@ var app = (function () {
     }
 
     // (385:36) {#if diagnosticosSeleccionados.length === 0}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let div2;
     	let div1;
     	let div0;
@@ -12303,7 +13308,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(385:36) {#if diagnosticosSeleccionados.length === 0}",
     		ctx
@@ -12610,7 +13615,7 @@ var app = (function () {
     	let each_blocks_1 = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
-    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    		each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
     	}
 
     	let each_value = /*diagnosticosSeleccionados*/ ctx[4];
@@ -12618,10 +13623,10 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
     	}
 
-    	let if_block = /*diagnosticosSeleccionados*/ ctx[4].length === 0 && create_if_block$2(ctx);
+    	let if_block = /*diagnosticosSeleccionados*/ ctx[4].length === 0 && create_if_block$3(ctx);
     	ordenesmedicas = new OrdenesMedicas({ $$inline: true });
 
     	modaldatospaciente = new ModalDatosPaciente({
@@ -13789,12 +14794,12 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value_1.length; i += 1) {
-    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
 
     					if (each_blocks_1[i]) {
     						each_blocks_1[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i] = create_each_block_1$1(child_ctx);
     						each_blocks_1[i].c();
     						each_blocks_1[i].m(div85, null);
     					}
@@ -13813,12 +14818,12 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$3(ctx, each_value, i);
+    					const child_ctx = get_each_context$4(ctx, each_value, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i] = create_each_block$4(child_ctx);
     						each_blocks[i].c();
     						each_blocks[i].m(ul1, t100);
     					}
@@ -13833,7 +14838,7 @@ var app = (function () {
 
     			if (/*diagnosticosSeleccionados*/ ctx[4].length === 0) {
     				if (if_block) ; else {
-    					if_block = create_if_block$2(ctx);
+    					if_block = create_if_block$3(ctx);
     					if_block.c();
     					if_block.m(ul1, null);
     				}
