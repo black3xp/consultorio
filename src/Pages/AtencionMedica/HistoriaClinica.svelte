@@ -26,6 +26,7 @@
 
     const guardarHistoria = () => {
         historia.diagnosticos = diagnosticosSeleccionados;
+        delete historia.id;
         console.log(historia);
     };
 
