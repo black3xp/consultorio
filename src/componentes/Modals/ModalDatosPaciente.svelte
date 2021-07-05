@@ -6,7 +6,6 @@
     export let seguro;
 
     onMount(() => {
-        console.log(paciente);
     });
 </script>
 <div class="modal fade modal-slide-right" id="modalDatosPersonales" tabindex="-1" role="dialog"

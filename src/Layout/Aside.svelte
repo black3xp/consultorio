@@ -6,13 +6,8 @@
   <aside class="admin-sidebar">
     <div class="admin-sidebar-brand">
       <!-- begin sidebar branding-->
-      <img
-        class="admin-brand-logo"
-        src="assets/img/logo.svg"
-        width="40"
-        alt="atmos Logo" />
       <span class="admin-brand-content">
-        <a href="/" use:link>atmos</a>
+        <a href="/" use:link>xmedical pro</a>
       </span>
       <!-- end sidebar branding-->
       <div class="ml-auto">

@@ -2,14 +2,14 @@
   import { fade } from "svelte/transition";
   import { push } from "svelte-spa-router";
   import axios from "axios";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import { url } from "../../util/index";
 
   import Header from "../../Layout/Header.svelte";
   import Aside from "../../Layout/Aside.svelte";
   import Evoluciones from "../../componentes/Evoluciones.svelte";
   import UltimosVitales from "../../componentes/UltimosVitales.svelte";
-  import Antecedente from "../../componentes/Antecedente.svelte";
+  import Loading from "../../componentes/Loading.svelte";
   import CabeceraPerfil from "../../componentes/CabeceraPerfil.svelte";
   import ModalDatosPaciente from "../../componentes/Modals/ModalDatosPaciente.svelte";
   import TarjetaAntecedentes from "../../componentes/TarjetaAntecedentes.svelte";
@@ -21,7 +21,7 @@
   let categoriasAntecedentes = [];
   let antecedentes = [];
 
-  function actualizarPaciente() {
+  function actualizarAntecedentesPaciente() {
     paciente.antecedentes = antecedentes;
     const config = {
       method: 'put',
@@ -37,24 +37,39 @@
       })
   }
 
-  function cambiarEstadoAntecedente(idAntecedente) {
-    const index = antecedentes.findIndex(x => x.id === idAntecedente)
-    antecedentes[index].activo = true;
+  const combinarAntecedentes = () => {
+    for (const ant of paciente.antecedentes) {
+      if (ant.activo == true) {
+        const index = antecedentes.findIndex((x) => x.id === ant.id);
+        antecedentes[index].activo = ant.activo;
+        antecedentes[index].descripcion = ant.descripcion;
+      }
+    }
+  };
+
+  function eliminarAntecedente(idAntecedente) {
+    const index = antecedentes.findIndex((x) => x.id === idAntecedente);
+    antecedentes[index].activo = false;
+    actualizarAntecedentesPaciente()
   }
 
-  function cargarAntecedentes() {
+  function cambiarEstadoAntecedente(idAntecedente) {
+    const index = antecedentes.findIndex((x) => x.id === idAntecedente);
+    antecedentes[index].activo = true;
+    actualizarAntecedentesPaciente()
+  }
+
+  async function cargarAntecedentes() {
     const config = {
       method: "get",
       url: `${url}/antecedentes`,
     };
-    axios(config)
-      .then((res) => {
-        antecedentes = res.data;
-        console.log(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    let promesa = await axios(config)
+    if(promesa.status == 200) {
+      antecedentes = promesa.data;
+    }else {
+      console.error(promesa.statusText)
+    }
   }
 
   function cargarCategoriasAntecedentes() {
@@ -63,26 +78,25 @@
       url: `${url}/categorias/antecedentes`,
     };
     axios(config).then((res) => {
-      console.log(res.data);
       categoriasAntecedentes = res.data;
     });
   }
 
-  function cargarPaciente() {
+  async function cargarPaciente() {
     const config = {
       method: "get",
       url: `${url}/pacientes/${params.id}`,
     };
-    axios(config)
-      .then((res) => {
-        paciente = res.data;
+    try {
+      let promesa = await axios(config);
+      if (promesa.status == 200) {
+        paciente = promesa.data;
         edad = calcularEdad(paciente.fechaNacimiento);
         seguro = paciente.seguroMedico[0].nombre;
-        console.log(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function calcularEdad(fecha) {
@@ -98,11 +112,12 @@
     return edad;
   }
 
-  onMount(() => {
+  onMount(async () => {
     jQuery("html, body").animate({ scrollTop: 0 }, "slow");
-    cargarPaciente();
+    await cargarPaciente();
+    await cargarAntecedentes();
     cargarCategoriasAntecedentes();
-    cargarAntecedentes();
+    combinarAntecedentes();
   });
 </script>
 
@@ -284,10 +299,13 @@
                 <div class="card-header">
                   <div class="avatar mr-2 avatar-xs">
                     <div class="avatar-title bg-dark rounded-circle">
-                      <i class="mdi mdi-history mdi-18px" />
+                      <i
+                        on:click={combinarAntecedentes}
+                        class="mdi mdi-history mdi-18px"
+                      />
                     </div>
                   </div>
-                  Antecedentes &nbsp;<button
+                  <span>Antecedentes &nbsp;</span><button
                     class="btn btn-outline-primary btn-sm"
                     data-toggle="modal"
                     data-target="#modalAntecedentes"
@@ -430,7 +448,8 @@
                                 type="button"
                                 class="btn btn-outline-primary btn-sm mb-1 mr-2"
                                 style="box-shadow: none;"
-                                on:click={() => cambiarEstadoAntecedente(antecedente.id)}
+                                on:click={() =>
+                                  cambiarEstadoAntecedente(antecedente.id)}
                                 ><i class="mdi mdi-plus" />
                                 <span data-bind="text: nombre"
                                   >{antecedente.nombre}</span
@@ -447,66 +466,64 @@
                               class="col-lg-12"
                               data-bind="foreach: antecedentesFiltrados"
                             >
-
-
-                            {#each antecedentes as antecedente}
-                              {#if antecedente.categoria.id === categoria.id}
+                              {#each antecedentes as antecedente}
+                                {#if antecedente.categoria.id === categoria.id}
                                   {#if antecedente.activo === true}
-                                     <!-- content here -->
-                                     <div
-                                    class="card m-b-20 mt-3"
-                                    style="box-shadow: none; border: 1px grey solid;"
-                                  >
-                                    <div class="card-header">
-                                      <div class="card-title">
-                                        <i class="mdi mdi-history mdi-18px" />
-                                        <span data-bind="text: nombre"
-                                          >{antecedente.nombre}</span
-                                        >
-                                      </div>
-                                    </div>
-                                    <div class="card-controls">
-                                      <div class="dropdown">
-                                        <a
-                                          href="/"
-                                          data-toggle="dropdown"
-                                          aria-haspopup="true"
-                                          aria-expanded="false"
-                                        >
-                                          <i class="icon mdi  mdi-dots-vertical" />
-                                        </a>
-                                        <div
-                                          class="dropdown-menu dropdown-menu-right"
-                                        >
-                                          <button
-                                            class="dropdown-item text-danger"
-                                            data-bind="click: eliminar"
-                                            type="button"
-                                            ><i class="mdi mdi-trash-can-outline" />
-                                            Eliminar</button
+                                    <!-- content here -->
+                                    <div
+                                      class="card m-b-20 mt-3"
+                                      style="box-shadow: none; border: 1px grey solid;"
+                                    >
+                                      <div class="card-header">
+                                        <div class="card-title">
+                                          <i class="mdi mdi-history mdi-18px" />
+                                          <span data-bind="text: nombre"
+                                            >{antecedente.nombre}</span
                                           >
                                         </div>
                                       </div>
+                                      <div class="card-controls">
+                                        <div class="dropdown">
+                                          <a
+                                            href="/"
+                                            data-toggle="dropdown"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                          >
+                                            <i
+                                              class="icon mdi  mdi-dots-vertical"
+                                            />
+                                          </a>
+                                          <div
+                                            class="dropdown-menu dropdown-menu-right"
+                                          >
+                                            <button
+                                              class="dropdown-item text-danger"
+                                              on:click={() => eliminarAntecedente(antecedente.id)}
+                                              type="button"
+                                              ><i
+                                                class="mdi mdi-trash-can-outline"
+                                              />
+                                              Eliminar</button
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="card-body">
+                                        <textarea
+                                          class="form-control"
+                                          bind:value={antecedente.descripcion}
+                                          on:blur={actualizarAntecedentesPaciente}
+                                          style="width: 100%; display: block; height: 100px;"
+                                          id="exampleFormControlTextarea1"
+                                          rows="5"
+                                          name="Comentario"
+                                        />
+                                      </div>
                                     </div>
-                                    <div class="card-body">
-                                      <textarea
-                                        class="form-control"
-                                        bind:value={antecedente.descripcion}
-                                        on:blur={actualizarPaciente}
-                                        style="width: 100%; display: block; height: 100px;"
-                                        id="exampleFormControlTextarea1"
-                                        rows="5"
-                                        name="Comentario"
-                                      />
-                                    </div>
-                                  </div>
                                   {/if}
-                              {/if}
-                            {/each}
-
-
-
-
+                                {/if}
+                              {/each}
                             </div>
                           </div>
                         </div>

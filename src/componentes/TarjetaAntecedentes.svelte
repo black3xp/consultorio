@@ -5,7 +5,6 @@
     export let nombre = "";
     export let antecedentes = [];
     onMount(() =>{
-        console.log(id)
     })
 </script>
 
