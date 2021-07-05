@@ -23,9 +23,18 @@
     let temperatura = {};
     let presionAlterial = {};
     let peso = {};
+    let timeout = null;
+
+    function searchDiagnosticos() {
+        if (timeout) {
+            window.clearTimeout(timeout);
+        }
+        
+        timeout = setTimeout(function () { cargarDiagnosticos(); }, 300);
+    }
 
     const guardarHistoria = () => {
-        historia.diagnosticos = diagnosticosSeleccionados;
+        historia.diagnosticos = diagnosticosSeleccionados
         delete historia.id;
         console.log(historia);
     };
@@ -56,7 +65,8 @@
             historia = promesa.data;
             temperatura = promesa.data.temperatura;
             presionAlterial = promesa.data.presionAlterial;
-            peso = promesa.data.peso
+            peso = promesa.data.peso;
+            diagnosticosSeleccionados = promesa.data.diagnosticos
             console.log(historia);
         } else {
             console.error(error);
@@ -555,7 +565,7 @@
                                 <input
                                     type="text"
                                     class="form-control"
-                                    on:keyup={cargarDiagnosticos}
+                                    on:keyup={searchDiagnosticos}
                                     id="txtBusquedaProblemaMedico"
                                     data-toggle="dropdown"
                                     aria-haspopup="true"
