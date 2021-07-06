@@ -24,6 +24,8 @@
     let presionAlterial = {};
     let peso = {};
     let timeout = null;
+    let fecha = '';
+    let hora = '';
 
     function searchDiagnosticos() {
         if (timeout) {
@@ -36,7 +38,18 @@
     const guardarHistoria = () => {
         historia.diagnosticos = diagnosticosSeleccionados
         delete historia.id;
-        console.log(historia);
+        const config = {
+            method: 'put',
+            url: `${url}/historias/${params.idHistoria}`,
+            data: historia,
+        }
+        axios(config)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     };
 
     async function cargarPaciente() {
@@ -67,7 +80,11 @@
             presionAlterial = promesa.data.presionAlterial;
             peso = promesa.data.peso;
             diagnosticosSeleccionados = promesa.data.diagnosticos
+            fecha = promesa.data.fechaHora.split('T')[0];
+            let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
+            hora = obtenerHora[0]+':'+obtenerHora[1]
             console.log(historia);
+            console.log(hora)
         } else {
             console.error(error);
         }
@@ -172,7 +189,7 @@
                     <sapn data-bind="text: text">Agregar Campo</sapn>
                 </button>
 
-                <button
+                <!-- <button
                     data-toggle="modal"
                     data-target="#modalInterconsulta"
                     style="box-shadow:none;"
@@ -180,7 +197,7 @@
                 >
                     <i data-bind="class: icon" class="mdi mdi-repeat" />
                     <sapn data-bind="text: text">Registrar Interconsulta</sapn>
-                </button>
+                </button> -->
 
                 <button
                     data-bind=" class: itemClass,click: clickEvent"
@@ -191,7 +208,7 @@
                     <sapn data-bind="text: text">Imprimir</sapn>
                 </button>
 
-                <button
+                <!-- <button
                     data-toggle="modal"
                     data-target="#modalAntecedentes"
                     style="box-shadow:none;"
@@ -199,7 +216,7 @@
                 >
                     <i data-bind="class: icon" class="mdi mdi-account-clock" />
                     <sapn data-bind="text: text">Antecedentes</sapn>
-                </button>
+                </button> -->
 
                 <button
                     data-bind=" class: itemClass,click: clickEvent"
@@ -493,7 +510,6 @@
             </div>
 
             <div
-                data-bind="if: perfil().examenFisico"
                 class="card m-b-20 autosave"
             >
                 <div class="card-header">
@@ -526,7 +542,8 @@
                     <textarea
                         class="form-control"
                         style="width: 100%; display: block;"
-                        data-bind="value: notaMedica.exploracionFisica"
+                        on:blur={guardarHistoria}
+                        bind:value={historia.examenFisico}
                         rows="5"
                         name="Comentario"
                     />
@@ -596,13 +613,13 @@
                                                 </div>
                                             </li>
                                         {/each}
+                                        <li class="defecto">
+                                            <a href="#!"
+                                                ><i class="mdi mdi-plus" />Agregar
+                                                manualmente</a
+                                            >
+                                        </li>
                                     </div>
-                                    <li class="defecto">
-                                        <a href="#!"
-                                            ><i class="mdi mdi-plus" />Agregar
-                                            manualmente</a
-                                        >
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -665,7 +682,10 @@
                 </div>
             </div>
 
-            <OrdenesMedicas />
+            <OrdenesMedicas
+                bind:instrucciones={historia.instrucciones}
+                on:modificado={guardarHistoria}
+            />
 
             <div class="card m-b-20 margen-mobile autosave">
                 <div class="card-header">
@@ -676,6 +696,8 @@
                         class="form-control"
                         style="width: 100%; display: block; height: 150px;"
                         rows="3"
+                        on:blur={guardarHistoria}
+                        bind:value={historia.observaciones}
                     />
                 </div>
             </div>
@@ -696,6 +718,7 @@
                                         type="date"
                                         class="form-control"
                                         placeholder="Fecha"
+                                        bind:value={fecha}
                                     />
                                 </div>
                                 <div
@@ -706,7 +729,8 @@
                                         type="time"
                                         placeholder="Hora"
                                         class="form-control"
-                                        max="23:59:59"
+                                        on:blur={() => console.log(hora)}
+                                        bind:value={hora}
                                     />
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import {link} from "svelte-spa-router"
+    import {link} from "svelte-spa-router";
     export let paciente;
     export let edad;
     export let seguro;
@@ -140,22 +140,25 @@
                     <div class="row text-center p-b-10">
                         <div class="col">
                             <a href="#!" class="text-danger" data-dismiss="modal">
+                                <!-- svelte-ignore a11y-missing-content -->
                                 <h3 class="mdi mdi-close-outline"></h3>
                                 <div class="text-overline">Cerrar</div>
                             </a>
                         </div>
-                        <div class="col">
-                            <a href="/" class="text-success">
+                        <!-- <div class="col">
+                            <a href={`/pacientes/perfil/${id}`} use:link class="text-success">
                                 <h3 class="mdi mdi-account-edit"></h3>
                                 <div class="text-overline">Editar</div>
                             </a>
-                        </div>
-                        <!-- <div class="col">
-                            <a data-bind="attr: {href: '/Expediente/Perfil/' + idPaciente()}" class="text-info">
+                        </div> -->
+                        <div class="col">
+                            <!-- svelte-ignore missing-declaration -->
+                            <a href={`/pacientes/perfil/${paciente.id}`} use:link on:click={() => jQuery("#modalDatosPersonales").modal('hide')} class="text-info">
+                                <!-- svelte-ignore a11y-missing-content -->
                                 <h3 class="mdi mdi-folder-account-outline"></h3>
                                 <div class="text-overline">Perfil</div>
                             </a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
