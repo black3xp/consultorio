@@ -8,8 +8,10 @@
   export let edad;
   export let id;
   export let paciente;
+  export let cargando;
   
   function crearNuevaHistoria() {
+    cargando = true;
     const config = {
       method: 'post',
       url: `${url}/historias`,
@@ -18,7 +20,9 @@
     axios(config).then(res => {
       console.log(res.data)
       push(`/pacientes/${id}/historias/${res.data.id}`)
+      cargando = false;
     }).catch(error => {
+      cargando = false;
       console.error(error)
     })
   }

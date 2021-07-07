@@ -4,6 +4,8 @@
     export let frecuenciaRespiratoria = '';
     export let frecuenciaCardiaca = '';
     export let presionAlterial = '';
+    export let tipoPeso = '';
+    export let tipoTemperatura = '';
 </script>
 <div class="card m-b-30">
     <div class="card-header">
@@ -35,7 +37,7 @@
             <i class="mdi mdi-speedometer mdi-18px"></i> Peso
           </div>
           <div class="col-lg-3 col-sm-2">
-            <p>{peso} Lb</p>
+            <p>{peso} {tipoPeso}</p>
           </div>
         </div>
 
@@ -44,7 +46,7 @@
             <i class="mdi mdi-thermometer mdi-18px"></i> Temperatura
           </div>
           <div class="col-lg-3 col-sm-2">
-            <p>{temperatura} °C</p>
+            <p>{temperatura} °{tipoTemperatura}</p>
           </div>
         </div>
         <div class="row">

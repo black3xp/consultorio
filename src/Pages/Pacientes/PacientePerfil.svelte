@@ -15,26 +15,57 @@
   import TarjetaAntecedentes from "../../componentes/TarjetaAntecedentes.svelte";
 
   export let params = "";
+  let cargando = false;
   let paciente = {};
   let edad = "";
   let seguro = "";
   let categoriasAntecedentes = [];
   let antecedentes = [];
+  let historiasPaciente = [];
+  let peso = '';
+  let tipoPeso = '';
+  let temperatura = '';
+  let tipoTemperatura = '';
+  let frecuenciaRespiratoria = '';
+  let frecuenciaCardiaca = '';
+  let presionAlterial = '';
+
+  const cargarHistoriasPaciente = () => {
+    const config = {
+      method: "get",
+      url: `${url}/historias/paciente/${params.id}`,
+    };
+    axios(config)
+      .then((res) => {
+        historiasPaciente = res.data;
+        peso = res.data[0].peso.valor
+        tipoPeso = res.data[0].peso.tipo
+        temperatura = res.data[0].temperatura.valor
+        tipoTemperatura = res.data[0].temperatura.tipo
+        frecuenciaRespiratoria = res.data[0].frecuenciaRespiratoria
+        frecuenciaCardiaca = res.data[0].frecuenciaCardiaca
+        presionAlterial = `${res.data[0].presionAlterial.mm}/${res.data[0].presionAlterial.Hg}`
+        console.log(historiasPaciente);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   function actualizarAntecedentesPaciente() {
     paciente.antecedentes = antecedentes;
     const config = {
-      method: 'put',
+      method: "put",
       url: `${url}/pacientes/${paciente.id}`,
       data: paciente,
     };
     axios(config)
-      .then(res => {
-        console.log(res.data)
+      .then((res) => {
+        console.log(res.data);
       })
-      .catch(error => {
-        console.error(error)
-      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   const combinarAntecedentes = () => {
@@ -50,13 +81,13 @@
   function eliminarAntecedente(idAntecedente) {
     const index = antecedentes.findIndex((x) => x.id === idAntecedente);
     antecedentes[index].activo = false;
-    actualizarAntecedentesPaciente()
+    actualizarAntecedentesPaciente();
   }
 
   function cambiarEstadoAntecedente(idAntecedente) {
     const index = antecedentes.findIndex((x) => x.id === idAntecedente);
     antecedentes[index].activo = true;
-    actualizarAntecedentesPaciente()
+    actualizarAntecedentesPaciente();
   }
 
   async function cargarAntecedentes() {
@@ -64,11 +95,11 @@
       method: "get",
       url: `${url}/antecedentes`,
     };
-    let promesa = await axios(config)
-    if(promesa.status == 200) {
+    let promesa = await axios(config);
+    if (promesa.status == 200) {
       antecedentes = promesa.data;
-    }else {
-      console.error(promesa.statusText)
+    } else {
+      console.error(promesa.statusText);
     }
   }
 
@@ -116,6 +147,7 @@
     jQuery("html, body").animate({ scrollTop: 0 }, "slow");
     await cargarPaciente();
     await cargarAntecedentes();
+    cargarHistoriasPaciente();
     cargarCategoriasAntecedentes();
     combinarAntecedentes();
   });
@@ -124,10 +156,16 @@
 <Aside />
 
 <main class="admin-main" in:fade={{ duration: 300 }}>
+  {#if cargando}
+    <div class="cargando">
+      <Loading/>
+    </div>
+  {/if}
   <Header />
   <section class="admin-content">
     <section class="admin-content">
       <CabeceraPerfil
+        bind:cargando={cargando}
         bind:edad
         bind:nombres={paciente.nombres}
         bind:apellidos={paciente.apellidos}
@@ -162,11 +200,13 @@
               </div>
 
               <UltimosVitales
-                peso={"80"}
-                temperatura={"38"}
-                frecuenciaRespiratoria={"30"}
-                frecuenciaCardiaca={"80"}
-                presionAlterial={"80/120"}
+                peso={peso}
+                tipoPeso={tipoPeso}
+                temperatura={temperatura}
+                tipoTemperatura={tipoTemperatura}
+                {frecuenciaRespiratoria}
+                {frecuenciaCardiaca}
+                {presionAlterial}
               /><!--.signos vitales-->
               <div class="card m-b-30">
                 <div class="card-header">
@@ -285,10 +325,13 @@
                   Historial atenciones
                 </div>
                 <div class="card-body">
-                  <Evoluciones
-                    motivo={"Conducta desorganizada - Alteracion del patron del sueño - Pobre respuesta al tx"}
-                    historia={"Refiere el informante (esposo) que el cuadro actual inicia hace alrededor de 4 dias, luego de conflicto por supuesta infidelidad, caracterizado por alteracion en el patron del sueño, a lo cual se fue agregando ideacion delirante de perjuicio y pobre respuesta al tx a base de Escitalopram y Olanzapina que utilizaba desde hace varios meses, por lo anterior es traida a este centro, donde previa evaluacion se decide su ingreso."}
-                  />
+                  {#each historiasPaciente as historia}
+                    <Evoluciones
+                      fecha={historia.fechaHora}
+                      motivo={historia.motivoConsulta}
+                      historia={historia.historiaEnfermedad}
+                    />
+                  {/each}
                 </div>
               </div>
             </div>
@@ -499,7 +542,10 @@
                                           >
                                             <button
                                               class="dropdown-item text-danger"
-                                              on:click={() => eliminarAntecedente(antecedente.id)}
+                                              on:click={() =>
+                                                eliminarAntecedente(
+                                                  antecedente.id
+                                                )}
                                               type="button"
                                               ><i
                                                 class="mdi mdi-trash-can-outline"
@@ -542,6 +588,18 @@
 </main>
 
 <style>
+  .cargando{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .lista-buscador {
     margin: 0;
     padding: 0;

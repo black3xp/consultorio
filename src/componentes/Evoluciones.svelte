@@ -1,6 +1,9 @@
 <script>
     export let motivo = '';
     export let historia = '';
+    export let fecha = '';
+
+    $: fechaHora = new Date(fecha).toLocaleString('es-DO')
 </script>
 <div class="list-unstyled">
     <div class="media">
@@ -9,7 +12,7 @@
         </div>
         <div class="media-body">
             <h6 class="mt-0 mb-1"> <span data-bind="text: atencionMedica.nombreMedico">Mariela Camilo</span>
-                <span class="text-muted ml-3 small" data-bind="text: new Date(atencionMedica.fechaIngreso()).toLocaleString('es-DO')">4/5/2020 1:31:00 p.&nbsp;m.</span>
+                <span class="text-muted ml-3 small">{fechaHora}</span>
             </h6>
             <small class="mt-4 mb-4 text-primary">Motivo de Consulta</small>
             <p data-bind="text: atencionMedica.motivoConsulta">{motivo}</p>
