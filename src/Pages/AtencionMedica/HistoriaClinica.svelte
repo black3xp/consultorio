@@ -138,6 +138,7 @@
     }
 
     onMount(async () => {
+        jQuery("html, body").animate({ scrollTop: 0 }, "slow");
         await cargarPaciente();
         await cargarHistoria();
         cargarDiagnosticos();

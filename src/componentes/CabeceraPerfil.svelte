@@ -2,11 +2,11 @@
   import { url } from '../util/index';
   import axios from 'axios';
   import { push } from 'svelte-spa-router';
-  export let nombres;
-  export let apellidos;
-  export let cedula;
+  export let nombres = '';
+  export let apellidos = '';
+  export let cedula = '';
   export let edad;
-  export let id;
+  export let id = '';
   export let paciente;
   export let cargando;
   

@@ -208,7 +208,7 @@
                 {frecuenciaCardiaca}
                 {presionAlterial}
               /><!--.signos vitales-->
-              <div class="card m-b-30">
+              <!-- <div class="card m-b-30">
                 <div class="card-header">
                   <h5 class="m-b-0">Archivos o Documentos</h5>
                   <p class="m-b-0 mt-2 text-muted">
@@ -311,7 +311,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="col-md-5 order-2 order-sm-1">
@@ -327,6 +327,8 @@
                 <div class="card-body">
                   {#each historiasPaciente as historia}
                     <Evoluciones
+                      idPaciente={paciente.id}
+                      id={historia.id}
                       fecha={historia.fechaHora}
                       motivo={historia.motivoConsulta}
                       historia={historia.historiaEnfermedad}
