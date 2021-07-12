@@ -371,7 +371,7 @@
                 </div>
               </div>
 
-              <div class="card m-b-30">
+              <!-- <div class="card m-b-30">
                 <div class=" card-header">
                   <div class="avatar mr-2 avatar-xs">
                     <div class="avatar-title bg-dark rounded-circle">
@@ -423,7 +423,7 @@
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!--.citas columna-->
           </div>

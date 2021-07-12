@@ -14,45 +14,14 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12 mb-2">
-                    <ul class="list-info" data-bind="foreach: tratamientos">
-                        <li>
-                                <span data-bind="text: disificacion">10MG de: OLANZAPINA DE 20MG</span> |
-                                <span data-bind="text: periodicidad">Una sola vez</span> |
-                                <span data-bind="text: 'Vía: ' + via()">Vía: Oral</span> |
-                                <span class="badge" style="line-height: 1.7;" data-bind="text: diagnostico">Por diagnostico de: TRASTORNO AFECTIVO BIPOLAR, EPISODIO MIXTO PRESENTE</span>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="Buscar medicamentos">
+                        </div>
+                        <div class="col-lg-12">
 
-                                <div class="row mt-3">
-                                    <div class="form-group col-md-12">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div
-                                    style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;">
-                                    <a href="#!" class="text-primary" data-bind="click: modoEditarOn"
-                                        title="Agregar comentarios"><i
-                                            class="mdi-18px mdi mdi-comment-plus-outline"></i></a>
-                                    <a href="/" class="text-danger" data-toggle="tooltip" data-placement="top"
-                                        data-original-title="Eliminar tratamiento" data-bind="click: eliminar"><i
-                                            class="mdi-18px mdi mdi-trash-can-outline"></i></a>
-                                </div>
-                        </li>
-
-                        <li>
-                                <span data-bind="text: disificacion">400MG de: LITIO 300MG, 50 TAB.</span> |
-                                <span data-bind="text: periodicidad">Cada 12 Horas/s</span> |
-                                <span data-bind="text: 'Vía: ' + via()">Vía: Oral</span> |
-                                <span class="badge" style="line-height: 1.7;" data-bind="text: diagnostico">Por diagnostico de: TRASTORNO AFECTIVO BIPOLAR, EPISODIO MIXTO PRESENTE</span>
-                                <div style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;">
-                                    <a href="#!" class="text-primary" data-bind="click: modoEditarOn" title="Agregar comentarios">
-                                        <i class="mdi-18px mdi mdi-comment-plus-outline"></i>
-                                    </a>
-                                    <a href="/" class="text-danger" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar tratamiento" data-bind="click: eliminar">
-                                        <i class="mdi-18px mdi mdi-trash-can-outline"></i>
-                                    </a>
-                                </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
