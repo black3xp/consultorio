@@ -19,6 +19,7 @@
     let diagnosticos = [];
     let inpBuscarDiagnostico = "";
     let diagnosticosSeleccionados = [];
+    let medicamentos = [];
     let historia = {};
     let temperatura = {};
     let presionAlterial = {};
@@ -26,6 +27,18 @@
     let timeout = null;
     let fecha = '';
     let hora = '';
+    let cargando = false;
+    let sltBuscarMedicamentos = '';
+    let medicamentosSeleccionados = [];
+    historia.medicamentos = []
+
+    const searchMedicamentos = () => {
+        if (timeout) {
+            window.clearTimeout(timeout);
+        }
+        
+        timeout = setTimeout(function () { cargarMedicamentos(); }, 300);
+    }
 
     function searchDiagnosticos() {
         if (timeout) {
@@ -35,7 +48,39 @@
         timeout = setTimeout(function () { cargarDiagnosticos(); }, 300);
     }
 
+    const agregarMedicamento = (event) => {
+        if(!event.detail){
+            return false
+        }
+        const medicamento = {
+            nombre: event.detail,
+            concentracion: '',
+            cantidad: '',
+            frecuencia: '',
+        }
+        medicamentosSeleccionados = [...medicamentosSeleccionados, medicamento]
+        historia.medicamentos = medicamentosSeleccionados;
+        sltBuscarMedicamentos = '';
+        guardarHistoria();
+        console.log(historia)
+    }
+
+    const cargarMedicamentos = () => {
+        const config = {
+            method: 'get',
+            url: `${url}/medicamentos?b=${sltBuscarMedicamentos}`
+        }
+        axios(config)
+            .then(res => {
+                medicamentos = res.data;
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
     const guardarHistoria = () => {
+        cargando = true;
         historia.diagnosticos = diagnosticosSeleccionados
         delete historia.id;
         const config = {
@@ -45,9 +90,11 @@
         }
         axios(config)
             .then(res => {
+                cargando= false
                 console.log(res.data)
             })
             .catch(error => {
+                cargando = false
                 console.error(error)
             })
     };
@@ -81,6 +128,7 @@
             peso = promesa.data.peso;
             diagnosticosSeleccionados = promesa.data.diagnosticos
             fecha = promesa.data.fechaHora.split('T')[0];
+            medicamentosSeleccionados = promesa.data.medicamentos;
             let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
             hora = obtenerHora[0]+':'+obtenerHora[1]
             console.log(historia);
@@ -142,6 +190,7 @@
         await cargarPaciente();
         await cargarHistoria();
         cargarDiagnosticos();
+        cargarMedicamentos()
     });
 </script>
 
@@ -161,12 +210,20 @@
         </div>
         <div class="col-md-6" style="text-align: right;">
             <div class="guardar-documento">
-                <div
-                    class="guardando mr-2 text-success"
-                    data-bind="html: content, class: contentClass"
-                >
-                    <i class="mdi mdi-check-all" /> <i>listo y guardado</i>
-                </div>
+                {#if !cargando}
+                    <div
+                        class="guardando mr-2 text-success"
+                    >
+                        <i class="mdi mdi-check-all" /> <i>listo y guardado</i>
+                    </div>
+                {/if}
+                {#if cargando}
+                    <div
+                        class="guardando mr-2 text-secondary"
+                    >
+                        <i class="mdi mdi-cached mdi-spin"></i> Guardando
+                    </div>
+                {/if}
             </div>
         </div>
         <div class="col-lg-12">
@@ -684,8 +741,13 @@
             </div>
 
             <OrdenesMedicas
+                bind:medicamentosSeleccionados={medicamentosSeleccionados}
+                bind:sltBuscarMedicamentos={sltBuscarMedicamentos}
+                bind:medicamentos={medicamentos}
                 bind:instrucciones={historia.instrucciones}
                 on:modificado={guardarHistoria}
+                on:buscarMedicamentos={searchMedicamentos}
+                on:agregarMedicamento={agregarMedicamento}
             />
 
             <div class="card m-b-20 margen-mobile autosave">
