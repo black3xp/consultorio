@@ -6,6 +6,7 @@
     export let medicamentos;
     export let sltBuscarMedicamentos;
     export let medicamentosSeleccionados;
+
 </script>
 
 <div class="alert alert-secondary" role="alert">
@@ -60,7 +61,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            {#each medicamentosSeleccionados as med}
+                            {#each medicamentosSeleccionados as med, i}
                                  <!-- content here -->
                                  <div
                                      class="col-lg-12 border border-primary rounded mt-3"
@@ -77,7 +78,7 @@
                                                  {med.nombre}
                                              </p>
                                          </div>
-                                         <div class="col">
+                                         <div class="col mt-2">
                                              <div class="mb-2">
                                                  <!-- svelte-ignore a11y-label-has-associated-control -->
                                                  <label
@@ -93,7 +94,7 @@
                                                  />
                                              </div>
                                          </div>
-                                         <div class="col">
+                                         <div class="col mt-2">
                                              <div class="mb-2">
                                                  <!-- svelte-ignore a11y-label-has-associated-control -->
                                                  <label
@@ -109,7 +110,7 @@
                                                  />
                                              </div>
                                          </div>
-                                         <div class="col">
+                                         <div class="col mt-2">
                                              <div class="mb-2">
                                                  <!-- svelte-ignore a11y-label-has-associated-control -->
                                                  <label
@@ -118,14 +119,17 @@
                                                      >Frecuencia</label
                                                  >
                                                  <input
-                                                     type="text"
-                                                     class="form-control"
-                                                     on:blur={() => dispatch("modificado")}
-                                                     bind:value={med.frecuencia}
+                                                 type="text"
+                                                 class="form-control"
+                                                 on:blur={() => dispatch("modificado")}
+                                                 bind:value={med.frecuencia}
                                                  />
-                                             </div>
-                                         </div>
-                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="icon-borrar" data-tooltip="Eliminar">
+                                            <i class="mdi mdi-close text-red" on:click={() => dispatch("eliminarMedicamento",i)}></i>
+                                        </div>
                                  </div>
                                  {:else}
                                  <div class="row">
@@ -264,3 +268,13 @@
         </div>
     </div>
 </div>
+<style>
+    .icon-borrar{
+        position: absolute;
+        right: 3px;
+        top: 3px;
+    }
+    .icon-borrar i {
+        cursor: pointer;
+    }
+</style>

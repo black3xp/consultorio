@@ -30,7 +30,6 @@
     let cargando = false;
     let sltBuscarMedicamentos = '';
     let medicamentosSeleccionados = [];
-    historia.medicamentos = []
 
     const searchMedicamentos = () => {
         if (timeout) {
@@ -46,6 +45,16 @@
         }
         
         timeout = setTimeout(function () { cargarDiagnosticos(); }, 300);
+    }
+
+    const eliminarMedicamento = (event) => {
+        console.log(event.detail)
+        if(confirm("Desea eliminar el medicamento?")){
+            medicamentosSeleccionados.splice(event.detail, 1)
+            medicamentosSeleccionados = medicamentosSeleccionados
+            historia.medicamentos = medicamentosSeleccionados;
+            guardarHistoria();
+        }
     }
 
     const agregarMedicamento = (event) => {
@@ -748,6 +757,7 @@
                 on:modificado={guardarHistoria}
                 on:buscarMedicamentos={searchMedicamentos}
                 on:agregarMedicamento={agregarMedicamento}
+                on:eliminarMedicamento={eliminarMedicamento}
             />
 
             <div class="card m-b-20 margen-mobile autosave">
