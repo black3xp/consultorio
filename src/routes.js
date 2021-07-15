@@ -1,10 +1,12 @@
-import {wrap} from 'svelte-spa-router/wrap'
-import {push} from 'svelte-spa-router'
-import Index from './Pages/Home/Index.svelte'
+import {wrap} from 'svelte-spa-router/wrap';
+import {push} from 'svelte-spa-router';
+
+import Index from './Pages/Home/Index.svelte';
 import Pacientes from './Pages/Pacientes/Index.svelte';
 import PacientePerfil from './Pages/Pacientes/PacientePerfil.svelte';
 import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
 import AtencionHistoriaClinica from './Pages/AtencionMedica/HistoriaClinica.svelte';
+import Login from './Pages/Home/Login.svelte';
 
 const isAdmin = () => {
     const roles = ['admin', 'patient', 'assitent']
@@ -28,6 +30,7 @@ const routes = {
             }
         ]
     }),
+    "/login": Login,
     "/pacientes": Pacientes,
     "/pacientes/perfil/:id": PacientePerfil,
     "/pacientes/crear": PacienteCrear,

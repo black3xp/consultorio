@@ -2598,11 +2598,27 @@ var app = (function () {
     	let header;
     	let t1;
     	let section;
-    	let div1;
+    	let div12;
     	let div0;
     	let t2;
-    	let h1;
+    	let div1;
+    	let h3;
     	let t4;
+    	let div11;
+    	let div10;
+    	let div9;
+    	let div7;
+    	let div3;
+    	let div2;
+    	let t6;
+    	let div6;
+    	let div5;
+    	let div4;
+    	let i;
+    	let t7;
+    	let h1;
+    	let t9;
+    	let div8;
     	let current;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
@@ -2615,21 +2631,66 @@ var app = (function () {
     			create_component(header.$$.fragment);
     			t1 = space();
     			section = element("section");
-    			div1 = element("div");
+    			div12 = element("div");
     			div0 = element("div");
     			t2 = space();
+    			div1 = element("div");
+    			h3 = element("h3");
+    			h3.textContent = "Resumen";
+    			t4 = space();
+    			div11 = element("div");
+    			div10 = element("div");
+    			div9 = element("div");
+    			div7 = element("div");
+    			div3 = element("div");
+    			div2 = element("div");
+    			div2.textContent = "Pacientes";
+    			t6 = space();
+    			div6 = element("div");
+    			div5 = element("div");
+    			div4 = element("div");
+    			i = element("i");
+    			t7 = space();
     			h1 = element("h1");
-    			h1.textContent = "Página principal";
-    			t4 = text("\r\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ipsa. Ab\r\n      recusandae consectetur vel eum unde voluptate quis consequuntur\r\n      reprehenderit omnis, facilis accusamus? Numquam quaerat nihil id amet\r\n      labore dolor laboriosam quidem distinctio architecto natus ipsam quod vel\r\n      illum, iusto libero facere magni at laudantium? Aliquid molestiae\r\n      exercitationem eveniet eos!");
+    			h1.textContent = "16k";
+    			t9 = space();
+    			div8 = element("div");
+    			div8.textContent = "Todos los registrados";
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file$2, 11, 6, 247);
-    			add_location(h1, file$2, 12, 6, 274);
-    			attr_dev(div1, "class", "p-2");
-    			add_location(div1, file$2, 10, 4, 222);
+    			add_location(div0, file$2, 11, 6, 243);
+    			add_location(h3, file$2, 13, 8, 312);
+    			attr_dev(div1, "class", "col-12 m-b-30 mt-4");
+    			add_location(div1, file$2, 12, 6, 270);
+    			attr_dev(div2, "class", "h6 text-muted ");
+    			add_location(div2, file$2, 20, 16, 532);
+    			attr_dev(div3, "class", "col my-auto");
+    			add_location(div3, file$2, 19, 14, 489);
+    			attr_dev(i, "class", "mdi mdi-account");
+    			add_location(i, file$2, 26, 20, 784);
+    			attr_dev(div4, "class", "avatar-title rounded-circle badge-soft-danger");
+    			add_location(div4, file$2, 25, 18, 703);
+    			attr_dev(div5, "class", "avatar");
+    			add_location(div5, file$2, 24, 16, 663);
+    			attr_dev(div6, "class", "col-auto my-auto");
+    			add_location(div6, file$2, 23, 14, 615);
+    			attr_dev(div7, "class", "row");
+    			add_location(div7, file$2, 18, 12, 456);
+    			attr_dev(h1, "class", "display-4 fw-600");
+    			add_location(h1, file$2, 31, 12, 921);
+    			attr_dev(div8, "class", "h6");
+    			add_location(div8, file$2, 32, 12, 972);
+    			attr_dev(div9, "class", "card-body");
+    			add_location(div9, file$2, 17, 10, 419);
+    			attr_dev(div10, "class", "card m-b-30");
+    			add_location(div10, file$2, 16, 8, 382);
+    			attr_dev(div11, "class", "col-lg-4");
+    			add_location(div11, file$2, 15, 6, 350);
+    			attr_dev(div12, "class", "p-2");
+    			add_location(div12, file$2, 10, 4, 218);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$2, 9, 2, 185);
+    			add_location(section, file$2, 9, 2, 181);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$2, 7, 0, 142);
+    			add_location(main, file$2, 7, 0, 138);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2641,11 +2702,27 @@ var app = (function () {
     			mount_component(header, main, null);
     			append_dev(main, t1);
     			append_dev(main, section);
-    			append_dev(section, div1);
-    			append_dev(div1, div0);
-    			append_dev(div1, t2);
-    			append_dev(div1, h1);
-    			append_dev(div1, t4);
+    			append_dev(section, div12);
+    			append_dev(div12, div0);
+    			append_dev(div12, t2);
+    			append_dev(div12, div1);
+    			append_dev(div1, h3);
+    			append_dev(div12, t4);
+    			append_dev(div12, div11);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, div7);
+    			append_dev(div7, div3);
+    			append_dev(div3, div2);
+    			append_dev(div7, t6);
+    			append_dev(div7, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, div4);
+    			append_dev(div4, i);
+    			append_dev(div9, t7);
+    			append_dev(div9, h1);
+    			append_dev(div9, t9);
+    			append_dev(div9, div8);
     			current = true;
     		},
     		p: noop,
@@ -15828,6 +15905,213 @@ var app = (function () {
     	}
     }
 
+    /* src\Pages\Home\Login.svelte generated by Svelte v3.29.0 */
+
+    const file$j = "src\\Pages\\Home\\Login.svelte";
+
+    function create_fragment$l(ctx) {
+    	let div9;
+    	let div8;
+    	let div6;
+    	let div5;
+    	let div4;
+    	let div0;
+    	let p0;
+    	let img;
+    	let img_src_value;
+    	let t0;
+    	let p1;
+    	let t2;
+    	let form;
+    	let div3;
+    	let div1;
+    	let label0;
+    	let t4;
+    	let input0;
+    	let t5;
+    	let div2;
+    	let label1;
+    	let t7;
+    	let input1;
+    	let t8;
+    	let button;
+    	let t10;
+    	let p2;
+    	let a;
+    	let t12;
+    	let div7;
+
+    	const block = {
+    		c: function create() {
+    			div9 = element("div");
+    			div8 = element("div");
+    			div6 = element("div");
+    			div5 = element("div");
+    			div4 = element("div");
+    			div0 = element("div");
+    			p0 = element("p");
+    			img = element("img");
+    			t0 = space();
+    			p1 = element("p");
+    			p1.textContent = "xmedical pro";
+    			t2 = space();
+    			form = element("form");
+    			div3 = element("div");
+    			div1 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Correo";
+    			t4 = space();
+    			input0 = element("input");
+    			t5 = space();
+    			div2 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Contraseña";
+    			t7 = space();
+    			input1 = element("input");
+    			t8 = space();
+    			button = element("button");
+    			button.textContent = "Entrar";
+    			t10 = space();
+    			p2 = element("p");
+    			a = element("a");
+    			a.textContent = "Olvide mi contraseña?";
+    			t12 = space();
+    			div7 = element("div");
+    			if (img.src !== (img_src_value = "assets/img/logo.svg")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "width", "80");
+    			attr_dev(img, "alt", "");
+    			add_location(img, file$j, 7, 28, 314);
+    			add_location(p0, file$j, 6, 24, 281);
+    			attr_dev(p1, "class", "admin-brand-content");
+    			add_location(p1, file$j, 10, 24, 421);
+    			attr_dev(div0, "class", "p-b-20 text-center");
+    			add_location(div0, file$j, 5, 20, 223);
+    			attr_dev(label0, "for", "");
+    			add_location(label0, file$j, 17, 32, 777);
+    			attr_dev(input0, "type", "email");
+    			input0.required = "true";
+    			attr_dev(input0, "autocomplete", "username");
+    			attr_dev(input0, "class", "form-control");
+    			attr_dev(input0, "placeholder", "Correo");
+    			add_location(input0, file$j, 18, 32, 839);
+    			attr_dev(div1, "class", "form-group floating-label col-md-12");
+    			add_location(div1, file$j, 16, 28, 694);
+    			attr_dev(label1, "for", "");
+    			add_location(label1, file$j, 21, 32, 1090);
+    			attr_dev(input1, "type", "password");
+    			attr_dev(input1, "autocomplete", "current-password");
+    			attr_dev(input1, "placeholder", "Contraseña");
+    			input1.required = "true";
+    			attr_dev(input1, "class", "form-control ");
+    			add_location(input1, file$j, 22, 32, 1163);
+    			attr_dev(div2, "class", "form-group floating-label col-md-12");
+    			add_location(div2, file$j, 20, 28, 1007);
+    			attr_dev(div3, "class", "form-row");
+    			add_location(div3, file$j, 15, 24, 642);
+    			attr_dev(button, "type", "submit");
+    			attr_dev(button, "class", "btn btn-primary btn-block btn-lg");
+    			add_location(button, file$j, 26, 24, 1384);
+    			attr_dev(form, "class", "needs-validation");
+    			attr_dev(form, "action", "#");
+    			add_location(form, file$j, 14, 20, 574);
+    			attr_dev(a, "href", "#!");
+    			attr_dev(a, "class", "text-underline");
+    			add_location(a, file$j, 30, 24, 1570);
+    			attr_dev(p2, "class", "text-right p-t-10");
+    			add_location(p2, file$j, 29, 20, 1515);
+    			attr_dev(div4, "class", "mx-auto col-md-8");
+    			add_location(div4, file$j, 4, 16, 171);
+    			attr_dev(div5, "class", "row align-items-center m-h-100");
+    			add_location(div5, file$j, 3, 12, 109);
+    			attr_dev(div6, "class", "col-lg-4  bg-white");
+    			add_location(div6, file$j, 2, 8, 63);
+    			attr_dev(div7, "class", "col-lg-8 d-none d-md-block bg-cover");
+    			set_style(div7, "background-image", "url('assets/img/login.svg')");
+    			add_location(div7, file$j, 36, 8, 1736);
+    			attr_dev(div8, "class", "row ");
+    			add_location(div8, file$j, 1, 4, 35);
+    			attr_dev(div9, "class", "container-fluid");
+    			add_location(div9, file$j, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div9, anchor);
+    			append_dev(div9, div8);
+    			append_dev(div8, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, div4);
+    			append_dev(div4, div0);
+    			append_dev(div0, p0);
+    			append_dev(p0, img);
+    			append_dev(div0, t0);
+    			append_dev(div0, p1);
+    			append_dev(div4, t2);
+    			append_dev(div4, form);
+    			append_dev(form, div3);
+    			append_dev(div3, div1);
+    			append_dev(div1, label0);
+    			append_dev(div1, t4);
+    			append_dev(div1, input0);
+    			append_dev(div3, t5);
+    			append_dev(div3, div2);
+    			append_dev(div2, label1);
+    			append_dev(div2, t7);
+    			append_dev(div2, input1);
+    			append_dev(form, t8);
+    			append_dev(form, button);
+    			append_dev(div4, t10);
+    			append_dev(div4, p2);
+    			append_dev(p2, a);
+    			append_dev(div8, t12);
+    			append_dev(div8, div7);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div9);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$l.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$l($$self, $$props) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Login", slots, []);
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Login> was created with unknown prop '${key}'`);
+    	});
+
+    	return [];
+    }
+
+    class Login extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$l, create_fragment$l, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Login",
+    			options,
+    			id: create_fragment$l.name
+    		});
+    	}
+    }
+
     const isAdmin = () => {
         const roles = ['admin', 'patient', 'assitent'];
         if(roles.includes('admin')){
@@ -15850,6 +16134,7 @@ var app = (function () {
                 }
             ]
         }),
+        "/login": Login,
         "/pacientes": Index$1,
         "/pacientes/perfil/:id": PacientePerfil,
         "/pacientes/crear": PacienteCrear,
@@ -15858,7 +16143,7 @@ var app = (function () {
 
     /* src\App.svelte generated by Svelte v3.29.0 */
 
-    function create_fragment$l(ctx) {
+    function create_fragment$m(ctx) {
     	let router;
     	let current;
     	router = new Router({ props: { routes }, $$inline: true });
@@ -15891,7 +16176,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$l.name,
+    		id: create_fragment$m.name,
     		type: "component",
     		source: "",
     		ctx
@@ -15900,7 +16185,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$l($$self, $$props, $$invalidate) {
+    function instance$m($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	const writable_props = [];
@@ -15916,13 +16201,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$l, create_fragment$l, safe_not_equal, {});
+    		init(this, options, instance$m, create_fragment$m, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$l.name
+    			id: create_fragment$m.name
     		});
     	}
     }
