@@ -49,14 +49,15 @@
                                                 </div>
                                             </li>
                                         {/each}
-                                        <li class="defecto">
-                                            <a href="#!"
-                                                ><i
-                                                    class="mdi mdi-plus"
-                                                />Agregar manualmente</a
-                                            >
-                                        </li>
                                     </div>
+                                    <li class="defecto">
+                                        <a href="#!"
+                                        on:click|preventDefault={() => dispatch("agregarMedicamento",sltBuscarMedicamentos)}
+                                            ><i
+                                                class="mdi mdi-plus"
+                                            />Agregar manualmente</a
+                                        >
+                                    </li>
                                 </ul>
                             </div>
                         </div>
