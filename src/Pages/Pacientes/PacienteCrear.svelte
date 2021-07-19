@@ -3,10 +3,10 @@
     import Header from "../../Layout/Header.svelte";
     import Aside from "../../Layout/Aside.svelte";
     import Select2 from '../../componentes/Select2.svelte';
+    
     import { push } from 'svelte-spa-router';
-
     import { onMount } from 'svelte';
-    import { url } from '../../util/index';
+    import { url, user } from '../../util/index';
 
     let asegurado = false;
     let aseguradoras = []
@@ -30,8 +30,9 @@
     let provincia = '';
     let direccion = '';
     let email = '';
-    let empresa = [];
+    let empresa = {};
     let responsables = [];
+    let usuario = {};
 
     function registrarPaciente(){
         const paciente = {
@@ -56,11 +57,16 @@
             email:email,
             empresa:empresa,
             responsables:responsables,
+            usuario: usuario,
+            antecedentes: []
         };
         const config = {
             method: 'post',
             url: `${url}/pacientes`,
             data: paciente,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         }
         axios(config).then(res => {
             if(res.status === 200){
@@ -87,12 +93,34 @@
         })
     }
 
+    const cargarUsuario = () => {
+        const config = {
+            method: 'get',
+            url: `${url}/usuarios/${user().id}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
+
+        }
+        axios(config)
+            .then(res => {
+                usuario = res.data;
+                empresa = res.data.empresa;
+                console.log(usuario)
+                console.log(empresa)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
     onMount(() => {
         jQuery('.select-aseguradoras').select2({ placeholder: ' - seleccionar aseguradora - '});
         jQuery('.select-aseguradoras').on("select2:select", e => {
             console.log(e.params.data.id)
         });
         cargarAseguradoras();
+        cargarUsuario()
     })
 </script>
 

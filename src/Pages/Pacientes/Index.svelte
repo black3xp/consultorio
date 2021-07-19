@@ -5,19 +5,21 @@
     import axios from "axios";
     import {onMount} from "svelte";
 
-    import {url} from "../../util/index";
+    import {url, calcularEdad} from "../../util/index";
 
     let pacientes = [];
 
     function cargarPacientes() {
         const config = {
             method: 'get',
-            url: `${url}/pacientes`
+            url: `${url}/pacientes`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         };
         axios(config).then((res) => {
             let {data} = res;
             pacientes = data;
-            console.log(pacientes)
         }).catch((err) => {
             console.error(err);
         })
@@ -58,7 +60,7 @@
                                  <div class="avatar avatar-sm "><img src="assets/img/users/user-1.jpg" class="avatar-img avatar-sm rounded-circle" alt=""></div>
                              </td>
                              <td>{paciente.nombres}</td>
-                             <td>{paciente.fechaNacimiento}</td>
+                             <td>{calcularEdad(paciente.fechaNacimiento)} años</td>
                              <td>{paciente.sexo}</td>
                              <td>{paciente.celular}</td>
                              <td>{paciente.cedula}</td>

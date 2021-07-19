@@ -38,14 +38,13 @@
     axios(config)
       .then((res) => {
         historiasPaciente = res.data;
-        peso = res.data[0].peso.valor
-        tipoPeso = res.data[0].peso.tipo
-        temperatura = res.data[0].temperatura.valor
-        tipoTemperatura = res.data[0].temperatura.tipo
-        frecuenciaRespiratoria = res.data[0].frecuenciaRespiratoria
-        frecuenciaCardiaca = res.data[0].frecuenciaCardiaca
-        presionAlterial = `${res.data[0].presionAlterial.mm}/${res.data[0].presionAlterial.Hg}`
-        console.log(historiasPaciente);
+        peso = res.data[0].peso.valor;
+        tipoPeso = res.data[0].peso.tipo;
+        temperatura = res.data[0].temperatura.valor;
+        tipoTemperatura = res.data[0].temperatura.tipo;
+        frecuenciaRespiratoria = res.data[0].frecuenciaRespiratoria;
+        frecuenciaCardiaca = res.data[0].frecuenciaCardiaca;
+        presionAlterial = `${res.data[0].presionAlterial.mm}/${res.data[0].presionAlterial.Hg}`;
       })
       .catch((error) => {
         console.error(error);
