@@ -1,5 +1,6 @@
 import {wrap} from 'svelte-spa-router/wrap';
 import {push} from 'svelte-spa-router';
+import { isLogin } from './util/index';
 
 import Index from './Pages/Home/Index.svelte';
 import Pacientes from './Pages/Pacientes/Index.svelte';
@@ -8,33 +9,69 @@ import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
 import AtencionHistoriaClinica from './Pages/AtencionMedica/HistoriaClinica.svelte';
 import Login from './Pages/Home/Login.svelte';
 
-const isAdmin = () => {
-    const roles = ['admin', 'patient', 'assitent']
-    if(roles.includes('admin')){
-        return true
-    }else{
-        return false
-    }
-}
 
 const routes = {
     "/": wrap({
         component: Index,
         conditions: [
             async (detail) => {
-                if(isAdmin()){
+                if(isLogin()){
                     return true
                 }else{
-                    return push('/pacientes/crear')
+                    return push('/login')
                 }
             }
         ]
     }),
     "/login": Login,
-    "/pacientes": Pacientes,
-    "/pacientes/perfil/:id": PacientePerfil,
-    "/pacientes/crear": PacienteCrear,
-    "/pacientes/:idPaciente/historias/:idHistoria": AtencionHistoriaClinica,
+    "/pacientes": wrap({
+        component: Pacientes,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/pacientes/perfil/:id": wrap({
+        component: PacientePerfil,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/pacientes/crear": wrap({
+        component: PacienteCrear,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/pacientes/:idPaciente/historias/:idHistoria": wrap({
+        component: AtencionHistoriaClinica,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
 }
 
 export default routes;

@@ -1,3 +1,31 @@
+<script>
+    import { url, isLogin } from '../../util/index';
+    import axios from 'axios';
+    import { push } from 'svelte-spa-router';
+
+    let inpCorreo = '';
+    let inpPassword = '';
+
+    const login = () => {
+        const data = {
+            correo: inpCorreo,
+            password: inpPassword,
+        }
+        const config = {
+            method: 'post',
+            url: `${url}/login`,
+            data 
+        };
+        axios(config)
+            .then(res => {
+                localStorage.setItem('auth', res.data);
+                console.log(res.data)
+                if(isLogin()){
+                   return push('/')
+                }
+            })
+    }
+</script>
 <div class="container-fluid">
     <div class="row ">
         <div class="col-lg-4  bg-white">
@@ -12,15 +40,15 @@
                             xmedical pro
                         </p>
                     </div>
-                    <form class="needs-validation" action="#">
+                    <form class="needs-validation" on:submit|preventDefault={login} >
                         <div class="form-row">
                             <div class="form-group floating-label col-md-12">
                                 <label for="">Correo</label>
-                                <input type="email" required="true" autocomplete="username" class="form-control" placeholder="Correo">
+                                <input type="email" bind:value={inpCorreo} required="true" autocomplete="username" class="form-control" placeholder="Correo">
                             </div>
                             <div class="form-group floating-label col-md-12">
                                 <label for="">Contrase&ntilde;a</label>
-                                <input type="password" autocomplete="current-password" placeholder="Contrase&ntilde;a" required="true" class="form-control ">
+                                <input type="password" bind:value={inpPassword} autocomplete="current-password" placeholder="Contrase&ntilde;a" required="true" class="form-control ">
                             </div>
                         </div>
 

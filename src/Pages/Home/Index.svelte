@@ -1,6 +1,29 @@
 <script>
+  import axios from "axios";
+  import { onMount } from "svelte";
+  import { url } from '../../util/index';
+
   import Header from "../../Layout/Header.svelte";
   import Aside from "../../Layout/Aside.svelte";
+
+  let numeroPacientes = 0;
+
+  const contarPacientes = () => {
+    const confing = {
+      method: 'get',
+      url: `${url}/pacientes`
+    }
+    axios(confing)
+      .then(res => {
+        numeroPacientes = res.data.length;
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+  onMount(() => {
+    contarPacientes()
+  })
 </script>
 
 <Aside />
@@ -29,7 +52,7 @@
                 </div>
               </div>
             </div>
-            <h1 class="display-4 fw-600">16k</h1>
+            <h1 class="display-4 fw-600">{numeroPacientes}</h1>
             <div class="h6">
               Todos los registrados
             </div>

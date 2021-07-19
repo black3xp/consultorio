@@ -1,3 +1,6 @@
+<script>
+  import { logout } from '../util/index';
+</script>
 <header class="admin-header">
     <a
       href="#!"
@@ -100,7 +103,7 @@
             <a class="dropdown-item" href="#!">Reset Password</a>
             <a class="dropdown-item" href="#!">Help</a>
             <div class="dropdown-divider" />
-            <a class="dropdown-item" href="#!">Logout</a>
+            <a class="dropdown-item" href="#!" on:click|preventDefault={logout}>Logout</a>
           </div>
         </li>
   
