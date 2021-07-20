@@ -55,9 +55,9 @@
             provincia:provincia,
             direccion:direccion,
             email:email,
-            empresa:empresa,
+            empresa:empresa.id,
             responsables:responsables,
-            usuario: usuario,
+            usuario: usuario.id,
             antecedentes: []
         };
         const config = {
@@ -83,7 +83,10 @@
         console.log('cargando aseguradoras')
         const config = {
             method: 'get',
-            url: `${url}/Aseguradoras`
+            url: `${url}/Aseguradoras`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         }
         axios(config).then((res) => {
             aseguradoras = res.data;

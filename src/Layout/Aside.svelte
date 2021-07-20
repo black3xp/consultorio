@@ -1,6 +1,8 @@
 <script>
     import { link } from "svelte-spa-router";
     import active from 'svelte-spa-router/active';
+
+    import { user } from '../util/index';
   </script>
   
   <aside class="admin-sidebar">
@@ -53,7 +55,8 @@
         </li>
         <!--list item ends-->
         <!--list item begins-->
-        <li class="menu-item ">
+        {#if user().roles.includes('admin')}
+        <li class="menu-item">
           <a href="#!" class="open-dropdown menu-link">
             <span class="menu-label">
               <span class="menu-name">
@@ -93,6 +96,7 @@
   
           </ul>
         </li>
+        {/if}
       </ul>
       <!-- Menu List Ends-->
     </div>

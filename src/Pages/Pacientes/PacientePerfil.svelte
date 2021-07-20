@@ -34,6 +34,9 @@
     const config = {
       method: "get",
       url: `${url}/historias/paciente/${params.id}`,
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
     };
     axios(config)
       .then((res) => {
@@ -57,6 +60,9 @@
       method: "put",
       url: `${url}/pacientes/${paciente.id}`,
       data: paciente,
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
     };
     axios(config)
       .then((res) => {
@@ -93,6 +99,9 @@
     const config = {
       method: "get",
       url: `${url}/antecedentes`,
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
     };
     let promesa = await axios(config);
     if (promesa.status == 200) {
@@ -106,6 +115,9 @@
     const config = {
       method: "get",
       url: `${url}/categorias/antecedentes`,
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
     };
     axios(config).then((res) => {
       categoriasAntecedentes = res.data;
@@ -116,6 +128,9 @@
     const config = {
       method: "get",
       url: `${url}/pacientes/${params.id}`,
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
     };
     try {
       let promesa = await axios(config);

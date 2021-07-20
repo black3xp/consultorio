@@ -99,11 +99,9 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#!">Add Account</a>
             <a class="dropdown-item" href="#!">Reset Password</a>
-            <a class="dropdown-item" href="#!">Help</a>
             <div class="dropdown-divider" />
-            <a class="dropdown-item" href="#!" on:click|preventDefault={logout}>Logout</a>
+            <a class="dropdown-item text-danger" href="#!" on:click|preventDefault={logout}><i class="mdi mdi-power"></i> Salir</a>
           </div>
         </li>
   

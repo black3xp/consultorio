@@ -11,7 +11,10 @@
   const contarPacientes = () => {
     const confing = {
       method: 'get',
-      url: `${url}/pacientes`
+      url: `${url}/pacientes`,
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
     }
     axios(confing)
       .then(res => {

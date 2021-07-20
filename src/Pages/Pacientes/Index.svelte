@@ -9,6 +9,26 @@
 
     let pacientes = [];
 
+    const eliminarPaciente = (id) => {
+        if(confirm('Esta seguro que desea eliminar el paciente?')){
+            const config = {
+                method: 'put',
+                url: `${url}/pacientes/eliminar/${id}`,
+                headers: {
+                    'Authorization': `${localStorage.getItem('auth')}` 
+                }
+            }
+            axios(config)
+                .then(res => {
+                    console.log(res.data)
+                    cargarPacientes()
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        }
+    }
+
     function cargarPacientes() {
         const config = {
             method: 'get',
@@ -55,34 +75,37 @@
                 </thead>
                 <tbody>
                 {#each pacientes as paciente}
-                         <tr>
-                             <td>
-                                 <div class="avatar avatar-sm "><img src="assets/img/users/user-1.jpg" class="avatar-img avatar-sm rounded-circle" alt=""></div>
-                             </td>
-                             <td>{paciente.nombres}</td>
-                             <td>{calcularEdad(paciente.fechaNacimiento)} años</td>
-                             <td>{paciente.sexo}</td>
-                             <td>{paciente.celular}</td>
-                             <td>{paciente.cedula}</td>
-                             <td class="text-right">
-                                 <a
-                                     href="/pacientes/perfil/1"
-                                     class="btn btn-danger"
-                                     data-tooltip="Eliminar"
-                                     use:link
-                                 >
-                                     <i class="mdi mdi-close"></i>
-                                 </a>
-                                 <a
-                                     href={`/pacientes/perfil/${paciente.id}`}
-                                     class="btn btn-primary"
-                                     data-tooltip="Perfil"
-                                     use:link
-                                 >
-                                     <i class="mdi mdi-send"></i>
-                                 </a>
-                             </td>
-                         </tr>
+                    {#if paciente.activo}
+                    <tr>
+                        <td>
+                            <div class="avatar avatar-sm "><img src="assets/img/users/user-1.jpg" class="avatar-img avatar-sm rounded-circle" alt=""></div>
+                        </td>
+                        <td>{paciente.nombres} {paciente.apellidos}</td>
+                        <td>{calcularEdad(paciente.fechaNacimiento)} años</td>
+                        <td>{paciente.sexo}</td>
+                        <td>{paciente.celular}</td>
+                        <td>{paciente.cedula}</td>
+                        <td class="text-right">
+                            <!-- svelte-ignore a11y-invalid-attribute -->
+                            <a
+                                href="#!"
+                                on:click|preventDefault={() => eliminarPaciente(paciente.id)}
+                                class="btn btn-danger"
+                                data-tooltip="Eliminar"
+                            >
+                                <i class="mdi mdi-close"></i>
+                            </a>
+                            <a
+                                href={`/pacientes/perfil/${paciente.id}`}
+                                class="btn btn-primary"
+                                data-tooltip="Perfil"
+                                use:link
+                            >
+                                <i class="mdi mdi-send"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {/if}
                 {/each}
                 </tbody>
             </table>
