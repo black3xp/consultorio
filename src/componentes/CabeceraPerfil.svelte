@@ -16,6 +16,9 @@
       method: 'post',
       url: `${url}/historias`,
       data: paciente,
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
     }
     axios(config).then(res => {
       console.log(res.data)
@@ -35,7 +38,7 @@
           <div class="col-md-6 text-white p-b-30">
             <div class="media">
               <div class="avatar mr-3  avatar-xl">
-                <span class="avatar-title rounded-circle">HL</span>
+                <span class="avatar-title rounded-circle">{`${nombres[0]}${apellidos[0]}`}</span>
               </div>
               <div class="media-body m-auto">
                 <h5 class="mt-0"> 

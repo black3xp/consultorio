@@ -1,11 +1,14 @@
 <script>
     import { onMount } from "svelte";
     import {link} from "svelte-spa-router";
+    import { differenceInDays } from 'date-fns';
+
     export let paciente;
     export let edad;
     export let seguro;
 
     onMount(() => {
+
     });
 </script>
 <div class="modal fade modal-slide-right" id="modalDatosPersonales" tabindex="-1" role="dialog"
@@ -34,10 +37,17 @@
                         <div class="text-muted text-center m-b-10">
                             {paciente.email || 'N/A'}
                         </div>
+                        {#if differenceInDays(Date.now(), paciente.updatedAt)  < 90 }
                         <div class="m-auto">
                             <span class="badge badge-primary">Ultima vez modificado
-                                <span>---</span></span>
+                                <span>{new Date(paciente.updatedAt).toLocaleString()}</span></span>
                         </div>
+                        {:else}
+                        <div class="m-auto">
+                            <span class="badge badge-danger"><i class="mdi mdi-calendar-alert"></i> Ultima vez modificado
+                                <span>{new Date(paciente.updatedAt).toLocaleString()}</span></span>
+                        </div>
+                        {/if}
                     </div>
                     <hr>
                     <form class="form-group floating-label">

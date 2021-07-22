@@ -5,7 +5,10 @@
     export let instrucciones;
     export let medicamentos;
     export let sltBuscarMedicamentos;
+    export let sltBuscarEstudios;
     export let medicamentosSeleccionados;
+    export let estudios;
+    export let estudiosSeleccionados;
 
 </script>
 
@@ -182,27 +185,20 @@
 
         <div class="card-body">
             <div class="row">
-                <div class="col-12">
-                    <form class="row" data-bind="submit: agregar">
-                        <div class="col-lg-11 col-md-12">
+                <div class="col-12 row">
+                        <div class="col-lg-6 col-md-12">
                             <div
                                 class="form-group buscardor dropdown dropdown-vnc"
                             >
                                 <input
                                     type="text"
                                     class="form-control"
-                                    name=""
+                                    bind:value={sltBuscarEstudios}
+                                    on:input={() => dispatch("buscandoEstudios")}
                                     data-toggle="dropdown"
                                     aria-haspopup="true"
                                     aria-expanded="false"
-                                />
-                                <input
-                                    type="text"
-                                    class="form-control readonly d-none"
-                                    name=""
-                                    readonly=""
-                                    aria-haspopup="true"
-                                    aria-expanded="true"
+                                    placeholder="Buscar estudios"
                                 />
                                 <ul
                                     class="lista-buscador dropdown-menu"
@@ -213,7 +209,28 @@
                                     <div
                                         class="contenidoLista"
                                         data-bind="foreach: listado"
-                                    />
+                                    >
+                                    {#each estudios as estudio}
+                                        <li 
+                                            on:click={() => dispatch("agregarEstudio",{id: estudio.id, descripcion: estudio.descripcion, tipo: estudio.tipo})}>
+                                            <div
+                                                class="p-2"
+                                                style="cursor: pointer;"
+                                            >
+                                            {#if estudio.tipo === 'LAB'}
+                                                <span class="badge badge-primary">
+                                                    <i class="mdi mdi-microscope"></i>
+                                                </span>
+                                                {:else}
+                                                <span class="badge badge-primary">
+                                                    <i class="mdi mdi-image"></i>
+                                                </span>
+                                            {/if}   
+                                            {estudio.descripcion}
+                                            </div>
+                                        </li>
+                                    {/each}
+                                    </div>
                                     <li class="defecto">
                                         <a
                                             href="/"
@@ -224,28 +241,71 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-1 col-md-12">
-                            <button
-                                type="submit"
-                                class="btn btn-success btn-block mb-3"
-                                data-toggle="tooltip"
-                                data-placement="right"
-                                title=""
-                                data-original-title="Agregar estudio"
-                                ><i class="mdi mdi-plus" /></button
-                            >
-                        </div>
-                    </form>
                 </div>
 
-                <div class="col-md-12">
-                    <div class="alert border alert-light" role="alert">
-                        <p class="alert-body text-center mt-3">
-                            No tienes agregado ningún estudio
-                        </p>
-                    </div>
-                    <ul class="list-info" data-bind="foreach: estudios" />
+                <div class="col-12">
+                    <ul class="list-info">
+                        {#each estudiosSeleccionados as item, i}
+                            <li>
+                                {#if item.tipo === 'LAB'}
+                                        <span class="badge badge-primary"
+                                            ><i class="mdi mdi-microscope"></i></span
+                                        >
+                                     {:else}
+                                     <span class="badge badge-primary"
+                                         ><i class="mdi mdi-image"></i></span
+                                     >
+                                {/if}
+                                &nbsp;<span>{item.descripcion}</span>
+                                <div
+                                    style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
+                                >
+                                    <a
+                                        href="#!"
+                                        class="text-primary"
+                                        title="Agregar comentarios"
+                                        ><i
+                                            class="mdi-18px mdi mdi-comment-plus-outline"
+                                        /></a
+                                    >
+                                    <a
+                                        href="#!"
+                                        on:click|preventDefault={() => dispatch("eliminarEstudio", i)}
+                                        class="text-danger"
+                                        data-toggle="tooltip"
+                                        data-placement="top"
+                                        data-original-title="Eliminar diagnostico"
+                                        ><i
+                                            class="mdi-18px mdi mdi-trash-can-outline"
+                                        /></a
+                                    >
+                                </div>
+                            </li>
+                        {/each}
+                        {#if estudiosSeleccionados.length === 0}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div
+                                        class="alert border alert-light"
+                                        role="alert"
+                                    >
+                                        <p
+                                            class="alert-body text-center mt-3"
+                                        >
+                                            No tienes agregado ningún
+                                            estudio
+                                        </p>
+                                    </div>
+                                    <ul
+                                        class="list-info"
+                                        data-bind="foreach: estudios"
+                                    />
+                                </div>
+                            </div>
+                        {/if}
+                    </ul>
                 </div>
+
             </div>
         </div>
     </div>

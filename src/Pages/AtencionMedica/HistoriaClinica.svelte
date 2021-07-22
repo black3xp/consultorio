@@ -11,6 +11,7 @@
     import axios from "axios";
     import { onMount } from "svelte";
     import { url } from "../../util/index";
+    import { v4 as uuid } from 'uuid';
 
     export let params = "";
     let paciente = {};
@@ -30,6 +31,9 @@
     let cargando = false;
     let sltBuscarMedicamentos = '';
     let medicamentosSeleccionados = [];
+    let sltBuscarEstudios = '';
+    let estudios = [];
+    let estudiosSeleccionados = []
 
     const searchMedicamentos = () => {
         if (timeout) {
@@ -47,12 +51,49 @@
         timeout = setTimeout(function () { cargarDiagnosticos(); }, 300);
     }
 
+    const searchEstudios = () => {
+        if (timeout) {
+            window.clearTimeout(timeout);
+        }
+        
+        timeout = setTimeout(function () { cargarEstudios(); }, 300);
+    }
+
+    const agregarEstudio = (obj) => {
+        estudiosSeleccionados = [...estudiosSeleccionados, obj.detail]
+        historia.estudios = estudiosSeleccionados;
+        guardarHistoria();
+        sltBuscarEstudios = '';
+        console.log(obj.detail)
+    }
+
+    const agregarDiagnosticoPersonalizado = (nombre) => {
+        const diagnostico = {
+            d: nombre,
+            c: 'PERS',
+            id: uuid(),
+        };
+        diagnosticosSeleccionados = [...diagnosticosSeleccionados, diagnostico];
+        guardarHistoria();
+        console.log(diagnosticosSeleccionados);
+    }
+
     const eliminarMedicamento = (event) => {
         console.log(event.detail)
         if(confirm("Desea eliminar el medicamento?")){
             medicamentosSeleccionados.splice(event.detail, 1)
-            medicamentosSeleccionados = medicamentosSeleccionados
+            medicamentosSeleccionados = medicamentosSeleccionados;
             historia.medicamentos = medicamentosSeleccionados;
+            guardarHistoria();
+        }
+    }
+
+    const eliminarEstudios = (event) => {
+        console.log(event.detail)
+        if(confirm("Desea eliminar el estudio?")){
+            estudiosSeleccionados.splice(event.detail, 1)
+            estudiosSeleccionados = estudiosSeleccionados;
+            historia.estudios = estudiosSeleccionados;
             guardarHistoria();
         }
     }
@@ -74,10 +115,31 @@
         console.log(historia)
     }
 
+    const cargarEstudios = () => {
+        const config = {
+            method: 'get',
+            url: `${url}/estudios?b=${sltBuscarEstudios}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
+        };
+        axios(config)
+            .then(res => {
+                estudios = res.data;
+                console.log(estudios);
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
     const cargarMedicamentos = () => {
         const config = {
             method: 'get',
-            url: `${url}/medicamentos?b=${sltBuscarMedicamentos}`
+            url: `${url}/medicamentos?b=${sltBuscarMedicamentos}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         }
         axios(config)
             .then(res => {
@@ -96,6 +158,9 @@
             method: 'put',
             url: `${url}/historias/${params.idHistoria}`,
             data: historia,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         }
         axios(config)
             .then(res => {
@@ -112,6 +177,9 @@
         const config = {
             method: "get",
             url: `${url}/pacientes/${params.idPaciente}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         };
         let promesa = await axios(config);
         if (promesa.status == 200) {
@@ -128,6 +196,9 @@
         const config = {
             method: "get",
             url: `${url}/historias/${params.idHistoria}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         };
         let promesa = await axios(config);
         if (promesa.status == 200) {
@@ -138,6 +209,7 @@
             diagnosticosSeleccionados = promesa.data.diagnosticos
             fecha = promesa.data.fechaHora.split('T')[0];
             medicamentosSeleccionados = promesa.data.medicamentos;
+            estudiosSeleccionados = promesa.data.estudios;
             let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
             hora = obtenerHora[0]+':'+obtenerHora[1]
             console.log(historia);
@@ -153,6 +225,9 @@
         const config = {
             method: "get",
             url: `${url}/diagnosticos?b=${inpBuscarDiagnostico}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         };
         setTimeout(() => {
             axios(config)
@@ -169,6 +244,9 @@
         const config = {
             method: "get",
             url: `${url}/diagnosticos/${id}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
         };
         axios(config).then((res) => {
             diagnosticosSeleccionados = [
@@ -199,7 +277,8 @@
         await cargarPaciente();
         await cargarHistoria();
         cargarDiagnosticos();
-        cargarMedicamentos()
+        cargarMedicamentos();
+        cargarEstudios();
     });
 </script>
 
@@ -682,6 +761,7 @@
                                         {/each}
                                         <li class="defecto">
                                             <a href="#!"
+                                                on:click|preventDefault={() => agregarDiagnosticoPersonalizado(inpBuscarDiagnostico)}
                                                 ><i class="mdi mdi-plus" />Agregar
                                                 manualmente</a
                                             >
@@ -750,10 +830,16 @@
             </div>
 
             <OrdenesMedicas
+                bind:estudiosSeleccionados={estudiosSeleccionados}
                 bind:medicamentosSeleccionados={medicamentosSeleccionados}
                 bind:sltBuscarMedicamentos={sltBuscarMedicamentos}
+                bind:sltBuscarEstudios={sltBuscarEstudios}
                 bind:medicamentos={medicamentos}
                 bind:instrucciones={historia.instrucciones}
+                bind:estudios={estudios}
+                on:eliminarEstudio={eliminarEstudios}
+                on:agregarEstudio={agregarEstudio}
+                on:buscandoEstudios={searchEstudios}
                 on:modificado={guardarHistoria}
                 on:buscarMedicamentos={searchMedicamentos}
                 on:agregarMedicamento={agregarMedicamento}
@@ -792,6 +878,7 @@
                                         class="form-control"
                                         placeholder="Fecha"
                                         bind:value={fecha}
+                                        disabled
                                     />
                                 </div>
                                 <div
@@ -804,6 +891,7 @@
                                         class="form-control"
                                         on:blur={() => console.log(hora)}
                                         bind:value={hora}
+                                        disabled
                                     />
                                 </div>
                             </div>

@@ -8,6 +8,7 @@ import PacientePerfil from './Pages/Pacientes/PacientePerfil.svelte';
 import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
 import AtencionHistoriaClinica from './Pages/AtencionMedica/HistoriaClinica.svelte';
 import Login from './Pages/Home/Login.svelte';
+import Usuarios from './Pages/Usuarios/Index.svelte';
 
 
 const routes = {
@@ -62,6 +63,18 @@ const routes = {
     }),
     "/pacientes/:idPaciente/historias/:idHistoria": wrap({
         component: AtencionHistoriaClinica,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/usuarios": wrap({
+        component: Usuarios,
         conditions: [
             async (detail) => {
                 if(isLogin()){

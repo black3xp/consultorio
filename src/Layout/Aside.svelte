@@ -3,6 +3,7 @@
     import active from 'svelte-spa-router/active';
 
     import { user } from '../util/index';
+
   </script>
   
   <aside class="admin-sidebar">
@@ -72,7 +73,7 @@
           <!--submenu-->
           <ul class="sub-menu">
             <li class="menu-item">
-              <a href="/Usuario/Index" use:link class=" menu-link">
+              <a href="/usuarios" use:link class=" menu-link">
                 <span class="menu-label">
                   <span class="menu-name">Usuarios</span>
                 </span>

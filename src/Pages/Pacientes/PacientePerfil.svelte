@@ -30,28 +30,27 @@
   let frecuenciaCardiaca = '';
   let presionAlterial = '';
 
-  const cargarHistoriasPaciente = () => {
-    const config = {
+  const cargarHistoriasPaciente = async () => {
+    try {
+      const config = {
       method: "get",
       url: `${url}/historias/paciente/${params.id}`,
       headers: {
         'Authorization': `${localStorage.getItem('auth')}` 
       }
     };
-    axios(config)
-      .then((res) => {
-        historiasPaciente = res.data;
-        peso = res.data[0].peso.valor;
-        tipoPeso = res.data[0].peso.tipo;
-        temperatura = res.data[0].temperatura.valor;
-        tipoTemperatura = res.data[0].temperatura.tipo;
-        frecuenciaRespiratoria = res.data[0].frecuenciaRespiratoria;
-        frecuenciaCardiaca = res.data[0].frecuenciaCardiaca;
-        presionAlterial = `${res.data[0].presionAlterial.mm}/${res.data[0].presionAlterial.Hg}`;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    let promesa = await axios(config)
+        historiasPaciente = promesa.data;
+        peso = promesa.data[0].peso.valor;
+        tipoPeso = promesa.data[0].peso.tipo;
+        temperatura = promesa.data[0].temperatura.valor;
+        tipoTemperatura = promesa.data[0].temperatura.tipo;
+        frecuenciaRespiratoria = promesa.data[0].frecuenciaRespiratoria;
+        frecuenciaCardiaca = promesa.data[0].frecuenciaCardiaca;
+        presionAlterial = `${promesa.data[0].presionAlterial.mm}/${promesa.data[0].presionAlterial.Hg}`;
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   function actualizarAntecedentesPaciente() {
@@ -161,7 +160,7 @@
     jQuery("html, body").animate({ scrollTop: 0 }, "slow");
     await cargarPaciente();
     await cargarAntecedentes();
-    cargarHistoriasPaciente();
+    await cargarHistoriasPaciente();
     cargarCategoriasAntecedentes();
     combinarAntecedentes();
   });
@@ -341,6 +340,7 @@
                 <div class="card-body">
                   {#each historiasPaciente as historia}
                     <Evoluciones
+                      usuario={historia.usuario}
                       idPaciente={paciente.id}
                       id={historia.id}
                       fecha={historia.fechaHora}
