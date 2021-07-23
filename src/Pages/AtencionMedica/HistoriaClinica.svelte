@@ -65,6 +65,7 @@
         guardarHistoria();
         sltBuscarEstudios = '';
         console.log(obj.detail)
+
     }
 
     const agregarDiagnosticoPersonalizado = (nombre) => {
@@ -78,12 +79,36 @@
         console.log(diagnosticosSeleccionados);
     }
 
+    const agregarComentarioDiagnostico = (position) => {
+        if(diagnosticosSeleccionados[position].comentario === undefined) {
+            diagnosticosSeleccionados[position].comentario = '';
+            historia.diagnosticos = diagnosticosSeleccionados;
+            guardarHistoria();
+        }
+        else
+        {
+            delete diagnosticosSeleccionados[position].comentario;
+            diagnosticosSeleccionados = diagnosticosSeleccionados;
+            historia.diagnosticos = diagnosticosSeleccionados;
+            guardarHistoria();
+        }
+    }
+
     const eliminarMedicamento = (event) => {
         console.log(event.detail)
         if(confirm("Desea eliminar el medicamento?")){
             medicamentosSeleccionados.splice(event.detail, 1)
             medicamentosSeleccionados = medicamentosSeleccionados;
             historia.medicamentos = medicamentosSeleccionados;
+            guardarHistoria();
+        }
+    }
+
+    const eliminarDiagnostico = (position) => {
+        if(confirm("Esta seguro que desea eliminar el diagnostico?")) {
+            diagnosticosSeleccionados.splice(position,1);
+            diagnosticosSeleccionados = diagnosticosSeleccionados;
+            historia.diagnosticos = diagnosticosSeleccionados;
             guardarHistoria();
         }
     }
@@ -773,7 +798,7 @@
 
                         <div class="col-md-12">
                             <ul class="list-info">
-                                {#each diagnosticosSeleccionados as item}
+                                {#each diagnosticosSeleccionados as item, i}
                                     <li>
                                         <span class="badge badge-primary"
                                             >{item.c}</span
@@ -784,7 +809,8 @@
                                             <a
                                                 href="#!"
                                                 class="text-primary"
-                                                title="Agregar comentarios"
+                                                data-tooltip="Comentar"
+                                                on:click|preventDefault={() => agregarComentarioDiagnostico(i)}
                                                 ><i
                                                     class="mdi-18px mdi mdi-comment-plus-outline"
                                                 /></a
@@ -792,14 +818,20 @@
                                             <a
                                                 href="#!"
                                                 class="text-danger"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                data-original-title="Eliminar diagnostico"
+                                                data-tooltip="Eliminar"
+                                                on:click|preventDefault={() => eliminarDiagnostico(i)}
                                                 ><i
                                                     class="mdi-18px mdi mdi-trash-can-outline"
                                                 /></a
                                             >
                                         </div>
+                                        {#if item.comentario !== undefined}
+                                            <div class="row mt-3">
+                                                <div class="col">
+                                                    <input type="text" on:blur={guardarHistoria} bind:value={item.comentario} class="form-control border-primary" placeholder="Comentario">
+                                                </div>
+                                            </div>
+                                        {/if}
                                     </li>
                                 {/each}
                                 {#if diagnosticosSeleccionados.length === 0}
