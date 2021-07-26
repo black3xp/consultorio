@@ -1,5 +1,5 @@
 import {push} from 'svelte-spa-router';
-import jwt_decode from "jwt-decode";
+import jwtDecode from "jwt-decode";
 // const url = 'https://xmconsulta.cthrics.com/api'
 // const url = 'http://localhost:3000/api'
 const url = 'http://localhost:1337/api'
@@ -19,7 +19,7 @@ const logout = () => {
 };
 
 const user = () => {
-    const decoded = jwt_decode(localStorage.getItem('auth'));
+    const decoded = jwtDecode(localStorage.getItem('auth'));
     return decoded;
 }
 

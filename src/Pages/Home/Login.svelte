@@ -14,6 +14,9 @@
         const config = {
             method: 'post',
             url: `${url}/login`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            },
             data 
         };
         axios(config)
