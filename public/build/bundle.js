@@ -17807,402 +17807,309 @@ var app = (function () {
     const file$k = "src\\componentes\\Modals\\ModalCrearUsuarios.svelte";
 
     function create_fragment$m(ctx) {
+    	let form;
+    	let div20;
     	let div19;
     	let div18;
-    	let div17;
     	let div0;
     	let h5;
     	let t1;
     	let button0;
-    	let span0;
+    	let span;
     	let t3;
-    	let div16;
-    	let form;
-    	let input0;
-    	let t4;
+    	let div11;
     	let div2;
     	let div1;
     	let label0;
+    	let t5;
+    	let input0;
     	let t6;
-    	let input1;
-    	let t7;
-    	let div5;
+    	let div4;
     	let div3;
     	let label1;
+    	let t8;
+    	let input1;
     	let t9;
-    	let input2;
-    	let t10;
-    	let div4;
-    	let label2;
-    	let t12;
-    	let input3;
-    	let t13;
-    	let div7;
     	let div6;
-    	let label3;
-    	let t15;
-    	let input4;
-    	let t16;
-    	let div12;
+    	let div5;
+    	let label2;
+    	let t11;
+    	let input2;
+    	let t12;
     	let div8;
-    	let label4;
-    	let t18;
-    	let input5;
-    	let t19;
-    	let div9;
-    	let label5;
-    	let input6;
-    	let t20;
-    	let span1;
-    	let t21;
-    	let span2;
-    	let t23;
+    	let div7;
+    	let label3;
+    	let t14;
+    	let input3;
+    	let t15;
     	let div10;
-    	let label6;
-    	let t25;
-    	let input7;
-    	let t26;
-    	let div11;
-    	let select;
-    	let option;
-    	let t27;
-    	let div14;
+    	let div9;
+    	let label4;
+    	let t17;
+    	let input4;
+    	let t18;
+    	let div17;
+    	let div16;
     	let div13;
-    	let label7;
-    	let t29;
-    	let textarea;
-    	let t30;
-    	let br;
-    	let t31;
-    	let div15;
     	let button1;
-    	let t33;
+    	let h30;
+    	let t19;
+    	let div12;
+    	let t21;
+    	let div15;
     	let button2;
+    	let h31;
+    	let t22;
+    	let div14;
 
     	const block = {
     		c: function create() {
+    			form = element("form");
+    			div20 = element("div");
     			div19 = element("div");
     			div18 = element("div");
-    			div17 = element("div");
     			div0 = element("div");
     			h5 = element("h5");
     			h5.textContent = "Usuario";
     			t1 = space();
     			button0 = element("button");
-    			span0 = element("span");
-    			span0.textContent = "×";
+    			span = element("span");
+    			span.textContent = "×";
     			t3 = space();
-    			div16 = element("div");
-    			form = element("form");
-    			input0 = element("input");
-    			t4 = space();
+    			div11 = element("div");
     			div2 = element("div");
     			div1 = element("div");
     			label0 = element("label");
-    			label0.textContent = "Nombre Completo";
+    			label0.textContent = "Nombre";
+    			t5 = space();
+    			input0 = element("input");
     			t6 = space();
-    			input1 = element("input");
-    			t7 = space();
-    			div5 = element("div");
+    			div4 = element("div");
     			div3 = element("div");
     			label1 = element("label");
-    			label1.textContent = "Usuario";
+    			label1.textContent = "Apellido";
+    			t8 = space();
+    			input1 = element("input");
     			t9 = space();
-    			input2 = element("input");
-    			t10 = space();
-    			div4 = element("div");
+    			div6 = element("div");
+    			div5 = element("div");
     			label2 = element("label");
     			label2.textContent = "Email";
+    			t11 = space();
+    			input2 = element("input");
     			t12 = space();
-    			input3 = element("input");
-    			t13 = space();
+    			div8 = element("div");
     			div7 = element("div");
-    			div6 = element("div");
     			label3 = element("label");
     			label3.textContent = "Contraseña";
+    			t14 = space();
+    			input3 = element("input");
     			t15 = space();
-    			input4 = element("input");
-    			t16 = space();
-    			div12 = element("div");
-    			div8 = element("div");
-    			label4 = element("label");
-    			label4.textContent = "Telefono";
-    			t18 = space();
-    			input5 = element("input");
-    			t19 = space();
-    			div9 = element("div");
-    			label5 = element("label");
-    			input6 = element("input");
-    			t20 = space();
-    			span1 = element("span");
-    			t21 = space();
-    			span2 = element("span");
-    			span2.textContent = "Es Medico";
-    			t23 = space();
     			div10 = element("div");
-    			label6 = element("label");
-    			label6.textContent = "exequatur";
-    			t25 = space();
-    			input7 = element("input");
-    			t26 = space();
-    			div11 = element("div");
-    			select = element("select");
-    			option = element("option");
-    			t27 = space();
-    			div14 = element("div");
+    			div9 = element("div");
+    			label4 = element("label");
+    			label4.textContent = "Repetir contraseña";
+    			t17 = space();
+    			input4 = element("input");
+    			t18 = space();
+    			div17 = element("div");
+    			div16 = element("div");
     			div13 = element("div");
-    			label7 = element("label");
-    			label7.textContent = "Observaciones";
-    			t29 = space();
-    			textarea = element("textarea");
-    			t30 = space();
-    			br = element("br");
-    			t31 = space();
-    			div15 = element("div");
     			button1 = element("button");
-    			button1.textContent = "Cerrar";
-    			t33 = space();
+    			h30 = element("h3");
+    			t19 = space();
+    			div12 = element("div");
+    			div12.textContent = "Cerrar";
+    			t21 = space();
+    			div15 = element("div");
     			button2 = element("button");
-    			button2.textContent = "Guardar";
+    			h31 = element("h3");
+    			t22 = space();
+    			div14 = element("div");
+    			div14.textContent = "Guardar";
     			attr_dev(h5, "class", "modal-title");
     			attr_dev(h5, "id", "modalUsuarioLabel");
-    			add_location(h5, file$k, 5, 16, 334);
-    			attr_dev(span0, "aria-hidden", "true");
-    			add_location(span0, file$k, 8, 20, 562);
+    			add_location(h5, file$k, 6, 16, 358);
+    			attr_dev(span, "aria-hidden", "true");
+    			add_location(span, file$k, 9, 20, 586);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close");
     			attr_dev(button0, "data-bind", "click: nuevoUsuario");
     			attr_dev(button0, "data-dismiss", "modal");
     			attr_dev(button0, "aria-label", "Close");
-    			add_location(button0, file$k, 6, 16, 411);
+    			add_location(button0, file$k, 7, 16, 435);
     			attr_dev(div0, "class", "modal-header");
-    			add_location(div0, file$k, 4, 12, 290);
-    			attr_dev(input0, "type", "hidden");
-    			attr_dev(input0, "name", "IdUser");
-    			add_location(input0, file$k, 14, 20, 744);
+    			add_location(div0, file$k, 5, 12, 314);
     			attr_dev(label0, "for", "");
-    			add_location(label0, file$k, 17, 28, 913);
+    			add_location(label0, file$k, 15, 28, 838);
+    			attr_dev(input0, "type", "name");
+    			attr_dev(input0, "class", "form-control");
+    			attr_dev(input0, "placeholder", "John");
+    			attr_dev(input0, "name", "Name");
+    			attr_dev(input0, "maxlength", "200");
+    			input0.required = true;
+    			add_location(input0, file$k, 16, 28, 896);
+    			attr_dev(div1, "class", "form-group col-md-12");
+    			add_location(div1, file$k, 14, 24, 774);
+    			attr_dev(div2, "class", "form-row");
+    			add_location(div2, file$k, 13, 20, 726);
+    			attr_dev(label1, "for", "");
+    			add_location(label1, file$k, 28, 28, 1415);
     			attr_dev(input1, "type", "name");
     			attr_dev(input1, "class", "form-control");
-    			attr_dev(input1, "placeholder", "Ing. John Doe");
+    			attr_dev(input1, "placeholder", "Doe");
     			attr_dev(input1, "name", "Name");
     			attr_dev(input1, "maxlength", "200");
-    			input1.required = "";
-    			add_location(input1, file$k, 18, 28, 980);
-    			attr_dev(div1, "class", "form-group col-md-12");
-    			add_location(div1, file$k, 16, 24, 849);
-    			attr_dev(div2, "class", "form-row");
-    			add_location(div2, file$k, 15, 20, 801);
-    			attr_dev(label1, "for", "");
-    			add_location(label1, file$k, 24, 28, 1315);
-    			attr_dev(input2, "type", "email");
-    			attr_dev(input2, "class", "form-control");
-    			attr_dev(input2, "autocomplete", "off");
-    			attr_dev(input2, "name", "UserName");
-    			attr_dev(input2, "id", "");
-    			attr_dev(input2, "maxlength", "100");
-    			add_location(input2, file$k, 25, 28, 1374);
+    			input1.required = true;
+    			add_location(input1, file$k, 29, 28, 1475);
     			attr_dev(div3, "class", "form-group col-md-12");
-    			add_location(div3, file$k, 23, 24, 1251);
+    			add_location(div3, file$k, 27, 24, 1351);
+    			attr_dev(div4, "class", "form-row");
+    			add_location(div4, file$k, 26, 20, 1303);
     			attr_dev(label2, "for", "");
-    			add_location(label2, file$k, 29, 28, 1627);
-    			attr_dev(input3, "type", "email");
-    			input3.required = true;
-    			attr_dev(input3, "class", "form-control");
-    			attr_dev(input3, "placeholder", "usuario@correo.com");
-    			attr_dev(input3, "autocomplete", "off");
-    			attr_dev(input3, "name", "Email");
-    			attr_dev(input3, "id", "txtCorreo");
-    			attr_dev(input3, "maxlength", "100");
-    			add_location(input3, file$k, 30, 28, 1684);
-    			attr_dev(div4, "class", "form-group col-md-12");
-    			add_location(div4, file$k, 28, 24, 1563);
-    			attr_dev(div5, "class", "form-row");
-    			add_location(div5, file$k, 22, 20, 1203);
+    			add_location(label2, file$k, 41, 28, 1993);
+    			attr_dev(input2, "type", "email");
+    			input2.required = true;
+    			attr_dev(input2, "class", "form-control");
+    			attr_dev(input2, "placeholder", "usuario@correo.com");
+    			attr_dev(input2, "autocomplete", "off");
+    			attr_dev(input2, "name", "Email");
+    			attr_dev(input2, "id", "txtCorreo");
+    			attr_dev(input2, "maxlength", "100");
+    			add_location(input2, file$k, 42, 28, 2050);
+    			attr_dev(div5, "class", "form-group col-md-12");
+    			add_location(div5, file$k, 40, 24, 1929);
+    			attr_dev(div6, "class", "form-row");
+    			add_location(div6, file$k, 39, 20, 1881);
     			attr_dev(label3, "for", "");
-    			add_location(label3, file$k, 37, 28, 2090);
+    			add_location(label3, file$k, 56, 28, 2685);
+    			attr_dev(input3, "type", "password");
+    			attr_dev(input3, "class", "form-control");
+    			input3.required = true;
+    			attr_dev(input3, "name", "PasswordHash");
+    			attr_dev(input3, "maxlength", "50");
+    			add_location(input3, file$k, 57, 28, 2754);
+    			attr_dev(div7, "class", "form-group col-md-12");
+    			add_location(div7, file$k, 55, 24, 2621);
+    			attr_dev(div8, "class", "form-row");
+    			add_location(div8, file$k, 54, 20, 2573);
+    			attr_dev(label4, "for", "");
+    			add_location(label4, file$k, 68, 28, 3232);
     			attr_dev(input4, "type", "password");
     			attr_dev(input4, "class", "form-control");
     			input4.required = true;
     			attr_dev(input4, "name", "PasswordHash");
     			attr_dev(input4, "maxlength", "50");
-    			add_location(input4, file$k, 38, 28, 2159);
-    			attr_dev(div6, "class", "form-group col-md-12");
-    			add_location(div6, file$k, 36, 24, 2026);
-    			attr_dev(div7, "class", "form-row");
-    			add_location(div7, file$k, 35, 20, 1978);
-    			attr_dev(label4, "for", "");
-    			add_location(label4, file$k, 47, 28, 2512);
-    			attr_dev(input5, "type", "text");
-    			attr_dev(input5, "class", "form-control");
-    			attr_dev(input5, "data-mask", "(000) 000-0000");
-    			attr_dev(input5, "data-mask-clearifnotmatch", "true");
-    			attr_dev(input5, "autocomplete", "off");
-    			attr_dev(input5, "maxlength", "14");
-    			attr_dev(input5, "placeholder", "(809) 000-0000");
-    			attr_dev(input5, "name", "PhoneNumber");
-    			attr_dev(input5, "id", "txtTelefono");
-    			add_location(input5, file$k, 48, 28, 2572);
-    			attr_dev(div8, "class", "form-group col-md-12");
-    			add_location(div8, file$k, 46, 24, 2448);
-    			attr_dev(input6, "type", "checkbox");
-    			input6.value = "true";
-    			attr_dev(input6, "name", "EsMedico");
-    			attr_dev(input6, "class", "cstm-switch-input");
-    			add_location(input6, file$k, 54, 32, 3020);
-    			attr_dev(span1, "class", "cstm-switch-indicator ");
-    			add_location(span1, file$k, 56, 32, 3169);
-    			attr_dev(span2, "class", "cstm-switch-description");
-    			add_location(span2, file$k, 57, 32, 3247);
-    			attr_dev(label5, "class", "cstm-switch");
-    			add_location(label5, file$k, 53, 28, 2959);
+    			add_location(input4, file$k, 69, 28, 3309);
     			attr_dev(div9, "class", "form-group col-md-12");
-    			add_location(div9, file$k, 52, 24, 2895);
-    			attr_dev(label6, "for", "");
-    			add_location(label6, file$k, 61, 28, 3462);
-    			attr_dev(input7, "type", "text");
-    			attr_dev(input7, "pattern", "^[0-9]+$");
-    			attr_dev(input7, "class", "form-control");
-    			attr_dev(input7, "utocomplete", "off");
-    			attr_dev(input7, "name", "Exequatur");
-    			attr_dev(input7, "id", "txtTelefono");
-    			add_location(input7, file$k, 62, 28, 3523);
-    			attr_dev(div10, "class", "form-group col-md-12");
-    			add_location(div10, file$k, 60, 24, 3398);
-    			option.__value = "";
-    			option.value = option.__value;
-    			add_location(option, file$k, 69, 32, 4036);
-    			attr_dev(select, "name", "IdDepartamento");
-    			attr_dev(select, "class", " js-select2 select2-hidden-accessible");
-    			attr_dev(select, "id", "sltDepartamentos");
-    			set_style(select, "width", "100%");
-    			attr_dev(select, "aria-hidden", "true");
-    			select.required = true;
-    			add_location(select, file$k, 66, 28, 3789);
-    			attr_dev(div11, "class", "form-group col-md-12");
-    			add_location(div11, file$k, 65, 24, 3725);
-    			attr_dev(div12, "class", "form-row");
-    			add_location(div12, file$k, 45, 20, 2400);
-    			attr_dev(label7, "for", "");
-    			add_location(label7, file$k, 75, 28, 4295);
-    			attr_dev(textarea, "class", "form-control");
-    			attr_dev(textarea, "rows", "3");
-    			attr_dev(textarea, "name", "Observaciones");
-    			add_location(textarea, file$k, 76, 28, 4360);
-    			attr_dev(div13, "class", "form-group col-md-12");
-    			add_location(div13, file$k, 74, 24, 4231);
-    			attr_dev(div14, "class", "form-row");
-    			add_location(div14, file$k, 73, 20, 4183);
-    			add_location(br, file$k, 81, 20, 4549);
-    			attr_dev(button1, "type", "button");
-    			attr_dev(button1, "class", "btn btn-secondary");
+    			add_location(div9, file$k, 67, 24, 3168);
+    			attr_dev(div10, "class", "form-row");
+    			add_location(div10, file$k, 66, 20, 3120);
+    			attr_dev(div11, "class", "modal-body");
+    			add_location(div11, file$k, 12, 12, 680);
+    			attr_dev(h30, "class", "mdi mdi-close-outline");
+    			add_location(h30, file$k, 84, 32, 4028);
+    			attr_dev(div12, "class", "text-overline");
+    			add_location(div12, file$k, 85, 32, 4101);
+    			attr_dev(button1, "class", "btn btn-default text-danger");
     			attr_dev(button1, "data-dismiss", "modal");
-    			add_location(button1, file$k, 83, 24, 4627);
+    			add_location(button1, file$k, 82, 28, 3852);
+    			attr_dev(div13, "class", "col");
+    			add_location(div13, file$k, 81, 24, 3805);
+    			attr_dev(h31, "class", "mdi mdi-content-save-outline");
+    			add_location(h31, file$k, 92, 36, 4514);
+    			attr_dev(div14, "class", "text-overline");
+    			add_location(div14, file$k, 93, 36, 4598);
     			attr_dev(button2, "type", "submit");
-    			attr_dev(button2, "class", "btn btn-success");
-    			add_location(button2, file$k, 86, 24, 4793);
-    			attr_dev(div15, "class", "modal-footer");
-    			add_location(div15, file$k, 82, 20, 4575);
+    			attr_dev(button2, "class", "btn btn-default text-info");
+    			add_location(button2, file$k, 90, 32, 4339);
+    			attr_dev(div15, "class", "col");
+    			add_location(div15, file$k, 89, 28, 4288);
+    			attr_dev(div16, "class", "row text-center p-b-10");
+    			add_location(div16, file$k, 80, 20, 3743);
+    			attr_dev(div17, "class", "modal-footer");
+    			add_location(div17, file$k, 79, 16, 3695);
+    			attr_dev(div18, "class", "modal-content");
+    			add_location(div18, file$k, 4, 8, 273);
+    			attr_dev(div19, "class", "modal-dialog");
+    			attr_dev(div19, "role", "document");
+    			add_location(div19, file$k, 3, 4, 221);
+    			attr_dev(div20, "class", "modal fade modal-slide-right");
+    			attr_dev(div20, "id", "modalUsuario");
+    			attr_dev(div20, "tabindex", "-1");
+    			attr_dev(div20, "role", "dialog");
+    			attr_dev(div20, "aria-labelledby", "modalUsuarioLabel");
+    			set_style(div20, "display", "none");
+    			set_style(div20, "padding-right", "16px");
+    			attr_dev(div20, "aria-modal", "true");
+    			add_location(div20, file$k, 1, 0, 24);
     			attr_dev(form, "id", "frmUsuario");
-    			add_location(form, file$k, 13, 16, 700);
-    			attr_dev(div16, "class", "modal-body");
-    			add_location(div16, file$k, 11, 12, 656);
-    			attr_dev(div17, "class", "modal-content");
-    			add_location(div17, file$k, 3, 8, 249);
-    			attr_dev(div18, "class", "modal-dialog");
-    			attr_dev(div18, "role", "document");
-    			add_location(div18, file$k, 2, 4, 197);
-    			attr_dev(div19, "class", "modal fade modal-slide-right");
-    			attr_dev(div19, "id", "modalUsuario");
-    			attr_dev(div19, "tabindex", "-1");
-    			attr_dev(div19, "role", "dialog");
-    			attr_dev(div19, "aria-labelledby", "modalUsuarioLabel");
-    			set_style(div19, "display", "none");
-    			set_style(div19, "padding-right", "16px");
-    			attr_dev(div19, "aria-modal", "true");
-    			add_location(div19, file$k, 0, 0, 0);
+    			add_location(form, file$k, 0, 0, 0);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div19, anchor);
+    			insert_dev(target, form, anchor);
+    			append_dev(form, div20);
+    			append_dev(div20, div19);
     			append_dev(div19, div18);
-    			append_dev(div18, div17);
-    			append_dev(div17, div0);
+    			append_dev(div18, div0);
     			append_dev(div0, h5);
     			append_dev(div0, t1);
     			append_dev(div0, button0);
-    			append_dev(button0, span0);
-    			append_dev(div17, t3);
-    			append_dev(div17, div16);
-    			append_dev(div16, form);
-    			append_dev(form, input0);
-    			append_dev(form, t4);
-    			append_dev(form, div2);
+    			append_dev(button0, span);
+    			append_dev(div18, t3);
+    			append_dev(div18, div11);
+    			append_dev(div11, div2);
     			append_dev(div2, div1);
     			append_dev(div1, label0);
-    			append_dev(div1, t6);
-    			append_dev(div1, input1);
-    			append_dev(form, t7);
-    			append_dev(form, div5);
-    			append_dev(div5, div3);
+    			append_dev(div1, t5);
+    			append_dev(div1, input0);
+    			append_dev(div11, t6);
+    			append_dev(div11, div4);
+    			append_dev(div4, div3);
     			append_dev(div3, label1);
-    			append_dev(div3, t9);
-    			append_dev(div3, input2);
-    			append_dev(div5, t10);
-    			append_dev(div5, div4);
-    			append_dev(div4, label2);
-    			append_dev(div4, t12);
-    			append_dev(div4, input3);
-    			append_dev(form, t13);
-    			append_dev(form, div7);
-    			append_dev(div7, div6);
-    			append_dev(div6, label3);
-    			append_dev(div6, t15);
-    			append_dev(div6, input4);
-    			append_dev(form, t16);
-    			append_dev(form, div12);
-    			append_dev(div12, div8);
-    			append_dev(div8, label4);
-    			append_dev(div8, t18);
-    			append_dev(div8, input5);
-    			append_dev(div12, t19);
-    			append_dev(div12, div9);
-    			append_dev(div9, label5);
-    			append_dev(label5, input6);
-    			append_dev(label5, t20);
-    			append_dev(label5, span1);
-    			append_dev(label5, t21);
-    			append_dev(label5, span2);
-    			append_dev(div12, t23);
-    			append_dev(div12, div10);
-    			append_dev(div10, label6);
-    			append_dev(div10, t25);
-    			append_dev(div10, input7);
-    			append_dev(div12, t26);
-    			append_dev(div12, div11);
-    			append_dev(div11, select);
-    			append_dev(select, option);
-    			append_dev(form, t27);
-    			append_dev(form, div14);
-    			append_dev(div14, div13);
-    			append_dev(div13, label7);
-    			append_dev(div13, t29);
-    			append_dev(div13, textarea);
-    			append_dev(form, t30);
-    			append_dev(form, br);
-    			append_dev(form, t31);
-    			append_dev(form, div15);
-    			append_dev(div15, button1);
-    			append_dev(div15, t33);
+    			append_dev(div3, t8);
+    			append_dev(div3, input1);
+    			append_dev(div11, t9);
+    			append_dev(div11, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, label2);
+    			append_dev(div5, t11);
+    			append_dev(div5, input2);
+    			append_dev(div11, t12);
+    			append_dev(div11, div8);
+    			append_dev(div8, div7);
+    			append_dev(div7, label3);
+    			append_dev(div7, t14);
+    			append_dev(div7, input3);
+    			append_dev(div11, t15);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, label4);
+    			append_dev(div9, t17);
+    			append_dev(div9, input4);
+    			append_dev(div18, t18);
+    			append_dev(div18, div17);
+    			append_dev(div17, div16);
+    			append_dev(div16, div13);
+    			append_dev(div13, button1);
+    			append_dev(button1, h30);
+    			append_dev(button1, t19);
+    			append_dev(button1, div12);
+    			append_dev(div16, t21);
+    			append_dev(div16, div15);
     			append_dev(div15, button2);
+    			append_dev(button2, h31);
+    			append_dev(button2, t22);
+    			append_dev(button2, div14);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div19);
+    			if (detaching) detach_dev(form);
     		}
     	};
 
@@ -18247,108 +18154,52 @@ var app = (function () {
 
     const file$l = "src\\componentes\\Modals\\ModalRolesUsuario.svelte";
 
-    function create_fragment$n(ctx) {
-    	let div7;
-    	let div6;
-    	let div5;
-    	let div0;
-    	let h5;
-    	let t1;
-    	let button;
+    function get_each_context$6(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[4] = list[i];
+    	child_ctx[5] = list;
+    	child_ctx[6] = i;
+    	return child_ctx;
+    }
+
+    // (35:28) {#each rolesMapeado as role}
+    function create_each_block$6(ctx) {
+    	let div;
+    	let label;
     	let span0;
-    	let t3;
-    	let div4;
-    	let form;
-    	let input0;
-    	let t4;
-    	let p;
-    	let span1;
-    	let t6;
-    	let div1;
-    	let label0;
-    	let t8;
-    	let input1;
-    	let t9;
-    	let div3;
-    	let div2;
-    	let label1;
-    	let span2;
-    	let t10;
+    	let t0_value = /*role*/ ctx[4].displayName + "";
+    	let t0;
+    	let t1;
     	let a;
     	let i;
-    	let t11;
-    	let input2;
-    	let t12;
-    	let span3;
+    	let t2;
+    	let input;
+    	let t3;
+    	let span1;
+    	let t4;
+    	let mounted;
+    	let dispose;
+
+    	function input_change_handler() {
+    		/*input_change_handler*/ ctx[3].call(input, /*each_value*/ ctx[5], /*role_index*/ ctx[6]);
+    	}
 
     	const block = {
     		c: function create() {
-    			div7 = element("div");
-    			div6 = element("div");
-    			div5 = element("div");
-    			div0 = element("div");
-    			h5 = element("h5");
-    			h5.textContent = "Roles";
-    			t1 = space();
-    			button = element("button");
+    			div = element("div");
+    			label = element("label");
     			span0 = element("span");
-    			span0.textContent = "×";
-    			t3 = space();
-    			div4 = element("div");
-    			form = element("form");
-    			input0 = element("input");
-    			t4 = space();
-    			p = element("p");
-    			span1 = element("span");
-    			span1.textContent = "-user name-";
-    			t6 = space();
-    			div1 = element("div");
-    			label0 = element("label");
-    			label0.textContent = "Buscar";
-    			t8 = space();
-    			input1 = element("input");
-    			t9 = space();
-    			div3 = element("div");
-    			div2 = element("div");
-    			label1 = element("label");
-    			span2 = element("span");
-    			t10 = text("Administrador ");
+    			t0 = text(t0_value);
+    			t1 = space();
     			a = element("a");
     			i = element("i");
-    			t11 = space();
-    			input2 = element("input");
-    			t12 = space();
-    			span3 = element("span");
-    			attr_dev(h5, "class", "modal-title");
-    			attr_dev(h5, "id", "modalRolesLabel");
-    			add_location(h5, file$l, 5, 20, 350);
-    			attr_dev(span0, "aria-hidden", "true");
-    			add_location(span0, file$l, 7, 24, 529);
-    			attr_dev(button, "type", "button");
-    			attr_dev(button, "class", "close");
-    			attr_dev(button, "data-dismiss", "modal");
-    			attr_dev(button, "aria-label", "Close");
-    			add_location(button, file$l, 6, 20, 427);
-    			attr_dev(div0, "class", "modal-header");
-    			add_location(div0, file$l, 4, 16, 302);
-    			attr_dev(input0, "type", "hidden");
-    			attr_dev(input0, "name", "idPaciente");
-    			input0.value = "";
-    			add_location(input0, file$l, 13, 24, 721);
-    			attr_dev(span1, "class", "badge badge-soft-primary");
-    			set_style(span1, "font-size", "17px");
-    			add_location(span1, file$l, 14, 27, 798);
-    			add_location(p, file$l, 14, 24, 795);
-    			attr_dev(label0, "for", "");
-    			add_location(label0, file$l, 17, 28, 1005);
-    			attr_dev(input1, "type", "text");
-    			attr_dev(input1, "class", "form-control");
-    			attr_dev(input1, "placeholder", "Buscar roles");
-    			add_location(input1, file$l, 18, 28, 1063);
-    			attr_dev(div1, "class", "form-group floating-label");
-    			add_location(div1, file$l, 16, 24, 936);
+    			t2 = space();
+    			input = element("input");
+    			t3 = space();
+    			span1 = element("span");
+    			t4 = space();
     			attr_dev(i, "class", "mdi-18px mdi mdi-information-outline");
-    			add_location(i, file$l, 29, 61, 1889);
+    			add_location(i, file$l, 42, 70, 2368);
     			attr_dev(a, "href", "#!");
     			attr_dev(a, "data-toggle", "popover");
     			attr_dev(a, "title", "Informacion Administrador");
@@ -18356,83 +18207,256 @@ var app = (function () {
     			attr_dev(a, "data-placement", "bottom");
     			attr_dev(a, "data-content", "And here's some amazing content. It's very engaging. Right?");
     			attr_dev(a, "class", "icon-rol");
-    			add_location(a, file$l, 25, 55, 1503);
-    			attr_dev(span2, "class", "cstm-switch-description mr-auto bd-highlight");
-    			add_location(span2, file$l, 24, 36, 1388);
-    			attr_dev(input2, "type", "checkbox");
-    			attr_dev(input2, "name", "option");
-    			input2.value = "1";
-    			attr_dev(input2, "class", "cstm-switch-input");
-    			add_location(input2, file$l, 31, 36, 2039);
-    			attr_dev(span3, "class", "cstm-switch-indicator bg-success bd-highlight");
-    			add_location(span3, file$l, 34, 36, 2232);
-    			attr_dev(label1, "class", "cstm-switch d-flex bd-highlight");
-    			add_location(label1, file$l, 23, 32, 1303);
-    			attr_dev(div2, "class", "lista-rol m-b-10");
-    			add_location(div2, file$l, 22, 28, 1239);
-    			attr_dev(div3, "class", "roles");
-    			add_location(div3, file$l, 20, 24, 1188);
+    			add_location(a, file$l, 38, 69, 1946);
+    			attr_dev(span0, "class", "cstm-switch-description mr-auto bd-highlight");
+    			add_location(span0, file$l, 37, 45, 1817);
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "cstm-switch-input");
+    			add_location(input, file$l, 44, 45, 2536);
+    			attr_dev(span1, "class", "cstm-switch-indicator bg-success bd-highlight");
+    			add_location(span1, file$l, 47, 45, 2759);
+    			attr_dev(label, "class", "cstm-switch d-flex bd-highlight");
+    			add_location(label, file$l, 36, 41, 1723);
+    			attr_dev(div, "class", "lista-rol m-b-10");
+    			add_location(div, file$l, 35, 37, 1650);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, label);
+    			append_dev(label, span0);
+    			append_dev(span0, t0);
+    			append_dev(span0, t1);
+    			append_dev(span0, a);
+    			append_dev(a, i);
+    			append_dev(label, t2);
+    			append_dev(label, input);
+    			input.checked = /*role*/ ctx[4].active;
+    			append_dev(label, t3);
+    			append_dev(label, span1);
+    			append_dev(div, t4);
+
+    			if (!mounted) {
+    				dispose = listen_dev(input, "change", input_change_handler);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*rolesMapeado*/ 2 && t0_value !== (t0_value = /*role*/ ctx[4].displayName + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*rolesMapeado*/ 2) {
+    				input.checked = /*role*/ ctx[4].active;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$6.name,
+    		type: "each",
+    		source: "(35:28) {#each rolesMapeado as role}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$n(ctx) {
+    	let div6;
+    	let div5;
+    	let div4;
+    	let div0;
+    	let h5;
+    	let t0_value = /*usuario*/ ctx[0].nombre + "";
+    	let t0;
+    	let t1;
+    	let t2_value = /*usuario*/ ctx[0].apellido + "";
+    	let t2;
+    	let t3;
+    	let button;
+    	let span0;
+    	let t5;
+    	let div3;
+    	let form;
+    	let input0;
+    	let t6;
+    	let p;
+    	let span1;
+    	let t7_value = /*usuario*/ ctx[0].correo + "";
+    	let t7;
+    	let t8;
+    	let div1;
+    	let label;
+    	let t10;
+    	let input1;
+    	let t11;
+    	let div2;
+    	let each_value = /*rolesMapeado*/ ctx[1];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div6 = element("div");
+    			div5 = element("div");
+    			div4 = element("div");
+    			div0 = element("div");
+    			h5 = element("h5");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			t2 = text(t2_value);
+    			t3 = space();
+    			button = element("button");
+    			span0 = element("span");
+    			span0.textContent = "×";
+    			t5 = space();
+    			div3 = element("div");
+    			form = element("form");
+    			input0 = element("input");
+    			t6 = space();
+    			p = element("p");
+    			span1 = element("span");
+    			t7 = text(t7_value);
+    			t8 = space();
+    			div1 = element("div");
+    			label = element("label");
+    			label.textContent = "Buscar";
+    			t10 = space();
+    			input1 = element("input");
+    			t11 = space();
+    			div2 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(h5, "class", "modal-title");
+    			attr_dev(h5, "id", "modalRolesLabel");
+    			add_location(h5, file$l, 18, 20, 661);
+    			attr_dev(span0, "aria-hidden", "true");
+    			add_location(span0, file$l, 20, 24, 870);
+    			attr_dev(button, "type", "button");
+    			attr_dev(button, "class", "close");
+    			attr_dev(button, "data-dismiss", "modal");
+    			attr_dev(button, "aria-label", "Close");
+    			add_location(button, file$l, 19, 20, 768);
+    			attr_dev(div0, "class", "modal-header");
+    			add_location(div0, file$l, 17, 16, 613);
+    			attr_dev(input0, "type", "hidden");
+    			attr_dev(input0, "name", "idPaciente");
+    			input0.value = "";
+    			add_location(input0, file$l, 26, 24, 1062);
+    			attr_dev(span1, "class", "badge badge-soft-primary");
+    			set_style(span1, "font-size", "17px");
+    			add_location(span1, file$l, 27, 27, 1139);
+    			add_location(p, file$l, 27, 24, 1136);
+    			attr_dev(label, "for", "");
+    			add_location(label, file$l, 30, 28, 1351);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "class", "form-control");
+    			attr_dev(input1, "placeholder", "Buscar roles");
+    			add_location(input1, file$l, 31, 28, 1409);
+    			attr_dev(div1, "class", "form-group floating-label");
+    			add_location(div1, file$l, 29, 24, 1282);
+    			attr_dev(div2, "class", "roles");
+    			add_location(div2, file$l, 33, 24, 1534);
     			attr_dev(form, "id", "");
-    			add_location(form, file$l, 12, 20, 683);
-    			attr_dev(div4, "class", "modal-body");
-    			add_location(div4, file$l, 10, 16, 635);
-    			attr_dev(div5, "class", "modal-content");
-    			add_location(div5, file$l, 3, 12, 257);
-    			attr_dev(div6, "class", "modal-dialog");
-    			attr_dev(div6, "role", "document");
-    			add_location(div6, file$l, 2, 8, 201);
-    			attr_dev(div7, "class", "modal fade modal-slide-right");
-    			attr_dev(div7, "id", "modalRoles");
-    			attr_dev(div7, "tabindex", "-1");
-    			attr_dev(div7, "role", "dialog");
-    			attr_dev(div7, "aria-labelledby", "modalRolesLabel");
-    			set_style(div7, "display", "none");
-    			set_style(div7, "padding-right", "16px");
-    			attr_dev(div7, "aria-modal", "true");
-    			add_location(div7, file$l, 0, 0, 0);
+    			add_location(form, file$l, 25, 20, 1024);
+    			attr_dev(div3, "class", "modal-body");
+    			add_location(div3, file$l, 23, 16, 976);
+    			attr_dev(div4, "class", "modal-content");
+    			add_location(div4, file$l, 16, 12, 568);
+    			attr_dev(div5, "class", "modal-dialog");
+    			attr_dev(div5, "role", "document");
+    			add_location(div5, file$l, 15, 8, 512);
+    			attr_dev(div6, "class", "modal fade modal-slide-right");
+    			attr_dev(div6, "id", "modalRoles");
+    			attr_dev(div6, "tabindex", "-1");
+    			attr_dev(div6, "role", "dialog");
+    			attr_dev(div6, "aria-labelledby", "modalRolesLabel");
+    			set_style(div6, "display", "none");
+    			set_style(div6, "padding-right", "16px");
+    			attr_dev(div6, "aria-modal", "true");
+    			add_location(div6, file$l, 13, 0, 311);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div7, anchor);
-    			append_dev(div7, div6);
+    			insert_dev(target, div6, anchor);
     			append_dev(div6, div5);
-    			append_dev(div5, div0);
+    			append_dev(div5, div4);
+    			append_dev(div4, div0);
     			append_dev(div0, h5);
-    			append_dev(div0, t1);
+    			append_dev(h5, t0);
+    			append_dev(h5, t1);
+    			append_dev(h5, t2);
+    			append_dev(div0, t3);
     			append_dev(div0, button);
     			append_dev(button, span0);
-    			append_dev(div5, t3);
-    			append_dev(div5, div4);
-    			append_dev(div4, form);
+    			append_dev(div4, t5);
+    			append_dev(div4, div3);
+    			append_dev(div3, form);
     			append_dev(form, input0);
-    			append_dev(form, t4);
+    			append_dev(form, t6);
     			append_dev(form, p);
     			append_dev(p, span1);
-    			append_dev(form, t6);
+    			append_dev(span1, t7);
+    			append_dev(form, t8);
     			append_dev(form, div1);
-    			append_dev(div1, label0);
-    			append_dev(div1, t8);
+    			append_dev(div1, label);
+    			append_dev(div1, t10);
     			append_dev(div1, input1);
-    			append_dev(form, t9);
-    			append_dev(form, div3);
-    			append_dev(div3, div2);
-    			append_dev(div2, label1);
-    			append_dev(label1, span2);
-    			append_dev(span2, t10);
-    			append_dev(span2, a);
-    			append_dev(a, i);
-    			append_dev(label1, t11);
-    			append_dev(label1, input2);
-    			append_dev(label1, t12);
-    			append_dev(label1, span3);
+    			append_dev(form, t11);
+    			append_dev(form, div2);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div2, null);
+    			}
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*usuario*/ 1 && t0_value !== (t0_value = /*usuario*/ ctx[0].nombre + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*usuario*/ 1 && t2_value !== (t2_value = /*usuario*/ ctx[0].apellido + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*usuario*/ 1 && t7_value !== (t7_value = /*usuario*/ ctx[0].correo + "")) set_data_dev(t7, t7_value);
+
+    			if (dirty & /*rolesMapeado*/ 2) {
+    				each_value = /*rolesMapeado*/ ctx[1];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$6(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$6(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div7);
+    			if (detaching) detach_dev(div6);
+    			destroy_each(each_blocks, detaching);
     		}
     	};
 
@@ -18447,22 +18471,61 @@ var app = (function () {
     	return block;
     }
 
-    function instance$n($$self, $$props) {
+    function instance$n($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("ModalRolesUsuario", slots, []);
-    	const writable_props = [];
+    	let { usuario = {} } = $$props;
+    	let { roles = [] } = $$props;
+    	const writable_props = ["usuario", "roles"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ModalRolesUsuario> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	function input_change_handler(each_value, role_index) {
+    		each_value[role_index].active = this.checked;
+    		(($$invalidate(1, rolesMapeado), $$invalidate(2, roles)), $$invalidate(0, usuario));
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ("usuario" in $$props) $$invalidate(0, usuario = $$props.usuario);
+    		if ("roles" in $$props) $$invalidate(2, roles = $$props.roles);
+    	};
+
+    	$$self.$capture_state = () => ({ usuario, roles, rolesMapeado });
+
+    	$$self.$inject_state = $$props => {
+    		if ("usuario" in $$props) $$invalidate(0, usuario = $$props.usuario);
+    		if ("roles" in $$props) $$invalidate(2, roles = $$props.roles);
+    		if ("rolesMapeado" in $$props) $$invalidate(1, rolesMapeado = $$props.rolesMapeado);
+    	};
+
+    	let rolesMapeado;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*roles, usuario*/ 5) {
+    			 $$invalidate(1, rolesMapeado = roles.map(x => {
+    				return {
+    					id: x.id,
+    					name: x.name,
+    					displayName: x.displayName,
+    					active: usuario.roles.some(y => x.name === y)
+    				};
+    			}));
+    		}
+    	};
+
+    	return [usuario, rolesMapeado, roles, input_change_handler];
     }
 
     class ModalRolesUsuario extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$n, create_fragment$n, safe_not_equal, {});
+    		init(this, options, instance$n, create_fragment$n, safe_not_equal, { usuario: 0, roles: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -18471,6 +18534,22 @@ var app = (function () {
     			id: create_fragment$n.name
     		});
     	}
+
+    	get usuario() {
+    		throw new Error("<ModalRolesUsuario>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set usuario(value) {
+    		throw new Error("<ModalRolesUsuario>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get roles() {
+    		throw new Error("<ModalRolesUsuario>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set roles(value) {
+    		throw new Error("<ModalRolesUsuario>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\Pages\Usuarios\Index.svelte generated by Svelte v3.29.0 */
@@ -18478,14 +18557,14 @@ var app = (function () {
     const { console: console_1$8 } = globals;
     const file$m = "src\\Pages\\Usuarios\\Index.svelte";
 
-    function get_each_context$6(ctx, list, i) {
+    function get_each_context$7(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[2] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (67:16) {#each usuarios as usuario}
-    function create_each_block$6(ctx) {
+    // (112:16) {#each usuarios as usuario}
+    function create_each_block$7(ctx) {
     	let tr;
     	let td0;
     	let div;
@@ -18493,14 +18572,14 @@ var app = (function () {
     	let img_src_value;
     	let t0;
     	let td1;
-    	let t1_value = /*usuario*/ ctx[2].nombre + "";
+    	let t1_value = /*usuario*/ ctx[9].nombre + "";
     	let t1;
     	let t2;
-    	let t3_value = /*usuario*/ ctx[2].apellido + "";
+    	let t3_value = /*usuario*/ ctx[9].apellido + "";
     	let t3;
     	let t4;
     	let td2;
-    	let t5_value = /*usuario*/ ctx[2].correo + "";
+    	let t5_value = /*usuario*/ ctx[9].correo + "";
     	let t5;
     	let t6;
     	let td3;
@@ -18517,6 +18596,10 @@ var app = (function () {
     	let t9;
     	let mounted;
     	let dispose;
+
+    	function click_handler(...args) {
+    		return /*click_handler*/ ctx[6](/*usuario*/ ctx[9], ...args);
+    	}
 
     	const block = {
     		c: function create() {
@@ -18546,35 +18629,35 @@ var app = (function () {
     			if (img.src !== (img_src_value = "assets/img/users/user-1.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "class", "avatar-img avatar-sm rounded-circle");
     			attr_dev(img, "alt", "");
-    			add_location(img, file$m, 69, 59, 2001);
+    			add_location(img, file$m, 114, 59, 3141);
     			attr_dev(div, "class", "avatar avatar-sm ");
-    			add_location(div, file$m, 69, 28, 1970);
-    			add_location(td0, file$m, 68, 24, 1936);
-    			add_location(td1, file$m, 71, 24, 2154);
-    			add_location(td2, file$m, 72, 24, 2224);
+    			add_location(div, file$m, 114, 28, 3110);
+    			add_location(td0, file$m, 113, 24, 3076);
+    			add_location(td1, file$m, 116, 24, 3294);
+    			add_location(td2, file$m, 117, 24, 3364);
     			attr_dev(i0, "class", "mdi mdi-security");
-    			add_location(i0, file$m, 82, 32, 2741);
+    			add_location(i0, file$m, 128, 32, 3969);
     			attr_dev(button, "href", "#!");
     			attr_dev(button, "class", "btn btn-default");
     			attr_dev(button, "data-tooltip", "Roles");
     			attr_dev(button, "data-toggle", "modal");
     			attr_dev(button, "data-target", "#modalRoles");
-    			add_location(button, file$m, 75, 28, 2403);
+    			add_location(button, file$m, 120, 28, 3543);
     			attr_dev(i1, "class", "mdi mdi-trash-can-outline");
-    			add_location(i1, file$m, 89, 28, 3074);
+    			add_location(i1, file$m, 135, 28, 4302);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "btn btn-default text-danger");
     			attr_dev(a0, "data-tooltip", "Eliminar");
-    			add_location(a0, file$m, 84, 28, 2842);
+    			add_location(a0, file$m, 130, 28, 4070);
     			attr_dev(i2, "class", "mdi mdi-send");
-    			add_location(i2, file$m, 97, 32, 3487);
-    			attr_dev(a1, "href", a1_href_value = `/pacientes/perfil/${/*usuario*/ ctx[2].id}`);
+    			add_location(i2, file$m, 143, 32, 4715);
+    			attr_dev(a1, "href", a1_href_value = `/pacientes/perfil/${/*usuario*/ ctx[9].id}`);
     			attr_dev(a1, "class", "btn btn-default text-primary");
     			attr_dev(a1, "data-tooltip", "Perfil");
-    			add_location(a1, file$m, 91, 28, 3179);
+    			add_location(a1, file$m, 137, 28, 4407);
     			attr_dev(td3, "class", "text-right");
-    			add_location(td3, file$m, 73, 24, 2275);
-    			add_location(tr, file$m, 67, 20, 1906);
+    			add_location(td3, file$m, 118, 24, 3415);
+    			add_location(tr, file$m, 112, 20, 3046);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -18602,31 +18685,36 @@ var app = (function () {
     			append_dev(tr, t9);
 
     			if (!mounted) {
-    				dispose = action_destroyer(link_action = link.call(null, a1));
+    				dispose = [
+    					listen_dev(button, "click", click_handler, false, false, false),
+    					action_destroyer(link_action = link.call(null, a1))
+    				];
+
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*usuarios*/ 1 && t1_value !== (t1_value = /*usuario*/ ctx[2].nombre + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*usuarios*/ 1 && t3_value !== (t3_value = /*usuario*/ ctx[2].apellido + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*usuarios*/ 1 && t5_value !== (t5_value = /*usuario*/ ctx[2].correo + "")) set_data_dev(t5, t5_value);
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*usuarios*/ 1 && t1_value !== (t1_value = /*usuario*/ ctx[9].nombre + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*usuarios*/ 1 && t3_value !== (t3_value = /*usuario*/ ctx[9].apellido + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*usuarios*/ 1 && t5_value !== (t5_value = /*usuario*/ ctx[9].correo + "")) set_data_dev(t5, t5_value);
 
-    			if (dirty & /*usuarios*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/perfil/${/*usuario*/ ctx[2].id}`)) {
+    			if (dirty & /*usuarios*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/perfil/${/*usuario*/ ctx[9].id}`)) {
     				attr_dev(a1, "href", a1_href_value);
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$6.name,
+    		id: create_each_block$7.name,
     		type: "each",
-    		source: "(67:16) {#each usuarios as usuario}",
+    		source: "(112:16) {#each usuarios as usuario}",
     		ctx
     	});
 
@@ -18642,6 +18730,8 @@ var app = (function () {
     	let modalcrearusuario;
     	let t2;
     	let modalrolesusuario;
+    	let updating_usuario;
+    	let updating_roles;
     	let t3;
     	let section;
     	let div3;
@@ -18671,13 +18761,38 @@ var app = (function () {
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
     	modalcrearusuario = new ModalCrearUsuarios({ $$inline: true });
-    	modalrolesusuario = new ModalRolesUsuario({ $$inline: true });
+
+    	function modalrolesusuario_usuario_binding(value) {
+    		/*modalrolesusuario_usuario_binding*/ ctx[4].call(null, value);
+    	}
+
+    	function modalrolesusuario_roles_binding(value) {
+    		/*modalrolesusuario_roles_binding*/ ctx[5].call(null, value);
+    	}
+
+    	let modalrolesusuario_props = {};
+
+    	if (/*usuarioModal*/ ctx[1] !== void 0) {
+    		modalrolesusuario_props.usuario = /*usuarioModal*/ ctx[1];
+    	}
+
+    	if (/*roles*/ ctx[2] !== void 0) {
+    		modalrolesusuario_props.roles = /*roles*/ ctx[2];
+    	}
+
+    	modalrolesusuario = new ModalRolesUsuario({
+    			props: modalrolesusuario_props,
+    			$$inline: true
+    		});
+
+    	binding_callbacks.push(() => bind(modalrolesusuario, "usuario", modalrolesusuario_usuario_binding));
+    	binding_callbacks.push(() => bind(modalrolesusuario, "roles", modalrolesusuario_roles_binding));
     	let each_value = /*usuarios*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+    		each_blocks[i] = create_each_block$7(get_each_context$7(ctx, each_value, i));
     	}
 
     	const block = {
@@ -18723,33 +18838,33 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file$m, 44, 6, 1150);
+    			add_location(div0, file$m, 89, 6, 2290);
     			attr_dev(i, "class", "mdi mdi-plus");
-    			add_location(i, file$m, 51, 17, 1405);
+    			add_location(i, file$m, 96, 17, 2545);
     			attr_dev(button, "class", "btn btn-primary btn-sm");
     			attr_dev(button, "data-toggle", "modal");
     			attr_dev(button, "data-target", "#modalUsuario");
-    			add_location(button, file$m, 47, 12, 1249);
-    			add_location(h5, file$m, 46, 8, 1222);
-    			add_location(th0, file$m, 58, 20, 1648);
-    			add_location(th1, file$m, 59, 20, 1679);
-    			add_location(th2, file$m, 60, 20, 1716);
-    			add_location(th3, file$m, 62, 20, 1756);
-    			add_location(tr, file$m, 57, 16, 1622);
-    			add_location(thead, file$m, 56, 16, 1597);
-    			add_location(tbody, file$m, 65, 16, 1832);
+    			add_location(button, file$m, 92, 12, 2389);
+    			add_location(h5, file$m, 91, 8, 2362);
+    			add_location(th0, file$m, 103, 20, 2788);
+    			add_location(th1, file$m, 104, 20, 2819);
+    			add_location(th2, file$m, 105, 20, 2856);
+    			add_location(th3, file$m, 107, 20, 2896);
+    			add_location(tr, file$m, 102, 16, 2762);
+    			add_location(thead, file$m, 101, 16, 2737);
+    			add_location(tbody, file$m, 110, 16, 2972);
     			attr_dev(table, "class", "table align-td-middle table-card");
-    			add_location(table, file$m, 55, 12, 1531);
+    			add_location(table, file$m, 100, 12, 2671);
     			attr_dev(div1, "class", "table-responsive");
-    			add_location(div1, file$m, 54, 8, 1487);
+    			add_location(div1, file$m, 99, 8, 2627);
     			attr_dev(div2, "class", "col-md-12 mt-3 m-b-30");
-    			add_location(div2, file$m, 45, 6, 1177);
+    			add_location(div2, file$m, 90, 6, 2317);
     			attr_dev(div3, "class", "p-2");
-    			add_location(div3, file$m, 43, 4, 1125);
+    			add_location(div3, file$m, 88, 4, 2265);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$m, 42, 2, 1088);
+    			add_location(section, file$m, 87, 2, 2228);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$m, 38, 0, 997);
+    			add_location(main, file$m, 80, 0, 2076);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -18796,18 +18911,34 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*usuarios*/ 1) {
+    			const modalrolesusuario_changes = {};
+
+    			if (!updating_usuario && dirty & /*usuarioModal*/ 2) {
+    				updating_usuario = true;
+    				modalrolesusuario_changes.usuario = /*usuarioModal*/ ctx[1];
+    				add_flush_callback(() => updating_usuario = false);
+    			}
+
+    			if (!updating_roles && dirty & /*roles*/ 4) {
+    				updating_roles = true;
+    				modalrolesusuario_changes.roles = /*roles*/ ctx[2];
+    				add_flush_callback(() => updating_roles = false);
+    			}
+
+    			modalrolesusuario.$set(modalrolesusuario_changes);
+
+    			if (dirty & /*usuarios, cargarUsuarioSeleccionado*/ 9) {
     				each_value = /*usuarios*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$6(ctx, each_value, i);
+    					const child_ctx = get_each_context$7(ctx, each_value, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks[i] = create_each_block$6(child_ctx);
+    						each_blocks[i] = create_each_block$7(child_ctx);
     						each_blocks[i].c();
     						each_blocks[i].m(tbody, null);
     					}
@@ -18861,6 +18992,42 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Index", slots, []);
     	let usuarios = [];
+    	let usuarioModal = { roles: [] };
+    	let roles = [];
+
+    	const cargarRoles = () => {
+    		const config = {
+    			method: "get",
+    			url: `${url}/roles`,
+    			headers: {
+    				"Authorization": `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			$$invalidate(2, roles = res.data);
+    			console.log(roles);
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
+
+    	const cargarUsuarioSeleccionado = id => {
+    		const config = {
+    			method: "get",
+    			url: `${url}/usuarios/${id}`,
+    			headers: {
+    				"Authorization": `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			$$invalidate(1, usuarioModal = res.data);
+    			console.log(usuarioModal);
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
 
     	function cargarPacientes() {
     		const config = {
@@ -18881,6 +19048,7 @@ var app = (function () {
 
     	onMount(() => {
     		cargarPacientes();
+    		cargarRoles();
     	});
 
     	const writable_props = [];
@@ -18888,6 +19056,18 @@ var app = (function () {
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$8.warn(`<Index> was created with unknown prop '${key}'`);
     	});
+
+    	function modalrolesusuario_usuario_binding(value) {
+    		usuarioModal = value;
+    		$$invalidate(1, usuarioModal);
+    	}
+
+    	function modalrolesusuario_roles_binding(value) {
+    		roles = value;
+    		$$invalidate(2, roles);
+    	}
+
+    	const click_handler = usuario => cargarUsuarioSeleccionado(usuario.id);
 
     	$$self.$capture_state = () => ({
     		link,
@@ -18899,18 +19079,32 @@ var app = (function () {
     		ModalCrearUsuario: ModalCrearUsuarios,
     		ModalRolesUsuario,
     		usuarios,
+    		usuarioModal,
+    		roles,
+    		cargarRoles,
+    		cargarUsuarioSeleccionado,
     		cargarPacientes
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("usuarios" in $$props) $$invalidate(0, usuarios = $$props.usuarios);
+    		if ("usuarioModal" in $$props) $$invalidate(1, usuarioModal = $$props.usuarioModal);
+    		if ("roles" in $$props) $$invalidate(2, roles = $$props.roles);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [usuarios];
+    	return [
+    		usuarios,
+    		usuarioModal,
+    		roles,
+    		cargarUsuarioSeleccionado,
+    		modalrolesusuario_usuario_binding,
+    		modalrolesusuario_roles_binding,
+    		click_handler
+    	];
     }
 
     class Index$2 extends SvelteComponentDev {

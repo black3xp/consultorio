@@ -1,3 +1,4 @@
+<form id="frmUsuario">
 <div class="modal fade modal-slide-right" id="modalUsuario" tabindex="-1" role="dialog"
     aria-labelledby="modalUsuarioLabel" style="display: none; padding-right: 16px;" aria-modal="true">
     <div class="modal-dialog" role="document">
@@ -10,85 +11,94 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <form id="frmUsuario">
-                    <input type="hidden" name="IdUser">
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="">Nombre Completo</label>
-                            <input type="name" class="form-control" placeholder="Ing. John Doe"
-                                name="Name" maxlength="200" required="">
+                            <label for="">Nombre</label>
+                            <input
+                                type="name"
+                                class="form-control"
+                                placeholder="John"
+                                name="Name"
+                                maxlength="200"
+                                required
+                            />
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="">Usuario</label>
-                            <input type="email"
-                                class="form-control" autocomplete="off" name="UserName" id="" maxlength="100">
+                            <label for="">Apellido</label>
+                            <input
+                                type="name"
+                                class="form-control"
+                                placeholder="Doe"
+                                name="Name"
+                                maxlength="200"
+                                required
+                            />
                         </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="">Email</label>
-                            <input type="email" required class="form-control"
-                                placeholder="usuario@correo.com" autocomplete="off" name="Email" id="txtCorreo"
-                                maxlength="100">
+                            <input
+                                type="email"
+                                required
+                                class="form-control"
+                                placeholder="usuario@correo.com"
+                                autocomplete="off"
+                                name="Email"
+                                id="txtCorreo"
+                                maxlength="100"
+                            />
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="">Contrase&ntilde;a</label>
-                            <input type="password" class="form-control"
-                                 required
-                                name="PasswordHash" maxlength="50">
-                        </div>
-
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="">Telefono</label>
-                            <input type="text" class="form-control"
-                                data-mask="(000) 000-0000" data-mask-clearifnotmatch="true" autocomplete="off"
-                                maxlength="14" placeholder="(809) 000-0000" name="PhoneNumber" id="txtTelefono">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label class="cstm-switch">
-                                <input type="checkbox" value="true" name="EsMedico"
-                                    class="cstm-switch-input">
-                                <span class="cstm-switch-indicator "></span>
-                                <span class="cstm-switch-description">Es Medico </span>
-                            </label>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="">exequatur</label>
-                            <input type="text" pattern="^[0-9]+$" class="form-control"
-                                utocomplete="off" name="Exequatur" id="txtTelefono">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <select name="IdDepartamento"
-                                class=" js-select2 select2-hidden-accessible" id="sltDepartamentos" style="width: 100%;"
-                                aria-hidden="true" required>
-                                <option value=""></option>
-                            </select>
+                            <input
+                                type="password"
+                                class="form-control"
+                                required
+                                name="PasswordHash"
+                                maxlength="50"
+                            />
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="">Observaciones</label>
-                            <textarea class="form-control" rows="3"
-                                name="Observaciones"></textarea>
+                            <label for="">Repetir contrase&ntilde;a</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                required
+                                name="PasswordHash"
+                                maxlength="50"
+                            />
                         </div>
                     </div>
-
-                    <br>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Cerrar
-                        </button>
-                        <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+                <div class="modal-footer">
+                    <div class="row text-center p-b-10">
+                        <div class="col">
+                            <button class="btn btn-default text-danger" data-dismiss="modal">
+                                <!-- svelte-ignore a11y-missing-content -->
+                                <h3 class="mdi mdi-close-outline"></h3>
+                                <div class="text-overline">
+                                    Cerrar
+                                </div>
+                            </button></div> 
+                            <div class="col">
+                                <button type="submit" class="btn btn-default text-info">
+                                    <!-- svelte-ignore a11y-missing-content -->
+                                    <h3 class="mdi mdi-content-save-outline"></h3>
+                                    <div class="text-overline">
+                                        Guardar
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </form>
-
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </form>

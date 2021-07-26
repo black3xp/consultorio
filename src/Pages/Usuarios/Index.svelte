@@ -11,6 +11,47 @@
 
 
     let usuarios = [];
+    let usuarioModal = {
+        roles: []
+    };
+    let roles = [];
+
+
+    const cargarRoles = () => {
+        const config = {
+            method:'get',
+            url: `${url}/roles`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
+        };
+        axios(config)
+            .then(res => {
+                roles = res.data;
+                console.log(roles);
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
+    const cargarUsuarioSeleccionado = (id) => {
+        const config = {
+            method: 'get',
+            url: `${url}/usuarios/${id}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
+        }
+        axios(config)
+            .then(res => {
+                usuarioModal = res.data;
+                console.log(usuarioModal);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    }
 
     function cargarPacientes() {
         const config = {
@@ -29,7 +70,8 @@
     }
 
     onMount(() => {
-        cargarPacientes()
+        cargarPacientes();
+        cargarRoles();
     });
 
 </script>
@@ -39,7 +81,10 @@
 <main class="admin-main">
   <Header />
   <ModalCrearUsuario/>
-  <ModalRolesUsuario/>
+  <ModalRolesUsuario
+    bind:usuario={usuarioModal}
+    bind:roles={roles}
+  />
   <section class="admin-content">
     <div class="p-2">
       <div class="row" />
@@ -79,6 +124,7 @@
                                 data-tooltip="Roles"
                                 data-toggle="modal"
                                 data-target="#modalRoles"
+                                on:click={() => cargarUsuarioSeleccionado(usuario.id)}
                             >
                                 <i class="mdi mdi-security"></i>
                             </button>
