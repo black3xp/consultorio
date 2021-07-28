@@ -1,5 +1,5 @@
 <script>
-  import { logout } from '../util/index';
+  import { logout, user } from '../util/index';
 </script>
 <header class="admin-header">
     <a
@@ -94,7 +94,7 @@
             aria-haspopup="true"
             aria-expanded="false">
             <div class="avatar avatar-sm avatar-online">
-              <span class="avatar-title rounded-circle bg-dark">V</span>
+              <span class="avatar-title rounded-circle bg-dark">{user().name[0]}</span>
   
             </div>
           </a>

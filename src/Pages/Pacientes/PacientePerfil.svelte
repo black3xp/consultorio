@@ -136,7 +136,13 @@
       if (promesa.status == 200) {
         paciente = promesa.data;
         edad = calcularEdad(paciente.fechaNacimiento);
-        seguro = paciente.seguroMedico[0].nombre;
+        if(paciente.seguroMedico.length !== 0) {
+          seguro = paciente.seguroMedico[0].nombre;
+        }
+        else
+        {
+          seguro = "N/A"
+        }
       }
     } catch (error) {
       console.error(error);

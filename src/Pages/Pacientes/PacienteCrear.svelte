@@ -34,7 +34,7 @@
     let responsables = [];
     let usuario = {};
 
-    function registrarPaciente(){
+    const registrarPaciente = () => {
         const paciente = {
             nombres:nombres,
             apellidos:apellidos,
@@ -73,7 +73,43 @@
                 console.log(res)
                 push(`/pacientes/perfil/${res.data.id}`);
             }
+            if(res.status === 201) {
+                Swal.fire({
+                        title: 'El paciente ya existe',
+                        text: "¿Deseas cargar su perfil?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si, cargar perfil!',
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        push(`/pacientes/perfil/${res.data}`);
+                    }
+                })
+            }
         }).catch(error => {
+            if(error.response.status === 400) {
+                Swal.fire({
+                        title: 'El paciente ya existe',
+                        text: "¿Deseas cargar su perfil?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si, cargar perfil!',
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                        )
+                    }
+                })
+            }
             console.log(error)
         })
         console.log(paciente)

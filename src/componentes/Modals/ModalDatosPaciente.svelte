@@ -3,9 +3,9 @@
     import {link} from "svelte-spa-router";
     import { differenceInDays } from 'date-fns';
 
-    export let paciente;
-    export let edad;
-    export let seguro;
+    export let paciente = {};
+    export let edad = "";
+    export let seguro = "";
 
     onMount(() => {
 

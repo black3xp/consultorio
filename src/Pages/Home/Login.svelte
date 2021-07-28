@@ -3,10 +3,14 @@
     import axios from 'axios';
     import { push } from 'svelte-spa-router';
 
+    import Loading from '../../componentes/Loading.svelte';
+
     let inpCorreo = '';
     let inpPassword = '';
+    let cargando = false;
 
     const login = () => {
+        cargando = true;
         const data = {
             correo: inpCorreo,
             password: inpPassword,
@@ -21,10 +25,29 @@
         };
         axios(config)
             .then(res => {
+                cargando = false;
                 localStorage.setItem('auth', res.data);
                 console.log(res.data)
+                if(res.status === 403){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Usuario o contrase&ntilde;a incorrectos!',
+                        footer: '<a href="">Why do I have this issue?</a>'
+                    })
+                }
                 if(isLogin()){
                    return push('/')
+                }
+            })
+            .catch(err => {
+                cargando = false;
+                if(err.response.status === 403){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Usuario o contraseña incorrectos, intenta de nuevo!'
+                    })
                 }
             })
     }
@@ -32,6 +55,11 @@
 <div class="container-fluid">
     <div class="row ">
         <div class="col-lg-4  bg-white">
+            {#if cargando}
+                <div class="cargando">
+                    <Loading/>
+                </div>
+            {/if}
             <div class="row align-items-center m-h-100">
                 <div class="mx-auto col-md-8">
                     <div class="p-b-20 text-center">
