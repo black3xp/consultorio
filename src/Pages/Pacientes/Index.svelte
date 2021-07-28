@@ -10,7 +10,17 @@
     let pacientes = [];
 
     const eliminarPaciente = (id) => {
-        if(confirm('Esta seguro que desea eliminar el paciente?')){
+        Swal.fire({
+            title: '¿Esta seguro?',
+            text: "Eliminar al paciente es quitarlo de su lista, sin embargo la información no se perderá!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.isConfirmed) {
             const config = {
                 method: 'put',
                 url: `${url}/pacientes/eliminar/${id}`,
@@ -22,11 +32,17 @@
                 .then(res => {
                     console.log(res.data)
                     cargarPacientes()
+                    Swal.fire(
+                        'Eliminado!',
+                        'El paciente se ha eliminado correctamente.',
+                        'success'
+                    )
                 })
                 .catch(error => {
                     console.error(error)
                 })
         }
+        })
     }
 
     function cargarPacientes() {
@@ -90,14 +106,14 @@
                             <a
                                 href="#!"
                                 on:click|preventDefault={() => eliminarPaciente(paciente.id)}
-                                class="btn btn-danger"
+                                class="btn btn-outline-danger"
                                 data-tooltip="Eliminar"
                             >
                                 <i class="mdi mdi-close"></i>
                             </a>
                             <a
                                 href={`/pacientes/perfil/${paciente.id}`}
-                                class="btn btn-primary"
+                                class="btn btn-outline-primary"
                                 data-tooltip="Perfil"
                                 use:link
                             >

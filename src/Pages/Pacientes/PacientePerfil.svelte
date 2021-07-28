@@ -124,6 +124,7 @@
   }
 
   async function cargarPaciente() {
+    cargando = true;
     const config = {
       method: "get",
       url: `${url}/pacientes/${params.id}`,
@@ -134,6 +135,7 @@
     try {
       let promesa = await axios(config);
       if (promesa.status == 200) {
+        cargando = false;
         paciente = promesa.data;
         edad = calcularEdad(paciente.fechaNacimiento);
         if(paciente.seguroMedico.length !== 0) {
@@ -145,6 +147,7 @@
         }
       }
     } catch (error) {
+      cargando = false;
       console.error(error);
     }
   }

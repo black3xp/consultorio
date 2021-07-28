@@ -210,7 +210,13 @@
         if (promesa.status == 200) {
             paciente = await promesa.data;
             edad = calcularEdad(paciente.fechaNacimiento);
-            seguro = paciente.seguroMedico[0].nombre;
+            if(paciente.seguroMedico.length !== 0){
+                seguro = paciente.seguroMedico[0].nombre;
+            }
+            else
+            {
+                seguro = "N/A"
+            }
             console.log(promesa.data);
         } else {
             console.error(promesa.statusText);

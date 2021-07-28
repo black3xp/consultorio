@@ -120,7 +120,7 @@
                             <!-- svelte-ignore a11y-invalid-attribute -->
                             <button
                                 href="#!"
-                                class="btn btn-default"
+                                class="btn btn-outline-secondary"
                                 data-tooltip="Roles"
                                 data-toggle="modal"
                                 data-target="#modalRoles"
@@ -130,14 +130,14 @@
                             </button>
                             <a
                                 href="#!"
-                                class="btn btn-default text-danger"
+                                class="btn btn-outline-danger"
                                 data-tooltip="Eliminar"
                             >
                             <i class="mdi mdi-trash-can-outline"></i>
                             </a>
                             <a
                                 href={`/pacientes/perfil/${usuario.id}`}
-                                class="btn btn-default text-primary"
+                                class="btn btn-outline-primary"
                                 data-tooltip="Perfil"
                                 use:link
                             >
