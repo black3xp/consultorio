@@ -13794,11 +13794,8 @@ var app = (function () {
     	let t1;
     	let t2;
     	let div;
-    	let a0;
-    	let i0;
-    	let t3;
-    	let a1;
-    	let i1;
+    	let a;
+    	let i_1;
     	let mounted;
     	let dispose;
 
@@ -13823,26 +13820,17 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = space();
     			div = element("div");
-    			a0 = element("a");
-    			i0 = element("i");
-    			t3 = space();
-    			a1 = element("a");
-    			i1 = element("i");
+    			a = element("a");
+    			i_1 = element("i");
     			add_location(span, file$i, 258, 38, 14259);
-    			attr_dev(i0, "class", "mdi-18px mdi mdi-comment-plus-outline");
-    			add_location(i0, file$i, 266, 41, 14782);
-    			attr_dev(a0, "href", "#!");
-    			attr_dev(a0, "class", "text-primary");
-    			attr_dev(a0, "title", "Agregar comentarios");
-    			add_location(a0, file$i, 262, 36, 14555);
-    			attr_dev(i1, "class", "mdi-18px mdi mdi-trash-can-outline");
-    			add_location(i1, file$i, 277, 41, 15469);
-    			attr_dev(a1, "href", "#!");
-    			attr_dev(a1, "class", "text-danger");
-    			attr_dev(a1, "data-toggle", "tooltip");
-    			attr_dev(a1, "data-placement", "top");
-    			attr_dev(a1, "data-original-title", "Eliminar diagnostico");
-    			add_location(a1, file$i, 270, 36, 14999);
+    			attr_dev(i_1, "class", "mdi-18px mdi mdi-trash-can-outline");
+    			add_location(i_1, file$i, 277, 41, 15478);
+    			attr_dev(a, "href", "#!");
+    			attr_dev(a, "class", "text-danger");
+    			attr_dev(a, "data-toggle", "tooltip");
+    			attr_dev(a, "data-placement", "top");
+    			attr_dev(a, "data-original-title", "Eliminar diagnostico");
+    			add_location(a, file$i, 270, 36, 15008);
     			set_style(div, "position", "absolute");
     			set_style(div, "top", "0");
     			set_style(div, "right", "0");
@@ -13860,14 +13848,11 @@ var app = (function () {
     			append_dev(span, t1);
     			append_dev(li, t2);
     			append_dev(li, div);
-    			append_dev(div, a0);
-    			append_dev(a0, i0);
-    			append_dev(div, t3);
-    			append_dev(div, a1);
-    			append_dev(a1, i1);
+    			append_dev(div, a);
+    			append_dev(a, i_1);
 
     			if (!mounted) {
-    				dispose = listen_dev(a1, "click", prevent_default(click_handler_4), false, true, false);
+    				dispose = listen_dev(a, "click", prevent_default(click_handler_4), false, true, false);
     				mounted = true;
     			}
     		},
@@ -13924,17 +13909,17 @@ var app = (function () {
     			t1 = space();
     			ul = element("ul");
     			attr_dev(p, "class", "alert-body text-center mt-3");
-    			add_location(p, file$i, 291, 40, 16174);
+    			add_location(p, file$i, 291, 40, 16183);
     			attr_dev(div0, "class", "alert border alert-light");
     			attr_dev(div0, "role", "alert");
-    			add_location(div0, file$i, 287, 36, 15961);
+    			add_location(div0, file$i, 287, 36, 15970);
     			attr_dev(ul, "class", "list-info");
     			attr_dev(ul, "data-bind", "foreach: estudios");
-    			add_location(ul, file$i, 298, 36, 16552);
+    			add_location(ul, file$i, 298, 36, 16561);
     			attr_dev(div1, "class", "col-md-12");
-    			add_location(div1, file$i, 286, 32, 15900);
+    			add_location(div1, file$i, 286, 32, 15909);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file$i, 285, 28, 15849);
+    			add_location(div2, file$i, 285, 28, 15858);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -14292,21 +14277,21 @@ var app = (function () {
     			attr_dev(div23, "class", "card m-b-20");
     			add_location(div23, file$i, 158, 4, 8968);
     			attr_dev(div24, "class", "card-title");
-    			add_location(div24, file$i, 314, 12, 17015);
+    			add_location(div24, file$i, 314, 12, 17024);
     			attr_dev(div25, "class", "card-header");
-    			add_location(div25, file$i, 313, 8, 16976);
+    			add_location(div25, file$i, 313, 8, 16985);
     			attr_dev(textarea, "class", "form-control");
     			set_style(textarea, "width", "100%");
     			attr_dev(textarea, "rows", "5");
-    			add_location(textarea, file$i, 319, 20, 17198);
+    			add_location(textarea, file$i, 319, 20, 17207);
     			attr_dev(div26, "class", "col-12");
-    			add_location(div26, file$i, 318, 16, 17156);
+    			add_location(div26, file$i, 318, 16, 17165);
     			attr_dev(div27, "class", "row");
-    			add_location(div27, file$i, 317, 12, 17121);
+    			add_location(div27, file$i, 317, 12, 17130);
     			attr_dev(div28, "class", "card-body");
-    			add_location(div28, file$i, 316, 8, 17084);
+    			add_location(div28, file$i, 316, 8, 17093);
     			attr_dev(div29, "class", "card m-b-20");
-    			add_location(div29, file$i, 312, 4, 16941);
+    			add_location(div29, file$i, 312, 4, 16950);
     			attr_dev(div30, "class", "alert alert-secondary");
     			attr_dev(div30, "role", "alert");
     			add_location(div30, file$i, 14, 0, 368);
@@ -14981,19 +14966,19 @@ var app = (function () {
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[71] = list[i];
-    	child_ctx[72] = list;
-    	child_ctx[73] = i;
+    	child_ctx[72] = list[i];
+    	child_ctx[73] = list;
+    	child_ctx[74] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[74] = list[i];
+    	child_ctx[75] = list[i];
     	return child_ctx;
     }
 
-    // (332:16) {#if !cargando}
+    // (358:16) {#if !cargando}
     function create_if_block_3$1(ctx) {
     	let div;
     	let i0;
@@ -15008,10 +14993,10 @@ var app = (function () {
     			i1 = element("i");
     			i1.textContent = "listo y guardado";
     			attr_dev(i0, "class", "mdi mdi-check-all");
-    			add_location(i0, file$j, 335, 24, 11021);
-    			add_location(i1, file$j, 335, 56, 11053);
+    			add_location(i0, file$j, 361, 24, 11904);
+    			add_location(i1, file$j, 361, 56, 11936);
     			attr_dev(div, "class", "guardando mr-2 text-success");
-    			add_location(div, file$j, 332, 20, 10907);
+    			add_location(div, file$j, 358, 20, 11790);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15028,14 +15013,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(332:16) {#if !cargando}",
+    		source: "(358:16) {#if !cargando}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (339:16) {#if cargando}
+    // (365:16) {#if cargando}
     function create_if_block_2$2(ctx) {
     	let div;
     	let i;
@@ -15047,9 +15032,9 @@ var app = (function () {
     			i = element("i");
     			t = text(" Guardando");
     			attr_dev(i, "class", "mdi mdi-cached mdi-spin");
-    			add_location(i, file$j, 342, 24, 11297);
+    			add_location(i, file$j, 368, 24, 12180);
     			attr_dev(div, "class", "guardando mr-2 text-secondary");
-    			add_location(div, file$j, 339, 20, 11181);
+    			add_location(div, file$j, 365, 20, 12064);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15065,28 +15050,28 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(339:16) {#if cargando}",
+    		source: "(365:16) {#if cargando}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (776:40) {#each filtroDiagnostico as diagnostico}
+    // (802:40) {#each filtroDiagnostico as diagnostico}
     function create_each_block_1$2(ctx) {
     	let li;
     	let div;
     	let span;
-    	let t0_value = /*diagnostico*/ ctx[74].c + "";
+    	let t0_value = /*diagnostico*/ ctx[75].c + "";
     	let t0;
     	let t1;
-    	let t2_value = /*diagnostico*/ ctx[74].d + "";
+    	let t2_value = /*diagnostico*/ ctx[75].d + "";
     	let t2;
     	let mounted;
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[48](/*diagnostico*/ ctx[74], ...args);
+    		return /*click_handler*/ ctx[48](/*diagnostico*/ ctx[75], ...args);
     	}
 
     	const block = {
@@ -15098,10 +15083,10 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			attr_dev(span, "class", "badge badge-primary");
-    			add_location(span, file$j, 784, 52, 34669);
+    			add_location(span, file$j, 810, 52, 35552);
     			attr_dev(div, "class", "p-2");
-    			add_location(div, file$j, 777, 48, 34210);
-    			add_location(li, file$j, 776, 44, 34156);
+    			add_location(div, file$j, 803, 48, 35093);
+    			add_location(li, file$j, 802, 44, 35039);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -15118,8 +15103,8 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*filtroDiagnostico*/ 262144 && t0_value !== (t0_value = /*diagnostico*/ ctx[74].c + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*filtroDiagnostico*/ 262144 && t2_value !== (t2_value = /*diagnostico*/ ctx[74].d + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*filtroDiagnostico*/ 262144 && t0_value !== (t0_value = /*diagnostico*/ ctx[75].c + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*filtroDiagnostico*/ 262144 && t2_value !== (t2_value = /*diagnostico*/ ctx[75].d + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -15132,14 +15117,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(776:40) {#each filtroDiagnostico as diagnostico}",
+    		source: "(802:40) {#each filtroDiagnostico as diagnostico}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (834:40) {#if item.comentario !== undefined}
+    // (860:40) {#if item.comentario !== undefined}
     function create_if_block_1$3(ctx) {
     	let div1;
     	let div0;
@@ -15148,7 +15133,7 @@ var app = (function () {
     	let dispose;
 
     	function input_input_handler() {
-    		/*input_input_handler*/ ctx[52].call(input, /*each_value*/ ctx[72], /*i*/ ctx[73]);
+    		/*input_input_handler*/ ctx[52].call(input, /*each_value*/ ctx[73], /*i*/ ctx[74]);
     	}
 
     	const block = {
@@ -15159,17 +15144,17 @@ var app = (function () {
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "form-control border-primary");
     			attr_dev(input, "placeholder", "Comentario");
-    			add_location(input, file$j, 836, 52, 37982);
+    			add_location(input, file$j, 862, 52, 38865);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$j, 835, 48, 37911);
+    			add_location(div0, file$j, 861, 48, 38794);
     			attr_dev(div1, "class", "row mt-3");
-    			add_location(div1, file$j, 834, 44, 37839);
+    			add_location(div1, file$j, 860, 44, 38722);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
     			append_dev(div0, input);
-    			set_input_value(input, /*item*/ ctx[71].comentario);
+    			set_input_value(input, /*item*/ ctx[72].comentario);
 
     			if (!mounted) {
     				dispose = [
@@ -15183,8 +15168,8 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty[0] & /*diagnosticosSeleccionados*/ 16 && input.value !== /*item*/ ctx[71].comentario) {
-    				set_input_value(input, /*item*/ ctx[71].comentario);
+    			if (dirty[0] & /*diagnosticosSeleccionados*/ 16 && input.value !== /*item*/ ctx[72].comentario) {
+    				set_input_value(input, /*item*/ ctx[72].comentario);
     			}
     		},
     		d: function destroy(detaching) {
@@ -15198,22 +15183,22 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(834:40) {#if item.comentario !== undefined}",
+    		source: "(860:40) {#if item.comentario !== undefined}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (807:32) {#each diagnosticosSeleccionados as item, i}
+    // (833:32) {#each diagnosticosSeleccionados as item, i}
     function create_each_block$5(ctx) {
     	let li;
     	let span0;
-    	let t0_value = /*item*/ ctx[71].c + "";
+    	let t0_value = /*item*/ ctx[72].c + "";
     	let t0;
     	let t1;
     	let span1;
-    	let t2_value = /*item*/ ctx[71].d + "";
+    	let t2_value = /*item*/ ctx[72].d + "";
     	let t2;
     	let t3;
     	let div;
@@ -15227,14 +15212,14 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_2(...args) {
-    		return /*click_handler_2*/ ctx[50](/*i*/ ctx[73], ...args);
+    		return /*click_handler_2*/ ctx[50](/*i*/ ctx[74], ...args);
     	}
 
     	function click_handler_3(...args) {
-    		return /*click_handler_3*/ ctx[51](/*i*/ ctx[73], ...args);
+    		return /*click_handler_3*/ ctx[51](/*i*/ ctx[74], ...args);
     	}
 
-    	let if_block = /*item*/ ctx[71].comentario !== undefined && create_if_block_1$3(ctx);
+    	let if_block = /*item*/ ctx[72].comentario !== undefined && create_if_block_1$3(ctx);
 
     	const block = {
     		c: function create() {
@@ -15254,28 +15239,28 @@ var app = (function () {
     			t5 = space();
     			if (if_block) if_block.c();
     			attr_dev(span0, "class", "badge badge-primary");
-    			add_location(span0, file$j, 808, 40, 36032);
-    			add_location(span1, file$j, 810, 47, 36175);
+    			add_location(span0, file$j, 834, 40, 36915);
+    			add_location(span1, file$j, 836, 47, 37058);
     			attr_dev(i0, "class", "mdi-18px mdi mdi-comment-plus-outline");
-    			add_location(i0, file$j, 819, 49, 36861);
+    			add_location(i0, file$j, 845, 49, 37744);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "text-primary");
     			attr_dev(a0, "data-tooltip", "Comentar");
-    			add_location(a0, file$j, 814, 44, 36493);
+    			add_location(a0, file$j, 840, 44, 37376);
     			attr_dev(i1, "class", "mdi-18px mdi mdi-trash-can-outline");
-    			add_location(i1, file$j, 828, 49, 37468);
+    			add_location(i1, file$j, 854, 49, 38351);
     			attr_dev(a1, "href", "#!");
     			attr_dev(a1, "class", "text-danger");
     			attr_dev(a1, "data-tooltip", "Eliminar");
-    			add_location(a1, file$j, 823, 44, 37110);
+    			add_location(a1, file$j, 849, 44, 37993);
     			set_style(div, "position", "absolute");
     			set_style(div, "top", "0");
     			set_style(div, "right", "0");
     			set_style(div, "padding", "10px");
     			set_style(div, "background-color", "white");
     			set_style(div, "border-bottom-left-radius", "5px");
-    			add_location(div, file$j, 811, 40, 36238);
-    			add_location(li, file$j, 807, 36, 35986);
+    			add_location(div, file$j, 837, 40, 37121);
+    			add_location(li, file$j, 833, 36, 36869);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -15305,10 +15290,10 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*diagnosticosSeleccionados*/ 16 && t0_value !== (t0_value = /*item*/ ctx[71].c + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*diagnosticosSeleccionados*/ 16 && t2_value !== (t2_value = /*item*/ ctx[71].d + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*diagnosticosSeleccionados*/ 16 && t0_value !== (t0_value = /*item*/ ctx[72].c + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*diagnosticosSeleccionados*/ 16 && t2_value !== (t2_value = /*item*/ ctx[72].d + "")) set_data_dev(t2, t2_value);
 
-    			if (/*item*/ ctx[71].comentario !== undefined) {
+    			if (/*item*/ ctx[72].comentario !== undefined) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -15333,14 +15318,14 @@ var app = (function () {
     		block,
     		id: create_each_block$5.name,
     		type: "each",
-    		source: "(807:32) {#each diagnosticosSeleccionados as item, i}",
+    		source: "(833:32) {#each diagnosticosSeleccionados as item, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (843:32) {#if diagnosticosSeleccionados.length === 0}
+    // (869:32) {#if diagnosticosSeleccionados.length === 0}
     function create_if_block$8(ctx) {
     	let div2;
     	let div1;
@@ -15359,17 +15344,17 @@ var app = (function () {
     			t1 = space();
     			ul = element("ul");
     			attr_dev(p, "class", "alert-body text-center mt-3");
-    			add_location(p, file$j, 849, 48, 38845);
+    			add_location(p, file$j, 875, 48, 39728);
     			attr_dev(div0, "class", "alert border alert-light");
     			attr_dev(div0, "role", "alert");
-    			add_location(div0, file$j, 845, 44, 38600);
+    			add_location(div0, file$j, 871, 44, 39483);
     			attr_dev(ul, "class", "list-info");
     			attr_dev(ul, "data-bind", "foreach: estudios");
-    			add_location(ul, file$j, 856, 44, 39283);
+    			add_location(ul, file$j, 882, 44, 40166);
     			attr_dev(div1, "class", "col-md-12");
-    			add_location(div1, file$j, 844, 40, 38531);
+    			add_location(div1, file$j, 870, 40, 39414);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file$j, 843, 36, 38472);
+    			add_location(div2, file$j, 869, 36, 39355);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -15388,7 +15373,7 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(843:32) {#if diagnosticosSeleccionados.length === 0}",
+    		source: "(869:32) {#if diagnosticosSeleccionados.length === 0}",
     		ctx
     	});
 
@@ -16094,68 +16079,68 @@ var app = (function () {
     			create_component(modalantecedentes.$$.fragment);
     			attr_dev(span0, "class", "badge badge-primary");
     			attr_dev(span0, "data-bind", "text: titulo");
-    			add_location(span0, file$j, 321, 16, 10434);
+    			add_location(span0, file$j, 347, 16, 11317);
     			attr_dev(span1, "data-bind", "text: paciente().nombreParaMostrar");
-    			add_location(span1, file$j, 324, 16, 10574);
-    			add_location(h50, file$j, 320, 12, 10412);
+    			add_location(span1, file$j, 350, 16, 11457);
+    			add_location(h50, file$j, 346, 12, 11295);
     			attr_dev(div0, "class", "col-md-6");
-    			add_location(div0, file$j, 319, 8, 10376);
+    			add_location(div0, file$j, 345, 8, 11259);
     			attr_dev(div1, "class", "guardar-documento");
-    			add_location(div1, file$j, 330, 12, 10821);
+    			add_location(div1, file$j, 356, 12, 11704);
     			attr_dev(div2, "class", "col-md-6");
     			set_style(div2, "text-align", "right");
-    			add_location(div2, file$j, 329, 8, 10758);
+    			add_location(div2, file$j, 355, 8, 11641);
     			attr_dev(i0, "data-bind", "class: icon");
     			attr_dev(i0, "class", "mdi mdi-comment-eye");
-    			add_location(i0, file$j, 355, 20, 11809);
+    			add_location(i0, file$j, 381, 20, 12692);
     			attr_dev(sapn0, "data-bind", "text: text");
-    			add_location(sapn0, file$j, 356, 20, 11888);
+    			add_location(sapn0, file$j, 382, 20, 12771);
     			attr_dev(button0, "data-toggle", "modal");
     			attr_dev(button0, "data-target", "#modalDatosPersonales");
     			set_style(button0, "box-shadow", "none");
     			attr_dev(button0, "class", "btn btn-outline-secondary btn-sm");
-    			add_location(button0, file$j, 349, 16, 11555);
+    			add_location(button0, file$j, 375, 16, 12438);
     			attr_dev(i1, "data-bind", "class: icon");
     			attr_dev(i1, "class", "mdi mdi-text");
-    			add_location(i1, file$j, 364, 20, 12209);
+    			add_location(i1, file$j, 390, 20, 13092);
     			attr_dev(sapn1, "data-bind", "text: text");
-    			add_location(sapn1, file$j, 365, 20, 12281);
+    			add_location(sapn1, file$j, 391, 20, 13164);
     			attr_dev(button1, "data-bind", " class: itemClass,click: clickEvent");
     			set_style(button1, "box-shadow", "none");
     			attr_dev(button1, "class", "btn btn-outline-dark btn-sm");
-    			add_location(button1, file$j, 359, 16, 11989);
+    			add_location(button1, file$j, 385, 16, 12872);
     			attr_dev(i2, "data-bind", "class: icon");
     			attr_dev(i2, "class", "mdi mdi-printer");
-    			add_location(i2, file$j, 383, 20, 13049);
+    			add_location(i2, file$j, 409, 20, 13932);
     			attr_dev(sapn2, "data-bind", "text: text");
-    			add_location(sapn2, file$j, 384, 20, 13124);
+    			add_location(sapn2, file$j, 410, 20, 14007);
     			attr_dev(button2, "data-bind", " class: itemClass,click: clickEvent");
     			set_style(button2, "box-shadow", "none");
     			attr_dev(button2, "class", "btn btn-outline-dark btn-sm btn-hover-white");
-    			add_location(button2, file$j, 378, 16, 12813);
+    			add_location(button2, file$j, 404, 16, 13696);
     			attr_dev(i3, "data-bind", "class: icon");
     			attr_dev(i3, "class", "mdi mdi-delete");
-    			add_location(i3, file$j, 402, 20, 13868);
+    			add_location(i3, file$j, 428, 20, 14751);
     			attr_dev(sapn3, "data-bind", "text: text");
-    			add_location(sapn3, file$j, 403, 20, 13942);
+    			add_location(sapn3, file$j, 429, 20, 14825);
     			attr_dev(button3, "data-bind", " class: itemClass,click: clickEvent");
     			set_style(button3, "box-shadow", "none");
     			attr_dev(button3, "class", "btn btn-outline-danger btn-sm");
-    			add_location(button3, file$j, 397, 16, 13646);
+    			add_location(button3, file$j, 423, 16, 14529);
     			attr_dev(div3, "class", "dropdown");
     			attr_dev(div3, "data-bind", "foreach: actionButtons");
-    			add_location(div3, file$j, 348, 12, 11480);
+    			add_location(div3, file$j, 374, 12, 12363);
     			attr_dev(div4, "class", "col-lg-12");
-    			add_location(div4, file$j, 347, 8, 11443);
+    			add_location(div4, file$j, 373, 8, 12326);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$j, 318, 4, 10349);
+    			add_location(div5, file$j, 344, 4, 11232);
     			attr_dev(div6, "class", "contenedor-datos");
     			attr_dev(div6, "id", "divHeaderBar");
-    			add_location(div6, file$j, 317, 0, 10295);
+    			add_location(div6, file$j, 343, 0, 11178);
     			attr_dev(div7, "class", "card-title");
-    			add_location(div7, file$j, 419, 20, 14409);
+    			add_location(div7, file$j, 445, 20, 15292);
     			attr_dev(div8, "class", "card-header");
-    			add_location(div8, file$j, 418, 16, 14362);
+    			add_location(div8, file$j, 444, 16, 15245);
     			attr_dev(textarea0, "class", "form-control");
     			set_style(textarea0, "width", "100%");
     			set_style(textarea0, "display", "block");
@@ -16163,16 +16148,16 @@ var app = (function () {
     			attr_dev(textarea0, "rows", "3");
     			attr_dev(textarea0, "name", "Comentario");
     			attr_dev(textarea0, "data-bind", "value: atencionMedica.motivoConsulta");
-    			add_location(textarea0, file$j, 422, 20, 14544);
+    			add_location(textarea0, file$j, 448, 20, 15427);
     			attr_dev(div9, "class", "card-body");
-    			add_location(div9, file$j, 421, 16, 14499);
+    			add_location(div9, file$j, 447, 16, 15382);
     			attr_dev(div10, "data-bind", "if: perfil().motivoConsulta");
     			attr_dev(div10, "class", "card m-b-20 margen-mobile");
-    			add_location(div10, file$j, 414, 12, 14217);
+    			add_location(div10, file$j, 440, 12, 15100);
     			attr_dev(div11, "class", "card-title");
-    			add_location(div11, file$j, 438, 20, 15213);
+    			add_location(div11, file$j, 464, 20, 16096);
     			attr_dev(div12, "class", "card-header");
-    			add_location(div12, file$j, 437, 16, 15166);
+    			add_location(div12, file$j, 463, 16, 16049);
     			attr_dev(textarea1, "class", "form-control");
     			attr_dev(textarea1, "data-bind", "value: atencionMedica.historiaEnfermedad");
     			set_style(textarea1, "width", "100%");
@@ -16180,291 +16165,291 @@ var app = (function () {
     			set_style(textarea1, "height", "150px");
     			attr_dev(textarea1, "rows", "3");
     			attr_dev(textarea1, "name", "Comentario");
-    			add_location(textarea1, file$j, 441, 20, 15355);
+    			add_location(textarea1, file$j, 467, 20, 16238);
     			attr_dev(div13, "class", "card-body");
-    			add_location(div13, file$j, 440, 16, 15310);
+    			add_location(div13, file$j, 466, 16, 16193);
     			attr_dev(div14, "data-bind", "if: perfil().historiaEnfermedad");
     			attr_dev(div14, "class", "card m-b-20 autosave");
-    			add_location(div14, file$j, 433, 12, 15022);
+    			add_location(div14, file$j, 459, 12, 15905);
     			attr_dev(div15, "class", "card-title");
-    			add_location(div15, file$j, 454, 20, 15954);
+    			add_location(div15, file$j, 480, 20, 16837);
     			attr_dev(div16, "class", "card-header");
-    			add_location(div16, file$j, 453, 16, 15907);
+    			add_location(div16, file$j, 479, 16, 16790);
     			attr_dev(i4, "class", "mdi mdi-thermometer mdi-18px");
-    			add_location(i4, file$j, 461, 37, 16290);
+    			add_location(i4, file$j, 487, 37, 17173);
     			attr_dev(label0, "for", "");
-    			add_location(label0, file$j, 460, 32, 16238);
+    			add_location(label0, file$j, 486, 32, 17121);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "class", "form-control");
-    			add_location(input0, file$j, 465, 40, 16539);
+    			add_location(input0, file$j, 491, 40, 17422);
     			attr_dev(div17, "class", "col-lg-7");
-    			add_location(div17, file$j, 464, 36, 16475);
+    			add_location(div17, file$j, 490, 36, 17358);
     			option0.__value = "C";
     			option0.value = option0.__value;
     			option0.selected = true;
-    			add_location(option0, file$j, 475, 44, 17221);
+    			add_location(option0, file$j, 501, 44, 18104);
     			option1.__value = "K";
     			option1.value = option1.__value;
-    			add_location(option1, file$j, 476, 44, 17305);
+    			add_location(option1, file$j, 502, 44, 18188);
     			option2.__value = "F";
     			option2.value = option2.__value;
-    			add_location(option2, file$j, 477, 44, 17380);
+    			add_location(option2, file$j, 503, 44, 18263);
     			attr_dev(select0, "class", "form-control");
     			if (/*temperatura*/ ctx[7].tipo === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[35].call(select0));
-    			add_location(select0, file$j, 474, 40, 17088);
+    			add_location(select0, file$j, 500, 40, 17971);
     			attr_dev(div18, "class", "col-lg-5");
-    			add_location(div18, file$j, 472, 36, 16943);
+    			add_location(div18, file$j, 498, 36, 17826);
     			attr_dev(div19, "class", "row");
-    			add_location(div19, file$j, 463, 32, 16420);
+    			add_location(div19, file$j, 489, 32, 17303);
     			attr_dev(div20, "class", "form-group");
-    			add_location(div20, file$j, 459, 28, 16180);
+    			add_location(div20, file$j, 485, 28, 17063);
     			attr_dev(div21, "class", "col-lg-3");
-    			add_location(div21, file$j, 458, 24, 16128);
+    			add_location(div21, file$j, 484, 24, 17011);
     			attr_dev(i5, "class", "mdi mdi-chart-line mdi-18px");
-    			add_location(i5, file$j, 486, 37, 17800);
+    			add_location(i5, file$j, 512, 37, 18683);
     			attr_dev(label1, "for", "");
-    			add_location(label1, file$j, 485, 32, 17748);
+    			add_location(label1, file$j, 511, 32, 18631);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "class", "form-control");
-    			add_location(input1, file$j, 491, 40, 18098);
+    			add_location(input1, file$j, 517, 40, 18981);
     			attr_dev(div22, "class", "col-lg-12");
-    			add_location(div22, file$j, 490, 36, 18033);
+    			add_location(div22, file$j, 516, 36, 18916);
     			attr_dev(div23, "class", "row");
-    			add_location(div23, file$j, 489, 32, 17978);
+    			add_location(div23, file$j, 515, 32, 18861);
     			attr_dev(div24, "class", "form-group");
-    			add_location(div24, file$j, 484, 28, 17690);
+    			add_location(div24, file$j, 510, 28, 18573);
     			attr_dev(div25, "class", "col-lg-3");
-    			add_location(div25, file$j, 483, 24, 17638);
+    			add_location(div25, file$j, 509, 24, 18521);
     			attr_dev(i6, "class", "mdi mdi-heart-pulse mdi-18px");
-    			add_location(i6, file$j, 504, 37, 18774);
+    			add_location(i6, file$j, 530, 37, 19657);
     			attr_dev(label2, "for", "");
-    			add_location(label2, file$j, 503, 32, 18722);
+    			add_location(label2, file$j, 529, 32, 19605);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "class", "form-control");
-    			add_location(input2, file$j, 509, 40, 19069);
+    			add_location(input2, file$j, 535, 40, 19952);
     			attr_dev(div26, "class", "col-lg-12");
-    			add_location(div26, file$j, 508, 36, 19004);
+    			add_location(div26, file$j, 534, 36, 19887);
     			attr_dev(div27, "class", "row");
-    			add_location(div27, file$j, 507, 32, 18949);
+    			add_location(div27, file$j, 533, 32, 19832);
     			attr_dev(div28, "class", "form-group");
-    			add_location(div28, file$j, 502, 28, 18664);
+    			add_location(div28, file$j, 528, 28, 19547);
     			attr_dev(div29, "class", "col-lg-3");
-    			add_location(div29, file$j, 501, 24, 18612);
+    			add_location(div29, file$j, 527, 24, 19495);
     			attr_dev(i7, "class", "mdi mdi-heart-pulse mdi-18px");
-    			add_location(i7, file$j, 522, 37, 19741);
+    			add_location(i7, file$j, 548, 37, 20624);
     			attr_dev(label3, "for", "");
-    			add_location(label3, file$j, 521, 32, 19689);
+    			add_location(label3, file$j, 547, 32, 20572);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "class", "form-control");
-    			add_location(input3, file$j, 527, 40, 20039);
+    			add_location(input3, file$j, 553, 40, 20922);
     			attr_dev(div30, "class", "col-lg-6");
-    			add_location(div30, file$j, 526, 36, 19975);
+    			add_location(div30, file$j, 552, 36, 20858);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "class", "form-control");
-    			add_location(input4, file$j, 535, 40, 20508);
+    			add_location(input4, file$j, 561, 40, 21391);
     			attr_dev(div31, "class", "col-lg-6");
-    			add_location(div31, file$j, 534, 36, 20444);
+    			add_location(div31, file$j, 560, 36, 21327);
     			attr_dev(div32, "class", "row");
-    			add_location(div32, file$j, 525, 32, 19920);
+    			add_location(div32, file$j, 551, 32, 20803);
     			attr_dev(div33, "class", "form-group");
-    			add_location(div33, file$j, 520, 28, 19631);
+    			add_location(div33, file$j, 546, 28, 20514);
     			attr_dev(div34, "class", "col-lg-3");
-    			add_location(div34, file$j, 519, 24, 19579);
-    			add_location(h51, file$j, 546, 28, 21064);
-    			add_location(hr, file$j, 547, 28, 21119);
+    			add_location(div34, file$j, 545, 24, 20462);
+    			add_location(h51, file$j, 572, 28, 21947);
+    			add_location(hr, file$j, 573, 28, 22002);
     			attr_dev(i8, "class", "mdi mdi-weight-pound");
-    			add_location(i8, file$j, 552, 45, 21392);
+    			add_location(i8, file$j, 578, 45, 22275);
     			attr_dev(label4, "for", "");
-    			add_location(label4, file$j, 551, 40, 21332);
+    			add_location(label4, file$j, 577, 40, 22215);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "class", "form-control");
-    			add_location(input5, file$j, 556, 48, 21658);
+    			add_location(input5, file$j, 582, 48, 22541);
     			attr_dev(div35, "class", "col-lg-7");
-    			add_location(div35, file$j, 555, 44, 21586);
+    			add_location(div35, file$j, 581, 44, 22469);
     			option3.__value = "Lb";
     			option3.value = option3.__value;
-    			add_location(option3, file$j, 569, 52, 22562);
+    			add_location(option3, file$j, 595, 52, 23445);
     			option4.__value = "Kg";
     			option4.value = option4.__value;
-    			add_location(option4, file$j, 570, 52, 22646);
+    			add_location(option4, file$j, 596, 52, 23529);
     			attr_dev(select1, "class", "form-control");
     			if (/*peso*/ ctx[9].tipo === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[41].call(select1));
-    			add_location(select1, file$j, 565, 48, 22272);
+    			add_location(select1, file$j, 591, 48, 23155);
     			attr_dev(div36, "class", "col-lg-5");
-    			add_location(div36, file$j, 563, 44, 22111);
+    			add_location(div36, file$j, 589, 44, 22994);
     			attr_dev(div37, "class", "row");
-    			add_location(div37, file$j, 554, 40, 21523);
+    			add_location(div37, file$j, 580, 40, 22406);
     			attr_dev(div38, "class", "form-group");
-    			add_location(div38, file$j, 550, 36, 21266);
+    			add_location(div38, file$j, 576, 36, 22149);
     			attr_dev(div39, "class", "col-lg-3");
-    			add_location(div39, file$j, 549, 32, 21206);
+    			add_location(div39, file$j, 575, 32, 22089);
     			attr_dev(i9, "class", "mdi mdi-human");
-    			add_location(i9, file$j, 579, 45, 23139);
+    			add_location(i9, file$j, 605, 45, 24022);
     			attr_dev(label5, "for", "");
-    			add_location(label5, file$j, 578, 40, 23079);
+    			add_location(label5, file$j, 604, 40, 23962);
     			attr_dev(input6, "type", "number");
     			attr_dev(input6, "class", "form-control");
     			attr_dev(input6, "max", "15");
     			attr_dev(input6, "maxlength", "2");
     			attr_dev(input6, "aria-label", "Recipient's username");
     			attr_dev(input6, "aria-describedby", "basic-addon2");
-    			add_location(input6, file$j, 588, 52, 23738);
+    			add_location(input6, file$j, 614, 52, 24621);
     			attr_dev(span2, "class", "input-group-text");
     			attr_dev(span2, "id", "basic-addon2");
-    			add_location(span2, file$j, 601, 56, 24697);
+    			add_location(span2, file$j, 627, 56, 25580);
     			attr_dev(div40, "class", "input-group-append");
-    			add_location(div40, file$j, 598, 52, 24496);
+    			add_location(div40, file$j, 624, 52, 25379);
     			attr_dev(div41, "class", "input-group");
     			set_style(div41, "width", "100%", 1);
     			set_style(div41, "float", "right");
-    			add_location(div41, file$j, 584, 48, 23457);
+    			add_location(div41, file$j, 610, 48, 24340);
     			attr_dev(div42, "class", "col-lg-12");
-    			add_location(div42, file$j, 583, 44, 23384);
+    			add_location(div42, file$j, 609, 44, 24267);
     			attr_dev(div43, "class", "row");
-    			add_location(div43, file$j, 582, 40, 23321);
+    			add_location(div43, file$j, 608, 40, 24204);
     			attr_dev(div44, "class", "form-group");
-    			add_location(div44, file$j, 577, 36, 23013);
+    			add_location(div44, file$j, 603, 36, 23896);
     			attr_dev(div45, "class", "col-lg-3");
-    			add_location(div45, file$j, 576, 32, 22953);
+    			add_location(div45, file$j, 602, 32, 23836);
     			attr_dev(i10, "class", "mdi mdi-emoticon-happy");
-    			add_location(i10, file$j, 615, 45, 25519);
+    			add_location(i10, file$j, 641, 45, 26402);
     			attr_dev(label6, "for", "");
-    			add_location(label6, file$j, 614, 40, 25459);
+    			add_location(label6, file$j, 640, 40, 26342);
     			attr_dev(input7, "type", "number");
     			attr_dev(input7, "class", "form-control");
     			attr_dev(input7, "max", "10");
     			attr_dev(input7, "maxlength", "2");
     			attr_dev(input7, "aria-label", "Recipient's username");
     			attr_dev(input7, "aria-describedby", "basic-addon2");
-    			add_location(input7, file$j, 625, 52, 26174);
+    			add_location(input7, file$j, 651, 52, 27057);
     			attr_dev(span3, "class", "input-group-text");
     			attr_dev(span3, "id", "basic-addon2");
-    			add_location(span3, file$j, 638, 56, 27131);
+    			add_location(span3, file$j, 664, 56, 28014);
     			attr_dev(div46, "class", "input-group-append");
-    			add_location(div46, file$j, 635, 52, 26930);
+    			add_location(div46, file$j, 661, 52, 27813);
     			attr_dev(div47, "class", "input-group");
     			set_style(div47, "width", "100%", 1);
     			set_style(div47, "float", "right");
-    			add_location(div47, file$j, 621, 48, 25893);
+    			add_location(div47, file$j, 647, 48, 26776);
     			attr_dev(div48, "class", "col-lg-12");
-    			add_location(div48, file$j, 620, 44, 25820);
+    			add_location(div48, file$j, 646, 44, 26703);
     			attr_dev(div49, "class", "row");
-    			add_location(div49, file$j, 619, 40, 25757);
+    			add_location(div49, file$j, 645, 40, 26640);
     			attr_dev(div50, "class", "form-group");
-    			add_location(div50, file$j, 613, 36, 25393);
+    			add_location(div50, file$j, 639, 36, 26276);
     			attr_dev(div51, "class", "col-lg-3");
-    			add_location(div51, file$j, 612, 32, 25333);
+    			add_location(div51, file$j, 638, 32, 26216);
     			attr_dev(i11, "class", "mdi mdi-opacity");
-    			add_location(i11, file$j, 652, 45, 27953);
+    			add_location(i11, file$j, 678, 45, 28836);
     			attr_dev(label7, "for", "");
-    			add_location(label7, file$j, 651, 40, 27893);
+    			add_location(label7, file$j, 677, 40, 28776);
     			attr_dev(input8, "type", "number");
     			attr_dev(input8, "class", "form-control");
-    			add_location(input8, file$j, 657, 48, 28284);
+    			add_location(input8, file$j, 683, 48, 29167);
     			attr_dev(div52, "class", "col-lg-12");
-    			add_location(div52, file$j, 656, 44, 28211);
+    			add_location(div52, file$j, 682, 44, 29094);
     			attr_dev(div53, "class", "row");
-    			add_location(div53, file$j, 655, 40, 28148);
+    			add_location(div53, file$j, 681, 40, 29031);
     			attr_dev(div54, "class", "form-group");
-    			add_location(div54, file$j, 650, 36, 27827);
+    			add_location(div54, file$j, 676, 36, 28710);
     			attr_dev(div55, "class", "col-lg-3");
-    			add_location(div55, file$j, 649, 32, 27767);
+    			add_location(div55, file$j, 675, 32, 28650);
     			attr_dev(label8, "for", "");
-    			add_location(label8, file$j, 669, 40, 29000);
+    			add_location(label8, file$j, 695, 40, 29883);
     			attr_dev(input9, "type", "text");
     			attr_dev(input9, "class", "form-control");
-    			add_location(input9, file$j, 672, 48, 29205);
+    			add_location(input9, file$j, 698, 48, 30088);
     			attr_dev(div56, "class", "col-lg-12");
-    			add_location(div56, file$j, 671, 44, 29132);
+    			add_location(div56, file$j, 697, 44, 30015);
     			attr_dev(div57, "class", "row");
-    			add_location(div57, file$j, 670, 40, 29069);
+    			add_location(div57, file$j, 696, 40, 29952);
     			attr_dev(div58, "class", "form-group");
-    			add_location(div58, file$j, 668, 36, 28934);
+    			add_location(div58, file$j, 694, 36, 29817);
     			attr_dev(div59, "class", "col-lg-12");
-    			add_location(div59, file$j, 667, 32, 28873);
+    			add_location(div59, file$j, 693, 32, 29756);
     			attr_dev(div60, "class", "row");
-    			add_location(div60, file$j, 548, 28, 21155);
+    			add_location(div60, file$j, 574, 28, 22038);
     			attr_dev(div61, "class", "col-12 mt-4");
-    			add_location(div61, file$j, 545, 24, 21009);
+    			add_location(div61, file$j, 571, 24, 21892);
     			attr_dev(div62, "class", "row");
-    			add_location(div62, file$j, 457, 20, 16085);
+    			add_location(div62, file$j, 483, 20, 16968);
     			attr_dev(div63, "class", "card-body");
-    			add_location(div63, file$j, 456, 16, 16040);
+    			add_location(div63, file$j, 482, 16, 16923);
     			attr_dev(div64, "class", "card m-b-20 margen-mobile autosave");
-    			add_location(div64, file$j, 452, 12, 15841);
+    			add_location(div64, file$j, 478, 12, 16724);
     			attr_dev(div65, "class", "card-title");
-    			add_location(div65, file$j, 692, 20, 30042);
+    			add_location(div65, file$j, 718, 20, 30925);
     			attr_dev(div66, "class", "card-header");
-    			add_location(div66, file$j, 691, 16, 29995);
+    			add_location(div66, file$j, 717, 16, 30878);
     			attr_dev(i12, "class", "icon mdi  mdi-dots-vertical");
-    			add_location(i12, file$j, 702, 28, 30474);
+    			add_location(i12, file$j, 728, 28, 31357);
     			attr_dev(a0, "href", "/");
     			attr_dev(a0, "data-toggle", "dropdown");
     			attr_dev(a0, "aria-haspopup", "true");
     			attr_dev(a0, "aria-expanded", "false");
-    			add_location(a0, file$j, 696, 24, 30224);
+    			add_location(a0, file$j, 722, 24, 31107);
     			attr_dev(button4, "class", "dropdown-item");
     			attr_dev(button4, "type", "button");
-    			add_location(button4, file$j, 705, 28, 30648);
+    			add_location(button4, file$j, 731, 28, 31531);
     			attr_dev(button5, "class", "dropdown-item");
     			attr_dev(button5, "type", "button");
-    			add_location(button5, file$j, 708, 28, 30801);
+    			add_location(button5, file$j, 734, 28, 31684);
     			attr_dev(button6, "class", "dropdown-item");
     			attr_dev(button6, "type", "button");
-    			add_location(button6, file$j, 711, 28, 30962);
+    			add_location(button6, file$j, 737, 28, 31845);
     			attr_dev(div67, "class", "dropdown-menu dropdown-menu-right");
-    			add_location(div67, file$j, 704, 24, 30571);
+    			add_location(div67, file$j, 730, 24, 31454);
     			attr_dev(div68, "class", "dropdown");
-    			add_location(div68, file$j, 695, 20, 30176);
+    			add_location(div68, file$j, 721, 20, 31059);
     			attr_dev(div69, "class", "card-controls");
-    			add_location(div69, file$j, 694, 16, 30127);
+    			add_location(div69, file$j, 720, 16, 31010);
     			attr_dev(textarea2, "class", "form-control");
     			set_style(textarea2, "width", "100%");
     			set_style(textarea2, "display", "block");
     			attr_dev(textarea2, "rows", "5");
     			attr_dev(textarea2, "name", "Comentario");
-    			add_location(textarea2, file$j, 718, 20, 31245);
+    			add_location(textarea2, file$j, 744, 20, 32128);
     			attr_dev(div70, "class", "card-body");
-    			add_location(div70, file$j, 717, 16, 31200);
+    			add_location(div70, file$j, 743, 16, 32083);
     			attr_dev(div71, "class", "card m-b-20 autosave");
-    			add_location(div71, file$j, 688, 12, 29912);
+    			add_location(div71, file$j, 714, 12, 30795);
     			attr_dev(div72, "class", "card-title");
-    			add_location(div72, file$j, 730, 20, 31722);
+    			add_location(div72, file$j, 756, 20, 32605);
     			attr_dev(div73, "class", "card-header");
-    			add_location(div73, file$j, 729, 16, 31675);
+    			add_location(div73, file$j, 755, 16, 32558);
     			attr_dev(i13, "class", "icon mdi  mdi-dots-vertical");
-    			add_location(i13, file$j, 740, 28, 32153);
+    			add_location(i13, file$j, 766, 28, 33036);
     			attr_dev(a1, "href", "/");
     			attr_dev(a1, "data-toggle", "dropdown");
     			attr_dev(a1, "aria-haspopup", "true");
     			attr_dev(a1, "aria-expanded", "false");
-    			add_location(a1, file$j, 734, 24, 31903);
+    			add_location(a1, file$j, 760, 24, 32786);
     			attr_dev(i14, "class", "mdi mdi-plus");
-    			add_location(i14, file$j, 746, 33, 32484);
+    			add_location(i14, file$j, 772, 33, 33367);
     			attr_dev(button7, "class", "dropdown-item text-success");
     			attr_dev(button7, "type", "button");
-    			add_location(button7, file$j, 743, 28, 32327);
+    			add_location(button7, file$j, 769, 28, 33210);
     			attr_dev(div74, "class", "dropdown-menu dropdown-menu-right");
-    			add_location(div74, file$j, 742, 24, 32250);
+    			add_location(div74, file$j, 768, 24, 33133);
     			attr_dev(div75, "class", "dropdown");
-    			add_location(div75, file$j, 733, 20, 31855);
+    			add_location(div75, file$j, 759, 20, 32738);
     			attr_dev(div76, "class", "card-controls");
-    			add_location(div76, file$j, 732, 16, 31806);
+    			add_location(div76, file$j, 758, 16, 32689);
     			attr_dev(input10, "type", "text");
     			attr_dev(input10, "class", "form-control");
     			attr_dev(input10, "id", "txtBusquedaProblemaMedico");
     			attr_dev(input10, "data-toggle", "dropdown");
     			attr_dev(input10, "aria-haspopup", "true");
     			attr_dev(input10, "aria-expanded", "true");
-    			add_location(input10, file$j, 758, 32, 33001);
+    			add_location(input10, file$j, 784, 32, 33884);
     			attr_dev(i15, "class", "mdi mdi-plus");
-    			add_location(i15, file$j, 795, 49, 35425);
+    			add_location(i15, file$j, 821, 49, 36308);
     			attr_dev(a2, "href", "#!");
-    			add_location(a2, file$j, 793, 44, 35227);
+    			add_location(a2, file$j, 819, 44, 36110);
     			attr_dev(li, "class", "defecto");
-    			add_location(li, file$j, 792, 40, 35161);
+    			add_location(li, file$j, 818, 40, 36044);
     			attr_dev(div77, "class", "contenidoLista");
-    			add_location(div77, file$j, 774, 36, 34000);
+    			add_location(div77, file$j, 800, 36, 34883);
     			attr_dev(ul0, "class", "lista-buscador dropdown-menu");
     			attr_dev(ul0, "id", "buscador");
     			attr_dev(ul0, "x-placement", "top-start");
@@ -16474,74 +16459,74 @@ var app = (function () {
     			set_style(ul0, "left", "0px");
     			set_style(ul0, "transform", "translate3d(0px, -128px, 0px)");
     			set_style(ul0, "border-radius", "5px");
-    			add_location(ul0, file$j, 768, 32, 33566);
+    			add_location(ul0, file$j, 794, 32, 34449);
     			attr_dev(div78, "class", "form-group buscardor dropdown dropdown-vnc");
-    			add_location(div78, file$j, 755, 28, 32848);
+    			add_location(div78, file$j, 781, 28, 33731);
     			attr_dev(div79, "class", "col-12");
-    			add_location(div79, file$j, 754, 24, 32798);
+    			add_location(div79, file$j, 780, 24, 33681);
     			attr_dev(ul1, "class", "list-info");
-    			add_location(ul1, file$j, 805, 28, 35848);
+    			add_location(ul1, file$j, 831, 28, 36731);
     			attr_dev(div80, "class", "col-md-12");
-    			add_location(div80, file$j, 804, 24, 35795);
+    			add_location(div80, file$j, 830, 24, 36678);
     			attr_dev(div81, "class", "row");
-    			add_location(div81, file$j, 753, 20, 32755);
+    			add_location(div81, file$j, 779, 20, 33638);
     			attr_dev(div82, "class", "card-body");
-    			add_location(div82, file$j, 752, 16, 32710);
+    			add_location(div82, file$j, 778, 16, 33593);
     			attr_dev(div83, "class", "card m-b-20");
-    			add_location(div83, file$j, 728, 12, 31632);
+    			add_location(div83, file$j, 754, 12, 32515);
     			attr_dev(div84, "class", "card-title");
-    			add_location(div84, file$j, 888, 20, 40743);
+    			add_location(div84, file$j, 914, 20, 41626);
     			attr_dev(div85, "class", "card-header");
-    			add_location(div85, file$j, 887, 16, 40696);
+    			add_location(div85, file$j, 913, 16, 41579);
     			attr_dev(textarea3, "class", "form-control");
     			set_style(textarea3, "width", "100%");
     			set_style(textarea3, "display", "block");
     			set_style(textarea3, "height", "150px");
     			attr_dev(textarea3, "rows", "3");
-    			add_location(textarea3, file$j, 891, 20, 40873);
+    			add_location(textarea3, file$j, 917, 20, 41756);
     			attr_dev(div86, "class", "card-body");
-    			add_location(div86, file$j, 890, 16, 40828);
+    			add_location(div86, file$j, 916, 16, 41711);
     			attr_dev(div87, "class", "card m-b-20 margen-mobile autosave");
-    			add_location(div87, file$j, 886, 12, 40630);
+    			add_location(div87, file$j, 912, 12, 41513);
     			attr_dev(div88, "class", "card-title");
-    			add_location(div88, file$j, 905, 28, 41420);
+    			add_location(div88, file$j, 931, 28, 42303);
     			attr_dev(div89, "class", "card-header");
-    			add_location(div89, file$j, 904, 24, 41365);
+    			add_location(div89, file$j, 930, 24, 42248);
     			attr_dev(label9, "for", "");
-    			add_location(label9, file$j, 912, 36, 41797);
+    			add_location(label9, file$j, 938, 36, 42680);
     			attr_dev(input11, "type", "date");
     			attr_dev(input11, "class", "form-control");
     			attr_dev(input11, "placeholder", "Fecha");
     			input11.disabled = true;
-    			add_location(input11, file$j, 913, 36, 41862);
+    			add_location(input11, file$j, 939, 36, 42745);
     			attr_dev(div90, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div90, file$j, 909, 32, 41629);
+    			add_location(div90, file$j, 935, 32, 42512);
     			attr_dev(label10, "for", "");
-    			add_location(label10, file$j, 924, 36, 42436);
+    			add_location(label10, file$j, 950, 36, 43319);
     			attr_dev(input12, "type", "time");
     			attr_dev(input12, "placeholder", "Hora");
     			attr_dev(input12, "class", "form-control");
     			input12.disabled = true;
-    			add_location(input12, file$j, 925, 36, 42500);
+    			add_location(input12, file$j, 951, 36, 43383);
     			attr_dev(div91, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div91, file$j, 921, 32, 42268);
+    			add_location(div91, file$j, 947, 32, 43151);
     			attr_dev(div92, "class", "form-row");
-    			add_location(div92, file$j, 908, 28, 41573);
+    			add_location(div92, file$j, 934, 28, 42456);
     			attr_dev(div93, "class", "card-body");
-    			add_location(div93, file$j, 907, 24, 41520);
+    			add_location(div93, file$j, 933, 24, 42403);
     			attr_dev(div94, "class", "card m-b-20");
-    			add_location(div94, file$j, 903, 20, 41314);
+    			add_location(div94, file$j, 929, 20, 42197);
     			attr_dev(div95, "class", "col-lg-6");
-    			add_location(div95, file$j, 902, 16, 41270);
+    			add_location(div95, file$j, 928, 16, 42153);
     			attr_dev(div96, "class", "row");
-    			add_location(div96, file$j, 901, 12, 41235);
+    			add_location(div96, file$j, 927, 12, 42118);
     			attr_dev(div97, "class", "col-lg-12");
     			set_style(div97, "margin-top", "150px");
-    			add_location(div97, file$j, 413, 8, 14154);
+    			add_location(div97, file$j, 439, 8, 15037);
     			attr_dev(div98, "class", "container m-b-30");
-    			add_location(div98, file$j, 412, 4, 14114);
+    			add_location(div98, file$j, 438, 4, 14997);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$j, 411, 0, 14083);
+    			add_location(main, file$j, 437, 0, 14966);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17179,6 +17164,19 @@ var app = (function () {
     function instance$l($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("HistoriaClinica", slots, []);
+
+    	const Toast = Swal.mixin({
+    		toast: true,
+    		position: "top-end",
+    		showConfirmButton: false,
+    		timer: 3000,
+    		timerProgressBar: true,
+    		didOpen: toast => {
+    			toast.addEventListener("mouseenter", Swal.stopTimer);
+    			toast.addEventListener("mouseleave", Swal.resumeTimer);
+    		}
+    	});
+
     	let { params = "" } = $$props;
     	let paciente = {};
     	let edad = "";
@@ -17289,14 +17287,28 @@ var app = (function () {
     	};
 
     	const eliminarEstudios = event => {
-    		console.log(event.detail);
+    		Swal.fire({
+    			title: "¿Está seguro?",
+    			text: "Se eliminará este estudio de la lista, pero puede volver a agregarlo luego!",
+    			icon: "warning",
+    			showCancelButton: true,
+    			confirmButtonColor: "#3085d6",
+    			cancelButtonColor: "#d33",
+    			confirmButtonText: "Si, Eliminarlo!",
+    			cancelButtonText: "Cancelar"
+    		}).then(result => {
+    			if (result.isConfirmed) {
+    				estudiosSeleccionados.splice(event.detail, 1);
+    				$$invalidate(17, estudiosSeleccionados);
+    				$$invalidate(6, historia.estudios = estudiosSeleccionados, historia);
+    				guardarHistoria();
 
-    		if (confirm("Desea eliminar el estudio?")) {
-    			estudiosSeleccionados.splice(event.detail, 1);
-    			$$invalidate(17, estudiosSeleccionados);
-    			$$invalidate(6, historia.estudios = estudiosSeleccionados, historia);
-    			guardarHistoria();
-    		}
+    				Toast.fire({
+    					icon: "success",
+    					title: "Se ha eliminado correctamente"
+    				});
+    			}
+    		});
     	};
 
     	const agregarMedicamento = event => {
@@ -17644,6 +17656,7 @@ var app = (function () {
     		onMount,
     		url,
     		uuid: v4,
+    		Toast,
     		params,
     		paciente,
     		edad,

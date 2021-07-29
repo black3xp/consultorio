@@ -260,14 +260,14 @@
                                 <div
                                     style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
                                 >
-                                    <a
+                                    <!-- <a
                                         href="#!"
                                         class="text-primary"
                                         title="Agregar comentarios"
                                         ><i
                                             class="mdi-18px mdi mdi-comment-plus-outline"
                                         /></a
-                                    >
+                                    > -->
                                     <a
                                         href="#!"
                                         on:click|preventDefault={() => dispatch("eliminarEstudio", i)}

@@ -13,6 +13,18 @@
     import { url } from "../../util/index";
     import { v4 as uuid } from 'uuid';
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
     export let params = "";
     let paciente = {};
     let edad = "";
@@ -114,13 +126,27 @@
     }
 
     const eliminarEstudios = (event) => {
-        console.log(event.detail)
-        if(confirm("Desea eliminar el estudio?")){
+        Swal.fire({
+            title: '¿Está seguro?',
+            text: "Se eliminará este estudio de la lista, pero puede volver a agregarlo luego!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminarlo!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.isConfirmed) {
             estudiosSeleccionados.splice(event.detail, 1)
             estudiosSeleccionados = estudiosSeleccionados;
             historia.estudios = estudiosSeleccionados;
             guardarHistoria();
+            Toast.fire({
+                icon: 'success',
+                title: 'Se ha eliminado correctamente'
+            })
         }
+        })
     }
 
     const agregarMedicamento = (event) => {
