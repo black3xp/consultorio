@@ -1,6 +1,9 @@
+<script>
+    export let msgError = '';
+</script>
 <div class="alert-container">
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Ocurrió un error al conectar al servidor <button
+        {msgError} <button
             type="button"
             class="close"
             data-dismiss="alert"

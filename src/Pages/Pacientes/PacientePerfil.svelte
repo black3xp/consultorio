@@ -199,28 +199,6 @@
         <div class="col-md-12">
           <div class="row">
             <div class="col-lg-3 order-lg-1 order-sm-3">
-              <div class="card m-b-30">
-                <div class="card-header">
-                  <div class="avatar mr-2 avatar-xs">
-                    <div class="avatar-title bg-dark rounded-circle">
-                      <i class="mdi mdi-comment-account-outline mdi-18px" />
-                    </div>
-                  </div>
-                  Comentario
-                </div>
-                <div class="form-group col-lg-12">
-                  <textarea
-                    class="form-control mt-2"
-                    style="width: 100%; display: block;"
-                    id="exampleFormControlTextarea1"
-                    readonly=""
-                    rows="3"
-                    data-bind="value: paciente().comentario"
-                    name="Comentario"
-                  />
-                </div>
-              </div>
-
               <UltimosVitales
                 peso={peso}
                 tipoPeso={tipoPeso}
@@ -377,7 +355,7 @@
                     class="btn btn-outline-primary btn-sm"
                     data-toggle="modal"
                     data-target="#modalAntecedentes"
-                    ><i class="mdi mdi-plus" /> AGREGAR &nbsp;
+                    ><i class="mdi mdi-plus" /> CAMBIAR &nbsp;
                   </button>
                 </div>
                 <div class="card-body">

@@ -11,7 +11,6 @@
   export let cargando;
   
   function crearNuevaHistoria() {
-    cargando = true;
     const config = {
       method: 'post',
       url: `${url}/historias`,
@@ -20,13 +19,26 @@
         'Authorization': `${localStorage.getItem('auth')}` 
       }
     }
-    axios(config).then(res => {
-      console.log(res.data)
-      push(`/pacientes/${id}/historias/${res.data.id}`)
-      cargando = false;
-    }).catch(error => {
-      cargando = false;
-      console.error(error)
+    Swal.fire({
+      text: "¿Quieres crear una nueva consulta para este paciente?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, crear!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        cargando = true;
+        axios(config).then(res => {
+          console.log(res.data)
+          push(`/pacientes/${id}/historias/${res.data.id}`)
+          cargando = false;
+        }).catch(error => {
+          cargando = false;
+          console.error(error)
+        })
+      }
     })
   }
 

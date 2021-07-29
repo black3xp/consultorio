@@ -113,7 +113,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="mt-3"><b>Datos demográficos</b></p>
+                        <p class="mt-3" style="font-size: 18px"><span class="badge badge-primary">Datos demográficos</span></p>
                         <hr>
                         <div class="form-row">
                             <div class="form-group col-md-12 ">

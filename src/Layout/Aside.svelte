@@ -56,6 +56,19 @@
         </li>
         <!--list item ends-->
         <!--list item begins-->
+        <li use:active={{path: '/historias', className: 'active'}} class="menu-item">
+          <a href="/historias" use:link class="menu-link">
+            <span class="menu-label">
+              <span class="menu-name">Consultas médicas</span>
+            </span>
+            <span class="menu-icon">
+              <!-- <span class="icon-badge badge-success badge badge-pill">1</span> -->
+              <i class="icon-placeholder mdi mdi-square-edit-outline"></i>
+            </span>
+          </a>
+        </li>
+        <!--list item ends-->
+        <!--list item begins-->
         {#if user().roles.includes('admin')}
         <li class="menu-item">
           <a href="#!" class="open-dropdown menu-link">
