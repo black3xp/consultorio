@@ -552,43 +552,43 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col">
                             <div class="form-group">
                                 <label for="">Gesta</label>
                                 <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.gesta}>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col">
                             <div class="form-group">
                                 <label for="">Para</label>
                                 <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.para}>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col">
                             <div class="form-group">
                                 <label for="">Abortos</label>
                                 <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.abortos}>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col">
                             <div class="form-group">
                                 <label for="">Ces&aacute;reas</label>
                                 <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.cesareas}>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col">
                             <div class="form-group">
                                 <label for="">Espont&aacute;neos</label>
                                 <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.espontaneos}>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col">
                             <div class="form-group">
                                 <label for="">Provocados</label>
                                 <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.provocados}>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col">
                             <div class="form-group">
                                 <label for="">Legrados</label>
                                 <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.legrados}>
