@@ -45,7 +45,8 @@
     let medicamentosSeleccionados = [];
     let sltBuscarEstudios = '';
     let estudios = [];
-    let estudiosSeleccionados = []
+    let estudiosSeleccionados = [];
+    let historiaGinecologica = {};
 
     const searchMedicamentos = () => {
         if (timeout) {
@@ -282,6 +283,7 @@
             fecha = promesa.data.fechaHora.split('T')[0];
             medicamentosSeleccionados = promesa.data.medicamentos;
             estudiosSeleccionados = promesa.data.estudios;
+            historiaGinecologica = promesa.data.historiaGinecologica;
             let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
             hora = obtenerHora[0]+':'+obtenerHora[1]
             console.log(historia);
@@ -490,6 +492,7 @@
                     />
                 </div>
             </div>
+            <!-- Historia ginecologica -->
             <div class="card m-b-20">
                 <div class="card-header">
                     <div class="card-title">
@@ -501,49 +504,49 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultima menstruaci&oacute;n</label>
-                                <input type="date" class="form-control" >
+                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimaMenstruacion}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultimo pap</label>
-                                <input type="date" class="form-control" >
+                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoPap}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultimo parto</label>
-                                <input type="date" class="form-control" >
+                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoParto}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultimo aborto</label>
-                                <input type="date" class="form-control" >
+                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoAborto}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultima ces&aacute;rea</label>
-                                <input type="date" class="form-control" >
+                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoCesarea}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Intervalo flujo menstrual</label>
-                                <input type="number" class="form-control" placeholder="Dias">
+                                <input type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.intervaloFlujoMenstrual}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Cantidad flujo menstrual</label>
-                                <input type="number" class="form-control" placeholder="Dias">
+                                <input type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.cantidadFlujoMenstrual}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Duracion flujo menstrual</label>
-                                <input type="number" class="form-control" placeholder="Dias">
+                                <input type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.duracionFlujoMenstrual}>
                             </div>
                         </div>
                     </div>
@@ -552,43 +555,43 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Gesta</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.gesta}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Para</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.para}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Abortos</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.abortos}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Ces&aacute;reas</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.cesareas}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Espont&aacute;neos</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.espontaneos}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Provocados</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.provocados}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Legrados</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.legrados}>
                             </div>
                         </div>
                     </div>
@@ -597,47 +600,47 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.sangradoVaginal} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Sangrado Vaginal</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.vidaSexualActiva} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Vida Sexual Activa</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.anticonceptivosOrales} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Anticonceptivos Orales</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.diu} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">DIU</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.aqv} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">AQV</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.condon} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Cond&oacute;n</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.norplant} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Norplant</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.ritmo} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Ritmo</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.coitoInterruptus} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Coito Interruptus</span>
                             </label>
@@ -645,6 +648,7 @@
                     </div>
                 </div>
             </div>
+            <!-- .Historia ginecologica -->
             <div class="card m-b-20 margen-mobile autosave">
                 <div class="card-header">
                     <div class="card-title">Signos vitales</div>
@@ -959,6 +963,7 @@
                                     data-toggle="dropdown"
                                     aria-haspopup="true"
                                     aria-expanded="true"
+                                    autocomplete="off"
                                     bind:value={inpBuscarDiagnostico}
                                 />
                                 <ul
