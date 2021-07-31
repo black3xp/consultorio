@@ -500,31 +500,31 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="">F.U.M</label>
+                                <label for="">Fecha ultima menstruaci&oacute;n</label>
                                 <input type="date" class="form-control" >
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="">F.U.Pap</label>
+                                <label for="">Fecha ultimo pap</label>
                                 <input type="date" class="form-control" >
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="">F.U.P</label>
+                                <label for="">Fecha ultimo parto</label>
                                 <input type="date" class="form-control" >
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="">F.U.A</label>
+                                <label for="">Fecha ultimo aborto</label>
                                 <input type="date" class="form-control" >
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="">F.U.C</label>
+                                <label for="">Fecha ultima ces&aacute;rea</label>
                                 <input type="date" class="form-control" >
                             </div>
                         </div>
