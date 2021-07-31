@@ -473,7 +473,6 @@
                 </div>
             </div>
             <div
-                data-bind="if: perfil().historiaEnfermedad"
                 class="card m-b-20 autosave"
             >
                 <div class="card-header">
@@ -489,6 +488,161 @@
                         rows="3"
                         name="Comentario"
                     />
+                </div>
+            </div>
+            <div class="card m-b-20">
+                <div class="card-header">
+                    <div class="card-title">
+                        Historia Ginecologica
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">F.U.M</label>
+                                <input type="date" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">F.U.Pap</label>
+                                <input type="date" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">F.U.P</label>
+                                <input type="date" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">F.U.A</label>
+                                <input type="date" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">F.U.C</label>
+                                <input type="date" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Intervalo flujo menstrual</label>
+                                <input type="number" class="form-control" placeholder="Dias">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Cantidad flujo menstrual</label>
+                                <input type="number" class="form-control" placeholder="Dias">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Duracion flujo menstrual</label>
+                                <input type="number" class="form-control" placeholder="Dias">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Gesta</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Para</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Abortos</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Ces&aacute;reas</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Espont&aacute;neos</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Provocados</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="">Legrados</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="mt-3">Planificaci&oacute;n</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">Sangrado Vaginal</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">Vida Sexual Activa</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">Anticonceptivos Orales</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">DIU</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">AQV</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">Cond&oacute;n</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">Norplant</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">Ritmo</span>
+                            </label>
+                            <label class="cstm-switch mr-4 mb-4">
+                                <input type="checkbox" checked="" name="option" value="1" class="cstm-switch-input">
+                                <span class="cstm-switch-indicator bg-success "></span>
+                                <span class="cstm-switch-description">Coito Interruptus</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card m-b-20 margen-mobile autosave">

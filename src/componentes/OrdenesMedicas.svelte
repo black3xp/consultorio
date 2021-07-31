@@ -13,7 +13,7 @@
 </script>
 
 <div class="alert alert-secondary" role="alert">
-    <h4 class="alert-heading">Ordenes Medicas</h4>
+    <h4 class="alert-heading">Receta</h4>
     <div class="card m-b-20 mt-3">
         <div class="card-header">
             <div class="card-title">Medicamentos</div>
