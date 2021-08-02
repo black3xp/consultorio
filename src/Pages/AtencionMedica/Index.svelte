@@ -1,13 +1,16 @@
 <script>
     import { link } from "svelte-spa-router";
-    import Header from "../../Layout/Header.svelte";
-    import Aside from "../../Layout/Aside.svelte";
-    import axios from "axios";
     import {onMount} from "svelte";
-
+    import axios from "axios";
     import {url, calcularEdad} from "../../util/index";
 
+    import Header from "../../Layout/Header.svelte";
+    import Aside from "../../Layout/Aside.svelte";
+    import ErrorServer from '../../componentes/ErrorConexion.svelte';
+
+
     let historias = [];
+    let errorServer = false;
 
     function cargarHistorias() {
         const config = {
@@ -17,13 +20,27 @@
                 'Authorization': `${localStorage.getItem('auth')}` 
             }
         };
-        axios(config).then((res) => {
-            let {data} = res;
-            historias = data;
-            console.log(historias)
-        }).catch((err) => {
-            console.error(err);
-        })
+        try {
+            axios(config).then((res) => {
+            if(res.status === 200) {
+                let {data} = res;
+                historias = data;
+                console.log(historias)
+            }
+            if(res.status === 500) {
+                errorServer = true;
+            }
+            }).catch((err) => {
+                if(err) {
+                    errorServer = true;
+                }
+                console.error(err);
+            })
+        } catch (error) {
+            if(error) {
+                errorServer = true;
+            }
+        }
     }
 
     onMount(() => {
@@ -36,6 +53,11 @@
 
 <main class="admin-main">
   <Header />
+  {#if errorServer}
+       <ErrorServer
+            msgError="Ocurrio un error al conectar con el servidor, vuelva a intentar o contacte al administrador"
+        />
+  {/if}
   <section class="admin-content">
     <div class="p-2">
       <div class="row" />

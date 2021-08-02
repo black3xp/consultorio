@@ -39,50 +39,10 @@
         <!--list item ends-->
 
         <!--list item begins-->
-        <li use:active={{path: '/AtencionMedica/Resumen', className: 'active'}} class="menu-item">
-            <a href="/AtencionMedica/Resumen" use:link class="menu-link">
-            <span class="menu-label">
-                <span class="menu-name">Resumen</span>
-            </span>
-            <span class="menu-icon">
-                <i class="icon-placeholder mdi-24px mdi mdi-format-list-bulleted-type"></i>
-            </span>
-            </a>
-        </li>
-        <!--list item ends-->
-
-        <!--list item begins-->
-        <li use:active={{path: '/AtencionMedica/EditarDatosAtencion', className: 'active'}} class="menu-item">
-            <a href="/AtencionMedica/EditarDatosAtencion" use:link class="menu-link">
-            <span class="menu-label">
-                <span class="menu-name">Editar atencion</span>
-            </span>
-            <span class="menu-icon">
-                <i class="icon-placeholder mdi-24px mdi mdi-format-list-bulleted-type"></i>
-            </span>
-            </a>
-        </li>
-        <!--list item ends-->
-        
-        <!--list item begins-->
-        <li use:active={{path: '/AtencionMedica/HistoriaClinica', className: 'active'}} class="menu-item">
-            <a href="/AtencionMedica/HistoriaClinica" use:link class="menu-link">
+        <li use:active={{path: '/pacientes/:idPaciente/historias/:idHistoria', className: 'active'}} class="menu-item">
+            <a href="/pacientes/:idPaciente/historias/:idHistoria" use:link class="menu-link">
             <span class="menu-label">
                 <span class="menu-name">Historia Clinica</span>
-            </span>
-            <span class="menu-icon">
-                <i class="icon-placeholder mdi-24px mdi mdi-format-list-bulleted-type"></i>
-            </span>
-            </a>
-        </li>
-        <!--list item ends-->
-
-        <!--list item begins-->
-        <li use:active={{path: '/AtencionMedica/NotasMedicas', className: 'active'}} class="menu-item">
-            <a href="/AtencionMedica/NotasMedicas" use:link class="menu-link">
-            <span class="menu-label">
-                <span class="menu-name">Notas médicas</span>
-                <span class="menu-info">Ingreso y Evoluciones</span>
             </span>
             <span class="menu-icon">
                 <i class="icon-placeholder mdi-24px mdi mdi-format-list-bulleted-type"></i>

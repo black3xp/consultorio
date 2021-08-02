@@ -1,13 +1,16 @@
 <script>
     import { link } from "svelte-spa-router";
+    import {onMount} from "svelte";
+    import {url, calcularEdad} from "../../util/index";
+    import axios from "axios";
+
     import Header from "../../Layout/Header.svelte";
     import Aside from "../../Layout/Aside.svelte";
-    import axios from "axios";
-    import {onMount} from "svelte";
+    import ErrorServer from "../../componentes/ErrorConexion.svelte";
 
-    import {url, calcularEdad} from "../../util/index";
 
     let pacientes = [];
+    let errorServer = false;
 
     const eliminarPaciente = (id) => {
         Swal.fire({
@@ -53,12 +56,26 @@
                 'Authorization': `${localStorage.getItem('auth')}` 
             }
         };
-        axios(config).then((res) => {
-            let {data} = res;
-            pacientes = data;
-        }).catch((err) => {
-            console.error(err);
-        })
+        try {
+            axios(config).then((res) => {
+            if(res.status === 200) {
+                let {data} = res;
+                pacientes = data;
+            }
+            if(res.status === 500) {
+                errorServer = true
+            }
+            }).catch((err) => {
+                console.error(err);
+                if(err) {
+                    errorServer = true;
+                }
+            })
+        } catch (error) {
+            if(error) {
+                errorServer = true;
+            }
+        }
     }
 
     onMount(() => {
@@ -71,6 +88,11 @@
 
 <main class="admin-main">
   <Header />
+  {#if errorServer}
+    <ErrorServer
+        msgError="Ocurrio un error al contactar al servidor, vuelva a intentar o contacte al administrador"
+    />
+  {/if}
   <section class="admin-content">
     <div class="p-2">
       <div class="row" />

@@ -1,5 +1,10 @@
 <script>
     import { link } from "svelte-spa-router";
+    import axios from "axios";
+    import { onMount } from "svelte";
+    import { url } from "../../util/index";
+    import { v4 as uuid } from 'uuid';
+
     import Header from "../../Layout/Header.svelte";
     import AsideAtencion from "../../Layout/AsideAtencion.svelte";
     import ModalDatosPaciente from "../../componentes/Modals/ModalDatosPaciente.svelte";
@@ -8,10 +13,7 @@
     import ModalAntecedentes from "../../componentes/Modals/ModalAntecedentes.svelte";
     import OrdenesMedicas from "../../componentes/OrdenesMedicas.svelte";
     import SignosVitales from "../../componentes/SignosVitales.svelte";
-    import axios from "axios";
-    import { onMount } from "svelte";
-    import { url } from "../../util/index";
-    import { v4 as uuid } from 'uuid';
+    import ErrorServer from '../../componentes/ErrorConexion.svelte';
 
     const Toast = Swal.mixin({
         toast: true,
@@ -47,6 +49,7 @@
     let estudios = [];
     let estudiosSeleccionados = [];
     let historiaGinecologica = {};
+    let errorServer = false;
 
     const searchMedicamentos = () => {
         if (timeout) {
@@ -218,6 +221,7 @@
     }
 
     const guardarHistoria = () => {
+        errorServer = false;
         cargando = true;
         historia.diagnosticos = diagnosticosSeleccionados
         delete historia.id;
@@ -229,15 +233,27 @@
                 'Authorization': `${localStorage.getItem('auth')}` 
             }
         }
-        axios(config)
+        try {
+            axios(config)
             .then(res => {
                 cargando= false
                 console.log(res.data)
+                if(res.status !== 200){
+                    errorServer = true;
+                }
             })
             .catch(error => {
+                if(error) {
+                    errorServer = true;
+                    cargando = false
+                }
                 cargando = false
                 console.error(error)
             })
+        } catch (error) {
+            errorServer = true;
+            cargando = false
+        }
     };
 
     async function cargarPaciente() {
@@ -359,6 +375,9 @@
 <AsideAtencion />
 
 <div class="contenedor-datos" id="divHeaderBar">
+    {#if errorServer}
+        <ErrorServer msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}/>
+    {/if}
     <div class="row">
         <div class="col-md-6">
             <h5>
@@ -372,14 +391,21 @@
         </div>
         <div class="col-md-6" style="text-align: right;">
             <div class="guardar-documento">
-                {#if !cargando}
+                {#if !cargando && !errorServer}
                     <div
                         class="guardando mr-2 text-success"
                     >
                         <i class="mdi mdi-check-all" /> <i>listo y guardado</i>
                     </div>
                 {/if}
-                {#if cargando}
+                {#if errorServer}
+                    <div
+                        class="guardando mr-2 text-danger"
+                    >
+                    <i class="mdi mdi-close"></i> <i>error al guardar</i>
+                    </div>
+                {/if}
+                {#if cargando && !errorServer}
                     <div
                         class="guardando mr-2 text-secondary"
                     >
@@ -388,6 +414,14 @@
                 {/if}
             </div>
         </div>
+        <button
+            type="button"
+            class="btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success flotante"
+            data-tooltip="Guardar"
+            on:click={guardarHistoria}
+        >
+            <i class="mdi mdi-content-save-outline"></i>
+        </button>
         <div class="col-lg-12">
             <div class="dropdown" data-bind="foreach: actionButtons">
                 <button
@@ -1145,3 +1179,11 @@
 <ModalTratamientos />
 <ModalInterconsulta />
 <ModalAntecedentes />
+
+<style>
+    .flotante{
+        position: fixed;
+        right: 30px;
+        bottom: 20px;
+    }
+</style>
