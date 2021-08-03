@@ -11,6 +11,16 @@
 
     let pacientes = [];
     let errorServer = false;
+    let sltBuscarPacientes = '';
+    let timeout = null;
+
+    const searchPacientes = () => {
+        if (timeout) {
+            window.clearTimeout(timeout);
+        }
+        
+        timeout = setTimeout(function () { cargarPacientes(); }, 300);
+    }
 
     const eliminarPaciente = (id) => {
         Swal.fire({
@@ -51,7 +61,7 @@
     function cargarPacientes() {
         const config = {
             method: 'get',
-            url: `${url}/pacientes`,
+            url: `${url}/pacientes?b=${sltBuscarPacientes}`,
             headers: {
                 'Authorization': `${localStorage.getItem('auth')}` 
             }
@@ -98,6 +108,20 @@
       <div class="row" />
       <div class="col-md-12 mt-3 m-b-30">
         <h5>Pacientes <a href="/pacientes/crear" use:link class="btn btn-primary btn-sm"><i class="mdi mdi-plus"></i> CREAR</a></h5>
+        <div class="alert alert-secondary" role="alert">
+            <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="Buscar">Buscar pacientes</label>
+                                    <input type="search" bind:value={sltBuscarPacientes} on:input={searchPacientes} class="form-control" placeholder="Nombres o Apelidos">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div class="table-responsive">
             <table class="table align-td-middle table-card">
                 <thead>

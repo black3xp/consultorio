@@ -73,13 +73,15 @@
       <div class="row" />
       <div class="col-md-12 mt-3 m-b-30">
         <h5>Consultas médicas</h5>
+        <div class="alert alert-secondary" role="alert">
         <div class="row">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <label for="Buscar">Buscar historias</label>
-                            <input type="search" bind:value={sltBuscarHistorias} on:input={searchHistorias} class="form-control" placeholder="Nombres o Apelidos">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="Buscar">Buscar historias</label>
+                                <input type="search" bind:value={sltBuscarHistorias} on:input={searchHistorias} class="form-control" placeholder="Nombres o Apelidos">
+                            </div>
                         </div>
                     </div>
                 </div>
