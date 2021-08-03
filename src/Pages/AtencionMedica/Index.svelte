@@ -11,11 +11,21 @@
 
     let historias = [];
     let errorServer = false;
+    let sltBuscarHistorias = '';
+    let timeout = null;
+
+    const searchHistorias = () => {
+        if (timeout) {
+            window.clearTimeout(timeout);
+        }
+        
+        timeout = setTimeout(function () { cargarHistorias(); }, 300);
+    }
 
     function cargarHistorias() {
         const config = {
             method: 'get',
-            url: `${url}/historias`,
+            url: `${url}/historias?b=${sltBuscarHistorias}`,
             headers: {
                 'Authorization': `${localStorage.getItem('auth')}` 
             }
@@ -63,6 +73,18 @@
       <div class="row" />
       <div class="col-md-12 mt-3 m-b-30">
         <h5>Consultas médicas</h5>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="Buscar">Buscar historias</label>
+                            <input type="search" bind:value={sltBuscarHistorias} on:input={searchHistorias} class="form-control" placeholder="Nombres o Apelidos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table align-td-middle table-card">
                 <thead>
