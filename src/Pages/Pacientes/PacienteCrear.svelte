@@ -6,7 +6,7 @@
     
     import { push } from 'svelte-spa-router';
     import { onMount } from 'svelte';
-    import { url, user } from '../../util/index';
+    import { url, user, ciudades, provincias, nacionalidades } from '../../util/index';
 
     let asegurado = false;
     let aseguradoras = []
@@ -33,6 +33,7 @@
     let empresa = {};
     let responsables = [];
     let usuario = {};
+
 
     const registrarPaciente = () => {
         const paciente = {
@@ -340,26 +341,22 @@
                                 <hr>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="sltCiudad">Ciudad</label>
-                                        <select
-                                            class="form-control"
-                                            id="sltCiudad"
-                                            bind:value={ciudad}
-                                        >
-                                            <option value="" selected disabled> - seleccionar ciudad - </option>
-                                            <option value="San Francisco de Macoris">San Francisco de Macoris</option>
-                                        </select>
+                                        <Select2
+                                                id={'sltCiudad'}
+                                                datos={ciudades}
+                                                bind:valor={ciudad}
+                                                placeholder={' - seleccionar ciudad - '}
+                                                label={'Ciudad'}
+                                            />
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="sltProvincia">Provincia</label>
-                                        <select
-                                            class="form-control"
-                                            id="sltProvincia"
-                                            bind:value={provincia}
-                                        >
-                                            <option value="" selected disabled> - seleccionar provincia - </option>
-                                            <option value="Duarte">Duarte</option>
-                                        </select>
+                                        <Select2
+                                            id={'sltProvincia'}
+                                            datos={provincias}
+                                            bind:valor={provincia}
+                                            placeholder={' - seleccionar provincia - '}
+                                            label={'Provincia'}
+                                        />
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -373,15 +370,13 @@
                                         </select>
                                     </div> -->
                                     <div class="form-group col-md-6">
-                                        <label for="sltNacionalidad">Nacionalidad</label>
-                                        <select
-                                            class="form-control"
-                                            id="sltNacionalidad"
-                                            bind:value={nacionalidad}
-                                        >
-                                            <option value="" selected disabled> - seleccionar nacionalidad - </option>
-                                            <option value="Dominicana">Dominicana</option>
-                                        </select>
+                                        <Select2
+                                            id={'sltNacionalidad'}
+                                            datos={nacionalidades}
+                                            bind:valor={nacionalidad}
+                                            placeholder={' - seleccionar nacionalidad - '}
+                                            label={'Nacionalidad'}
+                                        />
                                     </div>
                                 </div>
                                 <div class="form-row">

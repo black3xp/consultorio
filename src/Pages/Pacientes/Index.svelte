@@ -140,7 +140,9 @@
                     {#if paciente.activo}
                     <tr>
                         <td>
-                            <div class="avatar avatar-sm "><img src="assets/img/users/user-1.jpg" class="avatar-img avatar-sm rounded-circle" alt=""></div>
+                            <div class="avatar avatar-sm">
+                                <span class="avatar-title rounded-circle ">{paciente.nombres[0]}{paciente.apellidos[0]}</span>
+                            </div>
                         </td>
                         <td>{paciente.nombres} {paciente.apellidos}</td>
                         <td>{calcularEdad(paciente.fechaNacimiento)} años</td>

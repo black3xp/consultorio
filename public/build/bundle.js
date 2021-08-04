@@ -1804,6 +1804,157 @@ var app = (function () {
         return edad;
       };
 
+      let ciudades = [
+        {id: 'Distrito Nacional', nombre: 'Distrito Nacional'},
+        {id: 'Santiago de los Caballeros', nombre: 'Santiago de los Caballeros'},
+        {id: 'Santo Domingo Este', nombre: 'Santo Domingo Este'},
+        {id: 'Santo Domingo Norte', nombre: 'Santo Domingo Norte'},
+        {id: 'Santo Domingo Oeste', nombre: 'Santo Domingo Oeste'},
+        {id: 'San Felipe de Puerto Plata', nombre: 'San Felipe de Puerto Plata'},
+        {id: 'Higüey', nombre: 'Higüey'},
+        {id: 'San Francisco de Macorís', nombre: 'San Francisco de Macorís'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'San Pedro de Macoris', nombre: 'San Pedro de Macoris'},
+        {id: 'Los Alcarrizos', nombre: 'Los Alcarrizos'},
+        {id: 'La Vega', nombre: 'La Vega'},
+        {id: 'La Romana', nombre: 'La Romana'},
+        {id: 'Moca', nombre: 'Moca'},
+        {id: 'Villa Altagracia', nombre: 'Villa Altagracia'},
+        {id: 'San Juan de La Maguana', nombre: 'San Juan de La Maguana'},
+        {id: 'Haina', nombre: 'Haina'},
+        {id: 'Bonao', nombre: 'Bonao'},
+        {id: 'Cotuí', nombre: 'Cotuí'},
+        {id: 'Baní', nombre: 'Baní'},
+        {id: 'Santa Cruz de Barahona', nombre: 'Santa Cruz de Barahona'},
+        {id: 'Azua de Compostela', nombre: 'Azua de Compostela'},
+        {id: 'Boca Chica', nombre: 'Boca Chica'},
+        {id: 'Villa hermosa', nombre: 'Villa hermosa'},
+        {id: 'Mao', nombre: 'Mao'},
+        {id: 'Pedro Brand', nombre: 'Pedro Brand'},
+        {id: 'San Antonio de Guerra', nombre: 'San Antonio de Guerra'},
+        {id: 'San Ignacio de Sabaneta', nombre: 'San Ignacio de Sabaneta'},
+        {id: 'Santa Cruz del Seibo', nombre: 'Santa Cruz del Seibo'},
+        {id: 'Tamboril', nombre: 'Tamboril'},
+        {id: 'Nagua', nombre: 'Nagua'},
+        {id: 'Puñal', nombre: 'Puñal'},
+        {id: 'Hato', nombre: 'Hato'},
+        {id: 'Esperanza', nombre: 'Esperanza'},
+        {id: 'Sosúa', nombre: 'Sosúa'},
+        {id: 'Jarabacoa', nombre: 'Jarabacoa'},
+        {id: 'San José de las Matas', nombre: 'San José de las Matas'},
+        {id: 'Yamasá', nombre: 'Yamasá'},
+        {id: 'Monte Plata', nombre: 'Monte Plata'},
+        {id: 'Villa González', nombre: 'Villa González'},
+    ];
+
+    let provincias = [
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Puerto Plata', nombre: 'Puerto Plata'},
+        {id: 'La Altagracia', nombre: 'La Altagracia'},
+        {id: 'Duarte', nombre: 'Duarte'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'San pedro de Macoris', nombre: 'San pedro de Macoris'},
+        {id: 'La vega', nombre: 'La vega'},
+        {id: 'La Romana', nombre: 'La Romana'},
+        {id: 'Espaillat', nombre: 'Espaillat'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'San Juan de La Maguana', nombre: 'San Juan de La Maguana'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'Monseñor Nouel', nombre: 'Monseñor Nouel'},
+        {id: 'Sánchez Ramírez', nombre: 'Sánchez Ramírez'},
+        {id: 'Peravia	', nombre: 'Peravia	'},
+        {id: 'Barahona', nombre: 'Barahona'},
+        {id: 'Azua', nombre: 'Azua'},
+        {id: 'La Romana', nombre: 'La Romana'},
+        {id: 'Valverde', nombre: 'Valverde'},
+        {id: 'Santo Domingo', nombre: 'Santo Domingo'},
+        {id: 'Santiago Rodríguez', nombre: 'Santiago Rodríguez'},
+        {id: 'El Seibo', nombre: 'El Seibo'},
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Maria Trinidad Sanchez', nombre: 'Maria Trinidad Sanchez'},
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Mayor del Rey	Hato Mayor', nombre: 'Mayor del Rey	Hato Mayor'},
+        {id: 'Valverde Mao', nombre: 'Valverde Mao'},
+        {id: 'Puerto Plata', nombre: 'Puerto Plata'},
+        {id: 'La vega', nombre: 'La vega'},
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Monte plata	', nombre: 'Monte plata	'},
+        {id: 'Monte Plata', nombre: 'Monte Plata'},
+        {id: 'Santiago', nombre: 'Santiago'},
+    ];
+    let nacionalidades = [
+        {id: 'afgano', nombre: 'afgano'},
+        {id: 'alemán', nombre: 'alemán'},
+        {id: 'árabe', nombre: 'árabe'},
+        {id: 'argentino', nombre: 'argentino'},
+        {id: 'australiano', nombre: 'australiano'},
+        {id: 'belga', nombre: 'belga'},
+        {id: 'boliviano', nombre: 'boliviano'},
+        {id: 'brasileño', nombre: 'brasileño'},
+        {id: 'camboyano', nombre: 'camboyano'},
+        {id: 'canadiense', nombre: 'canadiense'},
+        {id: 'chileno', nombre: 'chileno'},
+        {id: 'chino', nombre: 'chino'},
+        {id: 'colombiano', nombre: 'colombiano'},
+        {id: 'coreano', nombre: 'coreano'},
+        {id: 'costarricense', nombre: 'costarricense'},
+        {id: 'cubano', nombre: 'cubano'},
+        {id: 'danés', nombre: 'danés'},
+        {id: 'ecuatoriano', nombre: 'ecuatoriano'},
+        {id: 'egipcio', nombre: 'egipcio'},
+        {id: 'salvadoreño', nombre: 'salvadoreño'},
+        {id: 'escocés', nombre: 'escocés'},
+        {id: 'español', nombre: 'español'},
+        {id: 'estadounidense', nombre: 'estadounidense'},
+        {id: 'estonio', nombre: 'estonio'},
+        {id: 'etiope', nombre: 'etiope'},
+        {id: 'filipino', nombre: 'filipino'},
+        {id: 'finlandés', nombre: 'finlandés'},
+        {id: 'francés', nombre: 'francés'},
+        {id: 'galés', nombre: 'galés'},
+        {id: 'griego', nombre: 'griego'},
+        {id: 'guatemalteco', nombre: 'guatemalteco'},
+        {id: 'haitiano', nombre: 'haitiano'},
+        {id: 'holandés', nombre: 'holandés'},
+        {id: 'hondureño', nombre: 'hondureño'},
+        {id: 'indonés', nombre: 'indonés'},
+        {id: 'inglés', nombre: 'inglés'},
+        {id: 'iraquí', nombre: 'iraquí'},
+        {id: 'iraní', nombre: 'iraní'},
+        {id: 'irlandés', nombre: 'irlandés'},
+        {id: 'israelí', nombre: 'israelí'},
+        {id: 'italiano', nombre: 'italiano'},
+        {id: 'japonés', nombre: 'japonés'},
+        {id: 'jordano', nombre: 'jordano'},
+        {id: 'laosiano', nombre: 'laosiano'},
+        {id: 'letón', nombre: 'letón'},
+        {id: 'letonés', nombre: 'letonés'},
+        {id: 'malayo', nombre: 'malayo'},
+        {id: 'marroquí', nombre: 'marroquí'},
+        {id: 'mexicano', nombre: 'mexicano'},
+        {id: 'nicaragüense', nombre: 'nicaragüense'},
+        {id: 'noruego', nombre: 'noruego'},
+        {id: 'neozelandés', nombre: 'neozelandés'},
+        {id: 'panameño', nombre: 'panameño'},
+        {id: 'paraguayo', nombre: 'paraguayo'},
+        {id: 'peruano', nombre: 'peruano'},
+        {id: 'polaco', nombre: 'polaco'},
+        {id: 'portugués', nombre: 'portugués'},
+        {id: 'puertorriqueño', nombre: 'puertorriqueño'},
+        {id: 'dominicano', nombre: 'dominicano'},
+        {id: 'rumano', nombre: 'rumano'},
+        {id: 'ruso', nombre: 'ruso'},
+        {id: 'sueco', nombre: 'sueco'},
+        {id: 'suizo', nombre: 'suizo'},
+        {id: 'tailandés', nombre: 'tailandés'},
+        {id: 'taiwanes', nombre: 'taiwanes'},
+        {id: 'turco', nombre: 'turco'},
+        {id: 'ucraniano', nombre: 'ucraniano'},
+        {id: 'uruguayo', nombre: 'uruguayo'},
+        {id: 'venezolano', nombre: 'venezolano'},
+        {id: 'vietnamita', nombre: 'vietnamita'},
+    ];
+
     var bind$1 = function bind(fn, thisArg) {
       return function wrap() {
         var args = new Array(arguments.length);
@@ -5009,42 +5160,45 @@ var app = (function () {
     	let tr;
     	let td0;
     	let div;
-    	let img;
-    	let img_src_value;
+    	let span;
+    	let t0_value = /*paciente*/ ctx[9].nombres[0] + "";
     	let t0;
-    	let td1;
-    	let t1_value = /*paciente*/ ctx[9].nombres + "";
+    	let t1_value = /*paciente*/ ctx[9].apellidos[0] + "";
     	let t1;
     	let t2;
-    	let t3_value = /*paciente*/ ctx[9].apellidos + "";
+    	let td1;
+    	let t3_value = /*paciente*/ ctx[9].nombres + "";
     	let t3;
     	let t4;
-    	let td2;
-    	let t5_value = calcularEdad(/*paciente*/ ctx[9].fechaNacimiento) + "";
+    	let t5_value = /*paciente*/ ctx[9].apellidos + "";
     	let t5;
     	let t6;
+    	let td2;
+    	let t7_value = calcularEdad(/*paciente*/ ctx[9].fechaNacimiento) + "";
     	let t7;
-    	let td3;
-    	let t8_value = /*paciente*/ ctx[9].sexo + "";
     	let t8;
     	let t9;
-    	let td4;
-    	let t10_value = /*paciente*/ ctx[9].celular + "";
+    	let td3;
+    	let t10_value = /*paciente*/ ctx[9].sexo + "";
     	let t10;
     	let t11;
-    	let td5;
-    	let t12_value = /*paciente*/ ctx[9].cedula + "";
+    	let td4;
+    	let t12_value = /*paciente*/ ctx[9].celular + "";
     	let t12;
     	let t13;
+    	let td5;
+    	let t14_value = /*paciente*/ ctx[9].cedula + "";
+    	let t14;
+    	let t15;
     	let td6;
     	let a0;
     	let i0;
-    	let t14;
+    	let t16;
     	let a1;
     	let i1;
     	let a1_href_value;
     	let link_action;
-    	let t15;
+    	let t17;
     	let mounted;
     	let dispose;
 
@@ -5057,92 +5211,94 @@ var app = (function () {
     			tr = element("tr");
     			td0 = element("td");
     			div = element("div");
-    			img = element("img");
-    			t0 = space();
-    			td1 = element("td");
+    			span = element("span");
+    			t0 = text(t0_value);
     			t1 = text(t1_value);
     			t2 = space();
+    			td1 = element("td");
     			t3 = text(t3_value);
     			t4 = space();
-    			td2 = element("td");
     			t5 = text(t5_value);
-    			t6 = text(" años");
-    			t7 = space();
-    			td3 = element("td");
-    			t8 = text(t8_value);
+    			t6 = space();
+    			td2 = element("td");
+    			t7 = text(t7_value);
+    			t8 = text(" años");
     			t9 = space();
-    			td4 = element("td");
+    			td3 = element("td");
     			t10 = text(t10_value);
     			t11 = space();
-    			td5 = element("td");
+    			td4 = element("td");
     			t12 = text(t12_value);
     			t13 = space();
+    			td5 = element("td");
+    			t14 = text(t14_value);
+    			t15 = space();
     			td6 = element("td");
     			a0 = element("a");
     			i0 = element("i");
-    			t14 = space();
+    			t16 = space();
     			a1 = element("a");
     			i1 = element("i");
-    			t15 = space();
-    			if (img.src !== (img_src_value = "assets/img/users/user-1.jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "avatar-img avatar-sm rounded-circle");
-    			attr_dev(img, "alt", "");
-    			add_location(img, file$4, 142, 59, 4728);
-    			attr_dev(div, "class", "avatar avatar-sm ");
+    			t17 = space();
+    			attr_dev(span, "class", "avatar-title rounded-circle ");
+    			add_location(span, file$4, 143, 32, 4761);
+    			attr_dev(div, "class", "avatar avatar-sm");
     			add_location(div, file$4, 142, 28, 4697);
     			add_location(td0, file$4, 141, 24, 4663);
-    			add_location(td1, file$4, 144, 24, 4881);
-    			add_location(td2, file$4, 145, 24, 4955);
-    			add_location(td3, file$4, 146, 24, 5035);
-    			add_location(td4, file$4, 147, 24, 5085);
-    			add_location(td5, file$4, 148, 24, 5138);
+    			add_location(td1, file$4, 146, 24, 4948);
+    			add_location(td2, file$4, 147, 24, 5022);
+    			add_location(td3, file$4, 148, 24, 5102);
+    			add_location(td4, file$4, 149, 24, 5152);
+    			add_location(td5, file$4, 150, 24, 5205);
     			attr_dev(i0, "class", "mdi mdi-close");
-    			add_location(i0, file$4, 157, 32, 5644);
+    			add_location(i0, file$4, 159, 32, 5711);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "btn btn-outline-danger");
     			attr_dev(a0, "data-tooltip", "Eliminar");
-    			add_location(a0, file$4, 151, 28, 5318);
+    			add_location(a0, file$4, 153, 28, 5385);
     			attr_dev(i1, "class", "mdi mdi-send");
-    			add_location(i1, file$4, 165, 32, 6041);
+    			add_location(i1, file$4, 167, 32, 6108);
     			attr_dev(a1, "href", a1_href_value = `/pacientes/perfil/${/*paciente*/ ctx[9].id}`);
     			attr_dev(a1, "class", "btn btn-outline-primary");
     			attr_dev(a1, "data-tooltip", "Perfil");
-    			add_location(a1, file$4, 159, 28, 5737);
+    			add_location(a1, file$4, 161, 28, 5804);
     			attr_dev(td6, "class", "text-right");
-    			add_location(td6, file$4, 149, 24, 5190);
+    			add_location(td6, file$4, 151, 24, 5257);
     			add_location(tr, file$4, 140, 20, 4633);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, td0);
     			append_dev(td0, div);
-    			append_dev(div, img);
-    			append_dev(tr, t0);
+    			append_dev(div, span);
+    			append_dev(span, t0);
+    			append_dev(span, t1);
+    			append_dev(tr, t2);
     			append_dev(tr, td1);
-    			append_dev(td1, t1);
-    			append_dev(td1, t2);
     			append_dev(td1, t3);
-    			append_dev(tr, t4);
+    			append_dev(td1, t4);
+    			append_dev(td1, t5);
+    			append_dev(tr, t6);
     			append_dev(tr, td2);
-    			append_dev(td2, t5);
-    			append_dev(td2, t6);
-    			append_dev(tr, t7);
-    			append_dev(tr, td3);
-    			append_dev(td3, t8);
+    			append_dev(td2, t7);
+    			append_dev(td2, t8);
     			append_dev(tr, t9);
-    			append_dev(tr, td4);
-    			append_dev(td4, t10);
+    			append_dev(tr, td3);
+    			append_dev(td3, t10);
     			append_dev(tr, t11);
-    			append_dev(tr, td5);
-    			append_dev(td5, t12);
+    			append_dev(tr, td4);
+    			append_dev(td4, t12);
     			append_dev(tr, t13);
+    			append_dev(tr, td5);
+    			append_dev(td5, t14);
+    			append_dev(tr, t15);
     			append_dev(tr, td6);
     			append_dev(td6, a0);
     			append_dev(a0, i0);
-    			append_dev(td6, t14);
+    			append_dev(td6, t16);
     			append_dev(td6, a1);
     			append_dev(a1, i1);
-    			append_dev(tr, t15);
+    			append_dev(tr, t17);
 
     			if (!mounted) {
     				dispose = [
@@ -5155,12 +5311,14 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*pacientes*/ 1 && t1_value !== (t1_value = /*paciente*/ ctx[9].nombres + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*pacientes*/ 1 && t3_value !== (t3_value = /*paciente*/ ctx[9].apellidos + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*pacientes*/ 1 && t5_value !== (t5_value = calcularEdad(/*paciente*/ ctx[9].fechaNacimiento) + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*pacientes*/ 1 && t8_value !== (t8_value = /*paciente*/ ctx[9].sexo + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*pacientes*/ 1 && t10_value !== (t10_value = /*paciente*/ ctx[9].celular + "")) set_data_dev(t10, t10_value);
-    			if (dirty & /*pacientes*/ 1 && t12_value !== (t12_value = /*paciente*/ ctx[9].cedula + "")) set_data_dev(t12, t12_value);
+    			if (dirty & /*pacientes*/ 1 && t0_value !== (t0_value = /*paciente*/ ctx[9].nombres[0] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*pacientes*/ 1 && t1_value !== (t1_value = /*paciente*/ ctx[9].apellidos[0] + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*pacientes*/ 1 && t3_value !== (t3_value = /*paciente*/ ctx[9].nombres + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*pacientes*/ 1 && t5_value !== (t5_value = /*paciente*/ ctx[9].apellidos + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*pacientes*/ 1 && t7_value !== (t7_value = calcularEdad(/*paciente*/ ctx[9].fechaNacimiento) + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*pacientes*/ 1 && t10_value !== (t10_value = /*paciente*/ ctx[9].sexo + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*pacientes*/ 1 && t12_value !== (t12_value = /*paciente*/ ctx[9].celular + "")) set_data_dev(t12, t12_value);
+    			if (dirty & /*pacientes*/ 1 && t14_value !== (t14_value = /*paciente*/ ctx[9].cedula + "")) set_data_dev(t14, t14_value);
 
     			if (dirty & /*pacientes*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/perfil/${/*paciente*/ ctx[9].id}`)) {
     				attr_dev(a1, "href", a1_href_value);
@@ -10816,7 +10974,7 @@ var app = (function () {
     	let t49;
     	let div26;
     	let div24;
-    	let select2;
+    	let select20;
     	let updating_valor;
     	let t50;
     	let div25;
@@ -10831,33 +10989,24 @@ var app = (function () {
     	let t56;
     	let div30;
     	let div28;
-    	let label12;
-    	let t58;
-    	let select2_1;
-    	let option6;
-    	let option7;
-    	let t61;
+    	let select21;
+    	let updating_valor_1;
+    	let t57;
     	let div29;
-    	let label13;
-    	let t63;
-    	let select3;
-    	let option8;
-    	let option9;
-    	let t66;
+    	let select22;
+    	let updating_valor_2;
+    	let t58;
     	let div32;
     	let div31;
-    	let label14;
-    	let t68;
-    	let select4;
-    	let option10;
-    	let option11;
-    	let t71;
+    	let select23;
+    	let updating_valor_3;
+    	let t59;
     	let div34;
     	let div33;
-    	let label15;
-    	let t73;
+    	let label12;
+    	let t61;
     	let input10;
-    	let t74;
+    	let t62;
     	let div35;
     	let button;
     	let current;
@@ -10866,11 +11015,11 @@ var app = (function () {
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
 
-    	function select2_valor_binding(value) {
-    		/*select2_valor_binding*/ ctx[30].call(null, value);
+    	function select20_valor_binding(value) {
+    		/*select20_valor_binding*/ ctx[30].call(null, value);
     	}
 
-    	let select2_props = {
+    	let select20_props = {
     		id: "sltAseguradoras",
     		datos: /*aseguradoras*/ ctx[1],
     		placeholder: " - seleccionar aseguradora - ",
@@ -10878,11 +11027,65 @@ var app = (function () {
     	};
 
     	if (/*aseguradora*/ ctx[2] !== void 0) {
-    		select2_props.valor = /*aseguradora*/ ctx[2];
+    		select20_props.valor = /*aseguradora*/ ctx[2];
     	}
 
-    	select2 = new Select2({ props: select2_props, $$inline: true });
-    	binding_callbacks.push(() => bind(select2, "valor", select2_valor_binding));
+    	select20 = new Select2({ props: select20_props, $$inline: true });
+    	binding_callbacks.push(() => bind(select20, "valor", select20_valor_binding));
+
+    	function select21_valor_binding(value) {
+    		/*select21_valor_binding*/ ctx[32].call(null, value);
+    	}
+
+    	let select21_props = {
+    		id: "sltCiudad",
+    		datos: ciudades,
+    		placeholder: " - seleccionar ciudad - ",
+    		label: "Ciudad"
+    	};
+
+    	if (/*ciudad*/ ctx[14] !== void 0) {
+    		select21_props.valor = /*ciudad*/ ctx[14];
+    	}
+
+    	select21 = new Select2({ props: select21_props, $$inline: true });
+    	binding_callbacks.push(() => bind(select21, "valor", select21_valor_binding));
+
+    	function select22_valor_binding(value) {
+    		/*select22_valor_binding*/ ctx[33].call(null, value);
+    	}
+
+    	let select22_props = {
+    		id: "sltProvincia",
+    		datos: provincias,
+    		placeholder: " - seleccionar provincia - ",
+    		label: "Provincia"
+    	};
+
+    	if (/*provincia*/ ctx[15] !== void 0) {
+    		select22_props.valor = /*provincia*/ ctx[15];
+    	}
+
+    	select22 = new Select2({ props: select22_props, $$inline: true });
+    	binding_callbacks.push(() => bind(select22, "valor", select22_valor_binding));
+
+    	function select23_valor_binding(value) {
+    		/*select23_valor_binding*/ ctx[34].call(null, value);
+    	}
+
+    	let select23_props = {
+    		id: "sltNacionalidad",
+    		datos: nacionalidades,
+    		placeholder: " - seleccionar nacionalidad - ",
+    		label: "Nacionalidad"
+    	};
+
+    	if (/*nacionalidad*/ ctx[8] !== void 0) {
+    		select23_props.valor = /*nacionalidad*/ ctx[8];
+    	}
+
+    	select23 = new Select2({ props: select23_props, $$inline: true });
+    	binding_callbacks.push(() => bind(select23, "valor", select23_valor_binding));
 
     	const block = {
     		c: function create() {
@@ -11008,7 +11211,7 @@ var app = (function () {
     			t49 = space();
     			div26 = element("div");
     			div24 = element("div");
-    			create_component(select2.$$.fragment);
+    			create_component(select20.$$.fragment);
     			t50 = space();
     			div25 = element("div");
     			label11 = element("label");
@@ -11023,305 +11226,242 @@ var app = (function () {
     			t56 = space();
     			div30 = element("div");
     			div28 = element("div");
-    			label12 = element("label");
-    			label12.textContent = "Ciudad";
-    			t58 = space();
-    			select2_1 = element("select");
-    			option6 = element("option");
-    			option6.textContent = "- seleccionar ciudad - ";
-    			option7 = element("option");
-    			option7.textContent = "San Francisco de Macoris";
-    			t61 = space();
+    			create_component(select21.$$.fragment);
+    			t57 = space();
     			div29 = element("div");
-    			label13 = element("label");
-    			label13.textContent = "Provincia";
-    			t63 = space();
-    			select3 = element("select");
-    			option8 = element("option");
-    			option8.textContent = "- seleccionar provincia - ";
-    			option9 = element("option");
-    			option9.textContent = "Duarte";
-    			t66 = space();
+    			create_component(select22.$$.fragment);
+    			t58 = space();
     			div32 = element("div");
     			div31 = element("div");
-    			label14 = element("label");
-    			label14.textContent = "Nacionalidad";
-    			t68 = space();
-    			select4 = element("select");
-    			option10 = element("option");
-    			option10.textContent = "- seleccionar nacionalidad - ";
-    			option11 = element("option");
-    			option11.textContent = "Dominicana";
-    			t71 = space();
+    			create_component(select23.$$.fragment);
+    			t59 = space();
     			div34 = element("div");
     			div33 = element("div");
-    			label15 = element("label");
-    			label15.textContent = "Direccion";
-    			t73 = space();
+    			label12 = element("label");
+    			label12.textContent = "Direccion";
+    			t61 = space();
     			input10 = element("input");
-    			t74 = space();
+    			t62 = space();
     			div35 = element("div");
     			button = element("button");
     			button.textContent = "Guardar";
     			attr_dev(div0, "class", "avatar-title bg-info rounded-circle mdi mdi-account-circle-outline");
-    			add_location(div0, file$d, 176, 28, 5764);
+    			add_location(div0, file$d, 177, 28, 5804);
     			attr_dev(div1, "class", "avatar avatar-lg ");
-    			add_location(div1, file$d, 175, 24, 5703);
+    			add_location(div1, file$d, 176, 24, 5743);
     			attr_dev(div2, "class", "m-b-10");
-    			add_location(div2, file$d, 174, 20, 5657);
-    			add_location(h3, file$d, 179, 20, 5932);
+    			add_location(div2, file$d, 175, 20, 5697);
+    			add_location(h3, file$d, 180, 20, 5972);
     			attr_dev(div3, "class", "col-lg-8 text-center mx-auto text-white p-b-30");
-    			add_location(div3, file$d, 173, 16, 5575);
+    			add_location(div3, file$d, 174, 16, 5615);
     			attr_dev(div4, "class", "row p-b-60 p-t-60");
-    			add_location(div4, file$d, 172, 12, 5526);
+    			add_location(div4, file$d, 173, 12, 5566);
     			attr_dev(div5, "class", "container");
-    			add_location(div5, file$d, 171, 8, 5489);
+    			add_location(div5, file$d, 172, 8, 5529);
     			attr_dev(div6, "class", "bg-dark bg-dots m-b-30");
-    			add_location(div6, file$d, 170, 4, 5443);
+    			add_location(div6, file$d, 171, 4, 5483);
     			attr_dev(h50, "class", "");
-    			add_location(h50, file$d, 191, 32, 6391);
+    			add_location(h50, file$d, 192, 32, 6431);
     			attr_dev(label0, "for", "inpNombre");
-    			add_location(label0, file$d, 194, 40, 6594);
+    			add_location(label0, file$d, 195, 40, 6634);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "id", "inpNombre");
     			attr_dev(input0, "placeholder", "John");
     			input0.required = true;
-    			add_location(input0, file$d, 195, 40, 6673);
+    			add_location(input0, file$d, 196, 40, 6713);
     			attr_dev(div7, "class", "form-group col-md-6");
-    			add_location(div7, file$d, 193, 36, 6519);
+    			add_location(div7, file$d, 194, 36, 6559);
     			attr_dev(label1, "for", "inpApellido");
-    			add_location(label1, file$d, 205, 40, 7247);
+    			add_location(label1, file$d, 206, 40, 7287);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "id", "inpApellido");
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "placeholder", "Doe");
     			input1.required = true;
-    			add_location(input1, file$d, 206, 40, 7331);
+    			add_location(input1, file$d, 207, 40, 7371);
     			attr_dev(div8, "class", "form-group col-md-6");
-    			add_location(div8, file$d, 204, 36, 7172);
+    			add_location(div8, file$d, 205, 36, 7212);
     			attr_dev(div9, "class", "form-row");
-    			add_location(div9, file$d, 192, 32, 6459);
+    			add_location(div9, file$d, 193, 32, 6499);
     			attr_dev(label2, "for", "inpApodo");
-    			add_location(label2, file$d, 218, 40, 8004);
+    			add_location(label2, file$d, 219, 40, 8044);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "class", "form-control");
     			attr_dev(input2, "id", "inpApodo");
-    			add_location(input2, file$d, 219, 40, 8081);
+    			add_location(input2, file$d, 220, 40, 8121);
     			attr_dev(div10, "class", "form-group col-md-6");
-    			add_location(div10, file$d, 217, 36, 7929);
+    			add_location(div10, file$d, 218, 36, 7969);
     			attr_dev(label3, "for", "sltSexo");
-    			add_location(label3, file$d, 227, 40, 8534);
+    			add_location(label3, file$d, 228, 40, 8574);
     			option0.__value = "";
     			option0.value = option0.__value;
     			option0.selected = true;
     			option0.disabled = true;
-    			add_location(option0, file$d, 234, 44, 8946);
+    			add_location(option0, file$d, 235, 44, 8986);
     			option1.__value = "Masculino";
     			option1.value = option1.__value;
-    			add_location(option1, file$d, 235, 44, 9058);
+    			add_location(option1, file$d, 236, 44, 9098);
     			option2.__value = "Femenino";
     			option2.value = option2.__value;
-    			add_location(option2, file$d, 236, 44, 9148);
+    			add_location(option2, file$d, 237, 44, 9188);
     			attr_dev(select0, "class", "form-control");
     			attr_dev(select0, "id", "sltSexo");
     			select0.required = true;
     			if (/*sexo*/ ctx[6] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[22].call(select0));
-    			add_location(select0, file$d, 228, 40, 8609);
+    			add_location(select0, file$d, 229, 40, 8649);
     			attr_dev(div11, "class", "form-group col-md-6");
-    			add_location(div11, file$d, 226, 36, 8459);
+    			add_location(div11, file$d, 227, 36, 8499);
     			attr_dev(div12, "class", "form-row");
-    			add_location(div12, file$d, 216, 32, 7869);
+    			add_location(div12, file$d, 217, 32, 7909);
     			attr_dev(label4, "for", "inpFechaNacimiento");
-    			add_location(label4, file$d, 242, 40, 9494);
+    			add_location(label4, file$d, 243, 40, 9534);
     			attr_dev(input3, "type", "date");
     			attr_dev(input3, "class", "form-control");
     			attr_dev(input3, "id", "inpFechaNacimiento");
     			input3.required = true;
-    			add_location(input3, file$d, 243, 40, 9595);
+    			add_location(input3, file$d, 244, 40, 9635);
     			attr_dev(div13, "class", "form-group col-md-6");
-    			add_location(div13, file$d, 241, 36, 9419);
+    			add_location(div13, file$d, 242, 36, 9459);
     			attr_dev(label5, "for", "sltTipoDocumento");
-    			add_location(label5, file$d, 252, 40, 10121);
+    			add_location(label5, file$d, 253, 40, 10161);
     			option3.__value = "";
     			option3.value = option3.__value;
     			option3.selected = true;
     			option3.disabled = true;
-    			add_location(option3, file$d, 259, 44, 10573);
+    			add_location(option3, file$d, 260, 44, 10613);
     			option4.__value = "C";
     			option4.value = option4.__value;
-    			add_location(option4, file$d, 260, 44, 10685);
+    			add_location(option4, file$d, 261, 44, 10725);
     			option5.__value = "P";
     			option5.value = option5.__value;
-    			add_location(option5, file$d, 261, 44, 10764);
+    			add_location(option5, file$d, 262, 44, 10804);
     			attr_dev(select1, "class", "form-control");
     			attr_dev(select1, "id", "sltTipoDocumento");
     			select1.required = true;
     			if (/*tipoDocumento*/ ctx[12] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[24].call(select1));
-    			add_location(select1, file$d, 253, 40, 10218);
+    			add_location(select1, file$d, 254, 40, 10258);
     			attr_dev(div14, "class", "form-group col-md-6");
-    			add_location(div14, file$d, 251, 36, 10046);
+    			add_location(div14, file$d, 252, 36, 10086);
     			attr_dev(div15, "class", "form-row");
-    			add_location(div15, file$d, 240, 32, 9359);
+    			add_location(div15, file$d, 241, 32, 9399);
     			attr_dev(label6, "for", "inpNumeroDocumento");
-    			add_location(label6, file$d, 267, 40, 11104);
+    			add_location(label6, file$d, 268, 40, 11144);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "class", "form-control");
     			attr_dev(input4, "id", "inpNumeroDocumento");
-    			add_location(input4, file$d, 268, 40, 11208);
+    			add_location(input4, file$d, 269, 40, 11248);
     			attr_dev(div16, "class", "form-group col-md-6");
-    			add_location(div16, file$d, 266, 36, 11029);
+    			add_location(div16, file$d, 267, 36, 11069);
     			attr_dev(label7, "for", "inpTelefono");
-    			add_location(label7, file$d, 276, 40, 11675);
+    			add_location(label7, file$d, 277, 40, 11715);
     			attr_dev(input5, "type", "tel");
     			attr_dev(input5, "class", "form-control");
     			attr_dev(input5, "id", "inpTelefono");
-    			add_location(input5, file$d, 277, 40, 11758);
+    			add_location(input5, file$d, 278, 40, 11798);
     			attr_dev(div17, "class", "form-group col-md-6");
-    			add_location(div17, file$d, 275, 36, 11600);
+    			add_location(div17, file$d, 276, 36, 11640);
     			attr_dev(div18, "class", "form-row");
-    			add_location(div18, file$d, 265, 32, 10969);
+    			add_location(div18, file$d, 266, 32, 11009);
     			attr_dev(label8, "for", "inpCelular");
-    			add_location(label8, file$d, 287, 40, 12312);
+    			add_location(label8, file$d, 288, 40, 12352);
     			attr_dev(input6, "type", "tel");
     			attr_dev(input6, "class", "form-control");
     			attr_dev(input6, "id", "inpCelular");
-    			add_location(input6, file$d, 288, 40, 12393);
+    			add_location(input6, file$d, 289, 40, 12433);
     			attr_dev(div19, "class", "form-group col-md-6");
-    			add_location(div19, file$d, 286, 36, 12237);
+    			add_location(div19, file$d, 287, 36, 12277);
     			attr_dev(label9, "for", "inpCorreo");
-    			add_location(label9, file$d, 296, 40, 12849);
+    			add_location(label9, file$d, 297, 40, 12889);
     			attr_dev(input7, "type", "email");
     			attr_dev(input7, "class", "form-control");
     			attr_dev(input7, "id", "inpCorreo");
-    			add_location(input7, file$d, 297, 40, 12940);
+    			add_location(input7, file$d, 298, 40, 12980);
     			attr_dev(div20, "class", "form-group col-md-6");
-    			add_location(div20, file$d, 295, 36, 12774);
+    			add_location(div20, file$d, 296, 36, 12814);
     			attr_dev(div21, "class", "form-row");
-    			add_location(div21, file$d, 285, 32, 12177);
+    			add_location(div21, file$d, 286, 32, 12217);
     			attr_dev(input8, "type", "checkbox");
     			attr_dev(input8, "name", "option");
     			input8.__value = "1";
     			input8.value = input8.__value;
     			attr_dev(input8, "class", "cstm-switch-input");
-    			add_location(input8, file$d, 308, 44, 13554);
+    			add_location(input8, file$d, 309, 44, 13594);
     			attr_dev(span0, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span0, file$d, 309, 44, 13698);
+    			add_location(span0, file$d, 310, 44, 13738);
     			attr_dev(span1, "class", "cstm-switch-description");
-    			add_location(span1, file$d, 310, 44, 13799);
+    			add_location(span1, file$d, 311, 44, 13839);
     			attr_dev(label10, "class", "cstm-switch");
-    			add_location(label10, file$d, 307, 40, 13481);
+    			add_location(label10, file$d, 308, 40, 13521);
     			attr_dev(div22, "class", " m-b-10");
-    			add_location(div22, file$d, 306, 36, 13418);
+    			add_location(div22, file$d, 307, 36, 13458);
     			attr_dev(div23, "class", "form-group");
-    			add_location(div23, file$d, 305, 32, 13356);
-    			add_location(h51, file$d, 315, 40, 14212);
-    			add_location(hr0, file$d, 316, 40, 14284);
+    			add_location(div23, file$d, 306, 32, 13396);
+    			add_location(h51, file$d, 316, 40, 14252);
+    			add_location(hr0, file$d, 317, 40, 14324);
     			attr_dev(div24, "class", "form-group col-md-6");
-    			add_location(div24, file$d, 318, 44, 14398);
+    			add_location(div24, file$d, 319, 44, 14438);
     			attr_dev(label11, "for", "inpNoAfiliado");
-    			add_location(label11, file$d, 328, 48, 15096);
+    			add_location(label11, file$d, 329, 48, 15136);
     			attr_dev(input9, "type", "number");
     			attr_dev(input9, "class", "form-control");
     			attr_dev(input9, "id", "inpNoAfiliado");
-    			add_location(input9, file$d, 329, 48, 15193);
+    			add_location(input9, file$d, 330, 48, 15233);
     			attr_dev(div25, "class", "form-group col-md-6");
-    			add_location(div25, file$d, 327, 44, 15013);
+    			add_location(div25, file$d, 328, 44, 15053);
     			attr_dev(div26, "class", "form-row");
-    			add_location(div26, file$d, 317, 40, 14330);
+    			add_location(div26, file$d, 318, 40, 14370);
 
     			attr_dev(div27, "class", div27_class_value = !/*asegurado*/ ctx[0]
     			? "hidden seguro animate__animated animate__bounceIn"
     			: "show seguro animate__animated animate__bounceIn");
 
-    			add_location(div27, file$d, 314, 36, 14040);
+    			add_location(div27, file$d, 315, 36, 14080);
     			attr_dev(h52, "class", "mt-3");
-    			add_location(h52, file$d, 338, 32, 15721);
-    			add_location(hr1, file$d, 339, 32, 15786);
-    			attr_dev(label12, "for", "sltCiudad");
-    			add_location(label12, file$d, 342, 40, 15959);
-    			option6.__value = "";
-    			option6.value = option6.__value;
-    			option6.selected = true;
-    			option6.disabled = true;
-    			add_location(option6, file$d, 348, 44, 16325);
-    			option7.__value = "San Francisco de Macoris";
-    			option7.value = option7.__value;
-    			add_location(option7, file$d, 349, 44, 16439);
-    			attr_dev(select2_1, "class", "form-control");
-    			attr_dev(select2_1, "id", "sltCiudad");
-    			if (/*ciudad*/ ctx[14] === void 0) add_render_callback(() => /*select2_1_change_handler*/ ctx[32].call(select2_1));
-    			add_location(select2_1, file$d, 343, 40, 16038);
+    			add_location(h52, file$d, 339, 32, 15761);
+    			add_location(hr1, file$d, 340, 32, 15826);
     			attr_dev(div28, "class", "form-group col-md-6");
-    			add_location(div28, file$d, 341, 36, 15884);
-    			attr_dev(label13, "for", "sltProvincia");
-    			add_location(label13, file$d, 353, 40, 16721);
-    			option8.__value = "";
-    			option8.value = option8.__value;
-    			option8.selected = true;
-    			option8.disabled = true;
-    			add_location(option8, file$d, 359, 44, 17099);
-    			option9.__value = "Duarte";
-    			option9.value = option9.__value;
-    			add_location(option9, file$d, 360, 44, 17216);
-    			attr_dev(select3, "class", "form-control");
-    			attr_dev(select3, "id", "sltProvincia");
-    			if (/*provincia*/ ctx[15] === void 0) add_render_callback(() => /*select3_change_handler*/ ctx[33].call(select3));
-    			add_location(select3, file$d, 354, 40, 16806);
+    			add_location(div28, file$d, 342, 36, 15924);
     			attr_dev(div29, "class", "form-group col-md-6");
-    			add_location(div29, file$d, 352, 36, 16646);
+    			add_location(div29, file$d, 351, 36, 16494);
     			attr_dev(div30, "class", "form-row");
-    			add_location(div30, file$d, 340, 32, 15824);
-    			attr_dev(label14, "for", "sltNacionalidad");
-    			add_location(label14, file$d, 375, 40, 18156);
-    			option10.__value = "";
-    			option10.value = option10.__value;
-    			option10.selected = true;
-    			option10.disabled = true;
-    			add_location(option10, file$d, 381, 44, 18546);
-    			option11.__value = "Dominicana";
-    			option11.value = option11.__value;
-    			add_location(option11, file$d, 382, 44, 18666);
-    			attr_dev(select4, "class", "form-control");
-    			attr_dev(select4, "id", "sltNacionalidad");
-    			if (/*nacionalidad*/ ctx[8] === void 0) add_render_callback(() => /*select4_change_handler*/ ctx[34].call(select4));
-    			add_location(select4, file$d, 376, 40, 18247);
+    			add_location(div30, file$d, 341, 32, 15864);
     			attr_dev(div31, "class", "form-group col-md-6");
-    			add_location(div31, file$d, 374, 36, 18081);
+    			add_location(div31, file$d, 371, 36, 17748);
     			attr_dev(div32, "class", "form-row");
-    			add_location(div32, file$d, 364, 32, 17423);
-    			attr_dev(label15, "for", "inpDireccion");
-    			add_location(label15, file$d, 388, 40, 19017);
+    			add_location(div32, file$d, 361, 32, 17090);
+    			attr_dev(label12, "for", "inpDireccion");
+    			add_location(label12, file$d, 383, 40, 18496);
     			attr_dev(input10, "type", "text");
     			attr_dev(input10, "class", "form-control");
     			attr_dev(input10, "id", "inpDireccion");
-    			add_location(input10, file$d, 389, 40, 19102);
+    			add_location(input10, file$d, 384, 40, 18581);
     			attr_dev(div33, "class", "form-group col-md-12");
-    			add_location(div33, file$d, 387, 36, 18941);
+    			add_location(div33, file$d, 382, 36, 18420);
     			attr_dev(div34, "class", "form-row");
-    			add_location(div34, file$d, 386, 32, 18881);
+    			add_location(div34, file$d, 381, 32, 18360);
     			attr_dev(button, "type", "submit");
     			attr_dev(button, "class", "btn btn-success btn-cta");
-    			add_location(button, file$d, 398, 36, 19586);
+    			add_location(button, file$d, 393, 36, 19065);
     			attr_dev(div35, "class", "text-right");
-    			add_location(div35, file$d, 397, 32, 19524);
+    			add_location(div35, file$d, 392, 32, 19003);
     			attr_dev(div36, "class", "card-body");
-    			add_location(div36, file$d, 190, 27, 6334);
+    			add_location(div36, file$d, 191, 27, 6374);
     			attr_dev(div37, "class", "card py-3 m-b-30");
-    			add_location(div37, file$d, 189, 23, 6275);
+    			add_location(div37, file$d, 190, 23, 6315);
     			attr_dev(div38, "class", "col-lg-8 mx-auto  mt-2");
-    			add_location(div38, file$d, 188, 20, 6214);
+    			add_location(div38, file$d, 189, 20, 6254);
     			attr_dev(div39, "class", "row ");
-    			add_location(div39, file$d, 187, 16, 6174);
+    			add_location(div39, file$d, 188, 16, 6214);
     			attr_dev(div40, "class", "container");
-    			add_location(div40, file$d, 186, 12, 6133);
+    			add_location(div40, file$d, 187, 12, 6173);
     			attr_dev(section0, "class", "pull-up");
-    			add_location(section0, file$d, 185, 8, 6094);
-    			add_location(form, file$d, 184, 4, 6033);
+    			add_location(section0, file$d, 186, 8, 6134);
+    			add_location(form, file$d, 185, 4, 6073);
     			attr_dev(section1, "class", "admin-content ");
-    			add_location(section1, file$d, 169, 2, 5405);
+    			add_location(section1, file$d, 170, 2, 5445);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$d, 167, 0, 5362);
+    			add_location(main, file$d, 168, 0, 5402);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11440,7 +11580,7 @@ var app = (function () {
     			append_dev(div27, t49);
     			append_dev(div27, div26);
     			append_dev(div26, div24);
-    			mount_component(select2, div24, null);
+    			mount_component(select20, div24, null);
     			append_dev(div26, t50);
     			append_dev(div26, div25);
     			append_dev(div25, label11);
@@ -11454,37 +11594,22 @@ var app = (function () {
     			append_dev(div36, t56);
     			append_dev(div36, div30);
     			append_dev(div30, div28);
-    			append_dev(div28, label12);
-    			append_dev(div28, t58);
-    			append_dev(div28, select2_1);
-    			append_dev(select2_1, option6);
-    			append_dev(select2_1, option7);
-    			select_option(select2_1, /*ciudad*/ ctx[14]);
-    			append_dev(div30, t61);
+    			mount_component(select21, div28, null);
+    			append_dev(div30, t57);
     			append_dev(div30, div29);
-    			append_dev(div29, label13);
-    			append_dev(div29, t63);
-    			append_dev(div29, select3);
-    			append_dev(select3, option8);
-    			append_dev(select3, option9);
-    			select_option(select3, /*provincia*/ ctx[15]);
-    			append_dev(div36, t66);
+    			mount_component(select22, div29, null);
+    			append_dev(div36, t58);
     			append_dev(div36, div32);
     			append_dev(div32, div31);
-    			append_dev(div31, label14);
-    			append_dev(div31, t68);
-    			append_dev(div31, select4);
-    			append_dev(select4, option10);
-    			append_dev(select4, option11);
-    			select_option(select4, /*nacionalidad*/ ctx[8]);
-    			append_dev(div36, t71);
+    			mount_component(select23, div31, null);
+    			append_dev(div36, t59);
     			append_dev(div36, div34);
     			append_dev(div34, div33);
-    			append_dev(div33, label15);
-    			append_dev(div33, t73);
+    			append_dev(div33, label12);
+    			append_dev(div33, t61);
     			append_dev(div33, input10);
     			set_input_value(input10, /*direccion*/ ctx[16]);
-    			append_dev(div36, t74);
+    			append_dev(div36, t62);
     			append_dev(div36, div35);
     			append_dev(div35, button);
     			current = true;
@@ -11503,9 +11628,6 @@ var app = (function () {
     					listen_dev(input7, "input", /*input7_input_handler*/ ctx[28]),
     					listen_dev(input8, "change", /*input8_change_handler*/ ctx[29]),
     					listen_dev(input9, "input", /*input9_input_handler*/ ctx[31]),
-    					listen_dev(select2_1, "change", /*select2_1_change_handler*/ ctx[32]),
-    					listen_dev(select3, "change", /*select3_change_handler*/ ctx[33]),
-    					listen_dev(select4, "change", /*select4_change_handler*/ ctx[34]),
     					listen_dev(input10, "input", /*input10_input_handler*/ ctx[35]),
     					listen_dev(form, "submit", prevent_default(/*registrarPaciente*/ ctx[18]), false, true, false)
     				];
@@ -11558,16 +11680,16 @@ var app = (function () {
     				input8.checked = /*asegurado*/ ctx[0];
     			}
 
-    			const select2_changes = {};
-    			if (dirty[0] & /*aseguradoras*/ 2) select2_changes.datos = /*aseguradoras*/ ctx[1];
+    			const select20_changes = {};
+    			if (dirty[0] & /*aseguradoras*/ 2) select20_changes.datos = /*aseguradoras*/ ctx[1];
 
     			if (!updating_valor && dirty[0] & /*aseguradora*/ 4) {
     				updating_valor = true;
-    				select2_changes.valor = /*aseguradora*/ ctx[2];
+    				select20_changes.valor = /*aseguradora*/ ctx[2];
     				add_flush_callback(() => updating_valor = false);
     			}
 
-    			select2.$set(select2_changes);
+    			select20.$set(select20_changes);
 
     			if (dirty[0] & /*numeroSeguro*/ 8192 && to_number(input9.value) !== /*numeroSeguro*/ ctx[13]) {
     				set_input_value(input9, /*numeroSeguro*/ ctx[13]);
@@ -11579,17 +11701,33 @@ var app = (function () {
     				attr_dev(div27, "class", div27_class_value);
     			}
 
-    			if (dirty[0] & /*ciudad*/ 16384) {
-    				select_option(select2_1, /*ciudad*/ ctx[14]);
+    			const select21_changes = {};
+
+    			if (!updating_valor_1 && dirty[0] & /*ciudad*/ 16384) {
+    				updating_valor_1 = true;
+    				select21_changes.valor = /*ciudad*/ ctx[14];
+    				add_flush_callback(() => updating_valor_1 = false);
     			}
 
-    			if (dirty[0] & /*provincia*/ 32768) {
-    				select_option(select3, /*provincia*/ ctx[15]);
+    			select21.$set(select21_changes);
+    			const select22_changes = {};
+
+    			if (!updating_valor_2 && dirty[0] & /*provincia*/ 32768) {
+    				updating_valor_2 = true;
+    				select22_changes.valor = /*provincia*/ ctx[15];
+    				add_flush_callback(() => updating_valor_2 = false);
     			}
 
-    			if (dirty[0] & /*nacionalidad*/ 256) {
-    				select_option(select4, /*nacionalidad*/ ctx[8]);
+    			select22.$set(select22_changes);
+    			const select23_changes = {};
+
+    			if (!updating_valor_3 && dirty[0] & /*nacionalidad*/ 256) {
+    				updating_valor_3 = true;
+    				select23_changes.valor = /*nacionalidad*/ ctx[8];
+    				add_flush_callback(() => updating_valor_3 = false);
     			}
+
+    			select23.$set(select23_changes);
 
     			if (dirty[0] & /*direccion*/ 65536 && input10.value !== /*direccion*/ ctx[16]) {
     				set_input_value(input10, /*direccion*/ ctx[16]);
@@ -11599,13 +11737,19 @@ var app = (function () {
     			if (current) return;
     			transition_in(aside.$$.fragment, local);
     			transition_in(header.$$.fragment, local);
-    			transition_in(select2.$$.fragment, local);
+    			transition_in(select20.$$.fragment, local);
+    			transition_in(select21.$$.fragment, local);
+    			transition_in(select22.$$.fragment, local);
+    			transition_in(select23.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(aside.$$.fragment, local);
     			transition_out(header.$$.fragment, local);
-    			transition_out(select2.$$.fragment, local);
+    			transition_out(select20.$$.fragment, local);
+    			transition_out(select21.$$.fragment, local);
+    			transition_out(select22.$$.fragment, local);
+    			transition_out(select23.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -11613,7 +11757,10 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(header);
-    			destroy_component(select2);
+    			destroy_component(select20);
+    			destroy_component(select21);
+    			destroy_component(select22);
+    			destroy_component(select23);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -11852,7 +11999,7 @@ var app = (function () {
     		$$invalidate(0, asegurado);
     	}
 
-    	function select2_valor_binding(value) {
+    	function select20_valor_binding(value) {
     		aseguradora = value;
     		$$invalidate(2, aseguradora);
     	}
@@ -11862,18 +12009,18 @@ var app = (function () {
     		$$invalidate(13, numeroSeguro);
     	}
 
-    	function select2_1_change_handler() {
-    		ciudad = select_value(this);
+    	function select21_valor_binding(value) {
+    		ciudad = value;
     		$$invalidate(14, ciudad);
     	}
 
-    	function select3_change_handler() {
-    		provincia = select_value(this);
+    	function select22_valor_binding(value) {
+    		provincia = value;
     		$$invalidate(15, provincia);
     	}
 
-    	function select4_change_handler() {
-    		nacionalidad = select_value(this);
+    	function select23_valor_binding(value) {
+    		nacionalidad = value;
     		$$invalidate(8, nacionalidad);
     	}
 
@@ -11891,6 +12038,9 @@ var app = (function () {
     		onMount,
     		url,
     		user,
+    		ciudades,
+    		provincias,
+    		nacionalidades,
     		asegurado,
     		aseguradoras,
     		aseguradora,
@@ -11982,11 +12132,11 @@ var app = (function () {
     		input6_input_handler,
     		input7_input_handler,
     		input8_change_handler,
-    		select2_valor_binding,
+    		select20_valor_binding,
     		input9_input_handler,
-    		select2_1_change_handler,
-    		select3_change_handler,
-    		select4_change_handler,
+    		select21_valor_binding,
+    		select22_valor_binding,
+    		select23_valor_binding,
     		input10_input_handler
     	];
     }
