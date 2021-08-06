@@ -107,7 +107,7 @@
     <div class="p-2">
       <div class="row" />
       <div class="col-md-12 mt-3 m-b-30">
-        <h5>Pacientes <a href="/pacientes/crear" use:link class="btn btn-primary btn-sm"><i class="mdi mdi-plus"></i> CREAR</a></h5>
+        <h5>Pacientes <a href="/pacientes/crear" use:link class="btn btn-primary btn-sm"><i class="mdi mdi-plus"></i> CREAR </a></h5>
         <div class="alert alert-secondary" role="alert">
             <div class="row">
                     <div class="col-12">

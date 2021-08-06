@@ -161,7 +161,7 @@
                                             <tr>
                                                 <td class="">
                                                     <p class="text-black m-0">{medicamento.nombre}</p>
-                                                    <p class="text-muted">
+                                                    <p class="text-muted" style="padding-bottom: 0; margin-bottom: 0;">
                                                         De {medicamento.concentracion}
                                                     </p>
                                                 </td>
@@ -219,5 +219,8 @@
       tfoot{
           padding: 10px;
           width: 100%;
+      }
+      td{
+          padding: 10px;
       }
   </style>
