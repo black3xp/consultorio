@@ -1,5 +1,6 @@
 <script>
     import { createEventDispatcher } from "svelte";
+    import { link } from 'svelte-spa-router';
     let dispatch = createEventDispatcher();
 
     export let instrucciones;
@@ -9,6 +10,8 @@
     export let medicamentosSeleccionados;
     export let estudios;
     export let estudiosSeleccionados;
+    export let idHistoria;
+    export let idPaciente;
 
 </script>
 
@@ -17,6 +20,15 @@
     <div class="card m-b-20 mt-3">
         <div class="card-header">
             <div class="card-title">Medicamentos</div>
+            <div class="card-controls">
+                <a
+                    href={`/impresion/pacientes/${idPaciente}/historias/${idHistoria}`}
+                    use:link class="btn btn-outline-primary btn-sm"
+                    data-tooltip="Imprimir"
+                >
+                    <i class="mdi mdi-printer"></i>
+                </a>
+            </div>
         </div>
         <div class="card-body">
             <div class="row">

@@ -1102,6 +1102,8 @@
             </div>
 
             <OrdenesMedicas
+                bind:idHistoria={params.idHistoria}
+                bind:idPaciente={params.idPaciente}
                 bind:estudiosSeleccionados={estudiosSeleccionados}
                 bind:medicamentosSeleccionados={medicamentosSeleccionados}
                 bind:sltBuscarMedicamentos={sltBuscarMedicamentos}

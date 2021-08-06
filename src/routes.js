@@ -10,6 +10,7 @@ import AtencionHistoriaClinica from './Pages/AtencionMedica/HistoriaClinica.svel
 import Login from './Pages/Home/Login.svelte';
 import Usuarios from './Pages/Usuarios/Index.svelte';
 import HistoriasClinicas from './Pages/AtencionMedica/Index.svelte';
+import RecetaMedicamentos from './Pages/Recetas/Medicamentos.svelte';
 
 
 const routes = {
@@ -88,6 +89,18 @@ const routes = {
     }),
     "/usuarios": wrap({
         component: Usuarios,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/impresion/pacientes/:idPaciente/historias/:idHistoria": wrap({
+        component: RecetaMedicamentos,
         conditions: [
             async (detail) => {
                 if(isLogin()){
