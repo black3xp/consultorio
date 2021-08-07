@@ -11,7 +11,8 @@ import Login from './Pages/Home/Login.svelte';
 import Usuarios from './Pages/Usuarios/Index.svelte';
 import HistoriasClinicas from './Pages/AtencionMedica/Index.svelte';
 import RecetaMedicamentos from './Pages/Recetas/Medicamentos.svelte';
-
+import RecetaEstudios from './Pages/Recetas/Estudios.svelte';
+import RecetaImagenes from './Pages/Recetas/Imagenes.svelte';
 
 const routes = {
     "/": wrap({
@@ -101,6 +102,30 @@ const routes = {
     }),
     "/impresion/pacientes/:idPaciente/historias/:idHistoria/medicamentos": wrap({
         component: RecetaMedicamentos,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/impresion/pacientes/:idPaciente/historias/:idHistoria/estudios/laboratorios": wrap({
+        component: RecetaEstudios,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/impresion/pacientes/:idPaciente/historias/:idHistoria/estudios/imagenes": wrap({
+        component: RecetaImagenes,
         conditions: [
             async (detail) => {
                 if(isLogin()){

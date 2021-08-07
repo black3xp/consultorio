@@ -171,27 +171,21 @@
     <div class="card m-b-20">
         <div class="card-header">
             <div class="card-title">Estudios</div>
-        </div>
-        <div class="card-controls">
-            <div class="dropdown dropdown-vnc">
+            <div class="card-controls">
                 <a
-                    href="/"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
+                    href={`/impresion/pacientes/${idPaciente}/historias/${idHistoria}/estudios/laboratorios`}
+                    use:link class="btn btn-outline-primary btn-sm"
+                    data-tooltip="Imprimir"
                 >
-                    <i class="icon mdi  mdi-dots-vertical" />
+                    <i class="mdi mdi-printer"></i> Laboratorios
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item text-primary" type="button"
-                        ><i class="mdi mdi-printer" />
-                        Imprimir estudios</button
-                    >
-                    <button class="dropdown-item text-success" type="button"
-                        ><i class="mdi mdi-plus" />
-                        Agregar nuevo estudio</button
-                    >
-                </div>
+                <a
+                    href={`/impresion/pacientes/${idPaciente}/historias/${idHistoria}/estudios/imagenes`}
+                    use:link class="btn btn-outline-primary btn-sm"
+                    data-tooltip="Imprimir"
+                >
+                    <i class="mdi mdi-printer"></i> Imagenes
+                </a>
             </div>
         </div>
 

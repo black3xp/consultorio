@@ -13,7 +13,7 @@
     let paciente = {};
     let historia = {};
     let empresa = {};
-    let medicamentos = [];
+    let estudios = [];
 
     const cargarPaciente = () => {
         const config = {
@@ -41,7 +41,7 @@
         axios(config)
             .then(res => {
                 historia = res.data;
-                medicamentos = res.data.medicamentos;
+                estudios = res.data.estudios;
                 console.log(historia)
             })
     }
@@ -146,39 +146,26 @@
                                         </address>
                                     </div>
                                 </div>
-
-                                <div class="table-responsive ">
-                                    <table class="table m-t-50">
-                                        <thead>
-                                        <tr>
-                                            <th class="">Medicamento</th>
-                                            <th class="text-center">Cantidad</th>
-                                            <th class="text-center">Frecuencia</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {#each medicamentos as medicamento}
-                                            <tr>
-                                                <td class="">
-                                                    <p class="text-black m-0">{medicamento.nombre}</p>
-                                                    <p class="text-muted" style="padding-bottom: 0; margin-bottom: 0;">
-                                                        De {medicamento.concentracion}
-                                                    </p>
-                                                </td>
-                                                <td class="text-center">{medicamento.cantidad}</td>
-                                                <td class="text-center">{medicamento.frecuencia}</td>
-                                            </tr>
-                                        {/each}
-                                        </tbody>
-                                        {#if historia.instrucciones}
-                                             <tfoot class="bg-light">
-                                                 <tr>
-                                                     <td colspan="3"><strong>Observaciones:</strong> {historia.instrucciones}</td>
-                                                 </tr>
-                                             </tfoot>
-                                        {/if}
-                                    </table>
+                                <div class="bg-light cabecera">
+                                    <div>Estudios de imagenes</div>
                                 </div>
+                                <div class="col-12">
+                                   <div class="row mt-3 mb-3 contenedor-estudios">
+                                       {#each estudios as estudio}
+                                           {#if estudio.tipo === 'IMG'}
+                                               <div class="col-lg-3 mb-3 estudio">
+                                                   {estudio.descripcion}
+                                               </div>
+                                           {/if}
+                                       {/each}
+                                   </div>
+                                </div>
+                                {#if historia.instrucciones}
+                                <div class="bg-light pie">
+                                    <div><strong>Observaciones:</strong> {historia.instrucciones}</div>
+                                </div>
+                                {/if}
+
                                 <div class="row">
                                     <div class="col-md-6">
 
@@ -216,11 +203,23 @@
           width: 200px;
           margin-top: 80px;
       }
-      tfoot{
+      .cabecera, .pie{
           padding: 10px;
-          width: 100%;
       }
-      td{
-          padding: 10px;
+      .cabecera{
+          font-size: 1.1rem;
+          font-weight: bold;
+      }
+      .pie{
+          margin-bottom: 50px;
+      }
+      @media print{
+          .contenedor-estudios{
+              display: flex;
+              flex-direction: row;
+          }
+        .estudio{
+            width: 25%;
+        }
       }
   </style>
