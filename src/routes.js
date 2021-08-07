@@ -99,7 +99,7 @@ const routes = {
             }
         ]
     }),
-    "/impresion/pacientes/:idPaciente/historias/:idHistoria": wrap({
+    "/impresion/pacientes/:idPaciente/historias/:idHistoria/medicamentos": wrap({
         component: RecetaMedicamentos,
         conditions: [
             async (detail) => {

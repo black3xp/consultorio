@@ -22,7 +22,7 @@
             <div class="card-title">Medicamentos</div>
             <div class="card-controls">
                 <a
-                    href={`/impresion/pacientes/${idPaciente}/historias/${idHistoria}`}
+                    href={`/impresion/pacientes/${idPaciente}/historias/${idHistoria}/medicamentos`}
                     use:link class="btn btn-outline-primary btn-sm"
                     data-tooltip="Imprimir"
                 >
