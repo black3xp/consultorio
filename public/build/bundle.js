@@ -22159,12 +22159,12 @@ var app = (function () {
 
     function get_each_context$9(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (79:4) {#if errorServer}
-    function create_if_block_1$7(ctx) {
+    // (100:4) {#if errorServer}
+    function create_if_block$b(ctx) {
     	let errorconexion;
     	let current;
 
@@ -22197,34 +22197,34 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$7.name,
+    		id: create_if_block$b.name,
     		type: "if",
-    		source: "(79:4) {#if errorServer}",
+    		source: "(100:4) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (160:40) {#each medicamentos as medicamento}
+    // (181:40) {#each medicamentos as medicamento}
     function create_each_block$9(ctx) {
     	let tr;
     	let td0;
     	let p0;
-    	let t0_value = /*medicamento*/ ctx[9].nombre + "";
+    	let t0_value = /*medicamento*/ ctx[11].nombre + "";
     	let t0;
     	let t1;
     	let p1;
     	let t2;
-    	let t3_value = /*medicamento*/ ctx[9].concentracion + "";
+    	let t3_value = /*medicamento*/ ctx[11].concentracion + "";
     	let t3;
     	let t4;
     	let td1;
-    	let t5_value = /*medicamento*/ ctx[9].cantidad + "";
+    	let t5_value = /*medicamento*/ ctx[11].cantidad + "";
     	let t5;
     	let t6;
     	let td2;
-    	let t7_value = /*medicamento*/ ctx[9].frecuencia + "";
+    	let t7_value = /*medicamento*/ ctx[11].frecuencia + "";
     	let t7;
     	let t8;
 
@@ -22246,18 +22246,18 @@ var app = (function () {
     			t7 = text(t7_value);
     			t8 = space();
     			attr_dev(p0, "class", "text-black m-0");
-    			add_location(p0, file$p, 162, 52, 6489);
+    			add_location(p0, file$p, 183, 52, 7081);
     			attr_dev(p1, "class", "text-muted");
     			set_style(p1, "padding-bottom", "0");
     			set_style(p1, "margin-bottom", "0");
-    			add_location(p1, file$p, 163, 52, 6593);
+    			add_location(p1, file$p, 184, 52, 7185);
     			attr_dev(td0, "class", " svelte-gpdeyw");
-    			add_location(td0, file$p, 161, 48, 6422);
+    			add_location(td0, file$p, 182, 48, 7014);
     			attr_dev(td1, "class", "text-center svelte-gpdeyw");
-    			add_location(td1, file$p, 167, 48, 6911);
+    			add_location(td1, file$p, 188, 48, 7503);
     			attr_dev(td2, "class", "text-center svelte-gpdeyw");
-    			add_location(td2, file$p, 168, 48, 7012);
-    			add_location(tr, file$p, 160, 44, 6368);
+    			add_location(td2, file$p, 189, 48, 7604);
+    			add_location(tr, file$p, 181, 44, 6960);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -22277,10 +22277,10 @@ var app = (function () {
     			append_dev(tr, t8);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*medicamentos*/ 8 && t0_value !== (t0_value = /*medicamento*/ ctx[9].nombre + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*medicamentos*/ 8 && t3_value !== (t3_value = /*medicamento*/ ctx[9].concentracion + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*medicamentos*/ 8 && t5_value !== (t5_value = /*medicamento*/ ctx[9].cantidad + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*medicamentos*/ 8 && t7_value !== (t7_value = /*medicamento*/ ctx[9].frecuencia + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*medicamentos*/ 8 && t0_value !== (t0_value = /*medicamento*/ ctx[11].nombre + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*medicamentos*/ 8 && t3_value !== (t3_value = /*medicamento*/ ctx[11].concentracion + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*medicamentos*/ 8 && t5_value !== (t5_value = /*medicamento*/ ctx[11].cantidad + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*medicamentos*/ 8 && t7_value !== (t7_value = /*medicamento*/ ctx[11].frecuencia + "")) set_data_dev(t7, t7_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -22291,61 +22291,7 @@ var app = (function () {
     		block,
     		id: create_each_block$9.name,
     		type: "each",
-    		source: "(160:40) {#each medicamentos as medicamento}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (173:40) {#if historia.instrucciones}
-    function create_if_block$b(ctx) {
-    	let tfoot;
-    	let tr;
-    	let td;
-    	let strong;
-    	let t1;
-    	let t2_value = /*historia*/ ctx[1].instrucciones + "";
-    	let t2;
-
-    	const block = {
-    		c: function create() {
-    			tfoot = element("tfoot");
-    			tr = element("tr");
-    			td = element("td");
-    			strong = element("strong");
-    			strong.textContent = "Observaciones:";
-    			t1 = space();
-    			t2 = text(t2_value);
-    			add_location(strong, file$p, 175, 69, 7482);
-    			attr_dev(td, "colspan", "3");
-    			attr_dev(td, "class", "svelte-gpdeyw");
-    			add_location(td, file$p, 175, 53, 7466);
-    			add_location(tr, file$p, 174, 49, 7407);
-    			attr_dev(tfoot, "class", "bg-light svelte-gpdeyw");
-    			add_location(tfoot, file$p, 173, 45, 7332);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, tfoot, anchor);
-    			append_dev(tfoot, tr);
-    			append_dev(tr, td);
-    			append_dev(td, strong);
-    			append_dev(td, t1);
-    			append_dev(td, t2);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*historia*/ 2 && t2_value !== (t2_value = /*historia*/ ctx[1].instrucciones + "")) set_data_dev(t2, t2_value);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(tfoot);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$b.name,
-    		type: "if",
-    		source: "(173:40) {#if historia.instrucciones}",
+    		source: "(181:40) {#each medicamentos as medicamento}",
     		ctx
     	});
 
@@ -22438,39 +22384,38 @@ var app = (function () {
     	let t37;
     	let tbody;
     	let t38;
-    	let t39;
     	let div16;
     	let div12;
-    	let t40;
+    	let t39;
     	let div15;
     	let h5;
-    	let t41_value = /*paciente*/ ctx[0].nombres + "";
+    	let t40_value = /*paciente*/ ctx[0].nombres + "";
+    	let t40;
     	let t41;
+    	let t42_value = /*paciente*/ ctx[0].apellidos + "";
     	let t42;
-    	let t43_value = /*paciente*/ ctx[0].apellidos + "";
     	let t43;
-    	let t44;
     	let div13;
+    	let t44;
+    	let t45_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "";
     	let t45;
-    	let t46_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "";
     	let t46;
     	let t47;
-    	let t48;
     	let div14;
-    	let t51;
+    	let t50;
     	let div17;
     	let hr0;
-    	let t52;
+    	let t51;
     	let p1;
-    	let t54;
+    	let t53;
     	let div19;
     	let hr1;
-    	let t55;
+    	let t54;
     	let div18;
     	let current;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*errorServer*/ ctx[4] && create_if_block_1$7(ctx);
+    	let if_block = /*errorServer*/ ctx[5] && create_if_block$b(ctx);
     	let each_value = /*medicamentos*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -22479,8 +22424,6 @@ var app = (function () {
     		each_blocks[i] = create_each_block$9(get_each_context$9(ctx, each_value, i));
     	}
 
-    	let if_block1 = /*historia*/ ctx[1].instrucciones && create_if_block$b(ctx);
-
     	const block = {
     		c: function create() {
     			create_component(aside.$$.fragment);
@@ -22488,7 +22431,7 @@ var app = (function () {
     			main = element("main");
     			create_component(header.$$.fragment);
     			t1 = space();
-    			if (if_block0) if_block0.c();
+    			if (if_block) if_block.c();
     			t2 = space();
     			section = element("section");
     			div8 = element("div");
@@ -22569,132 +22512,129 @@ var app = (function () {
     			}
 
     			t38 = space();
-    			if (if_block1) if_block1.c();
-    			t39 = space();
     			div16 = element("div");
     			div12 = element("div");
-    			t40 = space();
+    			t39 = space();
     			div15 = element("div");
     			h5 = element("h5");
-    			t41 = text(t41_value);
-    			t42 = space();
-    			t43 = text(t43_value);
-    			t44 = space();
+    			t40 = text(t40_value);
+    			t41 = space();
+    			t42 = text(t42_value);
+    			t43 = space();
     			div13 = element("div");
-    			t45 = text("Edad: ");
-    			t46 = text(t46_value);
-    			t47 = text(" años");
-    			t48 = space();
+    			t44 = text("Edad: ");
+    			t45 = text(t45_value);
+    			t46 = text(" años");
+    			t47 = space();
     			div14 = element("div");
     			div14.textContent = `Fecha: ${new Date().toLocaleDateString("es-DO")}`;
-    			t51 = space();
+    			t50 = space();
     			div17 = element("div");
     			hr0 = element("hr");
-    			t52 = space();
+    			t51 = space();
     			p1 = element("p");
     			p1.textContent = "Firma del especialista";
-    			t54 = space();
+    			t53 = space();
     			div19 = element("div");
     			hr1 = element("hr");
-    			t55 = space();
+    			t54 = space();
     			div18 = element("div");
     			div18.textContent = `© nextcom ${new Date().getFullYear()}`;
     			attr_dev(div0, "class", "avatar-title bg-success rounded-circle mdi mdi-receipt  ");
-    			add_location(div0, file$p, 89, 32, 2581);
+    			add_location(div0, file$p, 110, 32, 3219);
     			attr_dev(div1, "class", "avatar avatar mr-3");
-    			add_location(div1, file$p, 88, 28, 2515);
+    			add_location(div1, file$p, 109, 28, 3153);
     			attr_dev(div2, "class", "opacity-75");
-    			add_location(div2, file$p, 94, 32, 2817);
+    			add_location(div2, file$p, 115, 32, 3455);
     			attr_dev(h4, "class", "m-b-0");
-    			add_location(h4, file$p, 95, 32, 2886);
-    			add_location(br0, file$p, 97, 63, 3070);
+    			add_location(h4, file$p, 116, 32, 3524);
+    			add_location(br0, file$p, 118, 63, 3708);
     			attr_dev(p0, "class", "opacity-75");
-    			add_location(p0, file$p, 96, 32, 2983);
+    			add_location(p0, file$p, 117, 32, 3621);
     			attr_dev(i, "class", "mdi\r\n                                mdi-printer");
-    			add_location(i, file$p, 100, 89, 3316);
+    			add_location(i, file$p, 121, 89, 3954);
     			attr_dev(button, "class", "btn btn-white-translucent");
     			attr_dev(button, "id", "printDiv");
-    			add_location(button, file$p, 100, 32, 3259);
+    			add_location(button, file$p, 121, 32, 3897);
     			attr_dev(div3, "class", "media-body");
-    			add_location(div3, file$p, 93, 28, 2759);
+    			add_location(div3, file$p, 114, 28, 3397);
     			attr_dev(div4, "class", "media");
-    			add_location(div4, file$p, 87, 24, 2466);
+    			add_location(div4, file$p, 108, 24, 3104);
     			attr_dev(div5, "class", "col-md-6 text-white p-b-30");
-    			add_location(div5, file$p, 86, 20, 2400);
+    			add_location(div5, file$p, 107, 20, 3038);
     			attr_dev(div6, "class", "row p-b-60 p-t-60");
-    			add_location(div6, file$p, 84, 16, 2345);
+    			add_location(div6, file$p, 105, 16, 2983);
     			attr_dev(div7, "class", "container");
-    			add_location(div7, file$p, 83, 12, 2304);
+    			add_location(div7, file$p, 104, 12, 2942);
     			attr_dev(div8, "class", "bg-dark m-b-30");
-    			add_location(div8, file$p, 82, 8, 2262);
-    			if (img.src !== (img_src_value = "assets/img/logos/nytimes.jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "width", "60");
-    			attr_dev(img, "class", "rounded-circle");
+    			add_location(div8, file$p, 103, 8, 2900);
+    			if (img.src !== (img_src_value = /*logo*/ ctx[4])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "width", "150");
     			attr_dev(img, "alt", "");
-    			add_location(img, file$p, 137, 40, 5023);
+    			add_location(img, file$p, 158, 40, 5661);
     			attr_dev(span, "class", "h4 font-primary");
-    			add_location(span, file$p, 139, 44, 5216);
-    			add_location(br1, file$p, 139, 100, 5272);
-    			add_location(br2, file$p, 140, 64, 5342);
-    			add_location(br3, file$p, 141, 69, 5417);
-    			add_location(br4, file$p, 142, 61, 5484);
+    			add_location(span, file$p, 160, 44, 5808);
+    			add_location(br1, file$p, 160, 100, 5864);
+    			add_location(br2, file$p, 161, 64, 5934);
+    			add_location(br3, file$p, 162, 69, 6009);
+    			add_location(br4, file$p, 163, 61, 6076);
     			attr_dev(address, "class", "m-t-10");
-    			add_location(address, file$p, 138, 40, 5146);
+    			add_location(address, file$p, 159, 40, 5738);
     			attr_dev(div9, "class", "col-md-6");
-    			add_location(div9, file$p, 136, 36, 4959);
+    			add_location(div9, file$p, 157, 36, 5597);
     			attr_dev(div10, "class", "row");
-    			add_location(div10, file$p, 135, 32, 4904);
+    			add_location(div10, file$p, 156, 32, 5542);
     			attr_dev(th0, "class", "");
-    			add_location(th0, file$p, 153, 44, 5902);
+    			add_location(th0, file$p, 174, 44, 6494);
     			attr_dev(th1, "class", "text-center");
-    			add_location(th1, file$p, 154, 44, 5977);
+    			add_location(th1, file$p, 175, 44, 6569);
     			attr_dev(th2, "class", "text-center");
-    			add_location(th2, file$p, 155, 44, 6060);
-    			add_location(tr, file$p, 152, 40, 5852);
-    			add_location(thead, file$p, 151, 40, 5803);
-    			add_location(tbody, file$p, 158, 40, 6238);
+    			add_location(th2, file$p, 176, 44, 6652);
+    			add_location(tr, file$p, 173, 40, 6444);
+    			add_location(thead, file$p, 172, 40, 6395);
+    			add_location(tbody, file$p, 179, 40, 6830);
     			attr_dev(table, "class", "table m-t-50");
-    			add_location(table, file$p, 150, 36, 5733);
+    			add_location(table, file$p, 171, 36, 6325);
     			attr_dev(div11, "class", "table-responsive ");
-    			add_location(div11, file$p, 149, 32, 5664);
+    			add_location(div11, file$p, 170, 32, 6256);
     			attr_dev(div12, "class", "col-md-6");
-    			add_location(div12, file$p, 182, 36, 7876);
+    			add_location(div12, file$p, 196, 36, 7982);
     			attr_dev(h5, "class", "font-primary");
-    			add_location(h5, file$p, 186, 40, 8065);
+    			add_location(h5, file$p, 200, 40, 8171);
     			attr_dev(div13, "class", "");
-    			add_location(div13, file$p, 187, 40, 8176);
+    			add_location(div13, file$p, 201, 40, 8282);
     			attr_dev(div14, "class", "");
-    			add_location(div14, file$p, 188, 40, 8289);
+    			add_location(div14, file$p, 202, 40, 8395);
     			attr_dev(div15, "class", "col-md-6 text-right my-auto");
-    			add_location(div15, file$p, 185, 36, 7982);
+    			add_location(div15, file$p, 199, 36, 8088);
     			attr_dev(div16, "class", "row");
-    			add_location(div16, file$p, 181, 32, 7821);
-    			add_location(hr0, file$p, 192, 36, 8531);
-    			add_location(p1, file$p, 193, 36, 8573);
+    			add_location(div16, file$p, 195, 32, 7927);
+    			add_location(hr0, file$p, 206, 36, 8637);
+    			add_location(p1, file$p, 207, 36, 8679);
     			attr_dev(div17, "class", "firma svelte-gpdeyw");
-    			add_location(div17, file$p, 191, 32, 8474);
-    			add_location(hr1, file$p, 197, 36, 8743);
+    			add_location(div17, file$p, 205, 32, 8580);
+    			add_location(hr1, file$p, 211, 36, 8849);
     			attr_dev(div18, "class", "text-center opacity-75");
-    			add_location(div18, file$p, 198, 36, 8785);
+    			add_location(div18, file$p, 212, 36, 8891);
     			attr_dev(div19, "class", "p-t-10 p-b-20");
-    			add_location(div19, file$p, 195, 32, 8676);
+    			add_location(div19, file$p, 209, 32, 8782);
     			attr_dev(div20, "class", "card-body");
-    			add_location(div20, file$p, 134, 28, 4847);
+    			add_location(div20, file$p, 155, 28, 5485);
     			attr_dev(div21, "class", "card");
-    			add_location(div21, file$p, 133, 24, 4799);
+    			add_location(div21, file$p, 154, 24, 5437);
     			attr_dev(div22, "class", "col-md-12 m-b-40");
-    			add_location(div22, file$p, 132, 20, 4743);
+    			add_location(div22, file$p, 153, 20, 5381);
     			attr_dev(div23, "class", "row");
-    			add_location(div23, file$p, 131, 16, 4704);
+    			add_location(div23, file$p, 152, 16, 5342);
     			attr_dev(div24, "class", "container");
     			attr_dev(div24, "id", "printableArea");
-    			add_location(div24, file$p, 130, 12, 4644);
+    			add_location(div24, file$p, 151, 12, 5282);
     			attr_dev(div25, "class", "pull-up");
-    			add_location(div25, file$p, 129, 8, 4609);
+    			add_location(div25, file$p, 150, 8, 5247);
     			attr_dev(section, "class", "admin-content ");
-    			add_location(section, file$p, 81, 4, 2220);
+    			add_location(section, file$p, 102, 4, 2858);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$p, 76, 2, 2093);
+    			add_location(main, file$p, 97, 2, 2731);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -22705,7 +22645,7 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			mount_component(header, main, null);
     			append_dev(main, t1);
-    			if (if_block0) if_block0.m(main, null);
+    			if (if_block) if_block.m(main, null);
     			append_dev(main, t2);
     			append_dev(main, section);
     			append_dev(section, div8);
@@ -22781,33 +22721,31 @@ var app = (function () {
     				each_blocks[i].m(tbody, null);
     			}
 
-    			append_dev(table, t38);
-    			if (if_block1) if_block1.m(table, null);
-    			append_dev(div20, t39);
+    			append_dev(div20, t38);
     			append_dev(div20, div16);
     			append_dev(div16, div12);
-    			append_dev(div16, t40);
+    			append_dev(div16, t39);
     			append_dev(div16, div15);
     			append_dev(div15, h5);
+    			append_dev(h5, t40);
     			append_dev(h5, t41);
     			append_dev(h5, t42);
-    			append_dev(h5, t43);
-    			append_dev(div15, t44);
+    			append_dev(div15, t43);
     			append_dev(div15, div13);
+    			append_dev(div13, t44);
     			append_dev(div13, t45);
     			append_dev(div13, t46);
-    			append_dev(div13, t47);
-    			append_dev(div15, t48);
+    			append_dev(div15, t47);
     			append_dev(div15, div14);
-    			append_dev(div20, t51);
+    			append_dev(div20, t50);
     			append_dev(div20, div17);
     			append_dev(div17, hr0);
-    			append_dev(div17, t52);
+    			append_dev(div17, t51);
     			append_dev(div17, p1);
-    			append_dev(div20, t54);
+    			append_dev(div20, t53);
     			append_dev(div20, div19);
     			append_dev(div19, hr1);
-    			append_dev(div19, t55);
+    			append_dev(div19, t54);
     			append_dev(div19, div18);
     			current = true;
     		},
@@ -22816,6 +22754,11 @@ var app = (function () {
     			if ((!current || dirty & /*paciente*/ 1) && t8_value !== (t8_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t8, t8_value);
     			if ((!current || dirty & /*historia*/ 2) && t11_value !== (t11_value = /*historia*/ ctx[1].id + "")) set_data_dev(t11, t11_value);
     			if ((!current || dirty & /*historia*/ 2) && t14_value !== (t14_value = new Date(/*historia*/ ctx[1].createdAt).toLocaleDateString("es-DO") + "")) set_data_dev(t14, t14_value);
+
+    			if (!current || dirty & /*logo*/ 16 && img.src !== (img_src_value = /*logo*/ ctx[4])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
     			if ((!current || dirty & /*empresa*/ 4) && t19_value !== (t19_value = /*empresa*/ ctx[2].nombre + "")) set_data_dev(t19, t19_value);
     			if ((!current || dirty & /*empresa*/ 4) && t23_value !== (t23_value = /*empresa*/ ctx[2].direccion + "")) set_data_dev(t23, t23_value);
     			if ((!current || dirty & /*empresa*/ 4) && t26_value !== (t26_value = /*empresa*/ ctx[2].telefono + "")) set_data_dev(t26, t26_value);
@@ -22845,34 +22788,21 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (/*historia*/ ctx[1].instrucciones) {
-    				if (if_block1) {
-    					if_block1.p(ctx, dirty);
-    				} else {
-    					if_block1 = create_if_block$b(ctx);
-    					if_block1.c();
-    					if_block1.m(table, null);
-    				}
-    			} else if (if_block1) {
-    				if_block1.d(1);
-    				if_block1 = null;
-    			}
-
-    			if ((!current || dirty & /*paciente*/ 1) && t41_value !== (t41_value = /*paciente*/ ctx[0].nombres + "")) set_data_dev(t41, t41_value);
-    			if ((!current || dirty & /*paciente*/ 1) && t43_value !== (t43_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t43, t43_value);
-    			if ((!current || dirty & /*paciente*/ 1) && t46_value !== (t46_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "")) set_data_dev(t46, t46_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t40_value !== (t40_value = /*paciente*/ ctx[0].nombres + "")) set_data_dev(t40, t40_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t42_value !== (t42_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t42, t42_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t45_value !== (t45_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "")) set_data_dev(t45, t45_value);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(aside.$$.fragment, local);
     			transition_in(header.$$.fragment, local);
-    			transition_in(if_block0);
+    			transition_in(if_block);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(aside.$$.fragment, local);
     			transition_out(header.$$.fragment, local);
-    			transition_out(if_block0);
+    			transition_out(if_block);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -22880,9 +22810,8 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(header);
-    			if (if_block0) if_block0.d();
+    			if (if_block) if_block.d();
     			destroy_each(each_blocks, detaching);
-    			if (if_block1) if_block1.d();
     		}
     	};
 
@@ -22906,6 +22835,25 @@ var app = (function () {
     	let historia = {};
     	let empresa = {};
     	let medicamentos = [];
+    	let logo = "";
+
+    	const cargarImagenEmpresa = (idConsultorio, idImagen) => {
+    		const config = {
+    			method: "get",
+    			url: `${url}/imagenes/${idConsultorio}/${idImagen}`,
+    			responseType: "blob",
+    			headers: {
+    				Authorization: `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			$$invalidate(4, logo = URL.createObjectURL(res.data));
+    			console.log(logo);
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
 
     	const cargarPaciente = () => {
     		const config = {
@@ -22949,6 +22897,7 @@ var app = (function () {
 
     		axios$1(config).then(res => {
     			$$invalidate(2, empresa = res.data);
+    			cargarImagenEmpresa(empresa.id, empresa.logo);
     			console.log(empresa);
     		});
     	};
@@ -22971,7 +22920,7 @@ var app = (function () {
     	});
 
     	$$self.$$set = $$props => {
-    		if ("params" in $$props) $$invalidate(5, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(6, params = $$props.params);
     	};
 
     	$$self.$capture_state = () => ({
@@ -22989,31 +22938,34 @@ var app = (function () {
     		historia,
     		empresa,
     		medicamentos,
+    		logo,
+    		cargarImagenEmpresa,
     		cargarPaciente,
     		cargarHistoria,
     		cargarEmpresa
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("params" in $$props) $$invalidate(5, params = $$props.params);
-    		if ("errorServer" in $$props) $$invalidate(4, errorServer = $$props.errorServer);
+    		if ("params" in $$props) $$invalidate(6, params = $$props.params);
+    		if ("errorServer" in $$props) $$invalidate(5, errorServer = $$props.errorServer);
     		if ("paciente" in $$props) $$invalidate(0, paciente = $$props.paciente);
     		if ("historia" in $$props) $$invalidate(1, historia = $$props.historia);
     		if ("empresa" in $$props) $$invalidate(2, empresa = $$props.empresa);
     		if ("medicamentos" in $$props) $$invalidate(3, medicamentos = $$props.medicamentos);
+    		if ("logo" in $$props) $$invalidate(4, logo = $$props.logo);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [paciente, historia, empresa, medicamentos, errorServer, params];
+    	return [paciente, historia, empresa, medicamentos, logo, errorServer, params];
     }
 
     class Medicamentos extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$r, create_fragment$r, safe_not_equal, { params: 5 });
+    		init(this, options, instance$r, create_fragment$r, safe_not_equal, { params: 6 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -23025,7 +22977,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*params*/ ctx[5] === undefined && !("params" in props)) {
+    		if (/*params*/ ctx[6] === undefined && !("params" in props)) {
     			console_1$a.warn("<Medicamentos> was created without expected prop 'params'");
     		}
     	}
@@ -23046,11 +22998,11 @@ var app = (function () {
 
     function get_each_context$a(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (79:4) {#if errorServer}
+    // (100:4) {#if errorServer}
     function create_if_block_2$4(ctx) {
     	let errorconexion;
     	let current;
@@ -23086,17 +23038,17 @@ var app = (function () {
     		block,
     		id: create_if_block_2$4.name,
     		type: "if",
-    		source: "(79:4) {#if errorServer}",
+    		source: "(100:4) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (155:43) {#if estudio.tipo === 'LAB'}
-    function create_if_block_1$8(ctx) {
+    // (177:43) {#if estudio.tipo === 'LAB'}
+    function create_if_block_1$7(ctx) {
     	let div;
-    	let t0_value = /*estudio*/ ctx[9].descripcion + "";
+    	let t0_value = /*estudio*/ ctx[11].descripcion + "";
     	let t0;
     	let t1;
 
@@ -23105,8 +23057,8 @@ var app = (function () {
     			div = element("div");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(div, "class", "col-lg-3 mb-3 estudio svelte-xcvc35");
-    			add_location(div, file$q, 155, 47, 6121);
+    			attr_dev(div, "class", "col-lg-3 mb-3 estudio svelte-rr7nr8");
+    			add_location(div, file$q, 177, 47, 6766);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -23114,7 +23066,7 @@ var app = (function () {
     			append_dev(div, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*estudios*/ 8 && t0_value !== (t0_value = /*estudio*/ ctx[9].descripcion + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*estudios*/ 8 && t0_value !== (t0_value = /*estudio*/ ctx[11].descripcion + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -23123,19 +23075,19 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$8.name,
+    		id: create_if_block_1$7.name,
     		type: "if",
-    		source: "(155:43) {#if estudio.tipo === 'LAB'}",
+    		source: "(177:43) {#if estudio.tipo === 'LAB'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (154:39) {#each estudios as estudio}
+    // (176:39) {#each estudios as estudio}
     function create_each_block$a(ctx) {
     	let if_block_anchor;
-    	let if_block = /*estudio*/ ctx[9].tipo === "LAB" && create_if_block_1$8(ctx);
+    	let if_block = /*estudio*/ ctx[11].tipo === "LAB" && create_if_block_1$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -23147,11 +23099,11 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*estudio*/ ctx[9].tipo === "LAB") {
+    			if (/*estudio*/ ctx[11].tipo === "LAB") {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$8(ctx);
+    					if_block = create_if_block_1$7(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -23170,14 +23122,14 @@ var app = (function () {
     		block,
     		id: create_each_block$a.name,
     		type: "each",
-    		source: "(154:39) {#each estudios as estudio}",
+    		source: "(176:39) {#each estudios as estudio}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (163:32) {#if historia.instrucciones}
+    // (185:32) {#if historia.instrucciones}
     function create_if_block$c(ctx) {
     	let div1;
     	let div0;
@@ -23194,10 +23146,10 @@ var app = (function () {
     			strong.textContent = "Observaciones:";
     			t1 = space();
     			t2 = text(t2_value);
-    			add_location(strong, file$q, 164, 41, 6631);
-    			add_location(div0, file$q, 164, 36, 6626);
-    			attr_dev(div1, "class", "bg-light pie svelte-xcvc35");
-    			add_location(div1, file$q, 163, 32, 6562);
+    			add_location(strong, file$q, 186, 41, 7276);
+    			add_location(div0, file$q, 186, 36, 7271);
+    			attr_dev(div1, "class", "bg-light pie svelte-rr7nr8");
+    			add_location(div1, file$q, 185, 32, 7207);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -23218,7 +23170,7 @@ var app = (function () {
     		block,
     		id: create_if_block$c.name,
     		type: "if",
-    		source: "(163:32) {#if historia.instrucciones}",
+    		source: "(185:32) {#if historia.instrucciones}",
     		ctx
     	});
 
@@ -23302,42 +23254,44 @@ var app = (function () {
     	let div12;
     	let div11;
     	let t33;
+    	let hr0;
+    	let t34;
     	let div14;
     	let div13;
-    	let t34;
     	let t35;
+    	let t36;
     	let div19;
     	let div15;
-    	let t36;
+    	let t37;
     	let div18;
     	let h5;
-    	let t37_value = /*paciente*/ ctx[0].nombres + "";
-    	let t37;
+    	let t38_value = /*paciente*/ ctx[0].nombres + "";
     	let t38;
-    	let t39_value = /*paciente*/ ctx[0].apellidos + "";
     	let t39;
+    	let t40_value = /*paciente*/ ctx[0].apellidos + "";
     	let t40;
-    	let div16;
     	let t41;
-    	let t42_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "";
+    	let div16;
     	let t42;
+    	let t43_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "";
     	let t43;
     	let t44;
+    	let t45;
     	let div17;
-    	let t47;
-    	let div20;
-    	let hr0;
     	let t48;
-    	let p1;
-    	let t50;
-    	let div22;
+    	let div20;
     	let hr1;
+    	let t49;
+    	let p1;
     	let t51;
+    	let div22;
+    	let hr2;
+    	let t52;
     	let div21;
     	let current;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*errorServer*/ ctx[4] && create_if_block_2$4(ctx);
+    	let if_block0 = /*errorServer*/ ctx[5] && create_if_block_2$4(ctx);
     	let each_value = /*estudios*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -23418,8 +23372,10 @@ var app = (function () {
     			t31 = space();
     			div12 = element("div");
     			div11 = element("div");
-    			div11.textContent = "Estudios de laboratorio";
+    			div11.textContent = "Estudios de imagenes";
     			t33 = space();
+    			hr0 = element("hr");
+    			t34 = space();
     			div14 = element("div");
     			div13 = element("div");
 
@@ -23427,127 +23383,128 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			t34 = space();
-    			if (if_block1) if_block1.c();
     			t35 = space();
+    			if (if_block1) if_block1.c();
+    			t36 = space();
     			div19 = element("div");
     			div15 = element("div");
-    			t36 = space();
+    			t37 = space();
     			div18 = element("div");
     			h5 = element("h5");
-    			t37 = text(t37_value);
-    			t38 = space();
-    			t39 = text(t39_value);
-    			t40 = space();
+    			t38 = text(t38_value);
+    			t39 = space();
+    			t40 = text(t40_value);
+    			t41 = space();
     			div16 = element("div");
-    			t41 = text("Edad: ");
-    			t42 = text(t42_value);
-    			t43 = text(" años");
-    			t44 = space();
+    			t42 = text("Edad: ");
+    			t43 = text(t43_value);
+    			t44 = text(" años");
+    			t45 = space();
     			div17 = element("div");
     			div17.textContent = `Fecha: ${new Date().toLocaleDateString("es-DO")}`;
-    			t47 = space();
-    			div20 = element("div");
-    			hr0 = element("hr");
     			t48 = space();
+    			div20 = element("div");
+    			hr1 = element("hr");
+    			t49 = space();
     			p1 = element("p");
     			p1.textContent = "Firma del especialista";
-    			t50 = space();
-    			div22 = element("div");
-    			hr1 = element("hr");
     			t51 = space();
+    			div22 = element("div");
+    			hr2 = element("hr");
+    			t52 = space();
     			div21 = element("div");
     			div21.textContent = `© nextcom ${new Date().getFullYear()}`;
     			attr_dev(div0, "class", "avatar-title bg-success rounded-circle mdi mdi-receipt  ");
-    			add_location(div0, file$q, 89, 32, 2569);
+    			add_location(div0, file$q, 110, 32, 3207);
     			attr_dev(div1, "class", "avatar avatar mr-3");
-    			add_location(div1, file$q, 88, 28, 2503);
+    			add_location(div1, file$q, 109, 28, 3141);
     			attr_dev(div2, "class", "opacity-75");
-    			add_location(div2, file$q, 94, 32, 2805);
+    			add_location(div2, file$q, 115, 32, 3443);
     			attr_dev(h4, "class", "m-b-0");
-    			add_location(h4, file$q, 95, 32, 2874);
-    			add_location(br0, file$q, 97, 63, 3058);
+    			add_location(h4, file$q, 116, 32, 3512);
+    			add_location(br0, file$q, 118, 63, 3696);
     			attr_dev(p0, "class", "opacity-75");
-    			add_location(p0, file$q, 96, 32, 2971);
+    			add_location(p0, file$q, 117, 32, 3609);
     			attr_dev(i, "class", "mdi\r\n                                mdi-printer");
-    			add_location(i, file$q, 100, 89, 3304);
+    			add_location(i, file$q, 121, 89, 3942);
     			attr_dev(button, "class", "btn btn-white-translucent");
     			attr_dev(button, "id", "printDiv");
-    			add_location(button, file$q, 100, 32, 3247);
+    			add_location(button, file$q, 121, 32, 3885);
     			attr_dev(div3, "class", "media-body");
-    			add_location(div3, file$q, 93, 28, 2747);
+    			add_location(div3, file$q, 114, 28, 3385);
     			attr_dev(div4, "class", "media");
-    			add_location(div4, file$q, 87, 24, 2454);
+    			add_location(div4, file$q, 108, 24, 3092);
     			attr_dev(div5, "class", "col-md-6 text-white p-b-30");
-    			add_location(div5, file$q, 86, 20, 2388);
+    			add_location(div5, file$q, 107, 20, 3026);
     			attr_dev(div6, "class", "row p-b-60 p-t-60");
-    			add_location(div6, file$q, 84, 16, 2333);
+    			add_location(div6, file$q, 105, 16, 2971);
     			attr_dev(div7, "class", "container");
-    			add_location(div7, file$q, 83, 12, 2292);
+    			add_location(div7, file$q, 104, 12, 2930);
     			attr_dev(div8, "class", "bg-dark m-b-30");
-    			add_location(div8, file$q, 82, 8, 2250);
-    			if (img.src !== (img_src_value = "assets/img/logos/nytimes.jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "width", "60");
-    			attr_dev(img, "class", "rounded-circle");
+    			add_location(div8, file$q, 103, 8, 2888);
+    			if (img.src !== (img_src_value = /*logo*/ ctx[4])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "width", "150");
     			attr_dev(img, "alt", "");
-    			add_location(img, file$q, 137, 40, 5011);
+    			add_location(img, file$q, 158, 40, 5649);
     			attr_dev(span, "class", "h4 font-primary");
-    			add_location(span, file$q, 139, 44, 5204);
-    			add_location(br1, file$q, 139, 100, 5260);
-    			add_location(br2, file$q, 140, 64, 5330);
-    			add_location(br3, file$q, 141, 69, 5405);
-    			add_location(br4, file$q, 142, 61, 5472);
+    			add_location(span, file$q, 160, 44, 5796);
+    			add_location(br1, file$q, 160, 100, 5852);
+    			add_location(br2, file$q, 161, 64, 5922);
+    			add_location(br3, file$q, 162, 69, 5997);
+    			add_location(br4, file$q, 163, 61, 6064);
     			attr_dev(address, "class", "m-t-10");
-    			add_location(address, file$q, 138, 40, 5134);
+    			add_location(address, file$q, 159, 40, 5726);
     			attr_dev(div9, "class", "col-md-6");
-    			add_location(div9, file$q, 136, 36, 4947);
+    			add_location(div9, file$q, 157, 36, 5585);
     			attr_dev(div10, "class", "row");
-    			add_location(div10, file$q, 135, 32, 4892);
-    			add_location(div11, file$q, 149, 36, 5719);
-    			attr_dev(div12, "class", "bg-light cabecera svelte-xcvc35");
-    			add_location(div12, file$q, 148, 32, 5650);
-    			attr_dev(div13, "class", "row mt-3 mb-3 contenedor-estudios svelte-xcvc35");
-    			add_location(div13, file$q, 152, 35, 5884);
+    			add_location(div10, file$q, 156, 32, 5530);
+    			add_location(div11, file$q, 170, 36, 6311);
+    			attr_dev(div12, "class", "bg-light cabecera svelte-rr7nr8");
+    			add_location(div12, file$q, 169, 32, 6242);
+    			set_style(hr0, "margin", "0");
+    			add_location(hr0, file$q, 172, 32, 6416);
+    			attr_dev(div13, "class", "row mt-3 mb-3 contenedor-estudios svelte-rr7nr8");
+    			add_location(div13, file$q, 174, 35, 6529);
     			attr_dev(div14, "class", "col-12");
-    			add_location(div14, file$q, 151, 32, 5827);
+    			add_location(div14, file$q, 173, 32, 6472);
     			attr_dev(div15, "class", "col-md-6");
-    			add_location(div15, file$q, 169, 36, 6863);
+    			add_location(div15, file$q, 191, 36, 7508);
     			attr_dev(h5, "class", "font-primary");
-    			add_location(h5, file$q, 173, 40, 7052);
+    			add_location(h5, file$q, 195, 40, 7697);
     			attr_dev(div16, "class", "");
-    			add_location(div16, file$q, 174, 40, 7163);
+    			add_location(div16, file$q, 196, 40, 7808);
     			attr_dev(div17, "class", "");
-    			add_location(div17, file$q, 175, 40, 7276);
+    			add_location(div17, file$q, 197, 40, 7921);
     			attr_dev(div18, "class", "col-md-6 text-right my-auto");
-    			add_location(div18, file$q, 172, 36, 6969);
+    			add_location(div18, file$q, 194, 36, 7614);
     			attr_dev(div19, "class", "row");
-    			add_location(div19, file$q, 168, 32, 6808);
-    			add_location(hr0, file$q, 179, 36, 7518);
-    			add_location(p1, file$q, 180, 36, 7560);
-    			attr_dev(div20, "class", "firma svelte-xcvc35");
-    			add_location(div20, file$q, 178, 32, 7461);
-    			add_location(hr1, file$q, 184, 36, 7730);
+    			add_location(div19, file$q, 190, 32, 7453);
+    			add_location(hr1, file$q, 201, 36, 8163);
+    			add_location(p1, file$q, 202, 36, 8205);
+    			attr_dev(div20, "class", "firma svelte-rr7nr8");
+    			add_location(div20, file$q, 200, 32, 8106);
+    			add_location(hr2, file$q, 206, 36, 8375);
     			attr_dev(div21, "class", "text-center opacity-75");
-    			add_location(div21, file$q, 185, 36, 7772);
+    			add_location(div21, file$q, 207, 36, 8417);
     			attr_dev(div22, "class", "p-t-10 p-b-20");
-    			add_location(div22, file$q, 182, 32, 7663);
+    			add_location(div22, file$q, 204, 32, 8308);
     			attr_dev(div23, "class", "card-body");
-    			add_location(div23, file$q, 134, 28, 4835);
+    			add_location(div23, file$q, 155, 28, 5473);
     			attr_dev(div24, "class", "card");
-    			add_location(div24, file$q, 133, 24, 4787);
+    			add_location(div24, file$q, 154, 24, 5425);
     			attr_dev(div25, "class", "col-md-12 m-b-40");
-    			add_location(div25, file$q, 132, 20, 4731);
+    			add_location(div25, file$q, 153, 20, 5369);
     			attr_dev(div26, "class", "row");
-    			add_location(div26, file$q, 131, 16, 4692);
+    			add_location(div26, file$q, 152, 16, 5330);
     			attr_dev(div27, "class", "container");
     			attr_dev(div27, "id", "printableArea");
-    			add_location(div27, file$q, 130, 12, 4632);
+    			add_location(div27, file$q, 151, 12, 5270);
     			attr_dev(div28, "class", "pull-up");
-    			add_location(div28, file$q, 129, 8, 4597);
+    			add_location(div28, file$q, 150, 8, 5235);
     			attr_dev(section, "class", "admin-content ");
-    			add_location(section, file$q, 81, 4, 2208);
+    			add_location(section, file$q, 102, 4, 2846);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$q, 76, 2, 2081);
+    			add_location(main, file$q, 97, 2, 2719);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -23621,6 +23578,8 @@ var app = (function () {
     			append_dev(div23, div12);
     			append_dev(div12, div11);
     			append_dev(div23, t33);
+    			append_dev(div23, hr0);
+    			append_dev(div23, t34);
     			append_dev(div23, div14);
     			append_dev(div14, div13);
 
@@ -23628,33 +23587,33 @@ var app = (function () {
     				each_blocks[i].m(div13, null);
     			}
 
-    			append_dev(div23, t34);
-    			if (if_block1) if_block1.m(div23, null);
     			append_dev(div23, t35);
+    			if (if_block1) if_block1.m(div23, null);
+    			append_dev(div23, t36);
     			append_dev(div23, div19);
     			append_dev(div19, div15);
-    			append_dev(div19, t36);
+    			append_dev(div19, t37);
     			append_dev(div19, div18);
     			append_dev(div18, h5);
-    			append_dev(h5, t37);
     			append_dev(h5, t38);
     			append_dev(h5, t39);
-    			append_dev(div18, t40);
+    			append_dev(h5, t40);
+    			append_dev(div18, t41);
     			append_dev(div18, div16);
-    			append_dev(div16, t41);
     			append_dev(div16, t42);
     			append_dev(div16, t43);
-    			append_dev(div18, t44);
+    			append_dev(div16, t44);
+    			append_dev(div18, t45);
     			append_dev(div18, div17);
-    			append_dev(div23, t47);
+    			append_dev(div23, t48);
     			append_dev(div23, div20);
-    			append_dev(div20, hr0);
-    			append_dev(div20, t48);
+    			append_dev(div20, hr1);
+    			append_dev(div20, t49);
     			append_dev(div20, p1);
-    			append_dev(div23, t50);
+    			append_dev(div23, t51);
     			append_dev(div23, div22);
-    			append_dev(div22, hr1);
-    			append_dev(div22, t51);
+    			append_dev(div22, hr2);
+    			append_dev(div22, t52);
     			append_dev(div22, div21);
     			current = true;
     		},
@@ -23663,6 +23622,11 @@ var app = (function () {
     			if ((!current || dirty & /*paciente*/ 1) && t8_value !== (t8_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t8, t8_value);
     			if ((!current || dirty & /*historia*/ 2) && t11_value !== (t11_value = /*historia*/ ctx[1].id + "")) set_data_dev(t11, t11_value);
     			if ((!current || dirty & /*historia*/ 2) && t14_value !== (t14_value = new Date(/*historia*/ ctx[1].createdAt).toLocaleDateString("es-DO") + "")) set_data_dev(t14, t14_value);
+
+    			if (!current || dirty & /*logo*/ 16 && img.src !== (img_src_value = /*logo*/ ctx[4])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
     			if ((!current || dirty & /*empresa*/ 4) && t19_value !== (t19_value = /*empresa*/ ctx[2].nombre + "")) set_data_dev(t19, t19_value);
     			if ((!current || dirty & /*empresa*/ 4) && t23_value !== (t23_value = /*empresa*/ ctx[2].direccion + "")) set_data_dev(t23, t23_value);
     			if ((!current || dirty & /*empresa*/ 4) && t26_value !== (t26_value = /*empresa*/ ctx[2].telefono + "")) set_data_dev(t26, t26_value);
@@ -23698,16 +23662,16 @@ var app = (function () {
     				} else {
     					if_block1 = create_if_block$c(ctx);
     					if_block1.c();
-    					if_block1.m(div23, t35);
+    					if_block1.m(div23, t36);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
     				if_block1 = null;
     			}
 
-    			if ((!current || dirty & /*paciente*/ 1) && t37_value !== (t37_value = /*paciente*/ ctx[0].nombres + "")) set_data_dev(t37, t37_value);
-    			if ((!current || dirty & /*paciente*/ 1) && t39_value !== (t39_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t39, t39_value);
-    			if ((!current || dirty & /*paciente*/ 1) && t42_value !== (t42_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "")) set_data_dev(t42, t42_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t38_value !== (t38_value = /*paciente*/ ctx[0].nombres + "")) set_data_dev(t38, t38_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t40_value !== (t40_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t40, t40_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t43_value !== (t43_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "")) set_data_dev(t43, t43_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -23753,6 +23717,25 @@ var app = (function () {
     	let historia = {};
     	let empresa = {};
     	let estudios = [];
+    	let logo = "";
+
+    	const cargarImagenEmpresa = (idConsultorio, idImagen) => {
+    		const config = {
+    			method: "get",
+    			url: `${url}/imagenes/${idConsultorio}/${idImagen}`,
+    			responseType: "blob",
+    			headers: {
+    				Authorization: `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			$$invalidate(4, logo = URL.createObjectURL(res.data));
+    			console.log(logo);
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
 
     	const cargarPaciente = () => {
     		const config = {
@@ -23796,6 +23779,7 @@ var app = (function () {
 
     		axios$1(config).then(res => {
     			$$invalidate(2, empresa = res.data);
+    			cargarImagenEmpresa(empresa.id, empresa.logo);
     			console.log(empresa);
     		});
     	};
@@ -23818,7 +23802,7 @@ var app = (function () {
     	});
 
     	$$self.$$set = $$props => {
-    		if ("params" in $$props) $$invalidate(5, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(6, params = $$props.params);
     	};
 
     	$$self.$capture_state = () => ({
@@ -23836,31 +23820,34 @@ var app = (function () {
     		historia,
     		empresa,
     		estudios,
+    		logo,
+    		cargarImagenEmpresa,
     		cargarPaciente,
     		cargarHistoria,
     		cargarEmpresa
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("params" in $$props) $$invalidate(5, params = $$props.params);
-    		if ("errorServer" in $$props) $$invalidate(4, errorServer = $$props.errorServer);
+    		if ("params" in $$props) $$invalidate(6, params = $$props.params);
+    		if ("errorServer" in $$props) $$invalidate(5, errorServer = $$props.errorServer);
     		if ("paciente" in $$props) $$invalidate(0, paciente = $$props.paciente);
     		if ("historia" in $$props) $$invalidate(1, historia = $$props.historia);
     		if ("empresa" in $$props) $$invalidate(2, empresa = $$props.empresa);
     		if ("estudios" in $$props) $$invalidate(3, estudios = $$props.estudios);
+    		if ("logo" in $$props) $$invalidate(4, logo = $$props.logo);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [paciente, historia, empresa, estudios, errorServer, params];
+    	return [paciente, historia, empresa, estudios, logo, errorServer, params];
     }
 
     class Estudios extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$s, create_fragment$s, safe_not_equal, { params: 5 });
+    		init(this, options, instance$s, create_fragment$s, safe_not_equal, { params: 6 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -23872,7 +23859,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*params*/ ctx[5] === undefined && !("params" in props)) {
+    		if (/*params*/ ctx[6] === undefined && !("params" in props)) {
     			console_1$b.warn("<Estudios> was created without expected prop 'params'");
     		}
     	}
@@ -23893,11 +23880,11 @@ var app = (function () {
 
     function get_each_context$b(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (79:4) {#if errorServer}
+    // (100:4) {#if errorServer}
     function create_if_block_2$5(ctx) {
     	let errorconexion;
     	let current;
@@ -23933,17 +23920,17 @@ var app = (function () {
     		block,
     		id: create_if_block_2$5.name,
     		type: "if",
-    		source: "(79:4) {#if errorServer}",
+    		source: "(100:4) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (155:43) {#if estudio.tipo === 'IMG'}
-    function create_if_block_1$9(ctx) {
+    // (177:43) {#if estudio.tipo === 'IMG'}
+    function create_if_block_1$8(ctx) {
     	let div;
-    	let t0_value = /*estudio*/ ctx[9].descripcion + "";
+    	let t0_value = /*estudio*/ ctx[11].descripcion + "";
     	let t0;
     	let t1;
 
@@ -23952,8 +23939,8 @@ var app = (function () {
     			div = element("div");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(div, "class", "col-lg-3 mb-3 estudio svelte-xcvc35");
-    			add_location(div, file$r, 155, 47, 6118);
+    			attr_dev(div, "class", "col-lg-3 mb-3 estudio svelte-rr7nr8");
+    			add_location(div, file$r, 177, 47, 6766);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -23961,7 +23948,7 @@ var app = (function () {
     			append_dev(div, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*estudios*/ 8 && t0_value !== (t0_value = /*estudio*/ ctx[9].descripcion + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*estudios*/ 8 && t0_value !== (t0_value = /*estudio*/ ctx[11].descripcion + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -23970,19 +23957,19 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$9.name,
+    		id: create_if_block_1$8.name,
     		type: "if",
-    		source: "(155:43) {#if estudio.tipo === 'IMG'}",
+    		source: "(177:43) {#if estudio.tipo === 'IMG'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (154:39) {#each estudios as estudio}
+    // (176:39) {#each estudios as estudio}
     function create_each_block$b(ctx) {
     	let if_block_anchor;
-    	let if_block = /*estudio*/ ctx[9].tipo === "IMG" && create_if_block_1$9(ctx);
+    	let if_block = /*estudio*/ ctx[11].tipo === "IMG" && create_if_block_1$8(ctx);
 
     	const block = {
     		c: function create() {
@@ -23994,11 +23981,11 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*estudio*/ ctx[9].tipo === "IMG") {
+    			if (/*estudio*/ ctx[11].tipo === "IMG") {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$9(ctx);
+    					if_block = create_if_block_1$8(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -24017,14 +24004,14 @@ var app = (function () {
     		block,
     		id: create_each_block$b.name,
     		type: "each",
-    		source: "(154:39) {#each estudios as estudio}",
+    		source: "(176:39) {#each estudios as estudio}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (163:32) {#if historia.instrucciones}
+    // (185:32) {#if historia.instrucciones}
     function create_if_block$d(ctx) {
     	let div1;
     	let div0;
@@ -24041,10 +24028,10 @@ var app = (function () {
     			strong.textContent = "Observaciones:";
     			t1 = space();
     			t2 = text(t2_value);
-    			add_location(strong, file$r, 164, 41, 6628);
-    			add_location(div0, file$r, 164, 36, 6623);
-    			attr_dev(div1, "class", "bg-light pie svelte-xcvc35");
-    			add_location(div1, file$r, 163, 32, 6559);
+    			add_location(strong, file$r, 186, 41, 7276);
+    			add_location(div0, file$r, 186, 36, 7271);
+    			attr_dev(div1, "class", "bg-light pie svelte-rr7nr8");
+    			add_location(div1, file$r, 185, 32, 7207);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -24065,7 +24052,7 @@ var app = (function () {
     		block,
     		id: create_if_block$d.name,
     		type: "if",
-    		source: "(163:32) {#if historia.instrucciones}",
+    		source: "(185:32) {#if historia.instrucciones}",
     		ctx
     	});
 
@@ -24149,42 +24136,44 @@ var app = (function () {
     	let div12;
     	let div11;
     	let t33;
+    	let hr0;
+    	let t34;
     	let div14;
     	let div13;
-    	let t34;
     	let t35;
+    	let t36;
     	let div19;
     	let div15;
-    	let t36;
+    	let t37;
     	let div18;
     	let h5;
-    	let t37_value = /*paciente*/ ctx[0].nombres + "";
-    	let t37;
+    	let t38_value = /*paciente*/ ctx[0].nombres + "";
     	let t38;
-    	let t39_value = /*paciente*/ ctx[0].apellidos + "";
     	let t39;
+    	let t40_value = /*paciente*/ ctx[0].apellidos + "";
     	let t40;
-    	let div16;
     	let t41;
-    	let t42_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "";
+    	let div16;
     	let t42;
+    	let t43_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "";
     	let t43;
     	let t44;
+    	let t45;
     	let div17;
-    	let t47;
-    	let div20;
-    	let hr0;
     	let t48;
-    	let p1;
-    	let t50;
-    	let div22;
+    	let div20;
     	let hr1;
+    	let t49;
+    	let p1;
     	let t51;
+    	let div22;
+    	let hr2;
+    	let t52;
     	let div21;
     	let current;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*errorServer*/ ctx[4] && create_if_block_2$5(ctx);
+    	let if_block0 = /*errorServer*/ ctx[5] && create_if_block_2$5(ctx);
     	let each_value = /*estudios*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -24267,6 +24256,8 @@ var app = (function () {
     			div11 = element("div");
     			div11.textContent = "Estudios de imagenes";
     			t33 = space();
+    			hr0 = element("hr");
+    			t34 = space();
     			div14 = element("div");
     			div13 = element("div");
 
@@ -24274,127 +24265,128 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			t34 = space();
-    			if (if_block1) if_block1.c();
     			t35 = space();
+    			if (if_block1) if_block1.c();
+    			t36 = space();
     			div19 = element("div");
     			div15 = element("div");
-    			t36 = space();
+    			t37 = space();
     			div18 = element("div");
     			h5 = element("h5");
-    			t37 = text(t37_value);
-    			t38 = space();
-    			t39 = text(t39_value);
-    			t40 = space();
+    			t38 = text(t38_value);
+    			t39 = space();
+    			t40 = text(t40_value);
+    			t41 = space();
     			div16 = element("div");
-    			t41 = text("Edad: ");
-    			t42 = text(t42_value);
-    			t43 = text(" años");
-    			t44 = space();
+    			t42 = text("Edad: ");
+    			t43 = text(t43_value);
+    			t44 = text(" años");
+    			t45 = space();
     			div17 = element("div");
     			div17.textContent = `Fecha: ${new Date().toLocaleDateString("es-DO")}`;
-    			t47 = space();
-    			div20 = element("div");
-    			hr0 = element("hr");
     			t48 = space();
+    			div20 = element("div");
+    			hr1 = element("hr");
+    			t49 = space();
     			p1 = element("p");
     			p1.textContent = "Firma del especialista";
-    			t50 = space();
-    			div22 = element("div");
-    			hr1 = element("hr");
     			t51 = space();
+    			div22 = element("div");
+    			hr2 = element("hr");
+    			t52 = space();
     			div21 = element("div");
     			div21.textContent = `© nextcom ${new Date().getFullYear()}`;
     			attr_dev(div0, "class", "avatar-title bg-success rounded-circle mdi mdi-receipt  ");
-    			add_location(div0, file$r, 89, 32, 2569);
+    			add_location(div0, file$r, 110, 32, 3207);
     			attr_dev(div1, "class", "avatar avatar mr-3");
-    			add_location(div1, file$r, 88, 28, 2503);
+    			add_location(div1, file$r, 109, 28, 3141);
     			attr_dev(div2, "class", "opacity-75");
-    			add_location(div2, file$r, 94, 32, 2805);
+    			add_location(div2, file$r, 115, 32, 3443);
     			attr_dev(h4, "class", "m-b-0");
-    			add_location(h4, file$r, 95, 32, 2874);
-    			add_location(br0, file$r, 97, 63, 3058);
+    			add_location(h4, file$r, 116, 32, 3512);
+    			add_location(br0, file$r, 118, 63, 3696);
     			attr_dev(p0, "class", "opacity-75");
-    			add_location(p0, file$r, 96, 32, 2971);
+    			add_location(p0, file$r, 117, 32, 3609);
     			attr_dev(i, "class", "mdi\r\n                                mdi-printer");
-    			add_location(i, file$r, 100, 89, 3304);
+    			add_location(i, file$r, 121, 89, 3942);
     			attr_dev(button, "class", "btn btn-white-translucent");
     			attr_dev(button, "id", "printDiv");
-    			add_location(button, file$r, 100, 32, 3247);
+    			add_location(button, file$r, 121, 32, 3885);
     			attr_dev(div3, "class", "media-body");
-    			add_location(div3, file$r, 93, 28, 2747);
+    			add_location(div3, file$r, 114, 28, 3385);
     			attr_dev(div4, "class", "media");
-    			add_location(div4, file$r, 87, 24, 2454);
+    			add_location(div4, file$r, 108, 24, 3092);
     			attr_dev(div5, "class", "col-md-6 text-white p-b-30");
-    			add_location(div5, file$r, 86, 20, 2388);
+    			add_location(div5, file$r, 107, 20, 3026);
     			attr_dev(div6, "class", "row p-b-60 p-t-60");
-    			add_location(div6, file$r, 84, 16, 2333);
+    			add_location(div6, file$r, 105, 16, 2971);
     			attr_dev(div7, "class", "container");
-    			add_location(div7, file$r, 83, 12, 2292);
+    			add_location(div7, file$r, 104, 12, 2930);
     			attr_dev(div8, "class", "bg-dark m-b-30");
-    			add_location(div8, file$r, 82, 8, 2250);
-    			if (img.src !== (img_src_value = "assets/img/logos/nytimes.jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "width", "60");
-    			attr_dev(img, "class", "rounded-circle");
+    			add_location(div8, file$r, 103, 8, 2888);
+    			if (img.src !== (img_src_value = /*logo*/ ctx[4])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "width", "150");
     			attr_dev(img, "alt", "");
-    			add_location(img, file$r, 137, 40, 5011);
+    			add_location(img, file$r, 158, 40, 5649);
     			attr_dev(span, "class", "h4 font-primary");
-    			add_location(span, file$r, 139, 44, 5204);
-    			add_location(br1, file$r, 139, 100, 5260);
-    			add_location(br2, file$r, 140, 64, 5330);
-    			add_location(br3, file$r, 141, 69, 5405);
-    			add_location(br4, file$r, 142, 61, 5472);
+    			add_location(span, file$r, 160, 44, 5796);
+    			add_location(br1, file$r, 160, 100, 5852);
+    			add_location(br2, file$r, 161, 64, 5922);
+    			add_location(br3, file$r, 162, 69, 5997);
+    			add_location(br4, file$r, 163, 61, 6064);
     			attr_dev(address, "class", "m-t-10");
-    			add_location(address, file$r, 138, 40, 5134);
+    			add_location(address, file$r, 159, 40, 5726);
     			attr_dev(div9, "class", "col-md-6");
-    			add_location(div9, file$r, 136, 36, 4947);
+    			add_location(div9, file$r, 157, 36, 5585);
     			attr_dev(div10, "class", "row");
-    			add_location(div10, file$r, 135, 32, 4892);
-    			add_location(div11, file$r, 149, 36, 5719);
-    			attr_dev(div12, "class", "bg-light cabecera svelte-xcvc35");
-    			add_location(div12, file$r, 148, 32, 5650);
-    			attr_dev(div13, "class", "row mt-3 mb-3 contenedor-estudios svelte-xcvc35");
-    			add_location(div13, file$r, 152, 35, 5881);
+    			add_location(div10, file$r, 156, 32, 5530);
+    			add_location(div11, file$r, 170, 36, 6311);
+    			attr_dev(div12, "class", "bg-light cabecera svelte-rr7nr8");
+    			add_location(div12, file$r, 169, 32, 6242);
+    			set_style(hr0, "margin", "0");
+    			add_location(hr0, file$r, 172, 32, 6416);
+    			attr_dev(div13, "class", "row mt-3 mb-3 contenedor-estudios svelte-rr7nr8");
+    			add_location(div13, file$r, 174, 35, 6529);
     			attr_dev(div14, "class", "col-12");
-    			add_location(div14, file$r, 151, 32, 5824);
+    			add_location(div14, file$r, 173, 32, 6472);
     			attr_dev(div15, "class", "col-md-6");
-    			add_location(div15, file$r, 169, 36, 6860);
+    			add_location(div15, file$r, 191, 36, 7508);
     			attr_dev(h5, "class", "font-primary");
-    			add_location(h5, file$r, 173, 40, 7049);
+    			add_location(h5, file$r, 195, 40, 7697);
     			attr_dev(div16, "class", "");
-    			add_location(div16, file$r, 174, 40, 7160);
+    			add_location(div16, file$r, 196, 40, 7808);
     			attr_dev(div17, "class", "");
-    			add_location(div17, file$r, 175, 40, 7273);
+    			add_location(div17, file$r, 197, 40, 7921);
     			attr_dev(div18, "class", "col-md-6 text-right my-auto");
-    			add_location(div18, file$r, 172, 36, 6966);
+    			add_location(div18, file$r, 194, 36, 7614);
     			attr_dev(div19, "class", "row");
-    			add_location(div19, file$r, 168, 32, 6805);
-    			add_location(hr0, file$r, 179, 36, 7515);
-    			add_location(p1, file$r, 180, 36, 7557);
-    			attr_dev(div20, "class", "firma svelte-xcvc35");
-    			add_location(div20, file$r, 178, 32, 7458);
-    			add_location(hr1, file$r, 184, 36, 7727);
+    			add_location(div19, file$r, 190, 32, 7453);
+    			add_location(hr1, file$r, 201, 36, 8163);
+    			add_location(p1, file$r, 202, 36, 8205);
+    			attr_dev(div20, "class", "firma svelte-rr7nr8");
+    			add_location(div20, file$r, 200, 32, 8106);
+    			add_location(hr2, file$r, 206, 36, 8375);
     			attr_dev(div21, "class", "text-center opacity-75");
-    			add_location(div21, file$r, 185, 36, 7769);
+    			add_location(div21, file$r, 207, 36, 8417);
     			attr_dev(div22, "class", "p-t-10 p-b-20");
-    			add_location(div22, file$r, 182, 32, 7660);
+    			add_location(div22, file$r, 204, 32, 8308);
     			attr_dev(div23, "class", "card-body");
-    			add_location(div23, file$r, 134, 28, 4835);
+    			add_location(div23, file$r, 155, 28, 5473);
     			attr_dev(div24, "class", "card");
-    			add_location(div24, file$r, 133, 24, 4787);
+    			add_location(div24, file$r, 154, 24, 5425);
     			attr_dev(div25, "class", "col-md-12 m-b-40");
-    			add_location(div25, file$r, 132, 20, 4731);
+    			add_location(div25, file$r, 153, 20, 5369);
     			attr_dev(div26, "class", "row");
-    			add_location(div26, file$r, 131, 16, 4692);
+    			add_location(div26, file$r, 152, 16, 5330);
     			attr_dev(div27, "class", "container");
     			attr_dev(div27, "id", "printableArea");
-    			add_location(div27, file$r, 130, 12, 4632);
+    			add_location(div27, file$r, 151, 12, 5270);
     			attr_dev(div28, "class", "pull-up");
-    			add_location(div28, file$r, 129, 8, 4597);
+    			add_location(div28, file$r, 150, 8, 5235);
     			attr_dev(section, "class", "admin-content ");
-    			add_location(section, file$r, 81, 4, 2208);
+    			add_location(section, file$r, 102, 4, 2846);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$r, 76, 2, 2081);
+    			add_location(main, file$r, 97, 2, 2719);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -24468,6 +24460,8 @@ var app = (function () {
     			append_dev(div23, div12);
     			append_dev(div12, div11);
     			append_dev(div23, t33);
+    			append_dev(div23, hr0);
+    			append_dev(div23, t34);
     			append_dev(div23, div14);
     			append_dev(div14, div13);
 
@@ -24475,33 +24469,33 @@ var app = (function () {
     				each_blocks[i].m(div13, null);
     			}
 
-    			append_dev(div23, t34);
-    			if (if_block1) if_block1.m(div23, null);
     			append_dev(div23, t35);
+    			if (if_block1) if_block1.m(div23, null);
+    			append_dev(div23, t36);
     			append_dev(div23, div19);
     			append_dev(div19, div15);
-    			append_dev(div19, t36);
+    			append_dev(div19, t37);
     			append_dev(div19, div18);
     			append_dev(div18, h5);
-    			append_dev(h5, t37);
     			append_dev(h5, t38);
     			append_dev(h5, t39);
-    			append_dev(div18, t40);
+    			append_dev(h5, t40);
+    			append_dev(div18, t41);
     			append_dev(div18, div16);
-    			append_dev(div16, t41);
     			append_dev(div16, t42);
     			append_dev(div16, t43);
-    			append_dev(div18, t44);
+    			append_dev(div16, t44);
+    			append_dev(div18, t45);
     			append_dev(div18, div17);
-    			append_dev(div23, t47);
+    			append_dev(div23, t48);
     			append_dev(div23, div20);
-    			append_dev(div20, hr0);
-    			append_dev(div20, t48);
+    			append_dev(div20, hr1);
+    			append_dev(div20, t49);
     			append_dev(div20, p1);
-    			append_dev(div23, t50);
+    			append_dev(div23, t51);
     			append_dev(div23, div22);
-    			append_dev(div22, hr1);
-    			append_dev(div22, t51);
+    			append_dev(div22, hr2);
+    			append_dev(div22, t52);
     			append_dev(div22, div21);
     			current = true;
     		},
@@ -24510,6 +24504,11 @@ var app = (function () {
     			if ((!current || dirty & /*paciente*/ 1) && t8_value !== (t8_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t8, t8_value);
     			if ((!current || dirty & /*historia*/ 2) && t11_value !== (t11_value = /*historia*/ ctx[1].id + "")) set_data_dev(t11, t11_value);
     			if ((!current || dirty & /*historia*/ 2) && t14_value !== (t14_value = new Date(/*historia*/ ctx[1].createdAt).toLocaleDateString("es-DO") + "")) set_data_dev(t14, t14_value);
+
+    			if (!current || dirty & /*logo*/ 16 && img.src !== (img_src_value = /*logo*/ ctx[4])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
     			if ((!current || dirty & /*empresa*/ 4) && t19_value !== (t19_value = /*empresa*/ ctx[2].nombre + "")) set_data_dev(t19, t19_value);
     			if ((!current || dirty & /*empresa*/ 4) && t23_value !== (t23_value = /*empresa*/ ctx[2].direccion + "")) set_data_dev(t23, t23_value);
     			if ((!current || dirty & /*empresa*/ 4) && t26_value !== (t26_value = /*empresa*/ ctx[2].telefono + "")) set_data_dev(t26, t26_value);
@@ -24545,16 +24544,16 @@ var app = (function () {
     				} else {
     					if_block1 = create_if_block$d(ctx);
     					if_block1.c();
-    					if_block1.m(div23, t35);
+    					if_block1.m(div23, t36);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
     				if_block1 = null;
     			}
 
-    			if ((!current || dirty & /*paciente*/ 1) && t37_value !== (t37_value = /*paciente*/ ctx[0].nombres + "")) set_data_dev(t37, t37_value);
-    			if ((!current || dirty & /*paciente*/ 1) && t39_value !== (t39_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t39, t39_value);
-    			if ((!current || dirty & /*paciente*/ 1) && t42_value !== (t42_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "")) set_data_dev(t42, t42_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t38_value !== (t38_value = /*paciente*/ ctx[0].nombres + "")) set_data_dev(t38, t38_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t40_value !== (t40_value = /*paciente*/ ctx[0].apellidos + "")) set_data_dev(t40, t40_value);
+    			if ((!current || dirty & /*paciente*/ 1) && t43_value !== (t43_value = calcularEdad(/*paciente*/ ctx[0].fechaNacimiento) + "")) set_data_dev(t43, t43_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -24600,6 +24599,25 @@ var app = (function () {
     	let historia = {};
     	let empresa = {};
     	let estudios = [];
+    	let logo = "";
+
+    	const cargarImagenEmpresa = (idConsultorio, idImagen) => {
+    		const config = {
+    			method: "get",
+    			url: `${url}/imagenes/${idConsultorio}/${idImagen}`,
+    			responseType: "blob",
+    			headers: {
+    				Authorization: `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			$$invalidate(4, logo = URL.createObjectURL(res.data));
+    			console.log(logo);
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
 
     	const cargarPaciente = () => {
     		const config = {
@@ -24643,6 +24661,7 @@ var app = (function () {
 
     		axios$1(config).then(res => {
     			$$invalidate(2, empresa = res.data);
+    			cargarImagenEmpresa(empresa.id, empresa.logo);
     			console.log(empresa);
     		});
     	};
@@ -24665,7 +24684,7 @@ var app = (function () {
     	});
 
     	$$self.$$set = $$props => {
-    		if ("params" in $$props) $$invalidate(5, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(6, params = $$props.params);
     	};
 
     	$$self.$capture_state = () => ({
@@ -24683,31 +24702,34 @@ var app = (function () {
     		historia,
     		empresa,
     		estudios,
+    		logo,
+    		cargarImagenEmpresa,
     		cargarPaciente,
     		cargarHistoria,
     		cargarEmpresa
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("params" in $$props) $$invalidate(5, params = $$props.params);
-    		if ("errorServer" in $$props) $$invalidate(4, errorServer = $$props.errorServer);
+    		if ("params" in $$props) $$invalidate(6, params = $$props.params);
+    		if ("errorServer" in $$props) $$invalidate(5, errorServer = $$props.errorServer);
     		if ("paciente" in $$props) $$invalidate(0, paciente = $$props.paciente);
     		if ("historia" in $$props) $$invalidate(1, historia = $$props.historia);
     		if ("empresa" in $$props) $$invalidate(2, empresa = $$props.empresa);
     		if ("estudios" in $$props) $$invalidate(3, estudios = $$props.estudios);
+    		if ("logo" in $$props) $$invalidate(4, logo = $$props.logo);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [paciente, historia, empresa, estudios, errorServer, params];
+    	return [paciente, historia, empresa, estudios, logo, errorServer, params];
     }
 
     class Imagenes extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$t, create_fragment$t, safe_not_equal, { params: 5 });
+    		init(this, options, instance$t, create_fragment$t, safe_not_equal, { params: 6 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -24719,7 +24741,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*params*/ ctx[5] === undefined && !("params" in props)) {
+    		if (/*params*/ ctx[6] === undefined && !("params" in props)) {
     			console_1$c.warn("<Imagenes> was created without expected prop 'params'");
     		}
     	}

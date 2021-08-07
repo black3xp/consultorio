@@ -14,6 +14,26 @@
     let historia = {};
     let empresa = {};
     let estudios = [];
+    let logo = '';
+
+    const cargarImagenEmpresa = (idConsultorio, idImagen) => {
+        const config = {
+            method: 'get',
+            url: `${url}/imagenes/${idConsultorio}/${idImagen}`,
+            responseType:"blob", 
+            headers: {
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
+        }
+        axios(config)
+        .then(res => {
+            logo = URL.createObjectURL(res.data)
+            console.log(logo)
+        })
+        .catch(err => {
+            console.error(err)
+        })
+    }
 
     const cargarPaciente = () => {
         const config = {
@@ -57,6 +77,7 @@
         axios(config)
             .then(res => {
                 empresa = res.data;
+                cargarImagenEmpresa(empresa.id, empresa.logo)
                 console.log(empresa)
             })
     }
@@ -135,7 +156,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="assets/img/logos/nytimes.jpg" width="60" class="rounded-circle" alt="">
+                                        <img src={logo} width="150" alt="">
                                         <address class="m-t-10">
                                             <span class="h4 font-primary"> {empresa.nombre},</span> <br>
                                             {empresa.direccion} <br>
@@ -149,6 +170,7 @@
                                 <div class="bg-light cabecera">
                                     <div>Estudios de imagenes</div>
                                 </div>
+                                <hr style="margin: 0">
                                 <div class="col-12">
                                    <div class="row mt-3 mb-3 contenedor-estudios">
                                        {#each estudios as estudio}
@@ -214,12 +236,15 @@
           margin-bottom: 50px;
       }
       @media print{
-          .contenedor-estudios{
-              display: flex;
-              flex-direction: row;
-          }
+        .contenedor-estudios{
+            display: flex;
+            flex-direction: row;
+        }
         .estudio{
             width: 25%;
+        }
+        html, body{
+            background-color: transparent !important;
         }
       }
   </style>
