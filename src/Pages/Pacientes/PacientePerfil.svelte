@@ -73,7 +73,7 @@
   }
 
   const combinarAntecedentes = () => {
-    for (const ant of paciente.antecedentes) {
+    for (const ant of paciente.antecedentes.reverse()) {
       if (ant.activo == true) {
         const index = antecedentes.findIndex((x) => x.id === ant.id);
         antecedentes[index].activo = ant.activo;
@@ -326,14 +326,17 @@
                 </div>
                 <div class="card-body">
                   {#each historiasPaciente as historia}
-                    <Evoluciones
-                      usuario={historia.usuario}
-                      idPaciente={paciente.id}
-                      id={historia.id}
-                      fecha={historia.fechaHora}
-                      motivo={historia.motivoConsulta}
-                      historia={historia.historiaEnfermedad}
-                    />
+                    {#if historia.activo}
+                      <!-- content here -->
+                      <Evoluciones
+                        usuario={historia.usuario}
+                        idPaciente={paciente.id}
+                        id={historia.id}
+                        fecha={historia.fechaHora}
+                        motivo={historia.motivoConsulta}
+                        historia={historia.historiaEnfermedad}
+                      />
+                    {/if}
                   {/each}
                 </div>
               </div>
@@ -486,7 +489,7 @@
                         class="botones-antecedentes"
                         data-bind="foreach: tiposAntecedentesFiltrados"
                       >
-                        {#each antecedentes as antecedente}
+                        {#each antecedentes.reverse() as antecedente}
                           {#if antecedente.categoria.id === categoria.id}
                             {#if antecedente.activo === false}
                               <!-- content here -->

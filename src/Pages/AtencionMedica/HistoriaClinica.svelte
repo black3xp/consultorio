@@ -1,5 +1,5 @@
 <script>
-    import { link } from "svelte-spa-router";
+    import { link, push } from "svelte-spa-router";
     import axios from "axios";
     import { onMount } from "svelte";
     import { url } from "../../util/index";
@@ -50,6 +50,40 @@
     let estudiosSeleccionados = [];
     let historiaGinecologica = {};
     let errorServer = false;
+
+    const eliminarHistoria = (id) => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Se eliminará esta historia clínica, sin embargo, los datos no se perderán, puedes recuperarlos en el futuro!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminarlo!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const config = {
+                    method: 'put',
+                    url: `${url}/historias/${id}/eliminar`,
+                    headers: {
+                        'Authorization': `${localStorage.getItem('auth')}` 
+                    }
+                }
+                axios(config)
+                    .then(res => {
+                        console.log(res.data)
+                        if(res.status === 200) {
+                            push(`/pacientes/perfil/${params.idPaciente}`)
+                        }
+
+                    })
+                    .catch(err => {
+
+                    })
+            }
+        })
+    }
 
     const searchMedicamentos = () => {
         if (timeout) {
@@ -473,7 +507,7 @@
                 </button> -->
 
                 <button
-                    data-bind=" class: itemClass,click: clickEvent"
+                    on:click={() => eliminarHistoria(params.idHistoria)}
                     style="box-shadow:none;"
                     class="btn btn-outline-danger btn-sm"
                 >
@@ -1038,7 +1072,7 @@
 
                         <div class="col-md-12">
                             <ul class="list-info">
-                                {#each diagnosticosSeleccionados as item, i}
+                                {#each diagnosticosSeleccionados.reverse() as item, i}
                                     <li>
                                         <span class="badge badge-primary"
                                             >{item.c}</span

@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            {#each medicamentosSeleccionados as med, i}
+                            {#each medicamentosSeleccionados.reverse() as med, i}
                                  <!-- content here -->
                                  <div
                                      class="col-lg-12 border border-primary rounded mt-3"
@@ -251,7 +251,7 @@
 
                 <div class="col-12">
                     <ul class="list-info">
-                        {#each estudiosSeleccionados as item, i}
+                        {#each estudiosSeleccionados.reverse() as item, i}
                             <li>
                                 {#if item.tipo === 'LAB'}
                                         <span class="badge badge-primary"
