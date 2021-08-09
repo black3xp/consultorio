@@ -230,10 +230,6 @@
           width: 200px;
           margin-top: 80px;
       }
-      tfoot{
-          padding: 10px;
-          width: 100%;
-      }
       td{
           padding: 10px;
       }

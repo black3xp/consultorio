@@ -2,7 +2,7 @@
     import { link, push } from "svelte-spa-router";
     import axios from "axios";
     import { onMount } from "svelte";
-    import { url } from "../../util/index";
+    import { url, user } from "../../util/index";
     import { v4 as uuid } from 'uuid';
 
     import Header from "../../Layout/Header.svelte";
@@ -50,6 +50,25 @@
     let estudiosSeleccionados = [];
     let historiaGinecologica = {};
     let errorServer = false;
+    let empresa = {};
+
+    const cargarEmpresa = () => {
+        const config = {
+            method: 'get',
+            url: `${url}/empresas/${user().empresa}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
+        }
+        axios(config)
+            .then(res => {
+                empresa = res.data
+                console.log(empresa)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
 
     const eliminarHistoria = (id) => {
         Swal.fire({
@@ -403,6 +422,7 @@
         cargarDiagnosticos();
         cargarMedicamentos();
         cargarEstudios();
+        cargarEmpresa();
     });
 </script>
 
@@ -560,10 +580,11 @@
                     />
                 </div>
             </div>
+            {#if empresa.historiaGinecologica}
             <!-- Historia ginecologica -->
-            <div class="card m-b-20">
+            <div class="card m-b-20 border border-primary">
                 <div class="card-header">
-                    <div class="card-title">
+                    <div class="card-title text-primary">
                         Historia Ginecologica
                     </div>
                 </div>
@@ -717,6 +738,7 @@
                 </div>
             </div>
             <!-- .Historia ginecologica -->
+            {/if}
             <div class="card m-b-20 margen-mobile autosave">
                 <div class="card-header">
                     <div class="card-title">Signos vitales</div>
