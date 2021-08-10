@@ -25115,126 +25115,126 @@ var app = (function () {
     			span1 = element("span");
     			span1.textContent = "Historia Ginecologica";
     			attr_dev(i0, "class", "mdi mdi-content-save");
-    			add_location(i0, file$s, 93, 12, 2580);
+    			add_location(i0, file$s, 119, 12, 3305);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success");
     			set_style(button, "position", "fixed");
     			set_style(button, "bottom", "30px");
     			set_style(button, "right", "30px");
-    			add_location(button, file$s, 87, 8, 2343);
+    			add_location(button, file$s, 113, 8, 3068);
     			attr_dev(i1, "class", "mdi mdi-medical-bag");
-    			add_location(i1, file$s, 99, 18, 2781);
-    			add_location(h5, file$s, 99, 14, 2777);
+    			add_location(i1, file$s, 125, 18, 3506);
+    			add_location(h5, file$s, 125, 14, 3502);
     			attr_dev(div0, "class", "col-12 m-b-20 m-t-20");
-    			add_location(div0, file$s, 98, 12, 2728);
+    			add_location(div0, file$s, 124, 12, 3453);
     			attr_dev(h40, "class", "card-title");
-    			add_location(h40, file$s, 104, 24, 2998);
+    			add_location(h40, file$s, 130, 24, 3723);
     			attr_dev(div1, "class", "card-header");
-    			add_location(div1, file$s, 103, 20, 2948);
+    			add_location(div1, file$s, 129, 20, 3673);
     			if (img.src !== (img_src_value = /*logo*/ ctx[1])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "class", "logo-emp svelte-18x36bc");
     			attr_dev(img, "alt", "logo empresa");
-    			add_location(img, file$s, 111, 32, 3295);
+    			add_location(img, file$s, 137, 32, 4020);
     			attr_dev(i2, "class", "mdi mdi-refresh");
-    			add_location(i2, file$s, 114, 40, 3554);
+    			add_location(i2, file$s, 140, 40, 4279);
     			attr_dev(label0, "class", "btn btn-primary btn-sm");
     			attr_dev(label0, "for", "inpSubirImagen");
-    			add_location(label0, file$s, 113, 36, 3454);
+    			add_location(label0, file$s, 139, 36, 4179);
     			set_style(input0, "display", "none");
     			attr_dev(input0, "type", "file");
     			attr_dev(input0, "id", "inpSubirImagen");
     			attr_dev(input0, "accept", "image/png, image/jpeg");
-    			add_location(input0, file$s, 116, 36, 3682);
+    			add_location(input0, file$s, 142, 36, 4407);
     			attr_dev(div2, "class", "col-12 text-center mt-2");
-    			add_location(div2, file$s, 112, 32, 3380);
+    			add_location(div2, file$s, 138, 32, 4105);
     			attr_dev(div3, "class", "col-lg-3");
-    			add_location(div3, file$s, 110, 28, 3240);
+    			add_location(div3, file$s, 136, 28, 3965);
     			attr_dev(label1, "for", "");
-    			add_location(label1, file$s, 123, 44, 4120);
+    			add_location(label1, file$s, 149, 44, 4878);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "class", "form-control");
-    			add_location(input1, file$s, 124, 44, 4205);
+    			add_location(input1, file$s, 150, 44, 4963);
     			attr_dev(div4, "class", "form-group");
-    			add_location(div4, file$s, 122, 40, 4051);
+    			add_location(div4, file$s, 148, 40, 4809);
     			attr_dev(div5, "class", "col-lg-12");
-    			add_location(div5, file$s, 121, 36, 3987);
+    			add_location(div5, file$s, 147, 36, 4745);
     			attr_dev(label2, "for", "");
-    			add_location(label2, file$s, 129, 44, 4532);
+    			add_location(label2, file$s, 155, 44, 5290);
     			attr_dev(input2, "type", "tel");
     			attr_dev(input2, "class", "form-control");
-    			add_location(input2, file$s, 130, 44, 4607);
+    			add_location(input2, file$s, 156, 44, 5365);
     			attr_dev(div6, "class", "form-group");
-    			add_location(div6, file$s, 128, 40, 4463);
+    			add_location(div6, file$s, 154, 40, 5221);
     			attr_dev(div7, "class", "col-lg-6");
-    			add_location(div7, file$s, 127, 36, 4400);
+    			add_location(div7, file$s, 153, 36, 5158);
     			attr_dev(label3, "for", "");
-    			add_location(label3, file$s, 135, 44, 4935);
+    			add_location(label3, file$s, 161, 44, 5693);
     			attr_dev(input3, "type", "email");
     			attr_dev(input3, "class", "form-control");
-    			add_location(input3, file$s, 136, 44, 5008);
+    			add_location(input3, file$s, 162, 44, 5766);
     			attr_dev(div8, "class", "form-group");
-    			add_location(div8, file$s, 134, 40, 4866);
+    			add_location(div8, file$s, 160, 40, 5624);
     			attr_dev(div9, "class", "col-lg-6");
-    			add_location(div9, file$s, 133, 36, 4803);
+    			add_location(div9, file$s, 159, 36, 5561);
     			attr_dev(label4, "for", "");
-    			add_location(label4, file$s, 141, 44, 5337);
+    			add_location(label4, file$s, 167, 44, 6095);
     			attr_dev(input4, "type", "text");
     			attr_dev(input4, "class", "form-control");
-    			add_location(input4, file$s, 142, 44, 5413);
+    			add_location(input4, file$s, 168, 44, 6171);
     			attr_dev(div10, "class", "form-group");
-    			add_location(div10, file$s, 140, 40, 5268);
+    			add_location(div10, file$s, 166, 40, 6026);
     			attr_dev(div11, "class", "col-lg-12");
-    			add_location(div11, file$s, 139, 36, 5204);
+    			add_location(div11, file$s, 165, 36, 5962);
     			attr_dev(div12, "class", "row");
-    			add_location(div12, file$s, 120, 32, 3933);
+    			add_location(div12, file$s, 146, 32, 4691);
     			attr_dev(div13, "class", "col-lg-9");
-    			add_location(div13, file$s, 119, 28, 3878);
+    			add_location(div13, file$s, 145, 28, 4636);
     			attr_dev(div14, "class", "row");
-    			add_location(div14, file$s, 109, 24, 3194);
+    			add_location(div14, file$s, 135, 24, 3919);
     			attr_dev(div15, "class", "card-body");
-    			add_location(div15, file$s, 108, 20, 3146);
+    			add_location(div15, file$s, 134, 20, 3871);
     			attr_dev(div16, "class", "card m-b-30");
-    			add_location(div16, file$s, 102, 16, 2902);
+    			add_location(div16, file$s, 128, 16, 3627);
     			attr_dev(div17, "class", "col-12");
-    			add_location(div17, file$s, 101, 12, 2865);
+    			add_location(div17, file$s, 127, 12, 3590);
     			attr_dev(h41, "class", "card-title");
-    			add_location(h41, file$s, 154, 24, 5887);
+    			add_location(h41, file$s, 180, 24, 6645);
     			attr_dev(div18, "class", "card-header");
-    			add_location(div18, file$s, 153, 20, 5837);
+    			add_location(div18, file$s, 179, 20, 6595);
     			attr_dev(input5, "type", "checkbox");
     			attr_dev(input5, "name", "option");
     			input5.__value = "1";
     			input5.value = input5.__value;
     			attr_dev(input5, "class", "cstm-switch-input");
-    			add_location(input5, file$s, 163, 40, 6310);
+    			add_location(input5, file$s, 189, 40, 7068);
     			attr_dev(span0, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span0, file$s, 164, 40, 6468);
+    			add_location(span0, file$s, 190, 40, 7226);
     			attr_dev(span1, "class", "cstm-switch-description");
-    			add_location(span1, file$s, 165, 40, 6564);
+    			add_location(span1, file$s, 191, 40, 7322);
     			attr_dev(label5, "class", "cstm-switch");
-    			add_location(label5, file$s, 162, 36, 6242);
+    			add_location(label5, file$s, 188, 36, 7000);
     			attr_dev(div19, "class", " m-b-10");
-    			add_location(div19, file$s, 161, 32, 6184);
+    			add_location(div19, file$s, 187, 32, 6942);
     			attr_dev(div20, "class", "col-12");
-    			add_location(div20, file$s, 160, 28, 6131);
+    			add_location(div20, file$s, 186, 28, 6889);
     			attr_dev(div21, "class", "row");
-    			add_location(div21, file$s, 159, 24, 6085);
+    			add_location(div21, file$s, 185, 24, 6843);
     			attr_dev(div22, "class", "card-body");
-    			add_location(div22, file$s, 158, 20, 6037);
+    			add_location(div22, file$s, 184, 20, 6795);
     			attr_dev(div23, "class", "card");
-    			add_location(div23, file$s, 152, 16, 5798);
+    			add_location(div23, file$s, 178, 16, 6556);
     			attr_dev(div24, "class", "col-12");
-    			add_location(div24, file$s, 151, 12, 5761);
+    			add_location(div24, file$s, 177, 12, 6519);
     			attr_dev(div25, "class", "row");
-    			add_location(div25, file$s, 97, 10, 2698);
+    			add_location(div25, file$s, 123, 10, 3423);
     			attr_dev(div26, "class", "col-12");
-    			add_location(div26, file$s, 96, 8, 2667);
+    			add_location(div26, file$s, 122, 8, 3392);
     			attr_dev(div27, "class", "p-2");
-    			add_location(div27, file$s, 95, 6, 2641);
+    			add_location(div27, file$s, 121, 6, 3366);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$s, 86, 4, 2303);
+    			add_location(section, file$s, 112, 4, 3028);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$s, 84, 2, 2258);
+    			add_location(main, file$s, 110, 2, 2983);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -25324,12 +25324,13 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button, "click", /*editarEmpresa*/ ctx[2], false, false, false),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[3]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[4]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[5]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[6]),
-    					listen_dev(input5, "change", /*input5_change_handler*/ ctx[7])
+    					listen_dev(button, "click", /*editarEmpresa*/ ctx[3], false, false, false),
+    					listen_dev(input0, "change", /*cambiarImagenEmpresa*/ ctx[2], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[4]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[5]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[6]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[7]),
+    					listen_dev(input5, "change", /*input5_change_handler*/ ctx[8])
     				];
 
     				mounted = true;
@@ -25399,6 +25400,31 @@ var app = (function () {
     	let msgError = "";
     	let empresa = {};
     	let logo = "";
+    	let avatar;
+
+    	const cambiarImagenEmpresa = e => {
+    		let image = e.target.files[0];
+    		const form = new FormData();
+    		console.log(image);
+    		form.append("logo", image);
+
+    		const config = {
+    			method: "put",
+    			url: `${url}/empresas/${user().empresa}/imagen`,
+    			data: form,
+    			headers: {
+    				"Content-Type": "multipart/form-data",
+    				Authorization: `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			console.log(res.data);
+    			cargarEmpresa();
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
 
     	const editarEmpresa = () => {
     		const data = {
@@ -25420,6 +25446,7 @@ var app = (function () {
 
     		axios$1(config).then(res => {
     			console.log(res.data);
+    			cargarEmpresa();
     		}).catch(err => {
     			console.error(err);
     		});
@@ -25507,6 +25534,8 @@ var app = (function () {
     		msgError,
     		empresa,
     		logo,
+    		avatar,
+    		cambiarImagenEmpresa,
     		editarEmpresa,
     		cargarImagenEmpresa,
     		cargarEmpresa
@@ -25517,6 +25546,7 @@ var app = (function () {
     		if ("msgError" in $$props) msgError = $$props.msgError;
     		if ("empresa" in $$props) $$invalidate(0, empresa = $$props.empresa);
     		if ("logo" in $$props) $$invalidate(1, logo = $$props.logo);
+    		if ("avatar" in $$props) avatar = $$props.avatar;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -25526,6 +25556,7 @@ var app = (function () {
     	return [
     		empresa,
     		logo,
+    		cambiarImagenEmpresa,
     		editarEmpresa,
     		input1_input_handler,
     		input2_input_handler,

@@ -11,6 +11,31 @@
     let msgError = '';
     let empresa = {};
     let logo = '';
+    let avatar;
+
+    const cambiarImagenEmpresa = (e) => {
+        let image = e.target.files[0];
+        const form = new FormData();
+        console.log(image)
+        form.append('logo', image)
+        const config = {
+            method: 'put',
+            url: `${url}/empresas/${user().empresa}/imagen`,
+            data: form,
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
+        }
+        axios(config)
+        .then(res => {
+            console.log(res.data)
+            cargarEmpresa()
+        })
+        .catch(err => {
+            console.error(err)
+        })
+    }
 
     const editarEmpresa = () => {
         const data = {
@@ -31,6 +56,7 @@
         axios(config)
             .then(res => {
                 console.log(res.data)
+                cargarEmpresa()
             })
             .catch(err => {
                 console.error(err)
@@ -114,7 +140,7 @@
                                     <label class="btn btn-primary btn-sm" for="inpSubirImagen">
                                         <i class="mdi mdi-refresh"></i> Cambiar imagen
                                     </label>
-                                    <input style="display: none;" type="file" id="inpSubirImagen" accept="image/png, image/jpeg">
+                                    <input style="display: none;" on:change={cambiarImagenEmpresa} type="file" id="inpSubirImagen" accept="image/png, image/jpeg">
                                 </div>
                             </div>
                             <div class="col-lg-9">
