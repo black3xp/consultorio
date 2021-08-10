@@ -1768,193 +1768,6 @@ var app = (function () {
 
     function e(e){this.message=e;}e.prototype=new Error,e.prototype.name="InvalidCharacterError";var r="undefined"!=typeof window&&window.atob&&window.atob.bind(window)||function(r){var t=String(r).replace(/=+$/,"");if(t.length%4==1)throw new e("'atob' failed: The string to be decoded is not correctly encoded.");for(var n,o,a=0,i=0,c="";o=t.charAt(i++);~o&&(n=a%4?64*n+o:o,a++%4)?c+=String.fromCharCode(255&n>>(-2*a&6)):0)o="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(o);return c};function t(e){var t=e.replace(/-/g,"+").replace(/_/g,"/");switch(t.length%4){case 0:break;case 2:t+="==";break;case 3:t+="=";break;default:throw "Illegal base64url string!"}try{return function(e){return decodeURIComponent(r(e).replace(/(.)/g,(function(e,r){var t=r.charCodeAt(0).toString(16).toUpperCase();return t.length<2&&(t="0"+t),"%"+t})))}(t)}catch(e){return r(t)}}function n(e){this.message=e;}function o(e,r){if("string"!=typeof e)throw new n("Invalid token specified");var o=!0===(r=r||{}).header?0:1;try{return JSON.parse(t(e.split(".")[o]))}catch(e){throw new n("Invalid token specified: "+e.message)}}n.prototype=new Error,n.prototype.name="InvalidTokenError";
 
-    // const url = 'https://xmconsulta.cthrics.com/api'
-    // const url = 'http://localhost:3000/api'
-    const url = 'http://localhost:1337/api';
-    const isLogin = () => {
-        if(localStorage.getItem('auth')){
-            return true
-        }
-        else
-        {
-            return false
-        }
-    };
-
-    const logout = () => { 
-        localStorage.removeItem('auth');
-        return push('/login')
-    };
-
-    const user = () => {
-        const decoded = o(localStorage.getItem('auth'));
-        return decoded;
-    };
-
-    const calcularEdad = (fecha) => {
-        let hoy = new Date();
-        let cumpleanos = new Date(fecha);
-        let edad = hoy.getFullYear() - cumpleanos.getFullYear();
-        let m = hoy.getMonth() - cumpleanos.getMonth();
-
-        if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
-          edad--;
-        }
-
-        return edad;
-      };
-
-      let ciudades = [
-        {id: 'Distrito Nacional', nombre: 'Distrito Nacional'},
-        {id: 'Santiago de los Caballeros', nombre: 'Santiago de los Caballeros'},
-        {id: 'Santo Domingo Este', nombre: 'Santo Domingo Este'},
-        {id: 'Santo Domingo Norte', nombre: 'Santo Domingo Norte'},
-        {id: 'Santo Domingo Oeste', nombre: 'Santo Domingo Oeste'},
-        {id: 'San Felipe de Puerto Plata', nombre: 'San Felipe de Puerto Plata'},
-        {id: 'Higüey', nombre: 'Higüey'},
-        {id: 'San Francisco de Macorís', nombre: 'San Francisco de Macorís'},
-        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
-        {id: 'San Pedro de Macoris', nombre: 'San Pedro de Macoris'},
-        {id: 'Los Alcarrizos', nombre: 'Los Alcarrizos'},
-        {id: 'La Vega', nombre: 'La Vega'},
-        {id: 'La Romana', nombre: 'La Romana'},
-        {id: 'Moca', nombre: 'Moca'},
-        {id: 'Villa Altagracia', nombre: 'Villa Altagracia'},
-        {id: 'San Juan de La Maguana', nombre: 'San Juan de La Maguana'},
-        {id: 'Haina', nombre: 'Haina'},
-        {id: 'Bonao', nombre: 'Bonao'},
-        {id: 'Cotuí', nombre: 'Cotuí'},
-        {id: 'Baní', nombre: 'Baní'},
-        {id: 'Santa Cruz de Barahona', nombre: 'Santa Cruz de Barahona'},
-        {id: 'Azua de Compostela', nombre: 'Azua de Compostela'},
-        {id: 'Boca Chica', nombre: 'Boca Chica'},
-        {id: 'Villa hermosa', nombre: 'Villa hermosa'},
-        {id: 'Mao', nombre: 'Mao'},
-        {id: 'Pedro Brand', nombre: 'Pedro Brand'},
-        {id: 'San Antonio de Guerra', nombre: 'San Antonio de Guerra'},
-        {id: 'San Ignacio de Sabaneta', nombre: 'San Ignacio de Sabaneta'},
-        {id: 'Santa Cruz del Seibo', nombre: 'Santa Cruz del Seibo'},
-        {id: 'Tamboril', nombre: 'Tamboril'},
-        {id: 'Nagua', nombre: 'Nagua'},
-        {id: 'Puñal', nombre: 'Puñal'},
-        {id: 'Hato', nombre: 'Hato'},
-        {id: 'Esperanza', nombre: 'Esperanza'},
-        {id: 'Sosúa', nombre: 'Sosúa'},
-        {id: 'Jarabacoa', nombre: 'Jarabacoa'},
-        {id: 'San José de las Matas', nombre: 'San José de las Matas'},
-        {id: 'Yamasá', nombre: 'Yamasá'},
-        {id: 'Monte Plata', nombre: 'Monte Plata'},
-        {id: 'Villa González', nombre: 'Villa González'},
-    ];
-
-    let provincias = [
-        {id: 'Santiago', nombre: 'Santiago'},
-        {id: 'Puerto Plata', nombre: 'Puerto Plata'},
-        {id: 'La Altagracia', nombre: 'La Altagracia'},
-        {id: 'Duarte', nombre: 'Duarte'},
-        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
-        {id: 'San pedro de Macoris', nombre: 'San pedro de Macoris'},
-        {id: 'La vega', nombre: 'La vega'},
-        {id: 'La Romana', nombre: 'La Romana'},
-        {id: 'Espaillat', nombre: 'Espaillat'},
-        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
-        {id: 'San Juan de La Maguana', nombre: 'San Juan de La Maguana'},
-        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
-        {id: 'Monseñor Nouel', nombre: 'Monseñor Nouel'},
-        {id: 'Sánchez Ramírez', nombre: 'Sánchez Ramírez'},
-        {id: 'Peravia	', nombre: 'Peravia	'},
-        {id: 'Barahona', nombre: 'Barahona'},
-        {id: 'Azua', nombre: 'Azua'},
-        {id: 'La Romana', nombre: 'La Romana'},
-        {id: 'Valverde', nombre: 'Valverde'},
-        {id: 'Santo Domingo', nombre: 'Santo Domingo'},
-        {id: 'Santiago Rodríguez', nombre: 'Santiago Rodríguez'},
-        {id: 'El Seibo', nombre: 'El Seibo'},
-        {id: 'Santiago', nombre: 'Santiago'},
-        {id: 'Maria Trinidad Sanchez', nombre: 'Maria Trinidad Sanchez'},
-        {id: 'Santiago', nombre: 'Santiago'},
-        {id: 'Mayor del Rey	Hato Mayor', nombre: 'Mayor del Rey	Hato Mayor'},
-        {id: 'Valverde Mao', nombre: 'Valverde Mao'},
-        {id: 'Puerto Plata', nombre: 'Puerto Plata'},
-        {id: 'La vega', nombre: 'La vega'},
-        {id: 'Santiago', nombre: 'Santiago'},
-        {id: 'Monte plata	', nombre: 'Monte plata	'},
-        {id: 'Monte Plata', nombre: 'Monte Plata'},
-        {id: 'Santiago', nombre: 'Santiago'},
-    ];
-    let nacionalidades = [
-        {id: 'afgano', nombre: 'afgano'},
-        {id: 'alemán', nombre: 'alemán'},
-        {id: 'árabe', nombre: 'árabe'},
-        {id: 'argentino', nombre: 'argentino'},
-        {id: 'australiano', nombre: 'australiano'},
-        {id: 'belga', nombre: 'belga'},
-        {id: 'boliviano', nombre: 'boliviano'},
-        {id: 'brasileño', nombre: 'brasileño'},
-        {id: 'camboyano', nombre: 'camboyano'},
-        {id: 'canadiense', nombre: 'canadiense'},
-        {id: 'chileno', nombre: 'chileno'},
-        {id: 'chino', nombre: 'chino'},
-        {id: 'colombiano', nombre: 'colombiano'},
-        {id: 'coreano', nombre: 'coreano'},
-        {id: 'costarricense', nombre: 'costarricense'},
-        {id: 'cubano', nombre: 'cubano'},
-        {id: 'danés', nombre: 'danés'},
-        {id: 'ecuatoriano', nombre: 'ecuatoriano'},
-        {id: 'egipcio', nombre: 'egipcio'},
-        {id: 'salvadoreño', nombre: 'salvadoreño'},
-        {id: 'escocés', nombre: 'escocés'},
-        {id: 'español', nombre: 'español'},
-        {id: 'estadounidense', nombre: 'estadounidense'},
-        {id: 'estonio', nombre: 'estonio'},
-        {id: 'etiope', nombre: 'etiope'},
-        {id: 'filipino', nombre: 'filipino'},
-        {id: 'finlandés', nombre: 'finlandés'},
-        {id: 'francés', nombre: 'francés'},
-        {id: 'galés', nombre: 'galés'},
-        {id: 'griego', nombre: 'griego'},
-        {id: 'guatemalteco', nombre: 'guatemalteco'},
-        {id: 'haitiano', nombre: 'haitiano'},
-        {id: 'holandés', nombre: 'holandés'},
-        {id: 'hondureño', nombre: 'hondureño'},
-        {id: 'indonés', nombre: 'indonés'},
-        {id: 'inglés', nombre: 'inglés'},
-        {id: 'iraquí', nombre: 'iraquí'},
-        {id: 'iraní', nombre: 'iraní'},
-        {id: 'irlandés', nombre: 'irlandés'},
-        {id: 'israelí', nombre: 'israelí'},
-        {id: 'italiano', nombre: 'italiano'},
-        {id: 'japonés', nombre: 'japonés'},
-        {id: 'jordano', nombre: 'jordano'},
-        {id: 'laosiano', nombre: 'laosiano'},
-        {id: 'letón', nombre: 'letón'},
-        {id: 'letonés', nombre: 'letonés'},
-        {id: 'malayo', nombre: 'malayo'},
-        {id: 'marroquí', nombre: 'marroquí'},
-        {id: 'mexicano', nombre: 'mexicano'},
-        {id: 'nicaragüense', nombre: 'nicaragüense'},
-        {id: 'noruego', nombre: 'noruego'},
-        {id: 'neozelandés', nombre: 'neozelandés'},
-        {id: 'panameño', nombre: 'panameño'},
-        {id: 'paraguayo', nombre: 'paraguayo'},
-        {id: 'peruano', nombre: 'peruano'},
-        {id: 'polaco', nombre: 'polaco'},
-        {id: 'portugués', nombre: 'portugués'},
-        {id: 'puertorriqueño', nombre: 'puertorriqueño'},
-        {id: 'dominicano', nombre: 'dominicano'},
-        {id: 'rumano', nombre: 'rumano'},
-        {id: 'ruso', nombre: 'ruso'},
-        {id: 'sueco', nombre: 'sueco'},
-        {id: 'suizo', nombre: 'suizo'},
-        {id: 'tailandés', nombre: 'tailandés'},
-        {id: 'taiwanes', nombre: 'taiwanes'},
-        {id: 'turco', nombre: 'turco'},
-        {id: 'ucraniano', nombre: 'ucraniano'},
-        {id: 'uruguayo', nombre: 'uruguayo'},
-        {id: 'venezolano', nombre: 'venezolano'},
-        {id: 'vietnamita', nombre: 'vietnamita'},
-    ];
-
     var bind$1 = function bind(fn, thisArg) {
       return function wrap() {
         var args = new Array(arguments.length);
@@ -3412,6 +3225,193 @@ var app = (function () {
 
     var axios$1 = axios_1;
 
+    // const url = 'https://xmconsulta.cthrics.com/api'
+    // const url = 'http://localhost:3000/api'
+    const url = 'http://localhost:1337/api';
+    const isLogin = () => {
+        if(localStorage.getItem('auth')){
+            return true
+        }
+        else
+        {
+            return false
+        }
+    };
+
+    const logout = () => { 
+        localStorage.removeItem('auth');
+        return push('/login')
+    };
+
+    const user = () => {
+        const decoded = o(localStorage.getItem('auth'));
+        return decoded;
+    };
+
+    const calcularEdad = (fecha) => {
+        let hoy = new Date();
+        let cumpleanos = new Date(fecha);
+        let edad = hoy.getFullYear() - cumpleanos.getFullYear();
+        let m = hoy.getMonth() - cumpleanos.getMonth();
+
+        if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+          edad--;
+        }
+
+        return edad;
+    };
+
+      let ciudades = [
+        {id: 'Distrito Nacional', nombre: 'Distrito Nacional'},
+        {id: 'Santiago de los Caballeros', nombre: 'Santiago de los Caballeros'},
+        {id: 'Santo Domingo Este', nombre: 'Santo Domingo Este'},
+        {id: 'Santo Domingo Norte', nombre: 'Santo Domingo Norte'},
+        {id: 'Santo Domingo Oeste', nombre: 'Santo Domingo Oeste'},
+        {id: 'San Felipe de Puerto Plata', nombre: 'San Felipe de Puerto Plata'},
+        {id: 'Higüey', nombre: 'Higüey'},
+        {id: 'San Francisco de Macorís', nombre: 'San Francisco de Macorís'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'San Pedro de Macoris', nombre: 'San Pedro de Macoris'},
+        {id: 'Los Alcarrizos', nombre: 'Los Alcarrizos'},
+        {id: 'La Vega', nombre: 'La Vega'},
+        {id: 'La Romana', nombre: 'La Romana'},
+        {id: 'Moca', nombre: 'Moca'},
+        {id: 'Villa Altagracia', nombre: 'Villa Altagracia'},
+        {id: 'San Juan de La Maguana', nombre: 'San Juan de La Maguana'},
+        {id: 'Haina', nombre: 'Haina'},
+        {id: 'Bonao', nombre: 'Bonao'},
+        {id: 'Cotuí', nombre: 'Cotuí'},
+        {id: 'Baní', nombre: 'Baní'},
+        {id: 'Santa Cruz de Barahona', nombre: 'Santa Cruz de Barahona'},
+        {id: 'Azua de Compostela', nombre: 'Azua de Compostela'},
+        {id: 'Boca Chica', nombre: 'Boca Chica'},
+        {id: 'Villa hermosa', nombre: 'Villa hermosa'},
+        {id: 'Mao', nombre: 'Mao'},
+        {id: 'Pedro Brand', nombre: 'Pedro Brand'},
+        {id: 'San Antonio de Guerra', nombre: 'San Antonio de Guerra'},
+        {id: 'San Ignacio de Sabaneta', nombre: 'San Ignacio de Sabaneta'},
+        {id: 'Santa Cruz del Seibo', nombre: 'Santa Cruz del Seibo'},
+        {id: 'Tamboril', nombre: 'Tamboril'},
+        {id: 'Nagua', nombre: 'Nagua'},
+        {id: 'Puñal', nombre: 'Puñal'},
+        {id: 'Hato', nombre: 'Hato'},
+        {id: 'Esperanza', nombre: 'Esperanza'},
+        {id: 'Sosúa', nombre: 'Sosúa'},
+        {id: 'Jarabacoa', nombre: 'Jarabacoa'},
+        {id: 'San José de las Matas', nombre: 'San José de las Matas'},
+        {id: 'Yamasá', nombre: 'Yamasá'},
+        {id: 'Monte Plata', nombre: 'Monte Plata'},
+        {id: 'Villa González', nombre: 'Villa González'},
+    ];
+
+    let provincias = [
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Puerto Plata', nombre: 'Puerto Plata'},
+        {id: 'La Altagracia', nombre: 'La Altagracia'},
+        {id: 'Duarte', nombre: 'Duarte'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'San pedro de Macoris', nombre: 'San pedro de Macoris'},
+        {id: 'La vega', nombre: 'La vega'},
+        {id: 'La Romana', nombre: 'La Romana'},
+        {id: 'Espaillat', nombre: 'Espaillat'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'San Juan de La Maguana', nombre: 'San Juan de La Maguana'},
+        {id: 'San Cristóbal', nombre: 'San Cristóbal'},
+        {id: 'Monseñor Nouel', nombre: 'Monseñor Nouel'},
+        {id: 'Sánchez Ramírez', nombre: 'Sánchez Ramírez'},
+        {id: 'Peravia	', nombre: 'Peravia	'},
+        {id: 'Barahona', nombre: 'Barahona'},
+        {id: 'Azua', nombre: 'Azua'},
+        {id: 'La Romana', nombre: 'La Romana'},
+        {id: 'Valverde', nombre: 'Valverde'},
+        {id: 'Santo Domingo', nombre: 'Santo Domingo'},
+        {id: 'Santiago Rodríguez', nombre: 'Santiago Rodríguez'},
+        {id: 'El Seibo', nombre: 'El Seibo'},
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Maria Trinidad Sanchez', nombre: 'Maria Trinidad Sanchez'},
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Mayor del Rey	Hato Mayor', nombre: 'Mayor del Rey	Hato Mayor'},
+        {id: 'Valverde Mao', nombre: 'Valverde Mao'},
+        {id: 'Puerto Plata', nombre: 'Puerto Plata'},
+        {id: 'La vega', nombre: 'La vega'},
+        {id: 'Santiago', nombre: 'Santiago'},
+        {id: 'Monte plata	', nombre: 'Monte plata	'},
+        {id: 'Monte Plata', nombre: 'Monte Plata'},
+        {id: 'Santiago', nombre: 'Santiago'},
+    ];
+    let nacionalidades = [
+        {id: 'afgano', nombre: 'afgano'},
+        {id: 'alemán', nombre: 'alemán'},
+        {id: 'árabe', nombre: 'árabe'},
+        {id: 'argentino', nombre: 'argentino'},
+        {id: 'australiano', nombre: 'australiano'},
+        {id: 'belga', nombre: 'belga'},
+        {id: 'boliviano', nombre: 'boliviano'},
+        {id: 'brasileño', nombre: 'brasileño'},
+        {id: 'camboyano', nombre: 'camboyano'},
+        {id: 'canadiense', nombre: 'canadiense'},
+        {id: 'chileno', nombre: 'chileno'},
+        {id: 'chino', nombre: 'chino'},
+        {id: 'colombiano', nombre: 'colombiano'},
+        {id: 'coreano', nombre: 'coreano'},
+        {id: 'costarricense', nombre: 'costarricense'},
+        {id: 'cubano', nombre: 'cubano'},
+        {id: 'danés', nombre: 'danés'},
+        {id: 'ecuatoriano', nombre: 'ecuatoriano'},
+        {id: 'egipcio', nombre: 'egipcio'},
+        {id: 'salvadoreño', nombre: 'salvadoreño'},
+        {id: 'escocés', nombre: 'escocés'},
+        {id: 'español', nombre: 'español'},
+        {id: 'estadounidense', nombre: 'estadounidense'},
+        {id: 'estonio', nombre: 'estonio'},
+        {id: 'etiope', nombre: 'etiope'},
+        {id: 'filipino', nombre: 'filipino'},
+        {id: 'finlandés', nombre: 'finlandés'},
+        {id: 'francés', nombre: 'francés'},
+        {id: 'galés', nombre: 'galés'},
+        {id: 'griego', nombre: 'griego'},
+        {id: 'guatemalteco', nombre: 'guatemalteco'},
+        {id: 'haitiano', nombre: 'haitiano'},
+        {id: 'holandés', nombre: 'holandés'},
+        {id: 'hondureño', nombre: 'hondureño'},
+        {id: 'indonés', nombre: 'indonés'},
+        {id: 'inglés', nombre: 'inglés'},
+        {id: 'iraquí', nombre: 'iraquí'},
+        {id: 'iraní', nombre: 'iraní'},
+        {id: 'irlandés', nombre: 'irlandés'},
+        {id: 'israelí', nombre: 'israelí'},
+        {id: 'italiano', nombre: 'italiano'},
+        {id: 'japonés', nombre: 'japonés'},
+        {id: 'jordano', nombre: 'jordano'},
+        {id: 'laosiano', nombre: 'laosiano'},
+        {id: 'letón', nombre: 'letón'},
+        {id: 'letonés', nombre: 'letonés'},
+        {id: 'malayo', nombre: 'malayo'},
+        {id: 'marroquí', nombre: 'marroquí'},
+        {id: 'mexicano', nombre: 'mexicano'},
+        {id: 'nicaragüense', nombre: 'nicaragüense'},
+        {id: 'noruego', nombre: 'noruego'},
+        {id: 'neozelandés', nombre: 'neozelandés'},
+        {id: 'panameño', nombre: 'panameño'},
+        {id: 'paraguayo', nombre: 'paraguayo'},
+        {id: 'peruano', nombre: 'peruano'},
+        {id: 'polaco', nombre: 'polaco'},
+        {id: 'portugués', nombre: 'portugués'},
+        {id: 'puertorriqueño', nombre: 'puertorriqueño'},
+        {id: 'dominicano', nombre: 'dominicano'},
+        {id: 'rumano', nombre: 'rumano'},
+        {id: 'ruso', nombre: 'ruso'},
+        {id: 'sueco', nombre: 'sueco'},
+        {id: 'suizo', nombre: 'suizo'},
+        {id: 'tailandés', nombre: 'tailandés'},
+        {id: 'taiwanes', nombre: 'taiwanes'},
+        {id: 'turco', nombre: 'turco'},
+        {id: 'ucraniano', nombre: 'ucraniano'},
+        {id: 'uruguayo', nombre: 'uruguayo'},
+        {id: 'venezolano', nombre: 'venezolano'},
+        {id: 'vietnamita', nombre: 'vietnamita'},
+    ];
+
     /* src/Layout/Header.svelte generated by Svelte v3.29.0 */
     const file = "src/Layout/Header.svelte";
 
@@ -3906,6 +3906,7 @@ var app = (function () {
     	let t10;
     	let span10;
     	let i2;
+    	let link_action_1;
     	let mounted;
     	let dispose;
 
@@ -3973,14 +3974,14 @@ var app = (function () {
     			attr_dev(li0, "class", "menu-item");
     			add_location(li0, file$1, 87, 12, 3168);
     			attr_dev(span8, "class", "menu-name");
-    			add_location(span8, file$1, 101, 18, 3678);
+    			add_location(span8, file$1, 101, 18, 3702);
     			attr_dev(span9, "class", "menu-label");
-    			add_location(span9, file$1, 100, 16, 3634);
+    			add_location(span9, file$1, 100, 16, 3658);
     			attr_dev(i2, "class", "icon-placeholder ");
-    			add_location(i2, file$1, 104, 18, 3800);
+    			add_location(i2, file$1, 104, 18, 3824);
     			attr_dev(span10, "class", "menu-icon");
-    			add_location(span10, file$1, 103, 16, 3757);
-    			attr_dev(a2, "href", "#!");
+    			add_location(span10, file$1, 103, 16, 3781);
+    			attr_dev(a2, "href", "/empresa/detalles");
     			attr_dev(a2, "class", " menu-link");
     			add_location(a2, file$1, 99, 14, 3585);
     			attr_dev(li1, "class", "menu-item");
@@ -4021,14 +4022,18 @@ var app = (function () {
     			append_dev(span10, i2);
 
     			if (!mounted) {
-    				dispose = action_destroyer(link_action = link.call(null, a1));
+    				dispose = [
+    					action_destroyer(link_action = link.call(null, a1)),
+    					action_destroyer(link_action_1 = link.call(null, a2))
+    				];
+
     				mounted = true;
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li2);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -24937,6 +24942,613 @@ var app = (function () {
     	}
     }
 
+    /* src/Pages/Empresa/Detalle.svelte generated by Svelte v3.29.0 */
+
+    const { console: console_1$d } = globals;
+    const file$s = "src/Pages/Empresa/Detalle.svelte";
+
+    function create_fragment$u(ctx) {
+    	let aside;
+    	let t0;
+    	let main;
+    	let header;
+    	let t1;
+    	let section;
+    	let button;
+    	let i0;
+    	let t2;
+    	let div27;
+    	let div26;
+    	let div25;
+    	let div0;
+    	let h5;
+    	let i1;
+    	let t3;
+    	let t4;
+    	let div17;
+    	let div16;
+    	let div1;
+    	let h40;
+    	let t6;
+    	let div15;
+    	let div14;
+    	let div3;
+    	let img;
+    	let img_src_value;
+    	let t7;
+    	let div2;
+    	let label0;
+    	let i2;
+    	let t8;
+    	let t9;
+    	let input0;
+    	let t10;
+    	let div13;
+    	let div12;
+    	let div5;
+    	let div4;
+    	let label1;
+    	let t12;
+    	let input1;
+    	let t13;
+    	let div7;
+    	let div6;
+    	let label2;
+    	let t15;
+    	let input2;
+    	let t16;
+    	let div9;
+    	let div8;
+    	let label3;
+    	let t18;
+    	let input3;
+    	let t19;
+    	let div11;
+    	let div10;
+    	let label4;
+    	let t21;
+    	let input4;
+    	let t22;
+    	let div24;
+    	let div23;
+    	let div18;
+    	let h41;
+    	let t24;
+    	let div22;
+    	let div21;
+    	let div20;
+    	let div19;
+    	let label5;
+    	let input5;
+    	let t25;
+    	let span0;
+    	let t26;
+    	let span1;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	aside = new Aside({ $$inline: true });
+    	header = new Header({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			create_component(aside.$$.fragment);
+    			t0 = space();
+    			main = element("main");
+    			create_component(header.$$.fragment);
+    			t1 = space();
+    			section = element("section");
+    			button = element("button");
+    			i0 = element("i");
+    			t2 = space();
+    			div27 = element("div");
+    			div26 = element("div");
+    			div25 = element("div");
+    			div0 = element("div");
+    			h5 = element("h5");
+    			i1 = element("i");
+    			t3 = text(" Consultorio");
+    			t4 = space();
+    			div17 = element("div");
+    			div16 = element("div");
+    			div1 = element("div");
+    			h40 = element("h4");
+    			h40.textContent = "Información";
+    			t6 = space();
+    			div15 = element("div");
+    			div14 = element("div");
+    			div3 = element("div");
+    			img = element("img");
+    			t7 = space();
+    			div2 = element("div");
+    			label0 = element("label");
+    			i2 = element("i");
+    			t8 = text(" Cambiar imagen");
+    			t9 = space();
+    			input0 = element("input");
+    			t10 = space();
+    			div13 = element("div");
+    			div12 = element("div");
+    			div5 = element("div");
+    			div4 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Nombre consultorio";
+    			t12 = space();
+    			input1 = element("input");
+    			t13 = space();
+    			div7 = element("div");
+    			div6 = element("div");
+    			label2 = element("label");
+    			label2.textContent = "Telefono";
+    			t15 = space();
+    			input2 = element("input");
+    			t16 = space();
+    			div9 = element("div");
+    			div8 = element("div");
+    			label3 = element("label");
+    			label3.textContent = "Correo";
+    			t18 = space();
+    			input3 = element("input");
+    			t19 = space();
+    			div11 = element("div");
+    			div10 = element("div");
+    			label4 = element("label");
+    			label4.textContent = "Direccion";
+    			t21 = space();
+    			input4 = element("input");
+    			t22 = space();
+    			div24 = element("div");
+    			div23 = element("div");
+    			div18 = element("div");
+    			h41 = element("h4");
+    			h41.textContent = "Configuración";
+    			t24 = space();
+    			div22 = element("div");
+    			div21 = element("div");
+    			div20 = element("div");
+    			div19 = element("div");
+    			label5 = element("label");
+    			input5 = element("input");
+    			t25 = space();
+    			span0 = element("span");
+    			t26 = space();
+    			span1 = element("span");
+    			span1.textContent = "Historia Ginecologica";
+    			attr_dev(i0, "class", "mdi mdi-content-save");
+    			add_location(i0, file$s, 93, 12, 2580);
+    			attr_dev(button, "type", "button");
+    			attr_dev(button, "class", "btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success");
+    			set_style(button, "position", "fixed");
+    			set_style(button, "bottom", "30px");
+    			set_style(button, "right", "30px");
+    			add_location(button, file$s, 87, 8, 2343);
+    			attr_dev(i1, "class", "mdi mdi-medical-bag");
+    			add_location(i1, file$s, 99, 18, 2781);
+    			add_location(h5, file$s, 99, 14, 2777);
+    			attr_dev(div0, "class", "col-12 m-b-20 m-t-20");
+    			add_location(div0, file$s, 98, 12, 2728);
+    			attr_dev(h40, "class", "card-title");
+    			add_location(h40, file$s, 104, 24, 2998);
+    			attr_dev(div1, "class", "card-header");
+    			add_location(div1, file$s, 103, 20, 2948);
+    			if (img.src !== (img_src_value = /*logo*/ ctx[1])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "class", "logo-emp svelte-18x36bc");
+    			attr_dev(img, "alt", "logo empresa");
+    			add_location(img, file$s, 111, 32, 3295);
+    			attr_dev(i2, "class", "mdi mdi-refresh");
+    			add_location(i2, file$s, 114, 40, 3554);
+    			attr_dev(label0, "class", "btn btn-primary btn-sm");
+    			attr_dev(label0, "for", "inpSubirImagen");
+    			add_location(label0, file$s, 113, 36, 3454);
+    			set_style(input0, "display", "none");
+    			attr_dev(input0, "type", "file");
+    			attr_dev(input0, "id", "inpSubirImagen");
+    			attr_dev(input0, "accept", "image/png, image/jpeg");
+    			add_location(input0, file$s, 116, 36, 3682);
+    			attr_dev(div2, "class", "col-12 text-center mt-2");
+    			add_location(div2, file$s, 112, 32, 3380);
+    			attr_dev(div3, "class", "col-lg-3");
+    			add_location(div3, file$s, 110, 28, 3240);
+    			attr_dev(label1, "for", "");
+    			add_location(label1, file$s, 123, 44, 4120);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "class", "form-control");
+    			add_location(input1, file$s, 124, 44, 4205);
+    			attr_dev(div4, "class", "form-group");
+    			add_location(div4, file$s, 122, 40, 4051);
+    			attr_dev(div5, "class", "col-lg-12");
+    			add_location(div5, file$s, 121, 36, 3987);
+    			attr_dev(label2, "for", "");
+    			add_location(label2, file$s, 129, 44, 4532);
+    			attr_dev(input2, "type", "tel");
+    			attr_dev(input2, "class", "form-control");
+    			add_location(input2, file$s, 130, 44, 4607);
+    			attr_dev(div6, "class", "form-group");
+    			add_location(div6, file$s, 128, 40, 4463);
+    			attr_dev(div7, "class", "col-lg-6");
+    			add_location(div7, file$s, 127, 36, 4400);
+    			attr_dev(label3, "for", "");
+    			add_location(label3, file$s, 135, 44, 4935);
+    			attr_dev(input3, "type", "email");
+    			attr_dev(input3, "class", "form-control");
+    			add_location(input3, file$s, 136, 44, 5008);
+    			attr_dev(div8, "class", "form-group");
+    			add_location(div8, file$s, 134, 40, 4866);
+    			attr_dev(div9, "class", "col-lg-6");
+    			add_location(div9, file$s, 133, 36, 4803);
+    			attr_dev(label4, "for", "");
+    			add_location(label4, file$s, 141, 44, 5337);
+    			attr_dev(input4, "type", "text");
+    			attr_dev(input4, "class", "form-control");
+    			add_location(input4, file$s, 142, 44, 5413);
+    			attr_dev(div10, "class", "form-group");
+    			add_location(div10, file$s, 140, 40, 5268);
+    			attr_dev(div11, "class", "col-lg-12");
+    			add_location(div11, file$s, 139, 36, 5204);
+    			attr_dev(div12, "class", "row");
+    			add_location(div12, file$s, 120, 32, 3933);
+    			attr_dev(div13, "class", "col-lg-9");
+    			add_location(div13, file$s, 119, 28, 3878);
+    			attr_dev(div14, "class", "row");
+    			add_location(div14, file$s, 109, 24, 3194);
+    			attr_dev(div15, "class", "card-body");
+    			add_location(div15, file$s, 108, 20, 3146);
+    			attr_dev(div16, "class", "card m-b-30");
+    			add_location(div16, file$s, 102, 16, 2902);
+    			attr_dev(div17, "class", "col-12");
+    			add_location(div17, file$s, 101, 12, 2865);
+    			attr_dev(h41, "class", "card-title");
+    			add_location(h41, file$s, 154, 24, 5887);
+    			attr_dev(div18, "class", "card-header");
+    			add_location(div18, file$s, 153, 20, 5837);
+    			attr_dev(input5, "type", "checkbox");
+    			attr_dev(input5, "name", "option");
+    			input5.__value = "1";
+    			input5.value = input5.__value;
+    			attr_dev(input5, "class", "cstm-switch-input");
+    			add_location(input5, file$s, 163, 40, 6310);
+    			attr_dev(span0, "class", "cstm-switch-indicator bg-success ");
+    			add_location(span0, file$s, 164, 40, 6468);
+    			attr_dev(span1, "class", "cstm-switch-description");
+    			add_location(span1, file$s, 165, 40, 6564);
+    			attr_dev(label5, "class", "cstm-switch");
+    			add_location(label5, file$s, 162, 36, 6242);
+    			attr_dev(div19, "class", " m-b-10");
+    			add_location(div19, file$s, 161, 32, 6184);
+    			attr_dev(div20, "class", "col-12");
+    			add_location(div20, file$s, 160, 28, 6131);
+    			attr_dev(div21, "class", "row");
+    			add_location(div21, file$s, 159, 24, 6085);
+    			attr_dev(div22, "class", "card-body");
+    			add_location(div22, file$s, 158, 20, 6037);
+    			attr_dev(div23, "class", "card");
+    			add_location(div23, file$s, 152, 16, 5798);
+    			attr_dev(div24, "class", "col-12");
+    			add_location(div24, file$s, 151, 12, 5761);
+    			attr_dev(div25, "class", "row");
+    			add_location(div25, file$s, 97, 10, 2698);
+    			attr_dev(div26, "class", "col-12");
+    			add_location(div26, file$s, 96, 8, 2667);
+    			attr_dev(div27, "class", "p-2");
+    			add_location(div27, file$s, 95, 6, 2641);
+    			attr_dev(section, "class", "admin-content");
+    			add_location(section, file$s, 86, 4, 2303);
+    			attr_dev(main, "class", "admin-main");
+    			add_location(main, file$s, 84, 2, 2258);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(aside, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			mount_component(header, main, null);
+    			append_dev(main, t1);
+    			append_dev(main, section);
+    			append_dev(section, button);
+    			append_dev(button, i0);
+    			append_dev(section, t2);
+    			append_dev(section, div27);
+    			append_dev(div27, div26);
+    			append_dev(div26, div25);
+    			append_dev(div25, div0);
+    			append_dev(div0, h5);
+    			append_dev(h5, i1);
+    			append_dev(h5, t3);
+    			append_dev(div25, t4);
+    			append_dev(div25, div17);
+    			append_dev(div17, div16);
+    			append_dev(div16, div1);
+    			append_dev(div1, h40);
+    			append_dev(div16, t6);
+    			append_dev(div16, div15);
+    			append_dev(div15, div14);
+    			append_dev(div14, div3);
+    			append_dev(div3, img);
+    			append_dev(div3, t7);
+    			append_dev(div3, div2);
+    			append_dev(div2, label0);
+    			append_dev(label0, i2);
+    			append_dev(label0, t8);
+    			append_dev(div2, t9);
+    			append_dev(div2, input0);
+    			append_dev(div14, t10);
+    			append_dev(div14, div13);
+    			append_dev(div13, div12);
+    			append_dev(div12, div5);
+    			append_dev(div5, div4);
+    			append_dev(div4, label1);
+    			append_dev(div4, t12);
+    			append_dev(div4, input1);
+    			set_input_value(input1, /*empresa*/ ctx[0].nombre);
+    			append_dev(div12, t13);
+    			append_dev(div12, div7);
+    			append_dev(div7, div6);
+    			append_dev(div6, label2);
+    			append_dev(div6, t15);
+    			append_dev(div6, input2);
+    			set_input_value(input2, /*empresa*/ ctx[0].telefono);
+    			append_dev(div12, t16);
+    			append_dev(div12, div9);
+    			append_dev(div9, div8);
+    			append_dev(div8, label3);
+    			append_dev(div8, t18);
+    			append_dev(div8, input3);
+    			set_input_value(input3, /*empresa*/ ctx[0].correo);
+    			append_dev(div12, t19);
+    			append_dev(div12, div11);
+    			append_dev(div11, div10);
+    			append_dev(div10, label4);
+    			append_dev(div10, t21);
+    			append_dev(div10, input4);
+    			set_input_value(input4, /*empresa*/ ctx[0].direccion);
+    			append_dev(div25, t22);
+    			append_dev(div25, div24);
+    			append_dev(div24, div23);
+    			append_dev(div23, div18);
+    			append_dev(div18, h41);
+    			append_dev(div23, t24);
+    			append_dev(div23, div22);
+    			append_dev(div22, div21);
+    			append_dev(div21, div20);
+    			append_dev(div20, div19);
+    			append_dev(div19, label5);
+    			append_dev(label5, input5);
+    			input5.checked = /*empresa*/ ctx[0].historiaGinecologica;
+    			append_dev(label5, t25);
+    			append_dev(label5, span0);
+    			append_dev(label5, t26);
+    			append_dev(label5, span1);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button, "click", /*editarEmpresa*/ ctx[2], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[3]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[4]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[5]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[6]),
+    					listen_dev(input5, "change", /*input5_change_handler*/ ctx[7])
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*logo*/ 2 && img.src !== (img_src_value = /*logo*/ ctx[1])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if (dirty & /*empresa*/ 1 && input1.value !== /*empresa*/ ctx[0].nombre) {
+    				set_input_value(input1, /*empresa*/ ctx[0].nombre);
+    			}
+
+    			if (dirty & /*empresa*/ 1) {
+    				set_input_value(input2, /*empresa*/ ctx[0].telefono);
+    			}
+
+    			if (dirty & /*empresa*/ 1 && input3.value !== /*empresa*/ ctx[0].correo) {
+    				set_input_value(input3, /*empresa*/ ctx[0].correo);
+    			}
+
+    			if (dirty & /*empresa*/ 1 && input4.value !== /*empresa*/ ctx[0].direccion) {
+    				set_input_value(input4, /*empresa*/ ctx[0].direccion);
+    			}
+
+    			if (dirty & /*empresa*/ 1) {
+    				input5.checked = /*empresa*/ ctx[0].historiaGinecologica;
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(aside.$$.fragment, local);
+    			transition_in(header.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(aside.$$.fragment, local);
+    			transition_out(header.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(aside, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			destroy_component(header);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$u.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$u($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Detalle", slots, []);
+    	let errorServer = false;
+    	let msgError = "";
+    	let empresa = {};
+    	let logo = "";
+
+    	const editarEmpresa = () => {
+    		const data = {
+    			nombre: empresa.nombre,
+    			telefono: empresa.telefono,
+    			correo: empresa.correo,
+    			direccion: empresa.direccion,
+    			historiaGinecologica: empresa.historiaGinecologica
+    		};
+
+    		const config = {
+    			method: "put",
+    			url: `${url}/empresas/${user().empresa}`,
+    			data,
+    			headers: {
+    				Authorization: `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			console.log(res.data);
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
+
+    	const cargarImagenEmpresa = (idConsultorio, idImagen) => {
+    		const config = {
+    			method: "get",
+    			url: `${url}/imagenes/${idConsultorio}/${idImagen}`,
+    			responseType: "blob",
+    			headers: {
+    				Authorization: `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			return $$invalidate(1, logo = URL.createObjectURL(res.data));
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
+
+    	const cargarEmpresa = () => {
+    		const config = {
+    			method: "get",
+    			url: `${url}/empresas/${user().empresa}`,
+    			headers: {
+    				"Authorization": `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			$$invalidate(0, empresa = res.data);
+    			cargarImagenEmpresa(empresa.id, empresa.logo);
+    			console.log(res.data);
+    		}).catch(err => {
+    			console.error(err);
+    		});
+    	};
+
+    	onMount(() => {
+    		cargarEmpresa();
+    	});
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$d.warn(`<Detalle> was created with unknown prop '${key}'`);
+    	});
+
+    	function input1_input_handler() {
+    		empresa.nombre = this.value;
+    		$$invalidate(0, empresa);
+    	}
+
+    	function input2_input_handler() {
+    		empresa.telefono = this.value;
+    		$$invalidate(0, empresa);
+    	}
+
+    	function input3_input_handler() {
+    		empresa.correo = this.value;
+    		$$invalidate(0, empresa);
+    	}
+
+    	function input4_input_handler() {
+    		empresa.direccion = this.value;
+    		$$invalidate(0, empresa);
+    	}
+
+    	function input5_change_handler() {
+    		empresa.historiaGinecologica = this.checked;
+    		$$invalidate(0, empresa);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		axios: axios$1,
+    		onMount,
+    		url,
+    		user,
+    		Header,
+    		Aside,
+    		ErrorConexion,
+    		errorServer,
+    		msgError,
+    		empresa,
+    		logo,
+    		editarEmpresa,
+    		cargarImagenEmpresa,
+    		cargarEmpresa
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("errorServer" in $$props) errorServer = $$props.errorServer;
+    		if ("msgError" in $$props) msgError = $$props.msgError;
+    		if ("empresa" in $$props) $$invalidate(0, empresa = $$props.empresa);
+    		if ("logo" in $$props) $$invalidate(1, logo = $$props.logo);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		empresa,
+    		logo,
+    		editarEmpresa,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler,
+    		input4_input_handler,
+    		input5_change_handler
+    	];
+    }
+
+    class Detalle extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$u, create_fragment$u, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Detalle",
+    			options,
+    			id: create_fragment$u.name
+    		});
+    	}
+    }
+
     const routes = {
         "/": wrap({
             component: Index,
@@ -25059,11 +25671,23 @@ var app = (function () {
                 }
             ]
         }),
+        "/empresa/detalles": wrap({
+            component: Detalle,
+            conditions: [
+                async (detail) => {
+                    if(isLogin()){
+                        return true
+                    }else {
+                        return push('/login')
+                    }
+                }
+            ]
+        }),
     };
 
     /* src/App.svelte generated by Svelte v3.29.0 */
 
-    function create_fragment$u(ctx) {
+    function create_fragment$v(ctx) {
     	let router;
     	let current;
     	router = new Router({ props: { routes }, $$inline: true });
@@ -25096,7 +25720,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$u.name,
+    		id: create_fragment$v.name,
     		type: "component",
     		source: "",
     		ctx
@@ -25105,7 +25729,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$u($$self, $$props, $$invalidate) {
+    function instance$v($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	const writable_props = [];
@@ -25121,13 +25745,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$u, create_fragment$u, safe_not_equal, {});
+    		init(this, options, instance$v, create_fragment$v, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$u.name
+    			id: create_fragment$v.name
     		});
     	}
     }

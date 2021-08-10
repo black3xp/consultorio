@@ -97,7 +97,7 @@
   
             </li>
             <li class="menu-item">
-              <a href="#!" class=" menu-link">
+              <a href="/empresa/detalles" use:link class=" menu-link">
                 <span class="menu-label">
                   <span class="menu-name">Empresa</span>
                 </span>

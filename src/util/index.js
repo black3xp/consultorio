@@ -1,5 +1,6 @@
 import {push} from 'svelte-spa-router';
 import jwtDecode from "jwt-decode";
+import axios from 'axios';
 // const url = 'https://xmconsulta.cthrics.com/api'
 // const url = 'http://localhost:3000/api'
 const url = 'http://localhost:1337/api'
@@ -34,7 +35,26 @@ const calcularEdad = (fecha) => {
     }
 
     return edad;
-  }
+}
+
+const cargarImagenEmpresa = (idConsultorio, idImagen, logo) => {
+    const config = {
+        method: 'get',
+        url: `${url}/imagenes/${idConsultorio}/${idImagen}`,
+        responseType:"blob", 
+        headers: {
+            Authorization: `${localStorage.getItem("auth")}`,
+        },
+    }
+    axios(config)
+    .then(res => {
+        return logo = URL.createObjectURL(res.data)
+        console.log(logo)
+    })
+    .catch(err => {
+        console.error(err)
+    })
+}
 
   let ciudades = [
     {id: 'Distrito Nacional', nombre: 'Distrito Nacional'},
@@ -187,4 +207,4 @@ let nacionalidades = [
     {id: 'vietnamita', nombre: 'vietnamita'},
 ]
 
-export { url, isLogin, logout, user, calcularEdad, ciudades, provincias, nacionalidades }
+export { url, isLogin, logout, user, calcularEdad, ciudades, provincias, nacionalidades, cargarImagenEmpresa }
