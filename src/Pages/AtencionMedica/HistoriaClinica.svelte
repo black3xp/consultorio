@@ -51,6 +51,7 @@
     let historiaGinecologica = {};
     let errorServer = false;
     let empresa = {};
+    let exploracionFisica = [];
 
     const cargarEmpresa = () => {
         const config = {
@@ -353,6 +354,7 @@
             medicamentosSeleccionados = promesa.data.medicamentos;
             estudiosSeleccionados = promesa.data.estudios;
             historiaGinecologica = promesa.data.historiaGinecologica;
+            exploracionFisica = promesa.data.exploracionFisica || [];
             let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
             hora = obtenerHora[0]+':'+obtenerHora[1]
             console.log(historia);
@@ -739,241 +741,249 @@
             </div>
             <!-- .Historia ginecologica -->
             {/if}
-            <div class="card m-b-20 margen-mobile autosave">
-                <div class="card-header">
-                    <div class="card-title">Signos vitales</div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for=""
-                                    ><i class="mdi mdi-thermometer mdi-18px" /> Temperatura</label
-                                >
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            on:blur={guardarHistoria}
-                                            bind:value={temperatura.valor}
-                                        />
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <!-- svelte-ignore a11y-no-onchange -->
-                                        <select class="form-control" on:change={guardarHistoria} bind:value={temperatura.tipo}>
-                                            <option value="C" selected>°C</option>
-                                            <option value="K">°K</option>
-                                            <option value="F">°F</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for=""
-                                    ><i class="mdi mdi-chart-line mdi-18px" /> Frecuencia
-                                    respiratoria</label
-                                >
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            on:blur={guardarHistoria}
-                                            bind:value={historia.frecuenciaRespiratoria}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for=""
-                                    ><i class="mdi mdi-heart-pulse mdi-18px" /> Frecuencia
-                                    cardiaca</label
-                                >
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            on:blur={guardarHistoria}
-                                            bind:value={historia.frecuenciaCardiaca}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for=""
-                                    ><i class="mdi mdi-heart-pulse mdi-18px" /> Presion
-                                    alterial (mmHg)</label
-                                >
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            on:blur={guardarHistoria}
-                                            bind:value={presionAlterial.mm}
-                                        />
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            on:blur={guardarHistoria}
-                                            bind:value={presionAlterial.Hg}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mt-4">
-                            <h5>Otros parametros</h5>
-                            <hr />
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for=""
-                                            ><i class="mdi mdi-weight-pound" /> Peso</label
-                                        >
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <input
-                                                    type="number"
-                                                    class="form-control"
-                                                    on:blur={guardarHistoria}
-                                                    bind:value={peso.valor}
-                                                />
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <!-- svelte-ignore a11y-no-onchange -->
-                                                <select class="form-control"
-                                                    on:change={guardarHistoria}
-                                                    bind:value={peso.tipo}
-                                                >
-                                                    <option value="Lb">Lb</option>
-                                                    <option value="Kg">Kg</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for=""
-                                            ><i class="mdi mdi-human" /> Escala de
-                                            glasgow</label
-                                        >
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div
-                                                    class="input-group"
-                                                    style="width: 100% !important; float: right;"
-                                                >
-                                                    <input
-                                                        type="number"
-                                                        class="form-control"
-                                                        max="15"
-                                                        maxlength="2"
-                                                        aria-label="Recipient's username"
-                                                        aria-describedby="basic-addon2"
-                                                        on:blur={guardarHistoria}
-                                                        bind:value={historia.escalaGalsgow}
-                                                    />
-                                                    <div
-                                                        class="input-group-append"
-                                                    >
-                                                        <span
-                                                            class="input-group-text"
-                                                            id="basic-addon2"
-                                                            >/ 15</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for=""
-                                            ><i
-                                                class="mdi mdi-emoticon-happy"
-                                            /> Escala de dolor</label
-                                        >
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div
-                                                    class="input-group"
-                                                    style="width: 100% !important; float: right;"
-                                                >
-                                                    <input
-                                                        type="number"
-                                                        class="form-control"
-                                                        max="10"
-                                                        maxlength="2"
-                                                        aria-label="Recipient's username"
-                                                        aria-describedby="basic-addon2"
-                                                        on:blur={guardarHistoria}
-                                                        bind:value={historia.escalaDolor}
-                                                    />
-                                                    <div
-                                                        class="input-group-append"
-                                                    >
-                                                        <span
-                                                            class="input-group-text"
-                                                            id="basic-addon2"
-                                                            >/ 10</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for=""
-                                            ><i class="mdi mdi-opacity" /> Saturaci&oacute;n
-                                            de oxigeno</label
-                                        >
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <input
-                                                    type="number"
-                                                    class="form-control"
-                                                    on:blur={guardarHistoria}
-                                                    bind:value={historia.saturacionOxigeno}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="">Otros</label>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    on:blur={guardarHistoria}
-                                                    bind:value={historia.otrosParametros}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {#if empresa.signosVitales}
+                 <!-- content here -->
+                 <div class="card m-b-20 margen-mobile autosave">
+                     <div class="card-header">
+                         <div class="card-title">Signos vitales</div>
+                     </div>
+                     <div class="card-body">
+                         <div class="row">
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i class="mdi mdi-thermometer mdi-18px" /> Temperatura</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-7">
+                                             <input
+                                                 type="number"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={temperatura.valor}
+                                             />
+                                         </div>
+                                         <div class="col-lg-5">
+                                             <!-- svelte-ignore a11y-no-onchange -->
+                                             <select class="form-control" on:change={guardarHistoria} bind:value={temperatura.tipo}>
+                                                 <option value="C" selected>°C</option>
+                                                 <option value="K">°K</option>
+                                                 <option value="F">°F</option>
+                                             </select>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i class="mdi mdi-chart-line mdi-18px" /> Frecuencia
+                                         respiratoria</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-12">
+                                             <input
+                                                 type="number"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={historia.frecuenciaRespiratoria}
+                                             />
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i class="mdi mdi-heart-pulse mdi-18px" /> Frecuencia
+                                         cardiaca</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-12">
+                                             <input
+                                                 type="number"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={historia.frecuenciaCardiaca}
+                                             />
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i class="mdi mdi-heart-pulse mdi-18px" /> Presion
+                                         alterial (mmHg)</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-6">
+                                             <input
+                                                 type="number"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={presionAlterial.mm}
+                                             />
+                                         </div>
+                                         <div class="col-lg-6">
+                                             <input
+                                                 type="number"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={presionAlterial.Hg}
+                                             />
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            {/if}
+            {#if empresa.otrosParametros}
+                 <div class="card m-b-20">
+                     <div class="card-header">
+                         <div class="card-title">Otros Parametros</div>
+                     </div>
+                     <div class="card-body">
+                         <div class="row">
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i class="mdi mdi-weight-pound" /> Peso</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-7">
+                                             <input
+                                                 type="number"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={peso.valor}
+                                             />
+                                         </div>
+                                         <div class="col-lg-5">
+                                             <!-- svelte-ignore a11y-no-onchange -->
+                                             <select class="form-control"
+                                                 on:change={guardarHistoria}
+                                                 bind:value={peso.tipo}
+                                             >
+                                                 <option value="Lb">Lb</option>
+                                                 <option value="Kg">Kg</option>
+                                             </select>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i class="mdi mdi-human" /> Escala de
+                                         glasgow</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-12">
+                                             <div
+                                                 class="input-group"
+                                                 style="width: 100% !important; float: right;"
+                                             >
+                                                 <input
+                                                     type="number"
+                                                     class="form-control"
+                                                     max="15"
+                                                     maxlength="2"
+                                                     aria-label="Recipient's username"
+                                                     aria-describedby="basic-addon2"
+                                                     on:blur={guardarHistoria}
+                                                     bind:value={historia.escalaGalsgow}
+                                                 />
+                                                 <div
+                                                     class="input-group-append"
+                                                 >
+                                                     <span
+                                                         class="input-group-text"
+                                                         id="basic-addon2"
+                                                         >/ 15</span
+                                                     >
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i
+                                             class="mdi mdi-emoticon-happy"
+                                         /> Escala de dolor</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-12">
+                                             <div
+                                                 class="input-group"
+                                                 style="width: 100% !important; float: right;"
+                                             >
+                                                 <input
+                                                     type="number"
+                                                     class="form-control"
+                                                     max="10"
+                                                     maxlength="2"
+                                                     aria-label="Recipient's username"
+                                                     aria-describedby="basic-addon2"
+                                                     on:blur={guardarHistoria}
+                                                     bind:value={historia.escalaDolor}
+                                                 />
+                                                 <div
+                                                     class="input-group-append"
+                                                 >
+                                                     <span
+                                                         class="input-group-text"
+                                                         id="basic-addon2"
+                                                         >/ 10</span
+                                                     >
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group">
+                                     <label for=""
+                                         ><i class="mdi mdi-opacity" /> Saturaci&oacute;n
+                                         de oxigeno</label
+                                     >
+                                     <div class="row">
+                                         <div class="col-lg-12">
+                                             <input
+                                                 type="number"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={historia.saturacionOxigeno}
+                                             />
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-12">
+                                 <div class="form-group">
+                                     <label for="">Otros</label>
+                                     <div class="row">
+                                         <div class="col-lg-12">
+                                             <input
+                                                 type="text"
+                                                 class="form-control"
+                                                 on:blur={guardarHistoria}
+                                                 bind:value={historia.otrosParametros}
+                                             />
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            {/if}
 
             <div
                 class="card m-b-20 autosave"
@@ -1015,6 +1025,45 @@
                     />
                 </div>
             </div>
+
+            {#if empresa.exploracionFisica}
+                 <div class="card m-b-20">
+                     <div class="card-header">
+                         <div class="card-title">Exploraci&oacute;n Fisica</div>
+                     </div>
+                     <div class="card-body">
+                         <div class="row">
+                             <div class="col-12">
+                                 {#each exploracionFisica as item}
+                                     {#if !item.activo}
+                                         <button class="btn btn-outline-primary mr-2" on:click={() => { item.activo = true; guardarHistoria()} }>{item.nombre}</button>
+                                     {/if}
+                                 {/each}
+                             </div>
+                             <hr/>
+                             <div class="col-12">
+                                 <div class="row mt-2">
+                                     {#each exploracionFisica as item}
+                                         {#if item.activo}
+                                             <div class="col-lg-4">
+                                                 <div class="card m-t-10 m-b-20 border border-primary">
+                                                     <div class="card-header">
+                                                         <div class="card-title">{item.nombre}</div>
+                                                     </div>
+                                                     <div class="card-body">
+                                                         <textarea bind:value={item.text} on:blur={guardarHistoria} class="form-control" rows="5"></textarea>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         {/if}
+                                     {/each}
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            {/if}
+
             <div class="card m-b-20">
                 <div class="card-header">
                     <div class="card-title">Diagnosticos</div>

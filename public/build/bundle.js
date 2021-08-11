@@ -3227,7 +3227,8 @@ var app = (function () {
 
     // const url = 'https://xmconsulta.cthrics.com/api'
     // const url = 'http://localhost:3000/api'
-    const url = 'http://localhost:1337/api';
+    const url = 'http://serenidad.xmedical.online:1337/api';
+    // const url = 'http://localhost:1337/api'
     const isLogin = () => {
         if(localStorage.getItem('auth')){
             return true
@@ -3261,7 +3262,9 @@ var app = (function () {
         return edad;
     };
 
-      let ciudades = [
+
+
+    let ciudades = [
         {id: 'Distrito Nacional', nombre: 'Distrito Nacional'},
         {id: 'Santiago de los Caballeros', nombre: 'Santiago de los Caballeros'},
         {id: 'Santo Domingo Este', nombre: 'Santo Domingo Este'},
@@ -15592,20 +15595,36 @@ var app = (function () {
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[104] = list[i];
-    	child_ctx[105] = list;
-    	child_ctx[106] = i;
+    	child_ctx[107] = list[i];
+    	child_ctx[108] = list;
+    	child_ctx[109] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[107] = list[i];
+    	child_ctx[110] = list[i];
     	return child_ctx;
     }
 
-    // (432:4) {#if errorServer}
-    function create_if_block_6(ctx) {
+    function get_each_context_2$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[107] = list[i];
+    	child_ctx[113] = list;
+    	child_ctx[114] = i;
+    	return child_ctx;
+    }
+
+    function get_each_context_3$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[107] = list[i];
+    	child_ctx[115] = list;
+    	child_ctx[116] = i;
+    	return child_ctx;
+    }
+
+    // (434:4) {#if errorServer}
+    function create_if_block_11(ctx) {
     	let errorserver;
     	let current;
 
@@ -15640,17 +15659,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6.name,
+    		id: create_if_block_11.name,
     		type: "if",
-    		source: "(432:4) {#if errorServer}",
+    		source: "(434:4) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (448:16) {#if !cargando && !errorServer}
-    function create_if_block_5$1(ctx) {
+    // (450:16) {#if !cargando && !errorServer}
+    function create_if_block_10(ctx) {
     	let div;
     	let i0;
     	let t0;
@@ -15664,10 +15683,10 @@ var app = (function () {
     			i1 = element("i");
     			i1.textContent = "listo y guardado";
     			attr_dev(i0, "class", "mdi mdi-check-all");
-    			add_location(i0, file$j, 451, 24, 14589);
-    			add_location(i1, file$j, 451, 56, 14621);
+    			add_location(i0, file$j, 453, 24, 14691);
+    			add_location(i1, file$j, 453, 56, 14723);
     			attr_dev(div, "class", "guardando mr-2 text-success");
-    			add_location(div, file$j, 448, 20, 14478);
+    			add_location(div, file$j, 450, 20, 14580);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15682,17 +15701,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5$1.name,
+    		id: create_if_block_10.name,
     		type: "if",
-    		source: "(448:16) {#if !cargando && !errorServer}",
+    		source: "(450:16) {#if !cargando && !errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (455:16) {#if errorServer}
-    function create_if_block_4$1(ctx) {
+    // (457:16) {#if errorServer}
+    function create_if_block_9(ctx) {
     	let div;
     	let i0;
     	let t0;
@@ -15706,10 +15725,10 @@ var app = (function () {
     			i1 = element("i");
     			i1.textContent = "error al guardar";
     			attr_dev(i0, "class", "mdi mdi-close");
-    			add_location(i0, file$j, 458, 20, 14854);
-    			add_location(i1, file$j, 458, 50, 14884);
+    			add_location(i0, file$j, 460, 20, 14956);
+    			add_location(i1, file$j, 460, 50, 14986);
     			attr_dev(div, "class", "guardando mr-2 text-danger");
-    			add_location(div, file$j, 455, 20, 14748);
+    			add_location(div, file$j, 457, 20, 14850);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15724,17 +15743,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$1.name,
+    		id: create_if_block_9.name,
     		type: "if",
-    		source: "(455:16) {#if errorServer}",
+    		source: "(457:16) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (462:16) {#if cargando && !errorServer}
-    function create_if_block_3$1(ctx) {
+    // (464:16) {#if cargando && !errorServer}
+    function create_if_block_8(ctx) {
     	let div;
     	let i;
     	let t;
@@ -15745,9 +15764,9 @@ var app = (function () {
     			i = element("i");
     			t = text(" Guardando");
     			attr_dev(i, "class", "mdi mdi-cached mdi-spin");
-    			add_location(i, file$j, 465, 24, 15137);
+    			add_location(i, file$j, 467, 24, 15239);
     			attr_dev(div, "class", "guardando mr-2 text-secondary");
-    			add_location(div, file$j, 462, 20, 15024);
+    			add_location(div, file$j, 464, 20, 15126);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15761,17 +15780,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$1.name,
+    		id: create_if_block_8.name,
     		type: "if",
-    		source: "(462:16) {#if cargando && !errorServer}",
+    		source: "(464:16) {#if cargando && !errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (583:12) {#if empresa.historiaGinecologica}
-    function create_if_block_2$3(ctx) {
+    // (585:12) {#if empresa.historiaGinecologica}
+    function create_if_block_7(ctx) {
     	let div37;
     	let div1;
     	let div0;
@@ -16138,271 +16157,271 @@ var app = (function () {
     			span17 = element("span");
     			span17.textContent = "Coito Interruptus";
     			attr_dev(div0, "class", "card-title text-primary");
-    			add_location(div0, file$j, 586, 20, 20005);
+    			add_location(div0, file$j, 588, 20, 20107);
     			attr_dev(div1, "class", "card-header");
-    			add_location(div1, file$j, 585, 16, 19959);
+    			add_location(div1, file$j, 587, 16, 20061);
     			attr_dev(label0, "for", "");
-    			add_location(label0, file$j, 594, 32, 20349);
+    			add_location(label0, file$j, 596, 32, 20451);
     			attr_dev(input0, "type", "date");
     			attr_dev(input0, "class", "form-control");
-    			add_location(input0, file$j, 595, 32, 20436);
+    			add_location(input0, file$j, 597, 32, 20538);
     			attr_dev(div2, "class", "form-group");
-    			add_location(div2, file$j, 593, 28, 20292);
+    			add_location(div2, file$j, 595, 28, 20394);
     			attr_dev(div3, "class", "col-lg-3");
-    			add_location(div3, file$j, 592, 24, 20241);
+    			add_location(div3, file$j, 594, 24, 20343);
     			attr_dev(label1, "for", "");
-    			add_location(label1, file$j, 600, 32, 20759);
+    			add_location(label1, file$j, 602, 32, 20861);
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "form-control");
-    			add_location(input1, file$j, 601, 32, 20830);
+    			add_location(input1, file$j, 603, 32, 20932);
     			attr_dev(div4, "class", "form-group");
-    			add_location(div4, file$j, 599, 28, 20702);
+    			add_location(div4, file$j, 601, 28, 20804);
     			attr_dev(div5, "class", "col-lg-3");
-    			add_location(div5, file$j, 598, 24, 20651);
+    			add_location(div5, file$j, 600, 24, 20753);
     			attr_dev(label2, "for", "");
-    			add_location(label2, file$j, 606, 32, 21144);
+    			add_location(label2, file$j, 608, 32, 21246);
     			attr_dev(input2, "type", "date");
     			attr_dev(input2, "class", "form-control");
-    			add_location(input2, file$j, 607, 32, 21217);
+    			add_location(input2, file$j, 609, 32, 21319);
     			attr_dev(div6, "class", "form-group");
-    			add_location(div6, file$j, 605, 28, 21087);
+    			add_location(div6, file$j, 607, 28, 21189);
     			attr_dev(div7, "class", "col-lg-3");
-    			add_location(div7, file$j, 604, 24, 21036);
+    			add_location(div7, file$j, 606, 24, 21138);
     			attr_dev(label3, "for", "");
-    			add_location(label3, file$j, 612, 32, 21533);
+    			add_location(label3, file$j, 614, 32, 21635);
     			attr_dev(input3, "type", "date");
     			attr_dev(input3, "class", "form-control");
-    			add_location(input3, file$j, 613, 32, 21607);
+    			add_location(input3, file$j, 615, 32, 21709);
     			attr_dev(div8, "class", "form-group");
-    			add_location(div8, file$j, 611, 28, 21476);
+    			add_location(div8, file$j, 613, 28, 21578);
     			attr_dev(div9, "class", "col-lg-3");
-    			add_location(div9, file$j, 610, 24, 21425);
+    			add_location(div9, file$j, 612, 24, 21527);
     			attr_dev(label4, "for", "");
-    			add_location(label4, file$j, 618, 32, 21924);
+    			add_location(label4, file$j, 620, 32, 22026);
     			attr_dev(input4, "type", "date");
     			attr_dev(input4, "class", "form-control");
-    			add_location(input4, file$j, 619, 32, 22006);
+    			add_location(input4, file$j, 621, 32, 22108);
     			attr_dev(div10, "class", "form-group");
-    			add_location(div10, file$j, 617, 28, 21867);
+    			add_location(div10, file$j, 619, 28, 21969);
     			attr_dev(div11, "class", "col-lg-3");
-    			add_location(div11, file$j, 616, 24, 21816);
+    			add_location(div11, file$j, 618, 24, 21918);
     			attr_dev(label5, "for", "");
-    			add_location(label5, file$j, 624, 32, 22324);
+    			add_location(label5, file$j, 626, 32, 22426);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "class", "form-control");
     			attr_dev(input5, "placeholder", "Dias");
-    			add_location(input5, file$j, 625, 32, 22404);
+    			add_location(input5, file$j, 627, 32, 22506);
     			attr_dev(div12, "class", "form-group");
-    			add_location(div12, file$j, 623, 28, 22267);
+    			add_location(div12, file$j, 625, 28, 22369);
     			attr_dev(div13, "class", "col-lg-3");
-    			add_location(div13, file$j, 622, 24, 22216);
+    			add_location(div13, file$j, 624, 24, 22318);
     			attr_dev(label6, "for", "");
-    			add_location(label6, file$j, 630, 32, 22748);
+    			add_location(label6, file$j, 632, 32, 22850);
     			attr_dev(input6, "type", "number");
     			attr_dev(input6, "class", "form-control");
     			attr_dev(input6, "placeholder", "Dias");
-    			add_location(input6, file$j, 631, 32, 22827);
+    			add_location(input6, file$j, 633, 32, 22929);
     			attr_dev(div14, "class", "form-group");
-    			add_location(div14, file$j, 629, 28, 22691);
+    			add_location(div14, file$j, 631, 28, 22793);
     			attr_dev(div15, "class", "col-lg-3");
-    			add_location(div15, file$j, 628, 24, 22640);
+    			add_location(div15, file$j, 630, 24, 22742);
     			attr_dev(label7, "for", "");
-    			add_location(label7, file$j, 636, 32, 23170);
+    			add_location(label7, file$j, 638, 32, 23272);
     			attr_dev(input7, "type", "number");
     			attr_dev(input7, "class", "form-control");
     			attr_dev(input7, "placeholder", "Dias");
-    			add_location(input7, file$j, 637, 32, 23249);
+    			add_location(input7, file$j, 639, 32, 23351);
     			attr_dev(div16, "class", "form-group");
-    			add_location(div16, file$j, 635, 28, 23113);
+    			add_location(div16, file$j, 637, 28, 23215);
     			attr_dev(div17, "class", "col-lg-3");
-    			add_location(div17, file$j, 634, 24, 23062);
+    			add_location(div17, file$j, 636, 24, 23164);
     			attr_dev(div18, "class", "row");
-    			add_location(div18, file$j, 591, 20, 20199);
-    			add_location(hr0, file$j, 641, 20, 23507);
+    			add_location(div18, file$j, 593, 20, 20301);
+    			add_location(hr0, file$j, 643, 20, 23609);
     			attr_dev(label8, "for", "");
-    			add_location(label8, file$j, 645, 32, 23677);
+    			add_location(label8, file$j, 647, 32, 23779);
     			attr_dev(input8, "type", "number");
     			attr_dev(input8, "class", "form-control");
-    			add_location(input8, file$j, 646, 32, 23737);
+    			add_location(input8, file$j, 648, 32, 23839);
     			attr_dev(div19, "class", "form-group");
-    			add_location(div19, file$j, 644, 28, 23620);
+    			add_location(div19, file$j, 646, 28, 23722);
     			attr_dev(div20, "class", "col");
-    			add_location(div20, file$j, 643, 24, 23574);
+    			add_location(div20, file$j, 645, 24, 23676);
     			attr_dev(label9, "for", "");
-    			add_location(label9, file$j, 651, 32, 24039);
+    			add_location(label9, file$j, 653, 32, 24141);
     			attr_dev(input9, "type", "number");
     			attr_dev(input9, "class", "form-control");
-    			add_location(input9, file$j, 652, 32, 24098);
+    			add_location(input9, file$j, 654, 32, 24200);
     			attr_dev(div21, "class", "form-group");
-    			add_location(div21, file$j, 650, 28, 23982);
+    			add_location(div21, file$j, 652, 28, 24084);
     			attr_dev(div22, "class", "col");
-    			add_location(div22, file$j, 649, 24, 23936);
+    			add_location(div22, file$j, 651, 24, 24038);
     			attr_dev(label10, "for", "");
-    			add_location(label10, file$j, 657, 32, 24399);
+    			add_location(label10, file$j, 659, 32, 24501);
     			attr_dev(input10, "type", "number");
     			attr_dev(input10, "class", "form-control");
-    			add_location(input10, file$j, 658, 32, 24461);
+    			add_location(input10, file$j, 660, 32, 24563);
     			attr_dev(div23, "class", "form-group");
-    			add_location(div23, file$j, 656, 28, 24342);
+    			add_location(div23, file$j, 658, 28, 24444);
     			attr_dev(div24, "class", "col");
-    			add_location(div24, file$j, 655, 24, 24296);
+    			add_location(div24, file$j, 657, 24, 24398);
     			attr_dev(label11, "for", "");
-    			add_location(label11, file$j, 663, 32, 24765);
+    			add_location(label11, file$j, 665, 32, 24867);
     			attr_dev(input11, "type", "number");
     			attr_dev(input11, "class", "form-control");
-    			add_location(input11, file$j, 664, 32, 24835);
+    			add_location(input11, file$j, 666, 32, 24937);
     			attr_dev(div25, "class", "form-group");
-    			add_location(div25, file$j, 662, 28, 24708);
+    			add_location(div25, file$j, 664, 28, 24810);
     			attr_dev(div26, "class", "col");
-    			add_location(div26, file$j, 661, 24, 24662);
+    			add_location(div26, file$j, 663, 24, 24764);
     			attr_dev(label12, "for", "");
-    			add_location(label12, file$j, 669, 32, 25140);
+    			add_location(label12, file$j, 671, 32, 25242);
     			attr_dev(input12, "type", "number");
     			attr_dev(input12, "class", "form-control");
-    			add_location(input12, file$j, 670, 32, 25213);
+    			add_location(input12, file$j, 672, 32, 25315);
     			attr_dev(div27, "class", "form-group");
-    			add_location(div27, file$j, 668, 28, 25083);
+    			add_location(div27, file$j, 670, 28, 25185);
     			attr_dev(div28, "class", "col");
-    			add_location(div28, file$j, 667, 24, 25037);
+    			add_location(div28, file$j, 669, 24, 25139);
     			attr_dev(label13, "for", "");
-    			add_location(label13, file$j, 675, 32, 25521);
+    			add_location(label13, file$j, 677, 32, 25623);
     			attr_dev(input13, "type", "number");
     			attr_dev(input13, "class", "form-control");
-    			add_location(input13, file$j, 676, 32, 25586);
+    			add_location(input13, file$j, 678, 32, 25688);
     			attr_dev(div29, "class", "form-group");
-    			add_location(div29, file$j, 674, 28, 25464);
+    			add_location(div29, file$j, 676, 28, 25566);
     			attr_dev(div30, "class", "col");
-    			add_location(div30, file$j, 673, 24, 25418);
+    			add_location(div30, file$j, 675, 24, 25520);
     			attr_dev(label14, "for", "");
-    			add_location(label14, file$j, 681, 32, 25893);
+    			add_location(label14, file$j, 683, 32, 25995);
     			attr_dev(input14, "type", "number");
     			attr_dev(input14, "class", "form-control");
-    			add_location(input14, file$j, 682, 32, 25956);
+    			add_location(input14, file$j, 684, 32, 26058);
     			attr_dev(div31, "class", "form-group");
-    			add_location(div31, file$j, 680, 28, 25836);
+    			add_location(div31, file$j, 682, 28, 25938);
     			attr_dev(div32, "class", "col");
-    			add_location(div32, file$j, 679, 24, 25790);
+    			add_location(div32, file$j, 681, 24, 25892);
     			attr_dev(div33, "class", "row");
-    			add_location(div33, file$j, 642, 20, 23532);
+    			add_location(div33, file$j, 644, 20, 23634);
     			attr_dev(h5, "class", "mt-3");
-    			add_location(h5, file$j, 686, 20, 26181);
-    			add_location(hr1, file$j, 687, 20, 26244);
+    			add_location(h5, file$j, 688, 20, 26283);
+    			add_location(hr1, file$j, 689, 20, 26346);
     			attr_dev(input15, "type", "checkbox");
     			attr_dev(input15, "name", "option");
     			input15.__value = "1";
     			input15.value = input15.__value;
     			attr_dev(input15, "class", "cstm-switch-input");
-    			add_location(input15, file$j, 691, 32, 26433);
+    			add_location(input15, file$j, 693, 32, 26535);
     			attr_dev(span0, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span0, file$j, 692, 32, 26619);
+    			add_location(span0, file$j, 694, 32, 26721);
     			attr_dev(span1, "class", "cstm-switch-description");
-    			add_location(span1, file$j, 693, 32, 26707);
+    			add_location(span1, file$j, 695, 32, 26809);
     			attr_dev(label15, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label15, file$j, 690, 28, 26363);
+    			add_location(label15, file$j, 692, 28, 26465);
     			attr_dev(input16, "type", "checkbox");
     			attr_dev(input16, "name", "option");
     			input16.__value = "1";
     			input16.value = input16.__value;
     			attr_dev(input16, "class", "cstm-switch-input");
-    			add_location(input16, file$j, 696, 32, 26904);
+    			add_location(input16, file$j, 698, 32, 27006);
     			attr_dev(span2, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span2, file$j, 697, 32, 27091);
+    			add_location(span2, file$j, 699, 32, 27193);
     			attr_dev(span3, "class", "cstm-switch-description");
-    			add_location(span3, file$j, 698, 32, 27179);
+    			add_location(span3, file$j, 700, 32, 27281);
     			attr_dev(label16, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label16, file$j, 695, 28, 26834);
+    			add_location(label16, file$j, 697, 28, 26936);
     			attr_dev(input17, "type", "checkbox");
     			attr_dev(input17, "name", "option");
     			input17.__value = "1";
     			input17.value = input17.__value;
     			attr_dev(input17, "class", "cstm-switch-input");
-    			add_location(input17, file$j, 701, 32, 27378);
+    			add_location(input17, file$j, 703, 32, 27480);
     			attr_dev(span4, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span4, file$j, 702, 32, 27570);
+    			add_location(span4, file$j, 704, 32, 27672);
     			attr_dev(span5, "class", "cstm-switch-description");
-    			add_location(span5, file$j, 703, 32, 27658);
+    			add_location(span5, file$j, 705, 32, 27760);
     			attr_dev(label17, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label17, file$j, 700, 28, 27308);
+    			add_location(label17, file$j, 702, 28, 27410);
     			attr_dev(input18, "type", "checkbox");
     			attr_dev(input18, "name", "option");
     			input18.__value = "1";
     			input18.value = input18.__value;
     			attr_dev(input18, "class", "cstm-switch-input");
-    			add_location(input18, file$j, 706, 32, 27861);
+    			add_location(input18, file$j, 708, 32, 27963);
     			attr_dev(span6, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span6, file$j, 707, 32, 28035);
+    			add_location(span6, file$j, 709, 32, 28137);
     			attr_dev(span7, "class", "cstm-switch-description");
-    			add_location(span7, file$j, 708, 32, 28123);
+    			add_location(span7, file$j, 710, 32, 28225);
     			attr_dev(label18, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label18, file$j, 705, 28, 27791);
+    			add_location(label18, file$j, 707, 28, 27893);
     			attr_dev(input19, "type", "checkbox");
     			attr_dev(input19, "name", "option");
     			input19.__value = "1";
     			input19.value = input19.__value;
     			attr_dev(input19, "class", "cstm-switch-input");
-    			add_location(input19, file$j, 711, 32, 28307);
+    			add_location(input19, file$j, 713, 32, 28409);
     			attr_dev(span8, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span8, file$j, 712, 32, 28481);
+    			add_location(span8, file$j, 714, 32, 28583);
     			attr_dev(span9, "class", "cstm-switch-description");
-    			add_location(span9, file$j, 713, 32, 28569);
+    			add_location(span9, file$j, 715, 32, 28671);
     			attr_dev(label19, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label19, file$j, 710, 28, 28237);
+    			add_location(label19, file$j, 712, 28, 28339);
     			attr_dev(input20, "type", "checkbox");
     			attr_dev(input20, "name", "option");
     			input20.__value = "1";
     			input20.value = input20.__value;
     			attr_dev(input20, "class", "cstm-switch-input");
-    			add_location(input20, file$j, 716, 32, 28753);
+    			add_location(input20, file$j, 718, 32, 28855);
     			attr_dev(span10, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span10, file$j, 717, 32, 28930);
+    			add_location(span10, file$j, 719, 32, 29032);
     			attr_dev(span11, "class", "cstm-switch-description");
-    			add_location(span11, file$j, 718, 32, 29018);
+    			add_location(span11, file$j, 720, 32, 29120);
     			attr_dev(label20, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label20, file$j, 715, 28, 28683);
+    			add_location(label20, file$j, 717, 28, 28785);
     			attr_dev(input21, "type", "checkbox");
     			attr_dev(input21, "name", "option");
     			input21.__value = "1";
     			input21.value = input21.__value;
     			attr_dev(input21, "class", "cstm-switch-input");
-    			add_location(input21, file$j, 721, 32, 29212);
+    			add_location(input21, file$j, 723, 32, 29314);
     			attr_dev(span12, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span12, file$j, 722, 32, 29391);
+    			add_location(span12, file$j, 724, 32, 29493);
     			attr_dev(span13, "class", "cstm-switch-description");
-    			add_location(span13, file$j, 723, 32, 29479);
+    			add_location(span13, file$j, 725, 32, 29581);
     			attr_dev(label21, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label21, file$j, 720, 28, 29142);
+    			add_location(label21, file$j, 722, 28, 29244);
     			attr_dev(input22, "type", "checkbox");
     			attr_dev(input22, "name", "option");
     			input22.__value = "1";
     			input22.value = input22.__value;
     			attr_dev(input22, "class", "cstm-switch-input");
-    			add_location(input22, file$j, 726, 32, 29668);
+    			add_location(input22, file$j, 728, 32, 29770);
     			attr_dev(span14, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span14, file$j, 727, 32, 29844);
+    			add_location(span14, file$j, 729, 32, 29946);
     			attr_dev(span15, "class", "cstm-switch-description");
-    			add_location(span15, file$j, 728, 32, 29932);
+    			add_location(span15, file$j, 730, 32, 30034);
     			attr_dev(label22, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label22, file$j, 725, 28, 29598);
+    			add_location(label22, file$j, 727, 28, 29700);
     			attr_dev(input23, "type", "checkbox");
     			attr_dev(input23, "name", "option");
     			input23.__value = "1";
     			input23.value = input23.__value;
     			attr_dev(input23, "class", "cstm-switch-input");
-    			add_location(input23, file$j, 731, 32, 30118);
+    			add_location(input23, file$j, 733, 32, 30220);
     			attr_dev(span16, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span16, file$j, 732, 32, 30305);
+    			add_location(span16, file$j, 734, 32, 30407);
     			attr_dev(span17, "class", "cstm-switch-description");
-    			add_location(span17, file$j, 733, 32, 30393);
+    			add_location(span17, file$j, 735, 32, 30495);
     			attr_dev(label23, "class", "cstm-switch mr-4 mb-4");
-    			add_location(label23, file$j, 730, 28, 30048);
+    			add_location(label23, file$j, 732, 28, 30150);
     			attr_dev(div34, "class", "col-lg-12");
-    			add_location(div34, file$j, 689, 24, 26311);
+    			add_location(div34, file$j, 691, 24, 26413);
     			attr_dev(div35, "class", "row");
-    			add_location(div35, file$j, 688, 20, 26269);
+    			add_location(div35, file$j, 690, 20, 26371);
     			attr_dev(div36, "class", "card-body");
-    			add_location(div36, file$j, 590, 16, 20155);
+    			add_location(div36, file$j, 592, 16, 20257);
     			attr_dev(div37, "class", "card m-b-20 border border-primary");
-    			add_location(div37, file$j, 584, 12, 19895);
+    			add_location(div37, file$j, 586, 12, 19997);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div37, anchor);
@@ -16599,54 +16618,54 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[39]),
-    					listen_dev(input1, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[40]),
-    					listen_dev(input2, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[41]),
-    					listen_dev(input3, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[42]),
-    					listen_dev(input4, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[43]),
-    					listen_dev(input5, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[44]),
-    					listen_dev(input6, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[45]),
-    					listen_dev(input7, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[46]),
-    					listen_dev(input8, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[47]),
-    					listen_dev(input9, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[48]),
-    					listen_dev(input10, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[49]),
-    					listen_dev(input11, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input11, "input", /*input11_input_handler*/ ctx[50]),
-    					listen_dev(input12, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input12, "input", /*input12_input_handler*/ ctx[51]),
-    					listen_dev(input13, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input13, "input", /*input13_input_handler*/ ctx[52]),
-    					listen_dev(input14, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input14, "input", /*input14_input_handler*/ ctx[53]),
-    					listen_dev(input15, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input15, "change", /*input15_change_handler*/ ctx[54]),
-    					listen_dev(input16, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input16, "change", /*input16_change_handler*/ ctx[55]),
-    					listen_dev(input17, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input17, "change", /*input17_change_handler*/ ctx[56]),
-    					listen_dev(input18, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input18, "change", /*input18_change_handler*/ ctx[57]),
-    					listen_dev(input19, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input19, "change", /*input19_change_handler*/ ctx[58]),
-    					listen_dev(input20, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input20, "change", /*input20_change_handler*/ ctx[59]),
-    					listen_dev(input21, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input21, "change", /*input21_change_handler*/ ctx[60]),
-    					listen_dev(input22, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input22, "change", /*input22_change_handler*/ ctx[61]),
-    					listen_dev(input23, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input23, "change", /*input23_change_handler*/ ctx[62])
+    					listen_dev(input0, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[40]),
+    					listen_dev(input1, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[41]),
+    					listen_dev(input2, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[42]),
+    					listen_dev(input3, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[43]),
+    					listen_dev(input4, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[44]),
+    					listen_dev(input5, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[45]),
+    					listen_dev(input6, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[46]),
+    					listen_dev(input7, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[47]),
+    					listen_dev(input8, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[48]),
+    					listen_dev(input9, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[49]),
+    					listen_dev(input10, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[50]),
+    					listen_dev(input11, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input11, "input", /*input11_input_handler*/ ctx[51]),
+    					listen_dev(input12, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input12, "input", /*input12_input_handler*/ ctx[52]),
+    					listen_dev(input13, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input13, "input", /*input13_input_handler*/ ctx[53]),
+    					listen_dev(input14, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input14, "input", /*input14_input_handler*/ ctx[54]),
+    					listen_dev(input15, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input15, "change", /*input15_change_handler*/ ctx[55]),
+    					listen_dev(input16, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input16, "change", /*input16_change_handler*/ ctx[56]),
+    					listen_dev(input17, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input17, "change", /*input17_change_handler*/ ctx[57]),
+    					listen_dev(input18, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input18, "change", /*input18_change_handler*/ ctx[58]),
+    					listen_dev(input19, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input19, "change", /*input19_change_handler*/ ctx[59]),
+    					listen_dev(input20, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input20, "change", /*input20_change_handler*/ ctx[60]),
+    					listen_dev(input21, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input21, "change", /*input21_change_handler*/ ctx[61]),
+    					listen_dev(input22, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input22, "change", /*input22_change_handler*/ ctx[62]),
+    					listen_dev(input23, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input23, "change", /*input23_change_handler*/ ctx[63])
     				];
 
     				mounted = true;
@@ -16758,30 +16777,1160 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$3.name,
+    		id: create_if_block_7.name,
     		type: "if",
-    		source: "(583:12) {#if empresa.historiaGinecologica}",
+    		source: "(585:12) {#if empresa.historiaGinecologica}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1066:40) {#each filtroDiagnostico as diagnostico}
-    function create_each_block_1$2(ctx) {
-    	let li;
-    	let div;
-    	let span;
-    	let t0_value = /*diagnostico*/ ctx[107].c + "";
-    	let t0;
+    // (744:12) {#if empresa.signosVitales}
+    function create_if_block_6(ctx) {
+    	let div22;
+    	let div1;
+    	let div0;
     	let t1;
-    	let t2_value = /*diagnostico*/ ctx[107].d + "";
+    	let div21;
+    	let div20;
+    	let div6;
+    	let div5;
+    	let label0;
+    	let i0;
     	let t2;
+    	let t3;
+    	let div4;
+    	let div2;
+    	let input0;
+    	let t4;
+    	let div3;
+    	let select;
+    	let option0;
+    	let option1;
+    	let option2;
+    	let t8;
+    	let div10;
+    	let div9;
+    	let label1;
+    	let i1;
+    	let t9;
+    	let t10;
+    	let div8;
+    	let div7;
+    	let input1;
+    	let t11;
+    	let div14;
+    	let div13;
+    	let label2;
+    	let i2;
+    	let t12;
+    	let t13;
+    	let div12;
+    	let div11;
+    	let input2;
+    	let t14;
+    	let div19;
+    	let div18;
+    	let label3;
+    	let i3;
+    	let t15;
+    	let t16;
+    	let div17;
+    	let div15;
+    	let input3;
+    	let t17;
+    	let div16;
+    	let input4;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div22 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			div0.textContent = "Signos vitales";
+    			t1 = space();
+    			div21 = element("div");
+    			div20 = element("div");
+    			div6 = element("div");
+    			div5 = element("div");
+    			label0 = element("label");
+    			i0 = element("i");
+    			t2 = text(" Temperatura");
+    			t3 = space();
+    			div4 = element("div");
+    			div2 = element("div");
+    			input0 = element("input");
+    			t4 = space();
+    			div3 = element("div");
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "°C";
+    			option1 = element("option");
+    			option1.textContent = "°K";
+    			option2 = element("option");
+    			option2.textContent = "°F";
+    			t8 = space();
+    			div10 = element("div");
+    			div9 = element("div");
+    			label1 = element("label");
+    			i1 = element("i");
+    			t9 = text(" Frecuencia\n                                         respiratoria");
+    			t10 = space();
+    			div8 = element("div");
+    			div7 = element("div");
+    			input1 = element("input");
+    			t11 = space();
+    			div14 = element("div");
+    			div13 = element("div");
+    			label2 = element("label");
+    			i2 = element("i");
+    			t12 = text(" Frecuencia\n                                         cardiaca");
+    			t13 = space();
+    			div12 = element("div");
+    			div11 = element("div");
+    			input2 = element("input");
+    			t14 = space();
+    			div19 = element("div");
+    			div18 = element("div");
+    			label3 = element("label");
+    			i3 = element("i");
+    			t15 = text(" Presion\n                                         alterial (mmHg)");
+    			t16 = space();
+    			div17 = element("div");
+    			div15 = element("div");
+    			input3 = element("input");
+    			t17 = space();
+    			div16 = element("div");
+    			input4 = element("input");
+    			attr_dev(div0, "class", "card-title");
+    			add_location(div0, file$j, 747, 25, 30974);
+    			attr_dev(div1, "class", "card-header");
+    			add_location(div1, file$j, 746, 21, 30923);
+    			attr_dev(i0, "class", "mdi mdi-thermometer mdi-18px");
+    			add_location(i0, file$j, 754, 42, 31338);
+    			attr_dev(label0, "for", "");
+    			add_location(label0, file$j, 753, 37, 31282);
+    			attr_dev(input0, "type", "number");
+    			attr_dev(input0, "class", "form-control");
+    			add_location(input0, file$j, 758, 45, 31603);
+    			attr_dev(div2, "class", "col-lg-7");
+    			add_location(div2, file$j, 757, 41, 31535);
+    			option0.__value = "C";
+    			option0.value = option0.__value;
+    			option0.selected = true;
+    			add_location(option0, file$j, 768, 49, 32325);
+    			option1.__value = "K";
+    			option1.value = option1.__value;
+    			add_location(option1, file$j, 769, 49, 32413);
+    			option2.__value = "F";
+    			option2.value = option2.__value;
+    			add_location(option2, file$j, 770, 49, 32492);
+    			attr_dev(select, "class", "form-control");
+    			if (/*temperatura*/ ctx[8].tipo === void 0) add_render_callback(() => /*select_change_handler*/ ctx[65].call(select));
+    			add_location(select, file$j, 767, 45, 32188);
+    			attr_dev(div3, "class", "col-lg-5");
+    			add_location(div3, file$j, 765, 41, 32035);
+    			attr_dev(div4, "class", "row");
+    			add_location(div4, file$j, 756, 37, 31476);
+    			attr_dev(div5, "class", "form-group");
+    			add_location(div5, file$j, 752, 33, 31220);
+    			attr_dev(div6, "class", "col-lg-3");
+    			add_location(div6, file$j, 751, 29, 31164);
+    			attr_dev(i1, "class", "mdi mdi-chart-line mdi-18px");
+    			add_location(i1, file$j, 779, 42, 32948);
+    			attr_dev(label1, "for", "");
+    			add_location(label1, file$j, 778, 37, 32892);
+    			attr_dev(input1, "type", "number");
+    			attr_dev(input1, "class", "form-control");
+    			add_location(input1, file$j, 784, 45, 33266);
+    			attr_dev(div7, "class", "col-lg-12");
+    			add_location(div7, file$j, 783, 41, 33197);
+    			attr_dev(div8, "class", "row");
+    			add_location(div8, file$j, 782, 37, 33138);
+    			attr_dev(div9, "class", "form-group");
+    			add_location(div9, file$j, 777, 33, 32830);
+    			attr_dev(div10, "class", "col-lg-3");
+    			add_location(div10, file$j, 776, 29, 32774);
+    			attr_dev(i2, "class", "mdi mdi-heart-pulse mdi-18px");
+    			add_location(i2, file$j, 797, 42, 33994);
+    			attr_dev(label2, "for", "");
+    			add_location(label2, file$j, 796, 37, 33938);
+    			attr_dev(input2, "type", "number");
+    			attr_dev(input2, "class", "form-control");
+    			add_location(input2, file$j, 802, 45, 34309);
+    			attr_dev(div11, "class", "col-lg-12");
+    			add_location(div11, file$j, 801, 41, 34240);
+    			attr_dev(div12, "class", "row");
+    			add_location(div12, file$j, 800, 37, 34181);
+    			attr_dev(div13, "class", "form-group");
+    			add_location(div13, file$j, 795, 33, 33876);
+    			attr_dev(div14, "class", "col-lg-3");
+    			add_location(div14, file$j, 794, 29, 33820);
+    			attr_dev(i3, "class", "mdi mdi-heart-pulse mdi-18px");
+    			add_location(i3, file$j, 815, 42, 35033);
+    			attr_dev(label3, "for", "");
+    			add_location(label3, file$j, 814, 37, 34977);
+    			attr_dev(input3, "type", "number");
+    			attr_dev(input3, "class", "form-control");
+    			add_location(input3, file$j, 820, 45, 35351);
+    			attr_dev(div15, "class", "col-lg-6");
+    			add_location(div15, file$j, 819, 41, 35283);
+    			attr_dev(input4, "type", "number");
+    			attr_dev(input4, "class", "form-control");
+    			add_location(input4, file$j, 828, 45, 35852);
+    			attr_dev(div16, "class", "col-lg-6");
+    			add_location(div16, file$j, 827, 41, 35784);
+    			attr_dev(div17, "class", "row");
+    			add_location(div17, file$j, 818, 37, 35224);
+    			attr_dev(div18, "class", "form-group");
+    			add_location(div18, file$j, 813, 33, 34915);
+    			attr_dev(div19, "class", "col-lg-3");
+    			add_location(div19, file$j, 812, 29, 34859);
+    			attr_dev(div20, "class", "row");
+    			add_location(div20, file$j, 750, 25, 31117);
+    			attr_dev(div21, "class", "card-body");
+    			add_location(div21, file$j, 749, 21, 31068);
+    			attr_dev(div22, "class", "card m-b-20 margen-mobile autosave");
+    			add_location(div22, file$j, 745, 17, 30853);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div22, anchor);
+    			append_dev(div22, div1);
+    			append_dev(div1, div0);
+    			append_dev(div22, t1);
+    			append_dev(div22, div21);
+    			append_dev(div21, div20);
+    			append_dev(div20, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, label0);
+    			append_dev(label0, i0);
+    			append_dev(label0, t2);
+    			append_dev(div5, t3);
+    			append_dev(div5, div4);
+    			append_dev(div4, div2);
+    			append_dev(div2, input0);
+    			set_input_value(input0, /*temperatura*/ ctx[8].valor);
+    			append_dev(div4, t4);
+    			append_dev(div4, div3);
+    			append_dev(div3, select);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			append_dev(select, option2);
+    			select_option(select, /*temperatura*/ ctx[8].tipo);
+    			append_dev(div20, t8);
+    			append_dev(div20, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, label1);
+    			append_dev(label1, i1);
+    			append_dev(label1, t9);
+    			append_dev(div9, t10);
+    			append_dev(div9, div8);
+    			append_dev(div8, div7);
+    			append_dev(div7, input1);
+    			set_input_value(input1, /*historia*/ ctx[7].frecuenciaRespiratoria);
+    			append_dev(div20, t11);
+    			append_dev(div20, div14);
+    			append_dev(div14, div13);
+    			append_dev(div13, label2);
+    			append_dev(label2, i2);
+    			append_dev(label2, t12);
+    			append_dev(div13, t13);
+    			append_dev(div13, div12);
+    			append_dev(div12, div11);
+    			append_dev(div11, input2);
+    			set_input_value(input2, /*historia*/ ctx[7].frecuenciaCardiaca);
+    			append_dev(div20, t14);
+    			append_dev(div20, div19);
+    			append_dev(div19, div18);
+    			append_dev(div18, label3);
+    			append_dev(label3, i3);
+    			append_dev(label3, t15);
+    			append_dev(div18, t16);
+    			append_dev(div18, div17);
+    			append_dev(div17, div15);
+    			append_dev(div15, input3);
+    			set_input_value(input3, /*presionAlterial*/ ctx[9].mm);
+    			append_dev(div17, t17);
+    			append_dev(div17, div16);
+    			append_dev(div16, input4);
+    			set_input_value(input4, /*presionAlterial*/ ctx[9].Hg);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[64]),
+    					listen_dev(select, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(select, "change", /*select_change_handler*/ ctx[65]),
+    					listen_dev(input1, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[66]),
+    					listen_dev(input2, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[67]),
+    					listen_dev(input3, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[68]),
+    					listen_dev(input4, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[69])
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*temperatura*/ 256 && to_number(input0.value) !== /*temperatura*/ ctx[8].valor) {
+    				set_input_value(input0, /*temperatura*/ ctx[8].valor);
+    			}
+
+    			if (dirty[0] & /*temperatura*/ 256) {
+    				select_option(select, /*temperatura*/ ctx[8].tipo);
+    			}
+
+    			if (dirty[0] & /*historia*/ 128 && to_number(input1.value) !== /*historia*/ ctx[7].frecuenciaRespiratoria) {
+    				set_input_value(input1, /*historia*/ ctx[7].frecuenciaRespiratoria);
+    			}
+
+    			if (dirty[0] & /*historia*/ 128 && to_number(input2.value) !== /*historia*/ ctx[7].frecuenciaCardiaca) {
+    				set_input_value(input2, /*historia*/ ctx[7].frecuenciaCardiaca);
+    			}
+
+    			if (dirty[0] & /*presionAlterial*/ 512 && to_number(input3.value) !== /*presionAlterial*/ ctx[9].mm) {
+    				set_input_value(input3, /*presionAlterial*/ ctx[9].mm);
+    			}
+
+    			if (dirty[0] & /*presionAlterial*/ 512 && to_number(input4.value) !== /*presionAlterial*/ ctx[9].Hg) {
+    				set_input_value(input4, /*presionAlterial*/ ctx[9].Hg);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div22);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_6.name,
+    		type: "if",
+    		source: "(744:12) {#if empresa.signosVitales}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (843:12) {#if empresa.otrosParametros}
+    function create_if_block_5$1(ctx) {
+    	let div29;
+    	let div1;
+    	let div0;
+    	let t1;
+    	let div28;
+    	let div27;
+    	let div6;
+    	let div5;
+    	let label0;
+    	let i0;
+    	let t2;
+    	let t3;
+    	let div4;
+    	let div2;
+    	let input0;
+    	let t4;
+    	let div3;
+    	let select;
+    	let option0;
+    	let option1;
+    	let t7;
+    	let div12;
+    	let div11;
+    	let label1;
+    	let i1;
+    	let t8;
+    	let t9;
+    	let div10;
+    	let div9;
+    	let div8;
+    	let input1;
+    	let t10;
+    	let div7;
+    	let span0;
+    	let t12;
+    	let div18;
+    	let div17;
+    	let label2;
+    	let i2;
+    	let t13;
+    	let t14;
+    	let div16;
+    	let div15;
+    	let div14;
+    	let input2;
+    	let t15;
+    	let div13;
+    	let span1;
+    	let t17;
+    	let div22;
+    	let div21;
+    	let label3;
+    	let i3;
+    	let t18;
+    	let t19;
+    	let div20;
+    	let div19;
+    	let input3;
+    	let t20;
+    	let div26;
+    	let div25;
+    	let label4;
+    	let t22;
+    	let div24;
+    	let div23;
+    	let input4;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div29 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			div0.textContent = "Otros Parametros";
+    			t1 = space();
+    			div28 = element("div");
+    			div27 = element("div");
+    			div6 = element("div");
+    			div5 = element("div");
+    			label0 = element("label");
+    			i0 = element("i");
+    			t2 = text(" Peso");
+    			t3 = space();
+    			div4 = element("div");
+    			div2 = element("div");
+    			input0 = element("input");
+    			t4 = space();
+    			div3 = element("div");
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "Lb";
+    			option1 = element("option");
+    			option1.textContent = "Kg";
+    			t7 = space();
+    			div12 = element("div");
+    			div11 = element("div");
+    			label1 = element("label");
+    			i1 = element("i");
+    			t8 = text(" Escala de\n                                         glasgow");
+    			t9 = space();
+    			div10 = element("div");
+    			div9 = element("div");
+    			div8 = element("div");
+    			input1 = element("input");
+    			t10 = space();
+    			div7 = element("div");
+    			span0 = element("span");
+    			span0.textContent = "/ 15";
+    			t12 = space();
+    			div18 = element("div");
+    			div17 = element("div");
+    			label2 = element("label");
+    			i2 = element("i");
+    			t13 = text(" Escala de dolor");
+    			t14 = space();
+    			div16 = element("div");
+    			div15 = element("div");
+    			div14 = element("div");
+    			input2 = element("input");
+    			t15 = space();
+    			div13 = element("div");
+    			span1 = element("span");
+    			span1.textContent = "/ 10";
+    			t17 = space();
+    			div22 = element("div");
+    			div21 = element("div");
+    			label3 = element("label");
+    			i3 = element("i");
+    			t18 = text(" Saturación\n                                         de oxigeno");
+    			t19 = space();
+    			div20 = element("div");
+    			div19 = element("div");
+    			input3 = element("input");
+    			t20 = space();
+    			div26 = element("div");
+    			div25 = element("div");
+    			label4 = element("label");
+    			label4.textContent = "Otros";
+    			t22 = space();
+    			div24 = element("div");
+    			div23 = element("div");
+    			input4 = element("input");
+    			attr_dev(div0, "class", "card-title");
+    			add_location(div0, file$j, 845, 25, 36623);
+    			attr_dev(div1, "class", "card-header");
+    			add_location(div1, file$j, 844, 21, 36572);
+    			attr_dev(i0, "class", "mdi mdi-weight-pound");
+    			add_location(i0, file$j, 852, 42, 36989);
+    			attr_dev(label0, "for", "");
+    			add_location(label0, file$j, 851, 37, 36933);
+    			attr_dev(input0, "type", "number");
+    			attr_dev(input0, "class", "form-control");
+    			add_location(input0, file$j, 856, 45, 37239);
+    			attr_dev(div2, "class", "col-lg-7");
+    			add_location(div2, file$j, 855, 41, 37171);
+    			option0.__value = "Lb";
+    			option0.value = option0.__value;
+    			add_location(option0, file$j, 869, 49, 38091);
+    			option1.__value = "Kg";
+    			option1.value = option1.__value;
+    			add_location(option1, file$j, 870, 49, 38171);
+    			attr_dev(select, "class", "form-control");
+    			if (/*peso*/ ctx[10].tipo === void 0) add_render_callback(() => /*select_change_handler_1*/ ctx[71].call(select));
+    			add_location(select, file$j, 865, 45, 37817);
+    			attr_dev(div3, "class", "col-lg-5");
+    			add_location(div3, file$j, 863, 41, 37664);
+    			attr_dev(div4, "class", "row");
+    			add_location(div4, file$j, 854, 37, 37112);
+    			attr_dev(div5, "class", "form-group");
+    			add_location(div5, file$j, 850, 33, 36871);
+    			attr_dev(div6, "class", "col-lg-3");
+    			add_location(div6, file$j, 849, 29, 36815);
+    			attr_dev(i1, "class", "mdi mdi-human");
+    			add_location(i1, file$j, 879, 42, 38628);
+    			attr_dev(label1, "for", "");
+    			add_location(label1, file$j, 878, 37, 38572);
+    			attr_dev(input1, "type", "number");
+    			attr_dev(input1, "class", "form-control");
+    			attr_dev(input1, "max", "15");
+    			attr_dev(input1, "maxlength", "2");
+    			attr_dev(input1, "aria-label", "Recipient's username");
+    			attr_dev(input1, "aria-describedby", "basic-addon2");
+    			add_location(input1, file$j, 888, 49, 39191);
+    			attr_dev(span0, "class", "input-group-text");
+    			attr_dev(span0, "id", "basic-addon2");
+    			add_location(span0, file$j, 901, 53, 40098);
+    			attr_dev(div7, "class", "input-group-append");
+    			add_location(div7, file$j, 898, 49, 39909);
+    			attr_dev(div8, "class", "input-group");
+    			set_style(div8, "width", "100%", 1);
+    			set_style(div8, "float", "right");
+    			add_location(div8, file$j, 884, 45, 38926);
+    			attr_dev(div9, "class", "col-lg-12");
+    			add_location(div9, file$j, 883, 41, 38857);
+    			attr_dev(div10, "class", "row");
+    			add_location(div10, file$j, 882, 37, 38798);
+    			attr_dev(div11, "class", "form-group");
+    			add_location(div11, file$j, 877, 33, 38510);
+    			attr_dev(div12, "class", "col-lg-3");
+    			add_location(div12, file$j, 876, 29, 38454);
+    			attr_dev(i2, "class", "mdi mdi-emoticon-happy");
+    			add_location(i2, file$j, 915, 42, 40864);
+    			attr_dev(label2, "for", "");
+    			add_location(label2, file$j, 914, 37, 40808);
+    			attr_dev(input2, "type", "number");
+    			attr_dev(input2, "class", "form-control");
+    			attr_dev(input2, "max", "10");
+    			attr_dev(input2, "maxlength", "2");
+    			attr_dev(input2, "aria-label", "Recipient's username");
+    			attr_dev(input2, "aria-describedby", "basic-addon2");
+    			add_location(input2, file$j, 925, 49, 41479);
+    			attr_dev(span1, "class", "input-group-text");
+    			attr_dev(span1, "id", "basic-addon2");
+    			add_location(span1, file$j, 938, 53, 42384);
+    			attr_dev(div13, "class", "input-group-append");
+    			add_location(div13, file$j, 935, 49, 42195);
+    			attr_dev(div14, "class", "input-group");
+    			set_style(div14, "width", "100%", 1);
+    			set_style(div14, "float", "right");
+    			add_location(div14, file$j, 921, 45, 41214);
+    			attr_dev(div15, "class", "col-lg-12");
+    			add_location(div15, file$j, 920, 41, 41145);
+    			attr_dev(div16, "class", "row");
+    			add_location(div16, file$j, 919, 37, 41086);
+    			attr_dev(div17, "class", "form-group");
+    			add_location(div17, file$j, 913, 33, 40746);
+    			attr_dev(div18, "class", "col-lg-3");
+    			add_location(div18, file$j, 912, 29, 40690);
+    			attr_dev(i3, "class", "mdi mdi-opacity");
+    			add_location(i3, file$j, 952, 42, 43150);
+    			attr_dev(label3, "for", "");
+    			add_location(label3, file$j, 951, 37, 43094);
+    			attr_dev(input3, "type", "number");
+    			attr_dev(input3, "class", "form-control");
+    			add_location(input3, file$j, 957, 45, 43461);
+    			attr_dev(div19, "class", "col-lg-12");
+    			add_location(div19, file$j, 956, 41, 43392);
+    			attr_dev(div20, "class", "row");
+    			add_location(div20, file$j, 955, 37, 43333);
+    			attr_dev(div21, "class", "form-group");
+    			add_location(div21, file$j, 950, 33, 43032);
+    			attr_dev(div22, "class", "col-lg-3");
+    			add_location(div22, file$j, 949, 29, 42976);
+    			attr_dev(label4, "for", "");
+    			add_location(label4, file$j, 969, 37, 44129);
+    			attr_dev(input4, "type", "text");
+    			attr_dev(input4, "class", "form-control");
+    			add_location(input4, file$j, 972, 45, 44322);
+    			attr_dev(div23, "class", "col-lg-12");
+    			add_location(div23, file$j, 971, 41, 44253);
+    			attr_dev(div24, "class", "row");
+    			add_location(div24, file$j, 970, 37, 44194);
+    			attr_dev(div25, "class", "form-group");
+    			add_location(div25, file$j, 968, 33, 44067);
+    			attr_dev(div26, "class", "col-lg-12");
+    			add_location(div26, file$j, 967, 29, 44010);
+    			attr_dev(div27, "class", "row");
+    			add_location(div27, file$j, 848, 25, 36768);
+    			attr_dev(div28, "class", "card-body");
+    			add_location(div28, file$j, 847, 21, 36719);
+    			attr_dev(div29, "class", "card m-b-20");
+    			add_location(div29, file$j, 843, 17, 36525);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div29, anchor);
+    			append_dev(div29, div1);
+    			append_dev(div1, div0);
+    			append_dev(div29, t1);
+    			append_dev(div29, div28);
+    			append_dev(div28, div27);
+    			append_dev(div27, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, label0);
+    			append_dev(label0, i0);
+    			append_dev(label0, t2);
+    			append_dev(div5, t3);
+    			append_dev(div5, div4);
+    			append_dev(div4, div2);
+    			append_dev(div2, input0);
+    			set_input_value(input0, /*peso*/ ctx[10].valor);
+    			append_dev(div4, t4);
+    			append_dev(div4, div3);
+    			append_dev(div3, select);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			select_option(select, /*peso*/ ctx[10].tipo);
+    			append_dev(div27, t7);
+    			append_dev(div27, div12);
+    			append_dev(div12, div11);
+    			append_dev(div11, label1);
+    			append_dev(label1, i1);
+    			append_dev(label1, t8);
+    			append_dev(div11, t9);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, div8);
+    			append_dev(div8, input1);
+    			set_input_value(input1, /*historia*/ ctx[7].escalaGalsgow);
+    			append_dev(div8, t10);
+    			append_dev(div8, div7);
+    			append_dev(div7, span0);
+    			append_dev(div27, t12);
+    			append_dev(div27, div18);
+    			append_dev(div18, div17);
+    			append_dev(div17, label2);
+    			append_dev(label2, i2);
+    			append_dev(label2, t13);
+    			append_dev(div17, t14);
+    			append_dev(div17, div16);
+    			append_dev(div16, div15);
+    			append_dev(div15, div14);
+    			append_dev(div14, input2);
+    			set_input_value(input2, /*historia*/ ctx[7].escalaDolor);
+    			append_dev(div14, t15);
+    			append_dev(div14, div13);
+    			append_dev(div13, span1);
+    			append_dev(div27, t17);
+    			append_dev(div27, div22);
+    			append_dev(div22, div21);
+    			append_dev(div21, label3);
+    			append_dev(label3, i3);
+    			append_dev(label3, t18);
+    			append_dev(div21, t19);
+    			append_dev(div21, div20);
+    			append_dev(div20, div19);
+    			append_dev(div19, input3);
+    			set_input_value(input3, /*historia*/ ctx[7].saturacionOxigeno);
+    			append_dev(div27, t20);
+    			append_dev(div27, div26);
+    			append_dev(div26, div25);
+    			append_dev(div25, label4);
+    			append_dev(div25, t22);
+    			append_dev(div25, div24);
+    			append_dev(div24, div23);
+    			append_dev(div23, input4);
+    			set_input_value(input4, /*historia*/ ctx[7].otrosParametros);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler_2*/ ctx[70]),
+    					listen_dev(select, "change", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(select, "change", /*select_change_handler_1*/ ctx[71]),
+    					listen_dev(input1, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler_2*/ ctx[72]),
+    					listen_dev(input2, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler_2*/ ctx[73]),
+    					listen_dev(input3, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input3, "input", /*input3_input_handler_2*/ ctx[74]),
+    					listen_dev(input4, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(input4, "input", /*input4_input_handler_2*/ ctx[75])
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*peso*/ 1024 && to_number(input0.value) !== /*peso*/ ctx[10].valor) {
+    				set_input_value(input0, /*peso*/ ctx[10].valor);
+    			}
+
+    			if (dirty[0] & /*peso*/ 1024) {
+    				select_option(select, /*peso*/ ctx[10].tipo);
+    			}
+
+    			if (dirty[0] & /*historia*/ 128 && to_number(input1.value) !== /*historia*/ ctx[7].escalaGalsgow) {
+    				set_input_value(input1, /*historia*/ ctx[7].escalaGalsgow);
+    			}
+
+    			if (dirty[0] & /*historia*/ 128 && to_number(input2.value) !== /*historia*/ ctx[7].escalaDolor) {
+    				set_input_value(input2, /*historia*/ ctx[7].escalaDolor);
+    			}
+
+    			if (dirty[0] & /*historia*/ 128 && to_number(input3.value) !== /*historia*/ ctx[7].saturacionOxigeno) {
+    				set_input_value(input3, /*historia*/ ctx[7].saturacionOxigeno);
+    			}
+
+    			if (dirty[0] & /*historia*/ 128 && input4.value !== /*historia*/ ctx[7].otrosParametros) {
+    				set_input_value(input4, /*historia*/ ctx[7].otrosParametros);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div29);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5$1.name,
+    		type: "if",
+    		source: "(843:12) {#if empresa.otrosParametros}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1029:12) {#if empresa.exploracionFisica}
+    function create_if_block_2$3(ctx) {
+    	let div7;
+    	let div1;
+    	let div0;
+    	let t1;
+    	let div6;
+    	let div5;
+    	let div2;
+    	let t2;
+    	let hr;
+    	let t3;
+    	let div4;
+    	let div3;
+    	let each_value_3 = /*exploracionFisica*/ ctx[22];
+    	validate_each_argument(each_value_3);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_3$2(get_each_context_3$2(ctx, each_value_3, i));
+    	}
+
+    	let each_value_2 = /*exploracionFisica*/ ctx[22];
+    	validate_each_argument(each_value_2);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div7 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			div0.textContent = "Exploración Fisica";
+    			t1 = space();
+    			div6 = element("div");
+    			div5 = element("div");
+    			div2 = element("div");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t2 = space();
+    			hr = element("hr");
+    			t3 = space();
+    			div4 = element("div");
+    			div3 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div0, "class", "card-title");
+    			add_location(div0, file$j, 1031, 25, 46781);
+    			attr_dev(div1, "class", "card-header");
+    			add_location(div1, file$j, 1030, 21, 46730);
+    			attr_dev(div2, "class", "col-12");
+    			add_location(div2, file$j, 1035, 29, 46982);
+    			add_location(hr, file$j, 1042, 29, 47443);
+    			attr_dev(div3, "class", "row mt-2");
+    			add_location(div3, file$j, 1044, 33, 47532);
+    			attr_dev(div4, "class", "col-12");
+    			add_location(div4, file$j, 1043, 29, 47478);
+    			attr_dev(div5, "class", "row");
+    			add_location(div5, file$j, 1034, 25, 46935);
+    			attr_dev(div6, "class", "card-body");
+    			add_location(div6, file$j, 1033, 21, 46886);
+    			attr_dev(div7, "class", "card m-b-20");
+    			add_location(div7, file$j, 1029, 17, 46683);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div7, anchor);
+    			append_dev(div7, div1);
+    			append_dev(div1, div0);
+    			append_dev(div7, t1);
+    			append_dev(div7, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, div2);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div2, null);
+    			}
+
+    			append_dev(div5, t2);
+    			append_dev(div5, hr);
+    			append_dev(div5, t3);
+    			append_dev(div5, div4);
+    			append_dev(div4, div3);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div3, null);
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*exploracionFisica*/ 4194304 | dirty[1] & /*guardarHistoria*/ 16) {
+    				each_value_3 = /*exploracionFisica*/ ctx[22];
+    				validate_each_argument(each_value_3);
+    				let i;
+
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3$2(ctx, each_value_3, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_3$2(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_3.length;
+    			}
+
+    			if (dirty[0] & /*exploracionFisica*/ 4194304 | dirty[1] & /*guardarHistoria*/ 16) {
+    				each_value_2 = /*exploracionFisica*/ ctx[22];
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$2(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_2$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div3, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_2.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div7);
+    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$3.name,
+    		type: "if",
+    		source: "(1029:12) {#if empresa.exploracionFisica}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1038:37) {#if !item.activo}
+    function create_if_block_4$1(ctx) {
+    	let button;
+    	let t_value = /*item*/ ctx[107].nombre + "";
+    	let t;
     	let mounted;
     	let dispose;
 
     	function click_handler_1(...args) {
-    		return /*click_handler_1*/ ctx[77](/*diagnostico*/ ctx[107], ...args);
+    		return /*click_handler_1*/ ctx[77](/*item*/ ctx[107], /*each_value_3*/ ctx[115], /*item_index_1*/ ctx[116], ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			t = text(t_value);
+    			attr_dev(button, "class", "btn btn-outline-primary mr-2");
+    			add_location(button, file$j, 1038, 41, 47167);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    			append_dev(button, t);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", click_handler_1, false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty[0] & /*exploracionFisica*/ 4194304 && t_value !== (t_value = /*item*/ ctx[107].nombre + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_4$1.name,
+    		type: "if",
+    		source: "(1038:37) {#if !item.activo}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1037:33) {#each exploracionFisica as item}
+    function create_each_block_3$2(ctx) {
+    	let if_block_anchor;
+    	let if_block = !/*item*/ ctx[107].activo && create_if_block_4$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (!/*item*/ ctx[107].activo) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_4$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_3$2.name,
+    		type: "each",
+    		source: "(1037:33) {#each exploracionFisica as item}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1047:41) {#if item.activo}
+    function create_if_block_3$1(ctx) {
+    	let div4;
+    	let div3;
+    	let div1;
+    	let div0;
+    	let t0_value = /*item*/ ctx[107].nombre + "";
+    	let t0;
+    	let t1;
+    	let div2;
+    	let textarea;
+    	let t2;
+    	let mounted;
+    	let dispose;
+
+    	function textarea_input_handler() {
+    		/*textarea_input_handler*/ ctx[78].call(textarea, /*each_value_2*/ ctx[113], /*item_index*/ ctx[114]);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div4 = element("div");
+    			div3 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			div2 = element("div");
+    			textarea = element("textarea");
+    			t2 = space();
+    			attr_dev(div0, "class", "card-title");
+    			add_location(div0, file$j, 1050, 57, 47993);
+    			attr_dev(div1, "class", "card-header");
+    			add_location(div1, file$j, 1049, 53, 47910);
+    			attr_dev(textarea, "class", "form-control");
+    			attr_dev(textarea, "rows", "5");
+    			add_location(textarea, file$j, 1053, 57, 48231);
+    			attr_dev(div2, "class", "card-body");
+    			add_location(div2, file$j, 1052, 53, 48150);
+    			attr_dev(div3, "class", "card m-t-10 m-b-20 border border-primary");
+    			add_location(div3, file$j, 1048, 49, 47802);
+    			attr_dev(div4, "class", "col-lg-4");
+    			add_location(div4, file$j, 1047, 45, 47730);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div3);
+    			append_dev(div3, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div3, t1);
+    			append_dev(div3, div2);
+    			append_dev(div2, textarea);
+    			set_input_value(textarea, /*item*/ ctx[107].text);
+    			append_dev(div4, t2);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(textarea, "input", textarea_input_handler),
+    					listen_dev(textarea, "blur", /*guardarHistoria*/ ctx[35], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty[0] & /*exploracionFisica*/ 4194304 && t0_value !== (t0_value = /*item*/ ctx[107].nombre + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty[0] & /*exploracionFisica*/ 4194304) {
+    				set_input_value(textarea, /*item*/ ctx[107].text);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div4);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3$1.name,
+    		type: "if",
+    		source: "(1047:41) {#if item.activo}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1046:37) {#each exploracionFisica as item}
+    function create_each_block_2$2(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*item*/ ctx[107].activo && create_if_block_3$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*item*/ ctx[107].activo) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_3$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2$2.name,
+    		type: "each",
+    		source: "(1046:37) {#each exploracionFisica as item}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1115:40) {#each filtroDiagnostico as diagnostico}
+    function create_each_block_1$2(ctx) {
+    	let li;
+    	let div;
+    	let span;
+    	let t0_value = /*diagnostico*/ ctx[110].c + "";
+    	let t0;
+    	let t1;
+    	let t2_value = /*diagnostico*/ ctx[110].d + "";
+    	let t2;
+    	let mounted;
+    	let dispose;
+
+    	function click_handler_2(...args) {
+    		return /*click_handler_2*/ ctx[80](/*diagnostico*/ ctx[110], ...args);
     	}
 
     	const block = {
@@ -16793,10 +17942,10 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			attr_dev(span, "class", "badge badge-primary");
-    			add_location(span, file$j, 1074, 52, 49218);
+    			add_location(span, file$j, 1123, 52, 51819);
     			attr_dev(div, "class", "p-2");
-    			add_location(div, file$j, 1067, 48, 48766);
-    			add_location(li, file$j, 1066, 44, 48713);
+    			add_location(div, file$j, 1116, 48, 51367);
+    			add_location(li, file$j, 1115, 44, 51314);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -16807,14 +17956,14 @@ var app = (function () {
     			append_dev(div, t2);
 
     			if (!mounted) {
-    				dispose = listen_dev(div, "click", click_handler_1, false, false, false);
+    				dispose = listen_dev(div, "click", click_handler_2, false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*filtroDiagnostico*/ 4194304 && t0_value !== (t0_value = /*diagnostico*/ ctx[107].c + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*filtroDiagnostico*/ 4194304 && t2_value !== (t2_value = /*diagnostico*/ ctx[107].d + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*filtroDiagnostico*/ 8388608 && t0_value !== (t0_value = /*diagnostico*/ ctx[110].c + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*filtroDiagnostico*/ 8388608 && t2_value !== (t2_value = /*diagnostico*/ ctx[110].d + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -16827,14 +17976,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(1066:40) {#each filtroDiagnostico as diagnostico}",
+    		source: "(1115:40) {#each filtroDiagnostico as diagnostico}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1124:40) {#if item.comentario !== undefined}
+    // (1173:40) {#if item.comentario !== undefined}
     function create_if_block_1$5(ctx) {
     	let div1;
     	let div0;
@@ -16843,7 +17992,7 @@ var app = (function () {
     	let dispose;
 
     	function input_input_handler() {
-    		/*input_input_handler*/ ctx[81].call(input, /*each_value*/ ctx[105], /*i*/ ctx[106]);
+    		/*input_input_handler*/ ctx[84].call(input, /*each_value*/ ctx[108], /*i*/ ctx[109]);
     	}
 
     	const block = {
@@ -16854,21 +18003,21 @@ var app = (function () {
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "form-control border-primary");
     			attr_dev(input, "placeholder", "Comentario");
-    			add_location(input, file$j, 1126, 52, 52489);
+    			add_location(input, file$j, 1175, 52, 55090);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$j, 1125, 48, 52419);
+    			add_location(div0, file$j, 1174, 48, 55020);
     			attr_dev(div1, "class", "row mt-3");
-    			add_location(div1, file$j, 1124, 44, 52348);
+    			add_location(div1, file$j, 1173, 44, 54949);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
     			append_dev(div0, input);
-    			set_input_value(input, /*item*/ ctx[104].comentario);
+    			set_input_value(input, /*item*/ ctx[107].comentario);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
+    					listen_dev(input, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
     					listen_dev(input, "input", input_input_handler)
     				];
 
@@ -16878,8 +18027,8 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty[0] & /*diagnosticosSeleccionados*/ 32 && input.value !== /*item*/ ctx[104].comentario) {
-    				set_input_value(input, /*item*/ ctx[104].comentario);
+    			if (dirty[0] & /*diagnosticosSeleccionados*/ 32 && input.value !== /*item*/ ctx[107].comentario) {
+    				set_input_value(input, /*item*/ ctx[107].comentario);
     			}
     		},
     		d: function destroy(detaching) {
@@ -16893,22 +18042,22 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(1124:40) {#if item.comentario !== undefined}",
+    		source: "(1173:40) {#if item.comentario !== undefined}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1097:32) {#each diagnosticosSeleccionados.reverse() as item, i}
+    // (1146:32) {#each diagnosticosSeleccionados.reverse() as item, i}
     function create_each_block$5(ctx) {
     	let li;
     	let span0;
-    	let t0_value = /*item*/ ctx[104].c + "";
+    	let t0_value = /*item*/ ctx[107].c + "";
     	let t0;
     	let t1;
     	let span1;
-    	let t2_value = /*item*/ ctx[104].d + "";
+    	let t2_value = /*item*/ ctx[107].d + "";
     	let t2;
     	let t3;
     	let div;
@@ -16921,15 +18070,15 @@ var app = (function () {
     	let mounted;
     	let dispose;
 
-    	function click_handler_3(...args) {
-    		return /*click_handler_3*/ ctx[79](/*i*/ ctx[106], ...args);
-    	}
-
     	function click_handler_4(...args) {
-    		return /*click_handler_4*/ ctx[80](/*i*/ ctx[106], ...args);
+    		return /*click_handler_4*/ ctx[82](/*i*/ ctx[109], ...args);
     	}
 
-    	let if_block = /*item*/ ctx[104].comentario !== undefined && create_if_block_1$5(ctx);
+    	function click_handler_5(...args) {
+    		return /*click_handler_5*/ ctx[83](/*i*/ ctx[109], ...args);
+    	}
+
+    	let if_block = /*item*/ ctx[107].comentario !== undefined && create_if_block_1$5(ctx);
 
     	const block = {
     		c: function create() {
@@ -16949,28 +18098,28 @@ var app = (function () {
     			t5 = space();
     			if (if_block) if_block.c();
     			attr_dev(span0, "class", "badge badge-primary");
-    			add_location(span0, file$j, 1098, 40, 50567);
-    			add_location(span1, file$j, 1100, 47, 50708);
+    			add_location(span0, file$j, 1147, 40, 53168);
+    			add_location(span1, file$j, 1149, 47, 53309);
     			attr_dev(i0, "class", "mdi-18px mdi mdi-comment-plus-outline");
-    			add_location(i0, file$j, 1109, 49, 51385);
+    			add_location(i0, file$j, 1158, 49, 53986);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "text-primary");
     			attr_dev(a0, "data-tooltip", "Comentar");
-    			add_location(a0, file$j, 1104, 44, 51022);
+    			add_location(a0, file$j, 1153, 44, 53623);
     			attr_dev(i1, "class", "mdi-18px mdi mdi-trash-can-outline");
-    			add_location(i1, file$j, 1118, 49, 51983);
+    			add_location(i1, file$j, 1167, 49, 54584);
     			attr_dev(a1, "href", "#!");
     			attr_dev(a1, "class", "text-danger");
     			attr_dev(a1, "data-tooltip", "Eliminar");
-    			add_location(a1, file$j, 1113, 44, 51630);
+    			add_location(a1, file$j, 1162, 44, 54231);
     			set_style(div, "position", "absolute");
     			set_style(div, "top", "0");
     			set_style(div, "right", "0");
     			set_style(div, "padding", "10px");
     			set_style(div, "background-color", "white");
     			set_style(div, "border-bottom-left-radius", "5px");
-    			add_location(div, file$j, 1101, 40, 50770);
-    			add_location(li, file$j, 1097, 36, 50522);
+    			add_location(div, file$j, 1150, 40, 53371);
+    			add_location(li, file$j, 1146, 36, 53123);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -16991,8 +18140,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(a0, "click", prevent_default(click_handler_3), false, true, false),
-    					listen_dev(a1, "click", prevent_default(click_handler_4), false, true, false)
+    					listen_dev(a0, "click", prevent_default(click_handler_4), false, true, false),
+    					listen_dev(a1, "click", prevent_default(click_handler_5), false, true, false)
     				];
 
     				mounted = true;
@@ -17000,10 +18149,10 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*diagnosticosSeleccionados*/ 32 && t0_value !== (t0_value = /*item*/ ctx[104].c + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*diagnosticosSeleccionados*/ 32 && t2_value !== (t2_value = /*item*/ ctx[104].d + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*diagnosticosSeleccionados*/ 32 && t0_value !== (t0_value = /*item*/ ctx[107].c + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*diagnosticosSeleccionados*/ 32 && t2_value !== (t2_value = /*item*/ ctx[107].d + "")) set_data_dev(t2, t2_value);
 
-    			if (/*item*/ ctx[104].comentario !== undefined) {
+    			if (/*item*/ ctx[107].comentario !== undefined) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -17028,14 +18177,14 @@ var app = (function () {
     		block,
     		id: create_each_block$5.name,
     		type: "each",
-    		source: "(1097:32) {#each diagnosticosSeleccionados.reverse() as item, i}",
+    		source: "(1146:32) {#each diagnosticosSeleccionados.reverse() as item, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1133:32) {#if diagnosticosSeleccionados.length === 0}
+    // (1182:32) {#if diagnosticosSeleccionados.length === 0}
     function create_if_block$8(ctx) {
     	let div2;
     	let div1;
@@ -17054,17 +18203,17 @@ var app = (function () {
     			t1 = space();
     			ul = element("ul");
     			attr_dev(p, "class", "alert-body text-center mt-3");
-    			add_location(p, file$j, 1139, 48, 53339);
+    			add_location(p, file$j, 1188, 48, 55940);
     			attr_dev(div0, "class", "alert border alert-light");
     			attr_dev(div0, "role", "alert");
-    			add_location(div0, file$j, 1135, 44, 53098);
+    			add_location(div0, file$j, 1184, 44, 55699);
     			attr_dev(ul, "class", "list-info");
     			attr_dev(ul, "data-bind", "foreach: estudios");
-    			add_location(ul, file$j, 1146, 44, 53770);
+    			add_location(ul, file$j, 1195, 44, 56371);
     			attr_dev(div1, "class", "col-md-12");
-    			add_location(div1, file$j, 1134, 40, 53030);
+    			add_location(div1, file$j, 1183, 40, 55631);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file$j, 1133, 36, 52972);
+    			add_location(div2, file$j, 1182, 36, 55573);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -17083,7 +18232,7 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(1133:32) {#if diagnosticosSeleccionados.length === 0}",
+    		source: "(1182:32) {#if diagnosticosSeleccionados.length === 0}",
     		ctx
     	});
 
@@ -17097,7 +18246,7 @@ var app = (function () {
     	let t1;
     	let div5;
     	let div0;
-    	let h50;
+    	let h5;
     	let span0;
     	let t3;
     	let span1;
@@ -17140,8 +18289,8 @@ var app = (function () {
     	let header;
     	let t24;
     	let main;
-    	let div98;
-    	let div97;
+    	let div48;
+    	let div47;
     	let div10;
     	let div8;
     	let div7;
@@ -17157,179 +18306,60 @@ var app = (function () {
     	let textarea1;
     	let t30;
     	let t31;
-    	let div64;
+    	let t32;
+    	let t33;
+    	let div21;
     	let div16;
     	let div15;
-    	let t33;
-    	let div63;
-    	let div62;
-    	let div21;
-    	let div20;
-    	let label0;
-    	let i5;
-    	let t34;
     	let t35;
     	let div19;
-    	let div17;
-    	let input0;
-    	let t36;
     	let div18;
-    	let select0;
-    	let option0;
-    	let option1;
-    	let option2;
+    	let a0;
+    	let i5;
+    	let t36;
+    	let div17;
+    	let button5;
+    	let t38;
+    	let button6;
     	let t40;
-    	let div25;
-    	let div24;
-    	let label1;
-    	let i6;
-    	let t41;
+    	let button7;
     	let t42;
+    	let div20;
+    	let textarea2;
+    	let t43;
+    	let t44;
+    	let div33;
     	let div23;
     	let div22;
-    	let input1;
-    	let t43;
+    	let t46;
+    	let div26;
+    	let div25;
+    	let a1;
+    	let i6;
+    	let t47;
+    	let div24;
+    	let button8;
+    	let i7;
+    	let t48;
+    	let t49;
+    	let div32;
+    	let div31;
     	let div29;
     	let div28;
-    	let label2;
-    	let i7;
-    	let t44;
-    	let t45;
-    	let div27;
-    	let div26;
-    	let input2;
-    	let t46;
-    	let div34;
-    	let div33;
-    	let label3;
-    	let i8;
-    	let t47;
-    	let t48;
-    	let div32;
-    	let div30;
-    	let input3;
-    	let t49;
-    	let div31;
-    	let input4;
+    	let input0;
     	let t50;
-    	let div61;
-    	let h51;
-    	let t52;
-    	let hr;
-    	let t53;
-    	let div60;
-    	let div39;
-    	let div38;
-    	let label4;
-    	let i9;
-    	let t54;
-    	let t55;
-    	let div37;
-    	let div35;
-    	let input5;
-    	let t56;
-    	let div36;
-    	let select1;
-    	let option3;
-    	let option4;
-    	let t59;
-    	let div45;
-    	let div44;
-    	let label5;
-    	let i10;
-    	let t60;
-    	let t61;
-    	let div43;
-    	let div42;
-    	let div41;
-    	let input6;
-    	let t62;
-    	let div40;
-    	let span2;
-    	let t64;
-    	let div51;
-    	let div50;
-    	let label6;
-    	let i11;
-    	let t65;
-    	let t66;
-    	let div49;
-    	let div48;
-    	let div47;
-    	let input7;
-    	let t67;
-    	let div46;
-    	let span3;
-    	let t69;
-    	let div55;
-    	let div54;
-    	let label7;
-    	let i12;
-    	let t70;
-    	let t71;
-    	let div53;
-    	let div52;
-    	let input8;
-    	let t72;
-    	let div59;
-    	let div58;
-    	let label8;
-    	let t74;
-    	let div57;
-    	let div56;
-    	let input9;
-    	let t75;
-    	let div71;
-    	let div66;
-    	let div65;
-    	let t77;
-    	let div69;
-    	let div68;
-    	let a0;
-    	let i13;
-    	let t78;
-    	let div67;
-    	let button5;
-    	let t80;
-    	let button6;
-    	let t82;
-    	let button7;
-    	let t84;
-    	let div70;
-    	let textarea2;
-    	let t85;
-    	let div83;
-    	let div73;
-    	let div72;
-    	let t87;
-    	let div76;
-    	let div75;
-    	let a1;
-    	let i14;
-    	let t88;
-    	let div74;
-    	let button8;
-    	let i15;
-    	let t89;
-    	let t90;
-    	let div82;
-    	let div81;
-    	let div79;
-    	let div78;
-    	let input10;
-    	let t91;
     	let ul0;
-    	let div77;
-    	let t92;
+    	let div27;
+    	let t51;
     	let li;
     	let a2;
-    	let i16;
-    	let t93;
-    	let t94;
-    	let div80;
+    	let i8;
+    	let t52;
+    	let t53;
+    	let div30;
     	let ul1;
-    	let t95;
-    	let t96;
+    	let t54;
+    	let t55;
     	let ordenesmedicas;
     	let updating_idHistoria;
     	let updating_idPaciente;
@@ -17340,50 +18370,53 @@ var app = (function () {
     	let updating_medicamentos;
     	let updating_instrucciones;
     	let updating_estudios;
-    	let t97;
-    	let div87;
-    	let div85;
-    	let div84;
-    	let t99;
-    	let div86;
+    	let t56;
+    	let div37;
+    	let div35;
+    	let div34;
+    	let t58;
+    	let div36;
     	let textarea3;
-    	let t100;
-    	let div96;
-    	let div95;
-    	let div94;
-    	let div89;
-    	let div88;
-    	let t102;
-    	let div93;
-    	let div92;
-    	let div90;
-    	let label9;
-    	let t104;
-    	let input11;
-    	let t105;
-    	let div91;
-    	let label10;
-    	let t107;
-    	let input12;
-    	let t108;
+    	let t59;
+    	let div46;
+    	let div45;
+    	let div44;
+    	let div39;
+    	let div38;
+    	let t61;
+    	let div43;
+    	let div42;
+    	let div40;
+    	let label0;
+    	let t63;
+    	let input1;
+    	let t64;
+    	let div41;
+    	let label1;
+    	let t66;
+    	let input2;
+    	let t67;
     	let modaldatospaciente;
-    	let t109;
+    	let t68;
     	let modaltratamientos;
-    	let t110;
+    	let t69;
     	let modalinterconsulta;
-    	let t111;
+    	let t70;
     	let modalantecedentes;
     	let current;
     	let mounted;
     	let dispose;
     	asideatencion = new AsideAtencion({ $$inline: true });
-    	let if_block0 = /*errorServer*/ ctx[20] && create_if_block_6(ctx);
-    	let if_block1 = !/*cargando*/ ctx[13] && !/*errorServer*/ ctx[20] && create_if_block_5$1(ctx);
-    	let if_block2 = /*errorServer*/ ctx[20] && create_if_block_4$1(ctx);
-    	let if_block3 = /*cargando*/ ctx[13] && !/*errorServer*/ ctx[20] && create_if_block_3$1(ctx);
+    	let if_block0 = /*errorServer*/ ctx[20] && create_if_block_11(ctx);
+    	let if_block1 = !/*cargando*/ ctx[13] && !/*errorServer*/ ctx[20] && create_if_block_10(ctx);
+    	let if_block2 = /*errorServer*/ ctx[20] && create_if_block_9(ctx);
+    	let if_block3 = /*cargando*/ ctx[13] && !/*errorServer*/ ctx[20] && create_if_block_8(ctx);
     	header = new Header({ $$inline: true });
-    	let if_block4 = /*empresa*/ ctx[21].historiaGinecologica && create_if_block_2$3(ctx);
-    	let each_value_1 = /*filtroDiagnostico*/ ctx[22];
+    	let if_block4 = /*empresa*/ ctx[21].historiaGinecologica && create_if_block_7(ctx);
+    	let if_block5 = /*empresa*/ ctx[21].signosVitales && create_if_block_6(ctx);
+    	let if_block6 = /*empresa*/ ctx[21].otrosParametros && create_if_block_5$1(ctx);
+    	let if_block7 = /*empresa*/ ctx[21].exploracionFisica && create_if_block_2$3(ctx);
+    	let each_value_1 = /*filtroDiagnostico*/ ctx[23];
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -17399,42 +18432,42 @@ var app = (function () {
     		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
     	}
 
-    	let if_block5 = /*diagnosticosSeleccionados*/ ctx[5].length === 0 && create_if_block$8(ctx);
+    	let if_block8 = /*diagnosticosSeleccionados*/ ctx[5].length === 0 && create_if_block$8(ctx);
 
     	function ordenesmedicas_idHistoria_binding(value) {
-    		/*ordenesmedicas_idHistoria_binding*/ ctx[82].call(null, value);
+    		/*ordenesmedicas_idHistoria_binding*/ ctx[85].call(null, value);
     	}
 
     	function ordenesmedicas_idPaciente_binding(value) {
-    		/*ordenesmedicas_idPaciente_binding*/ ctx[83].call(null, value);
+    		/*ordenesmedicas_idPaciente_binding*/ ctx[86].call(null, value);
     	}
 
     	function ordenesmedicas_estudiosSeleccionados_binding(value) {
-    		/*ordenesmedicas_estudiosSeleccionados_binding*/ ctx[84].call(null, value);
+    		/*ordenesmedicas_estudiosSeleccionados_binding*/ ctx[87].call(null, value);
     	}
 
     	function ordenesmedicas_medicamentosSeleccionados_binding(value) {
-    		/*ordenesmedicas_medicamentosSeleccionados_binding*/ ctx[85].call(null, value);
+    		/*ordenesmedicas_medicamentosSeleccionados_binding*/ ctx[88].call(null, value);
     	}
 
     	function ordenesmedicas_sltBuscarMedicamentos_binding(value) {
-    		/*ordenesmedicas_sltBuscarMedicamentos_binding*/ ctx[86].call(null, value);
+    		/*ordenesmedicas_sltBuscarMedicamentos_binding*/ ctx[89].call(null, value);
     	}
 
     	function ordenesmedicas_sltBuscarEstudios_binding(value) {
-    		/*ordenesmedicas_sltBuscarEstudios_binding*/ ctx[87].call(null, value);
+    		/*ordenesmedicas_sltBuscarEstudios_binding*/ ctx[90].call(null, value);
     	}
 
     	function ordenesmedicas_medicamentos_binding(value) {
-    		/*ordenesmedicas_medicamentos_binding*/ ctx[88].call(null, value);
+    		/*ordenesmedicas_medicamentos_binding*/ ctx[91].call(null, value);
     	}
 
     	function ordenesmedicas_instrucciones_binding(value) {
-    		/*ordenesmedicas_instrucciones_binding*/ ctx[89].call(null, value);
+    		/*ordenesmedicas_instrucciones_binding*/ ctx[92].call(null, value);
     	}
 
     	function ordenesmedicas_estudios_binding(value) {
-    		/*ordenesmedicas_estudios_binding*/ ctx[90].call(null, value);
+    		/*ordenesmedicas_estudios_binding*/ ctx[93].call(null, value);
     	}
 
     	let ordenesmedicas_props = {};
@@ -17489,13 +18522,13 @@ var app = (function () {
     	binding_callbacks.push(() => bind(ordenesmedicas, "medicamentos", ordenesmedicas_medicamentos_binding));
     	binding_callbacks.push(() => bind(ordenesmedicas, "instrucciones", ordenesmedicas_instrucciones_binding));
     	binding_callbacks.push(() => bind(ordenesmedicas, "estudios", ordenesmedicas_estudios_binding));
-    	ordenesmedicas.$on("eliminarEstudio", /*eliminarEstudios*/ ctx[32]);
-    	ordenesmedicas.$on("agregarEstudio", /*agregarEstudio*/ ctx[27]);
-    	ordenesmedicas.$on("buscandoEstudios", /*searchEstudios*/ ctx[26]);
-    	ordenesmedicas.$on("modificado", /*guardarHistoria*/ ctx[34]);
-    	ordenesmedicas.$on("buscarMedicamentos", /*searchMedicamentos*/ ctx[24]);
-    	ordenesmedicas.$on("agregarMedicamento", /*agregarMedicamento*/ ctx[33]);
-    	ordenesmedicas.$on("eliminarMedicamento", /*eliminarMedicamento*/ ctx[30]);
+    	ordenesmedicas.$on("eliminarEstudio", /*eliminarEstudios*/ ctx[33]);
+    	ordenesmedicas.$on("agregarEstudio", /*agregarEstudio*/ ctx[28]);
+    	ordenesmedicas.$on("buscandoEstudios", /*searchEstudios*/ ctx[27]);
+    	ordenesmedicas.$on("modificado", /*guardarHistoria*/ ctx[35]);
+    	ordenesmedicas.$on("buscarMedicamentos", /*searchMedicamentos*/ ctx[25]);
+    	ordenesmedicas.$on("agregarMedicamento", /*agregarMedicamento*/ ctx[34]);
+    	ordenesmedicas.$on("eliminarMedicamento", /*eliminarMedicamento*/ ctx[31]);
 
     	modaldatospaciente = new ModalDatosPaciente({
     			props: {
@@ -17519,7 +18552,7 @@ var app = (function () {
     			t1 = space();
     			div5 = element("div");
     			div0 = element("div");
-    			h50 = element("h5");
+    			h5 = element("h5");
     			span0 = element("span");
     			span0.textContent = "Historia Clinica";
     			t3 = space();
@@ -17568,8 +18601,8 @@ var app = (function () {
     			create_component(header.$$.fragment);
     			t24 = space();
     			main = element("main");
-    			div98 = element("div");
-    			div97 = element("div");
+    			div48 = element("div");
+    			div47 = element("div");
     			div10 = element("div");
     			div8 = element("div");
     			div7 = element("div");
@@ -17588,312 +18621,186 @@ var app = (function () {
     			t30 = space();
     			if (if_block4) if_block4.c();
     			t31 = space();
-    			div64 = element("div");
+    			if (if_block5) if_block5.c();
+    			t32 = space();
+    			if (if_block6) if_block6.c();
+    			t33 = space();
+    			div21 = element("div");
     			div16 = element("div");
     			div15 = element("div");
-    			div15.textContent = "Signos vitales";
-    			t33 = space();
-    			div63 = element("div");
-    			div62 = element("div");
-    			div21 = element("div");
-    			div20 = element("div");
-    			label0 = element("label");
-    			i5 = element("i");
-    			t34 = text(" Temperatura");
+    			div15.textContent = "Examen Fisico";
     			t35 = space();
     			div19 = element("div");
-    			div17 = element("div");
-    			input0 = element("input");
-    			t36 = space();
     			div18 = element("div");
-    			select0 = element("select");
-    			option0 = element("option");
-    			option0.textContent = "°C";
-    			option1 = element("option");
-    			option1.textContent = "°K";
-    			option2 = element("option");
-    			option2.textContent = "°F";
-    			t40 = space();
-    			div25 = element("div");
-    			div24 = element("div");
-    			label1 = element("label");
-    			i6 = element("i");
-    			t41 = text(" Frecuencia\n                                    respiratoria");
-    			t42 = space();
-    			div23 = element("div");
-    			div22 = element("div");
-    			input1 = element("input");
-    			t43 = space();
-    			div29 = element("div");
-    			div28 = element("div");
-    			label2 = element("label");
-    			i7 = element("i");
-    			t44 = text(" Frecuencia\n                                    cardiaca");
-    			t45 = space();
-    			div27 = element("div");
-    			div26 = element("div");
-    			input2 = element("input");
-    			t46 = space();
-    			div34 = element("div");
-    			div33 = element("div");
-    			label3 = element("label");
-    			i8 = element("i");
-    			t47 = text(" Presion\n                                    alterial (mmHg)");
-    			t48 = space();
-    			div32 = element("div");
-    			div30 = element("div");
-    			input3 = element("input");
-    			t49 = space();
-    			div31 = element("div");
-    			input4 = element("input");
-    			t50 = space();
-    			div61 = element("div");
-    			h51 = element("h5");
-    			h51.textContent = "Otros parametros";
-    			t52 = space();
-    			hr = element("hr");
-    			t53 = space();
-    			div60 = element("div");
-    			div39 = element("div");
-    			div38 = element("div");
-    			label4 = element("label");
-    			i9 = element("i");
-    			t54 = text(" Peso");
-    			t55 = space();
-    			div37 = element("div");
-    			div35 = element("div");
-    			input5 = element("input");
-    			t56 = space();
-    			div36 = element("div");
-    			select1 = element("select");
-    			option3 = element("option");
-    			option3.textContent = "Lb";
-    			option4 = element("option");
-    			option4.textContent = "Kg";
-    			t59 = space();
-    			div45 = element("div");
-    			div44 = element("div");
-    			label5 = element("label");
-    			i10 = element("i");
-    			t60 = text(" Escala de\n                                            glasgow");
-    			t61 = space();
-    			div43 = element("div");
-    			div42 = element("div");
-    			div41 = element("div");
-    			input6 = element("input");
-    			t62 = space();
-    			div40 = element("div");
-    			span2 = element("span");
-    			span2.textContent = "/ 15";
-    			t64 = space();
-    			div51 = element("div");
-    			div50 = element("div");
-    			label6 = element("label");
-    			i11 = element("i");
-    			t65 = text(" Escala de dolor");
-    			t66 = space();
-    			div49 = element("div");
-    			div48 = element("div");
-    			div47 = element("div");
-    			input7 = element("input");
-    			t67 = space();
-    			div46 = element("div");
-    			span3 = element("span");
-    			span3.textContent = "/ 10";
-    			t69 = space();
-    			div55 = element("div");
-    			div54 = element("div");
-    			label7 = element("label");
-    			i12 = element("i");
-    			t70 = text(" Saturación\n                                            de oxigeno");
-    			t71 = space();
-    			div53 = element("div");
-    			div52 = element("div");
-    			input8 = element("input");
-    			t72 = space();
-    			div59 = element("div");
-    			div58 = element("div");
-    			label8 = element("label");
-    			label8.textContent = "Otros";
-    			t74 = space();
-    			div57 = element("div");
-    			div56 = element("div");
-    			input9 = element("input");
-    			t75 = space();
-    			div71 = element("div");
-    			div66 = element("div");
-    			div65 = element("div");
-    			div65.textContent = "Examen Fisico";
-    			t77 = space();
-    			div69 = element("div");
-    			div68 = element("div");
     			a0 = element("a");
-    			i13 = element("i");
-    			t78 = space();
-    			div67 = element("div");
+    			i5 = element("i");
+    			t36 = space();
+    			div17 = element("div");
     			button5 = element("button");
     			button5.textContent = "Action";
-    			t80 = space();
+    			t38 = space();
     			button6 = element("button");
     			button6.textContent = "Another action";
-    			t82 = space();
+    			t40 = space();
     			button7 = element("button");
     			button7.textContent = "Something else here";
-    			t84 = space();
-    			div70 = element("div");
+    			t42 = space();
+    			div20 = element("div");
     			textarea2 = element("textarea");
-    			t85 = space();
-    			div83 = element("div");
-    			div73 = element("div");
-    			div72 = element("div");
-    			div72.textContent = "Diagnosticos";
-    			t87 = space();
-    			div76 = element("div");
-    			div75 = element("div");
+    			t43 = space();
+    			if (if_block7) if_block7.c();
+    			t44 = space();
+    			div33 = element("div");
+    			div23 = element("div");
+    			div22 = element("div");
+    			div22.textContent = "Diagnosticos";
+    			t46 = space();
+    			div26 = element("div");
+    			div25 = element("div");
     			a1 = element("a");
-    			i14 = element("i");
-    			t88 = space();
-    			div74 = element("div");
+    			i6 = element("i");
+    			t47 = space();
+    			div24 = element("div");
     			button8 = element("button");
-    			i15 = element("i");
-    			t89 = text("\n                                Agregar nuevo diagnostico");
-    			t90 = space();
-    			div82 = element("div");
-    			div81 = element("div");
-    			div79 = element("div");
-    			div78 = element("div");
-    			input10 = element("input");
-    			t91 = space();
+    			i7 = element("i");
+    			t48 = text("\n                                Agregar nuevo diagnostico");
+    			t49 = space();
+    			div32 = element("div");
+    			div31 = element("div");
+    			div29 = element("div");
+    			div28 = element("div");
+    			input0 = element("input");
+    			t50 = space();
     			ul0 = element("ul");
-    			div77 = element("div");
+    			div27 = element("div");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t92 = space();
+    			t51 = space();
     			li = element("li");
     			a2 = element("a");
-    			i16 = element("i");
-    			t93 = text("Agregar\n                                                manualmente");
-    			t94 = space();
-    			div80 = element("div");
+    			i8 = element("i");
+    			t52 = text("Agregar\n                                                manualmente");
+    			t53 = space();
+    			div30 = element("div");
     			ul1 = element("ul");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t95 = space();
-    			if (if_block5) if_block5.c();
-    			t96 = space();
+    			t54 = space();
+    			if (if_block8) if_block8.c();
+    			t55 = space();
     			create_component(ordenesmedicas.$$.fragment);
-    			t97 = space();
-    			div87 = element("div");
-    			div85 = element("div");
-    			div84 = element("div");
-    			div84.textContent = "Observaciones";
-    			t99 = space();
-    			div86 = element("div");
+    			t56 = space();
+    			div37 = element("div");
+    			div35 = element("div");
+    			div34 = element("div");
+    			div34.textContent = "Observaciones";
+    			t58 = space();
+    			div36 = element("div");
     			textarea3 = element("textarea");
-    			t100 = space();
-    			div96 = element("div");
-    			div95 = element("div");
-    			div94 = element("div");
-    			div89 = element("div");
-    			div88 = element("div");
-    			div88.textContent = "Fecha y hora";
-    			t102 = space();
-    			div93 = element("div");
-    			div92 = element("div");
-    			div90 = element("div");
-    			label9 = element("label");
-    			label9.textContent = "Fecha";
-    			t104 = space();
-    			input11 = element("input");
-    			t105 = space();
-    			div91 = element("div");
-    			label10 = element("label");
-    			label10.textContent = "Hora";
-    			t107 = space();
-    			input12 = element("input");
-    			t108 = space();
+    			t59 = space();
+    			div46 = element("div");
+    			div45 = element("div");
+    			div44 = element("div");
+    			div39 = element("div");
+    			div38 = element("div");
+    			div38.textContent = "Fecha y hora";
+    			t61 = space();
+    			div43 = element("div");
+    			div42 = element("div");
+    			div40 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Fecha";
+    			t63 = space();
+    			input1 = element("input");
+    			t64 = space();
+    			div41 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Hora";
+    			t66 = space();
+    			input2 = element("input");
+    			t67 = space();
     			create_component(modaldatospaciente.$$.fragment);
-    			t109 = space();
+    			t68 = space();
     			create_component(modaltratamientos.$$.fragment);
-    			t110 = space();
+    			t69 = space();
     			create_component(modalinterconsulta.$$.fragment);
-    			t111 = space();
+    			t70 = space();
     			create_component(modalantecedentes.$$.fragment);
     			attr_dev(span0, "class", "badge badge-primary");
     			attr_dev(span0, "data-bind", "text: titulo");
-    			add_location(span0, file$j, 437, 16, 14000);
+    			add_location(span0, file$j, 439, 16, 14102);
     			attr_dev(span1, "data-bind", "text: paciente().nombreParaMostrar");
-    			add_location(span1, file$j, 440, 16, 14137);
-    			add_location(h50, file$j, 436, 12, 13979);
+    			add_location(span1, file$j, 442, 16, 14239);
+    			add_location(h5, file$j, 438, 12, 14081);
     			attr_dev(div0, "class", "col-md-6");
-    			add_location(div0, file$j, 435, 8, 13944);
+    			add_location(div0, file$j, 437, 8, 14046);
     			attr_dev(div1, "class", "guardar-documento");
-    			add_location(div1, file$j, 446, 12, 14378);
+    			add_location(div1, file$j, 448, 12, 14480);
     			attr_dev(div2, "class", "col-md-6");
     			set_style(div2, "text-align", "right");
-    			add_location(div2, file$j, 445, 8, 14316);
+    			add_location(div2, file$j, 447, 8, 14418);
     			attr_dev(i0, "class", "mdi mdi-content-save-outline");
-    			add_location(i0, file$j, 476, 12, 15496);
+    			add_location(i0, file$j, 478, 12, 15598);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success flotante svelte-14y2n0i");
     			attr_dev(button0, "data-tooltip", "Guardar");
-    			add_location(button0, file$j, 470, 8, 15278);
+    			add_location(button0, file$j, 472, 8, 15380);
     			attr_dev(i1, "data-bind", "class: icon");
     			attr_dev(i1, "class", "mdi mdi-comment-eye");
-    			add_location(i1, file$j, 486, 20, 15925);
+    			add_location(i1, file$j, 488, 20, 16027);
     			attr_dev(sapn0, "data-bind", "text: text");
-    			add_location(sapn0, file$j, 487, 20, 16003);
+    			add_location(sapn0, file$j, 489, 20, 16105);
     			attr_dev(button1, "data-toggle", "modal");
     			attr_dev(button1, "data-target", "#modalDatosPersonales");
     			set_style(button1, "box-shadow", "none");
     			attr_dev(button1, "class", "btn btn-outline-secondary btn-sm");
-    			add_location(button1, file$j, 480, 16, 15677);
+    			add_location(button1, file$j, 482, 16, 15779);
     			attr_dev(i2, "data-bind", "class: icon");
     			attr_dev(i2, "class", "mdi mdi-text");
-    			add_location(i2, file$j, 495, 20, 16316);
+    			add_location(i2, file$j, 497, 20, 16418);
     			attr_dev(sapn1, "data-bind", "text: text");
-    			add_location(sapn1, file$j, 496, 20, 16387);
+    			add_location(sapn1, file$j, 498, 20, 16489);
     			attr_dev(button2, "data-bind", " class: itemClass,click: clickEvent");
     			set_style(button2, "box-shadow", "none");
     			attr_dev(button2, "class", "btn btn-outline-dark btn-sm");
-    			add_location(button2, file$j, 490, 16, 16101);
+    			add_location(button2, file$j, 492, 16, 16203);
     			attr_dev(i3, "data-bind", "class: icon");
     			attr_dev(i3, "class", "mdi mdi-printer");
-    			add_location(i3, file$j, 514, 20, 17137);
+    			add_location(i3, file$j, 516, 20, 17239);
     			attr_dev(sapn2, "data-bind", "text: text");
-    			add_location(sapn2, file$j, 515, 20, 17211);
+    			add_location(sapn2, file$j, 517, 20, 17313);
     			attr_dev(button3, "data-bind", " class: itemClass,click: clickEvent");
     			set_style(button3, "box-shadow", "none");
     			attr_dev(button3, "class", "btn btn-outline-dark btn-sm btn-hover-white");
-    			add_location(button3, file$j, 509, 16, 16906);
+    			add_location(button3, file$j, 511, 16, 17008);
     			attr_dev(i4, "data-bind", "class: icon");
     			attr_dev(i4, "class", "mdi mdi-delete");
-    			add_location(i4, file$j, 533, 20, 17942);
+    			add_location(i4, file$j, 535, 20, 18044);
     			attr_dev(sapn3, "data-bind", "text: text");
-    			add_location(sapn3, file$j, 534, 20, 18015);
+    			add_location(sapn3, file$j, 536, 20, 18117);
     			set_style(button4, "box-shadow", "none");
     			attr_dev(button4, "class", "btn btn-outline-danger btn-sm");
-    			add_location(button4, file$j, 528, 16, 17720);
+    			add_location(button4, file$j, 530, 16, 17822);
     			attr_dev(div3, "class", "dropdown");
     			attr_dev(div3, "data-bind", "foreach: actionButtons");
-    			add_location(div3, file$j, 479, 12, 15603);
+    			add_location(div3, file$j, 481, 12, 15705);
     			attr_dev(div4, "class", "col-lg-12");
-    			add_location(div4, file$j, 478, 8, 15567);
+    			add_location(div4, file$j, 480, 8, 15669);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$j, 434, 4, 13918);
+    			add_location(div5, file$j, 436, 4, 14020);
     			attr_dev(div6, "class", "contenedor-datos");
     			attr_dev(div6, "id", "divHeaderBar");
-    			add_location(div6, file$j, 430, 0, 13703);
+    			add_location(div6, file$j, 432, 0, 13805);
     			attr_dev(div7, "class", "card-title");
-    			add_location(div7, file$j, 550, 20, 18466);
+    			add_location(div7, file$j, 552, 20, 18568);
     			attr_dev(div8, "class", "card-header");
-    			add_location(div8, file$j, 549, 16, 18420);
+    			add_location(div8, file$j, 551, 16, 18522);
     			attr_dev(textarea0, "class", "form-control");
     			set_style(textarea0, "width", "100%");
     			set_style(textarea0, "display", "block");
@@ -17901,16 +18808,16 @@ var app = (function () {
     			attr_dev(textarea0, "rows", "3");
     			attr_dev(textarea0, "name", "Comentario");
     			attr_dev(textarea0, "data-bind", "value: atencionMedica.motivoConsulta");
-    			add_location(textarea0, file$j, 553, 20, 18598);
+    			add_location(textarea0, file$j, 555, 20, 18700);
     			attr_dev(div9, "class", "card-body");
-    			add_location(div9, file$j, 552, 16, 18554);
+    			add_location(div9, file$j, 554, 16, 18656);
     			attr_dev(div10, "data-bind", "if: perfil().motivoConsulta");
     			attr_dev(div10, "class", "card m-b-20 margen-mobile");
-    			add_location(div10, file$j, 545, 12, 18279);
+    			add_location(div10, file$j, 547, 12, 18381);
     			attr_dev(div11, "class", "card-title");
-    			add_location(div11, file$j, 568, 20, 19191);
+    			add_location(div11, file$j, 570, 20, 19293);
     			attr_dev(div12, "class", "card-header");
-    			add_location(div12, file$j, 567, 16, 19145);
+    			add_location(div12, file$j, 569, 16, 19247);
     			attr_dev(textarea1, "class", "form-control");
     			attr_dev(textarea1, "data-bind", "value: atencionMedica.historiaEnfermedad");
     			set_style(textarea1, "width", "100%");
@@ -17918,291 +18825,85 @@ var app = (function () {
     			set_style(textarea1, "height", "150px");
     			attr_dev(textarea1, "rows", "3");
     			attr_dev(textarea1, "name", "Comentario");
-    			add_location(textarea1, file$j, 571, 20, 19330);
+    			add_location(textarea1, file$j, 573, 20, 19432);
     			attr_dev(div13, "class", "card-body");
-    			add_location(div13, file$j, 570, 16, 19286);
+    			add_location(div13, file$j, 572, 16, 19388);
     			attr_dev(div14, "class", "card m-b-20 autosave");
-    			add_location(div14, file$j, 564, 12, 19065);
+    			add_location(div14, file$j, 566, 12, 19167);
     			attr_dev(div15, "class", "card-title");
-    			add_location(div15, file$j, 743, 20, 30778);
+    			add_location(div15, file$j, 991, 20, 45079);
     			attr_dev(div16, "class", "card-header");
-    			add_location(div16, file$j, 742, 16, 30732);
-    			attr_dev(i5, "class", "mdi mdi-thermometer mdi-18px");
-    			add_location(i5, file$j, 750, 37, 31107);
-    			attr_dev(label0, "for", "");
-    			add_location(label0, file$j, 749, 32, 31056);
-    			attr_dev(input0, "type", "number");
-    			attr_dev(input0, "class", "form-control");
-    			add_location(input0, file$j, 754, 40, 31352);
-    			attr_dev(div17, "class", "col-lg-7");
-    			add_location(div17, file$j, 753, 36, 31289);
-    			option0.__value = "C";
-    			option0.value = option0.__value;
-    			option0.selected = true;
-    			add_location(option0, file$j, 764, 44, 32024);
-    			option1.__value = "K";
-    			option1.value = option1.__value;
-    			add_location(option1, file$j, 765, 44, 32107);
-    			option2.__value = "F";
-    			option2.value = option2.__value;
-    			add_location(option2, file$j, 766, 44, 32181);
-    			attr_dev(select0, "class", "form-control");
-    			if (/*temperatura*/ ctx[8].tipo === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[64].call(select0));
-    			add_location(select0, file$j, 763, 40, 31892);
-    			attr_dev(div18, "class", "col-lg-5");
-    			add_location(div18, file$j, 761, 36, 31749);
-    			attr_dev(div19, "class", "row");
-    			add_location(div19, file$j, 752, 32, 31235);
-    			attr_dev(div20, "class", "form-group");
-    			add_location(div20, file$j, 748, 28, 30999);
-    			attr_dev(div21, "class", "col-lg-3");
-    			add_location(div21, file$j, 747, 24, 30948);
-    			attr_dev(i6, "class", "mdi mdi-chart-line mdi-18px");
-    			add_location(i6, file$j, 775, 37, 32592);
-    			attr_dev(label1, "for", "");
-    			add_location(label1, file$j, 774, 32, 32541);
-    			attr_dev(input1, "type", "number");
-    			attr_dev(input1, "class", "form-control");
-    			add_location(input1, file$j, 780, 40, 32885);
-    			attr_dev(div22, "class", "col-lg-12");
-    			add_location(div22, file$j, 779, 36, 32821);
-    			attr_dev(div23, "class", "row");
-    			add_location(div23, file$j, 778, 32, 32767);
-    			attr_dev(div24, "class", "form-group");
-    			add_location(div24, file$j, 773, 28, 32484);
-    			attr_dev(div25, "class", "col-lg-3");
-    			add_location(div25, file$j, 772, 24, 32433);
-    			attr_dev(i7, "class", "mdi mdi-heart-pulse mdi-18px");
-    			add_location(i7, file$j, 793, 37, 33548);
-    			attr_dev(label2, "for", "");
-    			add_location(label2, file$j, 792, 32, 33497);
-    			attr_dev(input2, "type", "number");
-    			attr_dev(input2, "class", "form-control");
-    			add_location(input2, file$j, 798, 40, 33838);
-    			attr_dev(div26, "class", "col-lg-12");
-    			add_location(div26, file$j, 797, 36, 33774);
-    			attr_dev(div27, "class", "row");
-    			add_location(div27, file$j, 796, 32, 33720);
-    			attr_dev(div28, "class", "form-group");
-    			add_location(div28, file$j, 791, 28, 33440);
-    			attr_dev(div29, "class", "col-lg-3");
-    			add_location(div29, file$j, 790, 24, 33389);
-    			attr_dev(i8, "class", "mdi mdi-heart-pulse mdi-18px");
-    			add_location(i8, file$j, 811, 37, 34497);
-    			attr_dev(label3, "for", "");
-    			add_location(label3, file$j, 810, 32, 34446);
-    			attr_dev(input3, "type", "number");
-    			attr_dev(input3, "class", "form-control");
-    			add_location(input3, file$j, 816, 40, 34790);
-    			attr_dev(div30, "class", "col-lg-6");
-    			add_location(div30, file$j, 815, 36, 34727);
-    			attr_dev(input4, "type", "number");
-    			attr_dev(input4, "class", "form-control");
-    			add_location(input4, file$j, 824, 40, 35251);
-    			attr_dev(div31, "class", "col-lg-6");
-    			add_location(div31, file$j, 823, 36, 35188);
-    			attr_dev(div32, "class", "row");
-    			add_location(div32, file$j, 814, 32, 34673);
-    			attr_dev(div33, "class", "form-group");
-    			add_location(div33, file$j, 809, 28, 34389);
-    			attr_dev(div34, "class", "col-lg-3");
-    			add_location(div34, file$j, 808, 24, 34338);
-    			add_location(h51, file$j, 835, 28, 35796);
-    			add_location(hr, file$j, 836, 28, 35850);
-    			attr_dev(i9, "class", "mdi mdi-weight-pound");
-    			add_location(i9, file$j, 841, 45, 36118);
-    			attr_dev(label4, "for", "");
-    			add_location(label4, file$j, 840, 40, 36059);
-    			attr_dev(input5, "type", "number");
-    			attr_dev(input5, "class", "form-control");
-    			add_location(input5, file$j, 845, 48, 36380);
-    			attr_dev(div35, "class", "col-lg-7");
-    			add_location(div35, file$j, 844, 44, 36309);
-    			option3.__value = "Lb";
-    			option3.value = option3.__value;
-    			add_location(option3, file$j, 858, 52, 37271);
-    			option4.__value = "Kg";
-    			option4.value = option4.__value;
-    			add_location(option4, file$j, 859, 52, 37354);
-    			attr_dev(select1, "class", "form-control");
-    			if (/*peso*/ ctx[10].tipo === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[70].call(select1));
-    			add_location(select1, file$j, 854, 48, 36985);
-    			attr_dev(div36, "class", "col-lg-5");
-    			add_location(div36, file$j, 852, 44, 36826);
-    			attr_dev(div37, "class", "row");
-    			add_location(div37, file$j, 843, 40, 36247);
-    			attr_dev(div38, "class", "form-group");
-    			add_location(div38, file$j, 839, 36, 35994);
-    			attr_dev(div39, "class", "col-lg-3");
-    			add_location(div39, file$j, 838, 32, 35935);
-    			attr_dev(i10, "class", "mdi mdi-human");
-    			add_location(i10, file$j, 868, 45, 37838);
-    			attr_dev(label5, "for", "");
-    			add_location(label5, file$j, 867, 40, 37779);
-    			attr_dev(input6, "type", "number");
-    			attr_dev(input6, "class", "form-control");
-    			attr_dev(input6, "max", "15");
-    			attr_dev(input6, "maxlength", "2");
-    			attr_dev(input6, "aria-label", "Recipient's username");
-    			attr_dev(input6, "aria-describedby", "basic-addon2");
-    			add_location(input6, file$j, 877, 52, 38428);
-    			attr_dev(span2, "class", "input-group-text");
-    			attr_dev(span2, "id", "basic-addon2");
-    			add_location(span2, file$j, 890, 56, 39374);
-    			attr_dev(div40, "class", "input-group-append");
-    			add_location(div40, file$j, 887, 52, 39176);
-    			attr_dev(div41, "class", "input-group");
-    			set_style(div41, "width", "100%", 1);
-    			set_style(div41, "float", "right");
-    			add_location(div41, file$j, 873, 48, 38151);
-    			attr_dev(div42, "class", "col-lg-12");
-    			add_location(div42, file$j, 872, 44, 38079);
-    			attr_dev(div43, "class", "row");
-    			add_location(div43, file$j, 871, 40, 38017);
-    			attr_dev(div44, "class", "form-group");
-    			add_location(div44, file$j, 866, 36, 37714);
-    			attr_dev(div45, "class", "col-lg-3");
-    			add_location(div45, file$j, 865, 32, 37655);
-    			attr_dev(i11, "class", "mdi mdi-emoticon-happy");
-    			add_location(i11, file$j, 904, 45, 40182);
-    			attr_dev(label6, "for", "");
-    			add_location(label6, file$j, 903, 40, 40123);
-    			attr_dev(input7, "type", "number");
-    			attr_dev(input7, "class", "form-control");
-    			attr_dev(input7, "max", "10");
-    			attr_dev(input7, "maxlength", "2");
-    			attr_dev(input7, "aria-label", "Recipient's username");
-    			attr_dev(input7, "aria-describedby", "basic-addon2");
-    			add_location(input7, file$j, 914, 52, 40827);
-    			attr_dev(span3, "class", "input-group-text");
-    			attr_dev(span3, "id", "basic-addon2");
-    			add_location(span3, file$j, 927, 56, 41771);
-    			attr_dev(div46, "class", "input-group-append");
-    			add_location(div46, file$j, 924, 52, 41573);
-    			attr_dev(div47, "class", "input-group");
-    			set_style(div47, "width", "100%", 1);
-    			set_style(div47, "float", "right");
-    			add_location(div47, file$j, 910, 48, 40550);
-    			attr_dev(div48, "class", "col-lg-12");
-    			add_location(div48, file$j, 909, 44, 40478);
-    			attr_dev(div49, "class", "row");
-    			add_location(div49, file$j, 908, 40, 40416);
-    			attr_dev(div50, "class", "form-group");
-    			add_location(div50, file$j, 902, 36, 40058);
-    			attr_dev(div51, "class", "col-lg-3");
-    			add_location(div51, file$j, 901, 32, 39999);
-    			attr_dev(i12, "class", "mdi mdi-opacity");
-    			add_location(i12, file$j, 941, 45, 42579);
-    			attr_dev(label7, "for", "");
-    			add_location(label7, file$j, 940, 40, 42520);
-    			attr_dev(input8, "type", "number");
-    			attr_dev(input8, "class", "form-control");
-    			add_location(input8, file$j, 946, 48, 42905);
-    			attr_dev(div52, "class", "col-lg-12");
-    			add_location(div52, file$j, 945, 44, 42833);
-    			attr_dev(div53, "class", "row");
-    			add_location(div53, file$j, 944, 40, 42771);
-    			attr_dev(div54, "class", "form-group");
-    			add_location(div54, file$j, 939, 36, 42455);
-    			attr_dev(div55, "class", "col-lg-3");
-    			add_location(div55, file$j, 938, 32, 42396);
-    			attr_dev(label8, "for", "");
-    			add_location(label8, file$j, 958, 40, 43609);
-    			attr_dev(input9, "type", "text");
-    			attr_dev(input9, "class", "form-control");
-    			add_location(input9, file$j, 961, 48, 43811);
-    			attr_dev(div56, "class", "col-lg-12");
-    			add_location(div56, file$j, 960, 44, 43739);
-    			attr_dev(div57, "class", "row");
-    			add_location(div57, file$j, 959, 40, 43677);
-    			attr_dev(div58, "class", "form-group");
-    			add_location(div58, file$j, 957, 36, 43544);
-    			attr_dev(div59, "class", "col-lg-12");
-    			add_location(div59, file$j, 956, 32, 43484);
-    			attr_dev(div60, "class", "row");
-    			add_location(div60, file$j, 837, 28, 35885);
-    			attr_dev(div61, "class", "col-12 mt-4");
-    			add_location(div61, file$j, 834, 24, 35742);
-    			attr_dev(div62, "class", "row");
-    			add_location(div62, file$j, 746, 20, 30906);
-    			attr_dev(div63, "class", "card-body");
-    			add_location(div63, file$j, 745, 16, 30862);
-    			attr_dev(div64, "class", "card m-b-20 margen-mobile autosave");
-    			add_location(div64, file$j, 741, 12, 30667);
-    			attr_dev(div65, "class", "card-title");
-    			add_location(div65, file$j, 981, 20, 44628);
-    			attr_dev(div66, "class", "card-header");
-    			add_location(div66, file$j, 980, 16, 44582);
-    			attr_dev(i13, "class", "icon mdi  mdi-dots-vertical");
-    			add_location(i13, file$j, 991, 28, 45050);
+    			add_location(div16, file$j, 990, 16, 45033);
+    			attr_dev(i5, "class", "icon mdi  mdi-dots-vertical");
+    			add_location(i5, file$j, 1001, 28, 45501);
     			attr_dev(a0, "href", "/");
     			attr_dev(a0, "data-toggle", "dropdown");
     			attr_dev(a0, "aria-haspopup", "true");
     			attr_dev(a0, "aria-expanded", "false");
-    			add_location(a0, file$j, 985, 24, 44806);
+    			add_location(a0, file$j, 995, 24, 45257);
     			attr_dev(button5, "class", "dropdown-item");
     			attr_dev(button5, "type", "button");
-    			add_location(button5, file$j, 994, 28, 45221);
+    			add_location(button5, file$j, 1004, 28, 45672);
     			attr_dev(button6, "class", "dropdown-item");
     			attr_dev(button6, "type", "button");
-    			add_location(button6, file$j, 997, 28, 45371);
+    			add_location(button6, file$j, 1007, 28, 45822);
     			attr_dev(button7, "class", "dropdown-item");
     			attr_dev(button7, "type", "button");
-    			add_location(button7, file$j, 1000, 28, 45529);
-    			attr_dev(div67, "class", "dropdown-menu dropdown-menu-right");
-    			add_location(div67, file$j, 993, 24, 45145);
-    			attr_dev(div68, "class", "dropdown");
-    			add_location(div68, file$j, 984, 20, 44759);
-    			attr_dev(div69, "class", "card-controls");
-    			add_location(div69, file$j, 983, 16, 44711);
+    			add_location(button7, file$j, 1010, 28, 45980);
+    			attr_dev(div17, "class", "dropdown-menu dropdown-menu-right");
+    			add_location(div17, file$j, 1003, 24, 45596);
+    			attr_dev(div18, "class", "dropdown");
+    			add_location(div18, file$j, 994, 20, 45210);
+    			attr_dev(div19, "class", "card-controls");
+    			add_location(div19, file$j, 993, 16, 45162);
     			attr_dev(textarea2, "class", "form-control");
     			set_style(textarea2, "width", "100%");
     			set_style(textarea2, "display", "block");
     			attr_dev(textarea2, "rows", "5");
     			attr_dev(textarea2, "name", "Comentario");
-    			add_location(textarea2, file$j, 1007, 20, 45805);
-    			attr_dev(div70, "class", "card-body");
-    			add_location(div70, file$j, 1006, 16, 45761);
-    			attr_dev(div71, "class", "card m-b-20 autosave");
-    			add_location(div71, file$j, 977, 12, 44502);
-    			attr_dev(div72, "class", "card-title");
-    			add_location(div72, file$j, 1019, 20, 46270);
-    			attr_dev(div73, "class", "card-header");
-    			add_location(div73, file$j, 1018, 16, 46224);
-    			attr_dev(i14, "class", "icon mdi  mdi-dots-vertical");
-    			add_location(i14, file$j, 1029, 28, 46691);
+    			add_location(textarea2, file$j, 1017, 20, 46256);
+    			attr_dev(div20, "class", "card-body");
+    			add_location(div20, file$j, 1016, 16, 46212);
+    			attr_dev(div21, "class", "card m-b-20 autosave");
+    			add_location(div21, file$j, 987, 12, 44953);
+    			attr_dev(div22, "class", "card-title");
+    			add_location(div22, file$j, 1068, 20, 48871);
+    			attr_dev(div23, "class", "card-header");
+    			add_location(div23, file$j, 1067, 16, 48825);
+    			attr_dev(i6, "class", "icon mdi  mdi-dots-vertical");
+    			add_location(i6, file$j, 1078, 28, 49292);
     			attr_dev(a1, "href", "/");
     			attr_dev(a1, "data-toggle", "dropdown");
     			attr_dev(a1, "aria-haspopup", "true");
     			attr_dev(a1, "aria-expanded", "false");
-    			add_location(a1, file$j, 1023, 24, 46447);
-    			attr_dev(i15, "class", "mdi mdi-plus");
-    			add_location(i15, file$j, 1035, 33, 47016);
+    			add_location(a1, file$j, 1072, 24, 49048);
+    			attr_dev(i7, "class", "mdi mdi-plus");
+    			add_location(i7, file$j, 1084, 33, 49617);
     			attr_dev(button8, "class", "dropdown-item text-success");
     			attr_dev(button8, "type", "button");
-    			add_location(button8, file$j, 1032, 28, 46862);
-    			attr_dev(div74, "class", "dropdown-menu dropdown-menu-right");
-    			add_location(div74, file$j, 1031, 24, 46786);
-    			attr_dev(div75, "class", "dropdown");
-    			add_location(div75, file$j, 1022, 20, 46400);
-    			attr_dev(div76, "class", "card-controls");
-    			add_location(div76, file$j, 1021, 16, 46352);
-    			attr_dev(input10, "type", "text");
-    			attr_dev(input10, "class", "form-control");
-    			attr_dev(input10, "id", "txtBusquedaProblemaMedico");
-    			attr_dev(input10, "data-toggle", "dropdown");
-    			attr_dev(input10, "aria-haspopup", "true");
-    			attr_dev(input10, "aria-expanded", "true");
-    			attr_dev(input10, "autocomplete", "off");
-    			add_location(input10, file$j, 1047, 32, 47521);
-    			attr_dev(i16, "class", "mdi mdi-plus");
-    			add_location(i16, file$j, 1085, 49, 49963);
+    			add_location(button8, file$j, 1081, 28, 49463);
+    			attr_dev(div24, "class", "dropdown-menu dropdown-menu-right");
+    			add_location(div24, file$j, 1080, 24, 49387);
+    			attr_dev(div25, "class", "dropdown");
+    			add_location(div25, file$j, 1071, 20, 49001);
+    			attr_dev(div26, "class", "card-controls");
+    			add_location(div26, file$j, 1070, 16, 48953);
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "class", "form-control");
+    			attr_dev(input0, "id", "txtBusquedaProblemaMedico");
+    			attr_dev(input0, "data-toggle", "dropdown");
+    			attr_dev(input0, "aria-haspopup", "true");
+    			attr_dev(input0, "aria-expanded", "true");
+    			attr_dev(input0, "autocomplete", "off");
+    			add_location(input0, file$j, 1096, 32, 50122);
+    			attr_dev(i8, "class", "mdi mdi-plus");
+    			add_location(i8, file$j, 1134, 49, 52564);
     			attr_dev(a2, "href", "#!");
-    			add_location(a2, file$j, 1083, 44, 49767);
+    			add_location(a2, file$j, 1132, 44, 52368);
     			attr_dev(li, "class", "defecto");
-    			add_location(li, file$j, 1082, 40, 49702);
-    			attr_dev(div77, "class", "contenidoLista");
-    			add_location(div77, file$j, 1064, 36, 48559);
+    			add_location(li, file$j, 1131, 40, 52303);
+    			attr_dev(div27, "class", "contenidoLista");
+    			add_location(div27, file$j, 1113, 36, 51160);
     			attr_dev(ul0, "class", "lista-buscador dropdown-menu");
     			attr_dev(ul0, "id", "buscador");
     			attr_dev(ul0, "x-placement", "top-start");
@@ -18212,74 +18913,74 @@ var app = (function () {
     			set_style(ul0, "left", "0px");
     			set_style(ul0, "transform", "translate3d(0px, -128px, 0px)");
     			set_style(ul0, "border-radius", "5px");
-    			add_location(ul0, file$j, 1058, 32, 48131);
-    			attr_dev(div78, "class", "form-group buscardor dropdown dropdown-vnc");
-    			add_location(div78, file$j, 1044, 28, 47371);
-    			attr_dev(div79, "class", "col-12");
-    			add_location(div79, file$j, 1043, 24, 47322);
+    			add_location(ul0, file$j, 1107, 32, 50732);
+    			attr_dev(div28, "class", "form-group buscardor dropdown dropdown-vnc");
+    			add_location(div28, file$j, 1093, 28, 49972);
+    			attr_dev(div29, "class", "col-12");
+    			add_location(div29, file$j, 1092, 24, 49923);
     			attr_dev(ul1, "class", "list-info");
-    			add_location(ul1, file$j, 1095, 28, 50376);
-    			attr_dev(div80, "class", "col-md-12");
-    			add_location(div80, file$j, 1094, 24, 50324);
-    			attr_dev(div81, "class", "row");
-    			add_location(div81, file$j, 1042, 20, 47280);
-    			attr_dev(div82, "class", "card-body");
-    			add_location(div82, file$j, 1041, 16, 47236);
-    			attr_dev(div83, "class", "card m-b-20");
-    			add_location(div83, file$j, 1017, 12, 46182);
-    			attr_dev(div84, "class", "card-title");
-    			add_location(div84, file$j, 1180, 20, 55302);
-    			attr_dev(div85, "class", "card-header");
-    			add_location(div85, file$j, 1179, 16, 55256);
+    			add_location(ul1, file$j, 1144, 28, 52977);
+    			attr_dev(div30, "class", "col-md-12");
+    			add_location(div30, file$j, 1143, 24, 52925);
+    			attr_dev(div31, "class", "row");
+    			add_location(div31, file$j, 1091, 20, 49881);
+    			attr_dev(div32, "class", "card-body");
+    			add_location(div32, file$j, 1090, 16, 49837);
+    			attr_dev(div33, "class", "card m-b-20");
+    			add_location(div33, file$j, 1066, 12, 48783);
+    			attr_dev(div34, "class", "card-title");
+    			add_location(div34, file$j, 1229, 20, 57903);
+    			attr_dev(div35, "class", "card-header");
+    			add_location(div35, file$j, 1228, 16, 57857);
     			attr_dev(textarea3, "class", "form-control");
     			set_style(textarea3, "width", "100%");
     			set_style(textarea3, "display", "block");
     			set_style(textarea3, "height", "150px");
     			attr_dev(textarea3, "rows", "3");
-    			add_location(textarea3, file$j, 1183, 20, 55429);
-    			attr_dev(div86, "class", "card-body");
-    			add_location(div86, file$j, 1182, 16, 55385);
-    			attr_dev(div87, "class", "card m-b-20 margen-mobile autosave");
-    			add_location(div87, file$j, 1178, 12, 55191);
-    			attr_dev(div88, "class", "card-title");
-    			add_location(div88, file$j, 1197, 28, 55962);
-    			attr_dev(div89, "class", "card-header");
-    			add_location(div89, file$j, 1196, 24, 55908);
-    			attr_dev(label9, "for", "");
-    			add_location(label9, file$j, 1204, 36, 56332);
-    			attr_dev(input11, "type", "date");
-    			attr_dev(input11, "class", "form-control");
-    			attr_dev(input11, "placeholder", "Fecha");
-    			input11.disabled = true;
-    			add_location(input11, file$j, 1205, 36, 56396);
-    			attr_dev(div90, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div90, file$j, 1201, 32, 56167);
-    			attr_dev(label10, "for", "");
-    			add_location(label10, file$j, 1216, 36, 56959);
-    			attr_dev(input12, "type", "time");
-    			attr_dev(input12, "placeholder", "Hora");
-    			attr_dev(input12, "class", "form-control");
-    			input12.disabled = true;
-    			add_location(input12, file$j, 1217, 36, 57022);
-    			attr_dev(div91, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div91, file$j, 1213, 32, 56794);
-    			attr_dev(div92, "class", "form-row");
-    			add_location(div92, file$j, 1200, 28, 56112);
-    			attr_dev(div93, "class", "card-body");
-    			add_location(div93, file$j, 1199, 24, 56060);
-    			attr_dev(div94, "class", "card m-b-20");
-    			add_location(div94, file$j, 1195, 20, 55858);
-    			attr_dev(div95, "class", "col-lg-6");
-    			add_location(div95, file$j, 1194, 16, 55815);
-    			attr_dev(div96, "class", "row");
-    			add_location(div96, file$j, 1193, 12, 55781);
-    			attr_dev(div97, "class", "col-lg-12");
-    			set_style(div97, "margin-top", "150px");
-    			add_location(div97, file$j, 544, 8, 18217);
-    			attr_dev(div98, "class", "container m-b-30");
-    			add_location(div98, file$j, 543, 4, 18178);
+    			add_location(textarea3, file$j, 1232, 20, 58030);
+    			attr_dev(div36, "class", "card-body");
+    			add_location(div36, file$j, 1231, 16, 57986);
+    			attr_dev(div37, "class", "card m-b-20 margen-mobile autosave");
+    			add_location(div37, file$j, 1227, 12, 57792);
+    			attr_dev(div38, "class", "card-title");
+    			add_location(div38, file$j, 1246, 28, 58563);
+    			attr_dev(div39, "class", "card-header");
+    			add_location(div39, file$j, 1245, 24, 58509);
+    			attr_dev(label0, "for", "");
+    			add_location(label0, file$j, 1253, 36, 58933);
+    			attr_dev(input1, "type", "date");
+    			attr_dev(input1, "class", "form-control");
+    			attr_dev(input1, "placeholder", "Fecha");
+    			input1.disabled = true;
+    			add_location(input1, file$j, 1254, 36, 58997);
+    			attr_dev(div40, "class", "form-group floating-label col-md-6 show-label");
+    			add_location(div40, file$j, 1250, 32, 58768);
+    			attr_dev(label1, "for", "");
+    			add_location(label1, file$j, 1265, 36, 59560);
+    			attr_dev(input2, "type", "time");
+    			attr_dev(input2, "placeholder", "Hora");
+    			attr_dev(input2, "class", "form-control");
+    			input2.disabled = true;
+    			add_location(input2, file$j, 1266, 36, 59623);
+    			attr_dev(div41, "class", "form-group floating-label col-md-6 show-label");
+    			add_location(div41, file$j, 1262, 32, 59395);
+    			attr_dev(div42, "class", "form-row");
+    			add_location(div42, file$j, 1249, 28, 58713);
+    			attr_dev(div43, "class", "card-body");
+    			add_location(div43, file$j, 1248, 24, 58661);
+    			attr_dev(div44, "class", "card m-b-20");
+    			add_location(div44, file$j, 1244, 20, 58459);
+    			attr_dev(div45, "class", "col-lg-6");
+    			add_location(div45, file$j, 1243, 16, 58416);
+    			attr_dev(div46, "class", "row");
+    			add_location(div46, file$j, 1242, 12, 58382);
+    			attr_dev(div47, "class", "col-lg-12");
+    			set_style(div47, "margin-top", "150px");
+    			add_location(div47, file$j, 546, 8, 18319);
+    			attr_dev(div48, "class", "container m-b-30");
+    			add_location(div48, file$j, 545, 4, 18280);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$j, 542, 0, 18148);
+    			add_location(main, file$j, 544, 0, 18250);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -18292,10 +18993,10 @@ var app = (function () {
     			append_dev(div6, t1);
     			append_dev(div6, div5);
     			append_dev(div5, div0);
-    			append_dev(div0, h50);
-    			append_dev(h50, span0);
-    			append_dev(h50, t3);
-    			append_dev(h50, span1);
+    			append_dev(div0, h5);
+    			append_dev(h5, span0);
+    			append_dev(h5, t3);
+    			append_dev(h5, span1);
     			append_dev(span1, t4);
     			append_dev(span1, t5);
     			append_dev(span1, t6);
@@ -18336,305 +19037,153 @@ var app = (function () {
     			mount_component(header, target, anchor);
     			insert_dev(target, t24, anchor);
     			insert_dev(target, main, anchor);
-    			append_dev(main, div98);
-    			append_dev(div98, div97);
-    			append_dev(div97, div10);
+    			append_dev(main, div48);
+    			append_dev(div48, div47);
+    			append_dev(div47, div10);
     			append_dev(div10, div8);
     			append_dev(div8, div7);
     			append_dev(div10, t26);
     			append_dev(div10, div9);
     			append_dev(div9, textarea0);
     			set_input_value(textarea0, /*historia*/ ctx[7].motivoConsulta);
-    			append_dev(div97, t27);
-    			append_dev(div97, div14);
+    			append_dev(div47, t27);
+    			append_dev(div47, div14);
     			append_dev(div14, div12);
     			append_dev(div12, div11);
     			append_dev(div14, t29);
     			append_dev(div14, div13);
     			append_dev(div13, textarea1);
     			set_input_value(textarea1, /*historia*/ ctx[7].historiaEnfermedad);
-    			append_dev(div97, t30);
-    			if (if_block4) if_block4.m(div97, null);
-    			append_dev(div97, t31);
-    			append_dev(div97, div64);
-    			append_dev(div64, div16);
+    			append_dev(div47, t30);
+    			if (if_block4) if_block4.m(div47, null);
+    			append_dev(div47, t31);
+    			if (if_block5) if_block5.m(div47, null);
+    			append_dev(div47, t32);
+    			if (if_block6) if_block6.m(div47, null);
+    			append_dev(div47, t33);
+    			append_dev(div47, div21);
+    			append_dev(div21, div16);
     			append_dev(div16, div15);
-    			append_dev(div64, t33);
-    			append_dev(div64, div63);
-    			append_dev(div63, div62);
-    			append_dev(div62, div21);
-    			append_dev(div21, div20);
-    			append_dev(div20, label0);
-    			append_dev(label0, i5);
-    			append_dev(label0, t34);
-    			append_dev(div20, t35);
-    			append_dev(div20, div19);
-    			append_dev(div19, div17);
-    			append_dev(div17, input0);
-    			set_input_value(input0, /*temperatura*/ ctx[8].valor);
-    			append_dev(div19, t36);
+    			append_dev(div21, t35);
+    			append_dev(div21, div19);
     			append_dev(div19, div18);
-    			append_dev(div18, select0);
-    			append_dev(select0, option0);
-    			append_dev(select0, option1);
-    			append_dev(select0, option2);
-    			select_option(select0, /*temperatura*/ ctx[8].tipo);
-    			append_dev(div62, t40);
-    			append_dev(div62, div25);
-    			append_dev(div25, div24);
-    			append_dev(div24, label1);
-    			append_dev(label1, i6);
-    			append_dev(label1, t41);
-    			append_dev(div24, t42);
-    			append_dev(div24, div23);
-    			append_dev(div23, div22);
-    			append_dev(div22, input1);
-    			set_input_value(input1, /*historia*/ ctx[7].frecuenciaRespiratoria);
-    			append_dev(div62, t43);
-    			append_dev(div62, div29);
-    			append_dev(div29, div28);
-    			append_dev(div28, label2);
-    			append_dev(label2, i7);
-    			append_dev(label2, t44);
-    			append_dev(div28, t45);
-    			append_dev(div28, div27);
-    			append_dev(div27, div26);
-    			append_dev(div26, input2);
-    			set_input_value(input2, /*historia*/ ctx[7].frecuenciaCardiaca);
-    			append_dev(div62, t46);
-    			append_dev(div62, div34);
-    			append_dev(div34, div33);
-    			append_dev(div33, label3);
-    			append_dev(label3, i8);
-    			append_dev(label3, t47);
-    			append_dev(div33, t48);
-    			append_dev(div33, div32);
-    			append_dev(div32, div30);
-    			append_dev(div30, input3);
-    			set_input_value(input3, /*presionAlterial*/ ctx[9].mm);
-    			append_dev(div32, t49);
-    			append_dev(div32, div31);
-    			append_dev(div31, input4);
-    			set_input_value(input4, /*presionAlterial*/ ctx[9].Hg);
-    			append_dev(div62, t50);
-    			append_dev(div62, div61);
-    			append_dev(div61, h51);
-    			append_dev(div61, t52);
-    			append_dev(div61, hr);
-    			append_dev(div61, t53);
-    			append_dev(div61, div60);
-    			append_dev(div60, div39);
-    			append_dev(div39, div38);
-    			append_dev(div38, label4);
-    			append_dev(label4, i9);
-    			append_dev(label4, t54);
-    			append_dev(div38, t55);
-    			append_dev(div38, div37);
-    			append_dev(div37, div35);
-    			append_dev(div35, input5);
-    			set_input_value(input5, /*peso*/ ctx[10].valor);
-    			append_dev(div37, t56);
-    			append_dev(div37, div36);
-    			append_dev(div36, select1);
-    			append_dev(select1, option3);
-    			append_dev(select1, option4);
-    			select_option(select1, /*peso*/ ctx[10].tipo);
-    			append_dev(div60, t59);
-    			append_dev(div60, div45);
-    			append_dev(div45, div44);
-    			append_dev(div44, label5);
-    			append_dev(label5, i10);
-    			append_dev(label5, t60);
-    			append_dev(div44, t61);
-    			append_dev(div44, div43);
-    			append_dev(div43, div42);
-    			append_dev(div42, div41);
-    			append_dev(div41, input6);
-    			set_input_value(input6, /*historia*/ ctx[7].escalaGalsgow);
-    			append_dev(div41, t62);
-    			append_dev(div41, div40);
-    			append_dev(div40, span2);
-    			append_dev(div60, t64);
-    			append_dev(div60, div51);
-    			append_dev(div51, div50);
-    			append_dev(div50, label6);
-    			append_dev(label6, i11);
-    			append_dev(label6, t65);
-    			append_dev(div50, t66);
-    			append_dev(div50, div49);
-    			append_dev(div49, div48);
-    			append_dev(div48, div47);
-    			append_dev(div47, input7);
-    			set_input_value(input7, /*historia*/ ctx[7].escalaDolor);
-    			append_dev(div47, t67);
-    			append_dev(div47, div46);
-    			append_dev(div46, span3);
-    			append_dev(div60, t69);
-    			append_dev(div60, div55);
-    			append_dev(div55, div54);
-    			append_dev(div54, label7);
-    			append_dev(label7, i12);
-    			append_dev(label7, t70);
-    			append_dev(div54, t71);
-    			append_dev(div54, div53);
-    			append_dev(div53, div52);
-    			append_dev(div52, input8);
-    			set_input_value(input8, /*historia*/ ctx[7].saturacionOxigeno);
-    			append_dev(div60, t72);
-    			append_dev(div60, div59);
-    			append_dev(div59, div58);
-    			append_dev(div58, label8);
-    			append_dev(div58, t74);
-    			append_dev(div58, div57);
-    			append_dev(div57, div56);
-    			append_dev(div56, input9);
-    			set_input_value(input9, /*historia*/ ctx[7].otrosParametros);
-    			append_dev(div97, t75);
-    			append_dev(div97, div71);
-    			append_dev(div71, div66);
-    			append_dev(div66, div65);
-    			append_dev(div71, t77);
-    			append_dev(div71, div69);
-    			append_dev(div69, div68);
-    			append_dev(div68, a0);
-    			append_dev(a0, i13);
-    			append_dev(div68, t78);
-    			append_dev(div68, div67);
-    			append_dev(div67, button5);
-    			append_dev(div67, t80);
-    			append_dev(div67, button6);
-    			append_dev(div67, t82);
-    			append_dev(div67, button7);
-    			append_dev(div71, t84);
-    			append_dev(div71, div70);
-    			append_dev(div70, textarea2);
+    			append_dev(div18, a0);
+    			append_dev(a0, i5);
+    			append_dev(div18, t36);
+    			append_dev(div18, div17);
+    			append_dev(div17, button5);
+    			append_dev(div17, t38);
+    			append_dev(div17, button6);
+    			append_dev(div17, t40);
+    			append_dev(div17, button7);
+    			append_dev(div21, t42);
+    			append_dev(div21, div20);
+    			append_dev(div20, textarea2);
     			set_input_value(textarea2, /*historia*/ ctx[7].examenFisico);
-    			append_dev(div97, t85);
-    			append_dev(div97, div83);
-    			append_dev(div83, div73);
-    			append_dev(div73, div72);
-    			append_dev(div83, t87);
-    			append_dev(div83, div76);
-    			append_dev(div76, div75);
-    			append_dev(div75, a1);
-    			append_dev(a1, i14);
-    			append_dev(div75, t88);
-    			append_dev(div75, div74);
-    			append_dev(div74, button8);
-    			append_dev(button8, i15);
-    			append_dev(button8, t89);
-    			append_dev(div83, t90);
-    			append_dev(div83, div82);
-    			append_dev(div82, div81);
-    			append_dev(div81, div79);
-    			append_dev(div79, div78);
-    			append_dev(div78, input10);
-    			set_input_value(input10, /*inpBuscarDiagnostico*/ ctx[4]);
-    			append_dev(div78, t91);
-    			append_dev(div78, ul0);
-    			append_dev(ul0, div77);
+    			append_dev(div47, t43);
+    			if (if_block7) if_block7.m(div47, null);
+    			append_dev(div47, t44);
+    			append_dev(div47, div33);
+    			append_dev(div33, div23);
+    			append_dev(div23, div22);
+    			append_dev(div33, t46);
+    			append_dev(div33, div26);
+    			append_dev(div26, div25);
+    			append_dev(div25, a1);
+    			append_dev(a1, i6);
+    			append_dev(div25, t47);
+    			append_dev(div25, div24);
+    			append_dev(div24, button8);
+    			append_dev(button8, i7);
+    			append_dev(button8, t48);
+    			append_dev(div33, t49);
+    			append_dev(div33, div32);
+    			append_dev(div32, div31);
+    			append_dev(div31, div29);
+    			append_dev(div29, div28);
+    			append_dev(div28, input0);
+    			set_input_value(input0, /*inpBuscarDiagnostico*/ ctx[4]);
+    			append_dev(div28, t50);
+    			append_dev(div28, ul0);
+    			append_dev(ul0, div27);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(div77, null);
+    				each_blocks_1[i].m(div27, null);
     			}
 
-    			append_dev(div77, t92);
-    			append_dev(div77, li);
+    			append_dev(div27, t51);
+    			append_dev(div27, li);
     			append_dev(li, a2);
-    			append_dev(a2, i16);
-    			append_dev(a2, t93);
-    			append_dev(div81, t94);
-    			append_dev(div81, div80);
-    			append_dev(div80, ul1);
+    			append_dev(a2, i8);
+    			append_dev(a2, t52);
+    			append_dev(div31, t53);
+    			append_dev(div31, div30);
+    			append_dev(div30, ul1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(ul1, null);
     			}
 
-    			append_dev(ul1, t95);
-    			if (if_block5) if_block5.m(ul1, null);
-    			append_dev(div97, t96);
-    			mount_component(ordenesmedicas, div97, null);
-    			append_dev(div97, t97);
-    			append_dev(div97, div87);
-    			append_dev(div87, div85);
-    			append_dev(div85, div84);
-    			append_dev(div87, t99);
-    			append_dev(div87, div86);
-    			append_dev(div86, textarea3);
+    			append_dev(ul1, t54);
+    			if (if_block8) if_block8.m(ul1, null);
+    			append_dev(div47, t55);
+    			mount_component(ordenesmedicas, div47, null);
+    			append_dev(div47, t56);
+    			append_dev(div47, div37);
+    			append_dev(div37, div35);
+    			append_dev(div35, div34);
+    			append_dev(div37, t58);
+    			append_dev(div37, div36);
+    			append_dev(div36, textarea3);
     			set_input_value(textarea3, /*historia*/ ctx[7].observaciones);
-    			append_dev(div97, t100);
-    			append_dev(div97, div96);
-    			append_dev(div96, div95);
-    			append_dev(div95, div94);
-    			append_dev(div94, div89);
-    			append_dev(div89, div88);
-    			append_dev(div94, t102);
-    			append_dev(div94, div93);
-    			append_dev(div93, div92);
-    			append_dev(div92, div90);
-    			append_dev(div90, label9);
-    			append_dev(div90, t104);
-    			append_dev(div90, input11);
-    			set_input_value(input11, /*fecha*/ ctx[11]);
-    			append_dev(div92, t105);
-    			append_dev(div92, div91);
-    			append_dev(div91, label10);
-    			append_dev(div91, t107);
-    			append_dev(div91, input12);
-    			set_input_value(input12, /*hora*/ ctx[12]);
-    			insert_dev(target, t108, anchor);
+    			append_dev(div47, t59);
+    			append_dev(div47, div46);
+    			append_dev(div46, div45);
+    			append_dev(div45, div44);
+    			append_dev(div44, div39);
+    			append_dev(div39, div38);
+    			append_dev(div44, t61);
+    			append_dev(div44, div43);
+    			append_dev(div43, div42);
+    			append_dev(div42, div40);
+    			append_dev(div40, label0);
+    			append_dev(div40, t63);
+    			append_dev(div40, input1);
+    			set_input_value(input1, /*fecha*/ ctx[11]);
+    			append_dev(div42, t64);
+    			append_dev(div42, div41);
+    			append_dev(div41, label1);
+    			append_dev(div41, t66);
+    			append_dev(div41, input2);
+    			set_input_value(input2, /*hora*/ ctx[12]);
+    			insert_dev(target, t67, anchor);
     			mount_component(modaldatospaciente, target, anchor);
-    			insert_dev(target, t109, anchor);
+    			insert_dev(target, t68, anchor);
     			mount_component(modaltratamientos, target, anchor);
-    			insert_dev(target, t110, anchor);
+    			insert_dev(target, t69, anchor);
     			mount_component(modalinterconsulta, target, anchor);
-    			insert_dev(target, t111, anchor);
+    			insert_dev(target, t70, anchor);
     			mount_component(modalantecedentes, target, anchor);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(button4, "click", /*click_handler*/ ctx[36], false, false, false),
-    					listen_dev(textarea0, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(textarea0, "input", /*textarea0_input_handler*/ ctx[37]),
-    					listen_dev(textarea1, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(textarea1, "input", /*textarea1_input_handler*/ ctx[38]),
-    					listen_dev(input0, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[63]),
-    					listen_dev(select0, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[64]),
-    					listen_dev(input1, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[65]),
-    					listen_dev(input2, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[66]),
-    					listen_dev(input3, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[67]),
-    					listen_dev(input4, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[68]),
-    					listen_dev(input5, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input5, "input", /*input5_input_handler_1*/ ctx[69]),
-    					listen_dev(select1, "change", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[70]),
-    					listen_dev(input6, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input6, "input", /*input6_input_handler_1*/ ctx[71]),
-    					listen_dev(input7, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input7, "input", /*input7_input_handler_1*/ ctx[72]),
-    					listen_dev(input8, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input8, "input", /*input8_input_handler_1*/ ctx[73]),
-    					listen_dev(input9, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(input9, "input", /*input9_input_handler_1*/ ctx[74]),
-    					listen_dev(textarea2, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(textarea2, "input", /*textarea2_input_handler*/ ctx[75]),
-    					listen_dev(input10, "keyup", /*searchDiagnosticos*/ ctx[25], false, false, false),
-    					listen_dev(input10, "input", /*input10_input_handler_1*/ ctx[76]),
-    					listen_dev(a2, "click", prevent_default(/*click_handler_2*/ ctx[78]), false, true, false),
-    					listen_dev(textarea3, "blur", /*guardarHistoria*/ ctx[34], false, false, false),
-    					listen_dev(textarea3, "input", /*textarea3_input_handler*/ ctx[91]),
-    					listen_dev(input11, "input", /*input11_input_handler_1*/ ctx[92]),
-    					listen_dev(input12, "blur", /*blur_handler*/ ctx[93], false, false, false),
-    					listen_dev(input12, "input", /*input12_input_handler_1*/ ctx[94])
+    					listen_dev(button0, "click", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(button4, "click", /*click_handler*/ ctx[37], false, false, false),
+    					listen_dev(textarea0, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(textarea0, "input", /*textarea0_input_handler*/ ctx[38]),
+    					listen_dev(textarea1, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(textarea1, "input", /*textarea1_input_handler*/ ctx[39]),
+    					listen_dev(textarea2, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(textarea2, "input", /*textarea2_input_handler*/ ctx[76]),
+    					listen_dev(input0, "keyup", /*searchDiagnosticos*/ ctx[26], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler_3*/ ctx[79]),
+    					listen_dev(a2, "click", prevent_default(/*click_handler_3*/ ctx[81]), false, true, false),
+    					listen_dev(textarea3, "blur", /*guardarHistoria*/ ctx[35], false, false, false),
+    					listen_dev(textarea3, "input", /*textarea3_input_handler*/ ctx[94]),
+    					listen_dev(input1, "input", /*input1_input_handler_3*/ ctx[95]),
+    					listen_dev(input2, "blur", /*blur_handler*/ ctx[96], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler_3*/ ctx[97])
     				];
 
     				mounted = true;
@@ -18647,7 +19196,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_6(ctx);
+    					if_block0 = create_if_block_11(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div6, t1);
@@ -18667,7 +19216,7 @@ var app = (function () {
 
     			if (!/*cargando*/ ctx[13] && !/*errorServer*/ ctx[20]) {
     				if (if_block1) ; else {
-    					if_block1 = create_if_block_5$1(ctx);
+    					if_block1 = create_if_block_10(ctx);
     					if_block1.c();
     					if_block1.m(div1, t8);
     				}
@@ -18678,7 +19227,7 @@ var app = (function () {
 
     			if (/*errorServer*/ ctx[20]) {
     				if (if_block2) ; else {
-    					if_block2 = create_if_block_4$1(ctx);
+    					if_block2 = create_if_block_9(ctx);
     					if_block2.c();
     					if_block2.m(div1, t9);
     				}
@@ -18689,7 +19238,7 @@ var app = (function () {
 
     			if (/*cargando*/ ctx[13] && !/*errorServer*/ ctx[20]) {
     				if (if_block3) ; else {
-    					if_block3 = create_if_block_3$1(ctx);
+    					if_block3 = create_if_block_8(ctx);
     					if_block3.c();
     					if_block3.m(div1, null);
     				}
@@ -18710,73 +19259,64 @@ var app = (function () {
     				if (if_block4) {
     					if_block4.p(ctx, dirty);
     				} else {
-    					if_block4 = create_if_block_2$3(ctx);
+    					if_block4 = create_if_block_7(ctx);
     					if_block4.c();
-    					if_block4.m(div97, t31);
+    					if_block4.m(div47, t31);
     				}
     			} else if (if_block4) {
     				if_block4.d(1);
     				if_block4 = null;
     			}
 
-    			if (dirty[0] & /*temperatura*/ 256 && to_number(input0.value) !== /*temperatura*/ ctx[8].valor) {
-    				set_input_value(input0, /*temperatura*/ ctx[8].valor);
+    			if (/*empresa*/ ctx[21].signosVitales) {
+    				if (if_block5) {
+    					if_block5.p(ctx, dirty);
+    				} else {
+    					if_block5 = create_if_block_6(ctx);
+    					if_block5.c();
+    					if_block5.m(div47, t32);
+    				}
+    			} else if (if_block5) {
+    				if_block5.d(1);
+    				if_block5 = null;
     			}
 
-    			if (dirty[0] & /*temperatura*/ 256) {
-    				select_option(select0, /*temperatura*/ ctx[8].tipo);
-    			}
-
-    			if (dirty[0] & /*historia*/ 128 && to_number(input1.value) !== /*historia*/ ctx[7].frecuenciaRespiratoria) {
-    				set_input_value(input1, /*historia*/ ctx[7].frecuenciaRespiratoria);
-    			}
-
-    			if (dirty[0] & /*historia*/ 128 && to_number(input2.value) !== /*historia*/ ctx[7].frecuenciaCardiaca) {
-    				set_input_value(input2, /*historia*/ ctx[7].frecuenciaCardiaca);
-    			}
-
-    			if (dirty[0] & /*presionAlterial*/ 512 && to_number(input3.value) !== /*presionAlterial*/ ctx[9].mm) {
-    				set_input_value(input3, /*presionAlterial*/ ctx[9].mm);
-    			}
-
-    			if (dirty[0] & /*presionAlterial*/ 512 && to_number(input4.value) !== /*presionAlterial*/ ctx[9].Hg) {
-    				set_input_value(input4, /*presionAlterial*/ ctx[9].Hg);
-    			}
-
-    			if (dirty[0] & /*peso*/ 1024 && to_number(input5.value) !== /*peso*/ ctx[10].valor) {
-    				set_input_value(input5, /*peso*/ ctx[10].valor);
-    			}
-
-    			if (dirty[0] & /*peso*/ 1024) {
-    				select_option(select1, /*peso*/ ctx[10].tipo);
-    			}
-
-    			if (dirty[0] & /*historia*/ 128 && to_number(input6.value) !== /*historia*/ ctx[7].escalaGalsgow) {
-    				set_input_value(input6, /*historia*/ ctx[7].escalaGalsgow);
-    			}
-
-    			if (dirty[0] & /*historia*/ 128 && to_number(input7.value) !== /*historia*/ ctx[7].escalaDolor) {
-    				set_input_value(input7, /*historia*/ ctx[7].escalaDolor);
-    			}
-
-    			if (dirty[0] & /*historia*/ 128 && to_number(input8.value) !== /*historia*/ ctx[7].saturacionOxigeno) {
-    				set_input_value(input8, /*historia*/ ctx[7].saturacionOxigeno);
-    			}
-
-    			if (dirty[0] & /*historia*/ 128 && input9.value !== /*historia*/ ctx[7].otrosParametros) {
-    				set_input_value(input9, /*historia*/ ctx[7].otrosParametros);
+    			if (/*empresa*/ ctx[21].otrosParametros) {
+    				if (if_block6) {
+    					if_block6.p(ctx, dirty);
+    				} else {
+    					if_block6 = create_if_block_5$1(ctx);
+    					if_block6.c();
+    					if_block6.m(div47, t33);
+    				}
+    			} else if (if_block6) {
+    				if_block6.d(1);
+    				if_block6 = null;
     			}
 
     			if (dirty[0] & /*historia*/ 128) {
     				set_input_value(textarea2, /*historia*/ ctx[7].examenFisico);
     			}
 
-    			if (dirty[0] & /*inpBuscarDiagnostico*/ 16 && input10.value !== /*inpBuscarDiagnostico*/ ctx[4]) {
-    				set_input_value(input10, /*inpBuscarDiagnostico*/ ctx[4]);
+    			if (/*empresa*/ ctx[21].exploracionFisica) {
+    				if (if_block7) {
+    					if_block7.p(ctx, dirty);
+    				} else {
+    					if_block7 = create_if_block_2$3(ctx);
+    					if_block7.c();
+    					if_block7.m(div47, t44);
+    				}
+    			} else if (if_block7) {
+    				if_block7.d(1);
+    				if_block7 = null;
     			}
 
-    			if (dirty[0] & /*filtroDiagnostico*/ 4194304 | dirty[1] & /*seleccionarDiagnostico*/ 16) {
-    				each_value_1 = /*filtroDiagnostico*/ ctx[22];
+    			if (dirty[0] & /*inpBuscarDiagnostico*/ 16 && input0.value !== /*inpBuscarDiagnostico*/ ctx[4]) {
+    				set_input_value(input0, /*inpBuscarDiagnostico*/ ctx[4]);
+    			}
+
+    			if (dirty[0] & /*filtroDiagnostico*/ 8388608 | dirty[1] & /*seleccionarDiagnostico*/ 32) {
+    				each_value_1 = /*filtroDiagnostico*/ ctx[23];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -18788,7 +19328,7 @@ var app = (function () {
     					} else {
     						each_blocks_1[i] = create_each_block_1$2(child_ctx);
     						each_blocks_1[i].c();
-    						each_blocks_1[i].m(div77, t92);
+    						each_blocks_1[i].m(div27, t51);
     					}
     				}
 
@@ -18799,7 +19339,7 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty[0] & /*diagnosticosSeleccionados, agregarComentarioDiagnostico*/ 536870944 | dirty[1] & /*guardarHistoria, eliminarDiagnostico*/ 9) {
+    			if (dirty[0] & /*diagnosticosSeleccionados, agregarComentarioDiagnostico*/ 1073741856 | dirty[1] & /*guardarHistoria, eliminarDiagnostico*/ 18) {
     				each_value = /*diagnosticosSeleccionados*/ ctx[5].reverse();
     				validate_each_argument(each_value);
     				let i;
@@ -18812,7 +19352,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block$5(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(ul1, t95);
+    						each_blocks[i].m(ul1, t54);
     					}
     				}
 
@@ -18824,14 +19364,14 @@ var app = (function () {
     			}
 
     			if (/*diagnosticosSeleccionados*/ ctx[5].length === 0) {
-    				if (if_block5) ; else {
-    					if_block5 = create_if_block$8(ctx);
-    					if_block5.c();
-    					if_block5.m(ul1, null);
+    				if (if_block8) ; else {
+    					if_block8 = create_if_block$8(ctx);
+    					if_block8.c();
+    					if_block8.m(ul1, null);
     				}
-    			} else if (if_block5) {
-    				if_block5.d(1);
-    				if_block5 = null;
+    			} else if (if_block8) {
+    				if_block8.d(1);
+    				if_block8 = null;
     			}
 
     			const ordenesmedicas_changes = {};
@@ -18897,11 +19437,11 @@ var app = (function () {
     			}
 
     			if (dirty[0] & /*fecha*/ 2048) {
-    				set_input_value(input11, /*fecha*/ ctx[11]);
+    				set_input_value(input1, /*fecha*/ ctx[11]);
     			}
 
     			if (dirty[0] & /*hora*/ 4096) {
-    				set_input_value(input12, /*hora*/ ctx[12]);
+    				set_input_value(input2, /*hora*/ ctx[12]);
     			}
 
     			const modaldatospaciente_changes = {};
@@ -18946,17 +19486,20 @@ var app = (function () {
     			if (detaching) detach_dev(t24);
     			if (detaching) detach_dev(main);
     			if (if_block4) if_block4.d();
+    			if (if_block5) if_block5.d();
+    			if (if_block6) if_block6.d();
+    			if (if_block7) if_block7.d();
     			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
-    			if (if_block5) if_block5.d();
+    			if (if_block8) if_block8.d();
     			destroy_component(ordenesmedicas);
-    			if (detaching) detach_dev(t108);
+    			if (detaching) detach_dev(t67);
     			destroy_component(modaldatospaciente, detaching);
-    			if (detaching) detach_dev(t109);
+    			if (detaching) detach_dev(t68);
     			destroy_component(modaltratamientos, detaching);
-    			if (detaching) detach_dev(t110);
+    			if (detaching) detach_dev(t69);
     			destroy_component(modalinterconsulta, detaching);
-    			if (detaching) detach_dev(t111);
+    			if (detaching) detach_dev(t70);
     			destroy_component(modalantecedentes, detaching);
     			mounted = false;
     			run_all(dispose);
@@ -19027,6 +19570,7 @@ var app = (function () {
     	let historiaGinecologica = {};
     	let errorServer = false;
     	let empresa = {};
+    	let exploracionFisica = [];
 
     	const cargarEmpresa = () => {
     		const config = {
@@ -19344,6 +19888,7 @@ var app = (function () {
     			$$invalidate(15, medicamentosSeleccionados = promesa.data.medicamentos);
     			$$invalidate(18, estudiosSeleccionados = promesa.data.estudios);
     			$$invalidate(19, historiaGinecologica = promesa.data.historiaGinecologica);
+    			$$invalidate(22, exploracionFisica = promesa.data.exploracionFisica || []);
     			let obtenerHora = promesa.data.fechaHora.split("T")[1].split("Z")[0].split(".")[0].split(":");
     			$$invalidate(12, hora = obtenerHora[0] + ":" + obtenerHora[1]);
     			console.log(historia);
@@ -19365,7 +19910,7 @@ var app = (function () {
     		setTimeout(
     			() => {
     				axios$1(config).then(res => {
-    					$$invalidate(95, diagnosticos = res.data);
+    					$$invalidate(98, diagnosticos = res.data);
     				}).catch(error => {
     					console.log(error);
     				});
@@ -19545,7 +20090,7 @@ var app = (function () {
     		$$invalidate(8, temperatura);
     	}
 
-    	function select0_change_handler() {
+    	function select_change_handler() {
     		temperatura.tipo = select_value(this);
     		$$invalidate(8, temperatura);
     	}
@@ -19570,32 +20115,32 @@ var app = (function () {
     		$$invalidate(9, presionAlterial);
     	}
 
-    	function input5_input_handler_1() {
+    	function input0_input_handler_2() {
     		peso.valor = to_number(this.value);
     		$$invalidate(10, peso);
     	}
 
-    	function select1_change_handler() {
+    	function select_change_handler_1() {
     		peso.tipo = select_value(this);
     		$$invalidate(10, peso);
     	}
 
-    	function input6_input_handler_1() {
+    	function input1_input_handler_2() {
     		historia.escalaGalsgow = to_number(this.value);
     		$$invalidate(7, historia);
     	}
 
-    	function input7_input_handler_1() {
+    	function input2_input_handler_2() {
     		historia.escalaDolor = to_number(this.value);
     		$$invalidate(7, historia);
     	}
 
-    	function input8_input_handler_1() {
+    	function input3_input_handler_2() {
     		historia.saturacionOxigeno = to_number(this.value);
     		$$invalidate(7, historia);
     	}
 
-    	function input9_input_handler_1() {
+    	function input4_input_handler_2() {
     		historia.otrosParametros = this.value;
     		$$invalidate(7, historia);
     	}
@@ -19605,15 +20150,25 @@ var app = (function () {
     		$$invalidate(7, historia);
     	}
 
-    	function input10_input_handler_1() {
+    	const click_handler_1 = (item, each_value_3, item_index_1) => {
+    		$$invalidate(22, each_value_3[item_index_1].activo = true, exploracionFisica);
+    		guardarHistoria();
+    	};
+
+    	function textarea_input_handler(each_value_2, item_index) {
+    		each_value_2[item_index].text = this.value;
+    		$$invalidate(22, exploracionFisica);
+    	}
+
+    	function input0_input_handler_3() {
     		inpBuscarDiagnostico = this.value;
     		$$invalidate(4, inpBuscarDiagnostico);
     	}
 
-    	const click_handler_1 = diagnostico => seleccionarDiagnostico(diagnostico.c);
-    	const click_handler_2 = () => agregarDiagnosticoPersonalizado(inpBuscarDiagnostico);
-    	const click_handler_3 = i => agregarComentarioDiagnostico(i);
-    	const click_handler_4 = i => eliminarDiagnostico(i);
+    	const click_handler_2 = diagnostico => seleccionarDiagnostico(diagnostico.c);
+    	const click_handler_3 = () => agregarDiagnosticoPersonalizado(inpBuscarDiagnostico);
+    	const click_handler_4 = i => agregarComentarioDiagnostico(i);
+    	const click_handler_5 = i => eliminarDiagnostico(i);
 
     	function input_input_handler(each_value, i) {
     		each_value[i].comentario = this.value;
@@ -19670,14 +20225,14 @@ var app = (function () {
     		$$invalidate(7, historia);
     	}
 
-    	function input11_input_handler_1() {
+    	function input1_input_handler_3() {
     		fecha = this.value;
     		$$invalidate(11, fecha);
     	}
 
     	const blur_handler = () => console.log(hora);
 
-    	function input12_input_handler_1() {
+    	function input2_input_handler_3() {
     		hora = this.value;
     		$$invalidate(12, hora);
     	}
@@ -19728,6 +20283,7 @@ var app = (function () {
     		historiaGinecologica,
     		errorServer,
     		empresa,
+    		exploracionFisica,
     		cargarEmpresa,
     		eliminarHistoria,
     		searchMedicamentos,
@@ -19756,7 +20312,7 @@ var app = (function () {
     		if ("paciente" in $$props) $$invalidate(1, paciente = $$props.paciente);
     		if ("edad" in $$props) $$invalidate(2, edad = $$props.edad);
     		if ("seguro" in $$props) $$invalidate(3, seguro = $$props.seguro);
-    		if ("diagnosticos" in $$props) $$invalidate(95, diagnosticos = $$props.diagnosticos);
+    		if ("diagnosticos" in $$props) $$invalidate(98, diagnosticos = $$props.diagnosticos);
     		if ("inpBuscarDiagnostico" in $$props) $$invalidate(4, inpBuscarDiagnostico = $$props.inpBuscarDiagnostico);
     		if ("diagnosticosSeleccionados" in $$props) $$invalidate(5, diagnosticosSeleccionados = $$props.diagnosticosSeleccionados);
     		if ("medicamentos" in $$props) $$invalidate(6, medicamentos = $$props.medicamentos);
@@ -19776,7 +20332,8 @@ var app = (function () {
     		if ("historiaGinecologica" in $$props) $$invalidate(19, historiaGinecologica = $$props.historiaGinecologica);
     		if ("errorServer" in $$props) $$invalidate(20, errorServer = $$props.errorServer);
     		if ("empresa" in $$props) $$invalidate(21, empresa = $$props.empresa);
-    		if ("filtroDiagnostico" in $$props) $$invalidate(22, filtroDiagnostico = $$props.filtroDiagnostico);
+    		if ("exploracionFisica" in $$props) $$invalidate(22, exploracionFisica = $$props.exploracionFisica);
+    		if ("filtroDiagnostico" in $$props) $$invalidate(23, filtroDiagnostico = $$props.filtroDiagnostico);
     	};
 
     	let filtroDiagnostico;
@@ -19786,8 +20343,8 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[3] & /*diagnosticos*/ 4) {
-    			 $$invalidate(22, filtroDiagnostico = diagnosticos);
+    		if ($$self.$$.dirty[3] & /*diagnosticos*/ 32) {
+    			 $$invalidate(23, filtroDiagnostico = diagnosticos);
     		}
     	};
 
@@ -19814,6 +20371,7 @@ var app = (function () {
     		historiaGinecologica,
     		errorServer,
     		empresa,
+    		exploracionFisica,
     		filtroDiagnostico,
     		eliminarHistoria,
     		searchMedicamentos,
@@ -19856,23 +20414,25 @@ var app = (function () {
     		input22_change_handler,
     		input23_change_handler,
     		input0_input_handler_1,
-    		select0_change_handler,
+    		select_change_handler,
     		input1_input_handler_1,
     		input2_input_handler_1,
     		input3_input_handler_1,
     		input4_input_handler_1,
-    		input5_input_handler_1,
-    		select1_change_handler,
-    		input6_input_handler_1,
-    		input7_input_handler_1,
-    		input8_input_handler_1,
-    		input9_input_handler_1,
+    		input0_input_handler_2,
+    		select_change_handler_1,
+    		input1_input_handler_2,
+    		input2_input_handler_2,
+    		input3_input_handler_2,
+    		input4_input_handler_2,
     		textarea2_input_handler,
-    		input10_input_handler_1,
     		click_handler_1,
+    		textarea_input_handler,
+    		input0_input_handler_3,
     		click_handler_2,
     		click_handler_3,
     		click_handler_4,
+    		click_handler_5,
     		input_input_handler,
     		ordenesmedicas_idHistoria_binding,
     		ordenesmedicas_idPaciente_binding,
@@ -19884,9 +20444,9 @@ var app = (function () {
     		ordenesmedicas_instrucciones_binding,
     		ordenesmedicas_estudios_binding,
     		textarea3_input_handler,
-    		input11_input_handler_1,
+    		input1_input_handler_3,
     		blur_handler,
-    		input12_input_handler_1
+    		input2_input_handler_3
     	];
     }
 
@@ -24942,93 +25502,201 @@ var app = (function () {
     	}
     }
 
+    /* src/componentes/NoConexion.svelte generated by Svelte v3.29.0 */
+
+    const file$s = "src/componentes/NoConexion.svelte";
+
+    function create_fragment$u(ctx) {
+    	let div;
+    	let img;
+    	let img_src_value;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			img = element("img");
+    			attr_dev(img, "class", "imagen-error svelte-6b7rv3");
+    			if (img.src !== (img_src_value = "./assets/img/error.svg")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "");
+    			add_location(img, file$s, 1, 4, 27);
+    			attr_dev(div, "class", "cargando svelte-6b7rv3");
+    			add_location(div, file$s, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, img);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$u.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$u($$self, $$props) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("NoConexion", slots, []);
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<NoConexion> was created with unknown prop '${key}'`);
+    	});
+
+    	return [];
+    }
+
+    class NoConexion extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$u, create_fragment$u, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "NoConexion",
+    			options,
+    			id: create_fragment$u.name
+    		});
+    	}
+    }
+
     /* src/Pages/Empresa/Detalle.svelte generated by Svelte v3.29.0 */
 
     const { console: console_1$d } = globals;
-    const file$s = "src/Pages/Empresa/Detalle.svelte";
+    const file$t = "src/Pages/Empresa/Detalle.svelte";
 
-    function create_fragment$u(ctx) {
+    function create_fragment$v(ctx) {
     	let aside;
     	let t0;
     	let main;
     	let header;
     	let t1;
+    	let noconexion;
+    	let t2;
     	let section;
     	let button;
     	let i0;
-    	let t2;
-    	let div27;
-    	let div26;
-    	let div25;
+    	let t3;
+    	let div35;
+    	let div34;
+    	let div33;
     	let div0;
     	let h5;
     	let i1;
-    	let t3;
     	let t4;
+    	let t5;
     	let div17;
     	let div16;
     	let div1;
     	let h40;
-    	let t6;
+    	let t7;
     	let div15;
     	let div14;
     	let div3;
     	let img;
     	let img_src_value;
-    	let t7;
+    	let t8;
     	let div2;
     	let label0;
     	let i2;
-    	let t8;
     	let t9;
-    	let input0;
     	let t10;
+    	let input0;
+    	let t11;
     	let div13;
     	let div12;
     	let div5;
     	let div4;
     	let label1;
-    	let t12;
-    	let input1;
     	let t13;
+    	let input1;
+    	let t14;
     	let div7;
     	let div6;
     	let label2;
-    	let t15;
-    	let input2;
     	let t16;
+    	let input2;
+    	let t17;
     	let div9;
     	let div8;
     	let label3;
-    	let t18;
-    	let input3;
     	let t19;
+    	let input3;
+    	let t20;
     	let div11;
     	let div10;
     	let label4;
-    	let t21;
-    	let input4;
     	let t22;
-    	let div24;
-    	let div23;
+    	let input4;
+    	let t23;
+    	let div32;
+    	let div31;
     	let div18;
     	let h41;
-    	let t24;
-    	let div22;
-    	let div21;
+    	let t25;
+    	let div30;
+    	let div29;
+    	let div28;
+    	let p;
+    	let t27;
+    	let hr;
+    	let t28;
+    	let div27;
     	let div20;
     	let div19;
     	let label5;
     	let input5;
-    	let t25;
+    	let t29;
     	let span0;
-    	let t26;
+    	let t30;
     	let span1;
+    	let t32;
+    	let div22;
+    	let div21;
+    	let label6;
+    	let input6;
+    	let t33;
+    	let span2;
+    	let t34;
+    	let span3;
+    	let t36;
+    	let div24;
+    	let div23;
+    	let label7;
+    	let input7;
+    	let t37;
+    	let span4;
+    	let t38;
+    	let span5;
+    	let t40;
+    	let div26;
+    	let div25;
+    	let label8;
+    	let input8;
+    	let t41;
+    	let span6;
+    	let t42;
+    	let span7;
     	let current;
     	let mounted;
     	let dispose;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
+    	noconexion = new NoConexion({ $$inline: true });
 
     	const block = {
     		c: function create() {
@@ -25037,204 +25705,298 @@ var app = (function () {
     			main = element("main");
     			create_component(header.$$.fragment);
     			t1 = space();
+    			create_component(noconexion.$$.fragment);
+    			t2 = space();
     			section = element("section");
     			button = element("button");
     			i0 = element("i");
-    			t2 = space();
-    			div27 = element("div");
-    			div26 = element("div");
-    			div25 = element("div");
+    			t3 = space();
+    			div35 = element("div");
+    			div34 = element("div");
+    			div33 = element("div");
     			div0 = element("div");
     			h5 = element("h5");
     			i1 = element("i");
-    			t3 = text(" Consultorio");
-    			t4 = space();
+    			t4 = text(" Consultorio");
+    			t5 = space();
     			div17 = element("div");
     			div16 = element("div");
     			div1 = element("div");
     			h40 = element("h4");
     			h40.textContent = "Información";
-    			t6 = space();
+    			t7 = space();
     			div15 = element("div");
     			div14 = element("div");
     			div3 = element("div");
     			img = element("img");
-    			t7 = space();
+    			t8 = space();
     			div2 = element("div");
     			label0 = element("label");
     			i2 = element("i");
-    			t8 = text(" Cambiar imagen");
-    			t9 = space();
-    			input0 = element("input");
+    			t9 = text(" Cambiar imagen");
     			t10 = space();
+    			input0 = element("input");
+    			t11 = space();
     			div13 = element("div");
     			div12 = element("div");
     			div5 = element("div");
     			div4 = element("div");
     			label1 = element("label");
     			label1.textContent = "Nombre consultorio";
-    			t12 = space();
-    			input1 = element("input");
     			t13 = space();
+    			input1 = element("input");
+    			t14 = space();
     			div7 = element("div");
     			div6 = element("div");
     			label2 = element("label");
     			label2.textContent = "Telefono";
-    			t15 = space();
-    			input2 = element("input");
     			t16 = space();
+    			input2 = element("input");
+    			t17 = space();
     			div9 = element("div");
     			div8 = element("div");
     			label3 = element("label");
     			label3.textContent = "Correo";
-    			t18 = space();
-    			input3 = element("input");
     			t19 = space();
+    			input3 = element("input");
+    			t20 = space();
     			div11 = element("div");
     			div10 = element("div");
     			label4 = element("label");
     			label4.textContent = "Direccion";
-    			t21 = space();
-    			input4 = element("input");
     			t22 = space();
-    			div24 = element("div");
-    			div23 = element("div");
+    			input4 = element("input");
+    			t23 = space();
+    			div32 = element("div");
+    			div31 = element("div");
     			div18 = element("div");
     			h41 = element("h4");
     			h41.textContent = "Configuración";
-    			t24 = space();
-    			div22 = element("div");
-    			div21 = element("div");
+    			t25 = space();
+    			div30 = element("div");
+    			div29 = element("div");
+    			div28 = element("div");
+    			p = element("p");
+    			p.textContent = "Formularios activos";
+    			t27 = space();
+    			hr = element("hr");
+    			t28 = space();
+    			div27 = element("div");
     			div20 = element("div");
     			div19 = element("div");
     			label5 = element("label");
     			input5 = element("input");
-    			t25 = space();
+    			t29 = space();
     			span0 = element("span");
-    			t26 = space();
+    			t30 = space();
     			span1 = element("span");
     			span1.textContent = "Historia Ginecologica";
+    			t32 = space();
+    			div22 = element("div");
+    			div21 = element("div");
+    			label6 = element("label");
+    			input6 = element("input");
+    			t33 = space();
+    			span2 = element("span");
+    			t34 = space();
+    			span3 = element("span");
+    			span3.textContent = "Signos Vitales";
+    			t36 = space();
+    			div24 = element("div");
+    			div23 = element("div");
+    			label7 = element("label");
+    			input7 = element("input");
+    			t37 = space();
+    			span4 = element("span");
+    			t38 = space();
+    			span5 = element("span");
+    			span5.textContent = "Otros Parametros";
+    			t40 = space();
+    			div26 = element("div");
+    			div25 = element("div");
+    			label8 = element("label");
+    			input8 = element("input");
+    			t41 = space();
+    			span6 = element("span");
+    			t42 = space();
+    			span7 = element("span");
+    			span7.textContent = "Exploración Fisica";
     			attr_dev(i0, "class", "mdi mdi-content-save");
-    			add_location(i0, file$s, 119, 12, 3305);
+    			add_location(i0, file$t, 147, 12, 4283);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success");
     			set_style(button, "position", "fixed");
     			set_style(button, "bottom", "30px");
     			set_style(button, "right", "30px");
-    			add_location(button, file$s, 113, 8, 3068);
+    			set_style(button, "z-index", "1000");
+    			add_location(button, file$t, 141, 8, 4032);
     			attr_dev(i1, "class", "mdi mdi-medical-bag");
-    			add_location(i1, file$s, 125, 18, 3506);
-    			add_location(h5, file$s, 125, 14, 3502);
+    			add_location(i1, file$t, 153, 18, 4484);
+    			add_location(h5, file$t, 153, 14, 4480);
     			attr_dev(div0, "class", "col-12 m-b-20 m-t-20");
-    			add_location(div0, file$s, 124, 12, 3453);
+    			add_location(div0, file$t, 152, 12, 4431);
     			attr_dev(h40, "class", "card-title");
-    			add_location(h40, file$s, 130, 24, 3723);
+    			add_location(h40, file$t, 158, 24, 4701);
     			attr_dev(div1, "class", "card-header");
-    			add_location(div1, file$s, 129, 20, 3673);
+    			add_location(div1, file$t, 157, 20, 4651);
     			if (img.src !== (img_src_value = /*logo*/ ctx[1])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "class", "logo-emp svelte-18x36bc");
     			attr_dev(img, "alt", "logo empresa");
-    			add_location(img, file$s, 137, 32, 4020);
+    			add_location(img, file$t, 165, 32, 4998);
     			attr_dev(i2, "class", "mdi mdi-refresh");
-    			add_location(i2, file$s, 140, 40, 4279);
+    			add_location(i2, file$t, 168, 40, 5257);
     			attr_dev(label0, "class", "btn btn-primary btn-sm");
     			attr_dev(label0, "for", "inpSubirImagen");
-    			add_location(label0, file$s, 139, 36, 4179);
+    			add_location(label0, file$t, 167, 36, 5157);
     			set_style(input0, "display", "none");
     			attr_dev(input0, "type", "file");
     			attr_dev(input0, "id", "inpSubirImagen");
     			attr_dev(input0, "accept", "image/png, image/jpeg");
-    			add_location(input0, file$s, 142, 36, 4407);
+    			add_location(input0, file$t, 170, 36, 5385);
     			attr_dev(div2, "class", "col-12 text-center mt-2");
-    			add_location(div2, file$s, 138, 32, 4105);
+    			add_location(div2, file$t, 166, 32, 5083);
     			attr_dev(div3, "class", "col-lg-3");
-    			add_location(div3, file$s, 136, 28, 3965);
+    			add_location(div3, file$t, 164, 28, 4943);
     			attr_dev(label1, "for", "");
-    			add_location(label1, file$s, 149, 44, 4878);
+    			add_location(label1, file$t, 177, 44, 5856);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "class", "form-control");
-    			add_location(input1, file$s, 150, 44, 4963);
+    			add_location(input1, file$t, 178, 44, 5941);
     			attr_dev(div4, "class", "form-group");
-    			add_location(div4, file$s, 148, 40, 4809);
+    			add_location(div4, file$t, 176, 40, 5787);
     			attr_dev(div5, "class", "col-lg-12");
-    			add_location(div5, file$s, 147, 36, 4745);
+    			add_location(div5, file$t, 175, 36, 5723);
     			attr_dev(label2, "for", "");
-    			add_location(label2, file$s, 155, 44, 5290);
+    			add_location(label2, file$t, 183, 44, 6268);
     			attr_dev(input2, "type", "tel");
     			attr_dev(input2, "class", "form-control");
-    			add_location(input2, file$s, 156, 44, 5365);
+    			add_location(input2, file$t, 184, 44, 6343);
     			attr_dev(div6, "class", "form-group");
-    			add_location(div6, file$s, 154, 40, 5221);
+    			add_location(div6, file$t, 182, 40, 6199);
     			attr_dev(div7, "class", "col-lg-6");
-    			add_location(div7, file$s, 153, 36, 5158);
+    			add_location(div7, file$t, 181, 36, 6136);
     			attr_dev(label3, "for", "");
-    			add_location(label3, file$s, 161, 44, 5693);
+    			add_location(label3, file$t, 189, 44, 6671);
     			attr_dev(input3, "type", "email");
     			attr_dev(input3, "class", "form-control");
-    			add_location(input3, file$s, 162, 44, 5766);
+    			add_location(input3, file$t, 190, 44, 6744);
     			attr_dev(div8, "class", "form-group");
-    			add_location(div8, file$s, 160, 40, 5624);
+    			add_location(div8, file$t, 188, 40, 6602);
     			attr_dev(div9, "class", "col-lg-6");
-    			add_location(div9, file$s, 159, 36, 5561);
+    			add_location(div9, file$t, 187, 36, 6539);
     			attr_dev(label4, "for", "");
-    			add_location(label4, file$s, 167, 44, 6095);
+    			add_location(label4, file$t, 195, 44, 7073);
     			attr_dev(input4, "type", "text");
     			attr_dev(input4, "class", "form-control");
-    			add_location(input4, file$s, 168, 44, 6171);
+    			add_location(input4, file$t, 196, 44, 7149);
     			attr_dev(div10, "class", "form-group");
-    			add_location(div10, file$s, 166, 40, 6026);
+    			add_location(div10, file$t, 194, 40, 7004);
     			attr_dev(div11, "class", "col-lg-12");
-    			add_location(div11, file$s, 165, 36, 5962);
+    			add_location(div11, file$t, 193, 36, 6940);
     			attr_dev(div12, "class", "row");
-    			add_location(div12, file$s, 146, 32, 4691);
+    			add_location(div12, file$t, 174, 32, 5669);
     			attr_dev(div13, "class", "col-lg-9");
-    			add_location(div13, file$s, 145, 28, 4636);
+    			add_location(div13, file$t, 173, 28, 5614);
     			attr_dev(div14, "class", "row");
-    			add_location(div14, file$s, 135, 24, 3919);
+    			add_location(div14, file$t, 163, 24, 4897);
     			attr_dev(div15, "class", "card-body");
-    			add_location(div15, file$s, 134, 20, 3871);
+    			add_location(div15, file$t, 162, 20, 4849);
     			attr_dev(div16, "class", "card m-b-30");
-    			add_location(div16, file$s, 128, 16, 3627);
+    			add_location(div16, file$t, 156, 16, 4605);
     			attr_dev(div17, "class", "col-12");
-    			add_location(div17, file$s, 127, 12, 3590);
+    			add_location(div17, file$t, 155, 12, 4568);
     			attr_dev(h41, "class", "card-title");
-    			add_location(h41, file$s, 180, 24, 6645);
+    			add_location(h41, file$t, 208, 24, 7630);
     			attr_dev(div18, "class", "card-header");
-    			add_location(div18, file$s, 179, 20, 6595);
+    			add_location(div18, file$t, 207, 20, 7580);
+    			add_location(p, file$t, 215, 32, 7934);
+    			add_location(hr, file$t, 216, 32, 7993);
     			attr_dev(input5, "type", "checkbox");
     			attr_dev(input5, "name", "option");
     			input5.__value = "1";
     			input5.value = input5.__value;
     			attr_dev(input5, "class", "cstm-switch-input");
-    			add_location(input5, file$s, 189, 40, 7068);
+    			add_location(input5, file$t, 221, 48, 8287);
     			attr_dev(span0, "class", "cstm-switch-indicator bg-success ");
-    			add_location(span0, file$s, 190, 40, 7226);
+    			add_location(span0, file$t, 222, 48, 8453);
     			attr_dev(span1, "class", "cstm-switch-description");
-    			add_location(span1, file$s, 191, 40, 7322);
+    			add_location(span1, file$t, 223, 48, 8557);
     			attr_dev(label5, "class", "cstm-switch");
-    			add_location(label5, file$s, 188, 36, 7000);
+    			add_location(label5, file$t, 220, 44, 8211);
     			attr_dev(div19, "class", " m-b-10");
-    			add_location(div19, file$s, 187, 32, 6942);
+    			add_location(div19, file$t, 219, 40, 8145);
     			attr_dev(div20, "class", "col-12");
-    			add_location(div20, file$s, 186, 28, 6889);
-    			attr_dev(div21, "class", "row");
-    			add_location(div21, file$s, 185, 24, 6843);
-    			attr_dev(div22, "class", "card-body");
-    			add_location(div22, file$s, 184, 20, 6795);
-    			attr_dev(div23, "class", "card");
-    			add_location(div23, file$s, 178, 16, 6556);
+    			add_location(div20, file$t, 218, 36, 8084);
+    			attr_dev(input6, "type", "checkbox");
+    			attr_dev(input6, "name", "option");
+    			input6.__value = "1";
+    			input6.value = input6.__value;
+    			attr_dev(input6, "class", "cstm-switch-input");
+    			add_location(input6, file$t, 230, 48, 9006);
+    			attr_dev(span2, "class", "cstm-switch-indicator bg-success ");
+    			add_location(span2, file$t, 231, 48, 9165);
+    			attr_dev(span3, "class", "cstm-switch-description");
+    			add_location(span3, file$t, 232, 48, 9269);
+    			attr_dev(label6, "class", "cstm-switch");
+    			add_location(label6, file$t, 229, 44, 8930);
+    			attr_dev(div21, "class", " m-b-10");
+    			add_location(div21, file$t, 228, 40, 8864);
+    			attr_dev(div22, "class", "col-12");
+    			add_location(div22, file$t, 227, 36, 8803);
+    			attr_dev(input7, "type", "checkbox");
+    			attr_dev(input7, "name", "option");
+    			input7.__value = "1";
+    			input7.value = input7.__value;
+    			attr_dev(input7, "class", "cstm-switch-input");
+    			add_location(input7, file$t, 239, 48, 9711);
+    			attr_dev(span4, "class", "cstm-switch-indicator bg-success ");
+    			add_location(span4, file$t, 240, 48, 9872);
+    			attr_dev(span5, "class", "cstm-switch-description");
+    			add_location(span5, file$t, 241, 48, 9976);
+    			attr_dev(label7, "class", "cstm-switch");
+    			add_location(label7, file$t, 238, 44, 9635);
+    			attr_dev(div23, "class", " m-b-10");
+    			add_location(div23, file$t, 237, 40, 9569);
     			attr_dev(div24, "class", "col-12");
-    			add_location(div24, file$s, 177, 12, 6519);
-    			attr_dev(div25, "class", "row");
-    			add_location(div25, file$s, 123, 10, 3423);
+    			add_location(div24, file$t, 236, 36, 9508);
+    			attr_dev(input8, "type", "checkbox");
+    			attr_dev(input8, "name", "option");
+    			input8.__value = "1";
+    			input8.value = input8.__value;
+    			attr_dev(input8, "class", "cstm-switch-input");
+    			add_location(input8, file$t, 248, 48, 10420);
+    			attr_dev(span6, "class", "cstm-switch-indicator bg-success ");
+    			add_location(span6, file$t, 249, 48, 10583);
+    			attr_dev(span7, "class", "cstm-switch-description");
+    			add_location(span7, file$t, 250, 48, 10687);
+    			attr_dev(label8, "class", "cstm-switch");
+    			add_location(label8, file$t, 247, 44, 10344);
+    			attr_dev(div25, "class", " m-b-10");
+    			add_location(div25, file$t, 246, 40, 10278);
     			attr_dev(div26, "class", "col-12");
-    			add_location(div26, file$s, 122, 8, 3392);
-    			attr_dev(div27, "class", "p-2");
-    			add_location(div27, file$s, 121, 6, 3366);
+    			add_location(div26, file$t, 245, 36, 10217);
+    			attr_dev(div27, "class", "row");
+    			add_location(div27, file$t, 217, 32, 8030);
+    			attr_dev(div28, "class", "col-lg-4 mt-3");
+    			add_location(div28, file$t, 214, 28, 7874);
+    			attr_dev(div29, "class", "row");
+    			add_location(div29, file$t, 213, 24, 7828);
+    			attr_dev(div30, "class", "card-body");
+    			add_location(div30, file$t, 212, 20, 7780);
+    			attr_dev(div31, "class", "card");
+    			add_location(div31, file$t, 206, 16, 7541);
+    			attr_dev(div32, "class", "col-12 m-b-80");
+    			add_location(div32, file$t, 205, 12, 7497);
+    			attr_dev(div33, "class", "row");
+    			add_location(div33, file$t, 151, 10, 4401);
+    			attr_dev(div34, "class", "col-12");
+    			add_location(div34, file$t, 150, 8, 4370);
+    			attr_dev(div35, "class", "p-2");
+    			add_location(div35, file$t, 149, 6, 4344);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$s, 112, 4, 3028);
+    			add_location(section, file$t, 140, 4, 3992);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$s, 110, 2, 2983);
+    			add_location(main, file$t, 137, 2, 3929);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -25245,81 +26007,119 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			mount_component(header, main, null);
     			append_dev(main, t1);
+    			mount_component(noconexion, main, null);
+    			append_dev(main, t2);
     			append_dev(main, section);
     			append_dev(section, button);
     			append_dev(button, i0);
-    			append_dev(section, t2);
-    			append_dev(section, div27);
-    			append_dev(div27, div26);
-    			append_dev(div26, div25);
-    			append_dev(div25, div0);
+    			append_dev(section, t3);
+    			append_dev(section, div35);
+    			append_dev(div35, div34);
+    			append_dev(div34, div33);
+    			append_dev(div33, div0);
     			append_dev(div0, h5);
     			append_dev(h5, i1);
-    			append_dev(h5, t3);
-    			append_dev(div25, t4);
-    			append_dev(div25, div17);
+    			append_dev(h5, t4);
+    			append_dev(div33, t5);
+    			append_dev(div33, div17);
     			append_dev(div17, div16);
     			append_dev(div16, div1);
     			append_dev(div1, h40);
-    			append_dev(div16, t6);
+    			append_dev(div16, t7);
     			append_dev(div16, div15);
     			append_dev(div15, div14);
     			append_dev(div14, div3);
     			append_dev(div3, img);
-    			append_dev(div3, t7);
+    			append_dev(div3, t8);
     			append_dev(div3, div2);
     			append_dev(div2, label0);
     			append_dev(label0, i2);
-    			append_dev(label0, t8);
-    			append_dev(div2, t9);
+    			append_dev(label0, t9);
+    			append_dev(div2, t10);
     			append_dev(div2, input0);
-    			append_dev(div14, t10);
+    			append_dev(div14, t11);
     			append_dev(div14, div13);
     			append_dev(div13, div12);
     			append_dev(div12, div5);
     			append_dev(div5, div4);
     			append_dev(div4, label1);
-    			append_dev(div4, t12);
+    			append_dev(div4, t13);
     			append_dev(div4, input1);
     			set_input_value(input1, /*empresa*/ ctx[0].nombre);
-    			append_dev(div12, t13);
+    			append_dev(div12, t14);
     			append_dev(div12, div7);
     			append_dev(div7, div6);
     			append_dev(div6, label2);
-    			append_dev(div6, t15);
+    			append_dev(div6, t16);
     			append_dev(div6, input2);
     			set_input_value(input2, /*empresa*/ ctx[0].telefono);
-    			append_dev(div12, t16);
+    			append_dev(div12, t17);
     			append_dev(div12, div9);
     			append_dev(div9, div8);
     			append_dev(div8, label3);
-    			append_dev(div8, t18);
+    			append_dev(div8, t19);
     			append_dev(div8, input3);
     			set_input_value(input3, /*empresa*/ ctx[0].correo);
-    			append_dev(div12, t19);
+    			append_dev(div12, t20);
     			append_dev(div12, div11);
     			append_dev(div11, div10);
     			append_dev(div10, label4);
-    			append_dev(div10, t21);
+    			append_dev(div10, t22);
     			append_dev(div10, input4);
     			set_input_value(input4, /*empresa*/ ctx[0].direccion);
-    			append_dev(div25, t22);
-    			append_dev(div25, div24);
-    			append_dev(div24, div23);
-    			append_dev(div23, div18);
+    			append_dev(div33, t23);
+    			append_dev(div33, div32);
+    			append_dev(div32, div31);
+    			append_dev(div31, div18);
     			append_dev(div18, h41);
-    			append_dev(div23, t24);
-    			append_dev(div23, div22);
-    			append_dev(div22, div21);
-    			append_dev(div21, div20);
+    			append_dev(div31, t25);
+    			append_dev(div31, div30);
+    			append_dev(div30, div29);
+    			append_dev(div29, div28);
+    			append_dev(div28, p);
+    			append_dev(div28, t27);
+    			append_dev(div28, hr);
+    			append_dev(div28, t28);
+    			append_dev(div28, div27);
+    			append_dev(div27, div20);
     			append_dev(div20, div19);
     			append_dev(div19, label5);
     			append_dev(label5, input5);
     			input5.checked = /*empresa*/ ctx[0].historiaGinecologica;
-    			append_dev(label5, t25);
+    			append_dev(label5, t29);
     			append_dev(label5, span0);
-    			append_dev(label5, t26);
+    			append_dev(label5, t30);
     			append_dev(label5, span1);
+    			append_dev(div27, t32);
+    			append_dev(div27, div22);
+    			append_dev(div22, div21);
+    			append_dev(div21, label6);
+    			append_dev(label6, input6);
+    			input6.checked = /*empresa*/ ctx[0].signosVitales;
+    			append_dev(label6, t33);
+    			append_dev(label6, span2);
+    			append_dev(label6, t34);
+    			append_dev(label6, span3);
+    			append_dev(div27, t36);
+    			append_dev(div27, div24);
+    			append_dev(div24, div23);
+    			append_dev(div23, label7);
+    			append_dev(label7, input7);
+    			input7.checked = /*empresa*/ ctx[0].otrosParametros;
+    			append_dev(label7, t37);
+    			append_dev(label7, span4);
+    			append_dev(label7, t38);
+    			append_dev(label7, span5);
+    			append_dev(div27, t40);
+    			append_dev(div27, div26);
+    			append_dev(div26, div25);
+    			append_dev(div25, label8);
+    			append_dev(label8, input8);
+    			input8.checked = /*empresa*/ ctx[0].exploracionFisica;
+    			append_dev(label8, t41);
+    			append_dev(label8, span6);
+    			append_dev(label8, t42);
+    			append_dev(label8, span7);
     			current = true;
 
     			if (!mounted) {
@@ -25330,7 +26130,10 @@ var app = (function () {
     					listen_dev(input2, "input", /*input2_input_handler*/ ctx[5]),
     					listen_dev(input3, "input", /*input3_input_handler*/ ctx[6]),
     					listen_dev(input4, "input", /*input4_input_handler*/ ctx[7]),
-    					listen_dev(input5, "change", /*input5_change_handler*/ ctx[8])
+    					listen_dev(input5, "change", /*input5_change_handler*/ ctx[8]),
+    					listen_dev(input6, "change", /*input6_change_handler*/ ctx[9]),
+    					listen_dev(input7, "change", /*input7_change_handler*/ ctx[10]),
+    					listen_dev(input8, "change", /*input8_change_handler*/ ctx[11])
     				];
 
     				mounted = true;
@@ -25360,16 +26163,30 @@ var app = (function () {
     			if (dirty & /*empresa*/ 1) {
     				input5.checked = /*empresa*/ ctx[0].historiaGinecologica;
     			}
+
+    			if (dirty & /*empresa*/ 1) {
+    				input6.checked = /*empresa*/ ctx[0].signosVitales;
+    			}
+
+    			if (dirty & /*empresa*/ 1) {
+    				input7.checked = /*empresa*/ ctx[0].otrosParametros;
+    			}
+
+    			if (dirty & /*empresa*/ 1) {
+    				input8.checked = /*empresa*/ ctx[0].exploracionFisica;
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(aside.$$.fragment, local);
     			transition_in(header.$$.fragment, local);
+    			transition_in(noconexion.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(aside.$$.fragment, local);
     			transition_out(header.$$.fragment, local);
+    			transition_out(noconexion.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -25377,6 +26194,7 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(header);
+    			destroy_component(noconexion);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -25384,7 +26202,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$u.name,
+    		id: create_fragment$v.name,
     		type: "component",
     		source: "",
     		ctx
@@ -25393,9 +26211,22 @@ var app = (function () {
     	return block;
     }
 
-    function instance$u($$self, $$props, $$invalidate) {
+    function instance$v($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Detalle", slots, []);
+
+    	const Toast = Swal.mixin({
+    		toast: true,
+    		position: "top-end",
+    		showConfirmButton: false,
+    		timer: 3000,
+    		timerProgressBar: true,
+    		didOpen: toast => {
+    			toast.addEventListener("mouseenter", Swal.stopTimer);
+    			toast.addEventListener("mouseleave", Swal.resumeTimer);
+    		}
+    	});
+
     	let errorServer = false;
     	let msgError = "";
     	let empresa = {};
@@ -25419,8 +26250,15 @@ var app = (function () {
     		};
 
     		axios$1(config).then(res => {
-    			console.log(res.data);
-    			cargarEmpresa();
+    			if (res.status === 200) {
+    				Toast.fire({
+    					icon: "success",
+    					title: "Se ha cambiado la imagen correctamente"
+    				});
+
+    				console.log(res.data);
+    				cargarEmpresa();
+    			}
     		}).catch(err => {
     			console.error(err);
     		});
@@ -25432,7 +26270,9 @@ var app = (function () {
     			telefono: empresa.telefono,
     			correo: empresa.correo,
     			direccion: empresa.direccion,
-    			historiaGinecologica: empresa.historiaGinecologica
+    			historiaGinecologica: empresa.historiaGinecologica,
+    			signosVitales: empresa.signosVitales,
+    			otrosParametros: empresa.otrosParametros
     		};
 
     		const config = {
@@ -25445,8 +26285,15 @@ var app = (function () {
     		};
 
     		axios$1(config).then(res => {
-    			console.log(res.data);
-    			cargarEmpresa();
+    			if (res.status === 200) {
+    				Toast.fire({
+    					icon: "success",
+    					title: "Empresa actualizada"
+    				});
+
+    				console.log(res.data);
+    				cargarEmpresa();
+    			}
     		}).catch(err => {
     			console.error(err);
     		});
@@ -25522,6 +26369,21 @@ var app = (function () {
     		$$invalidate(0, empresa);
     	}
 
+    	function input6_change_handler() {
+    		empresa.signosVitales = this.checked;
+    		$$invalidate(0, empresa);
+    	}
+
+    	function input7_change_handler() {
+    		empresa.otrosParametros = this.checked;
+    		$$invalidate(0, empresa);
+    	}
+
+    	function input8_change_handler() {
+    		empresa.exploracionFisica = this.checked;
+    		$$invalidate(0, empresa);
+    	}
+
     	$$self.$capture_state = () => ({
     		axios: axios$1,
     		onMount,
@@ -25530,6 +26392,8 @@ var app = (function () {
     		Header,
     		Aside,
     		ErrorConexion,
+    		NoConexion,
+    		Toast,
     		errorServer,
     		msgError,
     		empresa,
@@ -25562,20 +26426,23 @@ var app = (function () {
     		input2_input_handler,
     		input3_input_handler,
     		input4_input_handler,
-    		input5_change_handler
+    		input5_change_handler,
+    		input6_change_handler,
+    		input7_change_handler,
+    		input8_change_handler
     	];
     }
 
     class Detalle extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$u, create_fragment$u, safe_not_equal, {});
+    		init(this, options, instance$v, create_fragment$v, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Detalle",
     			options,
-    			id: create_fragment$u.name
+    			id: create_fragment$v.name
     		});
     	}
     }
@@ -25718,7 +26585,7 @@ var app = (function () {
 
     /* src/App.svelte generated by Svelte v3.29.0 */
 
-    function create_fragment$v(ctx) {
+    function create_fragment$w(ctx) {
     	let router;
     	let current;
     	router = new Router({ props: { routes }, $$inline: true });
@@ -25751,7 +26618,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$v.name,
+    		id: create_fragment$w.name,
     		type: "component",
     		source: "",
     		ctx
@@ -25760,7 +26627,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$v($$self, $$props, $$invalidate) {
+    function instance$w($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	const writable_props = [];
@@ -25776,13 +26643,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$v, create_fragment$v, safe_not_equal, {});
+    		init(this, options, instance$w, create_fragment$w, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$v.name
+    			id: create_fragment$w.name
     		});
     	}
     }

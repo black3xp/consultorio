@@ -6,6 +6,19 @@
     import Header from "../../Layout/Header.svelte";
     import Aside from "../../Layout/Aside.svelte";
     import ErrorConexion from '../../componentes/ErrorConexion.svelte';
+    import NoConexion from "../../componentes/NoConexion.svelte";
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
   
     let errorServer = false;
     let msgError = '';
@@ -29,8 +42,14 @@
         }
         axios(config)
         .then(res => {
-            console.log(res.data)
-            cargarEmpresa()
+            if(res.status === 200){
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Se ha cambiado la imagen correctamente'
+                });
+                console.log(res.data)
+                cargarEmpresa()
+            }
         })
         .catch(err => {
             console.error(err)
@@ -44,6 +63,8 @@
             correo: empresa.correo,
             direccion: empresa.direccion,
             historiaGinecologica: empresa.historiaGinecologica,
+            signosVitales: empresa.signosVitales,
+            otrosParametros: empresa.otrosParametros
         };
         const config = {
             method: 'put',
@@ -55,8 +76,14 @@
         };
         axios(config)
             .then(res => {
-                console.log(res.data)
-                cargarEmpresa()
+                if(res.status === 200){
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Empresa actualizada'
+                    });
+                    console.log(res.data)
+                    cargarEmpresa()
+                }
             })
             .catch(err => {
                 console.error(err)
@@ -110,11 +137,12 @@
   
   <main class="admin-main">
     <Header />
+    <NoConexion/>
     <section class="admin-content">
         <button 
             type="button"
             class="btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success"
-            style="position: fixed; bottom: 30px; right: 30px;"
+            style="position: fixed; bottom: 30px; right: 30px; z-index: 1000"
             on:click={editarEmpresa}
         >
             <i class="mdi mdi-content-save"></i>
@@ -175,7 +203,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 m-b-80">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">
@@ -184,20 +212,53 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12">
-                                <div class=" m-b-10">
-                                    <label class="cstm-switch">
-                                        <input type="checkbox" bind:checked={empresa.historiaGinecologica} name="option" value="1" class="cstm-switch-input">
-                                        <span class="cstm-switch-indicator bg-success "></span>
-                                        <span class="cstm-switch-description">Historia Ginecologica</span>
-                                    </label>
-    
+                            <div class="col-lg-4 mt-3">
+                                <p>Formularios activos</p>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class=" m-b-10">
+                                            <label class="cstm-switch">
+                                                <input type="checkbox" bind:checked={empresa.historiaGinecologica} name="option" value="1" class="cstm-switch-input">
+                                                <span class="cstm-switch-indicator bg-success "></span>
+                                                <span class="cstm-switch-description">Historia Ginecologica</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class=" m-b-10">
+                                            <label class="cstm-switch">
+                                                <input type="checkbox" bind:checked={empresa.signosVitales} name="option" value="1" class="cstm-switch-input">
+                                                <span class="cstm-switch-indicator bg-success "></span>
+                                                <span class="cstm-switch-description">Signos Vitales</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class=" m-b-10">
+                                            <label class="cstm-switch">
+                                                <input type="checkbox" bind:checked={empresa.otrosParametros} name="option" value="1" class="cstm-switch-input">
+                                                <span class="cstm-switch-indicator bg-success "></span>
+                                                <span class="cstm-switch-description">Otros Parametros</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class=" m-b-10">
+                                            <label class="cstm-switch">
+                                                <input type="checkbox" bind:checked={empresa.exploracionFisica} name="option" value="1" class="cstm-switch-input">
+                                                <span class="cstm-switch-indicator bg-success "></span>
+                                                <span class="cstm-switch-description">Exploraci&oacute;n Fisica</span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
           </div>
         </div>
       </div>

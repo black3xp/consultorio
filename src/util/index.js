@@ -3,7 +3,8 @@ import jwtDecode from "jwt-decode";
 import axios from 'axios';
 // const url = 'https://xmconsulta.cthrics.com/api'
 // const url = 'http://localhost:3000/api'
-const url = 'http://localhost:1337/api'
+const url = 'http://serenidad.xmedical.online:1337/api';
+// const url = 'http://localhost:1337/api'
 const isLogin = () => {
     if(localStorage.getItem('auth')){
         return true
@@ -56,7 +57,9 @@ const cargarImagenEmpresa = (idConsultorio, idImagen, logo) => {
     })
 }
 
-  let ciudades = [
+
+
+let ciudades = [
     {id: 'Distrito Nacional', nombre: 'Distrito Nacional'},
     {id: 'Santiago de los Caballeros', nombre: 'Santiago de los Caballeros'},
     {id: 'Santo Domingo Este', nombre: 'Santo Domingo Este'},
@@ -205,6 +208,16 @@ let nacionalidades = [
     {id: 'uruguayo', nombre: 'uruguayo'},
     {id: 'venezolano', nombre: 'venezolano'},
     {id: 'vietnamita', nombre: 'vietnamita'},
+];
+
+let exploracionFisica = [
+    {nombre: 'Cabeza', activo: false, text: ''},
+    {nombre: 'Cuello', activo: false, text: ''},
+    {nombre: 'Torax', activo: false, text: ''},
+    {nombre: 'Abdomen', activo: false, text: ''},
+    {nombre: 'Espalda', activo: false, text: ''},
+    {nombre: 'Extremidades superiores e inferiores', activo: false, text: ''},
+    {nombre: 'Genitales', activo: false, text: ''}
 ]
 
 export { url, isLogin, logout, user, calcularEdad, ciudades, provincias, nacionalidades, cargarImagenEmpresa }
