@@ -489,7 +489,7 @@
                         class="botones-antecedentes"
                         data-bind="foreach: tiposAntecedentesFiltrados"
                       >
-                        {#each antecedentes.reverse() as antecedente}
+                        {#each antecedentes as antecedente}
                           {#if antecedente.categoria.id === categoria.id}
                             {#if antecedente.activo === false}
                               <!-- content here -->

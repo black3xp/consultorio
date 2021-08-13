@@ -137,7 +137,7 @@
   
   <main class="admin-main">
     <Header />
-    <NoConexion/>
+    <!-- <NoConexion/> -->
     <section class="admin-content">
         <button 
             type="button"

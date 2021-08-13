@@ -168,7 +168,7 @@
                                     </div>
                                 </div>
                                 <div class="bg-light cabecera">
-                                    <div>Estudios de imagenes</div>
+                                    <div>Estudios de laboratorios</div>
                                 </div>
                                 <hr style="margin: 0">
                                 <div class="col-12">
