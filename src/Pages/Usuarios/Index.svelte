@@ -28,7 +28,6 @@
         axios(config)
             .then(res => {
                 roles = res.data;
-                console.log(roles);
             })
             .catch(err => {
                 console.error(err)
@@ -46,7 +45,6 @@
         axios(config)
             .then(res => {
                 usuarioModal = res.data;
-                console.log(usuarioModal);
             })
             .catch(err => {
                 console.error(err);

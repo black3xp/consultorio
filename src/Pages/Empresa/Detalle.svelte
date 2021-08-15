@@ -29,7 +29,6 @@
     const cambiarImagenEmpresa = (e) => {
         let image = e.target.files[0];
         const form = new FormData();
-        console.log(image)
         form.append('logo', image)
         const config = {
             method: 'put',
@@ -47,7 +46,6 @@
                     icon: 'success',
                     title: 'Se ha cambiado la imagen correctamente'
                 });
-                console.log(res.data)
                 cargarEmpresa()
             }
         })
@@ -82,7 +80,6 @@
                         icon: 'success',
                         title: 'Empresa actualizada'
                     });
-                    console.log(res.data)
                     cargarEmpresa()
                 }
             })
@@ -121,7 +118,6 @@
             .then(res => {
                 empresa = res.data
                 cargarImagenEmpresa(empresa.id, empresa.logo)
-                console.log(res.data)
             })
             .catch(err => {
                 console.error(err)

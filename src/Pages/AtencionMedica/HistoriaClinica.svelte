@@ -64,7 +64,6 @@
         axios(config)
             .then(res => {
                 empresa = res.data
-                console.log(empresa)
             })
             .catch(err => {
                 console.error(err)
@@ -92,7 +91,6 @@
                 }
                 axios(config)
                     .then(res => {
-                        console.log(res.data)
                         if(res.status === 200) {
                             push(`/pacientes/perfil/${params.idPaciente}`)
                         }
@@ -134,8 +132,6 @@
         historia.estudios = estudiosSeleccionados;
         guardarHistoria();
         sltBuscarEstudios = '';
-        console.log(obj.detail)
-
     }
 
     const agregarDiagnosticoPersonalizado = (nombre) => {
@@ -146,7 +142,6 @@
         };
         diagnosticosSeleccionados = [...diagnosticosSeleccionados, diagnostico];
         guardarHistoria();
-        console.log(diagnosticosSeleccionados);
     }
 
     const agregarComentarioDiagnostico = (position) => {
@@ -165,7 +160,6 @@
     }
 
     const eliminarMedicamento = (event) => {
-        console.log(event.detail)
         if(confirm("Desea eliminar el medicamento?")){
             medicamentosSeleccionados.splice(event.detail, 1)
             medicamentosSeleccionados = medicamentosSeleccionados;
@@ -236,7 +230,6 @@
         historia.medicamentos = medicamentosSeleccionados;
         sltBuscarMedicamentos = '';
         guardarHistoria();
-        console.log(historia)
     }
 
     const cargarEstudios = () => {
@@ -250,7 +243,6 @@
         axios(config)
             .then(res => {
                 estudios = res.data;
-                console.log(estudios);
             })
             .catch(err => {
                 console.error(err)
@@ -291,7 +283,6 @@
             axios(config)
             .then(res => {
                 cargando= false
-                console.log(res.data)
                 if(res.status !== 200){
                     errorServer = true;
                 }
@@ -329,7 +320,6 @@
             {
                 seguro = "N/A"
             }
-            console.log(promesa.data);
         } else {
             console.error(promesa.statusText);
         }
@@ -357,8 +347,6 @@
             exploracionFisica = promesa.data.exploracionFisica || [];
             let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
             hora = obtenerHora[0]+':'+obtenerHora[1]
-            console.log(historia);
-            console.log(hora)
         } else {
             console.error(error);
         }
@@ -399,7 +387,6 @@
                 res.data,
             ];
             guardarHistoria()
-            console.log(diagnosticosSeleccionados);
         });
         inpBuscarDiagnostico = "";
     }

@@ -13,6 +13,7 @@ import HistoriasClinicas from './Pages/AtencionMedica/Index.svelte';
 import RecetaMedicamentos from './Pages/Recetas/Medicamentos.svelte';
 import RecetaEstudios from './Pages/Recetas/Estudios.svelte';
 import RecetaImagenes from './Pages/Recetas/Imagenes.svelte';
+import RecetasIndex from './Pages/Recetas/Indicaciones/Index.svelte';
 import EmpresaDetalle from './Pages/Empresa/Detalle.svelte';
 
 const routes = {
@@ -139,6 +140,18 @@ const routes = {
     }),
     "/empresa/detalles": wrap({
         component: EmpresaDetalle,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/recetas": wrap({
+        component: RecetasIndex,
         conditions: [
             async (detail) => {
                 if(isLogin()){

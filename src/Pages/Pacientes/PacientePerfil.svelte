@@ -41,7 +41,7 @@
     };
     let promesa = await axios(config)
         historiasPaciente = promesa.data;
-        peso = promesa.data[0].peso.valor;
+        peso = promesa.data[0].peso.valor || '';
         tipoPeso = promesa.data[0].peso.tipo;
         temperatura = promesa.data[0].temperatura.valor;
         tipoTemperatura = promesa.data[0].temperatura.tipo;

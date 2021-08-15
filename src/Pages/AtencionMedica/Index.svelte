@@ -35,7 +35,6 @@
             if(res.status === 200) {
                 let {data} = res;
                 historias = data;
-                console.log(historias)
             }
             if(res.status === 500) {
                 errorServer = true;
