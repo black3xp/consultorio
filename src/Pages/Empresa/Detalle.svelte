@@ -64,7 +64,8 @@
             direccion: empresa.direccion,
             historiaGinecologica: empresa.historiaGinecologica,
             signosVitales: empresa.signosVitales,
-            otrosParametros: empresa.otrosParametros
+            otrosParametros: empresa.otrosParametros,
+            exploracionFisica: empresa.exploracionFisica,
         };
         const config = {
             method: 'put',
