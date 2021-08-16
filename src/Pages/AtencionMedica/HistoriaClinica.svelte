@@ -1146,7 +1146,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
 
                         <div class="col-md-12">
                             <ul class="list-info">
-                                {#each diagnosticosSeleccionados.reverse() as item, i}
+                                {#each diagnosticosSeleccionados as item, i}
                                     <li>
                                         <span class="badge badge-primary"
                                             >{item.c}</span
