@@ -1,12 +1,12 @@
 <script>
     import { link } from "svelte-spa-router";
     import {onMount} from "svelte";
-    import {url} from "../../util/index";
+    import {url, user} from "../../util/index";
     import axios from "axios";
 
     import Header from "../../Layout/Header.svelte";
     import Aside from "../../Layout/Aside.svelte";
-    import ModalCrearUsuario from '../../componentes/Modals/ModalCrearUsuarios.svelte';
+    // import ModalCrearUsuario from '../../componentes/Modals/ModalCrearUsuarios.svelte';
     import ModalRolesUsuario from "../../componentes/Modals/ModalRolesUsuario.svelte";
 
 
@@ -78,7 +78,7 @@
 
 <main class="admin-main">
   <Header />
-  <ModalCrearUsuario/>
+  <!-- <ModalCrearUsuario/> -->
   <ModalRolesUsuario
     bind:usuario={usuarioModal}
     bind:roles={roles}
@@ -88,12 +88,12 @@
       <div class="row" />
       <div class="col-md-12 mt-3 m-b-30">
         <h5>Usuarios 
-            <button
+            <!-- <button
                 class="btn btn-primary btn-sm"
                 data-toggle="modal"
                 data-target="#modalUsuario"
                 ><i class="mdi mdi-plus"></i> CREAR
-            </button>
+            </button> -->
         </h5>
         <div class="table-responsive">
             <table class="table align-td-middle table-card">
@@ -126,21 +126,24 @@
                             >
                                 <i class="mdi mdi-security"></i>
                             </button>
-                            <a
-                                href="#!"
-                                class="btn btn-outline-danger"
-                                data-tooltip="Eliminar"
-                            >
-                            <i class="mdi mdi-trash-can-outline"></i>
-                            </a>
-                            <a
-                                href={`/pacientes/perfil/${usuario.id}`}
-                                class="btn btn-outline-primary"
-                                data-tooltip="Perfil"
-                                use:link
-                            >
-                                <i class="mdi mdi-send"></i>
-                            </a>
+                            {#if user().roles.includes('admin')}
+                                 <a
+                                     href="#!"
+                                     class="btn btn-outline-danger"
+                                     data-tooltip="Eliminar"
+                                 >
+                                 <i class="mdi mdi-trash-can-outline"></i>
+                                 </a>
+                                 <a
+                                     href={`/pacientes/perfil/${usuario.id}`}
+                                     class="btn btn-outline-primary"
+                                     data-tooltip="Perfil"
+                                     use:link
+                                 >
+                                     <i class="mdi mdi-send"></i>
+                                 </a>
+                            {/if}
+
                         </td>
                     </tr>
                 {/each}

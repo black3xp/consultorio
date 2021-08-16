@@ -82,7 +82,7 @@
         </li>
         <!--list item ends-->
         <!--list item begins-->
-        {#if user().roles.includes('admin')}
+        {#if user().roles.includes('doctor') || user().roles.includes('admin')}
         <li class="menu-item">
           <a href="#!" class="open-dropdown menu-link">
             <span class="menu-label">

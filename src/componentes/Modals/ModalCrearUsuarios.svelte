@@ -57,6 +57,7 @@
                             <label for="">Contrase&ntilde;a</label>
                             <input
                                 type="password"
+                                autocomplete="new-password"
                                 class="form-control"
                                 required
                                 name="PasswordHash"
@@ -69,6 +70,7 @@
                             <label for="">Repetir contrase&ntilde;a</label>
                             <input
                                 type="password"
+                                autocomplete="new-password"
                                 class="form-control"
                                 required
                                 name="PasswordHash"

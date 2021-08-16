@@ -14,6 +14,8 @@
     import OrdenesMedicas from "../../componentes/OrdenesMedicas.svelte";
     import SignosVitales from "../../componentes/SignosVitales.svelte";
     import ErrorServer from '../../componentes/ErrorConexion.svelte';
+    import NoConexion from "../../componentes/NoConexion.svelte";
+import ErrorConexion from "../../componentes/ErrorConexion.svelte";
 
     const Toast = Swal.mixin({
         toast: true,
@@ -52,6 +54,7 @@
     let errorServer = false;
     let empresa = {};
     let exploracionFisica = [];
+    let serverConexion = false;
 
     const cargarEmpresa = () => {
         const config = {
@@ -309,32 +312,39 @@
                 'Authorization': `${localStorage.getItem('auth')}` 
             }
         };
-        let promesa = await axios(config);
-        if (promesa.status == 200) {
-            paciente = await promesa.data;
-            edad = calcularEdad(paciente.fechaNacimiento);
-            if(paciente.seguroMedico.length !== 0){
-                seguro = paciente.seguroMedico[0].nombre;
+        try {
+            let promesa = await axios(config);
+            if (promesa.status == 200) {
+                paciente = await promesa.data;
+                edad = calcularEdad(paciente.fechaNacimiento);
+                if(paciente.seguroMedico.length !== 0){
+                    seguro = paciente.seguroMedico[0].nombre;
+                }
+                else
+                {
+                    seguro = "N/A"
+                }
+            } else {
+                serverConexion = true;
+                console.error(promesa.statusText);
             }
-            else
-            {
-                seguro = "N/A"
-            }
-        } else {
+        } catch (error) {
+            serverConexion = true;
             console.error(promesa.statusText);
         }
     }
 
     const cargarHistoria = async () => {
-        const config = {
-            method: "get",
-            url: `${url}/historias/${params.idHistoria}`,
-            headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
-        };
-        let promesa = await axios(config);
-        if (promesa.status == 200) {
+        try {
+            const config = {
+                method: "get",
+                url: `${url}/historias/${params.idHistoria}`,
+                headers: {
+                    'Authorization': `${localStorage.getItem('auth')}` 
+                }
+            };
+            
+            let promesa = await axios(config);
             historia = promesa.data;
             temperatura = promesa.data.temperatura;
             presionAlterial = promesa.data.presionAlterial;
@@ -347,7 +357,10 @@
             exploracionFisica = promesa.data.exploracionFisica || [];
             let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
             hora = obtenerHora[0]+':'+obtenerHora[1]
-        } else {
+
+        } catch (error) {
+            serverConexion = true;
+            console.log(serverConexion)
             console.error(error);
         }
     };
@@ -420,6 +433,9 @@
 <div class="contenedor-datos" id="divHeaderBar">
     {#if errorServer}
         <ErrorServer msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}/>
+    {/if}
+    {#if serverConexion}
+        <NoConexion/>
     {/if}
     <div class="row">
         <div class="col-md-6">

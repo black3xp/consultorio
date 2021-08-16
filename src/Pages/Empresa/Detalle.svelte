@@ -21,6 +21,7 @@
     })
   
     let errorServer = false;
+    let serverConexion = false;
     let msgError = '';
     let empresa = {};
     let logo = '';
@@ -116,10 +117,18 @@
         }
         axios(config)
             .then(res => {
-                empresa = res.data
-                cargarImagenEmpresa(empresa.id, empresa.logo)
+                if(res.status === 200)
+                {
+                    empresa = res.data
+                    cargarImagenEmpresa(empresa.id, empresa.logo)
+                }
+                else
+                {
+                    serverConexion = true;
+                }
             })
             .catch(err => {
+                serverConexion = true;
                 console.error(err)
             })
     }
@@ -134,7 +143,9 @@
   
   <main class="admin-main">
     <Header />
-    <!-- <NoConexion/> -->
+    {#if serverConexion}
+        <NoConexion/>
+    {/if}
     <section class="admin-content">
         <button 
             type="button"

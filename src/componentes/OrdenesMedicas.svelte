@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            {#each medicamentosSeleccionados.reverse() as med, i}
+                            {#each medicamentosSeleccionados as med, i}
                                  <!-- content here -->
                                  <div
                                      class="col-lg-12 border border-primary rounded mt-3"

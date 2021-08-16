@@ -22,7 +22,7 @@
   let categoriasAntecedentes = [];
   let antecedentes = [];
   let historiasPaciente = [];
-  let peso = '';
+  let peso = 0;
   let tipoPeso = '';
   let temperatura = '';
   let tipoTemperatura = '';
@@ -41,13 +41,17 @@
     };
     let promesa = await axios(config)
         historiasPaciente = promesa.data;
-        peso = promesa.data[0].peso.valor || '';
-        tipoPeso = promesa.data[0].peso.tipo;
-        temperatura = promesa.data[0].temperatura.valor;
-        tipoTemperatura = promesa.data[0].temperatura.tipo;
-        frecuenciaRespiratoria = promesa.data[0].frecuenciaRespiratoria;
-        frecuenciaCardiaca = promesa.data[0].frecuenciaCardiaca;
-        presionAlterial = `${promesa.data[0].presionAlterial.mm}/${promesa.data[0].presionAlterial.Hg}`;
+        if(historiasPaciente.length !== 0){          
+          peso = promesa.data[0].peso.valor;
+          tipoPeso = promesa.data[0].peso.tipo;
+          temperatura = promesa.data[0].temperatura.valor;
+          tipoTemperatura = promesa.data[0].temperatura.tipo;
+          frecuenciaRespiratoria = promesa.data[0].frecuenciaRespiratoria;
+          frecuenciaCardiaca = promesa.data[0].frecuenciaCardiaca;
+          presionAlterial = `${promesa.data[0].presionAlterial.mm}/${promesa.data[0].presionAlterial.Hg}`;
+        }else{
+          return false
+        }
     } catch (error) {
       console.log(error)
     }
@@ -200,7 +204,7 @@
           <div class="row">
             <div class="col-lg-3 order-lg-1 order-sm-3">
               <UltimosVitales
-                peso={peso}
+                peso={peso ?? 0}
                 tipoPeso={tipoPeso}
                 temperatura={temperatura}
                 tipoTemperatura={tipoTemperatura}
