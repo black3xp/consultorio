@@ -5157,12 +5157,12 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
-    // (101:2) {#if errorServer}
-    function create_if_block_1$1(ctx) {
+    // (105:2) {#if errorServer}
+    function create_if_block_2$1(ctx) {
     	let errorserver;
     	let current;
 
@@ -5197,48 +5197,48 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$1.name,
+    		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(101:2) {#if errorServer}",
+    		source: "(105:2) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (140:20) {#if paciente.activo}
-    function create_if_block$3(ctx) {
+    // (144:20) {#if paciente.activo}
+    function create_if_block_1$1(ctx) {
     	let tr;
     	let td0;
     	let div;
     	let span;
-    	let t0_value = /*paciente*/ ctx[9].nombres[0] + "";
+    	let t0_value = /*paciente*/ ctx[10].nombres[0] + "";
     	let t0;
-    	let t1_value = /*paciente*/ ctx[9].apellidos[0] + "";
+    	let t1_value = /*paciente*/ ctx[10].apellidos[0] + "";
     	let t1;
     	let t2;
     	let td1;
-    	let t3_value = /*paciente*/ ctx[9].nombres + "";
+    	let t3_value = /*paciente*/ ctx[10].nombres + "";
     	let t3;
     	let t4;
-    	let t5_value = /*paciente*/ ctx[9].apellidos + "";
+    	let t5_value = /*paciente*/ ctx[10].apellidos + "";
     	let t5;
     	let t6;
     	let td2;
-    	let t7_value = calcularEdad(/*paciente*/ ctx[9].fechaNacimiento) + "";
+    	let t7_value = calcularEdad(/*paciente*/ ctx[10].fechaNacimiento) + "";
     	let t7;
     	let t8;
     	let t9;
     	let td3;
-    	let t10_value = /*paciente*/ ctx[9].sexo + "";
+    	let t10_value = /*paciente*/ ctx[10].sexo + "";
     	let t10;
     	let t11;
     	let td4;
-    	let t12_value = /*paciente*/ ctx[9].celular + "";
+    	let t12_value = /*paciente*/ ctx[10].celular + "";
     	let t12;
     	let t13;
     	let td5;
-    	let t14_value = /*paciente*/ ctx[9].cedula + "";
+    	let t14_value = /*paciente*/ ctx[10].cedula + "";
     	let t14;
     	let t15;
     	let td6;
@@ -5254,7 +5254,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[6](/*paciente*/ ctx[9], ...args);
+    		return /*click_handler*/ ctx[7](/*paciente*/ ctx[10], ...args);
     	}
 
     	const block = {
@@ -5292,30 +5292,30 @@ var app = (function () {
     			i1 = element("i");
     			t17 = space();
     			attr_dev(span, "class", "avatar-title rounded-circle ");
-    			add_location(span, file$4, 143, 32, 4762);
+    			add_location(span, file$4, 147, 32, 4881);
     			attr_dev(div, "class", "avatar avatar-sm");
-    			add_location(div, file$4, 142, 28, 4698);
-    			add_location(td0, file$4, 141, 24, 4664);
-    			add_location(td1, file$4, 146, 24, 4949);
-    			add_location(td2, file$4, 147, 24, 5023);
-    			add_location(td3, file$4, 148, 24, 5103);
-    			add_location(td4, file$4, 149, 24, 5153);
-    			add_location(td5, file$4, 150, 24, 5206);
+    			add_location(div, file$4, 146, 28, 4817);
+    			add_location(td0, file$4, 145, 24, 4783);
+    			add_location(td1, file$4, 150, 24, 5068);
+    			add_location(td2, file$4, 151, 24, 5142);
+    			add_location(td3, file$4, 152, 24, 5222);
+    			add_location(td4, file$4, 153, 24, 5272);
+    			add_location(td5, file$4, 154, 24, 5325);
     			attr_dev(i0, "class", "mdi mdi-close");
-    			add_location(i0, file$4, 159, 32, 5712);
+    			add_location(i0, file$4, 163, 32, 5831);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "btn btn-outline-danger");
     			attr_dev(a0, "data-tooltip", "Eliminar");
-    			add_location(a0, file$4, 153, 28, 5386);
+    			add_location(a0, file$4, 157, 28, 5505);
     			attr_dev(i1, "class", "mdi mdi-send");
-    			add_location(i1, file$4, 167, 32, 6109);
-    			attr_dev(a1, "href", a1_href_value = `/pacientes/perfil/${/*paciente*/ ctx[9].id}`);
+    			add_location(i1, file$4, 171, 32, 6228);
+    			attr_dev(a1, "href", a1_href_value = `/pacientes/perfil/${/*paciente*/ ctx[10].id}`);
     			attr_dev(a1, "class", "btn btn-outline-primary");
     			attr_dev(a1, "data-tooltip", "Perfil");
-    			add_location(a1, file$4, 161, 28, 5805);
+    			add_location(a1, file$4, 165, 28, 5924);
     			attr_dev(td6, "class", "text-right");
-    			add_location(td6, file$4, 151, 24, 5258);
-    			add_location(tr, file$4, 140, 20, 4634);
+    			add_location(td6, file$4, 155, 24, 5377);
+    			add_location(tr, file$4, 144, 20, 4753);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -5362,16 +5362,16 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*pacientes*/ 1 && t0_value !== (t0_value = /*paciente*/ ctx[9].nombres[0] + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*pacientes*/ 1 && t1_value !== (t1_value = /*paciente*/ ctx[9].apellidos[0] + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*pacientes*/ 1 && t3_value !== (t3_value = /*paciente*/ ctx[9].nombres + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*pacientes*/ 1 && t5_value !== (t5_value = /*paciente*/ ctx[9].apellidos + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*pacientes*/ 1 && t7_value !== (t7_value = calcularEdad(/*paciente*/ ctx[9].fechaNacimiento) + "")) set_data_dev(t7, t7_value);
-    			if (dirty & /*pacientes*/ 1 && t10_value !== (t10_value = /*paciente*/ ctx[9].sexo + "")) set_data_dev(t10, t10_value);
-    			if (dirty & /*pacientes*/ 1 && t12_value !== (t12_value = /*paciente*/ ctx[9].celular + "")) set_data_dev(t12, t12_value);
-    			if (dirty & /*pacientes*/ 1 && t14_value !== (t14_value = /*paciente*/ ctx[9].cedula + "")) set_data_dev(t14, t14_value);
+    			if (dirty & /*pacientes*/ 1 && t0_value !== (t0_value = /*paciente*/ ctx[10].nombres[0] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*pacientes*/ 1 && t1_value !== (t1_value = /*paciente*/ ctx[10].apellidos[0] + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*pacientes*/ 1 && t3_value !== (t3_value = /*paciente*/ ctx[10].nombres + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*pacientes*/ 1 && t5_value !== (t5_value = /*paciente*/ ctx[10].apellidos + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*pacientes*/ 1 && t7_value !== (t7_value = calcularEdad(/*paciente*/ ctx[10].fechaNacimiento) + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*pacientes*/ 1 && t10_value !== (t10_value = /*paciente*/ ctx[10].sexo + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*pacientes*/ 1 && t12_value !== (t12_value = /*paciente*/ ctx[10].celular + "")) set_data_dev(t12, t12_value);
+    			if (dirty & /*pacientes*/ 1 && t14_value !== (t14_value = /*paciente*/ ctx[10].cedula + "")) set_data_dev(t14, t14_value);
 
-    			if (dirty & /*pacientes*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/perfil/${/*paciente*/ ctx[9].id}`)) {
+    			if (dirty & /*pacientes*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/perfil/${/*paciente*/ ctx[10].id}`)) {
     				attr_dev(a1, "href", a1_href_value);
     			}
     		},
@@ -5384,19 +5384,19 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(140:20) {#if paciente.activo}",
+    		source: "(144:20) {#if paciente.activo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (139:16) {#each pacientes as paciente}
+    // (143:16) {#each pacientes as paciente}
     function create_each_block(ctx) {
     	let if_block_anchor;
-    	let if_block = /*paciente*/ ctx[9].activo && create_if_block$3(ctx);
+    	let if_block = /*paciente*/ ctx[10].activo && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -5408,11 +5408,11 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*paciente*/ ctx[9].activo) {
+    			if (/*paciente*/ ctx[10].activo) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$3(ctx);
+    					if_block = create_if_block_1$1(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -5431,7 +5431,48 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(139:16) {#each pacientes as paciente}",
+    		source: "(143:16) {#each pacientes as paciente}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (182:8) {#if cargando}
+    function create_if_block$3(ctx) {
+    	let div1;
+    	let div0;
+    	let span;
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			span = element("span");
+    			span.textContent = "Loading...";
+    			attr_dev(span, "class", "sr-only");
+    			add_location(span, file$4, 184, 24, 6638);
+    			attr_dev(div0, "class", "spinner-border text-secondary");
+    			attr_dev(div0, "role", "status");
+    			add_location(div0, file$4, 183, 20, 6555);
+    			attr_dev(div1, "class", "text-center");
+    			add_location(div1, file$4, 182, 16, 6508);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, span);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(182:8) {#if cargando}",
     		ctx
     	});
 
@@ -5486,12 +5527,13 @@ var app = (function () {
     	let th6;
     	let t21;
     	let tbody;
+    	let t22;
     	let current;
     	let mounted;
     	let dispose;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block = /*errorServer*/ ctx[1] && create_if_block_1$1(ctx);
+    	let if_block0 = /*errorServer*/ ctx[1] && create_if_block_2$1(ctx);
     	let each_value = /*pacientes*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -5500,6 +5542,8 @@ var app = (function () {
     		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
 
+    	let if_block1 = /*cargando*/ ctx[3] && create_if_block$3(ctx);
+
     	const block = {
     		c: function create() {
     			create_component(aside.$$.fragment);
@@ -5507,7 +5551,7 @@ var app = (function () {
     			main = element("main");
     			create_component(header.$$.fragment);
     			t1 = space();
-    			if (if_block) if_block.c();
+    			if (if_block0) if_block0.c();
     			t2 = space();
     			section = element("section");
     			div9 = element("div");
@@ -5560,55 +5604,57 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
+    			t22 = space();
+    			if (if_block1) if_block1.c();
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file$4, 107, 6, 3140);
+    			add_location(div0, file$4, 111, 6, 3259);
     			attr_dev(i, "class", "mdi mdi-plus");
-    			add_location(i, file$4, 109, 89, 3293);
+    			add_location(i, file$4, 113, 89, 3412);
     			attr_dev(a, "href", "/pacientes/crear");
     			attr_dev(a, "class", "btn btn-primary btn-sm");
-    			add_location(a, file$4, 109, 22, 3226);
-    			add_location(h5, file$4, 109, 8, 3212);
+    			add_location(a, file$4, 113, 22, 3345);
+    			add_location(h5, file$4, 113, 8, 3331);
     			attr_dev(label, "for", "Buscar");
-    			add_location(label, file$4, 116, 36, 3659);
+    			add_location(label, file$4, 120, 36, 3778);
     			attr_dev(input, "type", "search");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "placeholder", "Nombres o Apelidos");
-    			add_location(input, file$4, 117, 36, 3741);
+    			add_location(input, file$4, 121, 36, 3860);
     			attr_dev(div1, "class", "form-group");
-    			add_location(div1, file$4, 115, 32, 3597);
+    			add_location(div1, file$4, 119, 32, 3716);
     			attr_dev(div2, "class", "col-lg-4");
-    			add_location(div2, file$4, 114, 28, 3541);
+    			add_location(div2, file$4, 118, 28, 3660);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file$4, 113, 24, 3494);
+    			add_location(div3, file$4, 117, 24, 3613);
     			attr_dev(div4, "class", "col-12");
-    			add_location(div4, file$4, 112, 20, 3448);
+    			add_location(div4, file$4, 116, 20, 3567);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$4, 111, 12, 3409);
+    			add_location(div5, file$4, 115, 12, 3528);
     			attr_dev(div6, "class", "alert alert-secondary");
     			attr_dev(div6, "role", "alert");
-    			add_location(div6, file$4, 110, 8, 3347);
-    			add_location(th0, file$4, 128, 20, 4226);
-    			add_location(th1, file$4, 129, 20, 4257);
-    			add_location(th2, file$4, 130, 20, 4294);
-    			add_location(th3, file$4, 131, 20, 4329);
-    			add_location(th4, file$4, 132, 20, 4364);
-    			add_location(th5, file$4, 133, 20, 4402);
-    			add_location(th6, file$4, 134, 20, 4439);
-    			add_location(tr, file$4, 127, 16, 4200);
-    			add_location(thead, file$4, 126, 16, 4175);
-    			add_location(tbody, file$4, 137, 16, 4515);
+    			add_location(div6, file$4, 114, 8, 3466);
+    			add_location(th0, file$4, 132, 20, 4345);
+    			add_location(th1, file$4, 133, 20, 4376);
+    			add_location(th2, file$4, 134, 20, 4413);
+    			add_location(th3, file$4, 135, 20, 4448);
+    			add_location(th4, file$4, 136, 20, 4483);
+    			add_location(th5, file$4, 137, 20, 4521);
+    			add_location(th6, file$4, 138, 20, 4558);
+    			add_location(tr, file$4, 131, 16, 4319);
+    			add_location(thead, file$4, 130, 16, 4294);
+    			add_location(tbody, file$4, 141, 16, 4634);
     			attr_dev(table, "class", "table align-td-middle table-card");
-    			add_location(table, file$4, 125, 12, 4109);
+    			add_location(table, file$4, 129, 12, 4228);
     			attr_dev(div7, "class", "table-responsive");
-    			add_location(div7, file$4, 124, 8, 4065);
+    			add_location(div7, file$4, 128, 8, 4184);
     			attr_dev(div8, "class", "col-md-12 mt-3 m-b-30");
-    			add_location(div8, file$4, 108, 6, 3167);
+    			add_location(div8, file$4, 112, 6, 3286);
     			attr_dev(div9, "class", "p-2");
-    			add_location(div9, file$4, 106, 4, 3115);
+    			add_location(div9, file$4, 110, 4, 3234);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$4, 105, 2, 3078);
+    			add_location(section, file$4, 109, 2, 3197);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$4, 98, 0, 2870);
+    			add_location(main, file$4, 102, 0, 2989);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5619,7 +5665,7 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			mount_component(header, main, null);
     			append_dev(main, t1);
-    			if (if_block) if_block.m(main, null);
+    			if (if_block0) if_block0.m(main, null);
     			append_dev(main, t2);
     			append_dev(main, section);
     			append_dev(section, div9);
@@ -5667,13 +5713,15 @@ var app = (function () {
     				each_blocks[i].m(tbody, null);
     			}
 
+    			append_dev(div8, t22);
+    			if (if_block1) if_block1.m(div8, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
     					action_destroyer(link_action = link.call(null, a)),
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[5]),
-    					listen_dev(input, "input", /*searchPacientes*/ ctx[3], false, false, false)
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[6]),
+    					listen_dev(input, "input", /*searchPacientes*/ ctx[4], false, false, false)
     				];
 
     				mounted = true;
@@ -5681,21 +5729,21 @@ var app = (function () {
     		},
     		p: function update(ctx, [dirty]) {
     			if (/*errorServer*/ ctx[1]) {
-    				if (if_block) {
+    				if (if_block0) {
     					if (dirty & /*errorServer*/ 2) {
-    						transition_in(if_block, 1);
+    						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block = create_if_block_1$1(ctx);
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(main, t2);
+    					if_block0 = create_if_block_2$1(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(main, t2);
     				}
-    			} else if (if_block) {
+    			} else if (if_block0) {
     				group_outros();
 
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
     				});
 
     				check_outros();
@@ -5705,7 +5753,7 @@ var app = (function () {
     				set_input_value(input, /*sltBuscarPacientes*/ ctx[2]);
     			}
 
-    			if (dirty & /*pacientes, eliminarPaciente, calcularEdad*/ 17) {
+    			if (dirty & /*pacientes, eliminarPaciente, calcularEdad*/ 33) {
     				each_value = /*pacientes*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -5728,18 +5776,29 @@ var app = (function () {
 
     				each_blocks.length = each_value.length;
     			}
+
+    			if (/*cargando*/ ctx[3]) {
+    				if (if_block1) ; else {
+    					if_block1 = create_if_block$3(ctx);
+    					if_block1.c();
+    					if_block1.m(div8, null);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(aside.$$.fragment, local);
     			transition_in(header.$$.fragment, local);
-    			transition_in(if_block);
+    			transition_in(if_block0);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(aside.$$.fragment, local);
     			transition_out(header.$$.fragment, local);
-    			transition_out(if_block);
+    			transition_out(if_block0);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -5747,8 +5806,9 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(header);
-    			if (if_block) if_block.d();
+    			if (if_block0) if_block0.d();
     			destroy_each(each_blocks, detaching);
+    			if (if_block1) if_block1.d();
     			mounted = false;
     			run_all(dispose);
     		}
@@ -5772,6 +5832,7 @@ var app = (function () {
     	let errorServer = false;
     	let sltBuscarPacientes = "";
     	let timeout = null;
+    	let cargando = false;
 
     	const searchPacientes = () => {
     		if (timeout) {
@@ -5818,6 +5879,8 @@ var app = (function () {
     	};
 
     	function cargarPacientes() {
+    		$$invalidate(3, cargando = true);
+
     		const config = {
     			method: "get",
     			url: `${url}/pacientes?b=${sltBuscarPacientes}`,
@@ -5828,6 +5891,8 @@ var app = (function () {
 
     		try {
     			axios$1(config).then(res => {
+    				$$invalidate(3, cargando = false);
+
     				if (res.status === 200) {
     					let { data } = res;
     					$$invalidate(0, pacientes = data);
@@ -5837,6 +5902,7 @@ var app = (function () {
     					$$invalidate(1, errorServer = true);
     				}
     			}).catch(err => {
+    				$$invalidate(3, cargando = false);
     				console.error(err);
 
     				if (err) {
@@ -5880,6 +5946,7 @@ var app = (function () {
     		errorServer,
     		sltBuscarPacientes,
     		timeout,
+    		cargando,
     		searchPacientes,
     		eliminarPaciente,
     		cargarPacientes
@@ -5890,6 +5957,7 @@ var app = (function () {
     		if ("errorServer" in $$props) $$invalidate(1, errorServer = $$props.errorServer);
     		if ("sltBuscarPacientes" in $$props) $$invalidate(2, sltBuscarPacientes = $$props.sltBuscarPacientes);
     		if ("timeout" in $$props) timeout = $$props.timeout;
+    		if ("cargando" in $$props) $$invalidate(3, cargando = $$props.cargando);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -5900,6 +5968,7 @@ var app = (function () {
     		pacientes,
     		errorServer,
     		sltBuscarPacientes,
+    		cargando,
     		searchPacientes,
     		eliminarPaciente,
     		input_input_handler,
@@ -9046,7 +9115,7 @@ var app = (function () {
     }
 
     // (493:26) {#if antecedente.categoria.id === categoria.id}
-    function create_if_block_2$1(ctx) {
+    function create_if_block_2$2(ctx) {
     	let if_block_anchor;
     	let if_block = /*antecedente*/ ctx[38].activo === false && create_if_block_3(ctx);
 
@@ -9081,7 +9150,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$1.name,
+    		id: create_if_block_2$2.name,
     		type: "if",
     		source: "(493:26) {#if antecedente.categoria.id === categoria.id}",
     		ctx
@@ -9161,7 +9230,7 @@ var app = (function () {
     // (492:24) {#each antecedentes as antecedente}
     function create_each_block_2(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[38].categoria.id === /*categoria*/ ctx[35].id && create_if_block_2$1(ctx);
+    	let if_block = /*antecedente*/ ctx[38].categoria.id === /*categoria*/ ctx[35].id && create_if_block_2$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -9177,7 +9246,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_2$1(ctx);
+    					if_block = create_if_block_2$2(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -14291,7 +14360,7 @@ var app = (function () {
     }
 
     // (226:44) {#if estudio.tipo === 'LAB'}
-    function create_if_block_2$2(ctx) {
+    function create_if_block_2$3(ctx) {
     	let span;
     	let i;
 
@@ -14315,7 +14384,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$2.name,
+    		id: create_if_block_2$3.name,
     		type: "if",
     		source: "(226:44) {#if estudio.tipo === 'LAB'}",
     		ctx
@@ -14336,7 +14405,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*estudio*/ ctx[30].tipo === "LAB") return create_if_block_2$2;
+    		if (/*estudio*/ ctx[30].tipo === "LAB") return create_if_block_2$3;
     		return create_else_block_1;
     	}
 
@@ -17566,7 +17635,7 @@ var app = (function () {
     }
 
     // (1016:12) {#if empresa.exploracionFisica}
-    function create_if_block_2$3(ctx) {
+    function create_if_block_2$4(ctx) {
     	let div7;
     	let div1;
     	let div0;
@@ -17719,7 +17788,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$3.name,
+    		id: create_if_block_2$4.name,
     		type: "if",
     		source: "(1016:12) {#if empresa.exploracionFisica}",
     		ctx
@@ -18458,7 +18527,7 @@ var app = (function () {
     	let if_block4 = /*empresa*/ ctx[21].historiaGinecologica && create_if_block_7(ctx);
     	let if_block5 = /*empresa*/ ctx[21].signosVitales && create_if_block_6(ctx);
     	let if_block6 = /*empresa*/ ctx[21].otrosParametros && create_if_block_5$1(ctx);
-    	let if_block7 = /*empresa*/ ctx[21].exploracionFisica && create_if_block_2$3(ctx);
+    	let if_block7 = /*empresa*/ ctx[21].exploracionFisica && create_if_block_2$4(ctx);
     	let each_value_1 = /*filtroDiagnostico*/ ctx[23];
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
@@ -19345,7 +19414,7 @@ var app = (function () {
     				if (if_block7) {
     					if_block7.p(ctx, dirty);
     				} else {
-    					if_block7 = create_if_block_2$3(ctx);
+    					if_block7 = create_if_block_2$4(ctx);
     					if_block7.c();
     					if_block7.m(div47, t44);
     				}
@@ -22223,12 +22292,12 @@ var app = (function () {
 
     function get_each_context$8(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[7] = list[i];
+    	child_ctx[8] = list[i];
     	return child_ctx;
     }
 
-    // (65:2) {#if errorServer}
-    function create_if_block_1$6(ctx) {
+    // (69:2) {#if errorServer}
+    function create_if_block_2$5(ctx) {
     	let errorserver;
     	let current;
 
@@ -22263,48 +22332,48 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$6.name,
+    		id: create_if_block_2$5.name,
     		type: "if",
-    		source: "(65:2) {#if errorServer}",
+    		source: "(69:2) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (104:20) {#if historia.activo}
-    function create_if_block$a(ctx) {
+    // (108:20) {#if historia.activo}
+    function create_if_block_1$6(ctx) {
     	let tr;
     	let td0;
     	let div;
     	let span;
-    	let t0_value = /*historia*/ ctx[7].paciente.nombres[0] + "";
+    	let t0_value = /*historia*/ ctx[8].paciente.nombres[0] + "";
     	let t0;
-    	let t1_value = /*historia*/ ctx[7].paciente.apellidos[0] + "";
+    	let t1_value = /*historia*/ ctx[8].paciente.apellidos[0] + "";
     	let t1;
     	let t2;
     	let td1;
-    	let t3_value = /*historia*/ ctx[7].paciente.nombres + "";
+    	let t3_value = /*historia*/ ctx[8].paciente.nombres + "";
     	let t3;
     	let t4;
-    	let t5_value = /*historia*/ ctx[7].paciente.apellidos + "";
+    	let t5_value = /*historia*/ ctx[8].paciente.apellidos + "";
     	let t5;
     	let t6;
     	let td2;
-    	let t7_value = /*historia*/ ctx[7].paciente.cedula + "";
+    	let t7_value = /*historia*/ ctx[8].paciente.cedula + "";
     	let t7;
     	let t8;
     	let td3;
-    	let t9_value = calcularEdad(/*historia*/ ctx[7].paciente.fechaNacimiento) + "";
+    	let t9_value = calcularEdad(/*historia*/ ctx[8].paciente.fechaNacimiento) + "";
     	let t9;
     	let t10;
     	let t11;
     	let td4;
-    	let t12_value = /*historia*/ ctx[7].paciente.sexo + "";
+    	let t12_value = /*historia*/ ctx[8].paciente.sexo + "";
     	let t12;
     	let t13;
     	let td5;
-    	let t14_value = new Date(/*historia*/ ctx[7].fechaHora).toLocaleDateString("es-DO") + "";
+    	let t14_value = new Date(/*historia*/ ctx[8].fechaHora).toLocaleDateString("es-DO") + "";
     	let t14;
     	let t15;
     	let td6;
@@ -22354,30 +22423,30 @@ var app = (function () {
     			i1 = element("i");
     			t17 = space();
     			attr_dev(span, "class", "avatar-title rounded-circle ");
-    			add_location(span, file$o, 107, 32, 3364);
+    			add_location(span, file$o, 111, 32, 3479);
     			attr_dev(div, "class", "avatar avatar-sm");
-    			add_location(div, file$o, 106, 28, 3300);
-    			add_location(td0, file$o, 105, 24, 3266);
-    			add_location(td1, file$o, 110, 24, 3569);
-    			add_location(td2, file$o, 111, 24, 3661);
-    			add_location(td3, file$o, 112, 24, 3722);
-    			add_location(td4, file$o, 113, 24, 3811);
-    			add_location(td5, file$o, 114, 24, 3870);
+    			add_location(div, file$o, 110, 28, 3415);
+    			add_location(td0, file$o, 109, 24, 3381);
+    			add_location(td1, file$o, 114, 24, 3684);
+    			add_location(td2, file$o, 115, 24, 3776);
+    			add_location(td3, file$o, 116, 24, 3837);
+    			add_location(td4, file$o, 117, 24, 3926);
+    			add_location(td5, file$o, 118, 24, 3985);
     			attr_dev(i0, "class", "mdi mdi-close");
-    			add_location(i0, file$o, 122, 32, 4322);
+    			add_location(i0, file$o, 126, 32, 4437);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "btn btn-outline-danger");
     			attr_dev(a0, "data-tooltip", "Eliminar");
-    			add_location(a0, file$o, 117, 28, 4091);
+    			add_location(a0, file$o, 121, 28, 4206);
     			attr_dev(i1, "class", "mdi mdi-send");
-    			add_location(i1, file$o, 130, 32, 4743);
-    			attr_dev(a1, "href", a1_href_value = `/pacientes/${/*historia*/ ctx[7].paciente.id}/historias/${/*historia*/ ctx[7].id}`);
+    			add_location(i1, file$o, 134, 32, 4858);
+    			attr_dev(a1, "href", a1_href_value = `/pacientes/${/*historia*/ ctx[8].paciente.id}/historias/${/*historia*/ ctx[8].id}`);
     			attr_dev(a1, "class", "btn btn-outline-primary");
     			attr_dev(a1, "data-tooltip", "Ver");
-    			add_location(a1, file$o, 124, 28, 4415);
+    			add_location(a1, file$o, 128, 28, 4530);
     			attr_dev(td6, "class", "text-right");
-    			add_location(td6, file$o, 115, 24, 3963);
-    			add_location(tr, file$o, 104, 20, 3236);
+    			add_location(td6, file$o, 119, 24, 4078);
+    			add_location(tr, file$o, 108, 20, 3351);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -22419,16 +22488,16 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*historias*/ 1 && t0_value !== (t0_value = /*historia*/ ctx[7].paciente.nombres[0] + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*historias*/ 1 && t1_value !== (t1_value = /*historia*/ ctx[7].paciente.apellidos[0] + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*historias*/ 1 && t3_value !== (t3_value = /*historia*/ ctx[7].paciente.nombres + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*historias*/ 1 && t5_value !== (t5_value = /*historia*/ ctx[7].paciente.apellidos + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*historias*/ 1 && t7_value !== (t7_value = /*historia*/ ctx[7].paciente.cedula + "")) set_data_dev(t7, t7_value);
-    			if (dirty & /*historias*/ 1 && t9_value !== (t9_value = calcularEdad(/*historia*/ ctx[7].paciente.fechaNacimiento) + "")) set_data_dev(t9, t9_value);
-    			if (dirty & /*historias*/ 1 && t12_value !== (t12_value = /*historia*/ ctx[7].paciente.sexo + "")) set_data_dev(t12, t12_value);
-    			if (dirty & /*historias*/ 1 && t14_value !== (t14_value = new Date(/*historia*/ ctx[7].fechaHora).toLocaleDateString("es-DO") + "")) set_data_dev(t14, t14_value);
+    			if (dirty & /*historias*/ 1 && t0_value !== (t0_value = /*historia*/ ctx[8].paciente.nombres[0] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*historias*/ 1 && t1_value !== (t1_value = /*historia*/ ctx[8].paciente.apellidos[0] + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*historias*/ 1 && t3_value !== (t3_value = /*historia*/ ctx[8].paciente.nombres + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*historias*/ 1 && t5_value !== (t5_value = /*historia*/ ctx[8].paciente.apellidos + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*historias*/ 1 && t7_value !== (t7_value = /*historia*/ ctx[8].paciente.cedula + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*historias*/ 1 && t9_value !== (t9_value = calcularEdad(/*historia*/ ctx[8].paciente.fechaNacimiento) + "")) set_data_dev(t9, t9_value);
+    			if (dirty & /*historias*/ 1 && t12_value !== (t12_value = /*historia*/ ctx[8].paciente.sexo + "")) set_data_dev(t12, t12_value);
+    			if (dirty & /*historias*/ 1 && t14_value !== (t14_value = new Date(/*historia*/ ctx[8].fechaHora).toLocaleDateString("es-DO") + "")) set_data_dev(t14, t14_value);
 
-    			if (dirty & /*historias*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/${/*historia*/ ctx[7].paciente.id}/historias/${/*historia*/ ctx[7].id}`)) {
+    			if (dirty & /*historias*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/${/*historia*/ ctx[8].paciente.id}/historias/${/*historia*/ ctx[8].id}`)) {
     				attr_dev(a1, "href", a1_href_value);
     			}
     		},
@@ -22441,19 +22510,19 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$a.name,
+    		id: create_if_block_1$6.name,
     		type: "if",
-    		source: "(104:20) {#if historia.activo}",
+    		source: "(108:20) {#if historia.activo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (103:16) {#each historias as historia}
+    // (107:16) {#each historias as historia}
     function create_each_block$8(ctx) {
     	let if_block_anchor;
-    	let if_block = /*historia*/ ctx[7].activo && create_if_block$a(ctx);
+    	let if_block = /*historia*/ ctx[8].activo && create_if_block_1$6(ctx);
 
     	const block = {
     		c: function create() {
@@ -22465,11 +22534,11 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*historia*/ ctx[7].activo) {
+    			if (/*historia*/ ctx[8].activo) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$a(ctx);
+    					if_block = create_if_block_1$6(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -22488,7 +22557,48 @@ var app = (function () {
     		block,
     		id: create_each_block$8.name,
     		type: "each",
-    		source: "(103:16) {#each historias as historia}",
+    		source: "(107:16) {#each historias as historia}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (146:8) {#if cargando}
+    function create_if_block$a(ctx) {
+    	let div1;
+    	let div0;
+    	let span;
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			span = element("span");
+    			span.textContent = "Loading...";
+    			attr_dev(span, "class", "sr-only");
+    			add_location(span, file$o, 148, 21, 5277);
+    			attr_dev(div0, "class", "spinner-border text-secondary");
+    			attr_dev(div0, "role", "status");
+    			add_location(div0, file$o, 147, 17, 5197);
+    			attr_dev(div1, "class", "text-center");
+    			add_location(div1, file$o, 146, 13, 5153);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, span);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$a.name,
+    		type: "if",
+    		source: "(146:8) {#if cargando}",
     		ctx
     	});
 
@@ -22538,12 +22648,13 @@ var app = (function () {
     	let th6;
     	let t20;
     	let tbody;
+    	let t21;
     	let current;
     	let mounted;
     	let dispose;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block = /*errorServer*/ ctx[1] && create_if_block_1$6(ctx);
+    	let if_block0 = /*errorServer*/ ctx[1] && create_if_block_2$5(ctx);
     	let each_value = /*historias*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -22552,6 +22663,8 @@ var app = (function () {
     		each_blocks[i] = create_each_block$8(get_each_context$8(ctx, each_value, i));
     	}
 
+    	let if_block1 = /*cargando*/ ctx[3] && create_if_block$a(ctx);
+
     	const block = {
     		c: function create() {
     			create_component(aside.$$.fragment);
@@ -22559,7 +22672,7 @@ var app = (function () {
     			main = element("main");
     			create_component(header.$$.fragment);
     			t1 = space();
-    			if (if_block) if_block.c();
+    			if (if_block0) if_block0.c();
     			t2 = space();
     			section = element("section");
     			div9 = element("div");
@@ -22609,50 +22722,52 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
+    			t21 = space();
+    			if (if_block1) if_block1.c();
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file$o, 71, 6, 1895);
-    			add_location(h5, file$o, 73, 8, 1967);
+    			add_location(div0, file$o, 75, 6, 2010);
+    			add_location(h5, file$o, 77, 8, 2082);
     			attr_dev(label, "for", "Buscar");
-    			add_location(label, file$o, 80, 32, 2291);
+    			add_location(label, file$o, 84, 32, 2406);
     			attr_dev(input, "type", "search");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "placeholder", "Nombres o Apelidos");
-    			add_location(input, file$o, 81, 32, 2369);
+    			add_location(input, file$o, 85, 32, 2484);
     			attr_dev(div1, "class", "form-group");
-    			add_location(div1, file$o, 79, 28, 2233);
+    			add_location(div1, file$o, 83, 28, 2348);
     			attr_dev(div2, "class", "col-lg-4");
-    			add_location(div2, file$o, 78, 24, 2181);
+    			add_location(div2, file$o, 82, 24, 2296);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file$o, 77, 20, 2138);
+    			add_location(div3, file$o, 81, 20, 2253);
     			attr_dev(div4, "class", "col-12");
-    			add_location(div4, file$o, 76, 16, 2096);
+    			add_location(div4, file$o, 80, 16, 2211);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$o, 75, 8, 2061);
+    			add_location(div5, file$o, 79, 8, 2176);
     			attr_dev(div6, "class", "alert alert-secondary");
     			attr_dev(div6, "role", "alert");
-    			add_location(div6, file$o, 74, 8, 2003);
-    			add_location(th0, file$o, 92, 20, 2830);
-    			add_location(th1, file$o, 93, 20, 2861);
-    			add_location(th2, file$o, 94, 20, 2898);
-    			add_location(th3, file$o, 95, 20, 2935);
-    			add_location(th4, file$o, 96, 20, 2970);
-    			add_location(th5, file$o, 97, 20, 3005);
-    			add_location(th6, file$o, 98, 20, 3041);
-    			add_location(tr, file$o, 91, 16, 2804);
-    			add_location(thead, file$o, 90, 16, 2779);
-    			add_location(tbody, file$o, 101, 16, 3117);
+    			add_location(div6, file$o, 78, 8, 2118);
+    			add_location(th0, file$o, 96, 20, 2945);
+    			add_location(th1, file$o, 97, 20, 2976);
+    			add_location(th2, file$o, 98, 20, 3013);
+    			add_location(th3, file$o, 99, 20, 3050);
+    			add_location(th4, file$o, 100, 20, 3085);
+    			add_location(th5, file$o, 101, 20, 3120);
+    			add_location(th6, file$o, 102, 20, 3156);
+    			add_location(tr, file$o, 95, 16, 2919);
+    			add_location(thead, file$o, 94, 16, 2894);
+    			add_location(tbody, file$o, 105, 16, 3232);
     			attr_dev(table, "class", "table align-td-middle table-card");
-    			add_location(table, file$o, 89, 12, 2713);
+    			add_location(table, file$o, 93, 12, 2828);
     			attr_dev(div7, "class", "table-responsive");
-    			add_location(div7, file$o, 88, 8, 2669);
+    			add_location(div7, file$o, 92, 8, 2784);
     			attr_dev(div8, "class", "col-md-12 mt-3 m-b-30");
-    			add_location(div8, file$o, 72, 6, 1922);
+    			add_location(div8, file$o, 76, 6, 2037);
     			attr_dev(div9, "class", "p-2");
-    			add_location(div9, file$o, 70, 4, 1870);
+    			add_location(div9, file$o, 74, 4, 1985);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$o, 69, 2, 1833);
+    			add_location(section, file$o, 73, 2, 1948);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$o, 62, 0, 1611);
+    			add_location(main, file$o, 66, 0, 1726);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -22663,7 +22778,7 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			mount_component(header, main, null);
     			append_dev(main, t1);
-    			if (if_block) if_block.m(main, null);
+    			if (if_block0) if_block0.m(main, null);
     			append_dev(main, t2);
     			append_dev(main, section);
     			append_dev(section, div9);
@@ -22707,12 +22822,14 @@ var app = (function () {
     				each_blocks[i].m(tbody, null);
     			}
 
+    			append_dev(div8, t21);
+    			if (if_block1) if_block1.m(div8, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[4]),
-    					listen_dev(input, "input", /*searchHistorias*/ ctx[3], false, false, false)
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[5]),
+    					listen_dev(input, "input", /*searchHistorias*/ ctx[4], false, false, false)
     				];
 
     				mounted = true;
@@ -22720,21 +22837,21 @@ var app = (function () {
     		},
     		p: function update(ctx, [dirty]) {
     			if (/*errorServer*/ ctx[1]) {
-    				if (if_block) {
+    				if (if_block0) {
     					if (dirty & /*errorServer*/ 2) {
-    						transition_in(if_block, 1);
+    						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block = create_if_block_1$6(ctx);
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(main, t2);
+    					if_block0 = create_if_block_2$5(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(main, t2);
     				}
-    			} else if (if_block) {
+    			} else if (if_block0) {
     				group_outros();
 
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
     				});
 
     				check_outros();
@@ -22767,18 +22884,29 @@ var app = (function () {
 
     				each_blocks.length = each_value.length;
     			}
+
+    			if (/*cargando*/ ctx[3]) {
+    				if (if_block1) ; else {
+    					if_block1 = create_if_block$a(ctx);
+    					if_block1.c();
+    					if_block1.m(div8, null);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(aside.$$.fragment, local);
     			transition_in(header.$$.fragment, local);
-    			transition_in(if_block);
+    			transition_in(if_block0);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(aside.$$.fragment, local);
     			transition_out(header.$$.fragment, local);
-    			transition_out(if_block);
+    			transition_out(if_block0);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -22786,8 +22914,9 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(header);
-    			if (if_block) if_block.d();
+    			if (if_block0) if_block0.d();
     			destroy_each(each_blocks, detaching);
+    			if (if_block1) if_block1.d();
     			mounted = false;
     			run_all(dispose);
     		}
@@ -22811,6 +22940,7 @@ var app = (function () {
     	let errorServer = false;
     	let sltBuscarHistorias = "";
     	let timeout = null;
+    	let cargando = false;
 
     	const searchHistorias = () => {
     		if (timeout) {
@@ -22826,6 +22956,8 @@ var app = (function () {
     	};
 
     	function cargarHistorias() {
+    		$$invalidate(3, cargando = true);
+
     		const config = {
     			method: "get",
     			url: `${url}/historias?b=${sltBuscarHistorias}`,
@@ -22836,6 +22968,8 @@ var app = (function () {
 
     		try {
     			axios$1(config).then(res => {
+    				$$invalidate(3, cargando = false);
+
     				if (res.status === 200) {
     					let { data } = res;
     					$$invalidate(0, historias = data);
@@ -22852,6 +22986,8 @@ var app = (function () {
     				console.error(err);
     			});
     		} catch(error) {
+    			$$invalidate(3, cargando = false);
+
     			if (error) {
     				$$invalidate(1, errorServer = true);
     			}
@@ -22886,6 +23022,7 @@ var app = (function () {
     		errorServer,
     		sltBuscarHistorias,
     		timeout,
+    		cargando,
     		searchHistorias,
     		cargarHistorias
     	});
@@ -22895,6 +23032,7 @@ var app = (function () {
     		if ("errorServer" in $$props) $$invalidate(1, errorServer = $$props.errorServer);
     		if ("sltBuscarHistorias" in $$props) $$invalidate(2, sltBuscarHistorias = $$props.sltBuscarHistorias);
     		if ("timeout" in $$props) timeout = $$props.timeout;
+    		if ("cargando" in $$props) $$invalidate(3, cargando = $$props.cargando);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -22905,6 +23043,7 @@ var app = (function () {
     		historias,
     		errorServer,
     		sltBuscarHistorias,
+    		cargando,
     		searchHistorias,
     		input_input_handler
     	];
@@ -23775,7 +23914,7 @@ var app = (function () {
     }
 
     // (100:4) {#if errorServer}
-    function create_if_block_2$4(ctx) {
+    function create_if_block_2$6(ctx) {
     	let errorconexion;
     	let current;
 
@@ -23808,7 +23947,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$4.name,
+    		id: create_if_block_2$6.name,
     		type: "if",
     		source: "(100:4) {#if errorServer}",
     		ctx
@@ -24063,7 +24202,7 @@ var app = (function () {
     	let current;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*errorServer*/ ctx[5] && create_if_block_2$4(ctx);
+    	let if_block0 = /*errorServer*/ ctx[5] && create_if_block_2$6(ctx);
     	let each_value = /*estudios*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -24657,7 +24796,7 @@ var app = (function () {
     }
 
     // (100:4) {#if errorServer}
-    function create_if_block_2$5(ctx) {
+    function create_if_block_2$7(ctx) {
     	let errorconexion;
     	let current;
 
@@ -24690,7 +24829,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$5.name,
+    		id: create_if_block_2$7.name,
     		type: "if",
     		source: "(100:4) {#if errorServer}",
     		ctx
@@ -24945,7 +25084,7 @@ var app = (function () {
     	let current;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*errorServer*/ ctx[5] && create_if_block_2$5(ctx);
+    	let if_block0 = /*errorServer*/ ctx[5] && create_if_block_2$7(ctx);
     	let each_value = /*estudios*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -25664,7 +25803,7 @@ var app = (function () {
     			t3 = space();
     			div9 = element("div");
     			h5 = element("h5");
-    			t4 = text("Indicaciones ");
+    			t4 = text("Recetas ");
     			a0 = element("a");
     			i0 = element("i");
     			t5 = text(" CREAR");
@@ -25676,7 +25815,7 @@ var app = (function () {
     			div2 = element("div");
     			div1 = element("div");
     			label = element("label");
-    			label.textContent = "Buscar indicaciones";
+    			label.textContent = "Buscar recetas";
     			t8 = space();
     			input = element("input");
     			t9 = space();
@@ -25728,67 +25867,67 @@ var app = (function () {
     			attr_dev(div0, "class", "row");
     			add_location(div0, file$s, 41, 6, 1032);
     			attr_dev(i0, "class", "mdi mdi-plus");
-    			add_location(i0, file$s, 43, 92, 1188);
+    			add_location(i0, file$s, 43, 87, 1183);
     			attr_dev(a0, "href", "/pacientes/crear");
     			attr_dev(a0, "class", "btn btn-primary btn-sm");
-    			add_location(a0, file$s, 43, 25, 1121);
+    			add_location(a0, file$s, 43, 20, 1116);
     			add_location(h5, file$s, 43, 8, 1104);
     			attr_dev(label, "for", "Buscar");
-    			add_location(label, file$s, 50, 36, 1554);
+    			add_location(label, file$s, 50, 36, 1549);
     			attr_dev(input, "type", "search");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "placeholder", "Nombres o Apelidos");
-    			add_location(input, file$s, 51, 36, 1639);
+    			add_location(input, file$s, 51, 36, 1629);
     			attr_dev(div1, "class", "form-group");
-    			add_location(div1, file$s, 49, 32, 1492);
+    			add_location(div1, file$s, 49, 32, 1487);
     			attr_dev(div2, "class", "col-lg-4");
-    			add_location(div2, file$s, 48, 28, 1436);
+    			add_location(div2, file$s, 48, 28, 1431);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file$s, 47, 24, 1389);
+    			add_location(div3, file$s, 47, 24, 1384);
     			attr_dev(div4, "class", "col-12");
-    			add_location(div4, file$s, 46, 20, 1343);
+    			add_location(div4, file$s, 46, 20, 1338);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$s, 45, 12, 1304);
+    			add_location(div5, file$s, 45, 12, 1299);
     			attr_dev(div6, "class", "alert alert-secondary");
     			attr_dev(div6, "role", "alert");
-    			add_location(div6, file$s, 44, 8, 1242);
-    			add_location(th0, file$s, 62, 20, 2130);
-    			add_location(th1, file$s, 63, 20, 2161);
-    			add_location(th2, file$s, 64, 20, 2207);
-    			add_location(th3, file$s, 65, 20, 2244);
-    			add_location(th4, file$s, 66, 20, 2282);
-    			add_location(th5, file$s, 67, 20, 2328);
-    			add_location(tr0, file$s, 61, 16, 2104);
-    			add_location(thead, file$s, 60, 16, 2079);
+    			add_location(div6, file$s, 44, 8, 1237);
+    			add_location(th0, file$s, 62, 20, 2120);
+    			add_location(th1, file$s, 63, 20, 2151);
+    			add_location(th2, file$s, 64, 20, 2197);
+    			add_location(th3, file$s, 65, 20, 2234);
+    			add_location(th4, file$s, 66, 20, 2272);
+    			add_location(th5, file$s, 67, 20, 2318);
+    			add_location(tr0, file$s, 61, 16, 2094);
+    			add_location(thead, file$s, 60, 16, 2069);
     			attr_dev(span, "class", "avatar-title rounded-circle ");
-    			add_location(span, file$s, 74, 32, 2561);
+    			add_location(span, file$s, 74, 32, 2551);
     			attr_dev(div7, "class", "avatar avatar-sm");
-    			add_location(div7, file$s, 73, 28, 2497);
-    			add_location(td0, file$s, 72, 24, 2463);
-    			add_location(td1, file$s, 77, 24, 2706);
-    			add_location(td2, file$s, 78, 24, 2755);
-    			add_location(td3, file$s, 79, 24, 2801);
-    			add_location(td4, file$s, 80, 24, 2846);
+    			add_location(div7, file$s, 73, 28, 2487);
+    			add_location(td0, file$s, 72, 24, 2453);
+    			add_location(td1, file$s, 77, 24, 2696);
+    			add_location(td2, file$s, 78, 24, 2745);
+    			add_location(td3, file$s, 79, 24, 2791);
+    			add_location(td4, file$s, 80, 24, 2836);
     			attr_dev(i1, "class", "mdi mdi-close");
-    			add_location(i1, file$s, 88, 32, 3252);
+    			add_location(i1, file$s, 88, 32, 3242);
     			attr_dev(a1, "href", "#!");
     			attr_dev(a1, "class", "btn btn-outline-danger");
     			attr_dev(a1, "data-tooltip", "Eliminar");
-    			add_location(a1, file$s, 83, 28, 3021);
+    			add_location(a1, file$s, 83, 28, 3011);
     			attr_dev(i2, "class", "mdi mdi-send");
-    			add_location(i2, file$s, 96, 32, 3649);
+    			add_location(i2, file$s, 96, 32, 3639);
     			attr_dev(a2, "href", a2_href_value = `/receta/paciente/190213892384032`);
     			attr_dev(a2, "class", "btn btn-outline-primary");
     			attr_dev(a2, "data-tooltip", "Perfil");
-    			add_location(a2, file$s, 90, 28, 3345);
+    			add_location(a2, file$s, 90, 28, 3335);
     			attr_dev(td5, "class", "text-right");
-    			add_location(td5, file$s, 81, 24, 2893);
-    			add_location(tr1, file$s, 71, 20, 2433);
-    			add_location(tbody, file$s, 70, 16, 2404);
+    			add_location(td5, file$s, 81, 24, 2883);
+    			add_location(tr1, file$s, 71, 20, 2423);
+    			add_location(tbody, file$s, 70, 16, 2394);
     			attr_dev(table, "class", "table align-td-middle table-card");
-    			add_location(table, file$s, 59, 12, 2013);
+    			add_location(table, file$s, 59, 12, 2003);
     			attr_dev(div8, "class", "table-responsive");
-    			add_location(div8, file$s, 58, 8, 1969);
+    			add_location(div8, file$s, 58, 8, 1959);
     			attr_dev(div9, "class", "col-md-12 mt-3 m-b-30");
     			add_location(div9, file$s, 42, 6, 1059);
     			attr_dev(div10, "class", "p-2");

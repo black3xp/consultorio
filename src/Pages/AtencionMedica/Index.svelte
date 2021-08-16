@@ -13,6 +13,7 @@
     let errorServer = false;
     let sltBuscarHistorias = '';
     let timeout = null;
+    let cargando = false;
 
     const searchHistorias = () => {
         if (timeout) {
@@ -23,6 +24,7 @@
     }
 
     function cargarHistorias() {
+        cargando = true;
         const config = {
             method: 'get',
             url: `${url}/historias?b=${sltBuscarHistorias}`,
@@ -32,6 +34,7 @@
         };
         try {
             axios(config).then((res) => {
+            cargando = false;
             if(res.status === 200) {
                 let {data} = res;
                 historias = data;
@@ -46,6 +49,7 @@
                 console.error(err);
             })
         } catch (error) {
+            cargando = false;
             if(error) {
                 errorServer = true;
             }
@@ -133,11 +137,19 @@
                         </td>
                     </tr>
                     {/if}
-                {/each}
+                    {/each}
                 </tbody>
             </table>
 
+            
         </div>
+        {#if cargando}
+             <div class="text-center">
+                 <div class="spinner-border text-secondary" role="status">
+                     <span class="sr-only">Loading...</span>
+                 </div>
+             </div>
+        {/if}
     </div>
     </div>
   </section>

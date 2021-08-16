@@ -13,6 +13,7 @@
     let errorServer = false;
     let sltBuscarPacientes = '';
     let timeout = null;
+    let cargando = false;
 
     const searchPacientes = () => {
         if (timeout) {
@@ -59,6 +60,7 @@
     }
 
     function cargarPacientes() {
+        cargando = true;
         const config = {
             method: 'get',
             url: `${url}/pacientes?b=${sltBuscarPacientes}`,
@@ -68,6 +70,7 @@
         };
         try {
             axios(config).then((res) => {
+            cargando = false;
             if(res.status === 200) {
                 let {data} = res;
                 pacientes = data;
@@ -76,6 +79,7 @@
                 errorServer = true
             }
             }).catch((err) => {
+                cargando = false;
                 console.error(err);
                 if(err) {
                     errorServer = true;
@@ -175,6 +179,13 @@
             </table>
 
         </div>
+        {#if cargando}
+                <div class="text-center">
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+        {/if}
     </div>
     </div>
   </section>
