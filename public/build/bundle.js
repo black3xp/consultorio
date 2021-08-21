@@ -3228,8 +3228,8 @@ var app = (function () {
     // const url = 'https://xmconsulta.cthrics.com/api'
     // const url = 'http://localhost:3000/api'
     // const url = 'http://serenidad.xmedical.online:1337/api';
-    // const url = 'https://consulta.xmedical.online/api';
-    const url = 'http://localhost:1337/api';
+    const url = 'https://consulta.xmedical.online/api';
+    // const url = 'http://localhost:1337/api'
     const isLogin = () => {
         if(localStorage.getItem('auth')){
             return true
@@ -18275,11 +18275,11 @@ var app = (function () {
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "form-control border-primary");
     			attr_dev(input, "placeholder", "Comentario");
-    			add_location(input, file$k, 1178, 52, 56364);
+    			add_location(input, file$k, 1178, 52, 56354);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file$k, 1177, 48, 56293);
+    			add_location(div0, file$k, 1177, 48, 56283);
     			attr_dev(div1, "class", "row mt-3");
-    			add_location(div1, file$k, 1176, 44, 56221);
+    			add_location(div1, file$k, 1176, 44, 56211);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -18321,7 +18321,7 @@ var app = (function () {
     	return block;
     }
 
-    // (1149:32) {#each diagnosticosSeleccionados.reverse() as item, i}
+    // (1149:32) {#each diagnosticosSeleccionados as item, i}
     function create_each_block$5(ctx) {
     	let li;
     	let span0;
@@ -18370,28 +18370,28 @@ var app = (function () {
     			t5 = space();
     			if (if_block) if_block.c();
     			attr_dev(span0, "class", "badge badge-primary");
-    			add_location(span0, file$k, 1150, 40, 54414);
-    			add_location(span1, file$k, 1152, 47, 54557);
+    			add_location(span0, file$k, 1150, 40, 54404);
+    			add_location(span1, file$k, 1152, 47, 54547);
     			attr_dev(i0, "class", "mdi-18px mdi mdi-comment-plus-outline");
-    			add_location(i0, file$k, 1161, 49, 55243);
+    			add_location(i0, file$k, 1161, 49, 55233);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "text-primary");
     			attr_dev(a0, "data-tooltip", "Comentar");
-    			add_location(a0, file$k, 1156, 44, 54875);
+    			add_location(a0, file$k, 1156, 44, 54865);
     			attr_dev(i1, "class", "mdi-18px mdi mdi-trash-can-outline");
-    			add_location(i1, file$k, 1170, 49, 55850);
+    			add_location(i1, file$k, 1170, 49, 55840);
     			attr_dev(a1, "href", "#!");
     			attr_dev(a1, "class", "text-danger");
     			attr_dev(a1, "data-tooltip", "Eliminar");
-    			add_location(a1, file$k, 1165, 44, 55492);
+    			add_location(a1, file$k, 1165, 44, 55482);
     			set_style(div, "position", "absolute");
     			set_style(div, "top", "0");
     			set_style(div, "right", "0");
     			set_style(div, "padding", "10px");
     			set_style(div, "background-color", "white");
     			set_style(div, "border-bottom-left-radius", "5px");
-    			add_location(div, file$k, 1153, 40, 54620);
-    			add_location(li, file$k, 1149, 36, 54368);
+    			add_location(div, file$k, 1153, 40, 54610);
+    			add_location(li, file$k, 1149, 36, 54358);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -18449,7 +18449,7 @@ var app = (function () {
     		block,
     		id: create_each_block$5.name,
     		type: "each",
-    		source: "(1149:32) {#each diagnosticosSeleccionados.reverse() as item, i}",
+    		source: "(1149:32) {#each diagnosticosSeleccionados as item, i}",
     		ctx
     	});
 
@@ -18475,17 +18475,17 @@ var app = (function () {
     			t1 = space();
     			ul = element("ul");
     			attr_dev(p, "class", "alert-body text-center mt-3");
-    			add_location(p, file$k, 1191, 48, 57227);
+    			add_location(p, file$k, 1191, 48, 57217);
     			attr_dev(div0, "class", "alert border alert-light");
     			attr_dev(div0, "role", "alert");
-    			add_location(div0, file$k, 1187, 44, 56982);
+    			add_location(div0, file$k, 1187, 44, 56972);
     			attr_dev(ul, "class", "list-info");
     			attr_dev(ul, "data-bind", "foreach: estudios");
-    			add_location(ul, file$k, 1198, 44, 57665);
+    			add_location(ul, file$k, 1198, 44, 57655);
     			attr_dev(div1, "class", "col-md-12");
-    			add_location(div1, file$k, 1186, 40, 56913);
+    			add_location(div1, file$k, 1186, 40, 56903);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file$k, 1185, 36, 56854);
+    			add_location(div2, file$k, 1185, 36, 56844);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -18698,7 +18698,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*diagnosticosSeleccionados*/ ctx[5].reverse();
+    	let each_value = /*diagnosticosSeleccionados*/ ctx[5];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -19205,51 +19205,51 @@ var app = (function () {
     			attr_dev(div33, "class", "card m-b-20");
     			add_location(div33, file$k, 1069, 12, 49948);
     			attr_dev(div34, "class", "card-title");
-    			add_location(div34, file$k, 1232, 20, 59231);
+    			add_location(div34, file$k, 1232, 20, 59221);
     			attr_dev(div35, "class", "card-header");
-    			add_location(div35, file$k, 1231, 16, 59184);
+    			add_location(div35, file$k, 1231, 16, 59174);
     			attr_dev(textarea3, "class", "form-control");
     			set_style(textarea3, "width", "100%");
     			set_style(textarea3, "display", "block");
     			set_style(textarea3, "height", "150px");
     			attr_dev(textarea3, "rows", "3");
-    			add_location(textarea3, file$k, 1235, 20, 59361);
+    			add_location(textarea3, file$k, 1235, 20, 59351);
     			attr_dev(div36, "class", "card-body");
-    			add_location(div36, file$k, 1234, 16, 59316);
+    			add_location(div36, file$k, 1234, 16, 59306);
     			attr_dev(div37, "class", "card m-b-20 margen-mobile autosave");
-    			add_location(div37, file$k, 1230, 12, 59118);
+    			add_location(div37, file$k, 1230, 12, 59108);
     			attr_dev(div38, "class", "card-title");
-    			add_location(div38, file$k, 1249, 28, 59908);
+    			add_location(div38, file$k, 1249, 28, 59898);
     			attr_dev(div39, "class", "card-header");
-    			add_location(div39, file$k, 1248, 24, 59853);
+    			add_location(div39, file$k, 1248, 24, 59843);
     			attr_dev(label0, "for", "");
-    			add_location(label0, file$k, 1256, 36, 60285);
+    			add_location(label0, file$k, 1256, 36, 60275);
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "placeholder", "Fecha");
     			input1.disabled = true;
-    			add_location(input1, file$k, 1257, 36, 60350);
+    			add_location(input1, file$k, 1257, 36, 60340);
     			attr_dev(div40, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div40, file$k, 1253, 32, 60117);
+    			add_location(div40, file$k, 1253, 32, 60107);
     			attr_dev(label1, "for", "");
-    			add_location(label1, file$k, 1268, 36, 60924);
+    			add_location(label1, file$k, 1268, 36, 60914);
     			attr_dev(input2, "type", "time");
     			attr_dev(input2, "placeholder", "Hora");
     			attr_dev(input2, "class", "form-control");
     			input2.disabled = true;
-    			add_location(input2, file$k, 1269, 36, 60988);
+    			add_location(input2, file$k, 1269, 36, 60978);
     			attr_dev(div41, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div41, file$k, 1265, 32, 60756);
+    			add_location(div41, file$k, 1265, 32, 60746);
     			attr_dev(div42, "class", "form-row");
-    			add_location(div42, file$k, 1252, 28, 60061);
+    			add_location(div42, file$k, 1252, 28, 60051);
     			attr_dev(div43, "class", "card-body");
-    			add_location(div43, file$k, 1251, 24, 60008);
+    			add_location(div43, file$k, 1251, 24, 59998);
     			attr_dev(div44, "class", "card m-b-20");
-    			add_location(div44, file$k, 1247, 20, 59802);
+    			add_location(div44, file$k, 1247, 20, 59792);
     			attr_dev(div45, "class", "col-lg-6");
-    			add_location(div45, file$k, 1246, 16, 59758);
+    			add_location(div45, file$k, 1246, 16, 59748);
     			attr_dev(div46, "class", "row");
-    			add_location(div46, file$k, 1245, 12, 59723);
+    			add_location(div46, file$k, 1245, 12, 59713);
     			attr_dev(div47, "class", "col-lg-12");
     			set_style(div47, "margin-top", "150px");
     			add_location(div47, file$k, 549, 8, 18964);
@@ -19639,7 +19639,7 @@ var app = (function () {
     			}
 
     			if (dirty[0] & /*diagnosticosSeleccionados*/ 32 | dirty[1] & /*guardarHistoria, eliminarDiagnostico, agregarComentarioDiagnostico*/ 37) {
-    				each_value = /*diagnosticosSeleccionados*/ ctx[5].reverse();
+    				each_value = /*diagnosticosSeleccionados*/ ctx[5];
     				validate_each_argument(each_value);
     				let i;
 
