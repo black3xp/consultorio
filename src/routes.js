@@ -15,6 +15,7 @@ import RecetaEstudios from './Pages/Recetas/Estudios.svelte';
 import RecetaImagenes from './Pages/Recetas/Imagenes.svelte';
 import RecetasIndex from './Pages/Recetas/Indicaciones/Index.svelte';
 import EmpresaDetalle from './Pages/Empresa/Detalle.svelte';
+import CitasIndex from './Pages/Citas/Index.svelte';
 
 const routes = {
     "/": wrap({
@@ -152,6 +153,18 @@ const routes = {
     }),
     "/recetas": wrap({
         component: RecetasIndex,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/citas": wrap({
+        component: CitasIndex,
         conditions: [
             async (detail) => {
                 if(isLogin()){
