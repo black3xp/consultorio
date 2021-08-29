@@ -149,6 +149,9 @@ var app = (function () {
         const selected_option = select.querySelector(':checked') || select.options[0];
         return selected_option && selected_option.__value;
     }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
     function custom_event(type, detail) {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, false, false, detail);
@@ -26994,12 +26997,13 @@ var app = (function () {
 
     function get_each_context$c(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[13] = list[i];
+    	child_ctx[15] = i;
     	return child_ctx;
     }
 
-    // (59:2) {#if errorServer}
-    function create_if_block_2$8(ctx) {
+    // (94:2) {#if errorServer}
+    function create_if_block_3$2(ctx) {
     	let errorserver;
     	let current;
 
@@ -27034,179 +27038,209 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$8.name,
+    		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(59:2) {#if errorServer}",
+    		source: "(94:2) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:20) {#if cita.activo}
+    // (134:20) {#if cita.activo}
     function create_if_block_1$9(ctx) {
     	let tr;
     	let td0;
     	let div;
-    	let span;
-    	let t0_value = /*cita*/ ctx[8].paciente.nombres[0] + "";
+    	let span0;
+    	let t0_value = /*cita*/ ctx[13].paciente.nombres[0] + "";
     	let t0;
-    	let t1_value = /*cita*/ ctx[8].paciente.apellidos[0] + "";
+    	let t1_value = /*cita*/ ctx[13].paciente.apellidos[0] + "";
     	let t1;
     	let t2;
     	let td1;
-    	let t3_value = /*cita*/ ctx[8].paciente.nombres + "";
+    	let t3_value = /*i*/ ctx[15] + 1 + "";
     	let t3;
     	let t4;
-    	let t5_value = /*cita*/ ctx[8].paciente.apellidos + "";
+    	let td2;
+    	let t5_value = /*cita*/ ctx[13].paciente.nombres + "";
     	let t5;
     	let t6;
-    	let td2;
-    	let t7_value = /*cita*/ ctx[8].paciente.cedula + "";
+    	let t7_value = /*cita*/ ctx[13].paciente.apellidos + "";
     	let t7;
     	let t8;
     	let td3;
-    	let t9_value = calcularEdad(/*cita*/ ctx[8].paciente.fechaNacimiento) + "";
+    	let t9_value = new Date(/*cita*/ ctx[13].fechaCita).toLocaleDateString("es-DO") + "";
     	let t9;
     	let t10;
+    	let span1;
+    	let t11_value = /*tandas*/ ctx[5][/*cita*/ ctx[13].tanda] + "";
     	let t11;
-    	let td4;
-    	let t12_value = /*cita*/ ctx[8].paciente.sexo + "";
     	let t12;
+    	let td4;
+    	let t13_value = /*cita*/ ctx[13].paciente.cedula + "";
     	let t13;
-    	let td5;
-    	let t14_value = new Date(/*cita*/ ctx[8].fechaCita).toLocaleDateString("es-DO") + "";
     	let t14;
+    	let td5;
+    	let t15_value = calcularEdad(/*cita*/ ctx[13].paciente.fechaNacimiento) + "";
     	let t15;
-    	let td6;
-    	let a0;
-    	let i0;
     	let t16;
-    	let a1;
-    	let i1;
-    	let a1_href_value;
-    	let link_action;
     	let t17;
-    	let mounted;
-    	let dispose;
+    	let td6;
+    	let span2;
+    	let t18_value = /*estados*/ ctx[4][/*cita*/ ctx[13].estado] + "";
+    	let t18;
+    	let t19;
+    	let td7;
+    	let t20;
+    	let if_block = /*cita*/ ctx[13].estado !== "R" && create_if_block_2$8(ctx);
 
     	const block = {
     		c: function create() {
     			tr = element("tr");
     			td0 = element("td");
     			div = element("div");
-    			span = element("span");
+    			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = text(t1_value);
     			t2 = space();
     			td1 = element("td");
     			t3 = text(t3_value);
     			t4 = space();
+    			td2 = element("td");
     			t5 = text(t5_value);
     			t6 = space();
-    			td2 = element("td");
     			t7 = text(t7_value);
     			t8 = space();
     			td3 = element("td");
     			t9 = text(t9_value);
-    			t10 = text(" años");
-    			t11 = space();
+    			t10 = space();
+    			span1 = element("span");
+    			t11 = text(t11_value);
+    			t12 = space();
     			td4 = element("td");
-    			t12 = text(t12_value);
-    			t13 = space();
+    			t13 = text(t13_value);
+    			t14 = space();
     			td5 = element("td");
-    			t14 = text(t14_value);
-    			t15 = space();
-    			td6 = element("td");
-    			a0 = element("a");
-    			i0 = element("i");
-    			t16 = space();
-    			a1 = element("a");
-    			i1 = element("i");
+    			t15 = text(t15_value);
+    			t16 = text(" años");
     			t17 = space();
-    			attr_dev(span, "class", "avatar-title rounded-circle ");
-    			add_location(span, file$u, 101, 32, 3139);
+    			td6 = element("td");
+    			span2 = element("span");
+    			t18 = text(t18_value);
+    			t19 = space();
+    			td7 = element("td");
+    			if (if_block) if_block.c();
+    			t20 = space();
+    			attr_dev(span0, "class", "avatar-title rounded-circle ");
+    			add_location(span0, file$u, 137, 32, 4087);
     			attr_dev(div, "class", "avatar avatar-sm");
-    			add_location(div, file$u, 100, 28, 3075);
-    			add_location(td0, file$u, 99, 24, 3041);
-    			add_location(td1, file$u, 104, 24, 3336);
-    			add_location(td2, file$u, 105, 24, 3420);
-    			add_location(td3, file$u, 106, 24, 3477);
-    			add_location(td4, file$u, 107, 24, 3562);
-    			add_location(td5, file$u, 108, 24, 3617);
-    			attr_dev(i0, "class", "mdi mdi-close");
-    			add_location(i0, file$u, 116, 32, 4065);
-    			attr_dev(a0, "href", "#!");
-    			attr_dev(a0, "class", "btn btn-outline-danger");
-    			attr_dev(a0, "data-tooltip", "Eliminar");
-    			add_location(a0, file$u, 111, 28, 3834);
-    			attr_dev(i1, "class", "mdi mdi-send");
-    			add_location(i1, file$u, 124, 32, 4478);
-    			attr_dev(a1, "href", a1_href_value = `/pacientes/${/*cita*/ ctx[8].paciente.id}/historias/${/*cita*/ ctx[8].id}`);
-    			attr_dev(a1, "class", "btn btn-outline-primary");
-    			attr_dev(a1, "data-tooltip", "Ver");
-    			add_location(a1, file$u, 118, 28, 4158);
-    			attr_dev(td6, "class", "text-right");
-    			add_location(td6, file$u, 109, 24, 3706);
-    			add_location(tr, file$u, 98, 20, 3011);
+    			add_location(div, file$u, 136, 28, 4023);
+    			add_location(td0, file$u, 135, 24, 3989);
+    			add_location(td1, file$u, 140, 24, 4284);
+    			add_location(td2, file$u, 141, 24, 4324);
+    			attr_dev(span1, "class", "badge text-white");
+    			toggle_class(span1, "bg-primary", /*cita*/ ctx[13].tanda === "M");
+    			toggle_class(span1, "bg-warning", /*cita*/ ctx[13].tanda === "V");
+    			add_location(span1, file$u, 143, 28, 4497);
+    			add_location(td3, file$u, 142, 24, 4408);
+    			add_location(td4, file$u, 151, 24, 4885);
+    			add_location(td5, file$u, 152, 24, 4942);
+    			attr_dev(span2, "class", "badge text-white");
+    			toggle_class(span2, "bg-success", /*cita*/ ctx[13].estado === "N");
+    			toggle_class(span2, "bg-secondary", /*cita*/ ctx[13].estado === "R");
+    			add_location(span2, file$u, 154, 28, 5061);
+    			add_location(td6, file$u, 153, 24, 5027);
+    			attr_dev(td7, "class", "text-right");
+    			add_location(td7, file$u, 162, 24, 5451);
+    			toggle_class(tr, "bg-soft-success", /*cita*/ ctx[13].estado === "R");
+    			add_location(tr, file$u, 134, 20, 3915);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, td0);
     			append_dev(td0, div);
-    			append_dev(div, span);
-    			append_dev(span, t0);
-    			append_dev(span, t1);
+    			append_dev(div, span0);
+    			append_dev(span0, t0);
+    			append_dev(span0, t1);
     			append_dev(tr, t2);
     			append_dev(tr, td1);
     			append_dev(td1, t3);
-    			append_dev(td1, t4);
-    			append_dev(td1, t5);
-    			append_dev(tr, t6);
+    			append_dev(tr, t4);
     			append_dev(tr, td2);
+    			append_dev(td2, t5);
+    			append_dev(td2, t6);
     			append_dev(td2, t7);
     			append_dev(tr, t8);
     			append_dev(tr, td3);
     			append_dev(td3, t9);
     			append_dev(td3, t10);
-    			append_dev(tr, t11);
+    			append_dev(td3, span1);
+    			append_dev(span1, t11);
+    			append_dev(tr, t12);
     			append_dev(tr, td4);
-    			append_dev(td4, t12);
-    			append_dev(tr, t13);
+    			append_dev(td4, t13);
+    			append_dev(tr, t14);
     			append_dev(tr, td5);
-    			append_dev(td5, t14);
-    			append_dev(tr, t15);
-    			append_dev(tr, td6);
-    			append_dev(td6, a0);
-    			append_dev(a0, i0);
-    			append_dev(td6, t16);
-    			append_dev(td6, a1);
-    			append_dev(a1, i1);
+    			append_dev(td5, t15);
+    			append_dev(td5, t16);
     			append_dev(tr, t17);
-
-    			if (!mounted) {
-    				dispose = action_destroyer(link_action = link.call(null, a1));
-    				mounted = true;
-    			}
+    			append_dev(tr, td6);
+    			append_dev(td6, span2);
+    			append_dev(span2, t18);
+    			append_dev(tr, t19);
+    			append_dev(tr, td7);
+    			if (if_block) if_block.m(td7, null);
+    			append_dev(tr, t20);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*citas*/ 1 && t0_value !== (t0_value = /*cita*/ ctx[8].paciente.nombres[0] + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*citas*/ 1 && t1_value !== (t1_value = /*cita*/ ctx[8].paciente.apellidos[0] + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*citas*/ 1 && t3_value !== (t3_value = /*cita*/ ctx[8].paciente.nombres + "")) set_data_dev(t3, t3_value);
-    			if (dirty & /*citas*/ 1 && t5_value !== (t5_value = /*cita*/ ctx[8].paciente.apellidos + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*citas*/ 1 && t7_value !== (t7_value = /*cita*/ ctx[8].paciente.cedula + "")) set_data_dev(t7, t7_value);
-    			if (dirty & /*citas*/ 1 && t9_value !== (t9_value = calcularEdad(/*cita*/ ctx[8].paciente.fechaNacimiento) + "")) set_data_dev(t9, t9_value);
-    			if (dirty & /*citas*/ 1 && t12_value !== (t12_value = /*cita*/ ctx[8].paciente.sexo + "")) set_data_dev(t12, t12_value);
-    			if (dirty & /*citas*/ 1 && t14_value !== (t14_value = new Date(/*cita*/ ctx[8].fechaCita).toLocaleDateString("es-DO") + "")) set_data_dev(t14, t14_value);
+    			if (dirty & /*citas*/ 1 && t0_value !== (t0_value = /*cita*/ ctx[13].paciente.nombres[0] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*citas*/ 1 && t1_value !== (t1_value = /*cita*/ ctx[13].paciente.apellidos[0] + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*citas*/ 1 && t5_value !== (t5_value = /*cita*/ ctx[13].paciente.nombres + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*citas*/ 1 && t7_value !== (t7_value = /*cita*/ ctx[13].paciente.apellidos + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*citas*/ 1 && t9_value !== (t9_value = new Date(/*cita*/ ctx[13].fechaCita).toLocaleDateString("es-DO") + "")) set_data_dev(t9, t9_value);
+    			if (dirty & /*citas*/ 1 && t11_value !== (t11_value = /*tandas*/ ctx[5][/*cita*/ ctx[13].tanda] + "")) set_data_dev(t11, t11_value);
 
-    			if (dirty & /*citas*/ 1 && a1_href_value !== (a1_href_value = `/pacientes/${/*cita*/ ctx[8].paciente.id}/historias/${/*cita*/ ctx[8].id}`)) {
-    				attr_dev(a1, "href", a1_href_value);
+    			if (dirty & /*citas*/ 1) {
+    				toggle_class(span1, "bg-primary", /*cita*/ ctx[13].tanda === "M");
+    			}
+
+    			if (dirty & /*citas*/ 1) {
+    				toggle_class(span1, "bg-warning", /*cita*/ ctx[13].tanda === "V");
+    			}
+
+    			if (dirty & /*citas*/ 1 && t13_value !== (t13_value = /*cita*/ ctx[13].paciente.cedula + "")) set_data_dev(t13, t13_value);
+    			if (dirty & /*citas*/ 1 && t15_value !== (t15_value = calcularEdad(/*cita*/ ctx[13].paciente.fechaNacimiento) + "")) set_data_dev(t15, t15_value);
+    			if (dirty & /*citas*/ 1 && t18_value !== (t18_value = /*estados*/ ctx[4][/*cita*/ ctx[13].estado] + "")) set_data_dev(t18, t18_value);
+
+    			if (dirty & /*citas*/ 1) {
+    				toggle_class(span2, "bg-success", /*cita*/ ctx[13].estado === "N");
+    			}
+
+    			if (dirty & /*citas*/ 1) {
+    				toggle_class(span2, "bg-secondary", /*cita*/ ctx[13].estado === "R");
+    			}
+
+    			if (/*cita*/ ctx[13].estado !== "R") {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_2$8(ctx);
+    					if_block.c();
+    					if_block.m(td7, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (dirty & /*citas*/ 1) {
+    				toggle_class(tr, "bg-soft-success", /*cita*/ ctx[13].estado === "R");
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
-    			mounted = false;
-    			dispose();
+    			if (if_block) if_block.d();
     		}
     	};
 
@@ -27214,17 +27248,118 @@ var app = (function () {
     		block,
     		id: create_if_block_1$9.name,
     		type: "if",
-    		source: "(98:20) {#if cita.activo}",
+    		source: "(134:20) {#if cita.activo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:16) {#each citas as cita}
+    // (165:28) {#if cita.estado !== 'R'}
+    function create_if_block_2$8(ctx) {
+    	let a0;
+    	let i0;
+    	let t0;
+    	let a1;
+    	let i1;
+    	let t1;
+    	let a2;
+    	let i2;
+    	let a2_href_value;
+    	let link_action;
+    	let mounted;
+    	let dispose;
+
+    	function click_handler(...args) {
+    		return /*click_handler*/ ctx[9](/*cita*/ ctx[13], ...args);
+    	}
+
+    	function click_handler_1(...args) {
+    		return /*click_handler_1*/ ctx[10](/*cita*/ ctx[13], ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			a0 = element("a");
+    			i0 = element("i");
+    			t0 = space();
+    			a1 = element("a");
+    			i1 = element("i");
+    			t1 = space();
+    			a2 = element("a");
+    			i2 = element("i");
+    			attr_dev(i0, "class", "mdi mdi-close");
+    			add_location(i0, file$u, 172, 36, 6046);
+    			attr_dev(a0, "href", "#!");
+    			attr_dev(a0, "class", "btn btn-outline-danger");
+    			attr_dev(a0, "data-tooltip", "Cancelar");
+    			add_location(a0, file$u, 166, 32, 5694);
+    			attr_dev(i1, "class", "mdi mdi-check-all");
+    			add_location(i1, file$u, 180, 35, 6507);
+    			attr_dev(a1, "href", "#!");
+    			attr_dev(a1, "class", "btn btn-outline-success");
+    			attr_dev(a1, "data-tooltip", "Marcar realizada");
+    			add_location(a1, file$u, 174, 32, 6147);
+    			attr_dev(i2, "class", "mdi mdi-send");
+    			add_location(i2, file$u, 188, 37, 6963);
+    			attr_dev(a2, "href", a2_href_value = `/pacientes/${/*cita*/ ctx[13].paciente.id}/historias/${/*cita*/ ctx[13].id}`);
+    			attr_dev(a2, "class", "btn btn-outline-primary");
+    			attr_dev(a2, "data-tooltip", "Ver");
+    			add_location(a2, file$u, 182, 33, 6613);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a0, anchor);
+    			append_dev(a0, i0);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, a1, anchor);
+    			append_dev(a1, i1);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, a2, anchor);
+    			append_dev(a2, i2);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(a0, "click", prevent_default(click_handler), false, true, false),
+    					listen_dev(a1, "click", prevent_default(click_handler_1), false, true, false),
+    					action_destroyer(link_action = link.call(null, a2))
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+
+    			if (dirty & /*citas*/ 1 && a2_href_value !== (a2_href_value = `/pacientes/${/*cita*/ ctx[13].paciente.id}/historias/${/*cita*/ ctx[13].id}`)) {
+    				attr_dev(a2, "href", a2_href_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(a0);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(a1);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(a2);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$8.name,
+    		type: "if",
+    		source: "(165:28) {#if cita.estado !== 'R'}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (133:16) {#each citas as cita, i}
     function create_each_block$c(ctx) {
     	let if_block_anchor;
-    	let if_block = /*cita*/ ctx[8].activo && create_if_block_1$9(ctx);
+    	let if_block = /*cita*/ ctx[13].activo && create_if_block_1$9(ctx);
 
     	const block = {
     		c: function create() {
@@ -27236,7 +27371,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*cita*/ ctx[8].activo) {
+    			if (/*cita*/ ctx[13].activo) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -27259,14 +27394,14 @@ var app = (function () {
     		block,
     		id: create_each_block$c.name,
     		type: "each",
-    		source: "(97:16) {#each citas as cita}",
+    		source: "(133:16) {#each citas as cita, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (136:8) {#if cargando}
+    // (201:8) {#if cargando}
     function create_if_block$h(ctx) {
     	let div1;
     	let div0;
@@ -27279,12 +27414,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Loading...";
     			attr_dev(span, "class", "sr-only");
-    			add_location(span, file$u, 138, 21, 4897);
+    			add_location(span, file$u, 203, 21, 7422);
     			attr_dev(div0, "class", "spinner-border text-secondary");
     			attr_dev(div0, "role", "status");
-    			add_location(div0, file$u, 137, 17, 4817);
+    			add_location(div0, file$u, 202, 17, 7342);
     			attr_dev(div1, "class", "text-center");
-    			add_location(div1, file$u, 136, 13, 4773);
+    			add_location(div1, file$u, 201, 13, 7298);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -27300,7 +27435,7 @@ var app = (function () {
     		block,
     		id: create_if_block$h.name,
     		type: "if",
-    		source: "(136:8) {#if cargando}",
+    		source: "(201:8) {#if cargando}",
     		ctx
     	});
 
@@ -27348,15 +27483,17 @@ var app = (function () {
     	let th5;
     	let t19;
     	let th6;
-    	let t20;
-    	let tbody;
     	let t21;
+    	let th7;
+    	let t22;
+    	let tbody;
+    	let t23;
     	let current;
     	let mounted;
     	let dispose;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*errorServer*/ ctx[3] && create_if_block_2$8(ctx);
+    	let if_block0 = /*errorServer*/ ctx[3] && create_if_block_3$2(ctx);
     	let each_value = /*citas*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -27402,74 +27539,78 @@ var app = (function () {
     			th0 = element("th");
     			t9 = space();
     			th1 = element("th");
-    			th1.textContent = "Nombre";
+    			th1.textContent = "#";
     			t11 = space();
     			th2 = element("th");
-    			th2.textContent = "Cedula";
+    			th2.textContent = "Nombre";
     			t13 = space();
     			th3 = element("th");
-    			th3.textContent = "Edad";
+    			th3.textContent = "Fecha Cita";
     			t15 = space();
     			th4 = element("th");
-    			th4.textContent = "Sexo";
+    			th4.textContent = "Cedula";
     			t17 = space();
     			th5 = element("th");
-    			th5.textContent = "Fecha Cita";
+    			th5.textContent = "Edad";
     			t19 = space();
     			th6 = element("th");
-    			t20 = space();
+    			th6.textContent = "Estado";
+    			t21 = space();
+    			th7 = element("th");
+    			t22 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t21 = space();
+    			t23 = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file$u, 65, 6, 1701);
-    			add_location(h5, file$u, 67, 8, 1773);
+    			add_location(div0, file$u, 100, 6, 2568);
+    			add_location(h5, file$u, 102, 8, 2640);
     			attr_dev(label, "for", "Buscar");
-    			add_location(label, file$u, 74, 32, 2085);
+    			add_location(label, file$u, 109, 32, 2952);
     			attr_dev(input, "type", "search");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "placeholder", "Nombres o Apelidos");
-    			add_location(input, file$u, 75, 32, 2159);
+    			add_location(input, file$u, 110, 32, 3026);
     			attr_dev(div1, "class", "form-group");
-    			add_location(div1, file$u, 73, 28, 2027);
+    			add_location(div1, file$u, 108, 28, 2894);
     			attr_dev(div2, "class", "col-lg-4");
-    			add_location(div2, file$u, 72, 24, 1975);
+    			add_location(div2, file$u, 107, 24, 2842);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file$u, 71, 20, 1932);
+    			add_location(div3, file$u, 106, 20, 2799);
     			attr_dev(div4, "class", "col-12");
-    			add_location(div4, file$u, 70, 16, 1890);
+    			add_location(div4, file$u, 105, 16, 2757);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$u, 69, 8, 1855);
+    			add_location(div5, file$u, 104, 8, 2722);
     			attr_dev(div6, "class", "alert alert-secondary");
     			attr_dev(div6, "role", "alert");
-    			add_location(div6, file$u, 68, 8, 1797);
-    			add_location(th0, file$u, 86, 20, 2612);
-    			add_location(th1, file$u, 87, 20, 2643);
-    			add_location(th2, file$u, 88, 20, 2680);
-    			add_location(th3, file$u, 89, 20, 2717);
-    			add_location(th4, file$u, 90, 20, 2752);
-    			add_location(th5, file$u, 91, 20, 2787);
-    			add_location(th6, file$u, 92, 20, 2828);
-    			add_location(tr, file$u, 85, 16, 2586);
-    			add_location(thead, file$u, 84, 16, 2561);
-    			add_location(tbody, file$u, 95, 16, 2904);
+    			add_location(div6, file$u, 103, 8, 2664);
+    			add_location(th0, file$u, 121, 20, 3479);
+    			add_location(th1, file$u, 122, 20, 3510);
+    			add_location(th2, file$u, 123, 20, 3542);
+    			add_location(th3, file$u, 124, 20, 3579);
+    			add_location(th4, file$u, 125, 20, 3620);
+    			add_location(th5, file$u, 126, 20, 3657);
+    			add_location(th6, file$u, 127, 20, 3692);
+    			add_location(th7, file$u, 128, 20, 3729);
+    			add_location(tr, file$u, 120, 16, 3453);
+    			add_location(thead, file$u, 119, 16, 3428);
+    			add_location(tbody, file$u, 131, 16, 3805);
     			attr_dev(table, "class", "table align-td-middle table-card");
-    			add_location(table, file$u, 83, 12, 2495);
+    			add_location(table, file$u, 118, 12, 3362);
     			attr_dev(div7, "class", "table-responsive");
-    			add_location(div7, file$u, 82, 8, 2451);
+    			add_location(div7, file$u, 117, 8, 3318);
     			attr_dev(div8, "class", "col-md-12 mt-3 m-b-30");
-    			add_location(div8, file$u, 66, 6, 1728);
+    			add_location(div8, file$u, 101, 6, 2595);
     			attr_dev(div9, "class", "p-2");
-    			add_location(div9, file$u, 64, 4, 1676);
+    			add_location(div9, file$u, 99, 4, 2543);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$u, 63, 2, 1639);
+    			add_location(section, file$u, 98, 2, 2506);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$u, 56, 0, 1417);
+    			add_location(main, file$u, 91, 0, 2284);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27517,21 +27658,23 @@ var app = (function () {
     			append_dev(tr, th5);
     			append_dev(tr, t19);
     			append_dev(tr, th6);
-    			append_dev(table, t20);
+    			append_dev(tr, t21);
+    			append_dev(tr, th7);
+    			append_dev(table, t22);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(tbody, null);
     			}
 
-    			append_dev(div8, t21);
+    			append_dev(div8, t23);
     			if (if_block1) if_block1.m(div8, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[5]),
-    					listen_dev(input, "input", /*searchCitas*/ ctx[4], false, false, false)
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[8]),
+    					listen_dev(input, "input", /*searchCitas*/ ctx[6], false, false, false)
     				];
 
     				mounted = true;
@@ -27542,7 +27685,7 @@ var app = (function () {
     				set_input_value(input, /*sltBuscarCitas*/ ctx[1]);
     			}
 
-    			if (dirty & /*citas, Date, calcularEdad*/ 1) {
+    			if (dirty & /*citas, cambiarEstadoCita, estados, calcularEdad, tandas, Date*/ 177) {
     				each_value = /*citas*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -27623,6 +27766,14 @@ var app = (function () {
     	let timeout = null;
     	let cargando = false;
 
+    	let estados = {
+    		N: "Nuevo",
+    		X: "Eliminada",
+    		R: "Realizada"
+    	};
+
+    	let tandas = { M: "Mañana", V: "Tarde", N: "Noche" };
+
     	const searchCitas = () => {
     		if (timeout) {
     			window.clearTimeout(timeout);
@@ -27634,6 +27785,29 @@ var app = (function () {
     			},
     			300
     		);
+    	};
+
+    	const cambiarEstadoCita = (idCita, estado) => {
+    		console.log(idCita, estado);
+    		const cita = { estado };
+
+    		const config = {
+    			method: "put",
+    			url: `${url}/citas/${idCita}`,
+    			data: cita,
+    			headers: {
+    				"Authorization": `${localStorage.getItem("auth")}`
+    			}
+    		};
+
+    		axios$1(config).then(res => {
+    			if (res.data) {
+    				cargarCitas();
+    				console.log(res.data);
+    			}
+    		}).catch(err => {
+    			console.error(err);
+    		});
     	};
 
     	const cargarCitas = () => {
@@ -27675,6 +27849,9 @@ var app = (function () {
     		$$invalidate(1, sltBuscarCitas);
     	}
 
+    	const click_handler = cita => cambiarEstadoCita(cita.id, "X");
+    	const click_handler_1 = cita => cambiarEstadoCita(cita.id, "R");
+
     	$$self.$capture_state = () => ({
     		link,
     		onMount,
@@ -27689,7 +27866,10 @@ var app = (function () {
     		sltBuscarCitas,
     		timeout,
     		cargando,
+    		estados,
+    		tandas,
     		searchCitas,
+    		cambiarEstadoCita,
     		cargarCitas
     	});
 
@@ -27699,13 +27879,27 @@ var app = (function () {
     		if ("sltBuscarCitas" in $$props) $$invalidate(1, sltBuscarCitas = $$props.sltBuscarCitas);
     		if ("timeout" in $$props) timeout = $$props.timeout;
     		if ("cargando" in $$props) $$invalidate(2, cargando = $$props.cargando);
+    		if ("estados" in $$props) $$invalidate(4, estados = $$props.estados);
+    		if ("tandas" in $$props) $$invalidate(5, tandas = $$props.tandas);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [citas, sltBuscarCitas, cargando, errorServer, searchCitas, input_input_handler];
+    	return [
+    		citas,
+    		sltBuscarCitas,
+    		cargando,
+    		errorServer,
+    		estados,
+    		tandas,
+    		searchCitas,
+    		cambiarEstadoCita,
+    		input_input_handler,
+    		click_handler,
+    		click_handler_1
+    	];
     }
 
     class Index$5 extends SvelteComponentDev {

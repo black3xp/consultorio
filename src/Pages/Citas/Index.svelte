@@ -14,6 +14,16 @@
     let sltBuscarCitas = '';
     let timeout = null;
     let cargando = false;
+    let estados = {
+        N: 'Nuevo',
+        X: 'Eliminada',
+        R: 'Realizada'
+    };
+    let tandas = {
+        M: 'Mañana',
+        V: 'Tarde',
+        N: 'Noche',
+    }
 
     const searchCitas = () => {
         if (timeout) {
@@ -21,6 +31,31 @@
         }
         
         timeout = setTimeout(function () { cargarCitas(); }, 300);
+    }
+
+    const cambiarEstadoCita = (idCita, estado) => {
+        console.log(idCita, estado)
+        const cita = {
+            estado
+        }
+        const config = {
+            method: 'put',
+            url: `${url}/citas/${idCita}`,
+            data: cita,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            },
+        };
+        axios(config)
+            .then(res => {
+                if(res.data){
+                    cargarCitas();
+                    console.log(res.data);
+                }
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
 
     const cargarCitas = () => {
@@ -85,45 +120,75 @@
                 <thead>
                 <tr>
                     <th></th>
+                    <th>#</th>
                     <th>Nombre</th>
+                    <th>Fecha Cita</th>
                     <th>Cedula</th>
                     <th>Edad</th>
-                    <th>Sexo</th>
-                    <th>Fecha Cita</th>
+                    <th>Estado</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                {#each citas as cita}
+                {#each citas as cita, i}
                     {#if cita.activo}
-                    <tr>
+                    <tr class:bg-soft-success={cita.estado === "R"}>
                         <td>
                             <div class="avatar avatar-sm">
                                 <span class="avatar-title rounded-circle ">{cita.paciente.nombres[0]}{cita.paciente.apellidos[0]}</span>
                             </div>
                         </td>
+                        <td>{i+1}</td>
                         <td>{cita.paciente.nombres} {cita.paciente.apellidos}</td>
+                        <td>{new Date(cita.fechaCita).toLocaleDateString('es-DO')} 
+                            <span
+                                class="badge text-white"
+                                class:bg-primary={cita.tanda === "M"}
+                                class:bg-warning={cita.tanda === "V"}
+                            >
+                                    {tandas[cita.tanda]}
+                            </span>
+                        </td>
                         <td>{cita.paciente.cedula}</td>
                         <td>{calcularEdad(cita.paciente.fechaNacimiento)} años</td>
-                        <td>{cita.paciente.sexo}</td>
-                        <td>{new Date(cita.fechaCita).toLocaleDateString('es-DO')}</td>
+                        <td>
+                            <span
+                                class="badge text-white"
+                                class:bg-success={cita.estado === 'N'}
+                                class:bg-secondary={cita.estado === 'R'}
+                            >
+                                {estados[cita.estado]}
+                            </span>
+                        </td>
                         <td class="text-right">
                             <!-- svelte-ignore a11y-invalid-attribute -->
-                            <a
-                                href="#!"
-                                class="btn btn-outline-danger"
-                                data-tooltip="Eliminar"
-                            >
-                                <i class="mdi mdi-close"></i>
-                            </a>
-                            <a
-                                href={`/pacientes/${cita.paciente.id}/historias/${cita.id}`}
-                                class="btn btn-outline-primary"
-                                data-tooltip="Ver"
-                                use:link
-                            >
-                                <i class="mdi mdi-send"></i>
-                            </a>
+                            {#if cita.estado !== 'R'}
+                                 <!-- content here -->
+                                <a
+                                    href="#!"
+                                    class="btn btn-outline-danger"
+                                    data-tooltip="Cancelar"
+                                    on:click|preventDefault={() => cambiarEstadoCita(cita.id, 'X')}
+                                >
+                                    <i class="mdi mdi-close"></i>
+                                </a>
+                                <a
+                                    href="#!"
+                                    class="btn btn-outline-success"
+                                    data-tooltip="Marcar realizada"
+                                    on:click|preventDefault={() => cambiarEstadoCita(cita.id, 'R')}
+                                >
+                                   <i class="mdi mdi-check-all"></i>
+                                </a>
+                                 <a
+                                     href={`/pacientes/${cita.paciente.id}/historias/${cita.id}`}
+                                     class="btn btn-outline-primary"
+                                     data-tooltip="Ver"
+                                     use:link
+                                 >
+                                     <i class="mdi mdi-send"></i>
+                                 </a>
+                            {/if}
                         </td>
                     </tr>
                     {/if}
