@@ -7,6 +7,7 @@
     import Header from "../../Layout/Header.svelte";
     import Aside from "../../Layout/Aside.svelte";
     import ErrorServer from "../../componentes/ErrorConexion.svelte";
+import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
 
 
     let pacientes = [];
@@ -14,6 +15,7 @@
     let sltBuscarPacientes = '';
     let timeout = null;
     let cargando = false;
+    let idPaciente = '';
 
     const searchPacientes = () => {
         if (timeout) {
@@ -21,6 +23,10 @@
         }
         
         timeout = setTimeout(function () { cargarPacientes(); }, 300);
+    }
+
+    const crearCita = (idPaciente) => {
+        console.log(idPaciente)
     }
 
     const eliminarPaciente = (id) => {
@@ -155,6 +161,16 @@
                         <td>{paciente.cedula}</td>
                         <td class="text-right">
                             <!-- svelte-ignore a11y-invalid-attribute -->
+                            <button
+                                href="#!"
+                                on:click|preventDefault={() => idPaciente = paciente.id}
+                                class="btn btn-outline-success"
+                                data-tooltip="Nueva cita"
+                                data-toggle="modal"
+                                data-target="#modalNuevaCita"
+                            >
+                                <i class="mdi mdi-calendar-multiselect"></i>
+                            </button>
                             <a
                                 href="#!"
                                 on:click|preventDefault={() => eliminarPaciente(paciente.id)}
@@ -190,3 +206,6 @@
     </div>
   </section>
 </main>
+<ModalNuevaCita
+    {idPaciente}
+/>

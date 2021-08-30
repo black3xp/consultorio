@@ -14,6 +14,7 @@
     let sltBuscarCitas = '';
     let timeout = null;
     let cargando = false;
+    let cambiandoEstado = false;
     let estados = {
         N: 'Nuevo',
         X: 'Eliminada',
@@ -34,6 +35,7 @@
     }
 
     const cambiarEstadoCita = (idCita, estado) => {
+        cambiandoEstado = true;
         console.log(idCita, estado)
         const cita = {
             estado
@@ -49,11 +51,14 @@
         axios(config)
             .then(res => {
                 if(res.data){
+                    cambiandoEstado = false;
                     cargarCitas();
                     console.log(res.data);
                 }
+                cambiandoEstado = false;
             })
             .catch(err => {
+                cambiandoEstado = false;
                 console.error(err);
             })
     }
@@ -161,6 +166,11 @@
                             </span>
                         </td>
                         <td class="text-right">
+                            {#if cambiandoEstado}
+                                <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            {/if}
                             <!-- svelte-ignore a11y-invalid-attribute -->
                             {#if cita.estado !== 'R'}
                                  <!-- content here -->
