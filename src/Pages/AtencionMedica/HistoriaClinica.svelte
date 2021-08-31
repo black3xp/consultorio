@@ -1,5 +1,6 @@
 <script>
     import { link, push } from "svelte-spa-router";
+    import Loading from '../../componentes/Loading.svelte';
     import axios from "axios";
     import { onMount } from "svelte";
     import { url, user } from "../../util/index";
@@ -55,6 +56,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     let empresa = {};
     let exploracionFisica = [];
     let serverConexion = false;
+    let cargandoHistoria = false;
 
     const cargarEmpresa = () => {
         const config = {
@@ -305,6 +307,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     };
 
     async function cargarPaciente() {
+        cargandoHistoria = true; 
         const config = {
             method: "get",
             url: `${url}/pacientes/${params.idPaciente}`,
@@ -314,6 +317,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
         };
         try {
             let promesa = await axios(config);
+            cargandoHistoria = false; 
             if (promesa.status == 200) {
                 paciente = await promesa.data;
                 edad = calcularEdad(paciente.fechaNacimiento);
@@ -329,6 +333,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 console.error(promesa.statusText);
             }
         } catch (error) {
+            cargandoHistoria = false;
             serverConexion = true;
             console.error(promesa.statusText);
         }
@@ -432,11 +437,17 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
 
 <div class="contenedor-datos" id="divHeaderBar">
     {#if errorServer}
-        <ErrorServer msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}/>
+    <ErrorServer msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}/>
     {/if}
     {#if serverConexion}
-        <NoConexion/>
+    <NoConexion/>
     {/if}
+    {#if cargandoHistoria}
+        <div class="cargando">
+            <Loading/>
+        </div>
+    {/if}
+    
     <div class="row">
         <div class="col-md-6">
             <h5>
@@ -1295,5 +1306,8 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
         position: fixed;
         right: 30px;
         bottom: 20px;
+    }
+    .cargando{
+        z-index: 1000;
     }
 </style>

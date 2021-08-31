@@ -7,6 +7,7 @@
     import Aside from "../../Layout/Aside.svelte";
     import ErrorConexion from '../../componentes/ErrorConexion.svelte';
     import NoConexion from "../../componentes/NoConexion.svelte";
+import Loading from "../../componentes/Loading.svelte";
 
     const Toast = Swal.mixin({
         toast: true,
@@ -26,6 +27,7 @@
     let empresa = {};
     let logo = '';
     let avatar;
+    let cargando = false;
 
     const cambiarImagenEmpresa = (e) => {
         let image = e.target.files[0];
@@ -108,6 +110,7 @@
     }
 
     const cargarEmpresa = () => {
+        cargando = true;
         const config = {
             method: 'get',
             url: `${url}/empresas/${user().empresa}`,
@@ -117,6 +120,7 @@
         }
         axios(config)
             .then(res => {
+                cargando = false;
                 if(res.status === 200)
                 {
                     empresa = res.data
@@ -128,6 +132,7 @@
                 }
             })
             .catch(err => {
+                cargando = false;
                 serverConexion = true;
                 console.error(err)
             })
@@ -145,6 +150,11 @@
     <Header />
     {#if serverConexion}
         <NoConexion/>
+    {/if}
+    {#if cargando}
+        <div class="cargando">
+            <Loading/>
+        </div>
     {/if}
     <section class="admin-content">
         <button 

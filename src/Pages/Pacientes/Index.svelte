@@ -15,7 +15,7 @@ import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
     let sltBuscarPacientes = '';
     let timeout = null;
     let cargando = false;
-    let idPaciente = '';
+    let pacienteSeleccionado = {};
 
     const searchPacientes = () => {
         if (timeout) {
@@ -23,10 +23,6 @@ import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
         }
         
         timeout = setTimeout(function () { cargarPacientes(); }, 300);
-    }
-
-    const crearCita = (idPaciente) => {
-        console.log(idPaciente)
     }
 
     const eliminarPaciente = (id) => {
@@ -163,7 +159,17 @@ import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
                             <!-- svelte-ignore a11y-invalid-attribute -->
                             <button
                                 href="#!"
-                                on:click|preventDefault={() => idPaciente = paciente.id}
+                                on:click|preventDefault={() => pacienteSeleccionado = {
+                                    id:paciente.id, 
+                                    nombres: paciente.nombres,
+                                    apellidos: paciente.apellidos,
+                                    sexo: paciente.sexo,
+                                    fechaNacimiento: paciente.fechaNacimiento,
+                                    nacionalidad: paciente.nacionalidad,
+                                    telefono: paciente.telefono,
+                                    celular: paciente.celular,
+                                    cedula: paciente.cedula,
+                                }}
                                 class="btn btn-outline-success"
                                 data-tooltip="Nueva cita"
                                 data-toggle="modal"
@@ -207,5 +213,5 @@ import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
   </section>
 </main>
 <ModalNuevaCita
-    {idPaciente}
+    {pacienteSeleccionado}
 />

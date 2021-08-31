@@ -25,6 +25,7 @@
         V: 'Tarde',
         N: 'Noche',
     }
+    let txtFecha = new Date().toISOString().split('T')[0];
 
     const searchCitas = () => {
         if (timeout) {
@@ -67,7 +68,7 @@
         cargando = true;
         const config = {
             method: 'get',
-            url: `${url}/citas`,
+            url: `${url}/citas?fechaBusqueda=${txtFecha}&busqueda=${sltBuscarCitas}`,
             headers: {
                 'Authorization': `${localStorage.getItem('auth')}` 
             },
@@ -114,6 +115,12 @@
                             <div class="form-group">
                                 <label for="Buscar">Buscar citas</label>
                                 <input type="search" bind:value={sltBuscarCitas} on:input={searchCitas} class="form-control" placeholder="Nombres o Apelidos">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="Buscar">Buscar citas</label>
+                                <input type="date" bind:value={txtFecha} on:change={searchCitas} class="form-control" placeholder="Nombres o Apelidos">
                             </div>
                         </div>
                     </div>
