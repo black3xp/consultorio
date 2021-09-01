@@ -17,7 +17,7 @@
     let cambiandoEstado = false;
     let estados = {
         N: 'Nuevo',
-        X: 'Eliminada',
+        X: 'Cancelada',
         R: 'Realizada'
     };
     let tandas = {
@@ -49,6 +49,36 @@
                 'Authorization': `${localStorage.getItem('auth')}` 
             },
         };
+        if(estado === 'X'){
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "La cita se va a cancelar y este cupo estara disponible!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Estoy seguro!',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                cambiandoEstado = false;
+                if (result.isConfirmed) {
+                    axios(config)
+                        .then(res => {
+                            if(res.data){
+                                cambiandoEstado = false;
+                                cargarCitas();
+                                console.log(res.data);
+                            }
+                            cambiandoEstado = false;
+                        })
+                        .catch(err => {
+                            cambiandoEstado = false;
+                            console.error(err);
+                        })
+                }
+            });
+            return
+        }
         axios(config)
             .then(res => {
                 if(res.data){
@@ -144,7 +174,7 @@
                 <tbody>
                 {#each citas as cita, i}
                     {#if cita.activo}
-                    <tr class:bg-soft-success={cita.estado === "R"}>
+                    <tr class:bg-soft-success={cita.estado === "R"} class:bg-soft-danger={cita.estado === "X"}>
                         <td>
                             <div class="avatar avatar-sm">
                                 <span class="avatar-title rounded-circle ">{cita.paciente.nombres[0]}{cita.paciente.apellidos[0]}</span>
@@ -168,6 +198,7 @@
                                 class="badge text-white"
                                 class:bg-success={cita.estado === 'N'}
                                 class:bg-secondary={cita.estado === 'R'}
+                                class:bg-danger={cita.estado === 'X'}
                             >
                                 {estados[cita.estado]}
                             </span>
@@ -179,7 +210,7 @@
                                 </div>
                             {/if}
                             <!-- svelte-ignore a11y-invalid-attribute -->
-                            {#if cita.estado !== 'R'}
+                            {#if cita.estado !== 'R' && cita.estado !== 'X'}
                                  <!-- content here -->
                                 <a
                                     href="#!"
