@@ -188,7 +188,6 @@
                             <label for="" class="text-primary">Proxima cita</label>
                             <select
                                 class="form-control"
-                                required
                                 bind:value={tiempoCita}
                             >
                                 <option value="">
@@ -313,6 +312,7 @@
                                 class="text-danger"
                                 data-dismiss="modal"
                             >
+                                <!-- svelte-ignore a11y-missing-content -->
                                 <h3 class="mdi mdi-close-outline" />
                                 <div class="text-overline">Cerrar</div>
                             </a>
@@ -322,6 +322,7 @@
                                 class="text-success"
                                 style="border: none; background-color: transparent;"
                             >
+                                <!-- svelte-ignore a11y-missing-content -->
                                 <h3 class="mdi mdi-send" />
                                 <div class="text-overline">Crear</div>
                             </button>
