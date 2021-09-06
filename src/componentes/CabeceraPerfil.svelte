@@ -2,6 +2,7 @@
   import { url } from '../util/index';
   import axios from 'axios';
   import { push } from 'svelte-spa-router';
+  import ModalNuevaCita from './Modals/ModalNuevaCita.svelte';
   export let nombres = '';
   export let apellidos = '';
   export let cedula = '';
@@ -9,6 +10,8 @@
   export let id = '';
   export let paciente;
   export let cargando;
+
+  let pacienteSeleccionado = {};
   
   function crearNuevaHistoria() {
     const config = {
@@ -71,10 +74,29 @@
             <div class="dropdown">
               <button 
                 type="button"
-                class="btn text-white m-b-30 ml-2 mr-2 ml-3 btn-primary"
+                class="btn text-white mb-2 ml-2 mr-2 ml-3 btn-primary"
                 on:click={crearNuevaHistoria}
               ><i class="mdi mdi-progress-check"></i>
                 Iniciar nueva atención
+              </button><br>
+              <button 
+                type="button"
+                class="btn text-white m-b-30 ml-2 mr-2 ml-3 btn-primary"
+                on:click={() => pacienteSeleccionado = {
+                  id:paciente.id, 
+                  nombres: paciente.nombres,
+                  apellidos: paciente.apellidos,
+                  sexo: paciente.sexo,
+                  fechaNacimiento: paciente.fechaNacimiento,
+                  nacionalidad: paciente.nacionalidad,
+                  telefono: paciente.telefono,
+                  celular: paciente.celular,
+                  cedula: paciente.cedula,
+                }}
+                data-toggle="modal"
+                data-target="#modalNuevaCita"
+              ><i class="mdi mdi-calendar-multiselect"></i>
+                Citas
               </button>
             </div>
           </div>
@@ -82,3 +104,6 @@
       </div>
     </div>
   </div>
+  <ModalNuevaCita
+    {pacienteSeleccionado}
+  />

@@ -17,6 +17,7 @@
     import ErrorServer from '../../componentes/ErrorConexion.svelte';
     import NoConexion from "../../componentes/NoConexion.svelte";
 import ErrorConexion from "../../componentes/ErrorConexion.svelte";
+    import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte"
 
     const Toast = Swal.mixin({
         toast: true,
@@ -57,6 +58,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     let exploracionFisica = [];
     let serverConexion = false;
     let cargandoHistoria = false;
+    let pacienteSeleccionado = {};
 
     const cargarEmpresa = () => {
         const config = {
@@ -524,12 +526,33 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 </button> -->
 
                 <button
-                    data-bind=" class: itemClass,click: clickEvent"
                     style="box-shadow:none;"
                     class="btn btn-outline-dark btn-sm btn-hover-white"
                 >
                     <i data-bind="class: icon" class="mdi mdi-printer" />
                     <sapn data-bind="text: text">Imprimir</sapn>
+                </button>
+
+                <button
+                    style="box-shadow:none;"
+                    class="btn btn-outline-success btn-sm btn-hover-white"
+                    on:click|preventDefault={() => pacienteSeleccionado = {
+                        id:paciente.id, 
+                        nombres: paciente.nombres,
+                        apellidos: paciente.apellidos,
+                        sexo: paciente.sexo,
+                        fechaNacimiento: paciente.fechaNacimiento,
+                        nacionalidad: paciente.nacionalidad,
+                        telefono: paciente.telefono,
+                        celular: paciente.celular,
+                        cedula: paciente.cedula,
+                    }}
+                    data-tooltip="Nueva cita"
+                    data-toggle="modal"
+                    data-target="#modalNuevaCita"
+                >
+                    <i class="mdi mdi-calendar-multiselect"></i>
+                    Nueva cita
                 </button>
 
                 <!-- <button
@@ -1300,6 +1323,9 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
 <ModalTratamientos />
 <ModalInterconsulta />
 <ModalAntecedentes />
+<ModalNuevaCita
+    {pacienteSeleccionado}
+/>
 
 <style>
     .flotante{

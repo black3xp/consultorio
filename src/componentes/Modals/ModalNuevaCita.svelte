@@ -29,9 +29,32 @@
         11: "Diciembre",
     };
     let cargando = false;
+    let tiempoCita = '';
 
     $: if (pacienteSeleccionado) {
         cargarCitasPorPaciente();
+    }
+
+    $: if(tiempoCita === 'S') {
+        let fecha = new Date();
+        fecha.setDate(fecha.getDate()+7);
+        fechaCita = fecha.toISOString().split('T')[0]
+    } else if(tiempoCita === 'D'){
+        let fecha = new Date();
+        fecha.setDate(fecha.getDate()+15);
+        fechaCita = fecha.toISOString().split('T')[0]
+    } else if(tiempoCita === 'M'){
+        let fecha = new Date();
+        fecha.setMonth(fecha.getMonth()+1);
+        fechaCita = fecha.toISOString().split('T')[0]
+    } else if(tiempoCita === 'T'){
+        let fecha = new Date();
+        fecha.setMonth(fecha.getMonth()+6);
+        fechaCita = fecha.toISOString().split('T')[0]
+    } else if(tiempoCita === 'A'){
+        let fecha = new Date();
+        fecha.setFullYear(fecha.getFullYear()+1);
+        fechaCita = fecha.toISOString().split('T')[0]
     }
 
     const cargarCitasPorPaciente = () => {
@@ -154,6 +177,23 @@
                         </div>
                     {/if}
                     <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="" class="text-primary">Proxima cita</label>
+                            <select
+                                class="form-control"
+                                required
+                                bind:value={tiempoCita}
+                            >
+                                <option value="">
+                                    - seleccionar tiempo -
+                                </option>
+                                <option value="S">En una semana</option>
+                                <option value="D">En 15 dias</option>
+                                <option value="M">En un mes</option>
+                                <option value="T">En 6 meses</option>
+                                <option value="A">En un año</option>
+                            </select>
+                        </div>
                         <div class="form-group col-md-12">
                             <label for="" class="text-primary"
                                 >Fecha de la cita</label
