@@ -547,7 +547,6 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                         celular: paciente.celular,
                         cedula: paciente.cedula,
                     }}
-                    data-tooltip="Nueva cita"
                     data-toggle="modal"
                     data-target="#modalNuevaCita"
                 >

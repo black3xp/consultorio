@@ -128,15 +128,21 @@
                 fechaCita = "";
                 tandaCita = "";
                 observaciones = "";
+                tiempoCita = "";
                 cargando = false;
-                if (err.response.data.err === 900) {
-                    msgError =
-                        "No hay horarios disponibles para este consultorio";
+                if(err){
+                    msgError = "Ocurrio un error al registrar la cita, intentalo de nuevo mas tarde o comunicate con el administrador"
                 }
-                if (err.response.data.err === 800) {
-                    msgError = "No hay cupos disponibles";
+                
+                if(err.response.data !== undefined) {
+                    if (err.response.data.err === 900) {
+                        msgError = "No hay horarios disponibles para este consultorio";
+                    }
+                    if (err.response.data.err === 800) {
+                        msgError = "No hay cupos disponibles";
+                    }
                 }
-                console.error(err);
+
             });
     };
     onMount(() => {
@@ -159,7 +165,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalInterconsulta">
-                        Nueva cita
+                        {pacienteSeleccionado.nombres} {pacienteSeleccionado.apellidos} 
+                        <span class="badge bg-primary text-white">Citas</span>
                     </h5>
                     <button
                         type="button"
