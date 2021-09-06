@@ -121,7 +121,7 @@ import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="Buscar">Buscar pacientes</label>
-                                    <input type="search" bind:value={sltBuscarPacientes} on:input={searchPacientes} class="form-control" placeholder="Nombres o Apelidos">
+                                    <input type="search" bind:value={sltBuscarPacientes} on:input={searchPacientes} class="form-control" placeholder="Nombres, Apellidos o Cedula">
                                 </div>
                             </div>
                         </div>

@@ -83,7 +83,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label for="Buscar">Buscar historias</label>
-                                <input type="search" bind:value={sltBuscarHistorias} on:input={searchHistorias} class="form-control" placeholder="Nombres o Apelidos">
+                                <input type="search" bind:value={sltBuscarHistorias} on:input={searchHistorias} class="form-control" placeholder="Nombres, Apellidos o Cedula">
                             </div>
                         </div>
                     </div>

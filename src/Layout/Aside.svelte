@@ -69,6 +69,7 @@
         </li>
         <!--list item ends-->
         <!--list item begins-->
+        {#if user().roles.includes('admin')}
         <li use:active={{path: '/recetas', className: 'active'}} class="menu-item">
           <a href="/recetas" use:link class="menu-link">
             <span class="menu-label">
@@ -80,6 +81,7 @@
             </span>
           </a>
         </li>
+        {/if}
         <!--list item ends-->
         <!--list item begins-->
         <li use:active={{path: '/citas', className: 'active'}} class="menu-item">

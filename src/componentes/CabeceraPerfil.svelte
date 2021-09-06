@@ -1,5 +1,5 @@
 <script>
-  import { url } from '../util/index';
+  import { url, user } from '../util/index';
   import axios from 'axios';
   import { push } from 'svelte-spa-router';
   import ModalNuevaCita from './Modals/ModalNuevaCita.svelte';
@@ -72,6 +72,7 @@
 
           <div class="col-md-6" style="text-align: right">
             <div class="dropdown">
+              {#if user().roles.includes('doctor') || user().roles.includes('admin')}
               <button 
                 type="button"
                 class="btn text-white mb-2 ml-2 mr-2 ml-3 btn-primary"
@@ -79,6 +80,7 @@
               ><i class="mdi mdi-progress-check"></i>
                 Iniciar nueva atención
               </button><br>
+              {/if}
               <button 
                 type="button"
                 class="btn text-white m-b-30 ml-2 mr-2 ml-3 btn-primary"
