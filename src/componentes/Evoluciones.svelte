@@ -4,6 +4,8 @@
 
     import { link } from "svelte-spa-router";
     import { user, url } from '../util/index';
+    import moment from 'moment';
+    import 'moment/locale/es';
 
     export let motivo = '';
     export let historia = '';
@@ -16,9 +18,8 @@
     $: apellido = usuario.apellido
 
     onMount(() => {
+        moment.locale('es');
     })
-
-    $: fechaHora = new Date(fecha).toLocaleString('es-DO')
 </script>
 <div class="list-unstyled">
     <div class="media">
@@ -29,7 +30,7 @@
             <h6 class="mt-0 mb-1"> <span>{nombre} {apellido}</span>
                 {#if user().roles.includes('doctor') || user().roles.includes('admin')}
                      <!-- content here -->
-                     <span class="text-muted ml-3 small">{fechaHora} 
+                     <span class="text-muted ml-3 small">{moment(fecha).fromNow()} 
                          <a href={`/pacientes/${idPaciente}/historias/${id}`} use:link class="btn btn-primary btn-sm text-white" style="position: absolute; right:20px;"><i class="fab fa-share-square"></i> editar</a>
                      </span>
                 {/if}
