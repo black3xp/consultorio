@@ -515,3 +515,13 @@ pre{
   .menu small{
     font-size: 0.8rem;
   }
+
+.select2-container .select2-selection--single .select2-selection__rendered{
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder{
+    padding: 0;
+    margin: 0;
+}
