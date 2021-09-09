@@ -11,7 +11,7 @@
 <div>
     <h6>{nombre}</h6>
     <hr>
-    {#each antecedentes.reverse() as antecedente}
+    {#each antecedentes as antecedente}
         {#if antecedente.categoria.id === id}
             {#if antecedente.activo}
                 <div class="alert alert-secondary" style="padding: 10px;" role="alert">

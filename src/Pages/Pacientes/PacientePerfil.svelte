@@ -77,7 +77,7 @@
   }
 
   const combinarAntecedentes = () => {
-    for (const ant of paciente.antecedentes.reverse()) {
+    for (const ant of paciente.antecedentes) {
       if (ant.activo == true) {
         const index = antecedentes.findIndex((x) => x.id === ant.id);
         antecedentes[index].activo = ant.activo;

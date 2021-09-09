@@ -156,7 +156,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src={logo} width="150" alt="">
+                                        <img src={logo} class="logo" alt="">
                                         <address class="m-t-10">
                                             <span class="h4 font-primary"> {empresa.nombre},</span> <br>
                                             {empresa.direccion} <br>
@@ -219,6 +219,9 @@
     </section>
   </main>
   <style>
+      .logo{
+          max-height: 150px !important;
+      }
       .firma{
           margin: 0 auto;
           text-align: center;

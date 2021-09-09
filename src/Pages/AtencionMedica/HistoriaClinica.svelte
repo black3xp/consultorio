@@ -506,14 +506,14 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <sapn data-bind="text: text">Datos del Paciente</sapn>
                 </button>
 
-                <button
+                <!-- <button
                     data-bind=" class: itemClass,click: clickEvent"
                     style="box-shadow:none;"
                     class="btn btn-outline-dark btn-sm"
                 >
                     <i data-bind="class: icon" class="mdi mdi-text" />
                     <sapn data-bind="text: text">Agregar Campo</sapn>
-                </button>
+                </button> -->
 
                 <!-- <button
                     data-toggle="modal"
@@ -525,13 +525,13 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <sapn data-bind="text: text">Registrar Interconsulta</sapn>
                 </button> -->
 
-                <button
+                <!-- <button
                     style="box-shadow:none;"
                     class="btn btn-outline-dark btn-sm btn-hover-white"
                 >
                     <i data-bind="class: icon" class="mdi mdi-printer" />
                     <sapn data-bind="text: text">Imprimir</sapn>
-                </button>
+                </button> -->
 
                 <button
                     style="box-shadow:none;"

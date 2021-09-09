@@ -113,6 +113,7 @@
           </a>
           <!--submenu-->
           <ul class="sub-menu">
+            {#if user().roles.includes('admin')}
             <li class="menu-item">
               <a href="/usuarios" use:link class=" menu-link">
                 <span class="menu-label">
@@ -122,8 +123,8 @@
                   <i class="icon-placeholder ">U</i>
                 </span>
               </a>
-  
             </li>
+            {/if}
             <li class="menu-item">
               <a href="/empresa/detalles" use:link class=" menu-link">
                 <span class="menu-label">
