@@ -90,8 +90,8 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
         }).then((result) => {
             if (result.isConfirmed) {
                 const config = {
-                    method: 'put',
-                    url: `${url}/historias/${id}/eliminar`,
+                    method: 'delete',
+                    url: `${url}/historias/${id}`,
                     headers: {
                         'Authorization': `${localStorage.getItem('auth')}` 
                     }

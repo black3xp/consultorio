@@ -8,6 +8,19 @@
     import Aside from "../../Layout/Aside.svelte";
     import ErrorServer from '../../componentes/ErrorConexion.svelte';
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    });
+
+
 
     let historias = [];
     let errorServer = false;
@@ -21,6 +34,39 @@
         }
         
         timeout = setTimeout(function () { cargarHistorias(); }, 300);
+    }
+
+    const eliminarHistoria = (idHistoria) => {
+        const config = {
+            method: 'delete',
+            url: `${url}/historias/${idHistoria}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            }
+        }
+        Swal.fire({
+            title: '¿Estas seguro?',
+            text: "La historia se eliminara, sin embargo los datos no ser perderán y se podrán recuperar en el futuro!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios(config)
+                    .then(res => {
+                        if(res.status === 200){
+                            cargarHistorias()
+                            Toast.fire({
+                                icon: 'success',
+                                title: 'Se ha eliminado correctamente'
+                            })
+                        }
+                    })
+            }
+        })
     }
 
     function cargarHistorias() {
@@ -121,6 +167,7 @@
                             <!-- svelte-ignore a11y-invalid-attribute -->
                             <a
                                 href="#!"
+                                on:click|preventDefault={() => eliminarHistoria(historia.id)}
                                 class="btn btn-outline-danger"
                                 data-tooltip="Eliminar"
                             >

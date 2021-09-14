@@ -126,6 +126,7 @@ import ModalAgregarHorario from "../../componentes/Modals/ModalAgregarHorario.sv
     const editarEmpresa = () => {
         const data = {
             nombre: empresa.nombre,
+            especialidades: empresa.especialidades,
             telefono: empresa.telefono,
             correo: empresa.correo,
             direccion: empresa.direccion,
@@ -275,6 +276,18 @@ import ModalAgregarHorario from "../../componentes/Modals/ModalAgregarHorario.sv
                                                         type="text"
                                                         class="form-control"
                                                         bind:value={empresa.nombre}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for=""
+                                                        >Especialidades</label
+                                                    >
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        bind:value={empresa.especialidades}
                                                     />
                                                 </div>
                                             </div>

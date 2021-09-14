@@ -159,6 +159,7 @@
                                         <img src={logo} class="logo" alt="">
                                         <address class="m-t-10">
                                             <span class="h4 font-primary"> {empresa.nombre},</span> <br>
+                                            {empresa.especialidades} <br>
                                             {empresa.direccion} <br>
                                             Tel.: {empresa.telefono} <br>
                                             {empresa.correo} <br>
