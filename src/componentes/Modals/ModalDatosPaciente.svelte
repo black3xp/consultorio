@@ -18,7 +18,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalDatosPersonales">Datos de paciente</h5>
+                    <h5 class="modal-title" id="modalDatosPersonales">Datos del paciente</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -157,12 +157,13 @@
                                 <div class="text-overline">Cerrar</div>
                             </a>
                         </div>
-                        <!-- <div class="col">
-                            <a href={`/pacientes/perfil/${id}`} use:link class="text-success">
+                        <div class="col">
+                            <a href={`/pacientes/${paciente.id}/editar`} use:link class="text-success" on:click={() => jQuery("#modalDatosPersonales").modal('hide')}>
+                                <!-- svelte-ignore a11y-missing-content -->
                                 <h3 class="mdi mdi-account-edit"></h3>
                                 <div class="text-overline">Editar</div>
                             </a>
-                        </div> -->
+                        </div>
                         <div class="col">
                             <!-- svelte-ignore missing-declaration -->
                             <a href={`/pacientes/perfil/${paciente.id}`} use:link on:click={() => jQuery("#modalDatosPersonales").modal('hide')} class="text-info">

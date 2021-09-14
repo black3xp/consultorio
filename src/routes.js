@@ -6,6 +6,7 @@ import Index from './Pages/Home/Index.svelte';
 import Pacientes from './Pages/Pacientes/Index.svelte';
 import PacientePerfil from './Pages/Pacientes/PacientePerfil.svelte';
 import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
+import PacienteEditar from './Pages/Pacientes/PacienteEditar.svelte';
 import AtencionHistoriaClinica from './Pages/AtencionMedica/HistoriaClinica.svelte';
 import Login from './Pages/Home/Login.svelte';
 import Usuarios from './Pages/Usuarios/Index.svelte';
@@ -57,6 +58,18 @@ const routes = {
     }),
     "/pacientes/crear": wrap({
         component: PacienteCrear,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/pacientes/:idPaciente/editar": wrap({
+        component: PacienteEditar,
         conditions: [
             async (detail) => {
                 if(isLogin()){
