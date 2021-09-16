@@ -1,5 +1,6 @@
 <script>
   import { logout, user } from '../util/index';
+  import ModalChangePassword from '../componentes/Modals/ModalChangePassword.svelte';
 </script>
 <header class="admin-header">
     <a
@@ -99,7 +100,7 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#!">Reset Password</a>
+            <a class="dropdown-item" href="#!" data-toggle="modal" data-target="#modalChangePassword">Cambiar contraseña</a>
             <div class="dropdown-divider" />
             <a class="dropdown-item text-danger" href="#!" on:click|preventDefault={logout}><i class="mdi mdi-power"></i> Salir</a>
           </div>
@@ -109,3 +110,4 @@
   
     </nav>
   </header>
+  <ModalChangePassword/>

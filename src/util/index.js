@@ -5,7 +5,8 @@ import axios from 'axios';
 // const url = 'http://localhost:3000/api'
 // const url = 'http://serenidad.xmedical.online:1337/api';
 const url = 'https://consulta.xmedical.online/api';
-// const url = 'http://localhost:1337/api'
+// const url = 'http://localhost:1337/api';
+
 const isLogin = () => {
     if(localStorage.getItem('auth')){
         return true
