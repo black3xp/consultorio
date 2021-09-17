@@ -15,6 +15,7 @@ import RecetaMedicamentos from './Pages/Recetas/Medicamentos.svelte';
 import RecetaEstudios from './Pages/Recetas/Estudios.svelte';
 import RecetaImagenes from './Pages/Recetas/Imagenes.svelte';
 import RecetasIndex from './Pages/Recetas/Indicaciones/Index.svelte';
+import ImprimirRecetas from './Pages/Recetas/ImprimirRecetas.svelte';
 import EmpresaDetalle from './Pages/Empresa/Detalle.svelte';
 import CitasIndex from './Pages/Citas/Index.svelte';
 
@@ -142,6 +143,18 @@ const routes = {
     }),
     "/impresion/pacientes/:idPaciente/historias/:idHistoria/estudios/imagenes": wrap({
         component: RecetaImagenes,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/pacientes/:idPaciente/historias/:idHistoria/imprimir/estudios": wrap({
+        component: ImprimirRecetas,
         conditions: [
             async (detail) => {
                 if(isLogin()){

@@ -59,6 +59,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     let serverConexion = false;
     let cargandoHistoria = false;
     let pacienteSeleccionado = {};
+    let disabled = false;
 
     const cargarEmpresa = () => {
         const config = {
@@ -590,6 +591,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 </div>
                 <div class="card-body">
                     <textarea
+                        {disabled}
                         on:blur={guardarHistoria}
                         bind:value={historia.motivoConsulta}
                         class="form-control"
@@ -608,6 +610,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 </div>
                 <div class="card-body">
                     <textarea
+                        {disabled}
                         on:blur={guardarHistoria}
                         bind:value={historia.historiaEnfermedad}
                         class="form-control"
@@ -631,49 +634,49 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultima menstruaci&oacute;n</label>
-                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimaMenstruacion}>
+                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimaMenstruacion}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultimo pap</label>
-                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoPap}>
+                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoPap}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultimo parto</label>
-                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoParto}>
+                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoParto}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultimo aborto</label>
-                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoAborto}>
+                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoAborto}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Fecha ultima ces&aacute;rea</label>
-                                <input type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoCesarea}>
+                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoCesarea}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Intervalo flujo menstrual</label>
-                                <input type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.intervaloFlujoMenstrual}>
+                                <input {disabled} type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.intervaloFlujoMenstrual}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Cantidad flujo menstrual</label>
-                                <input type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.cantidadFlujoMenstrual}>
+                                <input {disabled} type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.cantidadFlujoMenstrual}>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="">Duracion flujo menstrual</label>
-                                <input type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.duracionFlujoMenstrual}>
+                                <input {disabled} type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.duracionFlujoMenstrual}>
                             </div>
                         </div>
                     </div>
@@ -682,43 +685,43 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Gesta</label>
-                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.gesta}>
+                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.gesta}>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Para</label>
-                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.para}>
+                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.para}>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Abortos</label>
-                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.abortos}>
+                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.abortos}>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Ces&aacute;reas</label>
-                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.cesareas}>
+                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.cesareas}>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Espont&aacute;neos</label>
-                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.espontaneos}>
+                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.espontaneos}>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Provocados</label>
-                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.provocados}>
+                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.provocados}>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Legrados</label>
-                                <input type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.legrados}>
+                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.legrados}>
                             </div>
                         </div>
                     </div>
@@ -727,47 +730,47 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <div class="row">
                         <div class="col-lg-12">
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.sangradoVaginal} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.sangradoVaginal} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Sangrado Vaginal</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.vidaSexualActiva} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.vidaSexualActiva} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Vida Sexual Activa</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.anticonceptivosOrales} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.anticonceptivosOrales} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Anticonceptivos Orales</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.diu} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.diu} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">DIU</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.aqv} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.aqv} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">AQV</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.condon} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.condon} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Cond&oacute;n</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.norplant} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.norplant} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Norplant</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.ritmo} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.ritmo} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Ritmo</span>
                             </label>
                             <label class="cstm-switch mr-4 mb-4">
-                                <input type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.coitoInterruptus} name="option" value="1" class="cstm-switch-input">
+                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.coitoInterruptus} name="option" value="1" class="cstm-switch-input">
                                 <span class="cstm-switch-indicator bg-success "></span>
                                 <span class="cstm-switch-description">Coito Interruptus</span>
                             </label>
@@ -793,6 +796,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                      <div class="row">
                                          <div class="col-lg-7">
                                              <input
+                                                {disabled}
                                                  type="number"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -801,7 +805,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                          </div>
                                          <div class="col-lg-5">
                                              <!-- svelte-ignore a11y-no-onchange -->
-                                             <select class="form-control" on:change={guardarHistoria} bind:value={temperatura.tipo}>
+                                             <select class="form-control" {disabled} on:change={guardarHistoria} bind:value={temperatura.tipo}>
                                                  <option value="C" selected>°C</option>
                                                  <option value="K">°K</option>
                                                  <option value="F">°F</option>
@@ -819,6 +823,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                      <div class="row">
                                          <div class="col-lg-12">
                                              <input
+                                                {disabled}
                                                  type="number"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -837,6 +842,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                      <div class="row">
                                          <div class="col-lg-12">
                                              <input
+                                                {disabled}
                                                  type="number"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -855,6 +861,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                      <div class="row">
                                          <div class="col-lg-6">
                                              <input
+                                                {disabled}
                                                  type="number"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -863,6 +870,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                          </div>
                                          <div class="col-lg-6">
                                              <input
+                                                {disabled}
                                                  type="number"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -891,6 +899,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                      <div class="row">
                                          <div class="col-lg-7">
                                              <input
+                                                {disabled}
                                                  type="number"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -900,6 +909,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                          <div class="col-lg-5">
                                              <!-- svelte-ignore a11y-no-onchange -->
                                              <select class="form-control"
+                                                {disabled}
                                                  on:change={guardarHistoria}
                                                  bind:value={peso.tipo}
                                              >
@@ -923,6 +933,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                                  style="width: 100% !important; float: right;"
                                              >
                                                  <input
+                                                    {disabled}
                                                      type="number"
                                                      class="form-control"
                                                      max="15"
@@ -960,6 +971,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                                  style="width: 100% !important; float: right;"
                                              >
                                                  <input
+                                                    {disabled}
                                                      type="number"
                                                      class="form-control"
                                                      max="10"
@@ -992,6 +1004,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                      <div class="row">
                                          <div class="col-lg-12">
                                              <input
+                                                {disabled}
                                                  type="number"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -1007,6 +1020,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                      <div class="row">
                                          <div class="col-lg-12">
                                              <input
+                                                {disabled}
                                                  type="text"
                                                  class="form-control"
                                                  on:blur={guardarHistoria}
@@ -1052,6 +1066,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 </div>
                 <div class="card-body">
                     <textarea
+                        {disabled}
                         class="form-control"
                         style="width: 100%; display: block;"
                         on:blur={guardarHistoria}
@@ -1087,7 +1102,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                                          <div class="card-title">{item.nombre}</div>
                                                      </div>
                                                      <div class="card-body">
-                                                         <textarea bind:value={item.text} on:blur={guardarHistoria} class="form-control" rows="5"></textarea>
+                                                         <textarea {disabled} bind:value={item.text} on:blur={guardarHistoria} class="form-control" rows="5"></textarea>
                                                      </div>
                                                  </div>
                                              </div>
@@ -1131,6 +1146,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                 class="form-group buscardor dropdown dropdown-vnc"
                             >
                                 <input
+                                    {disabled}
                                     type="text"
                                     class="form-control"
                                     on:keyup={searchDiagnosticos}
@@ -1209,7 +1225,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                         {#if item.comentario !== undefined}
                                             <div class="row mt-3">
                                                 <div class="col">
-                                                    <input type="text" on:blur={guardarHistoria} bind:value={item.comentario} class="form-control border-primary" placeholder="Comentario">
+                                                    <input {disabled} type="text" on:blur={guardarHistoria} bind:value={item.comentario} class="form-control border-primary" placeholder="Comentario">
                                                 </div>
                                             </div>
                                         {/if}
@@ -1243,6 +1259,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
             </div>
 
             <OrdenesMedicas
+                {disabled}
                 bind:idHistoria={params.idHistoria}
                 bind:idPaciente={params.idPaciente}
                 bind:estudiosSeleccionados={estudiosSeleccionados}
@@ -1267,6 +1284,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 </div>
                 <div class="card-body">
                     <textarea
+                        {disabled}
                         class="form-control"
                         style="width: 100%; display: block; height: 150px;"
                         rows="3"

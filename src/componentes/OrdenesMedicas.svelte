@@ -12,11 +12,19 @@
     export let estudiosSeleccionados;
     export let idHistoria;
     export let idPaciente;
+    export let disabled;
 
 </script>
 
 <div class="alert alert-secondary" role="alert">
     <h4 class="alert-heading">Receta</h4>
+    <a
+        href={`/pacientes/${idPaciente}/historias/${idHistoria}/imprimir/estudios`}
+        use:link
+        class="btn btn-outline-primary btn-sm btn-receta"
+    > <i class="mdi mdi-printer"></i> 
+        Imprimir todas las recetas
+    </a>
     <div class="card m-b-20 mt-3">
         <div class="card-header">
             <div class="card-title">Medicamentos</div>
@@ -37,6 +45,7 @@
                         <div class="col-lg-6">
                             <div class="dropdown">
                                 <input
+                                    {disabled}
                                     type="text"
                                     class="form-control"
                                     data-toggle="dropdown"
@@ -103,6 +112,7 @@
                                                      >Concentraci&oacute;n</label
                                                  >
                                                  <input
+                                                    {disabled}
                                                      type="text"
                                                      class="form-control"
                                                      on:blur={() => dispatch("modificado")}
@@ -119,6 +129,7 @@
                                                      >Cantidad</label
                                                  >
                                                  <input
+                                                    {disabled}
                                                      type="text"
                                                      class="form-control"
                                                      on:blur={() => dispatch("modificado")}
@@ -135,10 +146,11 @@
                                                      >Frecuencia</label
                                                  >
                                                  <input
-                                                 type="text"
-                                                 class="form-control"
-                                                 on:blur={() => dispatch("modificado")}
-                                                 bind:value={med.frecuencia}
+                                                    {disabled}
+                                                    type="text"
+                                                    class="form-control"
+                                                    on:blur={() => dispatch("modificado")}
+                                                    bind:value={med.frecuencia}
                                                  />
                                                 </div>
                                             </div>
@@ -197,6 +209,7 @@
                                 class="form-group buscardor dropdown dropdown-vnc"
                             >
                                 <input
+                                    {disabled}
                                     type="text"
                                     class="form-control"
                                     bind:value={sltBuscarEstudios}
@@ -324,6 +337,7 @@
             <div class="row">
                 <div class="col-12">
                     <textarea
+                        {disabled}
                         bind:value={instrucciones}
                         on:blur={() => dispatch("modificado")}
                         class="form-control"
@@ -336,6 +350,11 @@
     </div>
 </div>
 <style>
+    .btn-receta{
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
     .icon-borrar{
         position: absolute;
         right: 3px;
