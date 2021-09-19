@@ -113,15 +113,15 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="" class="text-primary">Contrase&ntilde;a anterior</label>
-                            <input type="password" class="form-control" required bind:value={oldPassword}>
+                            <input type="password" class="form-control" required bind:value={oldPassword} autocomplete="current-password">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="" class="text-primary">Nueva contrase&ntilde;a</label>
-                            <input type="password" class="form-control" required bind:value={newPassword}>
+                            <input type="password" class="form-control" required bind:value={newPassword} autocomplete="new-password">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="" class="text-primary">Repetir Nueva contrase&ntilde;a</label>
-                            <input type="password" class="form-control" required bind:value={repeatNewPassword}>
+                            <input type="password" class="form-control" required bind:value={repeatNewPassword} autocomplete="new-password">
                         </div>
                     </div>
 

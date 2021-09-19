@@ -18,6 +18,7 @@ import RecetasIndex from './Pages/Recetas/Indicaciones/Index.svelte';
 import ImprimirRecetas from './Pages/Recetas/ImprimirRecetas.svelte';
 import EmpresaDetalle from './Pages/Empresa/Detalle.svelte';
 import CitasIndex from './Pages/Citas/Index.svelte';
+import HistoriaActual from './Pages/Reportes/HistoriaClinica/Actual.svelte';
 
 const routes = {
     "/": wrap({
@@ -191,6 +192,18 @@ const routes = {
     }),
     "/citas": wrap({
         component: CitasIndex,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/pacientes/:idPaciente/historias/:idHistoria/imprimir": wrap({
+        component: HistoriaActual,
         conditions: [
             async (detail) => {
                 if(isLogin()){

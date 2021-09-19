@@ -526,13 +526,15 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <sapn data-bind="text: text">Registrar Interconsulta</sapn>
                 </button> -->
 
-                <!-- <button
+                <a
+                    href="/"
+                    use:link
                     style="box-shadow:none;"
                     class="btn btn-outline-dark btn-sm btn-hover-white"
                 >
                     <i data-bind="class: icon" class="mdi mdi-printer" />
                     <sapn data-bind="text: text">Imprimir</sapn>
-                </button> -->
+                </a>
 
                 <button
                     style="box-shadow:none;"

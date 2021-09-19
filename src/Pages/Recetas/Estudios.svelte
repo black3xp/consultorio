@@ -87,9 +87,6 @@
         cargarPaciente()
         cargarHistoria()
         cargarEmpresa()
-        window.onafterprint = (event) => {
-            location.reload()
-        };
     });
   </script>
   
