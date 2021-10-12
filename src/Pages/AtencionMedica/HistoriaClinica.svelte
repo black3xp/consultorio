@@ -527,8 +527,8 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 </button> -->
 
                 <a
-                    href="/"
-                    use:link
+                    href={`/#/pacientes/${params.idPaciente}/historias/${params.idHistoria}/imprimir`}
+                    target="_blank"
                     style="box-shadow:none;"
                     class="btn btn-outline-dark btn-sm btn-hover-white"
                 >

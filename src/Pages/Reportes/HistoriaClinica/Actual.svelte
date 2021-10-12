@@ -15,6 +15,9 @@
     let presionAlterial = {}
     let peso = {};
     let exploracionFisica = [];
+    let antecedentes = [];
+    let diagnosticos = [];
+    let medicamentos = [];
 
     const cargarImagenEmpresa = (idConsultorio, idImagen) => {
         const config = {
@@ -46,7 +49,10 @@
         axios(config)
             .then(res => {
                 paciente = res.data;
-                seguroMedico = res.data.seguroMedico[0]
+                if(res.data.seguroMedico){
+                    seguroMedico = res.data.seguroMedico[0];
+                }
+                antecedentes = res.data.antecedentes;
                 console.log(paciente)
             })
     }
@@ -67,6 +73,9 @@
                 presionAlterial = res.data.presionAlterial;
                 peso = res.data.peso;
                 exploracionFisica = res.data.exploracionFisica
+                diagnosticos = res.data.diagnosticos;
+                medicamentos = res.data.medicamentos;
+                estudios = res.data.estudios;
                 console.log(historia)
             })
     }
@@ -92,6 +101,7 @@
         cargarPaciente()
         cargarHistoria()
         cargarEmpresa()
+        document.title = "Consultorio Medico | Reporte"
     })
 </script>
 <div class="reporte">
@@ -198,8 +208,106 @@
             </div>
         </div>
     </section>
+    <section>
+        <h3>Antecedentes</h3>
+        <div class="exploracion">
+            <div class="row">
+                {#each antecedentes as item}
+                     <!-- content here -->
+                     {#if item.activo}
+                          <!-- content here -->
+                          <div class="col-md-6 mb-2">
+                              <p><strong>{item.nombre}</strong></p>
+                              <p>{item.descripcion}</p>
+                          </div>
+                     {/if}
+                     {:else}
+                          <p>No tiene antecedentes</p>
+                {/each}
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>Diagnosticos</h3>
+        <div class="exploracion">
+            <div class="row">
+                {#each diagnosticos as item}
+                     <!-- content here -->
+                          <!-- content here -->
+                          <div class="col-md-6 mb-2">
+                              <p><strong>{item.c}</strong> - {item.d} 
+                                {#if item.comentario}
+                                     <!-- content here -->
+                                     ({item.comentario})
+                                {/if}
+                            </p>
+                          </div>
+                     {:else}
+                          <p>No tiene antecedentes</p>
+                {/each}
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>Medicamentos</h3>
+        <div class="exploracion">
+            <div class="row">
+                {#each medicamentos as item}
+                    <div class="col-md-12 mb-2">
+                        <p><strong>{item.concentracion}</strong> de: {item.nombre}, Cantidad: {item.cantidad} frecuencia: {item.frecuencia}</p>
+                    </div>
+                    {:else}
+                        <p>No se indicaron medicamentos</p>
+                {/each}
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>Estudios</h3>
+        <div class="exploracion">
+            <div class="row">
+                <p class="col-6"><strong>Estudios de Laboratorio</strong></p>
+                {#each estudios as item}
+                    {#if item.tipo === 'LAB'}
+                         <!-- content here -->
+                         <div class="col-md-12 mb-2">
+                             <p>- {item.descripcion}</p>
+                         </div>
+                    {/if}
+                    {:else}
+                        <p>No se indicaron medicamentos</p>
+                {/each}
+                <p class="col-6"><strong>Estudios de Imagenes</strong></p>
+                {#each estudios as item}
+                    {#if item.tipo === 'IMG'}
+                         <!-- content here -->
+                         <div class="col-md-12 mb-2">
+                             <p>- {item.descripcion}</p>
+                         </div>
+                    {/if}
+                    {:else}
+                        <p>No se indicaron medicamentos</p>
+                {/each}
+            </div>
+        </div>
+    </section>
+    <div class="firma">
+        <hr>
+        <p>Firma del especialista</p>
+        <p><strong>{user().title}. {user().name}</strong></p>
+    </div>
 </div>
 <style>
+.firma{
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.firma p{
+    margin: 0;
+}
 section .exploracion p{
     margin: 0;
 }
