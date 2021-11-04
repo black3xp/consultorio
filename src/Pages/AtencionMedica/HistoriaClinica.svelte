@@ -580,25 +580,27 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <i data-bind="class: icon" class="mdi mdi-comment-eye" />
                     <sapn data-bind="text: text">Datos del Paciente</sapn>
                 </button>
-                {#if historia.estado === 'C'}
-                    <button
-                        on:click={() => abrirHistoria(params.idHistoria)}
-                        style="box-shadow:none;"
-                        class="btn btn-outline-danger btn-sm"
-                    >
-                        <i class="mdi mdi-playlist-plus"></i>
-                        Abrir Historia
-                    </button>
-                {/if}
-                {#if historia.estado === 'A'}
-                    <button
-                        on:click={() => cerrarHistoria(params.idHistoria)}
-                        style="box-shadow:none;"
-                        class="btn btn-success btn-sm"
-                    >
-                        <i class="mdi mdi-playlist-remove"></i>
-                        Cerrar Historia
-                    </button>
+                {#if user().roles.includes('admin')}
+                    {#if historia.estado === 'C'}
+                        <button
+                            on:click={() => abrirHistoria(params.idHistoria)}
+                            style="box-shadow:none;"
+                            class="btn btn-outline-danger btn-sm"
+                        >
+                            <i class="mdi mdi-playlist-plus"></i>
+                            Abrir Historia
+                        </button>
+                    {/if}
+                     {#if historia.estado === 'A'}
+                         <button
+                             on:click={() => cerrarHistoria(params.idHistoria)}
+                             style="box-shadow:none;"
+                             class="btn btn-success btn-sm"
+                         >
+                             <i class="mdi mdi-playlist-remove"></i>
+                             Cerrar Historia
+                         </button>
+                     {/if}
                 {/if}
 
                 <!-- <button
