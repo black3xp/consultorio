@@ -66,7 +66,7 @@
                 oldPassword = '';
                 newPassword = '';
                 repeatNewPassword = '';
-                msgError = 'Ocurrio un erro al contactar al servidor, comuniquese con el administrador'
+                msgError = 'Ocurrio un error al contactar al servidor, comuniquese con el administrador'
                 cargando = false;
                 console.error(err)
             })

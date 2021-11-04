@@ -61,6 +61,12 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     let pacienteSeleccionado = {};
     let disabled = false;
 
+    $: if(historia.estado === "C"){
+        disabled = true;
+    }else{
+        disabled = false;
+    }
+
     const cargarEmpresa = () => {
         const config = {
             method: 'get',
@@ -76,6 +82,72 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
             .catch(err => {
                 console.error(err)
             })
+    }
+
+    const abrirHistoria = (id) => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Se abrir la historia y tendra acceso a modificarla de nuevo!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Abirla!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const config = {
+                    method: 'put',
+                    url: `${url}/historias/${id}/abrir`,
+                    headers: {
+                        'Authorization': `${localStorage.getItem('auth')}` 
+                    }
+                }
+                axios(config)
+                    .then(res => {
+                        if(res.status === 200) {
+                            cargarHistoria()
+                        }
+
+                    })
+                    .catch(err => {
+
+                    })
+            }
+        })
+    }
+
+    const cerrarHistoria = (id) => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Se cerrara la historia y no podra modificarla en el futuro!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Cerrarla!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const config = {
+                    method: 'put',
+                    url: `${url}/historias/${id}/cerrar`,
+                    headers: {
+                        'Authorization': `${localStorage.getItem('auth')}` 
+                    }
+                }
+                axios(config)
+                    .then(res => {
+                        if(res.status === 200) {
+                            cargarHistoria()
+                        }
+
+                    })
+                    .catch(err => {
+
+                    })
+            }
+        })
     }
 
     const eliminarHistoria = (id) => {
@@ -440,10 +512,10 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
 
 <div class="contenedor-datos" id="divHeaderBar">
     {#if errorServer}
-    <ErrorServer msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}/>
+        <ErrorServer msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}/>
     {/if}
     {#if serverConexion}
-    <NoConexion/>
+        <NoConexion/>
     {/if}
     {#if cargandoHistoria}
         <div class="cargando">
@@ -487,14 +559,16 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 {/if}
             </div>
         </div>
-        <button
-            type="button"
-            class="btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success flotante"
-            data-tooltip="Guardar"
-            on:click={guardarHistoria}
-        >
-            <i class="mdi mdi-content-save-outline"></i>
-        </button>
+        {#if historia.estado === 'A'}
+            <button
+                type="button"
+                class="btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success flotante"
+                data-tooltip="Guardar"
+                on:click={guardarHistoria}
+            >
+                <i class="mdi mdi-content-save-outline"></i>
+            </button>
+        {/if}
         <div class="col-lg-12">
             <div class="dropdown" data-bind="foreach: actionButtons">
                 <button
@@ -506,6 +580,26 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <i data-bind="class: icon" class="mdi mdi-comment-eye" />
                     <sapn data-bind="text: text">Datos del Paciente</sapn>
                 </button>
+                {#if historia.estado === 'C'}
+                    <button
+                        on:click={() => abrirHistoria(params.idHistoria)}
+                        style="box-shadow:none;"
+                        class="btn btn-outline-danger btn-sm"
+                    >
+                        <i class="mdi mdi-playlist-plus"></i>
+                        Abrir Historia
+                    </button>
+                {/if}
+                {#if historia.estado === 'A'}
+                    <button
+                        on:click={() => cerrarHistoria(params.idHistoria)}
+                        style="box-shadow:none;"
+                        class="btn btn-success btn-sm"
+                    >
+                        <i class="mdi mdi-playlist-remove"></i>
+                        Cerrar Historia
+                    </button>
+                {/if}
 
                 <!-- <button
                     data-bind=" class: itemClass,click: clickEvent"
@@ -566,15 +660,16 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <i data-bind="class: icon" class="mdi mdi-account-clock" />
                     <sapn data-bind="text: text">Antecedentes</sapn>
                 </button> -->
-
-                <button
-                    on:click={() => eliminarHistoria(params.idHistoria)}
-                    style="box-shadow:none;"
-                    class="btn btn-outline-danger btn-sm"
-                >
-                    <i data-bind="class: icon" class="mdi mdi-delete" />
-                    <sapn data-bind="text: text">Anular</sapn>
-                </button>
+                {#if historia.estado === 'A'}
+                     <button
+                         on:click={() => eliminarHistoria(params.idHistoria)}
+                         style="box-shadow:none;"
+                         class="btn btn-danger btn-sm"
+                     >
+                         <i data-bind="class: icon" class="mdi mdi-delete" />
+                         <sapn data-bind="text: text">Anular</sapn>
+                     </button>
+                {/if}
             </div>
         </div>
     </div>
@@ -1089,7 +1184,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                              <div class="col-12">
                                  {#each exploracionFisica as item}
                                      {#if !item.activo}
-                                         <button class="btn btn-outline-primary mr-2" on:click={() => { item.activo = true; guardarHistoria()} }>{item.nombre}</button>
+                                         <button class="btn btn-outline-primary mr-2" disabled={disabled} on:click={() => { item.activo = true; guardarHistoria()} }>{item.nombre}</button>
                                      {/if}
                                  {/each}
                              </div>
@@ -1202,28 +1297,31 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                         <span class="badge badge-primary"
                                             >{item.c}</span
                                         >&nbsp;<span>{item.d}</span>
-                                        <div
-                                            style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
-                                        >
-                                            <a
-                                                href="#!"
-                                                class="text-primary"
-                                                data-tooltip="Comentar"
-                                                on:click|preventDefault={() => agregarComentarioDiagnostico(i)}
-                                                ><i
-                                                    class="mdi-18px mdi mdi-comment-plus-outline"
-                                                /></a
-                                            >
-                                            <a
-                                                href="#!"
-                                                class="text-danger"
-                                                data-tooltip="Eliminar"
-                                                on:click|preventDefault={() => eliminarDiagnostico(i)}
-                                                ><i
-                                                    class="mdi-18px mdi mdi-trash-can-outline"
-                                                /></a
-                                            >
-                                        </div>
+                                        {#if !disabled}
+                                             <!-- content here -->
+                                             <div
+                                                 style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
+                                             >
+                                                 <a
+                                                     href="#!"
+                                                     class="text-primary"
+                                                     data-tooltip="Comentar"
+                                                     on:click|preventDefault={() => agregarComentarioDiagnostico(i)}
+                                                     ><i
+                                                         class="mdi-18px mdi mdi-comment-plus-outline"
+                                                     /></a
+                                                 >
+                                                 <a
+                                                     href="#!"
+                                                     class="text-danger"
+                                                     data-tooltip="Eliminar"
+                                                     on:click|preventDefault={() => eliminarDiagnostico(i)}
+                                                     ><i
+                                                         class="mdi-18px mdi mdi-trash-can-outline"
+                                                     /></a
+                                                 >
+                                             </div>
+                                        {/if}
                                         {#if item.comentario !== undefined}
                                             <div class="row mt-3">
                                                 <div class="col">
@@ -1247,10 +1345,6 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                                     diagnostico
                                                 </p>
                                             </div>
-                                            <ul
-                                                class="list-info"
-                                                data-bind="foreach: estudios"
-                                            />
                                         </div>
                                     </div>
                                 {/if}

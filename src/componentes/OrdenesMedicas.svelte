@@ -155,9 +155,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="icon-borrar" data-tooltip="Eliminar">
-                                            <i class="mdi mdi-close text-red" on:click={() => dispatch("eliminarMedicamento",i)}></i>
-                                        </div>
+                                        {#if !disabled}
+                                             <!-- content here -->
+                                             <div class="icon-borrar" data-tooltip="Eliminar">
+                                                 <i class="mdi mdi-close text-red" on:click={() => dispatch("eliminarMedicamento",i)}></i>
+                                             </div>
+                                        {/if}
                                  </div>
                                  {:else}
                                  <div class="row">
@@ -276,29 +279,28 @@
                                      >
                                 {/if}
                                 &nbsp;<span>{item.descripcion}</span>
-                                <div
-                                    style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
-                                >
-                                    <!-- <a
-                                        href="#!"
-                                        class="text-primary"
-                                        title="Agregar comentarios"
-                                        ><i
-                                            class="mdi-18px mdi mdi-comment-plus-outline"
-                                        /></a
-                                    > -->
-                                    <a
-                                        href="#!"
-                                        on:click|preventDefault={() => dispatch("eliminarEstudio", i)}
-                                        class="text-danger"
-                                        data-toggle="tooltip"
-                                        data-placement="top"
-                                        data-original-title="Eliminar diagnostico"
-                                        ><i
-                                            class="mdi-18px mdi mdi-trash-can-outline"
-                                        /></a
+                                {#if !disabled}
+                                    <div
+                                        style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
                                     >
-                                </div>
+                                        <!-- <a
+                                            href="#!"
+                                            class="text-primary"
+                                            title="Agregar comentarios"
+                                            ><i
+                                                class="mdi-18px mdi mdi-comment-plus-outline"
+                                            /></a
+                                        > -->
+                                            <!-- content here -->
+                                            <a
+                                                href="#!"
+                                                on:click|preventDefault={() => dispatch("eliminarEstudio", i)}
+                                                class="text-danger"
+                                                ><i
+                                                    class="mdi-18px mdi mdi-trash-can-outline"
+                                                /></a>
+                                    </div>
+                                {/if}
                             </li>
                         {/each}
                         {#if estudiosSeleccionados.length === 0}
@@ -315,10 +317,6 @@
                                             estudio
                                         </p>
                                     </div>
-                                    <ul
-                                        class="list-info"
-                                        data-bind="foreach: estudios"
-                                    />
                                 </div>
                             </div>
                         {/if}
