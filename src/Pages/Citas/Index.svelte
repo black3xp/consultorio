@@ -1,4 +1,9 @@
 <script>
+    import FullCalendar from 'svelte-fullcalendar';
+	import dayGridPlugin from '@fullcalendar/daygrid';
+    import interactionPlugin from '@fullcalendar/interaction';
+    import esLocale from '@fullcalendar/core/locales/es';
+
     import { link } from "svelte-spa-router";
     import {onMount} from "svelte";
     import axios from "axios";
@@ -10,11 +15,13 @@
 
 
     let citas = [];
+    let citasCalendar = [];
     let errorServer = false;
     let sltBuscarCitas = '';
     let timeout = null;
     let cargando = false;
     let cambiandoEstado = false;
+    let options = {};
     let estados = {
         N: 'Nuevo',
         X: 'Cancelada',
@@ -108,6 +115,52 @@
                 cargando= false;
                 if(res.status === 200) {
                     citas = res.data
+                    citasCalendar = citas.map(cita => {
+                        return {
+                            title: `${cita.paciente.nombres} ${cita.paciente.apellidos}`,
+                            start: cita.fechaCita,
+                            end: cita.fechaCita,
+                            color: cita.estado === 'N' ? '#00cc99' : '#ff0000',
+                            textColor: '#fff',
+                            extendedProps: {
+                                tanda: cita.tanda === 'V' ? 'Tarde' : cita.tanda === 'N' ? 'Noche' : 'Mañana',
+                            }
+                        }
+                    });
+                    options = {
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay'
+                        },
+                        locales: [ esLocale ],
+                        selectable: true,
+                        selectHelper: true,
+                        eventRender: function(event, element){
+                            jQuery(element).title({title: event.title});
+                        },
+                        editable: false,
+                        dateClick: function(info) {
+                            console.log(info);
+                            //info.dayEl.style.backgroundColor = 'red';
+                        },
+                        eventMouseover: function(event, jsEvent, view) {
+                            console.log(event);
+                        },
+                        eventClick: function(info) {
+                            console.log(info.event);
+                            alert('Event: ' + info.event.title);
+                            alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+                            alert('View: ' + info.view.type);
+
+                            // change the border color just for fun
+                            info.el.style.borderColor = 'red';
+                        },
+                        events: citasCalendar,
+                        initialView: 'dayGridMonth',
+                        plugins: [dayGridPlugin, interactionPlugin],
+                    };
+                    console.log(citasCalendar);
                     console.log(res.data)
                 }
             })
@@ -140,6 +193,7 @@
         <div class="alert alert-secondary" role="alert">
         <div class="row">
                 <div class="col-12">
+                    <div class="calendar"></div>
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
@@ -158,6 +212,7 @@
             </div>
         </div>
         <div class="table-responsive">
+            <FullCalendar {options} />
             <table class="table align-td-middle table-card">
                 <thead>
                 <tr>
