@@ -66,7 +66,6 @@ import ModalAgregarHorario from "../../componentes/Modals/ModalAgregarHorario.sv
                                 icon: 'success',
                                 title: 'Se ha eliminado el horario'
                             })
-                            console.log(res.data)
                             cargarHorariosCitas()
                         }
                     })
@@ -88,7 +87,6 @@ import ModalAgregarHorario from "../../componentes/Modals/ModalAgregarHorario.sv
         axios(config)
             .then(res => {
                 horarios = res.data
-                console.log(res.data)
             })
             .catch(err =>{
                 console.error(err)
@@ -603,7 +601,7 @@ import ModalAgregarHorario from "../../componentes/Modals/ModalAgregarHorario.sv
         </div>
     </section><br><br>
 </main>
-<ModalAgregarHorario/>
+<ModalAgregarHorario on:cargarHorariosCitas={cargarHorariosCitas}/>
 <style>
     .logo-emp {
         width: 100%;

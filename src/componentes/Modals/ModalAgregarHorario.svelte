@@ -1,9 +1,11 @@
 <script>
     import axios from "axios";
-    import { onMount } from "svelte";
+    import { createEventDispatcher, onMount } from "svelte";
     import { url } from "../../util";
 
     import Loading from '../../componentes/Loading.svelte';
+
+    const dispatch = createEventDispatcher();
 
     const Toast = Swal.mixin({
     toast: true,
@@ -42,9 +44,9 @@
         }
         axios(config)
             .then(res => {
-                console.log(res.data)
                 cargando = false;
                 if(res.status === 200){
+                    dispatch('cargarHorariosCitas');
                     Toast.fire({
                         icon: 'success',
                         title: 'Se ha agregado el horario'
@@ -64,7 +66,6 @@
                     }
                 }
             })
-        console.log('Creando')
     }
 
     const cargarTandas = () => {
@@ -78,7 +79,6 @@
         axios(config)
             .then((res) => {
                 tandas = res.data;
-                console.log(res.data);
             })
             .catch((err) => {
                 console.error(err);

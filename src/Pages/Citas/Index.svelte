@@ -3,6 +3,7 @@
 	import dayGridPlugin from '@fullcalendar/daygrid';
     import interactionPlugin from '@fullcalendar/interaction';
     import esLocale from '@fullcalendar/core/locales/es';
+    import ModalCitaCalendario from '../../componentes/Modals/ModalCitaCalendario.svelte';
 
     import { link } from "svelte-spa-router";
     import {onMount} from "svelte";
@@ -13,8 +14,22 @@
     import Aside from "../../Layout/Aside.svelte";
     import ErrorServer from '../../componentes/ErrorConexion.svelte';
 
+    let calendarRef;
+    function next() {
+		let calendarApi = calendarRef.getAPI();
+		calendarApi.next();
+	}
+
+    function prev() {
+		let calendarApi = calendarRef.getAPI();
+		calendarApi.prev();
+	}
 
     let citas = [];
+    let mesCita = new Date().getMonth() + 1;
+    let anioCita = new Date().getFullYear();
+    let dateStr = '';
+    let citasPorMes = [];
     let citasCalendar = [];
     let errorServer = false;
     let sltBuscarCitas = '';
@@ -33,6 +48,11 @@
         V: 'Tarde',
         N: 'Noche',
     }
+    let citasColor = {
+        N: '#00cc99',
+        X: '#f2545b',
+        R: '#95aac9',
+    }
     let txtFecha = new Date().toISOString().split('T')[0];
 
     const searchCitas = () => {
@@ -43,9 +63,104 @@
         timeout = setTimeout(function () { cargarCitas(); }, 300);
     }
 
+    const cargarCitasPorMes = (mes, anio) => {
+        cargando = true;
+        const config = {
+            method: 'get',
+            url: `${url}/citas/mes/${mes}/anio/${anio}`,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            },
+        };
+        axios(config)
+            .then(res => {
+                cargando= false;
+                if(res.status === 200) {
+                    citasPorMes = res.data
+                    citasCalendar = citasPorMes.map(cita => {
+                        return {
+                            title: `${cita.paciente.nombres} ${cita.paciente.apellidos}`,
+                            start: cita.fechaCita,
+                            end: cita.fechaCita,
+                            color: citasColor[cita.estado],
+                            textColor: '#fff',
+                            extendedProps: {
+                                tanda: cita.tanda === 'V' ? 'Tarde' : cita.tanda === 'N' ? 'Noche' : 'Mañana',
+                            }
+                        }
+                    });
+                    citasCalendar = citasCalendar;
+                    options = {
+                        dayMaxEventRows: false,
+                        headerToolbar: { right: 'prev,next' },
+                        locales: [ esLocale ],
+                        selectable: true,
+                        selectHelper: true,
+                        viewRender: function(view, element) {
+                        },
+                        eventRender: function(event, element){
+                            jQuery(element).title({title: event.title});
+                        },
+                        editable: false,
+                        dateClick: function(info) {
+                            dateStr = info.dateStr;
+                            jQuery('#modalCitaCalendario').modal('show')
+                            //info.dayEl.style.backgroundColor = 'red';
+                        },
+                        eventMouseover: function(event, jsEvent, view) {
+                        },
+                        eventClick: function(info, element) {
+                            alert('Event: ' + info.event.title);
+                            alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+                            alert('View: ' + info.view.type);
+
+                            // change the border color just for fun
+                            // info.el.style.borderColor = 'red';
+                        },
+                        customButtons: {
+                            prev: {
+                                text: 'Prev',
+                                click: function(event, element, view) {
+                                    if(mesCita === 1) {
+                                        mesCita = 12;
+                                        anioCita = anioCita - 1;
+                                    } else {
+                                        mesCita = mesCita - 1;
+                                    }
+		                            prev()
+                                    cargarCitasPorMes(mesCita, anioCita);
+                                }
+                            },
+                            next: {
+                                text: 'Next',
+                                click: function(event, element, view) {
+                                    if(mesCita === 12) {
+                                        mesCita = 1;
+                                        anioCita = anioCita + 1;
+                                    } else {
+                                        mesCita = mesCita + 1;
+                                    }
+		                            next()
+                                    cargarCitasPorMes(mesCita, anioCita);
+                                }
+                            },
+                        },
+                        events: citasCalendar,
+                        initialView: sltBuscarCitas,
+                        plugins: [dayGridPlugin, interactionPlugin],
+                    };
+
+                    
+                }
+            })
+            .catch(err => {
+                cargando = false;
+                console.error(err)
+            })
+    }
+
     const cambiarEstadoCita = (idCita, estado) => {
         cambiandoEstado = true;
-        console.log(idCita, estado)
         const cita = {
             estado
         }
@@ -75,7 +190,6 @@
                             if(res.data){
                                 cambiandoEstado = false;
                                 cargarCitas();
-                                console.log(res.data);
                             }
                             cambiandoEstado = false;
                         })
@@ -92,7 +206,6 @@
                 if(res.data){
                     cambiandoEstado = false;
                     cargarCitas();
-                    console.log(res.data);
                 }
                 cambiandoEstado = false;
             })
@@ -116,53 +229,6 @@
                 cargando= false;
                 if(res.status === 200) {
                     citas = res.data
-                    citasCalendar = citas.map(cita => {
-                        return {
-                            title: `${cita.paciente.nombres} ${cita.paciente.apellidos}`,
-                            start: cita.fechaCita,
-                            end: cita.fechaCita,
-                            color: cita.estado === 'N' ? '#00cc99' : '#ff0000',
-                            textColor: '#fff',
-                            extendedProps: {
-                                tanda: cita.tanda === 'V' ? 'Tarde' : cita.tanda === 'N' ? 'Noche' : 'Mañana',
-                            }
-                        }
-                    });
-                    options = {
-                        header: {
-                            left: 'prev,next today',
-                            center: 'title',
-                            right: 'month,agendaWeek,agendaDay'
-                        },
-                        locales: [ esLocale ],
-                        selectable: true,
-                        selectHelper: true,
-                        eventRender: function(event, element){
-                            jQuery(element).title({title: event.title});
-                        },
-                        editable: false,
-                        dateClick: function(info) {
-                            console.log(info);
-                            //info.dayEl.style.backgroundColor = 'red';
-                        },
-                        eventMouseover: function(event, jsEvent, view) {
-                            console.log(event);
-                        },
-                        eventClick: function(info) {
-                            console.log(info.event);
-                            alert('Event: ' + info.event.title);
-                            alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-                            alert('View: ' + info.view.type);
-
-                            // change the border color just for fun
-                            info.el.style.borderColor = 'red';
-                        },
-                        events: citasCalendar,
-                        initialView: sltBuscarCitas,
-                        plugins: [dayGridPlugin, interactionPlugin],
-                    };
-                    console.log(citasCalendar);
-                    console.log(res.data)
                 }
             })
             .catch(err => {
@@ -173,6 +239,7 @@
 
     onMount(() => {
         cargarCitas();
+        cargarCitasPorMes(mesCita, anioCita);
     });
 
 </script>
@@ -228,7 +295,23 @@
                      <div class="card-body">
                          <div class="row">
                              <div class="col-lg-12">
-                                 <FullCalendar {options} />
+                                 <div class="d-flex mb-2">
+                                    <div style={`width:15px; height: 15px; border-radius: 3px; background-color: ${citasColor['N']}`}>
+
+                                    </div>
+                                    <p class="ml-1 mr-3" style="margin-bottom: 0; margin-top: -3px">Nueva</p>
+                                    <div style={`width:15px; height: 15px; border-radius: 3px; background-color: ${citasColor['X']}`}>
+
+                                    </div>
+                                    <p class="ml-1 mr-3" style="margin-bottom: 0; margin-top: -3px">Cancelada</p>
+                                    <div style={`width:15px; height: 15px; border-radius: 3px; background-color: ${citasColor['R']}`}>
+
+                                    </div>
+                                    <p class="ml-1 mr-3" style="margin-bottom: 0; margin-top: -3px">Realizada</p>
+                                 </div>
+                                 <div class="row">
+                                 </div>
+                                 <FullCalendar {options} bind:this={calendarRef} />
                              </div>
                          </div>
                      </div>
@@ -336,3 +419,5 @@
     </div>
   </section>
 </main>
+
+<ModalCitaCalendario {dateStr} on:cargarCitasPorMes={cargarCitasPorMes} on:cargarCitas={cargarCitas}/>

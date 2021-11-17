@@ -11,9 +11,7 @@
 	})
 </script>
 
-<Router 
-on:routeLoaded={event}
-{routes} />
+<Router on:routeLoaded={event} {routes} />
 
 <style>
 

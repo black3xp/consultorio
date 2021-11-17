@@ -4,8 +4,8 @@ import axios from 'axios';
 // const url = 'https://xmconsulta.cthrics.com/api'
 // const url = 'http://localhost:3000/api'
 // const url = 'http://serenidad.xmedical.online:1337/api';
-const url = 'https://consulta.xmedical.online/api';
-// const url = 'http://localhost:1337/api';
+// const url = 'https://consulta.xmedical.online/api';
+const url = 'http://localhost:1337/api';
 
 const isLogin = () => {
     if(localStorage.getItem('auth')){
@@ -56,6 +56,14 @@ const cargarImagenEmpresa = (idConsultorio, idImagen, logo) => {
     .catch(err => {
         console.error(err)
     })
+}
+
+const search = (timeout, cb) => {
+    if (timeout) {
+        window.clearTimeout(timeout);
+    }
+    
+    timeout = setTimeout(function () { cb(); }, 300);
 }
 
 
@@ -221,4 +229,4 @@ let exploracionFisica = [
     {nombre: 'Genitales', activo: false, text: ''}
 ]
 
-export { url, isLogin, logout, user, calcularEdad, ciudades, provincias, nacionalidades, cargarImagenEmpresa }
+export { url, isLogin, logout, user, calcularEdad, ciudades, provincias, nacionalidades, cargarImagenEmpresa, search }
