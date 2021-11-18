@@ -3,6 +3,7 @@ import {push} from 'svelte-spa-router';
 import { isLogin } from './util/index';
 
 import Index from './Pages/Home/Index.svelte';
+import Prueba from './Pages/Prueba.svelte';
 import Pacientes from './Pages/Pacientes/Index.svelte';
 import PacientePerfil from './Pages/Pacientes/PacientePerfil.svelte';
 import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
@@ -33,6 +34,7 @@ const routes = {
             }
         ]
     }),
+    "/prueba": Prueba,
     "/login": Login,
     "/pacientes": wrap({
         component: Pacientes,
