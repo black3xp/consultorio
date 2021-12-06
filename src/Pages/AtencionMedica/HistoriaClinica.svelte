@@ -1,10 +1,10 @@
 <script>
     import { link, push } from "svelte-spa-router";
-    import Loading from '../../componentes/Loading.svelte';
+    import Loading from "../../componentes/Loading.svelte";
     import axios from "axios";
     import { onMount } from "svelte";
     import { url, user } from "../../util/index";
-    import { v4 as uuid } from 'uuid';
+    import { v4 as uuid } from "uuid";
 
     import Header from "../../Layout/Header.svelte";
     import AsideAtencion from "../../Layout/AsideAtencion.svelte";
@@ -14,22 +14,22 @@
     import ModalAntecedentes from "../../componentes/Modals/ModalAntecedentes.svelte";
     import OrdenesMedicas from "../../componentes/OrdenesMedicas.svelte";
     import SignosVitales from "../../componentes/SignosVitales.svelte";
-    import ErrorServer from '../../componentes/ErrorConexion.svelte';
+    import ErrorServer from "../../componentes/ErrorConexion.svelte";
     import NoConexion from "../../componentes/NoConexion.svelte";
-import ErrorConexion from "../../componentes/ErrorConexion.svelte";
-    import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte"
+    import ErrorConexion from "../../componentes/ErrorConexion.svelte";
+    import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
 
     const Toast = Swal.mixin({
         toast: true,
-        position: 'top-end',
+        position: "top-end",
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+    });
 
     export let params = "";
     let paciente = {};
@@ -44,12 +44,12 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     let presionAlterial = {};
     let peso = {};
     let timeout = null;
-    let fecha = '';
-    let hora = '';
+    let fecha = "";
+    let hora = "";
     let cargando = false;
-    let sltBuscarMedicamentos = '';
+    let sltBuscarMedicamentos = "";
     let medicamentosSeleccionados = [];
-    let sltBuscarEstudios = '';
+    let sltBuscarEstudios = "";
     let estudios = [];
     let estudiosSeleccionados = [];
     let historiaGinecologica = {};
@@ -61,347 +61,328 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     let pacienteSeleccionado = {};
     let disabled = false;
 
-    $: if(historia.estado === "C"){
+    $: if (historia.estado === "C") {
         disabled = true;
-    }else{
+    } else {
         disabled = false;
     }
 
     const cargarEmpresa = () => {
         const config = {
-            method: 'get',
+            method: "get",
             url: `${url}/empresas/${user().empresa}`,
             headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
-        }
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
+        };
         axios(config)
-            .then(res => {
-                empresa = res.data
+            .then((res) => {
+                empresa = res.data;
             })
-            .catch(err => {
-                console.error(err)
-            })
-    }
+            .catch((err) => {
+                console.error(err);
+            });
+    };
 
     const abrirHistoria = (id) => {
         Swal.fire({
-            title: '¿Estás seguro?',
+            title: "¿Estás seguro?",
             text: "Se abrir la historia y tendra acceso a modificarla de nuevo!",
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, Abirla!',
-            cancelButtonText: 'Cancelar'
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, Abirla!",
+            cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
                 const config = {
-                    method: 'put',
+                    method: "put",
                     url: `${url}/historias/${id}/abrir`,
                     headers: {
-                        'Authorization': `${localStorage.getItem('auth')}` 
-                    }
-                }
+                        Authorization: `${localStorage.getItem("auth")}`,
+                    },
+                };
                 axios(config)
-                    .then(res => {
-                        if(res.status === 200) {
-                            cargarHistoria()
+                    .then((res) => {
+                        if (res.status === 200) {
+                            cargarHistoria();
                         }
-
                     })
-                    .catch(err => {
-
-                    })
+                    .catch((err) => {});
             }
-        })
-    }
+        });
+    };
 
     const cerrarHistoria = (id) => {
         Swal.fire({
-            title: '¿Estás seguro?',
+            title: "¿Estás seguro?",
             text: "Se cerrara la historia y no podra modificarla en el futuro!",
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, Cerrarla!',
-            cancelButtonText: 'Cancelar'
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, Cerrarla!",
+            cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
                 const config = {
-                    method: 'put',
+                    method: "put",
                     url: `${url}/historias/${id}/cerrar`,
                     headers: {
-                        'Authorization': `${localStorage.getItem('auth')}` 
-                    }
-                }
+                        Authorization: `${localStorage.getItem("auth")}`,
+                    },
+                };
                 axios(config)
-                    .then(res => {
-                        if(res.status === 200) {
-                            cargarHistoria()
+                    .then((res) => {
+                        if (res.status === 200) {
+                            cargarHistoria();
                         }
-
                     })
-                    .catch(err => {
-
-                    })
+                    .catch((err) => {});
             }
-        })
-    }
+        });
+    };
 
     const eliminarHistoria = (id) => {
         Swal.fire({
-            title: '¿Estás seguro?',
+            title: "¿Estás seguro?",
             text: "Se eliminará esta historia clínica, sin embargo, los datos no se perderán, puedes recuperarlos en el futuro!",
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, Eliminarlo!',
-            cancelButtonText: 'Cancelar'
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, Eliminarlo!",
+            cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
                 const config = {
-                    method: 'delete',
+                    method: "delete",
                     url: `${url}/historias/${id}`,
                     headers: {
-                        'Authorization': `${localStorage.getItem('auth')}` 
-                    }
-                }
+                        Authorization: `${localStorage.getItem("auth")}`,
+                    },
+                };
                 axios(config)
-                    .then(res => {
-                        if(res.status === 200) {
-                            push(`/pacientes/perfil/${params.idPaciente}`)
+                    .then((res) => {
+                        if (res.status === 200) {
+                            push(`/pacientes/perfil/${params.idPaciente}`);
                         }
-
                     })
-                    .catch(err => {
-
-                    })
+                    .catch((err) => {});
             }
-        })
-    }
+        });
+    };
 
     const searchMedicamentos = () => {
         if (timeout) {
             window.clearTimeout(timeout);
         }
-        
-        timeout = setTimeout(function () { cargarMedicamentos(); }, 300);
-    }
+
+        timeout = setTimeout(function () {
+            cargarMedicamentos();
+        }, 300);
+    };
 
     function searchDiagnosticos() {
         if (timeout) {
             window.clearTimeout(timeout);
         }
-        
-        timeout = setTimeout(function () { cargarDiagnosticos(); }, 300);
+
+        timeout = setTimeout(function () {
+            cargarDiagnosticos();
+        }, 300);
     }
 
     const searchEstudios = () => {
         if (timeout) {
             window.clearTimeout(timeout);
         }
-        
-        timeout = setTimeout(function () { cargarEstudios(); }, 300);
-    }
+
+        timeout = setTimeout(function () {
+            cargarEstudios();
+        }, 300);
+    };
 
     const agregarEstudio = (obj) => {
-        estudiosSeleccionados = [...estudiosSeleccionados, obj.detail]
+        estudiosSeleccionados = [...estudiosSeleccionados, obj.detail];
         historia.estudios = estudiosSeleccionados;
         guardarHistoria();
-        sltBuscarEstudios = '';
-    }
+        sltBuscarEstudios = "";
+    };
 
     const agregarDiagnosticoPersonalizado = (nombre) => {
         const diagnostico = {
             d: nombre,
-            c: 'PERS',
+            c: "PERS",
             id: uuid(),
         };
         diagnosticosSeleccionados = [...diagnosticosSeleccionados, diagnostico];
         guardarHistoria();
-    }
+    };
 
     const agregarComentarioDiagnostico = (position) => {
-        if(diagnosticosSeleccionados[position].comentario === undefined) {
-            diagnosticosSeleccionados[position].comentario = '';
+        if (diagnosticosSeleccionados[position].comentario === undefined) {
+            diagnosticosSeleccionados[position].comentario = "";
             historia.diagnosticos = diagnosticosSeleccionados;
             guardarHistoria();
-        }
-        else
-        {
+        } else {
             delete diagnosticosSeleccionados[position].comentario;
             diagnosticosSeleccionados = diagnosticosSeleccionados;
             historia.diagnosticos = diagnosticosSeleccionados;
             guardarHistoria();
         }
-    }
+    };
 
     const eliminarMedicamento = (event) => {
-        if(confirm("Desea eliminar el medicamento?")){
-            medicamentosSeleccionados.splice(event.detail, 1)
+        if (confirm("Desea eliminar el medicamento?")) {
+            medicamentosSeleccionados.splice(event.detail, 1);
             medicamentosSeleccionados = medicamentosSeleccionados;
             historia.medicamentos = medicamentosSeleccionados;
             guardarHistoria();
         }
-    }
+    };
 
     const eliminarDiagnostico = (position) => {
         Swal.fire({
-            title: '¿Esta seguro?',
+            title: "¿Esta seguro?",
             text: "Esta acción eliminara el diagnostico de la consulta, pero puede agregarlo nuevamente luego.!",
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, Eliminar!',
-            cancelButtonText: 'Cancelar',
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, Eliminar!",
+            cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
-                diagnosticosSeleccionados.splice(position,1);
+                diagnosticosSeleccionados.splice(position, 1);
                 diagnosticosSeleccionados = diagnosticosSeleccionados;
                 historia.diagnosticos = diagnosticosSeleccionados;
                 guardarHistoria();
                 Toast.fire({
-                    icon: 'success',
-                    title: 'Se ha eliminado correctamente'
-                })
+                    icon: "success",
+                    title: "Se ha eliminado correctamente",
+                });
             }
-        })
-    }
+        });
+    };
 
     const eliminarEstudios = (event) => {
-        Swal.fire({
-            title: '¿Está seguro?',
-            text: "Se eliminará este estudio de la lista, pero puede volver a agregarlo luego!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, Eliminarlo!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-        if (result.isConfirmed) {
-            estudiosSeleccionados.splice(event.detail, 1)
-            estudiosSeleccionados = estudiosSeleccionados;
-            historia.estudios = estudiosSeleccionados;
-            guardarHistoria();
-            Toast.fire({
-                icon: 'success',
-                title: 'Se ha eliminado correctamente'
-            })
-        }
-        })
-    }
+        estudiosSeleccionados = estudiosSeleccionados.filter(
+            (estudio) => estudio.id !== event.detail
+        );
+        historia.estudios = estudiosSeleccionados;
+        guardarHistoria();
+        Toast.fire({
+            icon: "success",
+            title: "Se ha eliminado correctamente",
+        });
+    };
 
     const agregarMedicamento = (event) => {
-        if(!event.detail){
-            return false
+        if (!event.detail) {
+            return false;
         }
         const medicamento = {
             nombre: event.detail,
-            concentracion: '',
-            cantidad: '',
-            frecuencia: '',
-        }
-        medicamentosSeleccionados = [...medicamentosSeleccionados, medicamento]
+            concentracion: "",
+            cantidad: "",
+            frecuencia: "",
+        };
+        medicamentosSeleccionados = [...medicamentosSeleccionados, medicamento];
         historia.medicamentos = medicamentosSeleccionados;
-        sltBuscarMedicamentos = '';
+        sltBuscarMedicamentos = "";
         guardarHistoria();
-    }
+    };
 
     const cargarEstudios = () => {
         const config = {
-            method: 'get',
+            method: "get",
             url: `${url}/estudios?b=${sltBuscarEstudios}`,
             headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
         };
         axios(config)
-            .then(res => {
+            .then((res) => {
                 estudios = res.data;
             })
-            .catch(err => {
-                console.error(err)
-            })
-    }
+            .catch((err) => {
+                console.error(err);
+            });
+    };
 
     const cargarMedicamentos = () => {
         const config = {
-            method: 'get',
+            method: "get",
             url: `${url}/medicamentos?b=${sltBuscarMedicamentos}`,
             headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
-        }
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
+        };
         axios(config)
-            .then(res => {
+            .then((res) => {
                 medicamentos = res.data;
             })
-            .catch(error => {
-                console.error(error)
-            })
-    }
+            .catch((error) => {
+                console.error(error);
+            });
+    };
 
     const guardarHistoria = () => {
         errorServer = false;
         cargando = true;
-        historia.diagnosticos = diagnosticosSeleccionados
+        historia.diagnosticos = diagnosticosSeleccionados;
         delete historia.id;
         const config = {
-            method: 'put',
+            method: "put",
             url: `${url}/historias/${params.idHistoria}`,
             data: historia,
             headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
-        }
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
+        };
         try {
             axios(config)
-            .then(res => {
-                cargando= false
-                if(res.status !== 200){
-                    errorServer = true;
-                }
-            })
-            .catch(error => {
-                if(error) {
-                    errorServer = true;
-                    cargando = false
-                }
-                cargando = false
-                console.error(error)
-            })
+                .then((res) => {
+                    cargando = false;
+                    if (res.status !== 200) {
+                        errorServer = true;
+                    }
+                })
+                .catch((error) => {
+                    if (error) {
+                        errorServer = true;
+                        cargando = false;
+                    }
+                    cargando = false;
+                    console.error(error);
+                });
         } catch (error) {
             errorServer = true;
-            cargando = false
+            cargando = false;
         }
     };
 
     async function cargarPaciente() {
-        cargandoHistoria = true; 
+        cargandoHistoria = true;
         const config = {
             method: "get",
             url: `${url}/pacientes/${params.idPaciente}`,
             headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
         };
         try {
             let promesa = await axios(config);
-            cargandoHistoria = false; 
+            cargandoHistoria = false;
             if (promesa.status == 200) {
                 paciente = await promesa.data;
                 edad = calcularEdad(paciente.fechaNacimiento);
-                if(paciente.seguroMedico.length !== 0){
+                if (paciente.seguroMedico.length !== 0) {
                     seguro = paciente.seguroMedico[0].nombre;
-                }
-                else
-                {
-                    seguro = "N/A"
+                } else {
+                    seguro = "N/A";
                 }
             } else {
                 serverConexion = true;
@@ -420,27 +401,30 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 method: "get",
                 url: `${url}/historias/${params.idHistoria}`,
                 headers: {
-                    'Authorization': `${localStorage.getItem('auth')}` 
-                }
+                    Authorization: `${localStorage.getItem("auth")}`,
+                },
             };
-            
+
             let promesa = await axios(config);
             historia = promesa.data;
             temperatura = promesa.data.temperatura;
             presionAlterial = promesa.data.presionAlterial;
             peso = promesa.data.peso;
-            diagnosticosSeleccionados = promesa.data.diagnosticos
-            fecha = promesa.data.fechaHora.split('T')[0];
+            diagnosticosSeleccionados = promesa.data.diagnosticos;
+            fecha = promesa.data.fechaHora.split("T")[0];
             medicamentosSeleccionados = promesa.data.medicamentos;
             estudiosSeleccionados = promesa.data.estudios;
             historiaGinecologica = promesa.data.historiaGinecologica;
             exploracionFisica = promesa.data.exploracionFisica || [];
-            let obtenerHora = promesa.data.fechaHora.split('T')[1].split('Z')[0].split('.')[0].split(':')
-            hora = obtenerHora[0]+':'+obtenerHora[1]
-
+            let obtenerHora = promesa.data.fechaHora
+                .split("T")[1]
+                .split("Z")[0]
+                .split(".")[0]
+                .split(":");
+            hora = obtenerHora[0] + ":" + obtenerHora[1];
         } catch (error) {
             serverConexion = true;
-            console.log(serverConexion)
+            console.log(serverConexion);
             console.error(error);
         }
     };
@@ -452,8 +436,8 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
             method: "get",
             url: `${url}/diagnosticos?b=${inpBuscarDiagnostico}`,
             headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
         };
         setTimeout(() => {
             axios(config)
@@ -471,15 +455,15 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
             method: "get",
             url: `${url}/diagnosticos/${id}`,
             headers: {
-                'Authorization': `${localStorage.getItem('auth')}` 
-            }
+                Authorization: `${localStorage.getItem("auth")}`,
+            },
         };
         axios(config).then((res) => {
             diagnosticosSeleccionados = [
                 ...diagnosticosSeleccionados,
                 res.data,
             ];
-            guardarHistoria()
+            guardarHistoria();
         });
         inpBuscarDiagnostico = "";
     }
@@ -512,17 +496,19 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
 
 <div class="contenedor-datos" id="divHeaderBar">
     {#if errorServer}
-        <ErrorServer msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}/>
+        <ErrorServer
+            msgError={"Ocurrio un error en la conexion con el servidor, vuelva a intentarlo o llame al administrador"}
+        />
     {/if}
     {#if serverConexion}
-        <NoConexion/>
+        <NoConexion />
     {/if}
     {#if cargandoHistoria}
         <div class="cargando">
-            <Loading/>
+            <Loading />
         </div>
     {/if}
-    
+
     <div class="row">
         <div class="col-md-6">
             <h5>
@@ -537,36 +523,30 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
         <div class="col-md-6" style="text-align: right;">
             <div class="guardar-documento">
                 {#if !cargando && !errorServer}
-                    <div
-                        class="guardando mr-2 text-success"
-                    >
+                    <div class="guardando mr-2 text-success">
                         <i class="mdi mdi-check-all" /> <i>listo y guardado</i>
                     </div>
                 {/if}
                 {#if errorServer}
-                    <div
-                        class="guardando mr-2 text-danger"
-                    >
-                    <i class="mdi mdi-close"></i> <i>error al guardar</i>
+                    <div class="guardando mr-2 text-danger">
+                        <i class="mdi mdi-close" /> <i>error al guardar</i>
                     </div>
                 {/if}
                 {#if cargando && !errorServer}
-                    <div
-                        class="guardando mr-2 text-secondary"
-                    >
-                        <i class="mdi mdi-cached mdi-spin"></i> Guardando
+                    <div class="guardando mr-2 text-secondary">
+                        <i class="mdi mdi-cached mdi-spin" /> Guardando
                     </div>
                 {/if}
             </div>
         </div>
-        {#if historia.estado === 'A'}
+        {#if historia.estado === "A"}
             <button
                 type="button"
                 class="btn m-b-15 ml-2 mr-2 btn-lg btn-rounded-circle btn-success flotante"
                 data-tooltip="Guardar"
                 on:click={guardarHistoria}
             >
-                <i class="mdi mdi-content-save-outline"></i>
+                <i class="mdi mdi-content-save-outline" />
             </button>
         {/if}
         <div class="col-lg-12">
@@ -580,27 +560,27 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <i data-bind="class: icon" class="mdi mdi-comment-eye" />
                     <sapn data-bind="text: text">Datos del Paciente</sapn>
                 </button>
-                {#if user().roles.includes('admin')}
-                    {#if historia.estado === 'C'}
+                {#if user().roles.includes("admin")}
+                    {#if historia.estado === "C"}
                         <button
                             on:click={() => abrirHistoria(params.idHistoria)}
                             style="box-shadow:none;"
                             class="btn btn-outline-danger btn-sm"
                         >
-                            <i class="mdi mdi-playlist-plus"></i>
+                            <i class="mdi mdi-playlist-plus" />
                             Abrir Historia
                         </button>
                     {/if}
-                     {#if historia.estado === 'A'}
-                         <button
-                             on:click={() => cerrarHistoria(params.idHistoria)}
-                             style="box-shadow:none;"
-                             class="btn btn-success btn-sm"
-                         >
-                             <i class="mdi mdi-playlist-remove"></i>
-                             Cerrar Historia
-                         </button>
-                     {/if}
+                    {#if historia.estado === "A"}
+                        <button
+                            on:click={() => cerrarHistoria(params.idHistoria)}
+                            style="box-shadow:none;"
+                            class="btn btn-success btn-sm"
+                        >
+                            <i class="mdi mdi-playlist-remove" />
+                            Cerrar Historia
+                        </button>
+                    {/if}
                 {/if}
 
                 <!-- <button
@@ -635,21 +615,22 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 <button
                     style="box-shadow:none;"
                     class="btn btn-outline-success btn-sm btn-hover-white"
-                    on:click|preventDefault={() => pacienteSeleccionado = {
-                        id:paciente.id, 
-                        nombres: paciente.nombres,
-                        apellidos: paciente.apellidos,
-                        sexo: paciente.sexo,
-                        fechaNacimiento: paciente.fechaNacimiento,
-                        nacionalidad: paciente.nacionalidad,
-                        telefono: paciente.telefono,
-                        celular: paciente.celular,
-                        cedula: paciente.cedula,
-                    }}
+                    on:click|preventDefault={() =>
+                        (pacienteSeleccionado = {
+                            id: paciente.id,
+                            nombres: paciente.nombres,
+                            apellidos: paciente.apellidos,
+                            sexo: paciente.sexo,
+                            fechaNacimiento: paciente.fechaNacimiento,
+                            nacionalidad: paciente.nacionalidad,
+                            telefono: paciente.telefono,
+                            celular: paciente.celular,
+                            cedula: paciente.cedula,
+                        })}
                     data-toggle="modal"
                     data-target="#modalNuevaCita"
                 >
-                    <i class="mdi mdi-calendar-multiselect"></i>
+                    <i class="mdi mdi-calendar-multiselect" />
                     Nueva cita
                 </button>
 
@@ -662,15 +643,15 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     <i data-bind="class: icon" class="mdi mdi-account-clock" />
                     <sapn data-bind="text: text">Antecedentes</sapn>
                 </button> -->
-                {#if historia.estado === 'A'}
-                     <button
-                         on:click={() => eliminarHistoria(params.idHistoria)}
-                         style="box-shadow:none;"
-                         class="btn btn-danger btn-sm"
-                     >
-                         <i data-bind="class: icon" class="mdi mdi-delete" />
-                         <sapn data-bind="text: text">Anular</sapn>
-                     </button>
+                {#if historia.estado === "A"}
+                    <button
+                        on:click={() => eliminarHistoria(params.idHistoria)}
+                        style="box-shadow:none;"
+                        class="btn btn-danger btn-sm"
+                    >
+                        <i data-bind="class: icon" class="mdi mdi-delete" />
+                        <sapn data-bind="text: text">Anular</sapn>
+                    </button>
                 {/if}
             </div>
         </div>
@@ -701,9 +682,7 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                     />
                 </div>
             </div>
-            <div
-                class="card m-b-20 autosave"
-            >
+            <div class="card m-b-20 autosave">
                 <div class="card-header">
                     <div class="card-title">Historia de la enfermedad</div>
                 </div>
@@ -721,422 +700,638 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 </div>
             </div>
             {#if empresa.historiaGinecologica}
-            <!-- Historia ginecologica -->
-            <div class="card m-b-20 border border-primary">
-                <div class="card-header">
-                    <div class="card-title text-primary">
-                        Historia Ginecologica
+                <!-- Historia ginecologica -->
+                <div class="card m-b-20 border border-primary">
+                    <div class="card-header">
+                        <div class="card-title text-primary">
+                            Historia Ginecologica
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        >Fecha ultima menstruaci&oacute;n</label
+                                    >
+                                    <input
+                                        {disabled}
+                                        type="date"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.fechaUltimaMenstruacion}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="">Fecha ultimo pap</label>
+                                    <input
+                                        {disabled}
+                                        type="date"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.fechaUltimoPap}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="">Fecha ultimo parto</label>
+                                    <input
+                                        {disabled}
+                                        type="date"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.fechaUltimoParto}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="">Fecha ultimo aborto</label>
+                                    <input
+                                        {disabled}
+                                        type="date"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.fechaUltimoAborto}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        >Fecha ultima ces&aacute;rea</label
+                                    >
+                                    <input
+                                        {disabled}
+                                        type="date"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.fechaUltimoCesarea}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        >Intervalo flujo menstrual</label
+                                    >
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        placeholder="Dias"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.intervaloFlujoMenstrual}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        >Cantidad flujo menstrual</label
+                                    >
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        placeholder="Dias"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.cantidadFlujoMenstrual}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        >Duracion flujo menstrual</label
+                                    >
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        placeholder="Dias"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.duracionFlujoMenstrual}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Gesta</label>
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.gesta}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Para</label>
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.para}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Abortos</label>
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.abortos}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Ces&aacute;reas</label>
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.cesareas}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Espont&aacute;neos</label>
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.espontaneos}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Provocados</label>
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.provocados}
+                                    />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Legrados</label>
+                                    <input
+                                        {disabled}
+                                        type="number"
+                                        class="form-control"
+                                        on:blur={guardarHistoria}
+                                        bind:value={historiaGinecologica.legrados}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="mt-3">Planificaci&oacute;n</h5>
+                        <hr />
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.sangradoVaginal}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >Sangrado Vaginal</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.vidaSexualActiva}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >Vida Sexual Activa</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.anticonceptivosOrales}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >Anticonceptivos Orales</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.diu}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >DIU</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.aqv}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >AQV</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.condon}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >Cond&oacute;n</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.norplant}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >Norplant</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.ritmo}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >Ritmo</span
+                                    >
+                                </label>
+                                <label class="cstm-switch mr-4 mb-4">
+                                    <input
+                                        {disabled}
+                                        type="checkbox"
+                                        on:change={guardarHistoria}
+                                        bind:checked={historiaGinecologica.coitoInterruptus}
+                                        name="option"
+                                        value="1"
+                                        class="cstm-switch-input"
+                                    />
+                                    <span
+                                        class="cstm-switch-indicator bg-success "
+                                    />
+                                    <span class="cstm-switch-description"
+                                        >Coito Interruptus</span
+                                    >
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Fecha ultima menstruaci&oacute;n</label>
-                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimaMenstruacion}>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Fecha ultimo pap</label>
-                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoPap}>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Fecha ultimo parto</label>
-                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoParto}>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Fecha ultimo aborto</label>
-                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoAborto}>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Fecha ultima ces&aacute;rea</label>
-                                <input {disabled} type="date" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.fechaUltimoCesarea}>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Intervalo flujo menstrual</label>
-                                <input {disabled} type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.intervaloFlujoMenstrual}>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Cantidad flujo menstrual</label>
-                                <input {disabled} type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.cantidadFlujoMenstrual}>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label for="">Duracion flujo menstrual</label>
-                                <input {disabled} type="number" class="form-control" placeholder="Dias" on:blur={guardarHistoria} bind:value={historiaGinecologica.duracionFlujoMenstrual}>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Gesta</label>
-                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.gesta}>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Para</label>
-                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.para}>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Abortos</label>
-                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.abortos}>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Ces&aacute;reas</label>
-                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.cesareas}>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Espont&aacute;neos</label>
-                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.espontaneos}>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Provocados</label>
-                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.provocados}>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Legrados</label>
-                                <input {disabled} type="number" class="form-control" on:blur={guardarHistoria} bind:value={historiaGinecologica.legrados}>
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="mt-3">Planificaci&oacute;n</h5>
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.sangradoVaginal} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">Sangrado Vaginal</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.vidaSexualActiva} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">Vida Sexual Activa</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.anticonceptivosOrales} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">Anticonceptivos Orales</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.diu} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">DIU</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.aqv} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">AQV</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.condon} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">Cond&oacute;n</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.norplant} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">Norplant</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.ritmo} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">Ritmo</span>
-                            </label>
-                            <label class="cstm-switch mr-4 mb-4">
-                                <input {disabled} type="checkbox" on:change={guardarHistoria} bind:checked={historiaGinecologica.coitoInterruptus} name="option" value="1" class="cstm-switch-input">
-                                <span class="cstm-switch-indicator bg-success "></span>
-                                <span class="cstm-switch-description">Coito Interruptus</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- .Historia ginecologica -->
+                <!-- .Historia ginecologica -->
             {/if}
             {#if empresa.signosVitales}
-                 <!-- content here -->
-                 <div class="card m-b-20 margen-mobile autosave">
-                     <div class="card-header">
-                         <div class="card-title">Signos vitales</div>
-                     </div>
-                     <div class="card-body">
-                         <div class="row">
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i class="mdi mdi-thermometer mdi-18px" /> Temperatura</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-7">
-                                             <input
+                <!-- content here -->
+                <div class="card m-b-20 margen-mobile autosave">
+                    <div class="card-header">
+                        <div class="card-title">Signos vitales</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i
+                                            class="mdi mdi-thermometer mdi-18px"
+                                        /> Temperatura</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <input
                                                 {disabled}
-                                                 type="number"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={temperatura.valor}
-                                             />
-                                         </div>
-                                         <div class="col-lg-5">
-                                             <!-- svelte-ignore a11y-no-onchange -->
-                                             <select class="form-control" {disabled} on:change={guardarHistoria} bind:value={temperatura.tipo}>
-                                                 <option value="C" selected>°C</option>
-                                                 <option value="K">°K</option>
-                                                 <option value="F">°F</option>
-                                             </select>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i class="mdi mdi-chart-line mdi-18px" /> Frecuencia
-                                         respiratoria</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-12">
-                                             <input
+                                                type="number"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={temperatura.valor}
+                                            />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <!-- svelte-ignore a11y-no-onchange -->
+                                            <select
+                                                class="form-control"
                                                 {disabled}
-                                                 type="number"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={historia.frecuenciaRespiratoria}
-                                             />
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i class="mdi mdi-heart-pulse mdi-18px" /> Frecuencia
-                                         cardiaca</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-12">
-                                             <input
+                                                on:change={guardarHistoria}
+                                                bind:value={temperatura.tipo}
+                                            >
+                                                <option value="C" selected
+                                                    >°C</option
+                                                >
+                                                <option value="K">°K</option>
+                                                <option value="F">°F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i
+                                            class="mdi mdi-chart-line mdi-18px"
+                                        /> Frecuencia respiratoria</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <input
                                                 {disabled}
-                                                 type="number"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={historia.frecuenciaCardiaca}
-                                             />
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i class="mdi mdi-heart-pulse mdi-18px" /> Presion
-                                         alterial (mmHg)</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-6">
-                                             <input
+                                                type="number"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={historia.frecuenciaRespiratoria}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i
+                                            class="mdi mdi-heart-pulse mdi-18px"
+                                        /> Frecuencia cardiaca</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <input
                                                 {disabled}
-                                                 type="number"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={presionAlterial.mm}
-                                             />
-                                         </div>
-                                         <div class="col-lg-6">
-                                             <input
+                                                type="number"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={historia.frecuenciaCardiaca}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i
+                                            class="mdi mdi-heart-pulse mdi-18px"
+                                        /> Presion alterial (mmHg)</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input
                                                 {disabled}
-                                                 type="number"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={presionAlterial.Hg}
-                                             />
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                                                type="number"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={presionAlterial.mm}
+                                            />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input
+                                                {disabled}
+                                                type="number"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={presionAlterial.Hg}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {/if}
             {#if empresa.otrosParametros}
-                 <div class="card m-b-20">
-                     <div class="card-header">
-                         <div class="card-title">Otros Parametros</div>
-                     </div>
-                     <div class="card-body">
-                         <div class="row">
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i class="mdi mdi-weight-pound" /> Peso</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-7">
-                                             <input
+                <div class="card m-b-20">
+                    <div class="card-header">
+                        <div class="card-title">Otros Parametros</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i class="mdi mdi-weight-pound" /> Peso</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <input
                                                 {disabled}
-                                                 type="number"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={peso.valor}
-                                             />
-                                         </div>
-                                         <div class="col-lg-5">
-                                             <!-- svelte-ignore a11y-no-onchange -->
-                                             <select class="form-control"
+                                                type="number"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={peso.valor}
+                                            />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <!-- svelte-ignore a11y-no-onchange -->
+                                            <select
+                                                class="form-control"
                                                 {disabled}
-                                                 on:change={guardarHistoria}
-                                                 bind:value={peso.tipo}
-                                             >
-                                                 <option value="Lb">Lb</option>
-                                                 <option value="Kg">Kg</option>
-                                             </select>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i class="mdi mdi-human" /> Escala de
-                                         glasgow</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-12">
-                                             <div
-                                                 class="input-group"
-                                                 style="width: 100% !important; float: right;"
-                                             >
-                                                 <input
+                                                on:change={guardarHistoria}
+                                                bind:value={peso.tipo}
+                                            >
+                                                <option value="Lb">Lb</option>
+                                                <option value="Kg">Kg</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i class="mdi mdi-human" /> Escala de glasgow</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div
+                                                class="input-group"
+                                                style="width: 100% !important; float: right;"
+                                            >
+                                                <input
                                                     {disabled}
-                                                     type="number"
-                                                     class="form-control"
-                                                     max="15"
-                                                     maxlength="2"
-                                                     aria-label="Recipient's username"
-                                                     aria-describedby="basic-addon2"
-                                                     on:blur={guardarHistoria}
-                                                     bind:value={historia.escalaGalsgow}
-                                                 />
-                                                 <div
-                                                     class="input-group-append"
-                                                 >
-                                                     <span
-                                                         class="input-group-text"
-                                                         id="basic-addon2"
-                                                         >/ 15</span
-                                                     >
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i
-                                             class="mdi mdi-emoticon-happy"
-                                         /> Escala de dolor</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-12">
-                                             <div
-                                                 class="input-group"
-                                                 style="width: 100% !important; float: right;"
-                                             >
-                                                 <input
+                                                    type="number"
+                                                    class="form-control"
+                                                    max="15"
+                                                    maxlength="2"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="basic-addon2"
+                                                    on:blur={guardarHistoria}
+                                                    bind:value={historia.escalaGalsgow}
+                                                />
+                                                <div class="input-group-append">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2"
+                                                        >/ 15</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i class="mdi mdi-emoticon-happy" /> Escala
+                                        de dolor</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div
+                                                class="input-group"
+                                                style="width: 100% !important; float: right;"
+                                            >
+                                                <input
                                                     {disabled}
-                                                     type="number"
-                                                     class="form-control"
-                                                     max="10"
-                                                     maxlength="2"
-                                                     aria-label="Recipient's username"
-                                                     aria-describedby="basic-addon2"
-                                                     on:blur={guardarHistoria}
-                                                     bind:value={historia.escalaDolor}
-                                                 />
-                                                 <div
-                                                     class="input-group-append"
-                                                 >
-                                                     <span
-                                                         class="input-group-text"
-                                                         id="basic-addon2"
-                                                         >/ 10</span
-                                                     >
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3">
-                                 <div class="form-group">
-                                     <label for=""
-                                         ><i class="mdi mdi-opacity" /> Saturaci&oacute;n
-                                         de oxigeno</label
-                                     >
-                                     <div class="row">
-                                         <div class="col-lg-12">
-                                             <input
+                                                    type="number"
+                                                    class="form-control"
+                                                    max="10"
+                                                    maxlength="2"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="basic-addon2"
+                                                    on:blur={guardarHistoria}
+                                                    bind:value={historia.escalaDolor}
+                                                />
+                                                <div class="input-group-append">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2"
+                                                        >/ 10</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for=""
+                                        ><i class="mdi mdi-opacity" /> Saturaci&oacute;n
+                                        de oxigeno</label
+                                    >
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <input
                                                 {disabled}
-                                                 type="number"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={historia.saturacionOxigeno}
-                                             />
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-12">
-                                 <div class="form-group">
-                                     <label for="">Otros</label>
-                                     <div class="row">
-                                         <div class="col-lg-12">
-                                             <input
+                                                type="number"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={historia.saturacionOxigeno}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="">Otros</label>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <input
                                                 {disabled}
-                                                 type="text"
-                                                 class="form-control"
-                                                 on:blur={guardarHistoria}
-                                                 bind:value={historia.otrosParametros}
-                                             />
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                                                type="text"
+                                                class="form-control"
+                                                on:blur={guardarHistoria}
+                                                bind:value={historia.otrosParametros}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {/if}
 
-            <div
-                class="card m-b-20 autosave"
-            >
+            <div class="card m-b-20 autosave">
                 <div class="card-header">
                     <div class="card-title">Examen Fisico</div>
                 </div>
@@ -1177,41 +1372,58 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
             </div>
 
             {#if empresa.exploracionFisica}
-                 <div class="card m-b-20">
-                     <div class="card-header">
-                         <div class="card-title">Exploraci&oacute;n Fisica</div>
-                     </div>
-                     <div class="card-body">
-                         <div class="row">
-                             <div class="col-12">
-                                 {#each exploracionFisica as item}
-                                     {#if !item.activo}
-                                         <button class="btn btn-outline-primary mr-2" disabled={disabled} on:click={() => { item.activo = true; guardarHistoria()} }>{item.nombre}</button>
-                                     {/if}
-                                 {/each}
-                             </div>
-                             <hr/>
-                             <div class="col-12">
-                                 <div class="row mt-2">
-                                     {#each exploracionFisica as item}
-                                         {#if item.activo}
-                                             <div class="col-lg-4">
-                                                 <div class="card m-t-10 m-b-20 border border-primary">
-                                                     <div class="card-header">
-                                                         <div class="card-title">{item.nombre}</div>
-                                                     </div>
-                                                     <div class="card-body">
-                                                         <textarea {disabled} bind:value={item.text} on:blur={guardarHistoria} class="form-control" rows="5"></textarea>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         {/if}
-                                     {/each}
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                <div class="card m-b-20">
+                    <div class="card-header">
+                        <div class="card-title">Exploraci&oacute;n Fisica</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                {#each exploracionFisica as item}
+                                    {#if !item.activo}
+                                        <button
+                                            class="btn btn-outline-primary mr-2"
+                                            {disabled}
+                                            on:click={() => {
+                                                item.activo = true;
+                                                guardarHistoria();
+                                            }}>{item.nombre}</button
+                                        >
+                                    {/if}
+                                {/each}
+                            </div>
+                            <hr />
+                            <div class="col-12">
+                                <div class="row mt-2">
+                                    {#each exploracionFisica as item}
+                                        {#if item.activo}
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="card m-t-10 m-b-20 border border-primary"
+                                                >
+                                                    <div class="card-header">
+                                                        <div class="card-title">
+                                                            {item.nombre}
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <textarea
+                                                            {disabled}
+                                                            bind:value={item.text}
+                                                            on:blur={guardarHistoria}
+                                                            class="form-control"
+                                                            rows="5"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {/if}
+                                    {/each}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {/if}
 
             <div class="card m-b-20">
@@ -1281,10 +1493,15 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                             </li>
                                         {/each}
                                         <li class="defecto">
-                                            <a href="#!"
-                                                on:click|preventDefault={() => agregarDiagnosticoPersonalizado(inpBuscarDiagnostico)}
-                                                ><i class="mdi mdi-plus" />Agregar
-                                                manualmente</a
+                                            <a
+                                                href="#!"
+                                                on:click|preventDefault={() =>
+                                                    agregarDiagnosticoPersonalizado(
+                                                        inpBuscarDiagnostico
+                                                    )}
+                                                ><i
+                                                    class="mdi mdi-plus"
+                                                />Agregar manualmente</a
                                             >
                                         </li>
                                     </div>
@@ -1300,34 +1517,45 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                                             >{item.c}</span
                                         >&nbsp;<span>{item.d}</span>
                                         {#if !disabled}
-                                             <!-- content here -->
-                                             <div
-                                                 style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
-                                             >
-                                                 <a
-                                                     href="#!"
-                                                     class="text-primary"
-                                                     data-tooltip="Comentar"
-                                                     on:click|preventDefault={() => agregarComentarioDiagnostico(i)}
-                                                     ><i
-                                                         class="mdi-18px mdi mdi-comment-plus-outline"
-                                                     /></a
-                                                 >
-                                                 <a
-                                                     href="#!"
-                                                     class="text-danger"
-                                                     data-tooltip="Eliminar"
-                                                     on:click|preventDefault={() => eliminarDiagnostico(i)}
-                                                     ><i
-                                                         class="mdi-18px mdi mdi-trash-can-outline"
-                                                     /></a
-                                                 >
-                                             </div>
+                                            <!-- content here -->
+                                            <div
+                                                style="position: absolute; top: 0; right: 0;padding: 10px; background-color: white; border-bottom-left-radius: 5px;"
+                                            >
+                                                <a
+                                                    href="#!"
+                                                    class="text-primary"
+                                                    data-tooltip="Comentar"
+                                                    on:click|preventDefault={() =>
+                                                        agregarComentarioDiagnostico(
+                                                            i
+                                                        )}
+                                                    ><i
+                                                        class="mdi-18px mdi mdi-comment-plus-outline"
+                                                    /></a
+                                                >
+                                                <a
+                                                    href="#!"
+                                                    class="text-danger"
+                                                    data-tooltip="Eliminar"
+                                                    on:click|preventDefault={() =>
+                                                        eliminarDiagnostico(i)}
+                                                    ><i
+                                                        class="mdi-18px mdi mdi-trash-can-outline"
+                                                    /></a
+                                                >
+                                            </div>
                                         {/if}
                                         {#if item.comentario !== undefined}
                                             <div class="row mt-3">
                                                 <div class="col">
-                                                    <input {disabled} type="text" on:blur={guardarHistoria} bind:value={item.comentario} class="form-control border-primary" placeholder="Comentario">
+                                                    <input
+                                                        {disabled}
+                                                        type="text"
+                                                        on:blur={guardarHistoria}
+                                                        bind:value={item.comentario}
+                                                        class="form-control border-primary"
+                                                        placeholder="Comentario"
+                                                    />
                                                 </div>
                                             </div>
                                         {/if}
@@ -1360,13 +1588,13 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
                 {disabled}
                 bind:idHistoria={params.idHistoria}
                 bind:idPaciente={params.idPaciente}
-                bind:estudiosSeleccionados={estudiosSeleccionados}
-                bind:medicamentosSeleccionados={medicamentosSeleccionados}
-                bind:sltBuscarMedicamentos={sltBuscarMedicamentos}
-                bind:sltBuscarEstudios={sltBuscarEstudios}
-                bind:medicamentos={medicamentos}
+                bind:estudiosSeleccionados
+                bind:medicamentosSeleccionados
+                bind:sltBuscarMedicamentos
+                bind:sltBuscarEstudios
+                bind:medicamentos
                 bind:instrucciones={historia.instrucciones}
-                bind:estudios={estudios}
+                bind:estudios
                 on:eliminarEstudio={eliminarEstudios}
                 on:agregarEstudio={agregarEstudio}
                 on:buscandoEstudios={searchEstudios}
@@ -1438,17 +1666,15 @@ import ErrorConexion from "../../componentes/ErrorConexion.svelte";
 <ModalTratamientos />
 <ModalInterconsulta />
 <ModalAntecedentes />
-<ModalNuevaCita
-    {pacienteSeleccionado}
-/>
+<ModalNuevaCita {pacienteSeleccionado} />
 
 <style>
-    .flotante{
+    .flotante {
         position: fixed;
         right: 30px;
         bottom: 20px;
     }
-    .cargando{
+    .cargando {
         z-index: 1000;
     }
 </style>
