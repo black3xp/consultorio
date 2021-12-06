@@ -6,7 +6,7 @@
     import { link } from "svelte-spa-router";
     let dispatch = createEventDispatcher();
 
-    export let instrucciones;
+    export let instrucciones = '';
     export let medicamentos;
     export let sltBuscarMedicamentos;
     export let sltBuscarEstudios;
@@ -33,7 +33,6 @@
         axios(config)
             .then((res) => {
                 empresa = res.data;
-                console.log(empresa)
             })
             .catch((err) => {
                 console.error(err);
@@ -94,7 +93,6 @@
             .then(async (res) => {
                 categoriasEstudios = res.data;
                 await cargarEstudiosVistaRapida();
-                console.log(categoriasEstudios);
             })
             .catch((err) => {
                 console.error(err);
@@ -112,7 +110,6 @@
         axios(config)
             .then((res) => {
                 estudiosVistaRapida = res.data;
-                console.log(estudiosVistaRapida);
             })
             .catch((err) => {
                 console.error(err);

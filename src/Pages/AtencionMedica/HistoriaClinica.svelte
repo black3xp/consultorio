@@ -424,7 +424,6 @@
             hora = obtenerHora[0] + ":" + obtenerHora[1];
         } catch (error) {
             serverConexion = true;
-            console.log(serverConexion);
             console.error(error);
         }
     };

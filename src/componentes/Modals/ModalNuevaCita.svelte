@@ -68,7 +68,6 @@
         axios(config)
             .then((res) => {
                 citas = res.data;
-                console.log(res.data);
             })
             .catch((err) => {
                 console.error(err);
@@ -86,7 +85,6 @@
         axios(config)
             .then((res) => {
                 tandas = res.data;
-                console.log(res.data);
             })
             .catch((err) => {
                 console.error(err);
@@ -117,7 +115,6 @@
             .then((res) => {
                 cargando = false;
                 if (res.status === 200) {
-                    console.log(res.data);
                     fechaCita = "";
                     tandaCita = "";
                     observaciones = "";
@@ -146,7 +143,6 @@
             });
     };
     onMount(() => {
-        console.log(fechaMinima);
         cargarTandas();
     });
 </script>
