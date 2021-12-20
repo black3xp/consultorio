@@ -152,9 +152,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12 empresa-datos">
                                         <img src={logo} class="logo" alt="">
-                                        <address class="m-t-10">
+                                        <div class="m-t-10">
                                             <span class="h4 font-primary"> {empresa.nombre},</span> <br>
                                             {empresa.especialidades || ''} <br>
                                             {empresa.direccion} <br>
@@ -162,7 +162,7 @@
                                             {empresa.correo} <br>
 
 
-                                        </address>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="bg-light cabecera">
@@ -198,16 +198,16 @@
                                 </div>
                                 <div class="firma">
                                     <hr>
-                                    <p>Firma del especialista</p>
+                                    <p style="margin-bottom: 0;">Firma del especialista</p>
                                     <p><strong>{user().title}. {user().name}</strong></p>
                                 </div>
-                                <div class="p-t-10 p-b-20">
+                                <!-- <div class="p-t-10 p-b-20">
 
                                     <hr>
                                     <div class="text-center opacity-75">
                                         © nextcom {new Date().getFullYear()}
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -218,8 +218,15 @@
     </section>
   </main>
   <style>
+      .empresa-datos{
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 20px;
+
+      }
       .logo{
           max-height: 150px !important;
+          margin-right: 15px;
       }
       .firma{
           margin: 0 auto;
@@ -235,7 +242,7 @@
           font-weight: bold;
       }
       .pie{
-          margin-bottom: 50px;
+          margin-bottom: 20px;
       }
       @media print{
         .contenedor-estudios{

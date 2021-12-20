@@ -174,6 +174,7 @@
                     observaciones = "";
                     dispatch('cargarCitasPorMes');
                     dispatch('cargarCitas');
+                    location.reload();
                 }
             })
             .catch((err) => {
@@ -275,7 +276,7 @@
                             </div>
                         </ul>
                     </div>
-                        <div class="form-group col-md-12">
+                        <!-- <div class="form-group col-md-12">
                             <label for="" class="text-primary">Proxima cita</label>
                             <select
                                 class="form-control"
@@ -290,7 +291,7 @@
                                 <option value="T">En 6 meses</option>
                                 <option value="A">En un año</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group col-md-12">
                             <label for="" class="text-primary"
                                 >Fecha de la cita</label

@@ -7,6 +7,7 @@
 
     import { link } from "svelte-spa-router";
     import {onMount} from "svelte";
+    import {viewTable} from '../../store';
     import axios from "axios";
     import {url, calcularEdad} from "../../util/index";
 
@@ -36,7 +37,6 @@
     let timeout = null;
     let cargando = false;
     let cambiandoEstado = false;
-    let viewTable = false;
     let options = {};
     let estados = {
         N: 'Nuevo',
@@ -276,8 +276,8 @@
                             </div>
                         </div>
                         <div class="col">
-                            <button class="btn btn-outline-primary" on:click={() => viewTable = !viewTable} style="margin-top: 30px;">
-                                {#if viewTable}
+                            <button class="btn btn-outline-primary" on:click={() => $viewTable = !$viewTable} style="margin-top: 30px;">
+                                {#if $viewTable}
                                      <!-- content here -->
                                      <i class="mdi mdi-calendar-multiselect mdi-16px"></i>
                                      {:else}
@@ -290,7 +290,7 @@
             </div>
         </div>
         <div class="table-responsive">
-            {#if !viewTable}
+            {#if !$viewTable}
                  <div class="card m-b-30">
                      <div class="card-body">
                          <div class="row">
@@ -317,7 +317,7 @@
                      </div>
                  </div>
             {/if}
-            {#if viewTable}
+            {#if $viewTable}
                  <!-- content here -->
                  <table class="table align-td-middle table-card">
                      <thead>
@@ -390,7 +390,7 @@
                                         <i class="mdi mdi-check-all"></i>
                                      </a>
                                       <a
-                                          href={`/pacientes/${cita.paciente.id}/historias/${cita.id}`}
+                                          href={`/pacientes/perfil/${cita.paciente.id}`}
                                           class="btn btn-outline-primary"
                                           data-tooltip="Ver"
                                           use:link
