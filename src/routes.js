@@ -10,6 +10,7 @@ import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
 import PacienteEditar from './Pages/Pacientes/PacienteEditar.svelte';
 import AtencionHistoriaClinica from './Pages/AtencionMedica/HistoriaClinica.svelte';
 import Login from './Pages/Home/Login.svelte';
+import Register from './Pages/Home/Register.svelte';
 import Usuarios from './Pages/Usuarios/Index.svelte';
 import HistoriasClinicas from './Pages/AtencionMedica/Index.svelte';
 import RecetaMedicamentos from './Pages/Recetas/Medicamentos.svelte';
@@ -36,6 +37,7 @@ const routes = {
     }),
     "/prueba": Prueba,
     "/login": Login,
+    "/register": Register,
     "/pacientes": wrap({
         component: Pacientes,
         conditions: [

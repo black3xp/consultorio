@@ -71,7 +71,6 @@
         }
         axios(config).then(res => {
             if(res.status === 200){
-                console.log(res)
                 push(`/pacientes/perfil/${res.data.id}`);
             }
             if(res.status === 201) {
@@ -91,33 +90,25 @@
                 })
             }
         }).catch(error => {
-            if(error.response.status === 400) {
+            if(error.response.data.error == 5010) {
                 Swal.fire({
-                        title: 'El paciente ya existe',
-                        text: "¿Deseas cargar su perfil?",
-                        icon: 'warning',
-                        showCancelButton: true,
+                        title: 'Suscripción vencida',
+                        text: "Para registrar mas paciente puede renovar su suscripción, comuniquese con el administrador: vnc3xp@gmail.com",
+                        icon: 'error',
+                        showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         cancelButtonColor: '#d33',
-                        confirmButtonText: 'Si, cargar perfil!',
-                        cancelButtonText: 'Cancelar'
+                        confirmButtonText: 'Ok',
                     }).then((result) => {
                     if (result.isConfirmed) {
-                        Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                        )
+                        return false;
                     }
                 })
             }
-            console.log(error)
         })
-        console.log(paciente)
     }
 
     function cargarAseguradoras() {
-        console.log('cargando aseguradoras')
         const config = {
             method: 'get',
             url: `${url}/Aseguradoras`,
@@ -127,7 +118,6 @@
         }
         axios(config).then((res) => {
             aseguradoras = res.data;
-            console.log(aseguradoras)
         }).catch((err) => {
             console.error(err)
         })
@@ -146,8 +136,6 @@
             .then(res => {
                 usuario = res.data;
                 empresa = res.data.empresa;
-                console.log(usuario)
-                console.log(empresa)
             })
             .catch(err => {
                 console.error(err)
@@ -255,7 +243,6 @@
                                         <select
                                             class="form-control"
                                             id="sltTipoDocumento"
-                                            required
                                             bind:value={tipoDocumento}
                                         >
                                             <option value="" selected disabled> - seleccionar tipo - </option>

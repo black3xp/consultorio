@@ -2,6 +2,7 @@
     import { url, isLogin } from '../../util/index';
     import axios from 'axios';
     import { push } from 'svelte-spa-router';
+    import { link } from "svelte-spa-router";
 
     import Loading from '../../componentes/Loading.svelte';
 
@@ -84,11 +85,12 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block btn-lg">Entrar</button>
+                        <a href="/register" use:link class="btn btn-outline-success btn-block mt-2">CREAR CUENTA GRATIS</a>
 
                     </form>
-                    <p class="text-right p-t-10">
+                    <!-- <p class="text-right p-t-10">
                         <a href="#!" class="text-underline">Olvide mi contrase&ntilde;a?</a>
-                    </p>
+                    </p> -->
                 </div>
 
             </div>
