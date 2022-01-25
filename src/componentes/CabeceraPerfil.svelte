@@ -13,8 +13,51 @@
   export let sexo;
   export let embarazada;
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
   let pacienteSeleccionado = {};
-  
+
+  const updateEmbarazo = (value) => {
+    value = !value
+    embarazada = value;
+    console.log(embarazada);
+    const config = {
+      method: 'put',
+      url: `${url}/pacientes/${id}`,
+      data: {
+        embarazada,
+      },
+      headers: {
+        'Authorization': `${localStorage.getItem('auth')}` 
+      }
+    }
+    axios(config)
+      .then(res => {
+        console.log(res);
+        Toast.fire({
+          icon: 'success',
+          title: 'Se actualizo el estado de embarazo'
+        })
+      })
+      .catch(err => {
+        console.log(err);
+        Toast.fire({
+          icon: 'danger',
+          title: 'Ocurrio un error al actualizar el estado de embarazo' 
+        })
+      })
+  }
+   
   function crearNuevaHistoria() {
     const config = {
       method: 'post',
@@ -71,7 +114,7 @@
                     {#if sexo == 'Femenino'}
                        <!-- content here -->
                        <label class="cstm-switch ml-2">
-                         <input type="checkbox" checked={embarazada} name="option" class="cstm-switch-input">
+                         <input type="checkbox" checked={embarazada} on:change={() => updateEmbarazo(embarazada)} name="option" class="cstm-switch-input">
                          <span class="cstm-switch-indicator bg-success "></span>
                          <span class="cstm-switch-description">Embarazada</span>
                      </label>

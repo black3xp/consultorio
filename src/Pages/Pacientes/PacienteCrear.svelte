@@ -46,7 +46,7 @@
             estadoCivil:estadoCivil,
             telefono:telefono,
             celular:celular,
-            cedula:cedula,
+            cedula:cedula || '',
             tipoDocumento:tipoDocumento,
             religion:religion,
             ocupacion:ocupacion,
@@ -90,6 +90,7 @@
                 })
             }
         }).catch(error => {
+            console.error(error)
             if(error.response.data.error == 5010) {
                 Swal.fire({
                         title: 'Suscripción vencida',
