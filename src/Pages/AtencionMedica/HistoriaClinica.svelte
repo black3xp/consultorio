@@ -683,7 +683,7 @@
             </div>
             <div class="card m-b-20 autosave">
                 <div class="card-header">
-                    <div class="card-title">Historia de la enfermedad</div>
+                    <div class="card-title">Historial Cl&iacute;nico (Historia de la enfermedad)</div>
                 </div>
                 <div class="card-body">
                     <textarea
@@ -1332,7 +1332,7 @@
 
             <div class="card m-b-20 autosave">
                 <div class="card-header">
-                    <div class="card-title">Examen Fisico</div>
+                    <div class="card-title">Examen Cl&iacute;nico (Examen Fisico)</div>
                 </div>
                 <div class="card-controls">
                     <div class="dropdown">
