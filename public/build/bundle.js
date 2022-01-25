@@ -55848,7 +55848,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (251:2) {#if errorServer}
+    // (252:2) {#if errorServer}
     function create_if_block_7$1(ctx) {
     	let errorserver;
     	let current;
@@ -55886,14 +55886,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7$1.name,
     		type: "if",
-    		source: "(251:2) {#if errorServer}",
+    		source: "(252:2) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (283:37) {:else}
+    // (284:37) {:else}
     function create_else_block$3(ctx) {
     	let i;
 
@@ -55901,7 +55901,7 @@ var app = (function () {
     		c: function create() {
     			i = element("i");
     			attr_dev(i, "class", "mdi mdi-view-list mdi-16px");
-    			add_location(i, file$D, 283, 37, 10756);
+    			add_location(i, file$D, 284, 37, 10868);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -55915,14 +55915,14 @@ var app = (function () {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(283:37) {:else}",
+    		source: "(284:37) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (280:32) {#if $viewTable}
+    // (281:32) {#if $viewTable}
     function create_if_block_6$2(ctx) {
     	let i;
 
@@ -55930,7 +55930,7 @@ var app = (function () {
     		c: function create() {
     			i = element("i");
     			attr_dev(i, "class", "mdi mdi-calendar-multiselect mdi-16px");
-    			add_location(i, file$D, 281, 37, 10618);
+    			add_location(i, file$D, 282, 37, 10730);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -55944,14 +55944,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$2.name,
     		type: "if",
-    		source: "(280:32) {#if $viewTable}",
+    		source: "(281:32) {#if $viewTable}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (293:12) {#if !$viewTable}
+    // (294:12) {#if !$viewTable}
     function create_if_block_5$4(ctx) {
     	let div8;
     	let div7;
@@ -56012,35 +56012,35 @@ var app = (function () {
     			t9 = space();
     			create_component(fullcalendar.$$.fragment);
     			attr_dev(div0, "style", div0_style_value = `width:15px; height: 15px; border-radius: 3px; background-color: ${/*citasColor*/ ctx[12]["N"]}`);
-    			add_location(div0, file$D, 298, 36, 11353);
+    			add_location(div0, file$D, 299, 36, 11465);
     			attr_dev(p0, "class", "ml-1 mr-3");
     			set_style(p0, "margin-bottom", "0");
     			set_style(p0, "margin-top", "-3px");
-    			add_location(p0, file$D, 301, 36, 11535);
+    			add_location(p0, file$D, 302, 36, 11647);
     			attr_dev(div1, "style", div1_style_value = `width:15px; height: 15px; border-radius: 3px; background-color: ${/*citasColor*/ ctx[12]["X"]}`);
-    			add_location(div1, file$D, 302, 36, 11646);
+    			add_location(div1, file$D, 303, 36, 11758);
     			attr_dev(p1, "class", "ml-1 mr-3");
     			set_style(p1, "margin-bottom", "0");
     			set_style(p1, "margin-top", "-3px");
-    			add_location(p1, file$D, 305, 36, 11828);
+    			add_location(p1, file$D, 306, 36, 11940);
     			attr_dev(div2, "style", div2_style_value = `width:15px; height: 15px; border-radius: 3px; background-color: ${/*citasColor*/ ctx[12]["R"]}`);
-    			add_location(div2, file$D, 306, 36, 11943);
+    			add_location(div2, file$D, 307, 36, 12055);
     			attr_dev(p2, "class", "ml-1 mr-3");
     			set_style(p2, "margin-bottom", "0");
     			set_style(p2, "margin-top", "-3px");
-    			add_location(p2, file$D, 309, 36, 12125);
+    			add_location(p2, file$D, 310, 36, 12237);
     			attr_dev(div3, "class", "d-flex mb-2");
-    			add_location(div3, file$D, 297, 33, 11290);
+    			add_location(div3, file$D, 298, 33, 11402);
     			attr_dev(div4, "class", "row");
-    			add_location(div4, file$D, 311, 33, 12278);
+    			add_location(div4, file$D, 312, 33, 12390);
     			attr_dev(div5, "class", "col-lg-12");
-    			add_location(div5, file$D, 296, 29, 11232);
+    			add_location(div5, file$D, 297, 29, 11344);
     			attr_dev(div6, "class", "row");
-    			add_location(div6, file$D, 295, 25, 11184);
+    			add_location(div6, file$D, 296, 25, 11296);
     			attr_dev(div7, "class", "card-body");
-    			add_location(div7, file$D, 294, 21, 11134);
+    			add_location(div7, file$D, 295, 21, 11246);
     			attr_dev(div8, "class", "card m-b-30");
-    			add_location(div8, file$D, 293, 17, 11086);
+    			add_location(div8, file$D, 294, 17, 11198);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div8, anchor);
@@ -56090,14 +56090,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$4.name,
     		type: "if",
-    		source: "(293:12) {#if !$viewTable}",
+    		source: "(294:12) {#if !$viewTable}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (320:12) {#if $viewTable}
+    // (321:12) {#if $viewTable}
     function create_if_block_1$h(ctx) {
     	let table;
     	let thead;
@@ -56160,19 +56160,19 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$D, 324, 25, 12785);
-    			add_location(th1, file$D, 325, 25, 12821);
-    			add_location(th2, file$D, 326, 25, 12858);
-    			add_location(th3, file$D, 327, 25, 12900);
-    			add_location(th4, file$D, 328, 25, 12946);
-    			add_location(th5, file$D, 329, 25, 12988);
-    			add_location(th6, file$D, 330, 25, 13028);
-    			add_location(th7, file$D, 331, 25, 13070);
-    			add_location(tr, file$D, 323, 21, 12754);
-    			add_location(thead, file$D, 322, 21, 12724);
-    			add_location(tbody, file$D, 334, 21, 13161);
+    			add_location(th0, file$D, 325, 25, 12897);
+    			add_location(th1, file$D, 326, 25, 12933);
+    			add_location(th2, file$D, 327, 25, 12970);
+    			add_location(th3, file$D, 328, 25, 13012);
+    			add_location(th4, file$D, 329, 25, 13058);
+    			add_location(th5, file$D, 330, 25, 13100);
+    			add_location(th6, file$D, 331, 25, 13140);
+    			add_location(th7, file$D, 332, 25, 13182);
+    			add_location(tr, file$D, 324, 21, 12866);
+    			add_location(thead, file$D, 323, 21, 12836);
+    			add_location(tbody, file$D, 335, 21, 13273);
     			attr_dev(table, "class", "table align-td-middle table-card");
-    			add_location(table, file$D, 321, 17, 12653);
+    			add_location(table, file$D, 322, 17, 12765);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, table, anchor);
@@ -56235,14 +56235,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$h.name,
     		type: "if",
-    		source: "(320:12) {#if $viewTable}",
+    		source: "(321:12) {#if $viewTable}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (337:25) {#if cita.activo}
+    // (338:25) {#if cita.activo}
     function create_if_block_2$c(ctx) {
     	let tr;
     	let td0;
@@ -56265,7 +56265,7 @@ var app = (function () {
     	let t7;
     	let t8;
     	let td3;
-    	let t9_value = new Date(/*cita*/ ctx[30].fechaCita).toLocaleDateString("es-DO") + "";
+    	let t9_value = new Date(/*cita*/ ctx[30].fechaCita + "T00:00:00").toLocaleDateString("es-DO") + "";
     	let t9;
     	let t10;
     	let span1;
@@ -56332,30 +56332,30 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t21 = space();
     			attr_dev(span0, "class", "avatar-title rounded-circle ");
-    			add_location(span0, file$D, 340, 37, 13516);
+    			add_location(span0, file$D, 341, 37, 13628);
     			attr_dev(div, "class", "avatar avatar-sm");
-    			add_location(div, file$D, 339, 33, 13447);
-    			add_location(td0, file$D, 338, 29, 13408);
-    			add_location(td1, file$D, 343, 29, 13728);
-    			add_location(td2, file$D, 344, 29, 13773);
+    			add_location(div, file$D, 340, 33, 13559);
+    			add_location(td0, file$D, 339, 29, 13520);
+    			add_location(td1, file$D, 344, 29, 13840);
+    			add_location(td2, file$D, 345, 29, 13885);
     			attr_dev(span1, "class", "badge text-white");
     			toggle_class(span1, "bg-primary", /*cita*/ ctx[30].tanda === "M");
     			toggle_class(span1, "bg-warning", /*cita*/ ctx[30].tanda === "V");
-    			add_location(span1, file$D, 346, 33, 13956);
-    			add_location(td3, file$D, 345, 29, 13862);
-    			add_location(td4, file$D, 354, 29, 14384);
-    			add_location(td5, file$D, 355, 29, 14446);
+    			add_location(span1, file$D, 347, 33, 14080);
+    			add_location(td3, file$D, 346, 29, 13974);
+    			add_location(td4, file$D, 355, 29, 14508);
+    			add_location(td5, file$D, 356, 29, 14570);
     			attr_dev(span2, "class", "badge text-white");
     			toggle_class(span2, "bg-success", /*cita*/ ctx[30].estado === "N");
     			toggle_class(span2, "bg-secondary", /*cita*/ ctx[30].estado === "R");
     			toggle_class(span2, "bg-danger", /*cita*/ ctx[30].estado === "X");
-    			add_location(span2, file$D, 357, 33, 14575);
-    			add_location(td6, file$D, 356, 29, 14536);
+    			add_location(span2, file$D, 358, 33, 14699);
+    			add_location(td6, file$D, 357, 29, 14660);
     			attr_dev(td7, "class", "text-right");
-    			add_location(td7, file$D, 366, 29, 15081);
+    			add_location(td7, file$D, 367, 29, 15205);
     			toggle_class(tr, "bg-soft-success", /*cita*/ ctx[30].estado === "R");
     			toggle_class(tr, "bg-soft-danger", /*cita*/ ctx[30].estado === "X");
-    			add_location(tr, file$D, 337, 25, 13286);
+    			add_location(tr, file$D, 338, 25, 13398);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -56401,7 +56401,7 @@ var app = (function () {
     			if (dirty[0] & /*citas*/ 2 && t1_value !== (t1_value = /*cita*/ ctx[30].paciente.apellidos[0] + "")) set_data_dev(t1, t1_value);
     			if (dirty[0] & /*citas*/ 2 && t5_value !== (t5_value = /*cita*/ ctx[30].paciente.nombres + "")) set_data_dev(t5, t5_value);
     			if (dirty[0] & /*citas*/ 2 && t7_value !== (t7_value = /*cita*/ ctx[30].paciente.apellidos + "")) set_data_dev(t7, t7_value);
-    			if (dirty[0] & /*citas*/ 2 && t9_value !== (t9_value = new Date(/*cita*/ ctx[30].fechaCita).toLocaleDateString("es-DO") + "")) set_data_dev(t9, t9_value);
+    			if (dirty[0] & /*citas*/ 2 && t9_value !== (t9_value = new Date(/*cita*/ ctx[30].fechaCita + "T00:00:00").toLocaleDateString("es-DO") + "")) set_data_dev(t9, t9_value);
     			if (dirty[0] & /*citas*/ 2 && t11_value !== (t11_value = /*tandas*/ ctx[11][/*cita*/ ctx[30].tanda] + "")) set_data_dev(t11, t11_value);
 
     			if (dirty[0] & /*citas*/ 2) {
@@ -56471,14 +56471,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$c.name,
     		type: "if",
-    		source: "(337:25) {#if cita.activo}",
+    		source: "(338:25) {#if cita.activo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (368:33) {#if cambiandoEstado}
+    // (369:33) {#if cambiandoEstado}
     function create_if_block_4$6(ctx) {
     	let div;
     	let span;
@@ -56489,10 +56489,10 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Loading...";
     			attr_dev(span, "class", "sr-only");
-    			add_location(span, file$D, 369, 41, 15315);
+    			add_location(span, file$D, 370, 41, 15439);
     			attr_dev(div, "class", "spinner-border spinner-border-sm text-primary");
     			attr_dev(div, "role", "status");
-    			add_location(div, file$D, 368, 37, 15199);
+    			add_location(div, file$D, 369, 37, 15323);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -56507,14 +56507,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$6.name,
     		type: "if",
-    		source: "(368:33) {#if cambiandoEstado}",
+    		source: "(369:33) {#if cambiandoEstado}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (374:33) {#if cita.estado !== 'R' && cita.estado !== 'X'}
+    // (375:33) {#if cita.estado !== 'R' && cita.estado !== 'X'}
     function create_if_block_3$6(ctx) {
     	let a0;
     	let i0;
@@ -56548,23 +56548,23 @@ var app = (function () {
     			a2 = element("a");
     			i2 = element("i");
     			attr_dev(i0, "class", "mdi mdi-close");
-    			add_location(i0, file$D, 381, 41, 16084);
+    			add_location(i0, file$D, 382, 41, 16208);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "btn btn-outline-danger");
     			attr_dev(a0, "data-tooltip", "Cancelar");
-    			add_location(a0, file$D, 375, 37, 15702);
+    			add_location(a0, file$D, 376, 37, 15826);
     			attr_dev(i1, "class", "mdi mdi-check-all");
-    			add_location(i1, file$D, 389, 40, 16585);
+    			add_location(i1, file$D, 390, 40, 16709);
     			attr_dev(a1, "href", "#!");
     			attr_dev(a1, "class", "btn btn-outline-success");
     			attr_dev(a1, "data-tooltip", "Marcar realizada");
-    			add_location(a1, file$D, 383, 37, 16195);
+    			add_location(a1, file$D, 384, 37, 16319);
     			attr_dev(i2, "class", "mdi mdi-send");
-    			add_location(i2, file$D, 397, 42, 17067);
+    			add_location(i2, file$D, 398, 42, 17191);
     			attr_dev(a2, "href", a2_href_value = `/pacientes/perfil/${/*cita*/ ctx[30].paciente.id}`);
     			attr_dev(a2, "class", "btn btn-outline-primary");
     			attr_dev(a2, "data-tooltip", "Ver");
-    			add_location(a2, file$D, 391, 38, 16701);
+    			add_location(a2, file$D, 392, 38, 16825);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a0, anchor);
@@ -56608,14 +56608,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$6.name,
     		type: "if",
-    		source: "(374:33) {#if cita.estado !== 'R' && cita.estado !== 'X'}",
+    		source: "(375:33) {#if cita.estado !== 'R' && cita.estado !== 'X'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (336:21) {#each citas as cita, i}
+    // (337:21) {#each citas as cita, i}
     function create_each_block$i(ctx) {
     	let if_block_anchor;
     	let if_block = /*cita*/ ctx[30].activo && create_if_block_2$c(ctx);
@@ -56653,14 +56653,14 @@ var app = (function () {
     		block,
     		id: create_each_block$i.name,
     		type: "each",
-    		source: "(336:21) {#each citas as cita, i}",
+    		source: "(337:21) {#each citas as cita, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (411:8) {#if cargando}
+    // (412:8) {#if cargando}
     function create_if_block$p(ctx) {
     	let div1;
     	let div0;
@@ -56673,12 +56673,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Loading...";
     			attr_dev(span, "class", "sr-only");
-    			add_location(span, file$D, 413, 21, 17585);
+    			add_location(span, file$D, 414, 21, 17709);
     			attr_dev(div0, "class", "spinner-border text-secondary");
     			attr_dev(div0, "role", "status");
-    			add_location(div0, file$D, 412, 17, 17505);
+    			add_location(div0, file$D, 413, 17, 17629);
     			attr_dev(div1, "class", "text-center");
-    			add_location(div1, file$D, 411, 13, 17461);
+    			add_location(div1, file$D, 412, 13, 17585);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -56694,7 +56694,7 @@ var app = (function () {
     		block,
     		id: create_if_block$p.name,
     		type: "if",
-    		source: "(411:8) {#if cargando}",
+    		source: "(412:8) {#if cargando}",
     		ctx
     	});
 
@@ -56817,54 +56817,54 @@ var app = (function () {
     			t16 = space();
     			create_component(modalcitacalendario.$$.fragment);
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file$D, 257, 6, 9181);
-    			add_location(h5, file$D, 259, 8, 9253);
+    			add_location(div0, file$D, 258, 6, 9293);
+    			add_location(h5, file$D, 260, 8, 9365);
     			attr_dev(div1, "class", "calendar");
-    			add_location(div1, file$D, 263, 20, 9412);
+    			add_location(div1, file$D, 264, 20, 9524);
     			attr_dev(label0, "for", "Buscar");
-    			add_location(label0, file$D, 267, 32, 9615);
+    			add_location(label0, file$D, 268, 32, 9727);
     			attr_dev(input0, "type", "search");
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "placeholder", "Nombres, Apelidos o Cedula");
-    			add_location(input0, file$D, 268, 32, 9689);
+    			add_location(input0, file$D, 269, 32, 9801);
     			attr_dev(div2, "class", "form-group");
-    			add_location(div2, file$D, 266, 28, 9557);
+    			add_location(div2, file$D, 267, 28, 9669);
     			attr_dev(div3, "class", "col-lg-4");
-    			add_location(div3, file$D, 265, 24, 9505);
+    			add_location(div3, file$D, 266, 24, 9617);
     			attr_dev(label1, "for", "Buscar");
-    			add_location(label1, file$D, 273, 32, 10027);
+    			add_location(label1, file$D, 274, 32, 10139);
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "placeholder", "Nombres o Apelidos");
-    			add_location(input1, file$D, 274, 32, 10101);
+    			add_location(input1, file$D, 275, 32, 10213);
     			attr_dev(div4, "class", "form-group");
-    			add_location(div4, file$D, 272, 28, 9969);
+    			add_location(div4, file$D, 273, 28, 10081);
     			attr_dev(div5, "class", "col-lg-3");
-    			add_location(div5, file$D, 271, 24, 9917);
+    			add_location(div5, file$D, 272, 24, 10029);
     			attr_dev(button, "class", "btn btn-outline-primary");
     			set_style(button, "margin-top", "30px");
-    			add_location(button, file$D, 278, 28, 10361);
+    			add_location(button, file$D, 279, 28, 10473);
     			attr_dev(div6, "class", "col");
-    			add_location(div6, file$D, 277, 24, 10314);
+    			add_location(div6, file$D, 278, 24, 10426);
     			attr_dev(div7, "class", "row");
-    			add_location(div7, file$D, 264, 20, 9462);
+    			add_location(div7, file$D, 265, 20, 9574);
     			attr_dev(div8, "class", "col-12");
-    			add_location(div8, file$D, 262, 16, 9370);
+    			add_location(div8, file$D, 263, 16, 9482);
     			attr_dev(div9, "class", "row");
-    			add_location(div9, file$D, 261, 8, 9335);
+    			add_location(div9, file$D, 262, 8, 9447);
     			attr_dev(div10, "class", "alert alert-secondary");
     			attr_dev(div10, "role", "alert");
-    			add_location(div10, file$D, 260, 8, 9277);
+    			add_location(div10, file$D, 261, 8, 9389);
     			attr_dev(div11, "class", "table-responsive");
-    			add_location(div11, file$D, 291, 8, 11006);
+    			add_location(div11, file$D, 292, 8, 11118);
     			attr_dev(div12, "class", "col-md-12 mt-3 m-b-30");
-    			add_location(div12, file$D, 258, 6, 9208);
+    			add_location(div12, file$D, 259, 6, 9320);
     			attr_dev(div13, "class", "p-2");
-    			add_location(div13, file$D, 256, 4, 9156);
+    			add_location(div13, file$D, 257, 4, 9268);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$D, 255, 2, 9119);
+    			add_location(section, file$D, 256, 2, 9231);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$D, 248, 0, 8897);
+    			add_location(main, file$D, 249, 0, 9009);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -57119,8 +57119,8 @@ var app = (function () {
     				citasCalendar = citasPorMes.map(cita => {
     					return {
     						title: `${cita.paciente.nombres} ${cita.paciente.apellidos}`,
-    						start: cita.fechaCita,
-    						end: cita.fechaCita,
+    						start: `${cita.fechaCita}T${cita.horaCita || "00:00:00"}`,
+    						end: `${cita.fechaCita}T${cita.horaCita || "00:00:00"}`,
     						color: citasColor[cita.estado],
     						textColor: "#fff",
     						extendedProps: {
@@ -57274,6 +57274,7 @@ var app = (function () {
 
     			if (res.status === 200) {
     				$$invalidate(1, citas = res.data);
+    				console.log(citas);
     			}
     		}).catch(err => {
     			$$invalidate(4, cargando = false);

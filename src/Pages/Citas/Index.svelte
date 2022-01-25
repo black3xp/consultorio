@@ -80,8 +80,8 @@
                     citasCalendar = citasPorMes.map(cita => {
                         return {
                             title: `${cita.paciente.nombres} ${cita.paciente.apellidos}`,
-                            start: cita.fechaCita,
-                            end: cita.fechaCita,
+                            start: `${cita.fechaCita}T${cita.horaCita || '00:00:00'}`,
+                            end: `${cita.fechaCita}T${cita.horaCita || '00:00:00'}`,
                             color: citasColor[cita.estado],
                             textColor: '#fff',
                             extendedProps: {
@@ -229,6 +229,7 @@
                 cargando= false;
                 if(res.status === 200) {
                     citas = res.data
+                    console.log(citas)
                 }
             })
             .catch(err => {
@@ -343,7 +344,7 @@
                              </td>
                              <td>{i+1}</td>
                              <td>{cita.paciente.nombres} {cita.paciente.apellidos}</td>
-                             <td>{new Date(cita.fechaCita).toLocaleDateString('es-DO')} 
+                             <td>{new Date(cita.fechaCita+"T00:00:00").toLocaleDateString('es-DO')} 
                                  <span
                                      class="badge text-white"
                                      class:bg-primary={cita.tanda === "M"}
