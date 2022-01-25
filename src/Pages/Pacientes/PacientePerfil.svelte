@@ -141,6 +141,7 @@
       if (promesa.status == 200) {
         cargando = false;
         paciente = promesa.data;
+        console.log(paciente)
         edad = calcularEdad(paciente.fechaNacimiento);
         if(paciente.seguroMedico.length !== 0) {
           seguro = paciente.seguroMedico[0].nombre;
@@ -197,6 +198,8 @@
         bind:apellidos={paciente.apellidos}
         bind:cedula={paciente.cedula}
         bind:id={paciente.id}
+        bind:sexo={paciente.sexo}
+        bind:embarazada={paciente.embarazada}
         {paciente}
       />
       <div class="pull-up">

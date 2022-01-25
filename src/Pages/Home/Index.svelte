@@ -25,7 +25,8 @@
     axios(confing)
       .then((res) => {
         cargandoResumen = false;
-        numeroPacientes = res.data.length;
+        numeroPacientes = res.data.filter((paciente) => paciente.activo === true).length;
+        // numeroPacientes = res.data.length;
       })
       .catch((error) => {
         cargandoResumen = false;

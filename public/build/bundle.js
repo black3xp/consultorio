@@ -3243,8 +3243,8 @@ var app = (function () {
     // const url = 'https://xmconsulta.cthrics.com/api'
     // const url = 'http://localhost:3000/api'
     // const url = 'http://serenidad.xmedical.online:1337/api';
-    // const url = 'https://consulta.xmedical.online/api';
-    const url = 'http://localhost:1337/api';
+    const url = 'https://consulta.xmedical.online/api';
+    // const url = 'http://localhost:1337/api';
 
     const isLogin = () => {
         if(localStorage.getItem('auth')){
@@ -5294,7 +5294,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$5 = "src\\Pages\\Home\\Index.svelte";
 
-    // (69:2) {#if errorServer}
+    // (70:2) {#if errorServer}
     function create_if_block_2$1(ctx) {
     	let errorconexion;
     	let updating_msgError;
@@ -5354,14 +5354,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(69:2) {#if errorServer}",
+    		source: "(70:2) {#if errorServer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:10) {#if !cargandoResumen}
+    // (81:10) {#if !cargandoResumen}
     function create_if_block_1$2(ctx) {
     	let div6;
     	let div5;
@@ -5423,43 +5423,43 @@ var app = (function () {
     			h11 = element("h1");
     			t8 = text(/*numeroHistorias*/ ctx[1]);
     			attr_dev(i0, "class", "mdi mdi-account");
-    			add_location(i0, file$5, 86, 25, 2473);
+    			add_location(i0, file$5, 87, 25, 2567);
     			attr_dev(div0, "class", "avatar-title bg-soft-primary rounded-circle");
-    			add_location(div0, file$5, 85, 23, 2389);
+    			add_location(div0, file$5, 86, 23, 2483);
     			attr_dev(div1, "class", "avatar avatar-lg");
-    			add_location(div1, file$5, 84, 21, 2334);
+    			add_location(div1, file$5, 85, 21, 2428);
     			attr_dev(div2, "class", "pb-2");
-    			add_location(div2, file$5, 83, 19, 2293);
+    			add_location(div2, file$5, 84, 19, 2387);
     			attr_dev(p0, "class", "text-muted text-overline m-0");
-    			add_location(p0, file$5, 91, 21, 2638);
+    			add_location(p0, file$5, 92, 21, 2732);
     			attr_dev(h10, "class", "fw-400");
-    			add_location(h10, file$5, 92, 21, 2714);
-    			add_location(div3, file$5, 90, 19, 2610);
+    			add_location(h10, file$5, 93, 21, 2808);
+    			add_location(div3, file$5, 91, 19, 2704);
     			attr_dev(div4, "class", "card-body");
-    			add_location(div4, file$5, 82, 17, 2249);
+    			add_location(div4, file$5, 83, 17, 2343);
     			attr_dev(div5, "class", "card m-b-30");
-    			add_location(div5, file$5, 81, 15, 2205);
+    			add_location(div5, file$5, 82, 15, 2299);
     			attr_dev(div6, "class", "col-lg-3 col-md-6");
-    			add_location(div6, file$5, 80, 13, 2157);
+    			add_location(div6, file$5, 81, 13, 2251);
     			attr_dev(i1, "class", "mdi mdi-format-list-checks");
-    			add_location(i1, file$5, 103, 25, 3182);
+    			add_location(i1, file$5, 104, 25, 3276);
     			attr_dev(div7, "class", "avatar-title bg-soft-primary rounded-circle");
-    			add_location(div7, file$5, 102, 23, 3098);
+    			add_location(div7, file$5, 103, 23, 3192);
     			attr_dev(div8, "class", "avatar avatar-lg");
-    			add_location(div8, file$5, 101, 21, 3043);
+    			add_location(div8, file$5, 102, 21, 3137);
     			attr_dev(div9, "class", "pb-2");
-    			add_location(div9, file$5, 100, 19, 3002);
+    			add_location(div9, file$5, 101, 19, 3096);
     			attr_dev(p1, "class", "text-muted text-overline m-0");
-    			add_location(p1, file$5, 108, 21, 3360);
+    			add_location(p1, file$5, 109, 21, 3454);
     			attr_dev(h11, "class", "fw-400");
-    			add_location(h11, file$5, 109, 21, 3436);
-    			add_location(div10, file$5, 107, 19, 3332);
+    			add_location(h11, file$5, 110, 21, 3530);
+    			add_location(div10, file$5, 108, 19, 3426);
     			attr_dev(div11, "class", "card-body");
-    			add_location(div11, file$5, 99, 17, 2958);
+    			add_location(div11, file$5, 100, 17, 3052);
     			attr_dev(div12, "class", "card m-b-30");
-    			add_location(div12, file$5, 98, 15, 2914);
+    			add_location(div12, file$5, 99, 15, 3008);
     			attr_dev(div13, "class", "col-lg-3 col-md-6");
-    			add_location(div13, file$5, 97, 13, 2866);
+    			add_location(div13, file$5, 98, 13, 2960);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div6, anchor);
@@ -5505,14 +5505,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(80:10) {#if !cargandoResumen}",
+    		source: "(81:10) {#if !cargandoResumen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (118:10) {#if cargandoResumen}
+    // (119:10) {#if cargandoResumen}
     function create_if_block$3(ctx) {
     	let div6;
     	let div5;
@@ -5574,43 +5574,43 @@ var app = (function () {
     			h11 = element("h1");
     			t8 = text(/*numeroPacientes*/ ctx[0]);
     			attr_dev(i0, "class", "mdi mdi-account");
-    			add_location(i0, file$5, 124, 25, 3958);
+    			add_location(i0, file$5, 125, 25, 4052);
     			attr_dev(div0, "class", "avatar-title bg-soft-primary rounded-circle");
-    			add_location(div0, file$5, 123, 23, 3874);
+    			add_location(div0, file$5, 124, 23, 3968);
     			attr_dev(div1, "class", "avatar avatar-lg");
-    			add_location(div1, file$5, 122, 21, 3819);
+    			add_location(div1, file$5, 123, 21, 3913);
     			attr_dev(div2, "class", "pb-2");
-    			add_location(div2, file$5, 121, 19, 3778);
+    			add_location(div2, file$5, 122, 19, 3872);
     			attr_dev(p0, "class", "text-muted text-overline m-0 font-flow");
-    			add_location(p0, file$5, 129, 21, 4123);
+    			add_location(p0, file$5, 130, 21, 4217);
     			attr_dev(h10, "class", "fw-400 font-flow");
-    			add_location(h10, file$5, 130, 21, 4209);
-    			add_location(div3, file$5, 128, 19, 4095);
+    			add_location(h10, file$5, 131, 21, 4303);
+    			add_location(div3, file$5, 129, 19, 4189);
     			attr_dev(div4, "class", "card-body");
-    			add_location(div4, file$5, 120, 17, 3734);
+    			add_location(div4, file$5, 121, 17, 3828);
     			attr_dev(div5, "class", "card m-b-30");
-    			add_location(div5, file$5, 119, 15, 3690);
+    			add_location(div5, file$5, 120, 15, 3784);
     			attr_dev(div6, "class", "col-lg-3 col-md-6");
-    			add_location(div6, file$5, 118, 13, 3642);
+    			add_location(div6, file$5, 119, 13, 3736);
     			attr_dev(i1, "class", "mdi mdi-format-list-checks");
-    			add_location(i1, file$5, 141, 24, 4686);
+    			add_location(i1, file$5, 142, 24, 4780);
     			attr_dev(div7, "class", "avatar-title bg-soft-primary rounded-circle");
-    			add_location(div7, file$5, 140, 23, 4603);
+    			add_location(div7, file$5, 141, 23, 4697);
     			attr_dev(div8, "class", "avatar avatar-lg");
-    			add_location(div8, file$5, 139, 21, 4548);
+    			add_location(div8, file$5, 140, 21, 4642);
     			attr_dev(div9, "class", "pb-2");
-    			add_location(div9, file$5, 138, 19, 4507);
+    			add_location(div9, file$5, 139, 19, 4601);
     			attr_dev(p1, "class", "text-muted text-overline m-0 font-flow");
-    			add_location(p1, file$5, 146, 21, 4864);
+    			add_location(p1, file$5, 147, 21, 4958);
     			attr_dev(h11, "class", "fw-400 font-flow");
-    			add_location(h11, file$5, 147, 21, 4950);
-    			add_location(div10, file$5, 145, 19, 4836);
+    			add_location(h11, file$5, 148, 21, 5044);
+    			add_location(div10, file$5, 146, 19, 4930);
     			attr_dev(div11, "class", "card-body");
-    			add_location(div11, file$5, 137, 17, 4463);
+    			add_location(div11, file$5, 138, 17, 4557);
     			attr_dev(div12, "class", "card m-b-30");
-    			add_location(div12, file$5, 136, 15, 4419);
+    			add_location(div12, file$5, 137, 15, 4513);
     			attr_dev(div13, "class", "col-lg-3 col-md-6");
-    			add_location(div13, file$5, 135, 13, 4371);
+    			add_location(div13, file$5, 136, 13, 4465);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div6, anchor);
@@ -5656,7 +5656,7 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(118:10) {#if cargandoResumen}",
+    		source: "(119:10) {#if cargandoResumen}",
     		ctx
     	});
 
@@ -5714,22 +5714,22 @@ var app = (function () {
     			t11 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(h3, "class", "mt-2 text-secondary");
-    			add_location(h3, file$5, 74, 8, 1886);
+    			add_location(h3, file$5, 75, 8, 1980);
     			attr_dev(i, "class", "mdi mdi-table");
-    			add_location(i, file$5, 77, 16, 2050);
-    			add_location(h5, file$5, 77, 12, 2046);
+    			add_location(i, file$5, 78, 16, 2144);
+    			add_location(h5, file$5, 78, 12, 2140);
     			attr_dev(div0, "class", "col-12 m-b-20 m-t-20");
-    			add_location(div0, file$5, 76, 10, 1998);
+    			add_location(div0, file$5, 77, 10, 2092);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file$5, 75, 8, 1969);
+    			add_location(div1, file$5, 76, 8, 2063);
     			attr_dev(div2, "class", "col-12");
-    			add_location(div2, file$5, 73, 6, 1856);
+    			add_location(div2, file$5, 74, 6, 1950);
     			attr_dev(div3, "class", "p-2");
-    			add_location(div3, file$5, 72, 4, 1831);
+    			add_location(div3, file$5, 73, 4, 1925);
     			attr_dev(section, "class", "admin-content");
-    			add_location(section, file$5, 71, 2, 1794);
+    			add_location(section, file$5, 72, 2, 1888);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$5, 66, 0, 1674);
+    			add_location(main, file$5, 67, 0, 1768);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5865,9 +5865,9 @@ var app = (function () {
 
     		axios$1(confing).then(res => {
     			$$invalidate(3, cargandoResumen = false);
-    			$$invalidate(0, numeroPacientes = res.data.length);
+    			$$invalidate(0, numeroPacientes = res.data.filter(paciente => paciente.activo === true).length);
     		}).catch(error => {
-    			$$invalidate(3, cargandoResumen = false);
+    			$$invalidate(3, cargandoResumen = false); // numeroPacientes = res.data.length;
     			$$invalidate(2, errorServer = true);
     			$$invalidate(4, msgError = "Ocurrió un error al conectarse con el servidor. Intente de nuevo o contacte al administrador!");
     			console.error(error);
@@ -14878,7 +14878,66 @@ var app = (function () {
     const { console: console_1$6 } = globals;
     const file$b = "src\\componentes\\CabeceraPerfil.svelte";
 
-    // (75:14) {#if user().roles.includes('doctor') || user().roles.includes('admin')}
+    // (71:20) {#if sexo == 'Femenino'}
+    function create_if_block_1$5(ctx) {
+    	let label;
+    	let input;
+    	let t0;
+    	let span0;
+    	let t1;
+    	let span1;
+
+    	const block = {
+    		c: function create() {
+    			label = element("label");
+    			input = element("input");
+    			t0 = space();
+    			span0 = element("span");
+    			t1 = space();
+    			span1 = element("span");
+    			span1.textContent = "Embarazada";
+    			attr_dev(input, "type", "checkbox");
+    			input.checked = /*embarazada*/ ctx[6];
+    			attr_dev(input, "name", "option");
+    			attr_dev(input, "class", "cstm-switch-input");
+    			add_location(input, file$b, 73, 25, 2589);
+    			attr_dev(span0, "class", "cstm-switch-indicator bg-success ");
+    			add_location(span0, file$b, 74, 25, 2700);
+    			attr_dev(span1, "class", "cstm-switch-description");
+    			add_location(span1, file$b, 75, 25, 2782);
+    			attr_dev(label, "class", "cstm-switch ml-2");
+    			add_location(label, file$b, 72, 23, 2530);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, label, anchor);
+    			append_dev(label, input);
+    			append_dev(label, t0);
+    			append_dev(label, span0);
+    			append_dev(label, t1);
+    			append_dev(label, span1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*embarazada*/ 64) {
+    				prop_dev(input, "checked", /*embarazada*/ ctx[6]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(label);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$5.name,
+    		type: "if",
+    		source: "(71:20) {#if sexo == 'Femenino'}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (88:14) {#if user().roles.includes('doctor') || user().roles.includes('admin')}
     function create_if_block$7(ctx) {
     	let button;
     	let i;
@@ -14894,11 +14953,11 @@ var app = (function () {
     			t = text("\r\n                Iniciar nueva atención\r\n              ");
     			br = element("br");
     			attr_dev(i, "class", "mdi mdi-progress-check");
-    			add_location(i, file$b, 79, 15, 2791);
+    			add_location(i, file$b, 92, 15, 3359);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn text-white mb-2 ml-2 mr-2 ml-3 btn-primary");
-    			add_location(button, file$b, 75, 14, 2616);
-    			add_location(br, file$b, 81, 23, 2894);
+    			add_location(button, file$b, 88, 14, 3184);
+    			add_location(br, file$b, 94, 23, 3462);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -14907,7 +14966,7 @@ var app = (function () {
     			insert_dev(target, br, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*crearNuevaHistoria*/ ctx[6], false, false, false);
+    				dispose = listen_dev(button, "click", /*crearNuevaHistoria*/ ctx[8], false, false, false);
     				mounted = true;
     			}
     		},
@@ -14924,7 +14983,7 @@ var app = (function () {
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(75:14) {#if user().roles.includes('doctor') || user().roles.includes('admin')}",
+    		source: "(88:14) {#if user().roles.includes('doctor') || user().roles.includes('admin')}",
     		ctx
     	});
 
@@ -14962,23 +15021,25 @@ var app = (function () {
     	let t9;
     	let t10;
     	let t11;
+    	let t12;
     	let div6;
     	let div5;
     	let show_if = user().roles.includes("doctor") || user().roles.includes("admin");
-    	let t12;
+    	let t13;
     	let button;
     	let i1;
-    	let t13;
     	let t14;
+    	let t15;
     	let modalnuevacita;
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = show_if && create_if_block$7(ctx);
+    	let if_block0 = /*sexo*/ ctx[5] == "Femenino" && create_if_block_1$5(ctx);
+    	let if_block1 = show_if && create_if_block$7(ctx);
 
     	modalnuevacita = new ModalNuevaCita({
     			props: {
-    				pacienteSeleccionado: /*pacienteSeleccionado*/ ctx[5]
+    				pacienteSeleccionado: /*pacienteSeleccionado*/ ctx[7]
     			},
     			$$inline: true
     		});
@@ -15013,62 +15074,64 @@ var app = (function () {
     			t9 = text("No. Cedula: ");
     			t10 = text(/*cedula*/ ctx[2]);
     			t11 = space();
+    			if (if_block0) if_block0.c();
+    			t12 = space();
     			div6 = element("div");
     			div5 = element("div");
-    			if (if_block) if_block.c();
-    			t12 = space();
+    			if (if_block1) if_block1.c();
+    			t13 = space();
     			button = element("button");
     			i1 = element("i");
-    			t13 = text("\r\n                Citas");
-    			t14 = space();
+    			t14 = text("\r\n                Citas");
+    			t15 = space();
     			create_component(modalnuevacita.$$.fragment);
     			attr_dev(span0, "class", "avatar-title rounded-circle");
-    			add_location(span0, file$b, 55, 16, 1589);
+    			add_location(span0, file$b, 57, 16, 1635);
     			attr_dev(div0, "class", "avatar mr-3  avatar-xl");
-    			add_location(div0, file$b, 54, 14, 1535);
+    			add_location(div0, file$b, 56, 14, 1581);
     			attr_dev(span1, "data-bind", "text: paciente().nombreParaMostrar");
-    			add_location(span1, file$b, 59, 18, 1795);
+    			add_location(span1, file$b, 61, 18, 1841);
     			attr_dev(i0, "class", "mdi mdi-comment-eye");
-    			add_location(i0, file$b, 62, 20, 2050);
+    			add_location(i0, file$b, 64, 20, 2096);
     			attr_dev(a, "href", "/");
     			attr_dev(a, "class", "btn ml-2 btn-primary btn-sm");
     			attr_dev(a, "data-toggle", "modal");
     			attr_dev(a, "data-target", "#modalDatosPersonales");
-    			add_location(a, file$b, 60, 18, 1903);
+    			add_location(a, file$b, 62, 18, 1949);
     			attr_dev(h5, "class", "mt-0");
-    			add_location(h5, file$b, 58, 16, 1757);
+    			add_location(h5, file$b, 60, 16, 1803);
     			attr_dev(span2, "data-bind", "text: paciente().edad");
-    			add_location(span2, file$b, 65, 40, 2195);
+    			add_location(span2, file$b, 67, 40, 2241);
     			attr_dev(span3, "data-bind", "text: paciente().cedula");
-    			add_location(span3, file$b, 65, 101, 2256);
+    			add_location(span3, file$b, 67, 101, 2302);
     			attr_dev(div1, "class", "opacity-75");
-    			add_location(div1, file$b, 65, 16, 2171);
+    			add_location(div1, file$b, 67, 16, 2217);
     			attr_dev(div2, "class", "media-body m-auto");
-    			add_location(div2, file$b, 57, 14, 1708);
+    			add_location(div2, file$b, 59, 14, 1754);
     			attr_dev(div3, "class", "media");
-    			add_location(div3, file$b, 53, 12, 1500);
+    			add_location(div3, file$b, 55, 12, 1546);
     			attr_dev(div4, "class", "col-md-6 text-white p-b-30");
-    			add_location(div4, file$b, 52, 10, 1446);
+    			add_location(div4, file$b, 54, 10, 1492);
     			attr_dev(i1, "class", "mdi mdi-calendar-multiselect");
-    			add_location(i1, file$b, 99, 15, 3655);
+    			add_location(i1, file$b, 112, 15, 4223);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn text-white m-b-30 ml-2 mr-2 ml-3 btn-primary");
     			attr_dev(button, "data-toggle", "modal");
     			attr_dev(button, "data-target", "#modalNuevaCita");
-    			add_location(button, file$b, 83, 14, 2935);
+    			add_location(button, file$b, 96, 14, 3503);
     			attr_dev(div5, "class", "dropdown");
-    			add_location(div5, file$b, 73, 12, 2491);
+    			add_location(div5, file$b, 86, 12, 3059);
     			attr_dev(div6, "class", "col-md-6");
     			set_style(div6, "text-align", "right");
-    			add_location(div6, file$b, 72, 10, 2429);
+    			add_location(div6, file$b, 85, 10, 2997);
     			attr_dev(div7, "class", "row p-b-60 p-t-60");
-    			add_location(div7, file$b, 51, 8, 1403);
+    			add_location(div7, file$b, 53, 8, 1449);
     			attr_dev(div8, "class", "col-md-12");
-    			add_location(div8, file$b, 50, 6, 1370);
+    			add_location(div8, file$b, 52, 6, 1416);
     			attr_dev(div9, "class", "");
-    			add_location(div9, file$b, 49, 4, 1348);
+    			add_location(div9, file$b, 51, 4, 1394);
     			attr_dev(div10, "class", "bg-dark m-b-30");
-    			add_location(div10, file$b, 48, 0, 1314);
+    			add_location(div10, file$b, 50, 0, 1360);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -15101,20 +15164,22 @@ var app = (function () {
     			append_dev(div1, span3);
     			append_dev(span3, t9);
     			append_dev(span3, t10);
-    			append_dev(div7, t11);
+    			append_dev(div1, t11);
+    			if (if_block0) if_block0.m(div1, null);
+    			append_dev(div7, t12);
     			append_dev(div7, div6);
     			append_dev(div6, div5);
-    			if (if_block) if_block.m(div5, null);
-    			append_dev(div5, t12);
+    			if (if_block1) if_block1.m(div5, null);
+    			append_dev(div5, t13);
     			append_dev(div5, button);
     			append_dev(button, i1);
-    			append_dev(button, t13);
-    			insert_dev(target, t14, anchor);
+    			append_dev(button, t14);
+    			insert_dev(target, t15, anchor);
     			mount_component(modalnuevacita, target, anchor);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[9], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[11], false, false, false);
     				mounted = true;
     			}
     		},
@@ -15123,9 +15188,23 @@ var app = (function () {
     			if ((!current || dirty & /*nombres, apellidos*/ 3) && t2_value !== (t2_value = `${/*nombres*/ ctx[0]} ${/*apellidos*/ ctx[1]}` + "")) set_data_dev(t2, t2_value);
     			if (!current || dirty & /*edad*/ 8) set_data_dev(t6, /*edad*/ ctx[3]);
     			if (!current || dirty & /*cedula*/ 4) set_data_dev(t10, /*cedula*/ ctx[2]);
-    			if (show_if) if_block.p(ctx, dirty);
+
+    			if (/*sexo*/ ctx[5] == "Femenino") {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_1$5(ctx);
+    					if_block0.c();
+    					if_block0.m(div1, null);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (show_if) if_block1.p(ctx, dirty);
     			const modalnuevacita_changes = {};
-    			if (dirty & /*pacienteSeleccionado*/ 32) modalnuevacita_changes.pacienteSeleccionado = /*pacienteSeleccionado*/ ctx[5];
+    			if (dirty & /*pacienteSeleccionado*/ 128) modalnuevacita_changes.pacienteSeleccionado = /*pacienteSeleccionado*/ ctx[7];
     			modalnuevacita.$set(modalnuevacita_changes);
     		},
     		i: function intro(local) {
@@ -15139,8 +15218,9 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div10);
-    			if (if_block) if_block.d();
-    			if (detaching) detach_dev(t14);
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (detaching) detach_dev(t15);
     			destroy_component(modalnuevacita, detaching);
     			mounted = false;
     			dispose();
@@ -15168,6 +15248,8 @@ var app = (function () {
     	let { id = "" } = $$props;
     	let { paciente } = $$props;
     	let { cargando } = $$props;
+    	let { sexo } = $$props;
+    	let { embarazada } = $$props;
     	let pacienteSeleccionado = {};
 
     	function crearNuevaHistoria() {
@@ -15190,27 +15272,37 @@ var app = (function () {
     			cancelButtonText: "Cancelar"
     		}).then(result => {
     			if (result.isConfirmed) {
-    				$$invalidate(7, cargando = true);
+    				$$invalidate(9, cargando = true);
 
     				axios$1(config).then(res => {
     					console.log(res.data);
     					push(`/pacientes/${id}/historias/${res.data.id}`);
-    					$$invalidate(7, cargando = false);
+    					$$invalidate(9, cargando = false);
     				}).catch(error => {
-    					$$invalidate(7, cargando = false);
+    					$$invalidate(9, cargando = false);
     					console.error(error);
     				});
     			}
     		});
     	}
 
-    	const writable_props = ["nombres", "apellidos", "cedula", "edad", "id", "paciente", "cargando"];
+    	const writable_props = [
+    		"nombres",
+    		"apellidos",
+    		"cedula",
+    		"edad",
+    		"id",
+    		"paciente",
+    		"cargando",
+    		"sexo",
+    		"embarazada"
+    	];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$6.warn(`<CabeceraPerfil> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = () => $$invalidate(5, pacienteSeleccionado = {
+    	const click_handler = () => $$invalidate(7, pacienteSeleccionado = {
     		id: paciente.id,
     		nombres: paciente.nombres,
     		apellidos: paciente.apellidos,
@@ -15227,9 +15319,11 @@ var app = (function () {
     		if ("apellidos" in $$props) $$invalidate(1, apellidos = $$props.apellidos);
     		if ("cedula" in $$props) $$invalidate(2, cedula = $$props.cedula);
     		if ("edad" in $$props) $$invalidate(3, edad = $$props.edad);
-    		if ("id" in $$props) $$invalidate(8, id = $$props.id);
+    		if ("id" in $$props) $$invalidate(10, id = $$props.id);
     		if ("paciente" in $$props) $$invalidate(4, paciente = $$props.paciente);
-    		if ("cargando" in $$props) $$invalidate(7, cargando = $$props.cargando);
+    		if ("cargando" in $$props) $$invalidate(9, cargando = $$props.cargando);
+    		if ("sexo" in $$props) $$invalidate(5, sexo = $$props.sexo);
+    		if ("embarazada" in $$props) $$invalidate(6, embarazada = $$props.embarazada);
     	};
 
     	$$self.$capture_state = () => ({
@@ -15245,6 +15339,8 @@ var app = (function () {
     		id,
     		paciente,
     		cargando,
+    		sexo,
+    		embarazada,
     		pacienteSeleccionado,
     		crearNuevaHistoria
     	});
@@ -15254,10 +15350,12 @@ var app = (function () {
     		if ("apellidos" in $$props) $$invalidate(1, apellidos = $$props.apellidos);
     		if ("cedula" in $$props) $$invalidate(2, cedula = $$props.cedula);
     		if ("edad" in $$props) $$invalidate(3, edad = $$props.edad);
-    		if ("id" in $$props) $$invalidate(8, id = $$props.id);
+    		if ("id" in $$props) $$invalidate(10, id = $$props.id);
     		if ("paciente" in $$props) $$invalidate(4, paciente = $$props.paciente);
-    		if ("cargando" in $$props) $$invalidate(7, cargando = $$props.cargando);
-    		if ("pacienteSeleccionado" in $$props) $$invalidate(5, pacienteSeleccionado = $$props.pacienteSeleccionado);
+    		if ("cargando" in $$props) $$invalidate(9, cargando = $$props.cargando);
+    		if ("sexo" in $$props) $$invalidate(5, sexo = $$props.sexo);
+    		if ("embarazada" in $$props) $$invalidate(6, embarazada = $$props.embarazada);
+    		if ("pacienteSeleccionado" in $$props) $$invalidate(7, pacienteSeleccionado = $$props.pacienteSeleccionado);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -15270,6 +15368,8 @@ var app = (function () {
     		cedula,
     		edad,
     		paciente,
+    		sexo,
+    		embarazada,
     		pacienteSeleccionado,
     		crearNuevaHistoria,
     		cargando,
@@ -15287,9 +15387,11 @@ var app = (function () {
     			apellidos: 1,
     			cedula: 2,
     			edad: 3,
-    			id: 8,
+    			id: 10,
     			paciente: 4,
-    			cargando: 7
+    			cargando: 9,
+    			sexo: 5,
+    			embarazada: 6
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -15310,8 +15412,16 @@ var app = (function () {
     			console_1$6.warn("<CabeceraPerfil> was created without expected prop 'paciente'");
     		}
 
-    		if (/*cargando*/ ctx[7] === undefined && !("cargando" in props)) {
+    		if (/*cargando*/ ctx[9] === undefined && !("cargando" in props)) {
     			console_1$6.warn("<CabeceraPerfil> was created without expected prop 'cargando'");
+    		}
+
+    		if (/*sexo*/ ctx[5] === undefined && !("sexo" in props)) {
+    			console_1$6.warn("<CabeceraPerfil> was created without expected prop 'sexo'");
+    		}
+
+    		if (/*embarazada*/ ctx[6] === undefined && !("embarazada" in props)) {
+    			console_1$6.warn("<CabeceraPerfil> was created without expected prop 'embarazada'");
     		}
     	}
 
@@ -15368,6 +15478,22 @@ var app = (function () {
     	}
 
     	set cargando(value) {
+    		throw new Error("<CabeceraPerfil>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get sexo() {
+    		throw new Error("<CabeceraPerfil>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set sexo(value) {
+    		throw new Error("<CabeceraPerfil>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get embarazada() {
+    		throw new Error("<CabeceraPerfil>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set embarazada(value) {
     		throw new Error("<CabeceraPerfil>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -16612,7 +16738,7 @@ var app = (function () {
     // (15:8) {#if antecedente.categoria.id === id}
     function create_if_block$9(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[3].activo && create_if_block_1$5(ctx);
+    	let if_block = /*antecedente*/ ctx[3].activo && create_if_block_1$6(ctx);
 
     	const block = {
     		c: function create() {
@@ -16628,7 +16754,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$5(ctx);
+    					if_block = create_if_block_1$6(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -16655,7 +16781,7 @@ var app = (function () {
     }
 
     // (16:12) {#if antecedente.activo}
-    function create_if_block_1$5(ctx) {
+    function create_if_block_1$6(ctx) {
     	let div;
     	let h5;
     	let t0_value = /*antecedente*/ ctx[3].nombre + "";
@@ -16709,7 +16835,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$5.name,
+    		id: create_if_block_1$6.name,
     		type: "if",
     		source: "(16:12) {#if antecedente.activo}",
     		ctx
@@ -16939,39 +17065,39 @@ var app = (function () {
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[38] = list[i];
-    	child_ctx[39] = list;
-    	child_ctx[40] = i;
+    	child_ctx[40] = list[i];
+    	child_ctx[41] = list;
+    	child_ctx[42] = i;
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[38] = list[i];
+    	child_ctx[40] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[35] = list[i];
+    	child_ctx[37] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[35] = list[i];
-    	child_ctx[43] = list;
-    	child_ctx[44] = i;
+    	child_ctx[37] = list[i];
+    	child_ctx[45] = list;
+    	child_ctx[46] = i;
     	return child_ctx;
     }
 
     function get_each_context_4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[45] = list[i];
+    	child_ctx[47] = list[i];
     	return child_ctx;
     }
 
-    // (185:2) {#if cargando}
+    // (186:2) {#if cargando}
     function create_if_block_5(ctx) {
     	let div;
     	let loading;
@@ -16983,7 +17109,7 @@ var app = (function () {
     			div = element("div");
     			create_component(loading.$$.fragment);
     			attr_dev(div, "class", "cargando svelte-3oo6xw");
-    			add_location(div, file$e, 185, 4, 5496);
+    			add_location(div, file$e, 186, 4, 5527);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -17009,26 +17135,26 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(185:2) {#if cargando}",
+    		source: "(186:2) {#if cargando}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (333:20) {#if historia.activo}
+    // (336:20) {#if historia.activo}
     function create_if_block_4$1(ctx) {
     	let evoluciones;
     	let current;
 
     	evoluciones = new Evoluciones({
     			props: {
-    				usuario: /*historia*/ ctx[45].usuario,
+    				usuario: /*historia*/ ctx[47].usuario,
     				idPaciente: /*paciente*/ ctx[1].id,
-    				id: /*historia*/ ctx[45].id,
-    				fecha: /*historia*/ ctx[45].fechaHora,
-    				motivo: /*historia*/ ctx[45].motivoConsulta,
-    				historia: /*historia*/ ctx[45].historiaEnfermedad
+    				id: /*historia*/ ctx[47].id,
+    				fecha: /*historia*/ ctx[47].fechaHora,
+    				motivo: /*historia*/ ctx[47].motivoConsulta,
+    				historia: /*historia*/ ctx[47].historiaEnfermedad
     			},
     			$$inline: true
     		});
@@ -17043,12 +17169,12 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const evoluciones_changes = {};
-    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.usuario = /*historia*/ ctx[45].usuario;
+    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.usuario = /*historia*/ ctx[47].usuario;
     			if (dirty[0] & /*paciente*/ 2) evoluciones_changes.idPaciente = /*paciente*/ ctx[1].id;
-    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.id = /*historia*/ ctx[45].id;
-    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.fecha = /*historia*/ ctx[45].fechaHora;
-    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.motivo = /*historia*/ ctx[45].motivoConsulta;
-    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.historia = /*historia*/ ctx[45].historiaEnfermedad;
+    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.id = /*historia*/ ctx[47].id;
+    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.fecha = /*historia*/ ctx[47].fechaHora;
+    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.motivo = /*historia*/ ctx[47].motivoConsulta;
+    			if (dirty[0] & /*historiasPaciente*/ 64) evoluciones_changes.historia = /*historia*/ ctx[47].historiaEnfermedad;
     			evoluciones.$set(evoluciones_changes);
     		},
     		i: function intro(local) {
@@ -17069,18 +17195,18 @@ var app = (function () {
     		block,
     		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(333:20) {#if historia.activo}",
+    		source: "(336:20) {#if historia.activo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (332:18) {#each historiasPaciente as historia}
+    // (335:18) {#each historiasPaciente as historia}
     function create_each_block_4(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*historia*/ ctx[45].activo && create_if_block_4$1(ctx);
+    	let if_block = /*historia*/ ctx[47].activo && create_if_block_4$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -17093,7 +17219,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*historia*/ ctx[45].activo) {
+    			if (/*historia*/ ctx[47].activo) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -17135,14 +17261,14 @@ var app = (function () {
     		block,
     		id: create_each_block_4.name,
     		type: "each",
-    		source: "(332:18) {#each historiasPaciente as historia}",
+    		source: "(335:18) {#each historiasPaciente as historia}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (370:20) {#each categoriasAntecedentes as categoria}
+    // (373:20) {#each categoriasAntecedentes as categoria}
     function create_each_block_3(ctx) {
     	let tarjetaantecedentes;
     	let updating_id;
@@ -17151,25 +17277,25 @@ var app = (function () {
     	let current;
 
     	function tarjetaantecedentes_id_binding(value) {
-    		/*tarjetaantecedentes_id_binding*/ ctx[25].call(null, value, /*categoria*/ ctx[35]);
+    		/*tarjetaantecedentes_id_binding*/ ctx[27].call(null, value, /*categoria*/ ctx[37]);
     	}
 
     	function tarjetaantecedentes_nombre_binding(value) {
-    		/*tarjetaantecedentes_nombre_binding*/ ctx[26].call(null, value, /*categoria*/ ctx[35]);
+    		/*tarjetaantecedentes_nombre_binding*/ ctx[28].call(null, value, /*categoria*/ ctx[37]);
     	}
 
     	function tarjetaantecedentes_antecedentes_binding(value) {
-    		/*tarjetaantecedentes_antecedentes_binding*/ ctx[27].call(null, value);
+    		/*tarjetaantecedentes_antecedentes_binding*/ ctx[29].call(null, value);
     	}
 
     	let tarjetaantecedentes_props = {};
 
-    	if (/*categoria*/ ctx[35].id !== void 0) {
-    		tarjetaantecedentes_props.id = /*categoria*/ ctx[35].id;
+    	if (/*categoria*/ ctx[37].id !== void 0) {
+    		tarjetaantecedentes_props.id = /*categoria*/ ctx[37].id;
     	}
 
-    	if (/*categoria*/ ctx[35].nombre !== void 0) {
-    		tarjetaantecedentes_props.nombre = /*categoria*/ ctx[35].nombre;
+    	if (/*categoria*/ ctx[37].nombre !== void 0) {
+    		tarjetaantecedentes_props.nombre = /*categoria*/ ctx[37].nombre;
     	}
 
     	if (/*paciente*/ ctx[1].antecedentes !== void 0) {
@@ -17199,13 +17325,13 @@ var app = (function () {
 
     			if (!updating_id && dirty[0] & /*categoriasAntecedentes*/ 16) {
     				updating_id = true;
-    				tarjetaantecedentes_changes.id = /*categoria*/ ctx[35].id;
+    				tarjetaantecedentes_changes.id = /*categoria*/ ctx[37].id;
     				add_flush_callback(() => updating_id = false);
     			}
 
     			if (!updating_nombre && dirty[0] & /*categoriasAntecedentes*/ 16) {
     				updating_nombre = true;
-    				tarjetaantecedentes_changes.nombre = /*categoria*/ ctx[35].nombre;
+    				tarjetaantecedentes_changes.nombre = /*categoria*/ ctx[37].nombre;
     				add_flush_callback(() => updating_nombre = false);
     			}
 
@@ -17235,17 +17361,17 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(370:20) {#each categoriasAntecedentes as categoria}",
+    		source: "(373:20) {#each categoriasAntecedentes as categoria}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (497:26) {#if antecedente.categoria.id === categoria.id}
+    // (500:26) {#if antecedente.categoria.id === categoria.id}
     function create_if_block_2$4(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[38].activo === false && create_if_block_3$1(ctx);
+    	let if_block = /*antecedente*/ ctx[40].activo === false && create_if_block_3$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -17257,7 +17383,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*antecedente*/ ctx[38].activo === false) {
+    			if (/*antecedente*/ ctx[40].activo === false) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -17280,27 +17406,27 @@ var app = (function () {
     		block,
     		id: create_if_block_2$4.name,
     		type: "if",
-    		source: "(497:26) {#if antecedente.categoria.id === categoria.id}",
+    		source: "(500:26) {#if antecedente.categoria.id === categoria.id}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (498:28) {#if antecedente.activo === false}
+    // (501:28) {#if antecedente.activo === false}
     function create_if_block_3$1(ctx) {
     	let button;
     	let i;
     	let t0;
     	let span;
-    	let t1_value = /*antecedente*/ ctx[38].nombre + "";
+    	let t1_value = /*antecedente*/ ctx[40].nombre + "";
     	let t1;
     	let t2;
     	let mounted;
     	let dispose;
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[28](/*antecedente*/ ctx[38], ...args);
+    		return /*click_handler*/ ctx[30](/*antecedente*/ ctx[40], ...args);
     	}
 
     	const block = {
@@ -17312,13 +17438,13 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = space();
     			attr_dev(i, "class", "mdi mdi-plus");
-    			add_location(i, file$e, 505, 33, 18449);
+    			add_location(i, file$e, 508, 33, 18562);
     			attr_dev(span, "data-bind", "text: nombre");
-    			add_location(span, file$e, 506, 32, 18509);
+    			add_location(span, file$e, 509, 32, 18622);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-outline-primary btn-sm mb-1 mr-2");
     			set_style(button, "box-shadow", "none");
-    			add_location(button, file$e, 499, 30, 18093);
+    			add_location(button, file$e, 502, 30, 18206);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -17335,7 +17461,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*antecedentes*/ 32 && t1_value !== (t1_value = /*antecedente*/ ctx[38].nombre + "")) set_data_dev(t1, t1_value);
+    			if (dirty[0] & /*antecedentes*/ 32 && t1_value !== (t1_value = /*antecedente*/ ctx[40].nombre + "")) set_data_dev(t1, t1_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -17348,17 +17474,17 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(498:28) {#if antecedente.activo === false}",
+    		source: "(501:28) {#if antecedente.activo === false}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (496:24) {#each antecedentes as antecedente}
+    // (499:24) {#each antecedentes as antecedente}
     function create_each_block_2(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[38].categoria.id === /*categoria*/ ctx[35].id && create_if_block_2$4(ctx);
+    	let if_block = /*antecedente*/ ctx[40].categoria.id === /*categoria*/ ctx[37].id && create_if_block_2$4(ctx);
 
     	const block = {
     		c: function create() {
@@ -17370,7 +17496,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*antecedente*/ ctx[38].categoria.id === /*categoria*/ ctx[35].id) {
+    			if (/*antecedente*/ ctx[40].categoria.id === /*categoria*/ ctx[37].id) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -17393,17 +17519,17 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(496:24) {#each antecedentes as antecedente}",
+    		source: "(499:24) {#each antecedentes as antecedente}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (523:32) {#if antecedente.categoria.id === categoria.id}
+    // (526:32) {#if antecedente.categoria.id === categoria.id}
     function create_if_block$a(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[38].activo === true && create_if_block_1$6(ctx);
+    	let if_block = /*antecedente*/ ctx[40].activo === true && create_if_block_1$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -17415,11 +17541,11 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*antecedente*/ ctx[38].activo === true) {
+    			if (/*antecedente*/ ctx[40].activo === true) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$6(ctx);
+    					if_block = create_if_block_1$7(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -17438,22 +17564,22 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(523:32) {#if antecedente.categoria.id === categoria.id}",
+    		source: "(526:32) {#if antecedente.categoria.id === categoria.id}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (524:34) {#if antecedente.activo === true}
-    function create_if_block_1$6(ctx) {
+    // (527:34) {#if antecedente.activo === true}
+    function create_if_block_1$7(ctx) {
     	let div6;
     	let div1;
     	let div0;
     	let i0;
     	let t0;
     	let span;
-    	let t1_value = /*antecedente*/ ctx[38].nombre + "";
+    	let t1_value = /*antecedente*/ ctx[40].nombre + "";
     	let t1;
     	let t2;
     	let div4;
@@ -17473,11 +17599,11 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_1(...args) {
-    		return /*click_handler_1*/ ctx[29](/*antecedente*/ ctx[38], ...args);
+    		return /*click_handler_1*/ ctx[31](/*antecedente*/ ctx[40], ...args);
     	}
 
     	function textarea_input_handler() {
-    		/*textarea_input_handler*/ ctx[30].call(textarea, /*each_value_1*/ ctx[39], /*antecedente_index*/ ctx[40]);
+    		/*textarea_input_handler*/ ctx[32].call(textarea, /*each_value_1*/ ctx[41], /*antecedente_index*/ ctx[42]);
     	}
 
     	const block = {
@@ -17504,31 +17630,31 @@ var app = (function () {
     			textarea = element("textarea");
     			t6 = space();
     			attr_dev(i0, "class", "mdi mdi-history mdi-18px");
-    			add_location(i0, file$e, 531, 42, 19814);
+    			add_location(i0, file$e, 534, 42, 19927);
     			attr_dev(span, "data-bind", "text: nombre");
-    			add_location(span, file$e, 532, 42, 19896);
+    			add_location(span, file$e, 535, 42, 20009);
     			attr_dev(div0, "class", "card-title");
-    			add_location(div0, file$e, 530, 40, 19746);
+    			add_location(div0, file$e, 533, 40, 19859);
     			attr_dev(div1, "class", "card-header");
-    			add_location(div1, file$e, 529, 38, 19679);
+    			add_location(div1, file$e, 532, 38, 19792);
     			attr_dev(i1, "class", "icon mdi  mdi-dots-vertical");
-    			add_location(i1, file$e, 545, 44, 20661);
+    			add_location(i1, file$e, 548, 44, 20774);
     			attr_dev(a, "href", "/");
     			attr_dev(a, "data-toggle", "dropdown");
     			attr_dev(a, "aria-haspopup", "true");
     			attr_dev(a, "aria-expanded", "false");
-    			add_location(a, file$e, 539, 42, 20313);
+    			add_location(a, file$e, 542, 42, 20426);
     			attr_dev(i2, "class", "mdi mdi-trash-can-outline");
-    			add_location(i2, file$e, 559, 47, 21517);
+    			add_location(i2, file$e, 562, 47, 21630);
     			attr_dev(button, "class", "dropdown-item text-danger");
     			attr_dev(button, "type", "button");
-    			add_location(button, file$e, 552, 44, 21068);
+    			add_location(button, file$e, 555, 44, 21181);
     			attr_dev(div2, "class", "dropdown-menu dropdown-menu-right");
-    			add_location(div2, file$e, 549, 42, 20886);
+    			add_location(div2, file$e, 552, 42, 20999);
     			attr_dev(div3, "class", "dropdown");
-    			add_location(div3, file$e, 538, 40, 20247);
+    			add_location(div3, file$e, 541, 40, 20360);
     			attr_dev(div4, "class", "card-controls");
-    			add_location(div4, file$e, 537, 38, 20178);
+    			add_location(div4, file$e, 540, 38, 20291);
     			attr_dev(textarea, "class", "form-control");
     			set_style(textarea, "width", "100%");
     			set_style(textarea, "display", "block");
@@ -17536,13 +17662,13 @@ var app = (function () {
     			attr_dev(textarea, "id", "exampleFormControlTextarea1");
     			attr_dev(textarea, "rows", "5");
     			attr_dev(textarea, "name", "Comentario");
-    			add_location(textarea, file$e, 568, 40, 22012);
+    			add_location(textarea, file$e, 571, 40, 22125);
     			attr_dev(div5, "class", "card-body");
-    			add_location(div5, file$e, 567, 38, 21947);
+    			add_location(div5, file$e, 570, 38, 22060);
     			attr_dev(div6, "class", "card m-b-20 mt-3");
     			set_style(div6, "box-shadow", "none");
     			set_style(div6, "border", "1px grey solid");
-    			add_location(div6, file$e, 525, 36, 19443);
+    			add_location(div6, file$e, 528, 36, 19556);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div6, anchor);
@@ -17565,7 +17691,7 @@ var app = (function () {
     			append_dev(div6, t5);
     			append_dev(div6, div5);
     			append_dev(div5, textarea);
-    			set_input_value(textarea, /*antecedente*/ ctx[38].descripcion);
+    			set_input_value(textarea, /*antecedente*/ ctx[40].descripcion);
     			append_dev(div6, t6);
 
     			if (!mounted) {
@@ -17580,10 +17706,10 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*antecedentes*/ 32 && t1_value !== (t1_value = /*antecedente*/ ctx[38].nombre + "")) set_data_dev(t1, t1_value);
+    			if (dirty[0] & /*antecedentes*/ 32 && t1_value !== (t1_value = /*antecedente*/ ctx[40].nombre + "")) set_data_dev(t1, t1_value);
 
     			if (dirty[0] & /*antecedentes*/ 32) {
-    				set_input_value(textarea, /*antecedente*/ ctx[38].descripcion);
+    				set_input_value(textarea, /*antecedente*/ ctx[40].descripcion);
     			}
     		},
     		d: function destroy(detaching) {
@@ -17595,19 +17721,19 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$6.name,
+    		id: create_if_block_1$7.name,
     		type: "if",
-    		source: "(524:34) {#if antecedente.activo === true}",
+    		source: "(527:34) {#if antecedente.activo === true}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (522:30) {#each antecedentes as antecedente}
+    // (525:30) {#each antecedentes as antecedente}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
-    	let if_block = /*antecedente*/ ctx[38].categoria.id === /*categoria*/ ctx[35].id && create_if_block$a(ctx);
+    	let if_block = /*antecedente*/ ctx[40].categoria.id === /*categoria*/ ctx[37].id && create_if_block$a(ctx);
 
     	const block = {
     		c: function create() {
@@ -17619,7 +17745,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*antecedente*/ ctx[38].categoria.id === /*categoria*/ ctx[35].id) {
+    			if (/*antecedente*/ ctx[40].categoria.id === /*categoria*/ ctx[37].id) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -17642,19 +17768,19 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(522:30) {#each antecedentes as antecedente}",
+    		source: "(525:30) {#each antecedentes as antecedente}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (481:16) {#each categoriasAntecedentes as categoria}
+    // (484:16) {#each categoriasAntecedentes as categoria}
     function create_each_block$3(ctx) {
     	let div8;
     	let div1;
     	let div0;
-    	let t0_value = /*categoria*/ ctx[35].nombre + "";
+    	let t0_value = /*categoria*/ ctx[37].nombre + "";
     	let t0;
     	let t1;
     	let div7;
@@ -17708,27 +17834,27 @@ var app = (function () {
     			t3 = space();
     			attr_dev(div0, "class", "card-title");
     			attr_dev(div0, "data-bind", "text: nombre");
-    			add_location(div0, file$e, 486, 22, 17432);
+    			add_location(div0, file$e, 489, 22, 17545);
     			attr_dev(div1, "class", "card-header");
-    			add_location(div1, file$e, 485, 20, 17383);
+    			add_location(div1, file$e, 488, 20, 17496);
     			attr_dev(div2, "class", "botones-antecedentes");
     			attr_dev(div2, "data-bind", "foreach: tiposAntecedentesFiltrados");
-    			add_location(div2, file$e, 491, 22, 17652);
+    			add_location(div2, file$e, 494, 22, 17765);
     			attr_dev(div3, "class", "col-lg-12");
     			attr_dev(div3, "data-bind", "foreach: antecedentesFiltrados");
-    			add_location(div3, file$e, 517, 28, 18971);
+    			add_location(div3, file$e, 520, 28, 19084);
     			attr_dev(div4, "class", "row");
-    			add_location(div4, file$e, 516, 26, 18924);
+    			add_location(div4, file$e, 519, 26, 19037);
     			attr_dev(div5, "class", "col-12");
-    			add_location(div5, file$e, 515, 24, 18876);
+    			add_location(div5, file$e, 518, 24, 18989);
     			attr_dev(div6, "class", "row");
-    			add_location(div6, file$e, 514, 22, 18833);
+    			add_location(div6, file$e, 517, 22, 18946);
     			attr_dev(div7, "class", "card-body");
-    			add_location(div7, file$e, 490, 20, 17605);
+    			add_location(div7, file$e, 493, 20, 17718);
     			attr_dev(div8, "class", "card  m-b-30");
     			set_style(div8, "box-shadow", "none");
     			set_style(div8, "border", "#32325d solid 1px");
-    			add_location(div8, file$e, 481, 18, 17220);
+    			add_location(div8, file$e, 484, 18, 17333);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div8, anchor);
@@ -17756,7 +17882,7 @@ var app = (function () {
     			append_dev(div8, t3);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*categoriasAntecedentes*/ 16 && t0_value !== (t0_value = /*categoria*/ ctx[35].nombre + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*categoriasAntecedentes*/ 16 && t0_value !== (t0_value = /*categoria*/ ctx[37].nombre + "")) set_data_dev(t0, t0_value);
 
     			if (dirty[0] & /*cambiarEstadoAntecedente, antecedentes, categoriasAntecedentes*/ 131120) {
     				each_value_2 = /*antecedentes*/ ctx[5];
@@ -17817,7 +17943,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(481:16) {#each categoriasAntecedentes as categoria}",
+    		source: "(484:16) {#each categoriasAntecedentes as categoria}",
     		ctx
     	});
 
@@ -17840,6 +17966,8 @@ var app = (function () {
     	let updating_apellidos;
     	let updating_cedula;
     	let updating_id;
+    	let updating_sexo;
+    	let updating_embarazada;
     	let t3;
     	let div16;
     	let div15;
@@ -17925,6 +18053,14 @@ var app = (function () {
     		/*cabeceraperfil_id_binding*/ ctx[24].call(null, value);
     	}
 
+    	function cabeceraperfil_sexo_binding(value) {
+    		/*cabeceraperfil_sexo_binding*/ ctx[25].call(null, value);
+    	}
+
+    	function cabeceraperfil_embarazada_binding(value) {
+    		/*cabeceraperfil_embarazada_binding*/ ctx[26].call(null, value);
+    	}
+
     	let cabeceraperfil_props = { paciente: /*paciente*/ ctx[1] };
 
     	if (/*cargando*/ ctx[0] !== void 0) {
@@ -17951,6 +18087,14 @@ var app = (function () {
     		cabeceraperfil_props.id = /*paciente*/ ctx[1].id;
     	}
 
+    	if (/*paciente*/ ctx[1].sexo !== void 0) {
+    		cabeceraperfil_props.sexo = /*paciente*/ ctx[1].sexo;
+    	}
+
+    	if (/*paciente*/ ctx[1].embarazada !== void 0) {
+    		cabeceraperfil_props.embarazada = /*paciente*/ ctx[1].embarazada;
+    	}
+
     	cabeceraperfil = new CabeceraPerfil({
     			props: cabeceraperfil_props,
     			$$inline: true
@@ -17962,6 +18106,8 @@ var app = (function () {
     	binding_callbacks.push(() => bind(cabeceraperfil, "apellidos", cabeceraperfil_apellidos_binding));
     	binding_callbacks.push(() => bind(cabeceraperfil, "cedula", cabeceraperfil_cedula_binding));
     	binding_callbacks.push(() => bind(cabeceraperfil, "id", cabeceraperfil_id_binding));
+    	binding_callbacks.push(() => bind(cabeceraperfil, "sexo", cabeceraperfil_sexo_binding));
+    	binding_callbacks.push(() => bind(cabeceraperfil, "embarazada", cabeceraperfil_embarazada_binding));
 
     	ultimosvitales = new UltimosVitales({
     			props: {
@@ -18102,86 +18248,86 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "col-lg-3 order-lg-1 order-sm-3");
-    			add_location(div0, file$e, 204, 12, 6010);
+    			add_location(div0, file$e, 207, 12, 6123);
     			attr_dev(i0, "class", "mdi mdi-progress-check mdi-18px");
-    			add_location(i0, file$e, 325, 22, 11351);
+    			add_location(i0, file$e, 328, 22, 11464);
     			attr_dev(div1, "class", "avatar-title bg-dark rounded-circle");
-    			add_location(div1, file$e, 324, 20, 11278);
+    			add_location(div1, file$e, 327, 20, 11391);
     			attr_dev(div2, "class", "avatar mr-2 avatar-xs");
-    			add_location(div2, file$e, 323, 18, 11221);
+    			add_location(div2, file$e, 326, 18, 11334);
     			attr_dev(div3, "class", "card-header");
-    			add_location(div3, file$e, 322, 16, 11176);
+    			add_location(div3, file$e, 325, 16, 11289);
     			attr_dev(div4, "class", "card-body");
-    			add_location(div4, file$e, 330, 16, 11532);
+    			add_location(div4, file$e, 333, 16, 11645);
     			attr_dev(div5, "class", "card m-b-30");
-    			add_location(div5, file$e, 321, 14, 11133);
+    			add_location(div5, file$e, 324, 14, 11246);
     			attr_dev(div6, "class", "col-md-5 order-2 order-sm-1");
-    			add_location(div6, file$e, 320, 12, 11076);
+    			add_location(div6, file$e, 323, 12, 11189);
     			attr_dev(i1, "class", "mdi mdi-history mdi-18px");
-    			add_location(i1, file$e, 354, 22, 12537);
+    			add_location(i1, file$e, 357, 22, 12650);
     			attr_dev(div7, "class", "avatar-title bg-dark rounded-circle");
-    			add_location(div7, file$e, 353, 20, 12464);
+    			add_location(div7, file$e, 356, 20, 12577);
     			attr_dev(div8, "class", "avatar mr-2 avatar-xs");
-    			add_location(div8, file$e, 352, 18, 12407);
-    			add_location(span0, file$e, 360, 18, 12754);
+    			add_location(div8, file$e, 355, 18, 12520);
+    			add_location(span0, file$e, 363, 18, 12867);
     			attr_dev(i2, "class", "mdi mdi-plus");
-    			add_location(i2, file$e, 364, 21, 12971);
+    			add_location(i2, file$e, 367, 21, 13084);
     			attr_dev(button0, "class", "btn btn-outline-primary btn-sm");
     			attr_dev(button0, "data-toggle", "modal");
     			attr_dev(button0, "data-target", "#modalAntecedentes");
-    			add_location(button0, file$e, 360, 50, 12786);
+    			add_location(button0, file$e, 363, 50, 12899);
     			attr_dev(div9, "class", "card-header");
-    			add_location(div9, file$e, 351, 16, 12362);
+    			add_location(div9, file$e, 354, 16, 12475);
     			attr_dev(div10, "class", "atenciones-vnc mb-3");
-    			add_location(div10, file$e, 368, 18, 13126);
+    			add_location(div10, file$e, 371, 18, 13239);
     			attr_dev(div11, "class", "card-body");
-    			add_location(div11, file$e, 367, 16, 13083);
+    			add_location(div11, file$e, 370, 16, 13196);
     			attr_dev(div12, "class", "card m-b-30");
-    			add_location(div12, file$e, 350, 14, 12319);
+    			add_location(div12, file$e, 353, 14, 12432);
     			attr_dev(div13, "class", "col-md-4 order-lg-12 order-sm-2");
-    			add_location(div13, file$e, 349, 12, 12258);
+    			add_location(div13, file$e, 352, 12, 12371);
     			attr_dev(div14, "class", "row");
-    			add_location(div14, file$e, 203, 10, 5979);
+    			add_location(div14, file$e, 206, 10, 6092);
     			attr_dev(div15, "class", "col-md-12");
-    			add_location(div15, file$e, 202, 8, 5944);
+    			add_location(div15, file$e, 205, 8, 6057);
     			attr_dev(div16, "class", "pull-up");
-    			add_location(div16, file$e, 201, 6, 5913);
+    			add_location(div16, file$e, 204, 6, 6026);
     			attr_dev(section0, "class", "admin-content");
-    			add_location(section0, file$e, 191, 4, 5612);
+    			add_location(section0, file$e, 192, 4, 5643);
     			attr_dev(h5, "class", "modal-title");
     			attr_dev(h5, "id", "modalAntecedentes");
-    			add_location(h5, file$e, 457, 12, 16278);
+    			add_location(h5, file$e, 460, 12, 16391);
     			attr_dev(span1, "aria-hidden", "true");
-    			add_location(span1, file$e, 464, 14, 16522);
+    			add_location(span1, file$e, 467, 14, 16635);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "close");
     			attr_dev(button1, "data-dismiss", "modal");
     			attr_dev(button1, "aria-label", "Close");
-    			add_location(button1, file$e, 458, 12, 16356);
+    			add_location(button1, file$e, 461, 12, 16469);
     			attr_dev(i3, "class", "mdi mdi-check-all");
-    			add_location(i3, file$e, 472, 18, 16854);
-    			add_location(i4, file$e, 472, 50, 16886);
+    			add_location(i3, file$e, 475, 18, 16967);
+    			add_location(i4, file$e, 475, 50, 16999);
     			attr_dev(div17, "class", "guardando mr-2 text-success");
     			attr_dev(div17, "data-bind", "html: content, class: contentClass");
-    			add_location(div17, file$e, 468, 16, 16690);
+    			add_location(div17, file$e, 471, 16, 16803);
     			attr_dev(div18, "class", "guardar-documento");
-    			add_location(div18, file$e, 467, 14, 16641);
+    			add_location(div18, file$e, 470, 14, 16754);
     			set_style(div19, "margin-right", "40px");
-    			add_location(div19, file$e, 466, 12, 16592);
+    			add_location(div19, file$e, 469, 12, 16705);
     			attr_dev(div20, "class", "modal-header");
-    			add_location(div20, file$e, 456, 10, 16238);
+    			add_location(div20, file$e, 459, 10, 16351);
     			attr_dev(div21, "class", "col-lg-12");
     			attr_dev(div21, "data-bind", "foreach: gruposAntecedentes");
-    			add_location(div21, file$e, 479, 14, 17076);
+    			add_location(div21, file$e, 482, 14, 17189);
     			attr_dev(div22, "class", "row");
-    			add_location(div22, file$e, 478, 12, 17043);
+    			add_location(div22, file$e, 481, 12, 17156);
     			attr_dev(div23, "class", "modal-body");
-    			add_location(div23, file$e, 477, 10, 17005);
+    			add_location(div23, file$e, 480, 10, 17118);
     			attr_dev(div24, "class", "modal-content");
-    			add_location(div24, file$e, 455, 8, 16199);
+    			add_location(div24, file$e, 458, 8, 16312);
     			attr_dev(div25, "class", "modal-dialog");
     			attr_dev(div25, "role", "document");
-    			add_location(div25, file$e, 454, 6, 16147);
+    			add_location(div25, file$e, 457, 6, 16260);
     			attr_dev(div26, "class", "modal fade modal-slide-right");
     			attr_dev(div26, "id", "modalAntecedentes");
     			attr_dev(div26, "tabindex", "-1");
@@ -18189,11 +18335,11 @@ var app = (function () {
     			attr_dev(div26, "aria-labelledby", "modalAntecedentes");
     			set_style(div26, "display", "none");
     			attr_dev(div26, "aria-hidden", "true");
-    			add_location(div26, file$e, 445, 4, 15913);
+    			add_location(div26, file$e, 448, 4, 16026);
     			attr_dev(section1, "class", "admin-content");
-    			add_location(section1, file$e, 190, 2, 5575);
+    			add_location(section1, file$e, 191, 2, 5606);
     			attr_dev(main, "class", "admin-main");
-    			add_location(main, file$e, 183, 0, 5419);
+    			add_location(main, file$e, 184, 0, 5450);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -18343,6 +18489,18 @@ var app = (function () {
     				updating_id = true;
     				cabeceraperfil_changes.id = /*paciente*/ ctx[1].id;
     				add_flush_callback(() => updating_id = false);
+    			}
+
+    			if (!updating_sexo && dirty[0] & /*paciente*/ 2) {
+    				updating_sexo = true;
+    				cabeceraperfil_changes.sexo = /*paciente*/ ctx[1].sexo;
+    				add_flush_callback(() => updating_sexo = false);
+    			}
+
+    			if (!updating_embarazada && dirty[0] & /*paciente*/ 2) {
+    				updating_embarazada = true;
+    				cabeceraperfil_changes.embarazada = /*paciente*/ ctx[1].embarazada;
+    				add_flush_callback(() => updating_embarazada = false);
     			}
 
     			cabeceraperfil.$set(cabeceraperfil_changes);
@@ -18669,6 +18827,7 @@ var app = (function () {
     			if (promesa.status == 200) {
     				$$invalidate(0, cargando = false);
     				$$invalidate(1, paciente = promesa.data);
+    				console.log(paciente);
     				$$invalidate(2, edad = calcularEdad$1(paciente.fechaNacimiento));
 
     				if (paciente.seguroMedico.length !== 0) {
@@ -18725,6 +18884,16 @@ var app = (function () {
 
     	function cabeceraperfil_id_binding(value) {
     		paciente.id = value;
+    		$$invalidate(1, paciente);
+    	}
+
+    	function cabeceraperfil_sexo_binding(value) {
+    		paciente.sexo = value;
+    		$$invalidate(1, paciente);
+    	}
+
+    	function cabeceraperfil_embarazada_binding(value) {
+    		paciente.embarazada = value;
     		$$invalidate(1, paciente);
     	}
 
@@ -18844,6 +19013,8 @@ var app = (function () {
     		cabeceraperfil_apellidos_binding,
     		cabeceraperfil_cedula_binding,
     		cabeceraperfil_id_binding,
+    		cabeceraperfil_sexo_binding,
+    		cabeceraperfil_embarazada_binding,
     		tarjetaantecedentes_id_binding,
     		tarjetaantecedentes_nombre_binding,
     		tarjetaantecedentes_antecedentes_binding,
@@ -20492,7 +20663,7 @@ var app = (function () {
     }
 
     // (134:2) {#if msgError}
-    function create_if_block_1$7(ctx) {
+    function create_if_block_1$8(ctx) {
     	let errorconexion;
     	let current;
 
@@ -20530,7 +20701,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$7.name,
+    		id: create_if_block_1$8.name,
     		type: "if",
     		source: "(134:2) {#if msgError}",
     		ctx
@@ -20894,7 +21065,7 @@ var app = (function () {
     	let dispose;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*msgError*/ ctx[7] && create_if_block_1$7(ctx);
+    	let if_block0 = /*msgError*/ ctx[7] && create_if_block_1$8(ctx);
     	let if_block1 = /*cargando*/ ctx[6] && create_if_block$b(ctx);
     	let each_value_3 = /*aseguradoras*/ ctx[2];
     	validate_each_argument(each_value_3);
@@ -21596,7 +21767,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_1$7(ctx);
+    					if_block0 = create_if_block_1$8(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(main, t2);
@@ -24818,7 +24989,7 @@ var app = (function () {
     }
 
     // (510:32) {#if !disabled}
-    function create_if_block_1$8(ctx) {
+    function create_if_block_1$9(ctx) {
     	let div;
     	let a;
     	let i;
@@ -24869,7 +25040,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$8.name,
+    		id: create_if_block_1$9.name,
     		type: "if",
     		source: "(510:32) {#if !disabled}",
     		ctx
@@ -24894,7 +25065,7 @@ var app = (function () {
 
     	let current_block_type = select_block_type_1(ctx);
     	let if_block0 = current_block_type(ctx);
-    	let if_block1 = !/*disabled*/ ctx[9] && create_if_block_1$8(ctx);
+    	let if_block1 = !/*disabled*/ ctx[9] && create_if_block_1$9(ctx);
 
     	const block = {
     		c: function create() {
@@ -24934,7 +25105,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_1$8(ctx);
+    					if_block1 = create_if_block_1$9(ctx);
     					if_block1.c();
     					if_block1.m(li, null);
     				}
@@ -29342,7 +29513,7 @@ var app = (function () {
     }
 
     // (1547:40) {#if item.comentario !== undefined}
-    function create_if_block_1$9(ctx) {
+    function create_if_block_1$a(ctx) {
     	let div1;
     	let div0;
     	let input;
@@ -29403,7 +29574,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$9.name,
+    		id: create_if_block_1$a.name,
     		type: "if",
     		source: "(1547:40) {#if item.comentario !== undefined}",
     		ctx
@@ -29425,7 +29596,7 @@ var app = (function () {
     	let t3;
     	let t4;
     	let if_block0 = !/*disabled*/ ctx[26] && create_if_block_2$6(ctx);
-    	let if_block1 = /*item*/ ctx[116].comentario !== undefined && create_if_block_1$9(ctx);
+    	let if_block1 = /*item*/ ctx[116].comentario !== undefined && create_if_block_1$a(ctx);
 
     	const block = {
     		c: function create() {
@@ -29477,7 +29648,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_1$9(ctx);
+    					if_block1 = create_if_block_1$a(ctx);
     					if_block1.c();
     					if_block1.m(li, null);
     				}
@@ -33804,7 +33975,7 @@ var app = (function () {
     }
 
     // (154:20) {#if historia.activo}
-    function create_if_block_1$a(ctx) {
+    function create_if_block_1$b(ctx) {
     	let tr;
     	let td0;
     	let div;
@@ -33981,7 +34152,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$a.name,
+    		id: create_if_block_1$b.name,
     		type: "if",
     		source: "(154:20) {#if historia.activo}",
     		ctx
@@ -33993,7 +34164,7 @@ var app = (function () {
     // (153:16) {#each historias as historia}
     function create_each_block$a(ctx) {
     	let if_block_anchor;
-    	let if_block = /*historia*/ ctx[11].activo && create_if_block_1$a(ctx);
+    	let if_block = /*historia*/ ctx[11].activo && create_if_block_1$b(ctx);
 
     	const block = {
     		c: function create() {
@@ -34009,7 +34180,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$a(ctx);
+    					if_block = create_if_block_1$b(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -35488,7 +35659,7 @@ var app = (function () {
     }
 
     // (175:43) {#if estudio.tipo === 'LAB'}
-    function create_if_block_1$b(ctx) {
+    function create_if_block_1$c(ctx) {
     	let div;
     	let t0_value = /*estudio*/ ctx[11].descripcion + "";
     	let t0;
@@ -35517,7 +35688,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$b.name,
+    		id: create_if_block_1$c.name,
     		type: "if",
     		source: "(175:43) {#if estudio.tipo === 'LAB'}",
     		ctx
@@ -35529,7 +35700,7 @@ var app = (function () {
     // (174:39) {#each estudios as estudio}
     function create_each_block$c(ctx) {
     	let if_block_anchor;
-    	let if_block = /*estudio*/ ctx[11].tipo === "LAB" && create_if_block_1$b(ctx);
+    	let if_block = /*estudio*/ ctx[11].tipo === "LAB" && create_if_block_1$c(ctx);
 
     	const block = {
     		c: function create() {
@@ -35545,7 +35716,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$b(ctx);
+    					if_block = create_if_block_1$c(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -36373,7 +36544,7 @@ var app = (function () {
     }
 
     // (178:43) {#if estudio.tipo === 'IMG'}
-    function create_if_block_1$c(ctx) {
+    function create_if_block_1$d(ctx) {
     	let div;
     	let t0_value = /*estudio*/ ctx[11].descripcion + "";
     	let t0;
@@ -36402,7 +36573,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$c.name,
+    		id: create_if_block_1$d.name,
     		type: "if",
     		source: "(178:43) {#if estudio.tipo === 'IMG'}",
     		ctx
@@ -36414,7 +36585,7 @@ var app = (function () {
     // (177:39) {#each estudios as estudio}
     function create_each_block$d(ctx) {
     	let if_block_anchor;
-    	let if_block = /*estudio*/ ctx[11].tipo === "IMG" && create_if_block_1$c(ctx);
+    	let if_block = /*estudio*/ ctx[11].tipo === "IMG" && create_if_block_1$d(ctx);
 
     	const block = {
     		c: function create() {
@@ -36430,7 +36601,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$c(ctx);
+    					if_block = create_if_block_1$d(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
@@ -37963,7 +38134,7 @@ var app = (function () {
     }
 
     // (237:32) {#if historia.instrucciones}
-    function create_if_block_1$d(ctx) {
+    function create_if_block_1$e(ctx) {
     	let div1;
     	let div0;
     	let strong;
@@ -38001,7 +38172,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$d.name,
+    		id: create_if_block_1$e.name,
     		type: "if",
     		source: "(237:32) {#if historia.instrucciones}",
     		ctx
@@ -38459,7 +38630,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
     	}
 
-    	let if_block2 = /*historia*/ ctx[1].instrucciones && create_if_block_1$d(ctx);
+    	let if_block2 = /*historia*/ ctx[1].instrucciones && create_if_block_1$e(ctx);
     	let each_value = /*medicamentos*/ ctx[4];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -39364,7 +39535,7 @@ var app = (function () {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
     				} else {
-    					if_block2 = create_if_block_1$d(ctx);
+    					if_block2 = create_if_block_1$e(ctx);
     					if_block2.c();
     					if_block2.m(div42, t85);
     				}
@@ -39648,7 +39819,7 @@ var app = (function () {
     }
 
     // (119:20) {#if cargando}
-    function create_if_block_1$e(ctx) {
+    function create_if_block_1$f(ctx) {
     	let div;
     	let loading;
     	let current;
@@ -39683,7 +39854,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$e.name,
+    		id: create_if_block_1$f.name,
     		type: "if",
     		source: "(119:20) {#if cargando}",
     		ctx
@@ -39828,7 +39999,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*cargando*/ ctx[2] && create_if_block_1$e(ctx);
+    	let if_block0 = /*cargando*/ ctx[2] && create_if_block_1$f(ctx);
     	let each_value = /*tandas*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -40116,7 +40287,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_1$e(ctx);
+    					if_block0 = create_if_block_1$f(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div5, t4);
@@ -40392,7 +40563,7 @@ var app = (function () {
     }
 
     // (213:4) {#if serverConexion}
-    function create_if_block_1$f(ctx) {
+    function create_if_block_1$g(ctx) {
     	let noconexion;
     	let current;
     	noconexion = new NoConexion({ $$inline: true });
@@ -40421,7 +40592,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$f.name,
+    		id: create_if_block_1$g.name,
     		type: "if",
     		source: "(213:4) {#if serverConexion}",
     		ctx
@@ -40736,7 +40907,7 @@ var app = (function () {
     	let dispose;
     	aside = new Aside({ $$inline: true });
     	header = new Header({ $$inline: true });
-    	let if_block0 = /*serverConexion*/ ctx[0] && create_if_block_1$f(ctx);
+    	let if_block0 = /*serverConexion*/ ctx[0] && create_if_block_1$g(ctx);
     	let if_block1 = /*cargando*/ ctx[3] && create_if_block$n(ctx);
     	let each_value = /*horarios*/ ctx[4];
     	validate_each_argument(each_value);
@@ -41373,7 +41544,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_1$f(ctx);
+    					if_block0 = create_if_block_1$g(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(main, t2);
@@ -54704,7 +54875,7 @@ var app = (function () {
     }
 
     // (358:36) {#if cita.estado === "X"}
-    function create_if_block_1$g(ctx) {
+    function create_if_block_1$h(ctx) {
     	let i;
 
     	const block = {
@@ -54723,7 +54894,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$g.name,
+    		id: create_if_block_1$h.name,
     		type: "if",
     		source: "(358:36) {#if cita.estado === \\\"X\\\"}",
     		ctx
@@ -54789,7 +54960,7 @@ var app = (function () {
     	let t9;
     	let t10;
     	let if_block0 = /*cita*/ ctx[29].estado === "R" && create_if_block_2$b(ctx);
-    	let if_block1 = /*cita*/ ctx[29].estado === "X" && create_if_block_1$g(ctx);
+    	let if_block1 = /*cita*/ ctx[29].estado === "X" && create_if_block_1$h(ctx);
     	let if_block2 = /*cita*/ ctx[29].estado === "N" && create_if_block$o(ctx);
 
     	const block = {
@@ -54883,7 +55054,7 @@ var app = (function () {
 
     			if (/*cita*/ ctx[29].estado === "X") {
     				if (if_block1) ; else {
-    					if_block1 = create_if_block_1$g(ctx);
+    					if_block1 = create_if_block_1$h(ctx);
     					if_block1.c();
     					if_block1.m(div0, t1);
     				}
@@ -56098,7 +56269,7 @@ var app = (function () {
     }
 
     // (321:12) {#if $viewTable}
-    function create_if_block_1$h(ctx) {
+    function create_if_block_1$i(ctx) {
     	let table;
     	let thead;
     	let tr;
@@ -56233,7 +56404,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$h.name,
+    		id: create_if_block_1$i.name,
     		type: "if",
     		source: "(321:12) {#if $viewTable}",
     		ctx
@@ -56756,7 +56927,7 @@ var app = (function () {
     	let current_block_type = select_block_type(ctx);
     	let if_block1 = current_block_type(ctx);
     	let if_block2 = !/*$viewTable*/ ctx[8] && create_if_block_5$4(ctx);
-    	let if_block3 = /*$viewTable*/ ctx[8] && create_if_block_1$h(ctx);
+    	let if_block3 = /*$viewTable*/ ctx[8] && create_if_block_1$i(ctx);
     	let if_block4 = /*cargando*/ ctx[4] && create_if_block$p(ctx);
 
     	modalcitacalendario = new ModalCitaCalendario({
@@ -56976,7 +57147,7 @@ var app = (function () {
     				if (if_block3) {
     					if_block3.p(ctx, dirty);
     				} else {
-    					if_block3 = create_if_block_1$h(ctx);
+    					if_block3 = create_if_block_1$i(ctx);
     					if_block3.c();
     					if_block3.m(div11, null);
     				}
@@ -58012,7 +58183,7 @@ var app = (function () {
     }
 
     // (271:20) {#if item.tipo === 'LAB'}
-    function create_if_block_1$i(ctx) {
+    function create_if_block_1$j(ctx) {
     	let div;
     	let p;
     	let t0;
@@ -58046,7 +58217,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$i.name,
+    		id: create_if_block_1$j.name,
     		type: "if",
     		source: "(271:20) {#if item.tipo === 'LAB'}",
     		ctx
@@ -58058,7 +58229,7 @@ var app = (function () {
     // (270:16) {#each estudios as item}
     function create_each_block_1$7(ctx) {
     	let if_block_anchor;
-    	let if_block = /*item*/ ctx[20].tipo === "LAB" && create_if_block_1$i(ctx);
+    	let if_block = /*item*/ ctx[20].tipo === "LAB" && create_if_block_1$j(ctx);
 
     	const block = {
     		c: function create() {
@@ -58074,7 +58245,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1$i(ctx);
+    					if_block = create_if_block_1$j(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}

@@ -10,6 +10,8 @@
   export let id = '';
   export let paciente;
   export let cargando;
+  export let sexo;
+  export let embarazada;
 
   let pacienteSeleccionado = {};
   
@@ -64,7 +66,18 @@
                   </a>
                 </h5>
                 <div class="opacity-75"><span data-bind="text: paciente().edad">{edad} años</span> | <span
-                    data-bind="text: paciente().cedula">No. Cedula: {cedula}</span> </div>
+                    data-bind="text: paciente().cedula">No. Cedula: {cedula}</span> 
+                  
+                    {#if sexo == 'Femenino'}
+                       <!-- content here -->
+                       <label class="cstm-switch ml-2">
+                         <input type="checkbox" checked={embarazada} name="option" class="cstm-switch-input">
+                         <span class="cstm-switch-indicator bg-success "></span>
+                         <span class="cstm-switch-description">Embarazada</span>
+                     </label>
+                    {/if}
+                </div>
+
               </div>
             </div>
 
