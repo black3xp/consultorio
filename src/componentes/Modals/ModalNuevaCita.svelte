@@ -1,6 +1,7 @@
 <script>
     import axios from "axios";
     import { onMount } from "svelte";
+    import { link } from 'svelte-spa-router'
     import { url } from "../../util";
 
     import Loading from '../../componentes/Loading.svelte';
@@ -55,6 +56,54 @@
         let fecha = new Date();
         fecha.setFullYear(fecha.getFullYear()+1);
         fechaCita = fecha.toISOString().split('T')[0]
+    }
+
+    const cambiarEstadoCita = (idCita, estado) => {
+        const cita = {
+            estado
+        }
+        const config = {
+            method: 'put',
+            url: `${url}/citas/${idCita}`,
+            data: cita,
+            headers: {
+                'Authorization': `${localStorage.getItem('auth')}` 
+            },
+        };
+        if(estado === 'X'){
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "La cita se va a cancelar y este cupo estara disponible!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Estoy seguro!',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    axios(config)
+                        .then(res => {
+                            if(res.data){
+                                cargarCitasPorPaciente();
+                            }
+                        })
+                        .catch(err => {
+                            console.error(err);
+                        })
+                }
+            });
+            return
+        }
+        axios(config)
+            .then(res => {
+                if(res.data){
+                    cargarCitasPorPaciente();
+                }
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
 
     const cargarCitasPorPaciente = () => {
@@ -283,7 +332,7 @@
                                                     new Date(
                                                         cita.fechaCita
                                                     ).getMonth()
-                                                ]}</span
+                                                ].slice(0,3)}</span
                                             >
                                             <span
                                                 >{new Date(
@@ -294,6 +343,27 @@
                                         <div class="observaciones">
                                             {cita.observaciones}
                                         </div>
+                                        {#if cita.estado !== 'R' && cita.estado !== 'X'}
+                                        <!-- content here -->
+                                            <div class="botones-citas">
+                                                <a
+                                                    href="#!"
+                                                    class="btn btn-outline-danger"
+                                                    data-tooltip="Cancelar"
+                                                    on:click|preventDefault={() => cambiarEstadoCita(cita.id, 'X')}
+                                                >
+                                                    <i class="mdi mdi-close"></i>
+                                                </a>
+                                                <a
+                                                    href="#!"
+                                                    class="btn btn-outline-success"
+                                                    data-tooltip="Marcar realizada"
+                                                    on:click|preventDefault={() => cambiarEstadoCita(cita.id, 'R')}
+                                                >
+                                                    <i class="mdi mdi-check-all"></i>
+                                                </a>
+                                            </div>
+                                        {/if}
                                     </div>
                                 </div>
                             </div>
@@ -331,6 +401,11 @@
 </form>
 
 <style>
+    .botones-citas{
+        position: absolute;
+        right: 20px;
+        top: 35px;
+    }
     .calendar {
         display: flex;
         flex-direction: row;
@@ -350,7 +425,8 @@
     .calendar .fecha span:nth-child(2) {
         margin-top: -10px;
         text-transform: uppercase;
-        font-size: 0.7rem;
+        font-size: 1rem;
+        letter-spacing: 5px;
     }
 
     .calendar .fecha span:last-child {

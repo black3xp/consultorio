@@ -132,6 +132,10 @@ import ModalAgregarHorario from "../../componentes/Modals/ModalAgregarHorario.sv
             signosVitales: empresa.signosVitales,
             otrosParametros: empresa.otrosParametros,
             exploracionFisica: empresa.exploracionFisica,
+            estudiosCheck: empresa.estudiosCheck,
+            examenExtraOral: empresa.examenExtraOral,
+            examenIntraOral: empresa.examenIntraOral,
+            shortAntecedentes: empresa.shortAntecedentes,
         };
         const config = {
             method: "put",
@@ -491,6 +495,93 @@ import ModalAgregarHorario from "../../componentes/Modals/ModalAgregarHorario.sv
                                                                     class="cstm-switch-description"
                                                                     >Exploraci&oacute;n
                                                                     Fisica</span
+                                                                >
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class=" m-b-10">
+                                                            <label
+                                                                class="cstm-switch"
+                                                            >
+                                                                <input
+                                                                    type="checkbox"
+                                                                    bind:checked={empresa.estudiosCheck}
+                                                                    name="option"
+                                                                    class="cstm-switch-input"
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-indicator bg-success "
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-description"
+                                                                    >Estudios Para Seleccion Rapida</span
+                                                                >
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class=" m-b-10">
+                                                            <label
+                                                                class="cstm-switch"
+                                                            >
+                                                                <input
+                                                                    type="checkbox"
+                                                                    bind:checked={empresa.examenIntraOral}
+                                                                    name="option"
+                                                                    value="1"
+                                                                    class="cstm-switch-input"
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-indicator bg-success "
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-description"
+                                                                    >Examen Intra-Oral</span
+                                                                >
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class=" m-b-10">
+                                                            <label
+                                                                class="cstm-switch"
+                                                            >
+                                                                <input
+                                                                    type="checkbox"
+                                                                    bind:checked={empresa.examenExtraOral}
+                                                                    name="option"
+                                                                    value="1"
+                                                                    class="cstm-switch-input"
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-indicator bg-success "
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-description"
+                                                                    >Examen Extra-Oral</span
+                                                                >
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class=" m-b-10">
+                                                            <label
+                                                                class="cstm-switch"
+                                                            >
+                                                                <input
+                                                                    type="checkbox"
+                                                                    bind:checked={empresa.shortAntecedentes}
+                                                                    name="option"
+                                                                    value="1"
+                                                                    class="cstm-switch-input"
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-indicator bg-success "
+                                                                />
+                                                                <span
+                                                                    class="cstm-switch-description"
+                                                                    >Antecedentes Rapidos En Historial Clínico </span
                                                                 >
                                                             </label>
                                                         </div>

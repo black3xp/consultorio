@@ -134,7 +134,7 @@
     </a>
     <div class="card m-b-20 mt-3">
         <div class="card-header">
-            <div class="card-title">Medicamentos</div>
+            <div class="card-title"><strong>Medicamentos</strong></div>
             <div class="card-controls">
                 <a
                     href={`/impresion/pacientes/${idPaciente}/historias/${idHistoria}/medicamentos`}
@@ -321,7 +321,7 @@
 
     <div class="card m-b-20">
         <div class="card-header">
-            <div class="card-title">Estudios</div>
+            <div class="card-title"><strong>Estudios</strong></div>
             <div class="card-controls">
                 <a
                     href={`/impresion/pacientes/${idPaciente}/historias/${idHistoria}/estudios/laboratorios`}
@@ -557,7 +557,7 @@
 
     <div class="card m-b-20">
         <div class="card-header">
-            <div class="card-title">Instrucciones</div>
+            <div class="card-title"><strong>Instrucciones</strong></div>
         </div>
         <div class="card-body">
             <div class="row">

@@ -422,6 +422,7 @@
                 .split(".")[0]
                 .split(":");
             hora = obtenerHora[0] + ":" + obtenerHora[1];
+            console.log(historia)
         } catch (error) {
             serverConexion = true;
             console.error(error);
@@ -666,7 +667,7 @@
                 class="card m-b-20 margen-mobile"
             >
                 <div class="card-header">
-                    <div class="card-title">Motivo de consulta</div>
+                    <div class="card-title"><strong>Motivo de consulta</strong></div>
                 </div>
                 <div class="card-body">
                     <textarea
@@ -683,7 +684,7 @@
             </div>
             <div class="card m-b-20 autosave">
                 <div class="card-header">
-                    <div class="card-title">Historial Cl&iacute;nico (Historia de la enfermedad)</div>
+                    <div class="card-title"><strong>Historial Cl&iacute;nico</strong> <i class="mdi mdi-apple-keyboard-control mdi-rotate-90"></i> Historia de la enfermedad</div>
                 </div>
                 <div class="card-body">
                     <textarea
@@ -696,6 +697,29 @@
                         rows="3"
                         name="Comentario"
                     />
+                    <br>
+                    {#if empresa.shortAntecedentes}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inpEnfermedades"><strong>Enfermedades</strong></label>
+                            <input type="text" class="form-control" id="inpEnfermedades" bind:value={historia.shortEnfermedades} on:blur={guardarHistoria}>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inpAlergias"><strong>Alergias</strong></label>
+                            <input type="text" class="form-control" id="inpAlergias" bind:value={historia.shortAlergias} on:blur={guardarHistoria}>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inpDieta"><strong>Dieta</strong></label>
+                            <input type="text" class="form-control" id="inpDieta" bind:value={historia.shortDieta} on:blur={guardarHistoria}>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inpAntecedentes"><strong>Antecedentes</strong></label>
+                            <input type="text" class="form-control" id="inpAntecedentes" bind:value={historia.shortAntecedentes} on:blur={guardarHistoria}>
+                        </div>
+                    </div>
+                    {/if}
                 </div>
             </div>
             {#if empresa.historiaGinecologica}
@@ -904,11 +928,7 @@
                                     />
                                 </div>
                             </div>
-                        </div>
-                        <h5 class="mt-3">Planificaci&oacute;n</h5>
-                        <hr />
-                        <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 mt-3">
                                 <label class="cstm-switch mr-4 mb-4">
                                     <input
                                         {disabled}
@@ -943,6 +963,14 @@
                                         >Vida Sexual Activa</span
                                     >
                                 </label>
+                            </div>
+                        </div>
+                        <h5 class="mt-3">Planificaci&oacute;n</h5>
+                        <hr />
+                        <div class="row">
+                            <div class="col-lg-12">
+                                
+                                
                                 <label class="cstm-switch mr-4 mb-4">
                                     <input
                                         {disabled}
@@ -1072,7 +1100,7 @@
                 <!-- content here -->
                 <div class="card m-b-20 margen-mobile autosave">
                     <div class="card-header">
-                        <div class="card-title">Signos vitales</div>
+                        <div class="card-title"><strong>Signos vitales</strong></div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -1187,7 +1215,7 @@
             {#if empresa.otrosParametros}
                 <div class="card m-b-20">
                     <div class="card-header">
-                        <div class="card-title">Otros Parametros</div>
+                        <div class="card-title"><strong>Otros Parametros</strong></div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -1332,30 +1360,7 @@
 
             <div class="card m-b-20 autosave">
                 <div class="card-header">
-                    <div class="card-title">Examen Cl&iacute;nico (Examen Fisico)</div>
-                </div>
-                <div class="card-controls">
-                    <div class="dropdown">
-                        <a
-                            href="/"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                        >
-                            <i class="icon mdi  mdi-dots-vertical" />
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"
-                                >Action</button
-                            >
-                            <button class="dropdown-item" type="button"
-                                >Another action</button
-                            >
-                            <button class="dropdown-item" type="button"
-                                >Something else here</button
-                            >
-                        </div>
-                    </div>
+                    <div class="card-title"><strong>Examen Cl&iacute;nico</strong> <i class="mdi mdi-apple-keyboard-control mdi-rotate-90"></i> Examen Fisico</div>
                 </div>
                 <div class="card-body">
                     <textarea
@@ -1367,13 +1372,53 @@
                         rows="5"
                         name="Comentario"
                     />
+                    <br/>
+                    <div class="row">
+                        {#if empresa.examenIntraOral}
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for=""><strong>Intra-Oral</strong></label>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input
+                                            {disabled}
+                                            type="text"
+                                            class="form-control"
+                                            on:blur={guardarHistoria}
+                                            bind:value={historia.intraOral}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/if}
+                        {#if empresa.examenExtraOral}
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for=""><strong>Extra-Oral</strong></label>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input
+                                            {disabled}
+                                            type="text"
+                                            class="form-control"
+                                            on:blur={guardarHistoria}
+                                            bind:value={historia.extraOral}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/if}
+                    </div>
                 </div>
             </div>
+            
 
             {#if empresa.exploracionFisica}
                 <div class="card m-b-20">
                     <div class="card-header">
-                        <div class="card-title">Exploraci&oacute;n Fisica</div>
+                        <div class="card-title"><strong>Exploraci&oacute;n Fisica</strong></div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -1427,7 +1472,7 @@
 
             <div class="card m-b-20">
                 <div class="card-header">
-                    <div class="card-title">Diagnosticos</div>
+                    <div class="card-title"><strong>Diagnosticos</strong></div>
                 </div>
                 <div class="card-controls">
                     <div class="dropdown">
@@ -1585,6 +1630,7 @@
 
             <OrdenesMedicas
                 {disabled}
+                seleccionRapida={empresa.estudioSeleccionRapida}
                 bind:idHistoria={params.idHistoria}
                 bind:idPaciente={params.idPaciente}
                 bind:estudiosSeleccionados
@@ -1605,7 +1651,7 @@
 
             <div class="card m-b-20 margen-mobile autosave">
                 <div class="card-header">
-                    <div class="card-title">Observaciones</div>
+                    <div class="card-title"><strong>Observaciones</strong></div>
                 </div>
                 <div class="card-body">
                     <textarea
@@ -1623,7 +1669,7 @@
                 <div class="col-lg-6">
                     <div class="card m-b-20">
                         <div class="card-header">
-                            <div class="card-title">Fecha y hora</div>
+                            <div class="card-title"><strong>Fecha y hora</strong></div>
                         </div>
                         <div class="card-body">
                             <div class="form-row">
