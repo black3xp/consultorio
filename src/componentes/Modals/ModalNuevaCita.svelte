@@ -158,6 +158,7 @@
             },
         };
         if (!fechaCita || !tandaCita || !observaciones) {
+            cargando = false;
             return (msgError = "Algunos campos estan vacios");
         }
         axios(config)

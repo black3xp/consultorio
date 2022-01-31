@@ -6130,7 +6130,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (226:20) {#if cargando}
+    // (227:20) {#if cargando}
     function create_if_block_5(ctx) {
     	let div;
     	let loading;
@@ -6142,7 +6142,7 @@ var app = (function () {
     			div = element("div");
     			create_component(loading.$$.fragment);
     			attr_dev(div, "class", "cargando");
-    			add_location(div, file$7, 226, 24, 7237);
+    			add_location(div, file$7, 227, 24, 7268);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6168,14 +6168,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(226:20) {#if cargando}",
+    		source: "(227:20) {#if cargando}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (270:32) {#each tandas as tanda}
+    // (271:32) {#each tandas as tanda}
     function create_each_block_1(ctx) {
     	let option;
     	let t_value = /*tanda*/ ctx[25].descripcion + "";
@@ -6188,7 +6188,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*tanda*/ ctx[25].id;
     			option.value = option.__value;
-    			add_location(option, file$7, 270, 36, 9474);
+    			add_location(option, file$7, 271, 36, 9505);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -6211,14 +6211,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(270:32) {#each tandas as tanda}",
+    		source: "(271:32) {#each tandas as tanda}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (289:20) {#if msgError}
+    // (290:20) {#if msgError}
     function create_if_block_4(ctx) {
     	let div;
     	let t;
@@ -6229,7 +6229,7 @@ var app = (function () {
     			t = text(/*msgError*/ ctx[5]);
     			attr_dev(div, "class", "alert alert-danger");
     			attr_dev(div, "role", "alert");
-    			add_location(div, file$7, 289, 24, 10280);
+    			add_location(div, file$7, 290, 24, 10311);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6247,14 +6247,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(289:20) {#if msgError}",
+    		source: "(290:20) {#if msgError}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (306:36) {#if cita.estado === "R"}
+    // (307:36) {#if cita.estado === "R"}
     function create_if_block_3(ctx) {
     	let i;
 
@@ -6262,7 +6262,7 @@ var app = (function () {
     		c: function create() {
     			i = element("i");
     			attr_dev(i, "class", "icon mdi mdi-check-circle-outline");
-    			add_location(i, file$7, 306, 40, 11104);
+    			add_location(i, file$7, 307, 40, 11135);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -6276,14 +6276,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(306:36) {#if cita.estado === \\\"R\\\"}",
+    		source: "(307:36) {#if cita.estado === \\\"R\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (311:36) {#if cita.estado === "X"}
+    // (312:36) {#if cita.estado === "X"}
     function create_if_block_2$2(ctx) {
     	let i;
 
@@ -6291,7 +6291,7 @@ var app = (function () {
     		c: function create() {
     			i = element("i");
     			attr_dev(i, "class", "icon mdi mdi-alert-octagram");
-    			add_location(i, file$7, 311, 40, 11385);
+    			add_location(i, file$7, 312, 40, 11416);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -6305,14 +6305,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(311:36) {#if cita.estado === \\\"X\\\"}",
+    		source: "(312:36) {#if cita.estado === \\\"X\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (316:36) {#if cita.estado === "N"}
+    // (317:36) {#if cita.estado === "N"}
     function create_if_block_1$3(ctx) {
     	let i;
 
@@ -6320,7 +6320,7 @@ var app = (function () {
     		c: function create() {
     			i = element("i");
     			attr_dev(i, "class", "icon mdi mdi-alert-circle-outline");
-    			add_location(i, file$7, 316, 40, 11660);
+    			add_location(i, file$7, 317, 40, 11691);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -6334,14 +6334,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(316:36) {#if cita.estado === \\\"N\\\"}",
+    		source: "(317:36) {#if cita.estado === \\\"N\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (346:40) {#if cita.estado !== 'R' && cita.estado !== 'X'}
+    // (347:40) {#if cita.estado !== 'R' && cita.estado !== 'X'}
     function create_if_block$4(ctx) {
     	let div;
     	let a0;
@@ -6369,19 +6369,19 @@ var app = (function () {
     			a1 = element("a");
     			i1 = element("i");
     			attr_dev(i0, "class", "mdi mdi-close");
-    			add_location(i0, file$7, 354, 52, 14031);
+    			add_location(i0, file$7, 355, 52, 14062);
     			attr_dev(a0, "href", "#!");
     			attr_dev(a0, "class", "btn btn-outline-danger");
     			attr_dev(a0, "data-tooltip", "Cancelar");
-    			add_location(a0, file$7, 348, 48, 13583);
+    			add_location(a0, file$7, 349, 48, 13614);
     			attr_dev(i1, "class", "mdi mdi-check-all");
-    			add_location(i1, file$7, 362, 52, 14621);
+    			add_location(i1, file$7, 363, 52, 14652);
     			attr_dev(a1, "href", "#!");
     			attr_dev(a1, "class", "btn btn-outline-success");
     			attr_dev(a1, "data-tooltip", "Marcar realizada");
-    			add_location(a1, file$7, 356, 48, 14164);
+    			add_location(a1, file$7, 357, 48, 14195);
     			attr_dev(div, "class", "botones-citas svelte-sdy68u");
-    			add_location(div, file$7, 347, 44, 13506);
+    			add_location(div, file$7, 348, 44, 13537);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6414,14 +6414,14 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(346:40) {#if cita.estado !== 'R' && cita.estado !== 'X'}",
+    		source: "(347:40) {#if cita.estado !== 'R' && cita.estado !== 'X'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (296:20) {#each citas as cita}
+    // (297:20) {#each citas as cita}
     function create_each_block(ctx) {
     	let div6;
     	let div5;
@@ -6483,29 +6483,29 @@ var app = (function () {
     			if (if_block3) if_block3.c();
     			t11 = space();
     			attr_dev(div0, "class", "icon");
-    			add_location(div0, file$7, 304, 32, 10981);
+    			add_location(div0, file$7, 305, 32, 11012);
     			attr_dev(span0, "class", "svelte-sdy68u");
-    			add_location(span0, file$7, 324, 44, 12098);
+    			add_location(span0, file$7, 325, 44, 12129);
     			attr_dev(span1, "class", "svelte-sdy68u");
-    			add_location(span1, file$7, 329, 44, 12397);
+    			add_location(span1, file$7, 330, 44, 12428);
     			attr_dev(span2, "class", "svelte-sdy68u");
-    			add_location(span2, file$7, 336, 44, 12823);
+    			add_location(span2, file$7, 337, 44, 12854);
     			attr_dev(div1, "class", "fecha svelte-sdy68u");
-    			add_location(div1, file$7, 323, 40, 12033);
+    			add_location(div1, file$7, 324, 40, 12064);
     			attr_dev(div2, "class", "observaciones svelte-sdy68u");
-    			add_location(div2, file$7, 342, 40, 13166);
+    			add_location(div2, file$7, 343, 40, 13197);
     			attr_dev(div3, "class", "calendar svelte-sdy68u");
-    			add_location(div3, file$7, 322, 36, 11969);
+    			add_location(div3, file$7, 323, 36, 12000);
     			attr_dev(div4, "class", "content");
-    			add_location(div4, file$7, 321, 32, 11910);
+    			add_location(div4, file$7, 322, 32, 11941);
     			attr_dev(div5, "class", "d-flex");
-    			add_location(div5, file$7, 303, 28, 10927);
+    			add_location(div5, file$7, 304, 28, 10958);
     			attr_dev(div6, "class", "alert alert-dismissible fade show");
     			attr_dev(div6, "role", "alert");
     			toggle_class(div6, "alert-border-success", /*cita*/ ctx[22].estado === "R");
     			toggle_class(div6, "alert-border-danger", /*cita*/ ctx[22].estado === "X");
     			toggle_class(div6, "alert-border-info", /*cita*/ ctx[22].estado === "N");
-    			add_location(div6, file$7, 296, 24, 10523);
+    			add_location(div6, file$7, 297, 24, 10554);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div6, anchor);
@@ -6612,7 +6612,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(296:20) {#each citas as cita}",
+    		source: "(297:20) {#each citas as cita}",
     		ctx
     	});
 
@@ -6797,109 +6797,109 @@ var app = (function () {
     			div9 = element("div");
     			div9.textContent = "Crear";
     			attr_dev(span0, "class", "badge bg-primary text-white");
-    			add_location(span0, file$7, 213, 24, 6718);
+    			add_location(span0, file$7, 214, 24, 6749);
     			attr_dev(h5, "class", "modal-title");
     			attr_dev(h5, "id", "modalInterconsulta");
-    			add_location(h5, file$7, 211, 20, 6554);
+    			add_location(h5, file$7, 212, 20, 6585);
     			attr_dev(span1, "aria-hidden", "true");
-    			add_location(span1, file$7, 221, 24, 7045);
+    			add_location(span1, file$7, 222, 24, 7076);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close");
     			attr_dev(button0, "data-dismiss", "modal");
     			attr_dev(button0, "aria-label", "Close");
-    			add_location(button0, file$7, 215, 20, 6821);
+    			add_location(button0, file$7, 216, 20, 6852);
     			attr_dev(div0, "class", "modal-header");
-    			add_location(div0, file$7, 210, 16, 6506);
+    			add_location(div0, file$7, 211, 16, 6537);
     			attr_dev(label0, "for", "");
     			attr_dev(label0, "class", "text-primary");
-    			add_location(label0, file$7, 232, 28, 7492);
+    			add_location(label0, file$7, 233, 28, 7523);
     			option0.__value = "";
     			option0.value = option0.__value;
-    			add_location(option0, file$7, 237, 32, 7760);
+    			add_location(option0, file$7, 238, 32, 7791);
     			option1.__value = "S";
     			option1.value = option1.__value;
-    			add_location(option1, file$7, 240, 32, 7914);
+    			add_location(option1, file$7, 241, 32, 7945);
     			option2.__value = "D";
     			option2.value = option2.__value;
-    			add_location(option2, file$7, 241, 32, 7988);
+    			add_location(option2, file$7, 242, 32, 8019);
     			option3.__value = "M";
     			option3.value = option3.__value;
-    			add_location(option3, file$7, 242, 32, 8059);
+    			add_location(option3, file$7, 243, 32, 8090);
     			option4.__value = "T";
     			option4.value = option4.__value;
-    			add_location(option4, file$7, 243, 32, 8129);
+    			add_location(option4, file$7, 244, 32, 8160);
     			option5.__value = "A";
     			option5.value = option5.__value;
-    			add_location(option5, file$7, 244, 32, 8200);
+    			add_location(option5, file$7, 245, 32, 8231);
     			attr_dev(select0, "class", "form-control");
     			if (/*tiempoCita*/ ctx[8] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[13].call(select0));
-    			add_location(select0, file$7, 233, 28, 7577);
+    			add_location(select0, file$7, 234, 28, 7608);
     			attr_dev(div1, "class", "form-group col-md-12");
-    			add_location(div1, file$7, 231, 24, 7428);
+    			add_location(div1, file$7, 232, 24, 7459);
     			attr_dev(label1, "for", "");
     			attr_dev(label1, "class", "text-primary");
-    			add_location(label1, file$7, 248, 28, 8397);
+    			add_location(label1, file$7, 249, 28, 8428);
     			attr_dev(input, "type", "date");
     			attr_dev(input, "class", "form-control");
     			attr_dev(input, "min", /*fechaMinima*/ ctx[9]);
     			input.required = true;
-    			add_location(input, file$7, 251, 28, 8550);
+    			add_location(input, file$7, 252, 28, 8581);
     			attr_dev(div2, "class", "form-group col-md-12");
-    			add_location(div2, file$7, 247, 24, 8333);
+    			add_location(div2, file$7, 248, 24, 8364);
     			attr_dev(label2, "for", "");
     			attr_dev(label2, "class", "text-primary");
-    			add_location(label2, file$7, 260, 28, 8958);
+    			add_location(label2, file$7, 261, 28, 8989);
     			option6.__value = "";
     			option6.value = option6.__value;
-    			add_location(option6, file$7, 266, 32, 9260);
+    			add_location(option6, file$7, 267, 32, 9291);
     			attr_dev(select1, "class", "form-control");
     			select1.required = true;
     			if (/*tandaCita*/ ctx[4] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[15].call(select1));
-    			add_location(select1, file$7, 261, 28, 9036);
+    			add_location(select1, file$7, 262, 28, 9067);
     			attr_dev(div3, "class", "form-group col-md-12");
-    			add_location(div3, file$7, 259, 24, 8894);
+    			add_location(div3, file$7, 260, 24, 8925);
     			attr_dev(label3, "for", "");
     			attr_dev(label3, "class", "text-primary");
-    			add_location(label3, file$7, 277, 28, 9809);
+    			add_location(label3, file$7, 278, 28, 9840);
     			attr_dev(textarea, "class", "form-control");
     			attr_dev(textarea, "rows", "3");
-    			add_location(textarea, file$7, 280, 28, 9959);
+    			add_location(textarea, file$7, 281, 28, 9990);
     			attr_dev(div4, "class", "form-group col-md-12");
-    			add_location(div4, file$7, 276, 24, 9745);
+    			add_location(div4, file$7, 277, 24, 9776);
     			attr_dev(div5, "class", "form-row");
-    			add_location(div5, file$7, 230, 20, 7380);
-    			add_location(br, file$7, 293, 20, 10446);
+    			add_location(div5, file$7, 231, 20, 7411);
+    			add_location(br, file$7, 294, 20, 10477);
     			attr_dev(div6, "class", "modal-body");
-    			add_location(div6, file$7, 224, 16, 7151);
+    			add_location(div6, file$7, 225, 16, 7182);
     			attr_dev(h30, "class", "mdi mdi-close-outline");
-    			add_location(h30, file$7, 381, 32, 15480);
+    			add_location(h30, file$7, 382, 32, 15511);
     			attr_dev(div7, "class", "text-overline");
-    			add_location(div7, file$7, 382, 32, 15550);
+    			add_location(div7, file$7, 383, 32, 15581);
     			attr_dev(a, "href", "/");
     			attr_dev(a, "class", "text-danger");
     			attr_dev(a, "data-dismiss", "modal");
-    			add_location(a, file$7, 375, 28, 15187);
+    			add_location(a, file$7, 376, 28, 15218);
     			attr_dev(div8, "class", "col");
-    			add_location(div8, file$7, 374, 24, 15140);
+    			add_location(div8, file$7, 375, 24, 15171);
     			attr_dev(h31, "class", "mdi mdi-send");
-    			add_location(h31, file$7, 391, 32, 16017);
+    			add_location(h31, file$7, 392, 32, 16048);
     			attr_dev(div9, "class", "text-overline");
-    			add_location(div9, file$7, 392, 32, 16078);
+    			add_location(div9, file$7, 393, 32, 16109);
     			attr_dev(button1, "class", "text-success");
     			set_style(button1, "border", "none");
     			set_style(button1, "background-color", "transparent");
-    			add_location(button1, file$7, 386, 28, 15728);
+    			add_location(button1, file$7, 387, 28, 15759);
     			attr_dev(div10, "class", "col");
-    			add_location(div10, file$7, 385, 24, 15681);
+    			add_location(div10, file$7, 386, 24, 15712);
     			attr_dev(div11, "class", "row text-center p-b-10");
-    			add_location(div11, file$7, 373, 20, 15078);
+    			add_location(div11, file$7, 374, 20, 15109);
     			attr_dev(div12, "class", "modal-footer");
-    			add_location(div12, file$7, 372, 16, 15030);
+    			add_location(div12, file$7, 373, 16, 15061);
     			attr_dev(div13, "class", "modal-content");
-    			add_location(div13, file$7, 209, 12, 6461);
+    			add_location(div13, file$7, 210, 12, 6492);
     			attr_dev(div14, "class", "modal-dialog");
     			attr_dev(div14, "role", "document");
-    			add_location(div14, file$7, 208, 8, 6405);
+    			add_location(div14, file$7, 209, 8, 6436);
     			attr_dev(div15, "class", "modal fade modal-slide-right");
     			attr_dev(div15, "id", "modalNuevaCita");
     			attr_dev(div15, "tabindex", "-1");
@@ -6908,9 +6908,9 @@ var app = (function () {
     			set_style(div15, "display", "none");
     			set_style(div15, "padding-right", "16px");
     			attr_dev(div15, "aria-modal", "true");
-    			add_location(div15, file$7, 199, 4, 6137);
+    			add_location(div15, file$7, 200, 4, 6168);
     			attr_dev(form, "class", "col-md-12");
-    			add_location(form, file$7, 198, 0, 6062);
+    			add_location(form, file$7, 199, 0, 6093);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7270,6 +7270,7 @@ var app = (function () {
     		};
 
     		if (!fechaCita || !tandaCita || !observaciones) {
+    			$$invalidate(7, cargando = false);
     			return $$invalidate(5, msgError = "Algunos campos estan vacios");
     		}
 
