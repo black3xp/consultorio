@@ -525,3 +525,8 @@ pre{
     padding: 0;
     margin: 0;
 }
+
+.dropzone{
+    max-height: 40px;
+    text-align: center;
+}

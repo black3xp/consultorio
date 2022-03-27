@@ -5,6 +5,8 @@
     import { onMount } from "svelte";
     import { url, user } from "../../util/index";
     import { v4 as uuid } from "uuid";
+    import { blobToURL, fromBlob } from 'image-resize-compress';
+    import Dropzone from "svelte-dropzone";
 
     import Header from "../../Layout/Header.svelte";
     import AsideAtencion from "../../Layout/AsideAtencion.svelte";
@@ -18,6 +20,39 @@
     import NoConexion from "../../componentes/NoConexion.svelte";
     import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
+
+    let imagesHistoria = [];
+
+    const addedfile = file => {
+        uploadImageHC(file)
+    };
+    const drop = event => console.log(event.target);
+    const init = () => console.log("dropzone init ! 😍");
+
+    const uploadImageHC = async (file) => {
+        // quality value for webp and jpeg formats.
+        const quality = 40;
+        // output width. 0 will keep its original width and 'auto' will calculate its scale from height.
+        const width = 0;
+        // output height. 0 will keep its original height and 'auto' will calculate its scale from width.
+        const height = 0;
+        // file format: png, jpeg, bmp, gif, webp. If null, original format will be used.
+        const format = 'webp';
+
+        console.log(file);
+        
+        // note only the blobFile argument is required
+        fromBlob(file, quality, width, height, format).then((blob) => {
+            // will output the converted blob file
+            console.log(blob);
+            // will generate a url to the converted file
+            blobToURL(blob).then((url) => {
+                imagesHistoria = [...imagesHistoria, url];
+            });
+            return blob
+        });
+
+    }
 
     const Toast = Swal.mixin({
         toast: true,
@@ -1649,6 +1684,41 @@
                 on:eliminarMedicamento={eliminarMedicamento}
             />
 
+            <div
+                data-bind="if: perfil().motivoConsulta"
+                class="card m-b-20 margen-mobile"
+            >
+                <div class="card-header">
+                    <div class="card-title"><strong>Imagenes</strong></div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {#if imagesHistoria.length > 0}
+                            {#each imagesHistoria as image}
+                                <div class="col-md-4">
+                                    <!-- svelte-ignore a11y-img-redundant-alt -->
+                                    <img
+                                        src={image}
+                                        class="img-fluid img-hc"
+                                        alt="Responsive image"
+                                    />
+                                </div>
+                            {/each}
+                        {/if}
+                        <div class="col-lg-4">
+                            <Dropzone
+                                dropzoneClass="dropzone"
+                                hooveringClass="hooveringClass"
+                                id="id"
+                                dropzoneEvents={{ addedfile, drop, init }}
+                                options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>
+                                <p><i class="mdi mdi-image-plus"></i> Agregar imagen</p>
+                            </Dropzone>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="card m-b-20 margen-mobile autosave">
                 <div class="card-header">
                     <div class="card-title"><strong>Observaciones</strong></div>
@@ -1721,5 +1791,10 @@
     }
     .cargando {
         z-index: 1000;
+    }
+    .img-hc {
+        width: 100%;
+        max-height: 150px;
+        object-fit: cover;
     }
 </style>
