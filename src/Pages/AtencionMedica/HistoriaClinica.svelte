@@ -20,39 +20,9 @@
     import NoConexion from "../../componentes/NoConexion.svelte";
     import ErrorConexion from "../../componentes/ErrorConexion.svelte";
     import ModalNuevaCita from "../../componentes/Modals/ModalNuevaCita.svelte";
+import ImagenHc from "../../componentes/ImagenHC.svelte";
 
-    let imagesHistoria = [];
 
-    const addedfile = file => {
-        uploadImageHC(file)
-    };
-    const drop = event => console.log(event.target);
-    const init = () => console.log("dropzone init ! 😍");
-
-    const uploadImageHC = async (file) => {
-        // quality value for webp and jpeg formats.
-        const quality = 40;
-        // output width. 0 will keep its original width and 'auto' will calculate its scale from height.
-        const width = 0;
-        // output height. 0 will keep its original height and 'auto' will calculate its scale from width.
-        const height = 0;
-        // file format: png, jpeg, bmp, gif, webp. If null, original format will be used.
-        const format = 'webp';
-
-        console.log(file);
-        
-        // note only the blobFile argument is required
-        fromBlob(file, quality, width, height, format).then((blob) => {
-            // will output the converted blob file
-            console.log(blob);
-            // will generate a url to the converted file
-            blobToURL(blob).then((url) => {
-                imagesHistoria = [...imagesHistoria, url];
-            });
-            return blob
-        });
-
-    }
 
     const Toast = Swal.mixin({
         toast: true,
@@ -95,12 +65,63 @@
     let cargandoHistoria = false;
     let pacienteSeleccionado = {};
     let disabled = false;
+    let imagesHistoria = [];
+    let loadingImage = false;
 
     $: if (historia.estado === "C") {
         disabled = true;
     } else {
         disabled = false;
     }
+
+
+    const addedfile = file => {
+        uploadImageHC(file)
+    };
+    const drop = event => console.log(event.target);
+    const init = () => console.log("dropzone init ! 😍");
+
+    const uploadImageHC = async (file) => {
+        loadingImage = true;
+        // quality value for webp and jpeg formats.
+        const quality = 40;
+        // output width. 0 will keep its original width and 'auto' will calculate its scale from height.
+        const width = 0;
+        // output height. 0 will keep its original height and 'auto' will calculate its scale from width.
+        const height = 0;
+        // file format: png, jpeg, bmp, gif, webp. If null, original format will be used.
+        const format = 'webp';
+        
+        // note only the blobFile argument is required
+        fromBlob(file, quality, width, height, format).then((blob) => {
+            // will output the converted blob file
+            let form = new FormData();
+            form.append("imagen", blob);
+            let idImagen = '';
+            const config = {
+                method: "post",
+                url: `${url}/imagenes/historia/${params.idHistoria}`,
+                headers: {
+                    'Content-Type': `multipart/form-data`,
+                    Authorization: `${localStorage.getItem("auth")}`,
+                },
+                data: form,
+            }
+            axios(config)
+            .then(res => {
+                idImagen = res.data.imagen;
+                guardarHistoria(idImagen);
+            })
+            // will generate a url to the converted file
+            blobToURL(blob).then((url) => {
+                imagesHistoria = [...imagesHistoria, url];
+            });
+            loadingImage = false;
+            return blob
+        });
+
+    }
+
 
     const cargarEmpresa = () => {
         const config = {
@@ -364,9 +385,15 @@
             });
     };
 
-    const guardarHistoria = () => {
+    const guardarHistoria = (imagen = '') => {
         errorServer = false;
         cargando = true;
+        if(imagen){
+            historia.imagenes = [
+                ...historia.imagenes,
+                imagen
+            ];
+        }
         historia.diagnosticos = diagnosticosSeleccionados;
         delete historia.id;
         const config = {
@@ -457,7 +484,10 @@
                 .split(".")[0]
                 .split(":");
             hora = obtenerHora[0] + ":" + obtenerHora[1];
-            console.log(historia)
+            if(!promesa?.data?.imagenes){
+                historia.imagenes = [];
+                guardarHistoria();
+            }
         } catch (error) {
             serverConexion = true;
             console.error(error);
@@ -1693,27 +1723,29 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        {#if imagesHistoria.length > 0}
-                            {#each imagesHistoria as image}
-                                <div class="col-md-4">
-                                    <!-- svelte-ignore a11y-img-redundant-alt -->
-                                    <img
-                                        src={image}
-                                        class="img-fluid img-hc"
-                                        alt="Responsive image"
-                                    />
+                        {#if historia?.imagenes}
+                            {#each historia.imagenes as image}
+                                <div class="col-md-4 mb-3">
+                                    <ImagenHc idImagen={image} idHistoria={params.idHistoria} on:cargarHistoria={cargarHistoria} />
                                 </div>
                             {/each}
                         {/if}
-                        <div class="col-lg-4">
-                            <Dropzone
-                                dropzoneClass="dropzone"
-                                hooveringClass="hooveringClass"
-                                id="id"
-                                dropzoneEvents={{ addedfile, drop, init }}
-                                options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>
-                                <p><i class="mdi mdi-image-plus"></i> Agregar imagen</p>
-                            </Dropzone>
+                        <div class="col-lg-4 mb-3">
+                            {#if loadingImage}
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <Loading/>
+                                    procesando imagen
+                                </div>
+                                {:else}
+                                <Dropzone
+                                    dropzoneClass="dropzone"
+                                    hooveringClass="hooveringClass"
+                                    id="id"
+                                    dropzoneEvents={{ addedfile, drop, init }}
+                                    options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>
+                                    <p><i class="mdi mdi-image-plus"></i> Agregar imagen</p>
+                                </Dropzone>
+                            {/if}
                         </div>
                     </div>
                 </div>
@@ -1791,10 +1823,5 @@
     }
     .cargando {
         z-index: 1000;
-    }
-    .img-hc {
-        width: 100%;
-        max-height: 150px;
-        object-fit: cover;
     }
 </style>
