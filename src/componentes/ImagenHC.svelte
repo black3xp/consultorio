@@ -3,8 +3,8 @@
     import { createEventDispatcher } from "svelte";
     import { url } from "../util/index";
 
-
-    export let idImagen;
+    export let imagenes;
+    export let idImagen = "";
     export let idHistoria;
     let imagen = '';
     const dipatch = createEventDispatcher();
@@ -14,6 +14,10 @@
     }
 
     const getImagenHC = () => {
+        console.log(idImagen);
+        if(!idImagen){
+            return;
+        }
         imagen = '/assets/img/placeholder.svg';
         const config = {
             method: "get",
@@ -34,7 +38,8 @@
             });
     }
 
-    const deleteImage = (image) => {
+    const deleteImage = (idImagen) => {
+        console.log(imagenes)
         Swal.fire({
             title: "¿Estás seguro?",
             text: "Se eliminara la imagen que seleccionaste!",
@@ -46,15 +51,53 @@
             cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`${url}/imagenes/historia/${idHistoria}/${image}`, {
+                console.log(idImagen);
+                axios.delete(`${url}/imagenes/historia/${idHistoria}/${idImagen}`, {
                     headers: {
                         Authorization: `${localStorage.getItem("auth")}`,
                     },
                 })
-                    .then(function (response) {
-                        dipatch('cargarHistoria')
+                    .then(async function (response) {
+                        if(response?.status === 200){
+                            imagenes = imagenes.filter(imagen => {
+                                return imagen != idImagen;
+                            });
+                            console.log(imagenes);
+                            idImagen = '';
+                            await dipatch("eliminarImagenHC", imagenes);
+                            await dipatch('cargarHistoria')
+                        }
                     })
-                    .catch(function (error) {
+                    .catch(async function (error) {
+                        if(error?.response?.status === 400){
+
+                            if(error?.response?.data?.code == "E_IMAGE_DELETE"){
+                                Swal.fire({
+                                    title: "Error",
+                                    text: "No se puede eliminar la imagen",
+                                    icon: "error",
+                                    confirmButtonColor: "#3085d6",
+                                    confirmButtonText: "Ok",
+                                });
+                                return
+                            }
+
+                            imagenes = imagenes.filter(imagen => {
+                                return imagen != idImagen;
+                            });
+                            console.log(imagenes);
+                            idImagen = '';
+                            await dipatch("eliminarImagenHC", imagenes);
+                            await dipatch('cargarHistoria')
+                            return
+                        }
+                        Swal.fire({
+                            title: "Error",
+                            text: "Problemas de comunicación con el servidor",
+                            icon: "error",
+                            confirmButtonColor: "#3085d6",
+                            confirmButtonText: "Ok",
+                        });
                         console.log(error);
                     });
             }

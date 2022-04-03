@@ -67,6 +67,7 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
     let disabled = false;
     let imagesHistoria = [];
     let loadingImage = false;
+    let limiteImagenes = false;
 
     $: if (historia.estado === "C") {
         disabled = true;
@@ -83,6 +84,7 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
 
     const uploadImageHC = async (file) => {
         loadingImage = true;
+        limiteImagenes = false;
         // quality value for webp and jpeg formats.
         const quality = 40;
         // output width. 0 will keep its original width and 'auto' will calculate its scale from height.
@@ -96,6 +98,7 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
         fromBlob(file, quality, width, height, format).then((blob) => {
             // will output the converted blob file
             let form = new FormData();
+            console.log(blob);
             form.append("imagen", blob);
             let idImagen = '';
             const config = {
@@ -110,7 +113,18 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
             axios(config)
             .then(res => {
                 idImagen = res.data.imagen;
-                guardarHistoria(idImagen);
+                agregarImagenHistoria(idImagen);
+                guardarHistoria();
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(err.response)
+                if(err?.response?.data?.code === 'E_IMAGENES_LIMITE'){
+                    limiteImagenes = true;
+                }else{
+                    errorServer = false;
+                    limiteImagenes = false;
+                }
             })
             // will generate a url to the converted file
             blobToURL(blob).then((url) => {
@@ -385,15 +399,29 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
             });
     };
 
-    const guardarHistoria = (imagen = '') => {
+    const eliminarImagenHC = (event) => {
+        limiteImagenes = false;
+        historia.imagenes = event.detail;
+        guardarHistoria();
+        cargarHistoria();
+    }
+
+    const agregarImagenHistoria = (imagen = "") => {
+        if(typeof imagen === 'string'){
+            if(imagen.length > 0){
+                historia.imagenes = [
+                    ...historia.imagenes,
+                    imagen
+                ];
+            }
+        }
+        guardarHistoria();
+    }
+
+    const guardarHistoria = () => {
         errorServer = false;
         cargando = true;
-        if(imagen){
-            historia.imagenes = [
-                ...historia.imagenes,
-                imagen
-            ];
-        }
+
         historia.diagnosticos = diagnosticosSeleccionados;
         delete historia.id;
         const config = {
@@ -1726,7 +1754,12 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
                         {#if historia?.imagenes}
                             {#each historia.imagenes as image}
                                 <div class="col-md-4 mb-3">
-                                    <ImagenHc idImagen={image} idHistoria={params.idHistoria} on:cargarHistoria={cargarHistoria} />
+                                    <ImagenHc
+                                        bind:imagenes={historia.imagenes}
+                                        idImagen={image || ""} idHistoria={params.idHistoria}
+                                        on:cargarHistoria={cargarHistoria}
+                                        on:eliminarImagenHC={eliminarImagenHC}
+                                    />
                                 </div>
                             {/each}
                         {/if}
@@ -1747,6 +1780,18 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
                                 </Dropzone>
                             {/if}
                         </div>
+                        {#if limiteImagenes}
+                            <div class="col-lg-12 mb-3">
+                                <div class="alert alert-danger">
+                                    <p style="margin: 0;" class="text-center">
+                                        <i class="mdi mdi-alert-circle-outline"></i>
+                                        <strong>
+                                            Limite de imagenes alcanzado
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        {/if}
                     </div>
                 </div>
             </div>
