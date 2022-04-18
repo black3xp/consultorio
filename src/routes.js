@@ -5,6 +5,7 @@ import { isLogin } from './util/index';
 import Index from './Pages/Home/Index.svelte';
 import Prueba from './Pages/Prueba.svelte';
 import Pacientes from './Pages/Pacientes/Index.svelte';
+import Facturas from './Pages/Facturas/Index.svelte';
 import PacientePerfil from './Pages/Pacientes/PacientePerfil.svelte';
 import PacienteCrear from './Pages/Pacientes/PacienteCrear.svelte';
 import PacienteEditar from './Pages/Pacientes/PacienteEditar.svelte';
@@ -40,6 +41,18 @@ const routes = {
     "/register": Register,
     "/pacientes": wrap({
         component: Pacientes,
+        conditions: [
+            async (detail) => {
+                if(isLogin()){
+                    return true
+                }else{
+                    return push('/login')
+                }
+            }
+        ]
+    }),
+    "/facturas": wrap({
+        component: Facturas,
         conditions: [
             async (detail) => {
                 if(isLogin()){
