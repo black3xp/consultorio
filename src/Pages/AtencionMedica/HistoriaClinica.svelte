@@ -1773,10 +1773,10 @@ import ImagenHc from "../../componentes/ImagenHC.svelte";
                                 <Dropzone
                                     dropzoneClass="dropzone"
                                     hooveringClass="hooveringClass"
-                                    id="id"
+                                    id="agregarImage"
                                     dropzoneEvents={{ addedfile, drop, init }}
                                     options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>
-                                    <p><i class="mdi mdi-image-plus"></i> Agregar imagen</p>
+                                    <label for="agregarImage"><i class="mdi mdi-image-plus"></i> Agregar imagen</label>
                                 </Dropzone>
                             {/if}
                         </div>

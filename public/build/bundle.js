@@ -31894,7 +31894,7 @@ var app = (function () {
     			props: {
     				dropzoneClass: "dropzone",
     				hooveringClass: "hooveringClass",
-    				id: "id",
+    				id: "agregarImage",
     				dropzoneEvents: {
     					addedfile: /*addedfile*/ ctx[30],
     					drop: /*drop*/ ctx[31],
@@ -32003,28 +32003,29 @@ var app = (function () {
     	return block;
     }
 
-    // (1773:32) <Dropzone                                      dropzoneClass="dropzone"                                      hooveringClass="hooveringClass"                                      id="id"                                      dropzoneEvents={{ addedfile, drop, init }}                                      options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>
+    // (1773:32) <Dropzone                                      dropzoneClass="dropzone"                                      hooveringClass="hooveringClass"                                      id="agregarImage"                                      dropzoneEvents={{ addedfile, drop, init }}                                      options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>
     function create_default_slot(ctx) {
-    	let p;
+    	let label;
     	let i;
     	let t;
 
     	const block = {
     		c: function create() {
-    			p = element("p");
+    			label = element("label");
     			i = element("i");
     			t = text(" Agregar imagen");
     			attr_dev(i, "class", "mdi mdi-image-plus");
-    			add_location(i, file$r, 1778, 39, 83760);
-    			add_location(p, file$r, 1778, 36, 83757);
+    			add_location(i, file$r, 1778, 62, 83793);
+    			attr_dev(label, "for", "agregarImage");
+    			add_location(label, file$r, 1778, 36, 83767);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, i);
-    			append_dev(p, t);
+    			insert_dev(target, label, anchor);
+    			append_dev(label, i);
+    			append_dev(label, t);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(label);
     		}
     	};
 
@@ -32032,7 +32033,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(1773:32) <Dropzone                                      dropzoneClass=\\\"dropzone\\\"                                      hooveringClass=\\\"hooveringClass\\\"                                      id=\\\"id\\\"                                      dropzoneEvents={{ addedfile, drop, init }}                                      options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>",
+    		source: "(1773:32) <Dropzone                                      dropzoneClass=\\\"dropzone\\\"                                      hooveringClass=\\\"hooveringClass\\\"                                      id=\\\"agregarImage\\\"                                      dropzoneEvents={{ addedfile, drop, init }}                                      options={{ clickable: true, acceptedFiles: 'image/*', maxFilesize: 256, init }}>",
     		ctx
     	});
 
@@ -32058,15 +32059,15 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Limite de imagenes alcanzado";
     			attr_dev(i, "class", "mdi mdi-alert-circle-outline");
-    			add_location(i, file$r, 1786, 40, 84217);
-    			add_location(strong, file$r, 1787, 40, 84303);
+    			add_location(i, file$r, 1786, 40, 84254);
+    			add_location(strong, file$r, 1787, 40, 84340);
     			set_style(p, "margin", "0");
     			attr_dev(p, "class", "text-center");
-    			add_location(p, file$r, 1785, 36, 84133);
+    			add_location(p, file$r, 1785, 36, 84170);
     			attr_dev(div0, "class", "alert alert-danger");
-    			add_location(div0, file$r, 1784, 32, 84063);
+    			add_location(div0, file$r, 1784, 32, 84100);
     			attr_dev(div1, "class", "col-lg-12 mb-3");
-    			add_location(div1, file$r, 1783, 28, 84001);
+    			add_location(div1, file$r, 1783, 28, 84038);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -32849,55 +32850,55 @@ var app = (function () {
     			attr_dev(div37, "data-bind", "if: perfil().motivoConsulta");
     			attr_dev(div37, "class", "card m-b-20 margen-mobile");
     			add_location(div37, file$r, 1744, 12, 81862);
-    			add_location(strong5, file$r, 1800, 44, 84810);
+    			add_location(strong5, file$r, 1800, 44, 84847);
     			attr_dev(div38, "class", "card-title");
-    			add_location(div38, file$r, 1800, 20, 84786);
+    			add_location(div38, file$r, 1800, 20, 84823);
     			attr_dev(div39, "class", "card-header");
-    			add_location(div39, file$r, 1799, 16, 84739);
+    			add_location(div39, file$r, 1799, 16, 84776);
     			textarea3.disabled = /*disabled*/ ctx[26];
     			attr_dev(textarea3, "class", "form-control");
     			set_style(textarea3, "width", "100%");
     			set_style(textarea3, "display", "block");
     			set_style(textarea3, "height", "150px");
     			attr_dev(textarea3, "rows", "3");
-    			add_location(textarea3, file$r, 1803, 20, 84933);
+    			add_location(textarea3, file$r, 1803, 20, 84970);
     			attr_dev(div40, "class", "card-body");
-    			add_location(div40, file$r, 1802, 16, 84888);
+    			add_location(div40, file$r, 1802, 16, 84925);
     			attr_dev(div41, "class", "card m-b-20 margen-mobile autosave");
-    			add_location(div41, file$r, 1798, 12, 84673);
-    			add_location(strong6, file$r, 1818, 52, 85540);
+    			add_location(div41, file$r, 1798, 12, 84710);
+    			add_location(strong6, file$r, 1818, 52, 85577);
     			attr_dev(div42, "class", "card-title");
-    			add_location(div42, file$r, 1818, 28, 85516);
+    			add_location(div42, file$r, 1818, 28, 85553);
     			attr_dev(div43, "class", "card-header");
-    			add_location(div43, file$r, 1817, 24, 85461);
+    			add_location(div43, file$r, 1817, 24, 85498);
     			attr_dev(label0, "for", "");
-    			add_location(label0, file$r, 1825, 36, 85910);
+    			add_location(label0, file$r, 1825, 36, 85947);
     			attr_dev(input1, "type", "date");
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "placeholder", "Fecha");
     			input1.disabled = true;
-    			add_location(input1, file$r, 1826, 36, 85975);
+    			add_location(input1, file$r, 1826, 36, 86012);
     			attr_dev(div44, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div44, file$r, 1822, 32, 85742);
+    			add_location(div44, file$r, 1822, 32, 85779);
     			attr_dev(label1, "for", "");
-    			add_location(label1, file$r, 1837, 36, 86549);
+    			add_location(label1, file$r, 1837, 36, 86586);
     			attr_dev(input2, "type", "time");
     			attr_dev(input2, "placeholder", "Hora");
     			attr_dev(input2, "class", "form-control");
     			input2.disabled = true;
-    			add_location(input2, file$r, 1838, 36, 86613);
+    			add_location(input2, file$r, 1838, 36, 86650);
     			attr_dev(div45, "class", "form-group floating-label col-md-6 show-label");
-    			add_location(div45, file$r, 1834, 32, 86381);
+    			add_location(div45, file$r, 1834, 32, 86418);
     			attr_dev(div46, "class", "form-row");
-    			add_location(div46, file$r, 1821, 28, 85686);
+    			add_location(div46, file$r, 1821, 28, 85723);
     			attr_dev(div47, "class", "card-body");
-    			add_location(div47, file$r, 1820, 24, 85633);
+    			add_location(div47, file$r, 1820, 24, 85670);
     			attr_dev(div48, "class", "card m-b-20");
-    			add_location(div48, file$r, 1816, 20, 85410);
+    			add_location(div48, file$r, 1816, 20, 85447);
     			attr_dev(div49, "class", "col-lg-6");
-    			add_location(div49, file$r, 1815, 16, 85366);
+    			add_location(div49, file$r, 1815, 16, 85403);
     			attr_dev(div50, "class", "row");
-    			add_location(div50, file$r, 1814, 12, 85331);
+    			add_location(div50, file$r, 1814, 12, 85368);
     			attr_dev(div51, "class", "col-lg-12");
     			set_style(div51, "margin-top", "150px");
     			add_location(div51, file$r, 756, 8, 26707);
